@@ -1,0 +1,45 @@
+<html>
+<head>
+<style>
+	html body {padding:0;margin:0;width:100%;height:100%}
+	.pictures ul {list-style-type:none;padding:0;margin:0;}
+  .pictures li {padding:0;margin:0;float:left;}
+	.pictures li img {padding:0;margin:0;width:50px;height:50px;}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+
+  var app = {
+    onReady: function() {
+      $.ajax({
+        url: "https://greenwire-stage.greenpeace.org/netherlands/nl/api/public/volunteers.json?domain=netherlands&must_have_default_avatar=0&limit=250",
+        cache: true,
+        dataType: 'json',
+      })
+      .done(function(data) {
+        if (data) {
+          if (data.header.status == 'OK') {
+            $.each(data.body.volunteers, function(key, volunteer) {
+              if (volunteer.avatar) {
+                $('.pictures ul').append('<li><img src="' + volunteer.avatar + '" alt="" /></li>');
+              }
+            });
+          }
+        }
+      });
+    }
+  };
+
+  $(document).ready(
+    app.onReady
+  );
+
+</script>
+</head>
+<body>
+<div class="pictures">
+<ul>
+
+</ul>
+</body>
+</html>

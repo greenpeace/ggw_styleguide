@@ -4,6 +4,12 @@
 @charset "utf-8";
 /* CSS Document */
 
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -62,18 +68,26 @@ h3 {
 	padding-top:20px;
 }
 
+.float-left,
+.float-right {
+	position: relative;
+	width: 50%;
+	min-width: 450px;
+}
+
 .float-left {
 	float: left;
-	margin: 180px 0 0 20px;
-	position: relative;
-	width: 500px;
+	margin: 140px 0 0 20px;
 }
 
 .float-right {
 	float: right;
-	margin: 180px 20px 0 0;
-	position: relative;
-	width: 500px;
+	margin: 140px 20px 0 0;
+}
+
+.video-left {
+	margin: 220px 0 0 5%;
+	position: absolute;
 }
 
 .center {
@@ -133,12 +147,11 @@ h3 {
 
 #fourth {
 	background-image: url(images/greenwire_section_4_bg.jpg);
-	height: 850px;
-	padding: 30px 0 0 0;
 }
 
 .slide {
-	width: 980px;
+	width: 80%;
+	min-width: 980px;
 	margin: 0 auto;
 	position: relative;
 	z-index: 11;
@@ -204,7 +217,7 @@ h3 {
 	-webkit-border-radius: 6px;
 					border-radius:6px;
 	-webkit-box-shadow: 0 1px 3px 0 #999999;
-	box-shadow: 0 1px 3px 0 #999999;
+					box-shadow: 0 1px 3px 0 #999999;
 	overflow:hidden;
 	position: relative;
 	z-index: 30;
@@ -243,7 +256,7 @@ h3 {
 	color:#fff;
 	height: 50px;
 	margin: 0 auto;
-	padding: 20px 0 0 50px;
+	padding: 17px 0 0 0;
 }
 
 .links {
@@ -253,7 +266,12 @@ h3 {
 	width: 890px;
 }
 
-a.read-more {
+.links p {
+	margin: 0;
+}
+
+a.read-more,
+.leaflet-container a.read-more {
 	text-align:right;
 	color: #559F0C;
 	text-decoration:none;
@@ -268,6 +286,7 @@ a.read-more:hover {
 	padding-right:7px;
 	position:relative;
 	top:1px;
+	width: 21px;
 }
 
 .links a {

@@ -17,8 +17,8 @@
 
 <ul id="nav">
 		<li><a href="#intro" title="Next Section"><img src="images/dot.png" alt="Link" /></a></li>
-		<li><a href="#second" title="Next Section"><img src="images/dot.png" alt="Link" /></a></li>
-		<li><a href="#third" title="Next Section"><img src="images/dot.png" alt="Link" /></a></li>
+		<li><a href="#leaflet-map" title="Next Section"><img src="images/dot.png" alt="Link" /></a></li>
+		<li><a href="#pictures" title="Next Section"><img src="images/dot.png" alt="Link" /></a></li>
 		<li><a href="#fourth" title="Next Section"><img src="images/dot.png" alt="Link" /></a></li>
 </ul>
 
@@ -45,7 +45,7 @@
 		<div class="float-right" data-type="sprite" data-offsetY="-250" data-Xposition="75%" data-speed="2">
 			<div class="backround bgevents">
 				<i class="icon-calendar"></i>
-				<h2>Lorem ipsum</h2>
+				<h2>Greenwire Events</h2>
 				<p>Sadly, industrial facilities are treating public waterways like private sewers in many areas of Indonesia, pumping out a cocktail of hazardous substances into the local waterways.</p>
 				<p>One of the major sources of pollution is the fashion industry – with 68% of industrial facilities on the Upper Citarum producing textiles.</p>
 				<p><a href="#" class="read-more"><img src="images/icon_link_arrow.png" width="14" height="14" alt="more" >Learn More</a></p>
@@ -112,7 +112,7 @@
 	var app = {
 		onReady: function() {
 			$.ajax({
-				url: "https://greenwire-stage.greenpeace.org/netherlands/nl/api/public/volunteers.json?domain=netherlands&must_have_default_avatar=0&limit=250",
+				url: "https://greenwire.greenpeace.org/netherlands/nl/api/public/volunteers.json?domain=netherlands&must_have_default_avatar=0&limit=250",
 				cache: true,
 				dataType: 'json',
 			})

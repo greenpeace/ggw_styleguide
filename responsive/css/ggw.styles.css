@@ -1,0 +1,215 @@
+@font-face {
+  font-family: "fontello";
+  src: url('fonts/../../font/fontello.eot') format('embedded-opentype'), url('fonts/../../font/fontello.woff') format('woff'), url('fonts/../../font/fontello.ttf') format('truetype'), url('fonts/../../font/fontello.svg') format('svg'); }
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?27206179#fontello') format('svg');
+  }
+}
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/base\/_forms\.scss}line{font-family:\000032}}
+input,
+textarea {
+  background: #f0f0f0;
+  border: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/base\/_media\.scss}line{font-family:\000031}}
+img, media {
+  max-width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/\.rvm\/gems\/ruby-1\.9\.3-p484\@omega\.ndp\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/_vertical_rhythm\.scss}line{font-family:\0000361}}
+* html {
+  font-size: 81.25%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/\.rvm\/gems\/ruby-1\.9\.3-p484\@omega\.ndp\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/_vertical_rhythm\.scss}line{font-family:\0000364}}
+html {
+  font-size: 13px;
+  line-height: 1.53846em; }
+
+/**
+ * $PARAGRAPHS
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/base\/_typography\.scss}line{font-family:\000037}}
+p {
+  margin: 0;
+  margin-top: 0em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.53846em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/base\/_typography\.scss}line{font-family:\0000311}}
+p + img {
+  float: left;
+  margin-right: 1em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_header\.scss}line{font-family:\000031}}
+.header {
+  background: #66cc00; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_header\.scss}line{font-family:\000035}}
+#logo {
+  display: block;
+  margin: 10px 15px;
+  width: 140px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\000031}}
+.navigation a {
+  color: white;
+  text-decoration: none;
+  font-weight: normal; }
+  @media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\000031}}
+    .navigation a {
+      background: #56b004; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\0000310}}
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\0000316}}
+#main-menu {
+  position: static;
+  width: 100%;
+  /* first level */
+  /* second level */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\0000320}}
+  #main-menu > a {
+    display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\0000324}}
+  #main-menu li {
+    position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\0000332}}
+  #main-menu > ul > li {
+    width: auto;
+    height: 100%;
+    padding: .5em 1em;
+    float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\0000338}}
+    #main-menu > ul > li.parent > a:after {
+      width: 0;
+      height: 0;
+      border: 0.313em solid transparent;
+      /* 5 */
+      border-bottom: none;
+      border-top-color: #efa585;
+      content: '';
+      vertical-align: middle;
+      display: inline-block;
+      position: relative;
+      right: -0.313em;
+      /* 5 */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\0000351}}
+    #main-menu > ul > li a {
+      font-size: 1em;
+      height: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\0000356}}
+    #main-menu > ul > li.active {
+      background-color: #c04f23; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\0000364}}
+  #main-menu li a {
+    display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\0000368}}
+  #main-menu li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: #59b300; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\0000374}}
+    #main-menu li ul li {
+      width: 15em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\0000378}}
+    #main-menu li ul a {
+      font-size: 1em;
+      height: 100%;
+      line-height: 2.5em;
+      text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\0000386}}
+  #main-menu li:hover ul {
+    display: block; }
+
+@media only screen and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\0000395}}
+  #main-menu {
+    position: relative;
+    left: auto;
+    top: auto;
+    /* first level */
+    /* second level */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\00003100}}
+    #main-menu > a {
+      font-size: 3em;
+      right: 0;
+      line-height: 60px;
+      position: absolute;
+      text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/variables\/_font-icons\.scss}line{font-family:\0000334}}
+      #main-menu > a:before {
+        content: "\e804";
+        speak: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-transform: none;
+        line-height: 1;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        margin-right: .2em;
+        text-align: center;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        font-family: 'fontello'; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\00003108}}
+      #main-menu > a span {
+        position: absolute !important;
+        clip: rect(1px 1px 1px 1px);
+        /* IE6, IE7 */
+        clip: rect(1px, 1px, 1px, 1px);
+        overflow: hidden;
+        height: 1px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\00003114}}
+    #main-menu:not(:target) > a:first-of-type, #main-menu:target > a:last-of-type {
+      display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\00003119}}
+    #main-menu > ul {
+      margin: 60px 0 0;
+      padding: 0;
+      height: auto;
+      display: none;
+      position: absolute;
+      left: 20px;
+      right: 0;
+      background-color: #66cc00; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\00003129}}
+      #main-menu > ul > li {
+        width: 100%;
+        float: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\00003135}}
+        #main-menu > ul > li a {
+          height: auto;
+          padding: 0 .833em;
+          font-size: 1.4em;
+          line-height: 1.5em;
+          text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\00003148}}
+    #main-menu:target > ul,
+    #main-menu > ul.active {
+      display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\00003152}}
+    #main-menu li:not(:last-child) > a {
+      border-right: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/components\/_navigation\.scss}line{font-family:\00003157}}
+    #main-menu li ul {
+      position: static;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 1px inset;
+      -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 1px inset;
+      box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 1px inset; } }

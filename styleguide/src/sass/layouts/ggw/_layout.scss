@@ -1,0 +1,10 @@
+.container {
+  position:   relative;
+  @include pie-clearfix;
+
+  @include breakpoint($desk) {
+    width:  960px;
+    margin: 0 auto;
+  }
+
+}

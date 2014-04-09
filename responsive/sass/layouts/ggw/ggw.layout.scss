@@ -17,6 +17,7 @@
 .header {
   height: 60px;
   overflow: hidden;
+  position: relative;
   z-index: 1;
 
   .logo {
@@ -26,6 +27,7 @@
 
 .navigation {
   margin-top: -60px;
+  position: relative;
   z-index: 2;
 
   @include breakpoint($tab) {

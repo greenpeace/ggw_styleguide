@@ -21,8 +21,9 @@
 .header {
   height: 60px;
   overflow: hidden;
+  position: relative;
   z-index: 1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/layouts\/ggw\/ggw\.layout\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/layouts\/ggw\/ggw\.layout\.scss}line{font-family:\0000323}}
   .header .logo {
     width: 48.93617%;
     float: left;
@@ -30,12 +31,13 @@
     margin-left: 0%;
     clear: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/layouts\/ggw\/ggw\.layout\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/layouts\/ggw\/ggw\.layout\.scss}line{font-family:\0000328}}
 .navigation {
   margin-top: -60px;
+  position: relative;
   z-index: 2; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/layouts\/ggw\/ggw\.layout\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/maikel\/Sites\/styleguide\.dev\/responsive\/sass\/layouts\/ggw\/ggw\.layout\.scss}line{font-family:\0000328}}
     .navigation {
       position: relative;
       width: 100%;

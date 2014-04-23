@@ -23,12 +23,6 @@ $breakpoint-no-query-fallbacks: true;
 // Defining reusable declarations
 @import "abstractions/**/*";
 
-// Generate normalize.css.
-@import "normalize";
-
-// Use 'border-box' for the box model.
-@import "toolkit/border-box";
-
 // Styles that are used across the site
 @import "base/**/*";
 
@@ -39,4 +33,4 @@ $breakpoint-no-query-fallbacks: true;
 @import "layouts/**/*";
 
 // Things we only want to serve to old browsers
-@import "browser/old/**/*";
+//@import "browser/old/**/*";

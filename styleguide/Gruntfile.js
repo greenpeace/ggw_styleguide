@@ -4,6 +4,7 @@ module.exports = function (grunt) {
 
   var config = {
     src: 'src',
+    dist: 'dist',
     styleguide: 'styleguide'
   };
 
@@ -15,11 +16,10 @@ module.exports = function (grunt) {
 
     watch: {
       options: {
-        livereload: true
+       // livereload: true
       },
       sass: {
         files: ['<%= config.src %>/sass/{,**/}*.{scss,sass}'],
-        tasks: ['compass:dev'],
         options: {
           livereload: false
         }
@@ -63,6 +63,14 @@ module.exports = function (grunt) {
       },
     },
 
+    concat: {
+      dist: {
+        nonull: true,
+        src: ['src/css/ggw.normalize.css', 'src/css/ggw.styles.css'],
+        dest: 'src/css/styleguide.css',
+      },
+    },
+
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -101,6 +109,7 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -114,7 +123,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('css', [
-    'compass:dist',
     'copy:styleguide'
   ]);
 

@@ -1,0 +1,12 @@
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false; // needs to enabled later for box-sizing polyfill
+$legacy-support-for-ie8: true;
+
+// Import the legacy variables (relevant for controlling compass-normalize).
+@import "variables/**/*";
+
+// Generate normalize.css.
+@import "normalize";
+
+// Use 'border-box' for the box model.
+@import "toolkit/border-box";

@@ -3,7 +3,7 @@
 The aim of this project is to create reusable and optimized front-
 end code for Greenwire.
 
-* Make sure you have Ruby and RVM installed, we use RVM version 1.9.3
+* Make sure you have Ruby, Bundler and RVM installed, we use RVM version 1.9.3
 If you are on a Mac, you'll require a package manager like Homebrew and the latest version of XCode Development Tools, as well as the Xcode Command Line Tools. Although Mac comes with Ruby, it may not be the right version.
 * Install RVM with Ruby with
 `\curl -L https://get.rvm.io | bash -s stable --ruby`.

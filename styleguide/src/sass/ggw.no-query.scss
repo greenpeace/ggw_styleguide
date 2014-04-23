@@ -17,7 +17,7 @@ $breakpoint-no-query-fallbacks: true;
 @import "toolkit-no-css";
 
 // Defining reusable values
-// should not contain any CSS output, because it is called twice.
+// should not contain any CSS output
 @import "variables/**/*";
 
 // Defining reusable declarations

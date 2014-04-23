@@ -1,7 +1,15 @@
 {
   "name": "greenpeace_greenwire_styleguide",
+  "title": "Greenpeace Greenwire Styleguide",
+  "url": "http://greenwire.greenpeace.org",
+  "author": "Maikel Koopman",
+  "copyright": "Copyright 2014, Greenpeace International",
+  "license": "GNU General Public License version 3 or later;",
   "version": "0.0.1",
-  "repository": "https://github.com/greenpeace/ggw_styleguide",
+  "repository":  {
+    "type": "git",
+    "url": "https://github.com/greenpeace/ggw_styleguide"
+    },
   "devDependencies": {
     "grunt": "~0.4.0",
     "grunt-contrib-watch": "~0.4.3",

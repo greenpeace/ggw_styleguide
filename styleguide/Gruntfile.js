@@ -7,11 +7,11 @@ module.exports = function (grunt) {
     styleguide: 'styleguide'
   };
 
+/** Configuration */
   grunt.initConfig({
 
     config: config,
     pkg: grunt.file.readJSON('./package.json'),
-    bower: grunt.file.readJSON('./.bowerrc'),
 
     watch: {
       options: {
@@ -55,6 +55,14 @@ module.exports = function (grunt) {
       }
     },
 
+    copy: {
+      styleguide: {
+        nonull: true,
+        src: '<%= config.src %>/css/styleguide.css',
+        dest: '<%= config.styleguide %>/css/styleguide.css'
+      },
+    },
+
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -95,6 +103,7 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
@@ -102,6 +111,11 @@ module.exports = function (grunt) {
     'uglify:dist',
     'compass:dist',
     'jshint'
+  ]);
+
+  grunt.registerTask('css', [
+    'compass:dist',
+    'copy:styleguide'
   ]);
 
 };

@@ -69,8 +69,8 @@ module.exports = function (grunt) {
     copy: {
       styleguide: {
         nonull: true,
-        src: '<%= config.src %>/sass/ggw.styleguide.scss',
-        dest: '<%= config.styleguide %>/src/ggw.styleguide.scss'
+        src: '<%= config.src %>/css/ggw.styleguide.css',
+        dest: '<%= config.styleguide %>/src/ggw.styleguide.css'
       },
     },
 

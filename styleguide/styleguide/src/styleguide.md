@@ -20,6 +20,6 @@ In this case, we are working with gww.styleguide.scss located in /src/sass
 
 Specifically:
 
-`kss-node src/sass styleguide --S src/sass/ggw.styleguide.scss --template styleguide/template`
+`kss-node styleguide/src styleguide --css styleguide/src/ggw.styleguide.css --template styleguide/template`
 
 

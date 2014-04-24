@@ -1,0 +1,5 @@
+.block-title {
+  text-transform: uppercase;
+  color: $heading;
+  @include font-size($h2);
+}

@@ -19,24 +19,25 @@ module.exports = function (grunt) {
        // livereload: true
       },
       sass: {
-        files: ['<%= config.src %>/sass/{,**/}*.{scss}'],
+        files: ['<%= config.src %>/sass/{,**/}*.scss'],
+        tasks: ['compass:dist'],
         options: {
-          livereload: false
+          livereload: 8000
         }
       },
       images: {
         files: ['<%= config.src %>/images/**']
       },
       css: {
-        files: ['<%= config.src %>/css/{,**/}*.css']
-      },
-      styles: {
         files: ['<%= config.src %>/css/{,**/}*.css'],
-        task: ['autoprefixer']
       },
       js: {
         files: ['<%= config.src %>/js/{,**/}*.js', '!<%= config.src %>/js/{,**/}*.js'],
         tasks: ['jshint', 'uglify:dev']
+      },
+      styles: {
+        files: ['<%= config.src %>/css/{,**/}*.css'],
+        tasks: ['autoprefixer:src']
       }
     },
 
@@ -60,26 +61,24 @@ module.exports = function (grunt) {
     },
 
     autoprefixer: {
-      dist: {
-        files: {
-          '<%= config.src %>/css/ggw.styles.css': '<%= config.dist %>/css/ggw.styles.css'
-        }
+      src: {
+        src: '<%= config.src %>/sass/ggw.styleguide.scss, <%= config.src %>/css/ggw.styles.css '
       }
     },
 
     copy: {
       styleguide: {
         nonull: true,
-        src: '<%= config.src %>/css/styleguide.css',
-        dest: '<%= config.styleguide %>/css/styleguide.css'
+        src: '<%= config.src %>/sass/ggw.styleguide.scss',
+        dest: '<%= config.styleguide %>/src/ggw.styleguide.scss'
       },
     },
 
     concat: {
-      dist: {
+      src: {
         nonull: true,
-        src: ['src/css/ggw.normalize.css', 'src/css/ggw.styles.css'],
-        dest: 'src/css/styleguide.css',
+        src: ['<%= config.src %>/css/ggw.normalize.css', '<%= config.src %>/css/ggw.styles.css'],
+        dest: '<%= config.src %>/css/ggw.styleguide.css',
       },
     },
 
@@ -135,7 +134,9 @@ module.exports = function (grunt) {
     'jshint'
   ]);
 
-  grunt.registerTask('css', [
+  grunt.registerTask('styleguide', [
+    'compass:dist',
+    'autoprefixer:src',
     'copy:styleguide'
   ]);
 

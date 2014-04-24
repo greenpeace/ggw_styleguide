@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>kss-node Styleguide</title>
+    <meta name="description" content="" />
+    <meta name="generator" content="kss-node" />
+    <link rel="stylesheet" href="public/kss.css" />
+    <link rel="stylesheet" href="public/style.css" />
+    <!--[if lt IE 9]>
+    <script src="public/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body id="kss-node">
+    <div class="kss-wrapper">
+      <div class="kss-sidebar">
+        <div class="kss-sidebar-inner">
+          <header class="kss-header">
+            <h1 class="kss-doc-title"><a href="./">kss-node Styleguide</a></h1>
+          </header>
+          <nav class="kss-nav">
+            <ul class="kss-menu" data-kss-ref="0">
+              <li class="kss-menu-item"><a href="./"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
+              
+            </ul>
+            
+            
+          </nav>
+        </div>
+      </div>
+      <div class="kss-content">
+        <article class="kss-article">
+          
+          <section id="section-0" class="kss-section kss-overview">
+            <h1>Testing a Styleguide for Greenwire</h1>
+<p>&quot;KSS-NODE&quot; is a NodeJS implementation of <a href="https://github.com/kneath/kss">Knyle Style Sheets</a> (KSS).
+KSS-NODE enables us to generate a beatiful styleguide for CSS, that suports LESS, SASS and Stylus.
+
+</p>
+<p>This is a <strong>template</strong> based on the kss-node-template created by <a href="https://github.com/htanjo">Tanjo, Hiroyuki</a>
+for <a href="https://github.com/hughsk/kss-node">kss-node</a> styleguide.
+
+</p>
+<h2>How to apply this template in p3_styleguide:</h2>
+<ol>
+<li><p>To modify the style of the KSS-NODE Styleguide, the files are contained in styleguide/template/</p>
+</li>
+<li><p>To modify the contents, we should add the comments in the file we are working on.
+The comments should be written in a very <a href="https://github.com/kneath/kss/blob/master/SPEC.md">specific way</a>.
+In this case, we are working with gww.styleguide.scss located in /src/sass</p>
+</li>
+<li><p>Once we made all the changes we wanted, in .../sass/ we use the next command line:</p>
+</li>
+</ol>
+<p><code>kss-node [css-directory] [styleguide-directory] --[style-language] [input-file] [template-directory]</code>
+
+</p>
+<p>Specifically:
+
+</p>
+<p><code>kss-node styleguide/css styleguide --css styleguide/css/styleguide.css --template styleguide/styleguide-template</code>
+
+
+</p>
+
+          </section>
+          
+        </article>
+        <footer class="kss-footer">
+          <div>Created using <a href="https://github.com/hughsk/kss-node">kss-node</a> and <a href="https://github.com/htanjo/kss-node-template">kss-node-template</a>.</div>
+        </footer>
+      </div>
+    </div>
+    <script src="public/kss.js"></script>
+    <script src="public/jquery-1.9.1.min.js"></script>
+    <!--[if gt IE 8]><!-->
+    <script src="public/rainbow.min.js"></script>
+    <!--<![endif]-->
+    <script src="public/main.js"></script>
+  </body>
+</html>

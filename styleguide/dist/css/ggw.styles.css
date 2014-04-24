@@ -1,6 +1,36 @@
+/*
+Blocks
+
+Wrapper for most content
+
+Styleguide 1.
+*/
+/*
+Standard block
+
+Standard block styling.
+
+Styleguide 1.1
+*/
+/*
+Standard block
+
+Markup:
+<div class="block">
+  <i class="block-icon icon-news"></i>
+  <h2 class="block-title"> This is the block title</h2>
+
+  <div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+  </div>
+</div>
+
+Styleguide 1.1.1
+*/
 .block {
   background-color: white;
   border-radius: 4px;
+  -webkit-box-shadow: 0 1px 3px 0 #999999;
   box-shadow: 0 1px 3px 0 #999999;
   padding: 15px;
 }
@@ -40,10 +70,15 @@ img, media {
 
 .container {
   position: relative;
-  *zoom: 1;
 }
 .container:after {
   content: "";
   display: table;
   clear: both;
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  }
 }

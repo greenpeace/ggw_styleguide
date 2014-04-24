@@ -19,7 +19,7 @@ module.exports = function (grunt) {
        // livereload: true
       },
       sass: {
-        files: ['<%= config.src %>/sass/{,**/}*.{scss,sass}'],
+        files: ['<%= config.src %>/sass/{,**/}*.{scss}'],
         options: {
           livereload: false
         }
@@ -29,6 +29,10 @@ module.exports = function (grunt) {
       },
       css: {
         files: ['<%= config.src %>/css/{,**/}*.css']
+      },
+      styles: {
+        files: ['<%= config.src %>/css/{,**/}*.css'],
+        task: ['autoprefixer']
       },
       js: {
         files: ['<%= config.src %>/js/{,**/}*.js', '!<%= config.src %>/js/{,**/}*.js'],
@@ -51,6 +55,14 @@ module.exports = function (grunt) {
         options: {
           environment: 'production',
           force: true
+        }
+      }
+    },
+
+    autoprefixer: {
+      dist: {
+        files: {
+          '<%= config.src %>/css/ggw.styles.css': '<%= config.dist %>/css/ggw.styles.css'
         }
       }
     },
@@ -110,6 +122,7 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-copy');

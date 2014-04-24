@@ -62,7 +62,7 @@ module.exports = function (grunt) {
 
     autoprefixer: {
       src: {
-        src: '<%= config.src %>/sass/ggw.styleguide.scss, <%= config.src %>/css/ggw.styles.css '
+        src: '<%= config.src %>/css/ggw.styleguide.css, <%= config.src %>/css/ggw.styles.css '
       }
     },
 
@@ -77,7 +77,7 @@ module.exports = function (grunt) {
     concat: {
       src: {
         nonull: true,
-        src: ['<%= config.src %>/css/ggw.normalize.css', '<%= config.src %>/css/ggw.styles.css'],
+        src: ['<%= config.src %>/css/ggw.normalize.css', '<%= config.src %>/css/ggw.styleguide.css'],
         dest: '<%= config.src %>/css/ggw.styleguide.css',
       },
     },
@@ -137,6 +137,7 @@ module.exports = function (grunt) {
   grunt.registerTask('styleguide', [
     'compass:dist',
     'autoprefixer:src',
+    'concat',
     'copy:styleguide'
   ]);
 

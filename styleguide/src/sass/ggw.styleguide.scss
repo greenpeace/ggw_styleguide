@@ -16,14 +16,5 @@ $legacy-support-for-ie8: true;
 // Defining reusable declarations
 @import "abstractions/**/*";
 
-// Styles that are used across the site
-@import "base/**/*";
-
-// Styles that are component specific
-@import "components/**/*";
-
-// Defining the layout
-@import "layouts/**/*";
-
-// Things we only want to serve to modern browsers
-//@import "browser/modern/**/*";
+// Load the styleguide syntax
+@import "styleguide/**/*";

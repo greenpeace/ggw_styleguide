@@ -1,5 +1,5 @@
-/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
-/*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
+
+
 article,
 aside,
 details,
@@ -33,7 +33,7 @@ template {
   display: none;
 }
 
-/*! normalize.css v3.0.0 | Base | MIT License | git.io/normalize */
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -44,7 +44,7 @@ body {
   margin: 0;
 }
 
-/*! normalize.css v3.0.0 | Links | MIT License | git.io/normalize */
+
 a {
   background: transparent;
 }
@@ -54,7 +54,7 @@ a:hover {
   outline: 0;
 }
 
-/*! normalize.css v3.0.0 | Typography | MIT License | git.io/normalize */
+
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -98,7 +98,7 @@ sub {
   bottom: -0.25em;
 }
 
-/*! normalize.css v3.0.0 | Embedded Content | MIT License | git.io/normalize */
+
 img {
   border: 0;
 }
@@ -107,7 +107,7 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-/*! normalize.css v3.0.0 | Figures | MIT License | git.io/normalize */
+
 figure {
   margin: 1em 40px;
 }
@@ -130,7 +130,7 @@ samp {
   font-size: 1em;
 }
 
-/*! normalize.css v3.0.0 | Forms | MIT License | git.io/normalize */
+
 button,
 input,
 optgroup,
@@ -215,7 +215,7 @@ optgroup {
   font-weight: bold;
 }
 
-/*! normalize.css v3.0.0 | Tables | MIT License | git.io/normalize */
+
 table {
   border-collapse: collapse;
   border-spacing: 0;

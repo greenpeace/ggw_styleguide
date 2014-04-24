@@ -74,10 +74,16 @@ module.exports = function (grunt) {
       },
     },
 
+    comments: {
+      normalize: {
+        src: [ '<%= config.src %>/css/ggw.normalize.css' ]
+      }
+    },
+
     concat: {
       src: {
         nonull: true,
-        src: ['<%= config.src %>/css/ggw.normalize.css', '<%= config.src %>/css/ggw.styleguide.css'],
+        src: [ '<%= config.src %>/css/ggw.normalize.css', '<%= config.src %>/css/ggw.styleguide.css' ],
         dest: '<%= config.src %>/css/ggw.styleguide.css',
       },
     },
@@ -120,6 +126,7 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-stripcomments');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -137,6 +144,7 @@ module.exports = function (grunt) {
   grunt.registerTask('styleguide', [
     'compass:dist',
     'autoprefixer:src',
+    'comments:normalize',
     'concat',
     'copy:styleguide'
   ]);

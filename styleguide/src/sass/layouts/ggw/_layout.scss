@@ -25,3 +25,11 @@
 .l-interface {
   @include grid-span(1, 4); // span 1 column, start at 1st position
 }
+
+@include breakpoint($tab) {
+
+  .l-header-navigation {
+
+  }
+
+}

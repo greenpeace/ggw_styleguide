@@ -342,6 +342,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2em;
 }
 
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none outside none;
+}
+
 .block-title {
   text-transform: uppercase;
   color: #1a1a1a;
@@ -411,6 +417,22 @@ img, media {
   background-color: #66cc00;
 }
 
+@media (min-width: 768px) {
+  .desk-navigation {
+    background-color: #56b004;
+  }
+
+  .menu-item {
+    white-space: nowrap;
+    display: inline-block;
+    float: left;
+    padding-right: 15px;
+  }
+
+  .expanded .menu {
+    display: none;
+  }
+}
 .container {
   position: relative;
   *zoom: 1;

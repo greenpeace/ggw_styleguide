@@ -1,17 +1,13 @@
-
 // Legacy support.
 $legacy-support-for-ie6: false;
 $legacy-support-for-ie7: false;
 $legacy-support-for-ie8: false;
-
-$breakpoint-no-queries: false;
 
 // Import external libraries.
 @import "compass";
 @import "breakpoint";
 @import "singularitygs";
 @import "toolkit-no-css";
-
 
 // Defining reusable values
 // should not contain any CSS output

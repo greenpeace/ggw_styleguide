@@ -1,0 +1,18 @@
+@include breakpoint($tab) {
+  .desk-navigation {
+    background-color: $green2;
+  }
+
+  .menu-item {
+    white-space: nowrap;
+    display: inline-block;
+    float: left;
+    padding-right: $def-mar;
+  }
+
+  .expanded .menu {
+    @include element-hidden;
+  }
+
+}
+

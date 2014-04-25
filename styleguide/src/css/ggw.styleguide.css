@@ -417,9 +417,18 @@ img, media {
   background-color: #66cc00;
 }
 
+.main-menu {
+  position: relative;
+}
+
 @media (min-width: 768px) {
   .desk-navigation {
     background-color: #56b004;
+    height: 28px;
+  }
+
+  .mobile-nav {
+    display: none;
   }
 
   .menu-item {
@@ -431,6 +440,13 @@ img, media {
 
   .expanded .menu {
     display: none;
+  }
+}
+@media (min-width: 768px) {
+  .block-search {
+    position: absolute;
+    right: 0;
+    top: 15px;
   }
 }
 .container {
@@ -475,4 +491,22 @@ img, media {
   margin-left: 0;
   margin-right: 0;
   clear: none;
+}
+
+@media (min-width: 768px) {
+  .l-branding {
+    width: 14.89362%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0%;
+    clear: none;
+  }
+
+  .l-header-navigation {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: both;
+  }
 }

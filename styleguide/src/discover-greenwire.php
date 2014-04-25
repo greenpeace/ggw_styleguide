@@ -14,9 +14,10 @@
     </div>
 
     <div class="l-header-navigation desk-navigation">
-      <a id="main-menu-show" href="#primary-navigation" class="icon-menu"><span class="element-invisible">Show Navigation</span></a>
-      <a id="main-menu-hide" href="#" class="icon-menu"><span class="element-invisible">Hide Navigation</span></a>
-
+      <div class="mobile-nav">
+        <a id="main-menu-show" href="#primary-navigation" class="icon-menu"><span class="element-invisible">Show Navigation</span></a>
+        <a id="main-menu-hide" href="#" class="icon-menu"><span class="element-invisible">Hide Navigation</span></a>
+      </div>
       <div id="primary-navigation">
       <!-- remove .block for all header blocks so we can style the rest of the blocks with a single selector -->
         <div class="block-search">
@@ -30,12 +31,14 @@
       </div>
 
       <div class="l-secondary-navigation">
-        <a id="secondary-menu-show" href="#secondary-menu" class="icon-user">
-          <span class="element-invisible">Show Navigation</span>
-        </a>
-        <a id="secondary-menu-hide" href="#" class="icon-user">
-          <span class="element-invisible">Hide Navigation</span>
-        </a>
+        <div class="mobile-nav">
+          <a id="secondary-menu-show" href="#secondary-menu" class="icon-user">
+            <span class="element-invisible">Show Navigation</span>
+          </a>
+          <a id="secondary-menu-hide" href="#" class="icon-user">
+            <span class="element-invisible">Hide Navigation</span>
+          </a>
+        </div>
 
         <div id="secondary-navigation">
 

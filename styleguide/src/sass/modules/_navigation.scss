@@ -1,7 +1,17 @@
+.main-menu {
+  position: relative;
+}
+
+
 @include breakpoint($tab) {
   .desk-navigation {
     background-color: $green2;
-  }
+    height: 28px;
+   }
+
+   .mobile-nav {
+    @include element-hidden;
+   }
 
   .menu-item {
     white-space: nowrap;

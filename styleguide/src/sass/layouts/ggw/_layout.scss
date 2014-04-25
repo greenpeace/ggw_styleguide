@@ -28,8 +28,12 @@
 
 @include breakpoint($tab) {
 
-  .l-header-navigation {
+  .l-branding {
+    @include grid-span(2, 1); // span 2 columns, start at 2nd position
+  }
 
+  .l-header-navigation {
+    @include isolation-span(12, 1, 'both'); // span 12 column, start at 1st position
   }
 
 }

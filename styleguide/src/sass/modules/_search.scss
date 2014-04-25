@@ -1,0 +1,8 @@
+@include breakpoint($tab) {
+  .block-search {
+    position: absolute;
+    right: 0;
+    top: $def-mar;
+  }
+
+}

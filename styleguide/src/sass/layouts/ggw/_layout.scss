@@ -8,3 +8,20 @@
   }
 
 }
+
+.l-header {
+  padding: $def-half-mar;
+}
+
+
+.l-branding {
+  @include grid-span(2, 2); // span 2 columns, start at 2nd position
+}
+
+.l-navigation {
+  @include grid-span(1, 1); // span 1 column, start at 1st position
+}
+
+.l-interface {
+  @include grid-span(1, 4); // span 1 column, start at 1st position
+}

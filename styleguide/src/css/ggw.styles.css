@@ -1,8 +1,327 @@
+@charset "UTF-8";
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'icon';
+  speak: none;
+  text-align: center;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+.element-invisible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+}
+
+body {
+  font-size: 13px;
+  line-height: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4d4d4d;
+}
+
+.logo {
+  background-image: url(../images/logo.svg);
+  background-repeat: no-repeat;
+  background-size: auto 28px;
+  display: block;
+  width: 100%;
+  height: 28px;
+}
+
+@font-face {
+  font-family: 'icon';
+  src: url("../font/greenwire-v01.eot?26487031");
+  src: url("../font/greenwire-v01.eot?26487031#iefix") format("embedded-opentype"), url("../font/greenwire-v01.woff?26487031") format("woff"), url("../font/greenwire-v01.ttf?26487031") format("truetype"), url("../font/greenwire-v01.svg?26487031#greenwire-10") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2em;
+}
+
+.block-title {
+  text-transform: uppercase;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+img, media {
+  max-width: 100%;
+}
+
+.icon-bg-default {
+  background: #56b004;
+}
+
+.icon-bg-news-media {
+  background: #055905;
+}
+
+.icon-bg-action {
+  background: #ff7704;
+}
+
+.icon-bg-event {
+  background: #006532;
+}
+
+.icon-bg-user {
+  background: #ffce00;
+}
+
+.icon-bg-admin {
+  background: #93005f;
+}
+
+.icon-bg-error {
+  background: #d50d00;
+}
+
 .block {
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 1px 3px 0 #999999;
   padding: 15px;
+  position: relative;
 }
 
 .block-icon {
@@ -20,22 +339,12 @@
   text-transform: none;
 }
 
-body {
-  font-size: 13px;
-  line-height: 1.5em;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #4d4d4d;
+.block-with-icon .block-title {
+  margin-left: 30px;
 }
 
-img, media {
-  max-width: 100%;
-}
-
-.block-title {
-  text-transform: uppercase;
-  color: #1a1a1a;
-  font-size: 14px;
-  font-size: 1.07692rem;
+.header {
+  background-color: #66cc00;
 }
 
 .container {
@@ -51,4 +360,32 @@ img, media {
     width: 960px;
     margin: 0 auto;
   }
+}
+
+.l-header {
+  padding: 7px;
+}
+
+.l-branding {
+  width: 46.66667%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 26.66667%;
+  clear: none;
+}
+
+.l-navigation {
+  width: 20%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 0%;
+  clear: none;
+}
+
+.l-interface {
+  width: 20%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none;
 }

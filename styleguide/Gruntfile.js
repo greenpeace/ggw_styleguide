@@ -69,14 +69,22 @@ module.exports = function (grunt) {
     copy: {
       styleguide: {
         nonull: true,
-        src: '<%= config.src %>/css/ggw.styleguide.css',
-        dest: '<%= config.styleguide %>/src/ggw.styleguide.css'
-      },
+        files: [
+          { expand: true,
+            flatten: true,
+            src: ['<%= config.src %>/css/styleguide/*'],
+            dest: '<%= config.styleguide %>/src/'
+          }
+        ]
+      }
     },
 
     comments: {
       normalize: {
         src: [ '<%= config.src %>/css/ggw.normalize.css' ]
+      },
+      styleguide: {
+        src: [ '<%= config.src %>/css/styleguide/ggw.styleguide.css' ]
       }
     },
 
@@ -84,7 +92,7 @@ module.exports = function (grunt) {
       src: {
         nonull: true,
         src: [ '<%= config.src %>/css/ggw.normalize.css', '<%= config.src %>/css/ggw.styleguide.css' ],
-        dest: '<%= config.src %>/css/ggw.styleguide.css',
+        dest: '<%= config.src %>/css/styleguide/ggw.styleguide.css',
       },
     },
 
@@ -146,6 +154,7 @@ module.exports = function (grunt) {
     'autoprefixer:src',
     'comments:normalize',
     'concat',
+    //'comments:styleguide',
     'copy:styleguide'
   ]);
 

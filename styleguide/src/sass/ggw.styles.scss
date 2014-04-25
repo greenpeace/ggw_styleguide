@@ -20,13 +20,16 @@ $breakpoint-no-queries: false;
 // Defining reusable declarations
 @import "abstractions/**/*";
 
-// Styles that are used across the site
+// Defining the base
 @import "base/**/*";
 
-// Styles that are component specific
+// Components that can be reused
 @import "components/**/*";
 
-// Defining the layout
+// Specific blocks that do not exchange styles
+@import "modules/**/*";
+
+// Defining the layout - grid
 @import "layouts/**/*";
 
 // Things we only want to serve to modern browsers

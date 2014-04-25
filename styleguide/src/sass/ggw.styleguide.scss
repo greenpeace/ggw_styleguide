@@ -18,3 +18,15 @@ $legacy-support-for-ie8: true;
 
 // Load the styleguide syntax
 @import "styleguide/**/*";
+
+// Defining the base
+@import "base/**/*";
+
+// Components that can be reused
+@import "components/**/*";
+
+// Specific blocks that do not exchange styles
+@import "modules/**/*";
+
+// Defining the layout - grid
+@import "layouts/**/*";

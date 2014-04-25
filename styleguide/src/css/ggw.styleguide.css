@@ -1,257 +1,391 @@
-
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
-  display: block;
-}
-
-audio,
-canvas,
-progress,
-video {
+@charset "UTF-8";
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'icon';
+  speak: none;
+  text-align: center;
   display: inline-block;
-  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-[hidden],
-template {
-  display: none;
-}
-
-
-html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-}
-
-
-a {
-  background: transparent;
-}
-
-a:active,
-a:hover {
-  outline: 0;
-}
-
-
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-b,
-strong {
-  font-weight: bold;
-}
-
-dfn {
-  font-style: italic;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-mark {
-  background: #ff0;
-  color: #000;
-}
-
-small {
-  font-size: 80%;
-}
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-
-img {
-  border: 0;
-}
-
-svg:not(:root) {
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+/* '' */
+.element-invisible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
-}
-
-
-figure {
-  margin: 1em 40px;
-}
-
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-}
-
-pre {
-  overflow: auto;
-}
-
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
-
-button {
-  overflow: visible;
-}
-
-button,
-select {
-  text-transform: none;
-}
-
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer;
-}
-
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-input {
-  line-height: normal;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-input[type="search"] {
-  -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
-legend {
-  border: 0;
-  padding: 0;
-}
-
-textarea {
-  overflow: auto;
-}
-
-optgroup {
-  font-weight: bold;
-}
-
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-td,
-th {
-  padding: 0;
-}
-
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  height: 1px;
 }
 
 /*
+
+# Base #
+
+## Typography
+
+### Headings
+
+```
+<h1>h1. Greenpeace Greenwire heading</h1>
+<h2>h2. Greenpeace Greenwire heading</h2>
+<h3>h3. Greenpeace Greenwire heading</h3>
+<h4>h4. Greenpeace Greenwire heading</h4>
+<h5>h5. Greenpeace Greenwire heading</h5>
+<h6>h6. Greenpeace Greenwire heading</h6>
+
+```
+*/
+/*
+
+# Modules #
+
 ## Blocks
 
 Blocks to wrap content
 
+### Standard block
+
 ```
 <div class="block">
-  <i class="block-icon icon-news"></i>
   <h2 class="block-title"> This is the block title</h2>
   <div class="content">
      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
   </div>
 </div>
 ```
+
+### Block with an icon
+
+```
+<div class="block block-with-icon">
+  <i class="block-icon icon-bg-news-media icon-book-open"></i>
+  <h2 class="block-title"> This is the block title</h2>
+  <div class="content">
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+  </div>
+</div>
+```
+
+### Block with an icon
+
+```
+<div class="block block-with-icon">
+  <i class="block-icon icon-user icon-book-open"></i>
+  <h2 class="block-title"> This is the block title</h2>
+  <div class="content">
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+  </div>
+</div>
+```
+
+## Breadcrumbs ##
+
 */
+body {
+  font-size: 13px;
+  line-height: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4d4d4d;
+}
+
+.logo {
+  background-image: url(../images/logo.svg);
+  background-repeat: no-repeat;
+  background-size: auto 28px;
+  display: block;
+  width: 100%;
+  height: 28px;
+}
+
+@font-face {
+  font-family: 'icon';
+  src: url("../font/greenwire-v01.eot?26487031");
+  src: url("../font/greenwire-v01.eot?26487031#iefix") format("embedded-opentype"), url("../font/greenwire-v01.woff?26487031") format("woff"), url("../font/greenwire-v01.ttf?26487031") format("truetype"), url("../font/greenwire-v01.svg?26487031#greenwire-10") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2em;
+}
+
+.block-title {
+  text-transform: uppercase;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+img, media {
+  max-width: 100%;
+}
+
+.icon-bg-default {
+  background: #56b004;
+}
+
+.icon-bg-news-media {
+  background: #055905;
+}
+
+.icon-bg-action {
+  background: #ff7704;
+}
+
+.icon-bg-event {
+  background: #006532;
+}
+
+.icon-bg-user {
+  background: #ffce00;
+}
+
+.icon-bg-admin {
+  background: #93005f;
+}
+
+.icon-bg-error {
+  background: #d50d00;
+}
+
 .block {
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 1px 3px 0 #999999;
   padding: 15px;
+  position: relative;
 }
 
 .block-icon {
@@ -267,4 +401,56 @@ Blocks to wrap content
   line-height: 37px;
   text-align: center;
   text-transform: none;
+}
+
+.block-with-icon .block-title {
+  margin-left: 30px;
+}
+
+.header {
+  background-color: #66cc00;
+}
+
+.container {
+  position: relative;
+  *zoom: 1;
+}
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  }
+}
+
+.l-header {
+  padding: 7px;
+}
+
+.l-branding {
+  width: 46.66667%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 26.66667%;
+  clear: none;
+}
+
+.l-navigation {
+  width: 20%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 0%;
+  clear: none;
+}
+
+.l-interface {
+  width: 20%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none;
 }

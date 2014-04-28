@@ -1,9 +1,5 @@
 .block {
-  background-color: $white;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px 0 $grey1;
-  padding: $def-mar;
-  position: relative;
+  @extend %block-element;
 }
 
 .block-icon {
@@ -12,15 +8,19 @@
   top: 0;
   width: 36px;
   height: 36px;
+  line-height: 36px;
   border-radius: 4px 0;
   color: $white;
-  display: block;
   font-size: $h1;
-  line-height: 37px;
-  text-align: center;
-  text-transform: none;
 }
 
-.block-with-icon .block-title {
-  margin-left:30px;
+.main-content,
+.block-with-icon {
+
+  .block-title,
+  .title-prefix {
+    margin-left: 30px;
+    line-height: 1.3em;
+  }
+
 }

@@ -37,3 +37,27 @@
   }
 
 }
+
+.l-main {
+  margin: $def-mar auto;
+}
+
+.l-has-sidebar .l-main-column {
+
+  @include breakpoint($tab) {
+    @include grid-span(8, 1);
+  }
+
+}
+
+.l-has-sidebar .l-sidebar {
+  @extend %element-hidden;
+
+  @include breakpoint($tab) {
+    @include grid-span(4, 9);
+    display: block;
+  }
+}
+
+
+

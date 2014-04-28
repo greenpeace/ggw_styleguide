@@ -14,3 +14,21 @@ ul, li {
   color: $heading;
   font-size: $h2;
 }
+
+a {
+  text-decoration: none;
+}
+
+// all links in main section
+.l-main a {
+  color: $green5;
+}
+
+.title-prefix {
+  color: $grey1;
+  font-size: $small;
+  position: relative;
+  text-transform: uppercase;
+  margin-top: -9px;
+  display: block;
+}

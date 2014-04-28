@@ -1,0 +1,11 @@
+@mixin block-element {
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 $grey1;
+  padding: $def-mar;
+  position: relative;
+}
+
+%block-element {
+   @include block-element;
+}

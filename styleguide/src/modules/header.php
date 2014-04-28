@@ -10,7 +10,7 @@
 <meta name="HandheldFriendly" content="true" />
 <meta name="MobileOptimized" content="width" />
 <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
-<link rel="shortcut icon" href="http://ndp.dev/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
 <meta name="Generator" content="Drupal 7 (http://drupal.org)" />
 <meta name="viewport" content="width=device-width" />
 

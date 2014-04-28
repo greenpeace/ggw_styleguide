@@ -1,12 +1,25 @@
 @charset "UTF-8";
+.main-content, .block {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 #999999;
+  padding: 15px;
+  position: relative;
+}
+
 [class^="icon-"],
 [class*=" icon-"] {
-  font-family: 'icon';
+  font-family: 'greenwire-10';
   speak: none;
   text-align: center;
   display: inline-block;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user-add:before {
+  content: '\e811';
 }
 
 /* '' */
@@ -208,21 +221,9 @@
 /* '' */
 /* '' */
 /* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
 /* '' */
 /* '' */
 /* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
 /* '' */
 /* '' */
 /* '' */
@@ -240,6 +241,37 @@
 /* '' */
 /* '' */
 /* '' */
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* for IE 6/7 */
+  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+  /* non-JS fallback */
+  *zoom: 1;
+}
+.breadcrumbs:before, .breadcrumbs:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.breadcrumbs:after {
+  clear: both;
+}
+.breadcrumbs li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+}
+
+.l-has-sidebar .l-sidebar {
+  display: none;
+}
+
 .element-invisible {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
@@ -318,6 +350,7 @@ body {
   line-height: 1.5em;
   font-family: Arial, Helvetica, sans-serif;
   color: #4d4d4d;
+  background-color: #eeeeee;
 }
 
 .logo {
@@ -329,10 +362,14 @@ body {
   height: 28px;
 }
 
+.main-content .content {
+  margin-top: 15px;
+}
+
 @font-face {
-  font-family: 'icon';
-  src: url("../font/greenwire-v01.eot?26487031");
-  src: url("../font/greenwire-v01.eot?26487031#iefix") format("embedded-opentype"), url("../font/greenwire-v01.woff?26487031") format("woff"), url("../font/greenwire-v01.ttf?26487031") format("truetype"), url("../font/greenwire-v01.svg?26487031#greenwire-10") format("svg");
+  font-family: "greenwire-10";
+  src: url("../font/greenwire-10.eot?26487031");
+  src: url("../font/greenwire-10.eot?26487031#iefix") format("embedded-opentype"), url("../font/greenwire-10.woff?26487031") format("woff"), url("../font/greenwire-10.ttf?26487031") format("truetype"), url("../font/greenwire-10.svg?26487031#greenwire-10") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -352,6 +389,42 @@ ul, li {
   text-transform: uppercase;
   color: #1a1a1a;
   font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.l-main a {
+  color: #559f0c;
+}
+
+.title-prefix {
+  color: #999999;
+  font-size: 12px;
+  position: relative;
+  text-transform: uppercase;
+  margin-top: -9px;
+  display: block;
+}
+
+.progress-bar-wrapper {
+  background-color: #F5F5F5;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+  min-height: 20px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  float: left;
+  background-color: #56b004;
+  color: #FFFFFF;
+  font-size: 13px;
+  line-height: 2em;
+  text-align: center;
+  width: 0;
 }
 
 img, media {
@@ -386,31 +459,42 @@ img, media {
   background: #d50d00;
 }
 
-.block {
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px 0 #999999;
-  padding: 15px;
-  position: relative;
-}
-
 .block-icon {
   position: absolute;
   left: 0;
   top: 0;
   width: 36px;
   height: 36px;
+  line-height: 36px;
   border-radius: 4px 0;
   color: white;
-  display: block;
   font-size: 21px;
-  line-height: 37px;
-  text-align: center;
-  text-transform: none;
 }
 
-.block-with-icon .block-title {
+.main-content .block-title,
+.main-content .title-prefix,
+.block-with-icon .block-title,
+.block-with-icon .title-prefix {
   margin-left: 30px;
+  line-height: 1.3em;
+}
+
+.breadcrumbs {
+  margin-bottom: 15px;
+}
+
+.breadcrumb-item {
+  margin-right: 3px;
+}
+
+.breadcrumb-link {
+  font-weight: 700;
+  display: block;
+}
+.breadcrumb-link:after {
+  color: #4D4D4D;
+  content: ' › ';
+  font-weight: 300;
 }
 
 .header {
@@ -442,6 +526,12 @@ img, media {
     display: none;
   }
 }
+.page-register-step1 .progress-bar {
+  background: none;
+  color: #4d4d4d;
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   .block-search {
     position: absolute;
@@ -508,5 +598,29 @@ img, media {
     margin-left: 0;
     margin-right: 0;
     clear: both;
+  }
+}
+.l-main {
+  margin: 15px auto;
+}
+
+@media (min-width: 768px) {
+  .l-has-sidebar .l-main-column {
+    width: 65.95745%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0%;
+    clear: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .l-has-sidebar .l-sidebar {
+    width: 31.91489%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    display: block;
   }
 }

@@ -61,3 +61,12 @@
   @include element-focusable;
 }
 
+@mixin hideYetClickable() {
+  opacity: 0;
+  border: none;
+  background: none;
+}
+
+%hideYetClickable {
+  @include hideYetClickable;
+}

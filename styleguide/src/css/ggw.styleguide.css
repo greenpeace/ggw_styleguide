@@ -22,225 +22,6 @@
   content: '\e811';
 }
 
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
-/* '' */
 .breadcrumbs {
   margin: 0;
   padding: 0;
@@ -279,6 +60,13 @@
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
   height: 1px;
+}
+
+.selector select, .checker input, .form-type-radio input,
+.radio input, .uploader input {
+  opacity: 0;
+  border: none;
+  background: none;
 }
 
 /*
@@ -366,6 +154,14 @@ body {
   margin-top: 15px;
 }
 
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
 @font-face {
   font-family: "greenwire-10";
   src: url("../font/greenwire-10.eot?26487031");
@@ -406,6 +202,356 @@ a {
   text-transform: uppercase;
   margin-top: -9px;
   display: block;
+}
+
+.btn {
+  background: whitesmoke;
+  background-image: linear-gradient(#f5f5f5, #ededed);
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+  color: #4d4d4d;
+  min-width: 8em;
+  padding: 4px 6px;
+}
+.btn:hover {
+  box-shadow: 0 1px 2px 0 #cccccc;
+}
+
+.btn-primary {
+  background: #ff7704;
+  background-image: linear-gradient(#ff9841, #e46900);
+  border: 1px solid #d05f00;
+  color: white;
+}
+
+.form-wrapper {
+  /* for IE 6/7 */
+  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+  /* non-JS fallback */
+  *zoom: 1;
+  margin: 15px 0;
+}
+.form-wrapper:before, .form-wrapper:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.form-wrapper:after {
+  clear: both;
+}
+
+.form-item {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  font-weight: 700;
+  line-height: 1.5em;
+}
+
+.form-required {
+  color: #d50d00;
+}
+
+.form-description {
+  margin-bottom: 7px;
+  font-size: 12px;
+  color: #999999;
+}
+
+.l-main .form-actions {
+  margin-top: 30px;
+}
+
+input[type='text'],
+input[type='password'],
+textarea {
+  padding: 4px 6px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  width: 100%;
+}
+input[type='text']:focus,
+input[type='password']:focus,
+textarea:focus {
+  border-color: #999999;
+  box-shadow: 0 1px 3px 0 #cccccc;
+}
+input[type='text']:hover,
+input[type='password']:hover,
+textarea:hover {
+  border-color: #999999;
+}
+
+/* General settings */
+div.selector, div.selector span, div.checker span, div.radio span, div.uploader, div.uploader span.action {
+  background-image: url("../images/sprite.png");
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Select */
+.selector {
+  background-position: 0 -130px;
+  line-height: 26px;
+  height: 26px;
+  padding: 0 0 0 10px;
+  position: relative;
+  overflow: hidden;
+  font-size: 12px;
+}
+.selector span {
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  background-position: right 0;
+  height: 26px;
+  line-height: 26px;
+  padding-right: 25px;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  color: #666666;
+}
+.selector.fixedWidth {
+  width: 190px;
+}
+.selector.fixedWidth span {
+  width: 155px;
+}
+.selector select {
+  position: absolute;
+  height: 22px;
+  top: 2px;
+  left: 0px;
+  width: 100%;
+}
+.selector.active {
+  background-position: 0 -156px;
+}
+.selector.active span {
+  background-position: right -26px;
+}
+.selector.hover, .selector.focus {
+  background-position: 0 -182px;
+}
+.selector.hover span, .selector.focus span {
+  background-position: right -52px;
+}
+.selector.hover.active, .selector.focus.active {
+  background-position: 0 -208px;
+}
+.selector.hover.active span, .selector.focus.active span {
+  background-position: right -78px;
+}
+.selector.disabled, .selector.disabled.active {
+  background-position: 0 -234px;
+}
+.selector.disabled span, .selector.disabled.active span {
+  background-position: right -104px;
+}
+
+/* Checkbox */
+.checker {
+  position: relative;
+  margin-right: 5px;
+}
+.checker, .checker span, .checker input {
+  width: 19px;
+  height: 19px;
+}
+.checker span {
+  display: inline-block;
+  text-align: center;
+  background-position: 0 -260px;
+}
+.checker span.checked {
+  background-position: -76px -260px;
+}
+.checker input {
+  display: inline-block;
+}
+.checker.active span {
+  background-position: -19px -260px;
+}
+.checker.active span.checked {
+  background-position: -95px -260px;
+}
+.checker.hover span, .checker.focus span {
+  background-position: -38px -260px;
+}
+.checker.hover span.checked, .checker.focus span.checked {
+  background-position: -114px -260px;
+}
+.checker.hover.active span, .checker.focus.active span {
+  background-position: -57px -260px;
+}
+.checker.hover.active span.checked, .checker.focus.active span.checked {
+  background-position: -133px -260px;
+}
+.checker.disabled, .checker.disabled.active {
+  background-position: -152px -260px;
+}
+.checker.disabled span, .checker.disabled.active span {
+  color: #cccccc;
+}
+.checker.disabled span.checked, .checker.disabled.active span.checked {
+  background-position: -171px -260px;
+}
+
+/* Radio */
+.form-type-radio,
+.radio {
+  position: relative;
+  display: inline-block;
+  margin-right: 3px;
+}
+.form-type-radio span,
+.radio span {
+  display: inline-block;
+  text-align: center;
+  width: 18px;
+  background-position: 0 -279px;
+}
+.form-type-radio span.checked,
+.radio span.checked {
+  background-position: -72px -279px;
+}
+.form-type-radio input,
+.radio input {
+  display: inline-block;
+  text-align: center;
+}
+.form-type-radio.active span,
+.radio.active span {
+  background-position: -18px -279px;
+}
+.form-type-radio.active span.checked,
+.radio.active span.checked {
+  background-position: -90px -279px;
+}
+.form-type-radio.hover span, .form-type-radio.focus span,
+.radio.hover span,
+.radio.focus span {
+  background-position: -36px -279px;
+}
+.form-type-radio.hover span.checked, .form-type-radio.focus span.checked,
+.radio.hover span.checked,
+.radio.focus span.checked {
+  background-position: -108px -279px;
+}
+.form-type-radio.hover.active span, .form-type-radio.focus.active span,
+.radio.hover.active span,
+.radio.focus.active span {
+  background-position: -54px -279px;
+}
+.form-type-radio.hover.active span.checked, .form-type-radio.focus.active span.checked,
+.radio.hover.active span.checked,
+.radio.focus.active span.checked {
+  background-position: -126px -279px;
+}
+.form-type-radio.disabled span, .form-type-radio.disabled.active span,
+.radio.disabled span,
+.radio.disabled.active span {
+  background-position: -144px -279px;
+}
+.form-type-radio.disabled span.checked, .form-type-radio.disabled.active span.checked,
+.radio.disabled span.checked,
+.radio.disabled.active span.checked {
+  background-position: -162px -279px;
+}
+
+/* Uploader */
+.uploader {
+  background-position: 0 -297px;
+  height: 28px;
+  width: 190px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.uploader .action {
+  background-position: right -409px;
+  height: 28px;
+  line-height: 28px;
+  width: 82px;
+  text-align: center;
+  float: left;
+  display: inline;
+  overflow: hidden;
+  cursor: pointer;
+  text-shadow: #fff 0px 1px 0px;
+  background-color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+}
+.uploader .filename {
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  float: left;
+  cursor: default;
+  height: 24px;
+  margin: 2px 0 2px 2px;
+  line-height: 24px;
+  width: 85px;
+  padding: 0 10px;
+  color: #777;
+  border-right: solid 1px #bbb;
+  font-size: 11px;
+}
+.uploader input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  float: right;
+  cursor: default;
+  width: 100%;
+  height: 100%;
+}
+.uploader.active .action {
+  background-position: right -465px;
+}
+.uploader.hover, .uploader.focus {
+  background-position: 0 -353px;
+}
+.uploader.hover .action, .uploader.focus .action {
+  background-position: right -437px;
+}
+.uploader.hover.active .action, .uploader.focus.active .action {
+  background-position: right -493px;
+}
+.uploader.disabled, .uploader.disabled.active {
+  background-position: 0 -325px;
+}
+.uploader.disabled .action, .uploader.disabled.active .action {
+  color: #cccccc;
+  background-position: right -381px;
+}
+.uploader.disabled .filename, .uploader.disabled.active .filename {
+  border-color: #999999;
+  color: #cccccc;
+}
+
+/* INPUT & TEXTAREA */
+select.uniform-multiselect {
+  font-size: 12px;
+  border-top: solid 1px #aaa;
+  border-left: solid 1px #aaa;
+  border-bottom: solid 1px #ccc;
+  border-right: solid 1px #ccc;
+  border-radius: 3px;
+}
+select.uniform-multiselect.hover, select.uniform-multiselect.focus {
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  border-color: #999;
 }
 
 .progress-bar-wrapper {
@@ -532,6 +678,16 @@ img, media {
   width: 100%;
 }
 
+.page-register .form-item {
+  width: 80%;
+}
+
+.page-register .date-padding .form-item {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+}
+
 @media (min-width: 768px) {
   .block-search {
     position: absolute;
@@ -539,6 +695,30 @@ img, media {
     top: 15px;
   }
 }
+@media (min-width: 768px) {
+  .domain-nl .field-name-field-user-initials {
+    width: 14.89362%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0%;
+    clear: none;
+  }
+  .domain-nl .field-name-field-user-first-name {
+    width: 40.42553%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 17.02128%;
+    clear: none;
+  }
+  .domain-nl .field-name-field-user-last-name {
+    width: 40.42553%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+  }
+}
+
 .container {
   position: relative;
   *zoom: 1;

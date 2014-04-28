@@ -8,3 +8,10 @@
 %hlist {
   @include horizontal-list(false);
 }
+
+@mixin ellipsis() {
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}

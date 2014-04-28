@@ -82,6 +82,40 @@
           <div class="progress-bar">Progress: 0%</div>
        </div>
 
+       <form>
+
+        <div class="form-wrapper">
+
+          <div class="form-item">
+
+            <label class="form-label" for="edit-name">
+              Username <span class="form-required" title="This field is required.">*</span>
+            </label>
+
+            <div class="form-description">Spaces are NOT allowed; punctuation is not allowed except for periods, hyphens, apostrophes, and underscores.</div>
+
+            <input id="edit-name" class="username form-text" type="text" maxlength="60" size="60" value="" name="name" />
+          </div>
+
+          <div class="form-item">
+
+            <label class="form-label" for="edit-email">
+              E-mail address <span class="form-required" title="This field is required.">*</span>
+            </label>
+
+            <div class="form-description">A valid e-mail address. All e-mails from the system will be sent to this address. The e-mail address is not made public and will only be used if you wish to receive a new password or wish to receive certain news or notifications by e-mail.</div>
+
+            <input id="edit-email" class="email form-text" type="text" maxlength="60" size="60" value="" name="email" />
+         </div>
+
+        </div> <?php //form-wrapper ?>
+
+        <div class="form-actions form-wrapper">
+          <input class="btn btn-primary pull-right" <?php // modify all classes here ?> type="submit" value="Next">
+        </div>
+
+       </form>
+
       </div>
 
     </div>

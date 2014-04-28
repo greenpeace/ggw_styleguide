@@ -25,4 +25,9 @@
 <script src="libraries/html5shiv/html5shiv.min.js"></script>
 <script src="libraries/html5shiv/html5shiv-print.min.js"></script>
 <![endif]-->
+
+<script src="js/jquery.1.11.0.js"></script>
+<script src="js/jquery-plugins/jquery.uniform.2.1.2.js"></script>
+<script src="js/jquery.runscripts.js"></script>
+
 </head>

@@ -1,7 +1,7 @@
 @mixin block-element {
   background-color: $white;
   border-radius: 4px;
-  box-shadow: 0 1px 3px 0 $grey1;
+  box-shadow: 0 1px 3px 0 $grey-m;
   padding: $def-mar;
   position: relative;
 }

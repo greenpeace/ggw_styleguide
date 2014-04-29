@@ -103,9 +103,6 @@
             <input class="form-text" type="text" value="" name="field_user_last_name[und][0][value]" >
           </div>
 
-        </div> <?php //form-wrapper ?>
-
-        <div class="form-wrapper">
           <div class="form-item">
 
             <label class="form-label" for="edit-field-user-gender-und">
@@ -190,7 +187,7 @@
 
   </div>
 
-  <aside class="l-sidebar">
+  <aside class="l-sidebar sidebar">
 
     <div class="block">
 

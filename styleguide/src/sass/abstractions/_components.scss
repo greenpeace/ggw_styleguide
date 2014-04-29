@@ -9,3 +9,14 @@
 %block-element {
    @include block-element;
 }
+
+@mixin white-popup {
+  @include block-element;
+  width: auto;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+%white-popup {
+   @include white-popup;
+}

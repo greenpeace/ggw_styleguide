@@ -6,4 +6,9 @@ jQuery(document).ready(function ($) {
   // Disable autowidth on certain selects
   $(".contact-form select, .form-item-timezone select, .form-item-domain-source select, .form-field-name-field-signup-event select").uniform({selectAutoWidth: false});
 
+  $(".modal").magnificPopup({
+    type: 'ajax',
+    alignTop: true
+  })
+
 });

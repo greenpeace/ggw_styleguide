@@ -4,12 +4,18 @@
 }
 
 .form-item {
-  margin-bottom: $def-mar;
+  margin-bottom: (1.5 * $def-mar);
 }
 
 .form-label {
   font-weight: 700;
   line-height: 1.5em;
+  display: block;
+}
+
+.form-type-checkbox .option {
+  display: inline;
+  vertical-align: middle;
 }
 
 .form-required {
@@ -245,6 +251,8 @@ div#{$class-wrapper} {
 #{$class-wrapper}#{$class-checkbox} {
   position: relative;
   margin-right: 5px;
+  display: inline-block;
+  vertical-align: middle;
 
   &, span, input {
     width: $checkbox-width;

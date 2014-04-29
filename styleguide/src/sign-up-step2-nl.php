@@ -1,5 +1,5 @@
 <?php include('modules/header.php'); ?>
-<body class="not-front not-logged-in domain-usa page-register page-register-step2 l-has-sidebar">
+<body class="not-front not-logged-in domain-nl page-register page-register-step2 l-has-sidebar">
 
 <noscript><div id="javascript-disabled">Your JavaScript seems to be disabled, this might affect your experience on Greenpeace Greenwire.</div></noscript>
 
@@ -88,6 +88,10 @@
 
         <div class="form-wrapper">
           <?php //remove extra wrapper here conditionally, is needed for autocomplete ?>
+          <div class="form-item field-name-field-user-initials">
+            <label class="form-label" for="edit-field-user-initials-und-0-value">Initials</label>
+            <input class="form-text" type="text" value="" name="field_user_initials[und][0][value]" >
+          </div>
 
           <div class="form-item field-name-field-user-first-name">
             <label class="form-label" for="edit-field-user-first-name-und-0-value">First name</label>
@@ -99,7 +103,7 @@
             <input class="form-text" type="text" value="" name="field_user_last_name[und][0][value]" >
           </div>
 
-          <div class="form-item field-name-field-user-birthdate">
+          <div class="form-item">
 
             <label class="form-label" for="edit-field-user-gender-und">
               Gender

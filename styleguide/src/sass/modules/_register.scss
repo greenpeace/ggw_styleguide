@@ -17,6 +17,18 @@
 
 @include breakpoint($tab) {
 
+  .field-name-field-user-first-name {
+    @include grid-span(6, 1);
+  }
+
+  .field-name-field-user-last-name {
+    @include grid-span(6, 7);
+  }
+
+  .field-name-field-user-birthdate {
+    @include inline-clear;
+  }
+
   .field-name-field-user-phone-house-country,
   .field-name-field-user-phone-mobile-country {
     @include isolation-span(4, 1);

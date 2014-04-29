@@ -24,3 +24,8 @@
 %clearfix {
   @include clearfix;
 }
+
+// clear floats inside a container before moving to next line
+@mixin inline-clear {
+  clear: both;
+}

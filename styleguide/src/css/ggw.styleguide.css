@@ -1214,6 +1214,25 @@ img.mfp-img {
 }
 
 @media (min-width: 768px) {
+  .field-name-field-user-first-name {
+    width: 48.93617%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 2.12766%;
+  }
+
+  .field-name-field-user-last-name {
+    width: 48.93617%;
+    clear: right;
+    float: right;
+    margin-right: 0;
+  }
+
+  .field-name-field-user-birthdate {
+    clear: both;
+  }
+
   .field-name-field-user-phone-house-country,
   .field-name-field-user-phone-mobile-country {
     width: 31.91489%;

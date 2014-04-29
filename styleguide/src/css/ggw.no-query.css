@@ -37,12 +37,21 @@
 }
 
 .element-invisible {
-  position: absolute !important;
+  position: absolute;
   clip: rect(1px 1px 1px 1px);
   /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
   height: 1px;
+}
+
+.element-placeholder {
+  position: relative;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  opacity: 0;
 }
 
 .selector select, .checker input, .form-type-radio input,
@@ -191,6 +200,11 @@ a {
   margin-top: 30px;
 }
 
+select {
+  width: 100%;
+  max-width: 394px;
+}
+
 input[type='text'],
 input[type='password'],
 textarea {
@@ -198,6 +212,7 @@ textarea {
   border: 1px solid #cccccc;
   border-radius: 4px;
   width: 100%;
+  max-width: 400px;
 }
 input[type='text']:focus,
 input[type='password']:focus,
@@ -243,10 +258,10 @@ div.selector, div.selector span, div.checker span, div.radio span, div.uploader,
   color: #666666;
 }
 .selector.fixedWidth {
-  width: 190px;
+  width: 394px;
 }
 .selector.fixedWidth span {
-  width: 155px;
+  width: 359px;
 }
 .selector select {
   position: absolute;

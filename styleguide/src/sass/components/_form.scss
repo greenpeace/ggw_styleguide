@@ -32,6 +32,11 @@
   margin-top: (2 * $def-mar);
 }
 
+select {
+  width: 100%;
+  max-width: 394px; // 6px less the inputs because of added padding
+}
+
 input[type='text'],
 input[type='password'],
 textarea {
@@ -39,6 +44,7 @@ textarea {
   border: 1px solid $grey-l;
   border-radius: 4px;
   width: 100%;
+  max-width: 400px;
 
   &:focus {
     border-color: $grey-m;
@@ -118,7 +124,7 @@ $checkbox-width: 19px;
 $input-padding: 3px;
 $radio-height: 18px;
 $radio-width: 18px;
-$select-fixed-width: 190px;
+$select-fixed-width: 394px;
 $select-height: 26px;
 $select-margin-left: 10px;
 $select-margin-right: 25px;

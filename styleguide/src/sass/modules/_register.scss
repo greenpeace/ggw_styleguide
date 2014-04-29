@@ -4,15 +4,6 @@
   width: 100%;
 }
 
-// prevent input boxes from being too long
-.page-register .form-text {
-  max-width: 400px;
-}
-
-.page-register .form-type-checkbox {
-  width: 100%;
-}
-
 .page-register .date-padding .form-item {
   display: inline-block;
   width: auto;
@@ -23,3 +14,54 @@
 .page-register .sidebar .content {
   text-align: center;
 }
+
+@include breakpoint($tab) {
+
+  .field-name-field-user-phone-house-country,
+  .field-name-field-user-phone-mobile-country {
+    @include isolation-span(4, 1);
+  }
+
+  .field-name-field-user-phone-house,
+  .field-name-field-user-phone-mobile {
+    @include isolation-span(4, 5, 'right');
+  }
+
+}
+
+.phone-wrapper {
+  @extend %clearfix;
+}
+
+.wrapper {
+  @extend %wrapper;
+}
+
+
+// Showing and hiding of phone options
+
+.phone-switch {
+  @extend %block;
+}
+
+#landline,
+#mobileline {
+  background: $white;
+
+}
+
+#landline {
+  position: absolute;
+  top:0;
+  width: 100%;
+}
+
+#landline:not( :target ) {
+  @extend %element-hidden;
+}
+
+#mobileline:target,
+#landline:target {
+  display:block;
+}
+

@@ -171,6 +171,29 @@ a {
   text-decoration: none;
 }
 
+article p {
+  margin: 0.65em 0 0.95em;
+}
+
+article ul,
+article ol {
+  margin: 0 0 10px 0;
+  padding: 0 0 0 30px;
+}
+
+article ol ol,
+article ul ul {
+  margin-bottom: 0;
+}
+
+article ul li {
+  list-style: square inside;
+}
+
+article ol li {
+  list-style: decimal inside;
+}
+
 .l-main a {
   color: #559f0c;
 }

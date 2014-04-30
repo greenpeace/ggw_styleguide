@@ -23,7 +23,6 @@
 // "!important" is used to prevent unintentional overrides.
 @mixin element-invisible {
   position: absolute;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
   height: 1px;
@@ -47,7 +46,6 @@
 
 @mixin element-placeholder {
   position: relative;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
   opacity: 0;

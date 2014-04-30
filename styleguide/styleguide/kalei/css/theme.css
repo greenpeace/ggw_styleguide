@@ -157,53 +157,18 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
   box-sizing: border-box;
 }
 
-.kalei-comments > pre > code,
-.kalei-css-container > pre > code {
-  padding: 10px;
-  font-size: 11px;
-  white-space: pre-wrap;
-}
-
-.kalei-css-container,
-.kalei-comments > pre > code {
-  opacity: 0.3;
-}
-
-.kalei-comments > pre > code:hover,
-.kalei-css-container:hover  {
-  opacity: 1;
-}
-
 .kalei-css-container.kalei-no-css {
   display: none;
 }
 
 .kalei-comments >  pre {
+  border-radius: 0 0 4px 4px;
   position: relative;
-  margin: 0;
-  padding: 20px;
+  margin: -16px 0 15px 0;
+  padding: 9px 14px;
   border: 1px solid #ebebeb;
   border-top: none;
-  border-radius:  0 0 3px 3px;
-}
-
-.kalei-comments > pre > code:before {
-  content: "Code";
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  padding: 3px 7px;
-  color: #ebebeb;
-  font-size: 12px;
-  font-weight: bold;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  border-radius: 0 0 4px 0;
-  background-color: #444;
-  opacity: 0.3;
-}
-
-.kalei-comments > pre > code:hover:before {
-  opacity: 1;
+  background-color: #F7F7F9;
 }
 
 .kalei-comments {
@@ -218,13 +183,13 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
   background-color: #fff;
 }
 
-body .codedemo {
+.codedemo {
+  background-color: #FFFFFF;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #DDDDDD;
+  padding: 45px 15px 15px;
   position: relative;
-  padding: 40px;
-  font-size: 100%;
-  border-radius: 3px 3px 0 0;
-  border: 1px solid #ebebeb;
-  background: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAAXNSR0IArs4c6QAAAAZQTFRF+vr6////+o8bnQAAABBJREFUCB1jYPjPgBXhEAYAfr8P8bm+jEoAAAAASUVORK5CYII=);
+  margin: 0 0 15px;
 }
 
 *:not(.codedemo) .kalei-styleguide-menu-heading h1 {
@@ -249,18 +214,16 @@ body .codedemo {
   padding: 0;
 }
 
-body .codedemo:after {
+.codedemo:after {
+  color: #BBBBBB;
   content: "Example";
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  padding: 3px 7px;
-  color: #ebebeb;
   font-size: 12px;
-  font-weight: bold;
-  font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
-  border-radius: 3px 0 3px 0;
-  background-color: #444;
+  font-weight: 700;
+  left: 15px;
+  letter-spacing: 1px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 15px;
 }
 
 
@@ -329,3 +292,6 @@ body .codedemo:after {
   font-size: 14px;
 }
 
+.well {
+
+}

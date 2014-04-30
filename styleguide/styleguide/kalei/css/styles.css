@@ -113,12 +113,5 @@ Public domain: http://unlicense.org/
 /* ### Kalei theme ### */
 @import url("theme.css");
 
-
-
-
-/* ### Examples ### */
-@import url("buttons.css");
-@import url("fixie-demo.css");
-
 /* ### Third Party ### */
-@import url("highlight/styles/googlecode.css");
+@import url("highlight/styles/vs.css");

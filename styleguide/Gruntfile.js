@@ -91,7 +91,7 @@ module.exports = function (grunt) {
     concat: {
       src: {
         nonull: true,
-        src: [ '<%= config.src %>/css/ggw.normalize.css', '<%= config.src %>/css/ggw.styleguide.css' ],
+        src: [ '<%= config.src %>/css/ggw.normalize.css', '<%= config.src %>/css/ggw.styles.css', '<%= config.src %>/css/ggw.styleguide.css' ],
         dest: '<%= config.src %>/css/styleguide/ggw.styleguide.css',
       },
     },

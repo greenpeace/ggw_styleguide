@@ -26,8 +26,11 @@ $breakpoint-no-query-fallbacks: true;
 // Styles that are used across the site
 @import "base/**/*";
 
-// Styles that are component specific
+// Components that can be reused
 @import "components/**/*";
+
+// Specific blocks that do not exchange styles
+@import "modules/**/*";
 
 // Defining the layout
 @import "layouts/**/*";

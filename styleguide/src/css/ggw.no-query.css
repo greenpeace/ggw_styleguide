@@ -1,4 +1,17 @@
-.main-content {
+@charset "UTF-8";
+.phone-wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.phone-wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.main-content, .block {
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 1px 3px 0 #999999;
@@ -17,8 +30,24 @@
   margin: 20px auto;
 }
 
+.phone-wrapper {
+  /* for IE 6/7 */
+  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+  /* non-JS fallback */
+  *zoom: 1;
+}
+.phone-wrapper:before, .phone-wrapper:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.phone-wrapper:after {
+  clear: both;
+}
+
 [class^="icon-"],
-[class*=" icon-"] {
+[class*=" icon-"], .block-search .form-actions {
   font-family: 'greenwire-10';
   speak: none;
   text-align: center;
@@ -28,18 +57,47 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.block-search .form-actions:before {
+  content: '\e807';
+}
+
 .icon-user-add:before {
   content: '\e811';
 }
 
-.l-has-sidebar .l-sidebar {
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* for IE 6/7 */
+  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+  /* non-JS fallback */
+  *zoom: 1;
+}
+.breadcrumbs:before, .breadcrumbs:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.breadcrumbs:after {
+  clear: both;
+}
+.breadcrumbs li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+}
+
+#landline:not(:target), .l-has-sidebar .l-sidebar {
   display: none;
 }
 
 .element-invisible {
   position: absolute;
-  clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
   height: 1px;
@@ -47,8 +105,6 @@
 
 .element-placeholder {
   position: relative;
-  clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
   opacity: 0;
@@ -59,6 +115,14 @@
   opacity: 0;
   border: none;
   background: none;
+}
+
+.phone-switch {
+  display: block;
+}
+
+.wrapper {
+  position: relative;
 }
 
 body {
@@ -142,9 +206,16 @@ a {
   color: #4d4d4d;
   min-width: 8em;
   padding: 4px 6px;
+  height: 30px;
 }
-.btn:hover {
+.btn:hover, .btn:focus {
   box-shadow: 0 1px 2px 0 #cccccc;
+}
+.btn:active,
+.btn .active {
+  top: 1px;
+  position: relative;
+  box-shadow: inset 0 1px 2px #cccccc;
 }
 
 .btn-primary {
@@ -152,6 +223,38 @@ a {
   background-image: linear-gradient(#ff9841, #e46900);
   border: 1px solid #d05f00;
   color: white;
+}
+
+.disabled {
+  background: white;
+  color: #cccccc;
+  cursor: default;
+}
+.disabled:hover, .disabled:focus {
+  box-shadow: none;
+}
+
+.btn-l {
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.btn-s {
+  padding: 2px 4px;
+  font-size: 12px;
+  border-radius: 2px;
+}
+
+.btn-block {
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+.btn + .btn-block {
+  margin-top: 5px;
 }
 
 .form-wrapper {
@@ -1000,6 +1103,101 @@ img.mfp-img {
 
 .icon-bg-error {
   background: #d50d00;
+}
+
+.block-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 4px 0;
+  color: white;
+  font-size: 21px;
+}
+
+.main-content .block-title,
+.main-content .title-prefix,
+.block-with-icon .block-title,
+.block-with-icon .title-prefix {
+  margin-left: 30px;
+  line-height: 1.3em;
+}
+
+.breadcrumbs {
+  margin-bottom: 15px;
+}
+
+.breadcrumb-item {
+  margin-right: 3px;
+}
+
+.breadcrumb-link {
+  font-weight: 700;
+  display: block;
+}
+.breadcrumb-link:after {
+  color: #4D4D4D;
+  content: ' › ';
+  font-weight: 300;
+}
+
+.header {
+  background-color: #66cc00;
+  height: 88px;
+}
+
+.main-menu {
+  position: relative;
+}
+.main-menu .menu-link {
+  color: white;
+  font-weight: bold;
+  line-height: 28px;
+  padding: 0 7px;
+  display: block;
+}
+.main-menu .menu-link:hover {
+  background: #66cc00;
+  color: #055905;
+  border-radius: 0 0 4px 4px;
+}
+
+.page-register-step1 .progress-bar {
+  background: none;
+  color: #4d4d4d;
+  width: 100%;
+}
+
+.page-register .date-padding .form-item {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+}
+
+.page-register .sidebar .content {
+  text-align: center;
+}
+
+#landline,
+#mobileline {
+  background: white;
+}
+
+#landline {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#mobileline:target,
+#landline:target {
+  display: block;
+}
+
+.sidebar .content {
+  margin-top: 15px;
 }
 
 .container {

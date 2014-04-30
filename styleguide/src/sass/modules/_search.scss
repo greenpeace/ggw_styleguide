@@ -1,8 +1,48 @@
+.block-search .form-actions {
+  @extend %load-icon;
+  @extend %icon-search;
+}
+
 @include breakpoint($tab) {
   .block-search {
     position: absolute;
     right: 0;
     top: $def-mar;
   }
+
+  .search-form {
+    position: relative;
+
+    .form-text {
+      font-size: $small;
+      border: 1px solid $green2;
+      border-radius: 3px;
+      padding: 3px 6px;
+    }
+
+    .form-submit {
+      @include hideYetClickable;
+      position: absolute;
+      top: 0;
+      width: 16px;
+    }
+
+    .form-actions {
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      width: 16px;
+      line-height: 16px;
+      height: 16px;
+      border-radius: 3px;
+      background: $green2;
+      padding: 0 0 0 2px;
+      color: $white;
+      font-size: $h2;
+    }
+
+  }
+
+
 
 }

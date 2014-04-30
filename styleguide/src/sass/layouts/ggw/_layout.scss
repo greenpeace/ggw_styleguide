@@ -15,25 +15,29 @@
 
 
 .l-branding {
-  @include grid-span(2, 2); // span 2 columns, start at 2nd position
+  @include grid-span(6, 4);
 }
 
 .l-navigation {
-  @include grid-span(1, 1); // span 1 column, start at 1st position
+  @include grid-span(3, 1);
 }
 
 .l-interface {
-  @include grid-span(1, 4); // span 1 column, start at 1st position
+  @include grid-span(3, 9);
 }
 
 @include breakpoint($tab) {
 
   .l-branding {
-    @include grid-span(2, 1); // span 2 columns, start at 2nd position
+    @include grid-span(2, 1);
   }
 
   .l-header-navigation {
-    @include isolation-span(12, 1, 'both'); // span 12 column, start at 1st position
+    @include isolation-span(12, 1, 'both');
+  }
+
+  .block-search {
+    @include grid-span(3, 9);
   }
 
 }

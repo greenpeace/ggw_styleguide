@@ -7,8 +7,7 @@ $tab: 768px;
 $desk: 1024px;
 $wide: 1200px;
 
-$grids: 4;
-$grids: add-grid(12 at $tab);
+$grids: 12;
 $output: 'float';
 
 $gutters: 1/3;

@@ -47,7 +47,7 @@
 }
 
 [class^="icon-"],
-[class*=" icon-"] {
+[class*=" icon-"], .block-search .form-actions {
   font-family: 'greenwire-10';
   speak: none;
   text-align: center;
@@ -55,6 +55,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.block-search .form-actions:before {
+  content: '\e807';
 }
 
 .icon-user-add:before {
@@ -1273,6 +1277,37 @@ img.mfp-img {
     right: 0;
     top: 15px;
   }
+
+  .search-form {
+    position: relative;
+  }
+  .search-form .form-text {
+    font-size: 12px;
+    border: 1px solid #56b004;
+    border-radius: 3px;
+    padding: 3px 6px;
+  }
+  .search-form .form-submit {
+    opacity: 0;
+    border: none;
+    background: none;
+    position: absolute;
+    top: 0;
+    width: 16px;
+  }
+  .search-form .form-actions {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 16px;
+    line-height: 16px;
+    height: 16px;
+    border-radius: 3px;
+    background: #56b004;
+    padding: 0 0 0 2px;
+    color: white;
+    font-size: 14px;
+  }
 }
 .sidebar .content {
   margin-top: 15px;
@@ -1320,24 +1355,23 @@ img.mfp-img {
 }
 
 .l-branding {
-  width: 46.66667%;
+  width: 48.93617%;
   clear: right;
   float: left;
 }
 
 .l-navigation {
-  width: 20%;
+  width: 23.40426%;
   clear: right;
   float: left;
   margin-left: 0;
-  margin-right: 6.66667%;
+  margin-right: 2.12766%;
 }
 
 .l-interface {
-  width: 20%;
+  width: 23.40426%;
   clear: right;
-  float: right;
-  margin-right: 0;
+  float: left;
 }
 
 @media (min-width: 768px) {
@@ -1355,6 +1389,12 @@ img.mfp-img {
     margin-left: 0;
     margin-right: 0;
     clear: both;
+  }
+
+  .block-search {
+    width: 23.40426%;
+    clear: right;
+    float: left;
   }
 }
 .l-main {

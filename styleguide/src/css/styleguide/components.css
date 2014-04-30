@@ -11,12 +11,17 @@ Buttons get a standard .btn class, the element type should have no effect
 
 ```
 <!-- Standard button -->
+<p>
 <input type="submit" value="input type=submit" class="btn">
 <button type="button" class="btn">button</button>
-
+<a href="#" role="button" class="btn">button link</a>
+</p>
 <!-- Primary button for form submits, navigation etc. -->
+<p>
 <input type="submit" value="input type=submit" class="btn btn-primary">
-<button type="button" class="btn btn-primary" >button</button>
+<button type="button" class="btn btn-primary">button</button>
+<a href="#" role="button" class="btn btn-primary">button link</a>
+</p>
 ```
 
 <h2> Size </h2>
@@ -51,26 +56,41 @@ Create block level buttons—those that span the full width of a parent— by ad
 </div>
 ```
 
-
-
-
-
 <h2> Active state </h2>
 
-Buttons will appear pressed (with an inset shadow) when active. For `<button>` elements, this is done via :active. For <a> elements, it's done with .active. We use .active on `<button>`s here to replicate the active state progammatically.
+Buttons will appear pressed (with an inset shadow) when active. For `<button>` elements, this is done via :active. For `<a>` elements, it's done with .active. We use .active on `<button>`s here to replicate the active state progammatically.
 
 ```
 <!-- Active button (we need to add the class now to present it) -->
 <p>
 <button type="button" class="btn active">Active standard button</button>
-<button type="button" class="btn btn-primary active">Active Standard button</button>
-</p>
-
-<!-- Active anchor element -->
-<p>
-<a href="#" class="btn active" role="button">Active standard anchor button</a>
-<a href="#" class="btn btn-primary active" role="button">Active primary anchor button</a>
+<button type="button" class="btn btn-primary active">Active primary button</button>
 </p>
 ```
 
+<h2> Disabled state </h2>
+
+Make buttons look unclickable by making them white.
+
+<h3> Button element </h3>
+
+Add the disabled attribute to `<button>` buttons.
+
+```
+<p>
+<button type="button" class="btn" disabled="disabled">Button</button>
+<button type="button" class="btn btn-primary" disabled="disabled">Primary button</button>
+</p>
+```
+
+<h3> Anchor element </h3>
+
+Add the .disabled class to `<a>` buttons.
+
+```
+<p>
+<a href="#" role="button" class="btn disabled">button link</a>
+<a href="#" role="button" class="btn btn-primary disabled">primary button link</a>
+</p>
+```
 */

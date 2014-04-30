@@ -204,18 +204,29 @@ a {
   border-radius: 3px;
   border: 1px solid #cccccc;
   color: #4d4d4d;
-  min-width: 8em;
   padding: 4px 6px;
   line-height: 1rem;
+  text-align: center;
 }
 .btn:hover, .btn:focus {
   box-shadow: 0 1px 2px 0 #cccccc;
 }
-.btn:active,
-.btn .active {
+.btn:active, .btn.active {
   top: 1px;
   position: relative;
-  box-shadow: inset 0 1px 2px #cccccc;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+}
+.btn[disabled], .btn.disabled {
+  background: white;
+  border-color: #cccccc;
+  color: #cccccc;
+  cursor: default;
+}
+.btn[disabled]:active, .btn[disabled]:hover, .btn[disabled]:focus, .btn.disabled:active, .btn.disabled:hover, .btn.disabled:focus {
+  box-shadow: none;
+}
+.btn[disabled]:active, .btn.disabled:active {
+  top: 0;
 }
 
 .btn-primary {
@@ -223,15 +234,6 @@ a {
   background-image: linear-gradient(#ff9841, #e46900);
   border: 1px solid #d05f00;
   color: white;
-}
-
-.disabled {
-  background: white;
-  color: #cccccc;
-  cursor: default;
-}
-.disabled:hover, .disabled:focus {
-  box-shadow: none;
 }
 
 .btn-l {

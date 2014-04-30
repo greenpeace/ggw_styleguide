@@ -127,6 +127,12 @@ body {
   width: 100%;
   height: 28px;
 }
+@media (min-width: 768px) {
+  .logo {
+    height: 34px;
+    background-size: auto 34px;
+  }
+}
 
 .main-content .content {
   margin-top: 15px;
@@ -1084,18 +1090,37 @@ img.mfp-img {
 
 .header {
   background-color: #66cc00;
-}
-
-.main-menu {
-  position: relative;
+  height: 88px;
 }
 
 @media (min-width: 768px) {
-  .desk-navigation {
+  .header:after {
+    display: block;
     background-color: #56b004;
+    content: '';
     height: 28px;
+    position: absolute;
+    top: 60px;
+    width: 100%;
   }
+}
+.main-menu {
+  position: relative;
+}
+.main-menu .menu-link {
+  color: white;
+  font-weight: bold;
+  line-height: 28px;
+  padding: 0 7px;
+  display: block;
+}
+.main-menu .menu-link:hover {
+  background: #66cc00;
+  color: #055905;
+  border-radius: 0 0 4px 4px;
+}
 
+@media (min-width: 768px) {
   .mobile-nav {
     display: none;
   }
@@ -1182,12 +1207,6 @@ img.mfp-img {
 }
 
 @media (min-width: 768px) {
-  .block-search {
-    position: absolute;
-    right: 0;
-    top: 15px;
-  }
-
   .search-form {
     position: relative;
   }
@@ -1260,7 +1279,12 @@ img.mfp-img {
 }
 
 .l-header {
-  padding: 7px;
+  padding-top: 7px;
+}
+@media (min-width: 768px) {
+  .l-header {
+    padding-top: 15px;
+  }
 }
 
 .l-branding {
@@ -1298,12 +1322,18 @@ img.mfp-img {
     margin-left: 0;
     margin-right: 0;
     clear: both;
+    position: relative;
+    bottom: -11px;
+    z-index: 2;
   }
 
   .block-search {
     width: 23.40426%;
     clear: right;
     float: left;
+    bottom: 36px;
+    position: absolute;
+    right: 0;
   }
 }
 .l-main {

@@ -13,6 +13,11 @@ body {
   display:block;
   width: 100%;
   height: 28px;
+
+  @include breakpoint($tab) {
+    height: 34px;
+    background-size: auto 34px;
+  }
 }
 
 .main-content {

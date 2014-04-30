@@ -1,17 +1,28 @@
 .main-menu {
   position: relative;
+
+  .menu-link {
+    color: $white;
+    font-weight: bold;
+    line-height: 28px;
+    padding: 0 $def-mar-half;
+    display: block;
+
+    &:hover {
+      background: $green1;
+      color: $green3;
+      border-radius: 0 0 4px 4px;
+    }
+  }
+
 }
 
 
 @include breakpoint($tab) {
-  .desk-navigation {
-    background-color: $green2;
-    height: 28px;
-   }
 
-   .mobile-nav {
+  .mobile-nav {
     @include element-hidden;
-   }
+  }
 
   .menu-item {
     white-space: nowrap;

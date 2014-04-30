@@ -13,7 +13,7 @@
 
     </div>
 
-    <div class="l-header-navigation desk-navigation">
+    <div class="l-header-navigation">
       <div class="mobile-nav">
         <a id="main-menu-show" href="#primary-navigation" class="icon-menu"><span class="element-invisible">Show Navigation</span></a>
         <a id="main-menu-hide" href="#" class="icon-menu"><span class="element-invisible">Hide Navigation</span></a>

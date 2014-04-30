@@ -10,7 +10,11 @@
 }
 
 .l-header {
-  padding: $def-mar-half;
+  padding-top: $def-mar-half;
+
+  @include breakpoint($tab) {
+    padding-top: $def-mar;
+  }
 }
 
 
@@ -34,10 +38,16 @@
 
   .l-header-navigation {
     @include isolation-span(12, 1, 'both');
+    position: relative;
+    bottom: -11px;
+    z-index: 2;
   }
 
   .block-search {
     @include grid-span(3, 9);
+    bottom: 36px;
+    position: absolute;
+    right: 0;
   }
 
 }

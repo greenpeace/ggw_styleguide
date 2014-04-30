@@ -1,3 +1,17 @@
 .header {
   background-color: $green1;
+  height: 88px;
+}
+
+@include breakpoint($tab) {
+  // the background is inserted via pseudo element because it is not present on mobile
+  .header:after {
+    display: block;
+    background-color: $green2;
+    content:'';
+    height: 28px;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+  }
 }

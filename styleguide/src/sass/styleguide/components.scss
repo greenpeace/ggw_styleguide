@@ -1,23 +1,25 @@
 /*
 
-# Components #
+Buttons
+===
 
-## Buttons
+<h2> Options </h2>
 
-### Options
+
 Buttons get a standard .btn class, the element type should have no effect
 
 ```
 <!-- Standard button -->
-<input type="submit" value="submit" class="btn">
-<button class="btn" href="javascript:void(0) ">button</button>
+<input type="submit" value="input type=submit" class="btn">
+<button type="button" class="btn">button</button>
 
 <!-- Primary button for form submits, navigation etc. -->
-<input type="submit" value="submit" class="btn btn-primary">
-<button class="btn btn-primary" href="javascript:void(0) ">button</button>
+<input type="submit" value="input type=submit" class="btn btn-primary">
+<button type="button" class="btn btn-primary" >button</button>
 ```
 
-### Size
+<h2> Size </h2>
+
 Fancy larger or smaller buttons? Add .btn-large or .btn-small for additional sizes. To display a button that stretches to full width of the parent container add .btn-block.
 
 ```
@@ -39,28 +41,35 @@ Fancy larger or smaller buttons? Add .btn-large or .btn-small for additional siz
 <button type="button" class="btn btn-primary btn-l">Large button</button>
 </p>
 ```
-
 Create block level buttons—those that span the full width of a parent— by adding .btn-block.
 ```
+<div class="well" style="max-width: 400px; margin: 0 auto 10px;">
 <!-- Block button -->
-<div style="max-width: 400px; margin: 0 auto 10px;">
 <button type="button" class="btn btn-block">Block button</button>
 <button type="button" class="btn btn-primary btn-block">Block button</button>
 </div>
 ```
 
-### Active state
+
+
+
+
+<h2> Active state </h2>
+
 Buttons will appear pressed (with an inset shadow) when active. For `<button>` elements, this is done via :active. For <a> elements, it's done with .active. We use .active on `<button>`s here to replicate the active state progammatically.
 
 ```
 <!-- Active button (we need to add the class now to present it) -->
+<p>
 <button type="button" class="btn active">Active standard button</button>
 <button type="button" class="btn btn-primary active">Active Standard button</button>
+</p>
 
 <!-- Active anchor element -->
-<a href="#" class="btn active">Active standard button</a>
-<a href="#" class="btn btn-primary active">Active primary button</a>
-
+<p>
+<a href="#" class="btn active" role="button">Active standard anchor button</a>
+<a href="#" class="btn btn-primary active" role="button">Active primary anchor button</a>
+</p>
 ```
 
 */

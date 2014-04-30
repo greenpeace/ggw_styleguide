@@ -166,8 +166,7 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
   position: relative;
   margin: -16px 0 15px 0;
   padding: 9px 14px;
-  border: 1px solid #ebebeb;
-  border-top: none;
+  border: 1px solid #DDDDDD;
   background-color: #F7F7F9;
 }
 
@@ -179,7 +178,7 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
   -o-box-sizing: border-box;
   box-sizing: border-box;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: #fff;
 }
 
@@ -293,5 +292,10 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
 }
 
 .well {
-
+  border: 1px solid #E3E3E3;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+  margin-bottom: 20px;
+  min-height: 20px;
+  padding: 19px;
 }

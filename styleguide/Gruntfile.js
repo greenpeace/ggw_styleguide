@@ -107,10 +107,6 @@ module.exports = function (grunt) {
     },
 
     concat: {
-      options: {
-        separator: '\n',
-        banner: '// ** Built automatically in Grunt, do not edit **\n'
-      },
       css: {
         files: {
           '<%= config.src %>/css/styleguide/ggw.styleguide.css':[

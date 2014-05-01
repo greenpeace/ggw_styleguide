@@ -359,7 +359,9 @@ label {
 
 select {
   width: 100%;
-  max-width: 394px;
+  max-width: 368px;
+  -moz-appearance: toolbox;
+  text-overflow: ellipsis;
 }
 
 input[type='text'],
@@ -415,10 +417,10 @@ div.selector, div.selector span, div.checker span, div.radio span, div.uploader,
   color: #666666;
 }
 .selector.fixedWidth {
-  width: 394px;
+  width: 190px;
 }
 .selector.fixedWidth span {
-  width: 359px;
+  width: 155px;
 }
 .selector select {
   position: absolute;

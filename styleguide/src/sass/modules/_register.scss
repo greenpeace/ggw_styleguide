@@ -32,6 +32,12 @@
   .field-name-field-user-phone-house-country,
   .field-name-field-user-phone-mobile-country {
     @include isolation-span(4, 1);
+
+    // fix overflow issue with firefox and webkit
+    select {
+      max-width: 160px;
+      -moz-appearance: none;
+    }
   }
 
   .field-name-field-user-phone-house,

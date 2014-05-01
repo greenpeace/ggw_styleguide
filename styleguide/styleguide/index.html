@@ -1,84 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>kss-node Styleguide</title>
-    <meta name="description" content="" />
-    <meta name="generator" content="kss-node" />
-    <link rel="stylesheet" href="public/kss.css" />
-    <link rel="stylesheet" href="public/style.css" />
-    <!--[if lt IE 9]>
-    <script src="public/html5shiv.js"></script>
-    <![endif]-->
-  </head>
-  <body id="kss-node">
-    <div class="kss-wrapper">
-      <div class="kss-sidebar">
-        <div class="kss-sidebar-inner">
-          <header class="kss-header">
-            <h1 class="kss-doc-title"><a href="./">kss-node Styleguide</a></h1>
-          </header>
-          <nav class="kss-nav">
-            <ul class="kss-menu" data-kss-ref="0">
-              <li class="kss-menu-item"><a href="./"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
-              
-              <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name"></span></a></li>
-              
-            </ul>
-            
-            
-          </nav>
-        </div>
-      </div>
-      <div class="kss-content">
-        <article class="kss-article">
-          
-          <section id="section-0" class="kss-section kss-overview">
-            <h1>Testing a Styleguide for Greenwire</h1>
-<p>&quot;KSS-NODE&quot; is a NodeJS implementation of <a href="https://github.com/kneath/kss">Knyle Style Sheets</a> (KSS).
-KSS-NODE enables us to generate a beatiful styleguide for CSS, that suports LESS, SASS and Stylus.
-
-</p>
-<p>This is a <strong>template</strong> based on the kss-node-template created by <a href="https://github.com/htanjo">Tanjo, Hiroyuki</a>
-for <a href="https://github.com/hughsk/kss-node">kss-node</a> styleguide.
-
-</p>
-<h2>How to apply this template in p3_styleguide:</h2>
-<ol>
-<li><p>To modify the style of the KSS-NODE Styleguide, the files are contained in styleguide/template/</p>
-</li>
-<li><p>To modify the contents, we should add the comments in the file we are working on.
-The comments should be written in a very <a href="https://github.com/kneath/kss/blob/master/SPEC.md">specific way</a>.
-In this case, we are working with gww.styleguide.scss located in /src/sass</p>
-</li>
-<li><p>Once we made all the changes we wanted, in .../sass/ we use the next command line:</p>
-</li>
-</ol>
-<p><code>kss-node [css-directory] [styleguide-directory] --[style-language] [input-file] [template-directory]</code>
-
-</p>
-<p>Specifically:
-
-</p>
-<p><code>kss-node styleguide/src styleguide --css styleguide/src/ggw.styleguide.css --template styleguide/template</code>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 
-</p>
+	<title>Kalei Styleguide - CSS Living Style guide</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="This project aims at making sure your style sheets are fully documented whilst being synchronized with your webpages styles. To do this it actually uses your live stylesheets in so that at anytime you can review how your styleguide looks.">
+	<link rel="stylesheet" href="css/styles.css">
+	<script type="text/javascript"> if (!window.console) console = {log: function() {}}; </script>
 
-          </section>
-          
-        </article>
-        <footer class="kss-footer">
-          <div>Created using <a href="https://github.com/hughsk/kss-node">kss-node</a> and <a href="https://github.com/htanjo/kss-node-template">kss-node-template</a>.</div>
-        </footer>
-      </div>
-    </div>
-    <script src="public/kss.js"></script>
-    <script src="public/jquery-1.9.1.min.js"></script>
-    <!--[if gt IE 8]><!-->
-    <script src="public/rainbow.min.js"></script>
-    <!--<![endif]-->
-    <script src="public/main.js"></script>
-  </body>
+	<script data-main="js/main" src="js/libs/require/require.js"></script>
+  <script src="src/js/styleguide.min.js"></script>
+</head>
+<body>
+  <!-- Initially populated by templates/layout.html -->
+  <div class="kalei"></div>
+  <script src="//static.getclicky.com/js" type="text/javascript"></script>
+  <script type="text/javascript">try{ clicky.init(66607634); }catch(e){}</script>
+  <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/66607634ns.gif" /></p></noscript>
+</body>
 </html>

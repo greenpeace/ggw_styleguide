@@ -5,7 +5,7 @@ module.exports = function (grunt) {
   var config = {
     src: 'src',
     dist: 'dist',
-    styleguide: 'styleguide'
+    styleguide: 'styleguide/src/'
   };
 
 /** Configuration */
@@ -73,7 +73,25 @@ module.exports = function (grunt) {
           { expand: true,
             flatten: true,
             src: ['<%= config.src %>/css/styleguide/*'],
-            dest: '<%= config.styleguide %>/src/'
+            dest: '<%= config.styleguide %>/css/'
+          }
+        ]
+      },
+      styleguideImages: {
+        files: [
+          { expand: true,
+            cwd: '<%= config.src %>/images/',
+            src: ['*'],
+            dest: '<%= config.styleguide %>/images/'
+          }
+        ]
+      },
+      styleguideFont: {
+        files: [
+          { expand: true,
+            cwd: '<%= config.src %>/font/',
+            src: ['*'],
+            dest: '<%= config.styleguide %>/font/'
           }
         ]
       }
@@ -89,11 +107,28 @@ module.exports = function (grunt) {
     },
 
     concat: {
-      src: {
-        nonull: true,
-        src: [ '<%= config.src %>/css/ggw.styleguide.css', '<%= config.src %>/css/ggw.normalize.css', '<%= config.src %>/css/ggw.styles.css' ],
-        dest: '<%= config.src %>/css/styleguide/ggw.styleguide.css',
+      options: {
+        separator: '\n',
+        banner: '// ** Built automatically in Grunt, do not edit **\n'
       },
+      css: {
+        files: {
+          '<%= config.src %>/css/styleguide/ggw.styleguide.css':[
+            '<%= config.src %>/css/ggw.styleguide.css',
+            '<%= config.src %>/css/ggw.normalize.css',
+            '<%= config.src %>/css/ggw.styles.css'
+          ]
+        }
+      },
+      styleguideJS: {
+        files: {
+          '<%= config.src %>/js/styleguide.js': [
+            '<%= config.src %>/js/jquery.1.11.0.js',
+            '<%= config.src %>/js/jquery-plugins/*.js',
+            '<%= config.src %>/js/jquery.runscripts.js',
+          ]
+        }
+      }
     },
 
     jshint: {
@@ -104,6 +139,16 @@ module.exports = function (grunt) {
     },
 
     uglify: {
+      styleguide: {
+        options: {
+          preserveComments: 'all',
+          mangle: true
+        },
+        files: {
+          '<%= config.styleguide %>/js/styleguide.min.js': '<%= config.src %>/js/styleguide.js'
+        }
+      },
+
       dev: {
         options: {
           mangle: false,
@@ -154,8 +199,8 @@ module.exports = function (grunt) {
     'autoprefixer:src',
     'comments:normalize',
     'concat',
-    //'comments:styleguide',
-    'copy:styleguide'
+    'uglify:styleguide',
+    'copy'
   ]);
 
 };

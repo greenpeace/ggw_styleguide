@@ -12,43 +12,71 @@ ul, li {
 .block-title {
   text-transform: uppercase;
   color: $heading;
-  font-size: $h4;
+  font-size: $h5;
 }
 
 a {
-  text-decoration: none;
-}
-
-article p {
-  margin: 0.65em 0 0.95em;
-}
-
-article ul,
-article ol {
-  margin: 0 0 10px 0;
-  padding: 0 0 0 30px;
-}
-
-article ol ol,
-article ul ul {
-  margin-bottom: 0;
-}
-
-article ul li {
-  list-style: square inside;
-}
-
-article ol li {
-  list-style: decimal inside;
-}
-
-article li {
-
-}
-
-// all links in main section
-.l-main a {
   color: $green5;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    text-decoration: underline;
+    outline: thin dotted;
+  }
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+article {
+
+  p {
+    margin: 0.65em 0 0.95em;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 10px 0;
+    padding: 0 0 0 (2 * $def-mar);
+  }
+
+  ol ol,
+  ul ul {
+    margin-bottom: 0;
+    padding: 0 0 0 $def-mar;
+  }
+
+  ul li {
+    list-style: square inside;
+  }
+
+  ol li {
+    list-style: decimal inside;
+  }
+
+  // headings
+  #{headings()} {
+    margin: 10px 0;
+    line-height: 1.5em;
+  }
+
+  $headings: h1, h2, h3, h4, h5, h6;
+  $size: $h1, $h2, $h3, $h4, $h5, $h6;
+
+  $head-size: zip($headings, $size);
+
+  @each $a in $head-size {
+    #{nth($a, 1)} {
+      font-size: nth($a, 2);
+    }
+  }
+
+
 }
 
 .title-prefix {

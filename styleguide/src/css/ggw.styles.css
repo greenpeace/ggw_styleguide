@@ -168,34 +168,61 @@ ul, li {
 }
 
 a {
+  color: #559f0c;
   text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:focus {
+  text-decoration: underline;
+  outline: thin dotted;
+}
+
+strong, b {
+  font-weight: 700;
 }
 
 article p {
   margin: 0.65em 0 0.95em;
 }
-
 article ul,
 article ol {
   margin: 0 0 10px 0;
   padding: 0 0 0 30px;
 }
-
 article ol ol,
 article ul ul {
   margin-bottom: 0;
+  padding: 0 0 0 15px;
 }
-
 article ul li {
   list-style: square inside;
 }
-
 article ol li {
   list-style: decimal inside;
 }
-
-.l-main a {
-  color: #559f0c;
+article h1, article h2, article h3, article h4, article h5, article h6 {
+  margin: 10px 0;
+  line-height: 1.5em;
+}
+article h1 {
+  font-size: 22px;
+}
+article h2 {
+  font-size: 20px;
+}
+article h3 {
+  font-size: 18px;
+}
+article h4 {
+  font-size: 16px;
+}
+article h5 {
+  font-size: 14px;
+}
+article h6 {
+  font-size: 14px;
 }
 
 .title-prefix {
@@ -215,7 +242,7 @@ article ol li {
   border-radius: 3px;
   border: 1px solid #cccccc;
   color: #4d4d4d;
-  padding: 4px 6px;
+  padding: 4px 12px;
   line-height: 1rem;
   text-align: center;
 }
@@ -283,13 +310,14 @@ article ol li {
   margin-bottom: 22.5px;
 }
 
-.form-label {
+label {
   font-weight: 700;
   line-height: 1.5em;
   display: block;
 }
 
-.form-type-checkbox .option {
+.option {
+  font-weight: 300;
   display: inline;
   vertical-align: middle;
 }
@@ -1119,7 +1147,7 @@ img.mfp-img {
   line-height: 36px;
   border-radius: 4px 0;
   color: white;
-  font-size: 21px;
+  font-size: 14px;
 }
 
 .main-content .block-title,
@@ -1295,7 +1323,7 @@ img.mfp-img {
     background: #56b004;
     padding: 0 0 0 2px;
     color: white;
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .sidebar .content {

@@ -7,13 +7,15 @@
   margin-bottom: (1.5 * $def-mar);
 }
 
-.form-label {
+label {
   font-weight: 700;
   line-height: 1.5em;
   display: block;
 }
 
-.form-type-checkbox .option {
+// labels for checkboxes
+.option {
+  font-weight: 300;
   display: inline;
   vertical-align: middle;
 }

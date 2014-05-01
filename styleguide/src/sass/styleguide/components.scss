@@ -5,6 +5,9 @@ Forms
 
 <h2>Basic form example</h2>
 
+All forms are wrapped in a `.form-wrapper`. This provides the white-space around each form. <br />
+All forms fields are wrapped in a `.form-item`. This provides the white-space around each field.
+
 ```
 <form>
 <div class="form-wrapper">
@@ -30,9 +33,7 @@ Forms
 
   <div class="form-item">
 
-    <label>
-        Radios
-    </label>
+    <label>Radios</label>
     <div class="form-radios">
 
       <div class="form-type-radio">
@@ -84,9 +85,9 @@ Forms
 
 <h2>Form variations</h2>
 
-<h3> Horizontal form - Inline form </h3>
-Currently we are not supporting horizontal and inline forms.
+<h3>Horizontal form - Inline form </h3>
 
+Currently we are not supporting horizontal and inline forms.
 
 Buttons
 ===
@@ -94,7 +95,7 @@ Buttons
 <h2> Options </h2>
 
 
-Buttons get a standard .btn class, the element type should have no effect
+Buttons get a standard `.btn` class, the element type should have no effect
 
 ```
 <!-- Standard button -->

@@ -46,7 +46,6 @@
 
 .btn-primary {
   background: $primary;
-  background-image: linear-gradient(lighten($primary, 12%), darken($primary, 6%));
   border: 1px solid darken($primary, 10%);
   color: $white;
 }

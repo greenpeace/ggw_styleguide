@@ -192,7 +192,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('styleguide', [
     'compass:dist',
-    'autoprefixer:src',
+    //'autoprefixer:src',
     'comments:normalize',
     'concat',
     'uglify:styleguide',

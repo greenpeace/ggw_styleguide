@@ -551,6 +551,11 @@ article h6 {
   margin-bottom: 22.5px;
 }
 
+.form-item.row {
+  display: inline-table;
+  margin-right: 1em;
+}
+
 label {
   font-weight: 700;
   line-height: 1.5em;

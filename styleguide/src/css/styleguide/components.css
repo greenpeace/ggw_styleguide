@@ -13,11 +13,11 @@ All forms fields are wrapped in a `.form-item`. This provides the white-space ar
 <form>
 <div class="form-wrapper">
   <div class="form-item">
-    <label for="edit-text">
+    <label for="edit-text1">
       Input type text <span class="form-required" title="This field is required.">`*`</span>
     </label>
     <div class="form-description">input description, comes before the input.</div>
-    <input id="edit-text" class="form-text" type="text" value="" />
+    <input id="edit-text1" class="form-text" type="text" value="" />
   </div>
 
   <div class="form-item">
@@ -88,7 +88,36 @@ All forms fields are wrapped in a `.form-item`. This provides the white-space ar
 
 <h3>Horizontal form - Inline form </h3>
 
-Currently we are not supporting horizontal and inline forms.
+Adding the class `.row` alongside `.form-item` display those forms inline.
+
+```
+<form>
+<div class="form-wrapper">
+  <div class="form-item row">
+    <label for="edit-text2">
+      Input type text <span class="form-required" title="This field is required.">`*`</span>
+    </label>
+    <div class="form-description">input description, comes before the input.</div>
+    <input id="edit-text2" class="form-text" type="text" value="" />
+  </div>
+  <div class="form-item row">
+    <label for="edit-text3">
+      Input type text <span class="form-required" title="This field is required.">`*`</span>
+    </label>
+    <div class="form-description">input description, comes before the input.</div>
+    <input id="edit-text3" class="form-text" type="text" value="" />
+  </div>
+  <div class="form-item row">
+    <label for="edit-text4">
+      Input type text <span class="form-required" title="This field is required.">`*`</span>
+    </label>
+    <div class="form-description">input description, comes before the input.</div>
+    <input id="edit-text4" class="form-text" type="text" value="" />
+  </div>
+</div>
+</form>
+
+```
 
 Buttons
 ===

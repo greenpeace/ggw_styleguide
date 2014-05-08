@@ -261,6 +261,7 @@ article h6 {
 .btn:hover, .btn:focus {
   box-shadow: 0 1px 2px 0 #cccccc;
   text-decoration: none;
+  outline: 0;
 }
 .btn:active, .btn.active {
   top: 1px;

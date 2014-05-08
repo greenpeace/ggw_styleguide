@@ -123,7 +123,6 @@ Buttons
 
 <h2> Options </h2>
 
-
 Buttons get a standard `.btn` class, the element type should have no effect
 
 ```
@@ -171,6 +170,18 @@ Create block level buttons—those that span the full width of a parent— by ad
 <button type="button" class="btn btn-block">Block button</button>
 <button type="button" class="btn btn-primary btn-block">Block button</button>
 </div>
+```
+
+<h2> Hover state </h2>
+
+Buttons will appear without text decoration and a soft box-shadow when hovered. For `<button>` elements, this is done via :hover. For `<a>` elements, it's done with .hover. We use .hover on `<button>`s here to replicate the active state progammatically.
+
+```
+<!-- Hover button (we need to add the class now to present it) -->
+<p>
+<button type="button" class="btn hover">Hovered standard button</button>
+<button type="button" class="btn btn-primary hover">Hovered primary button</button>
+</p>
 ```
 
 <h2> Active state </h2>

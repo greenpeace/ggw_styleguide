@@ -7,4 +7,6 @@ jQuery(document).ready(function ($) {
     alignTop: true
   });
 
+  $('.form-item select').wrap('<div class="selector"></div>');
+
 });

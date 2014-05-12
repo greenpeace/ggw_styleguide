@@ -1,16 +1,4 @@
 @charset "UTF-8";
-.phone-wrapper:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.phone-wrapper:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .main-content, .block {
   background-color: white;
   border-radius: 4px;
@@ -37,7 +25,7 @@
 }
 
 .form-type-radio .option:before,
-.form-type-checkbox .option:before, [class*="icon-"], .block-search .form-actions {
+.form-type-checkbox .option:before, .selector:before, [class*="icon-"], .block-search .form-actions {
   font-family: 'greenwire-10';
   speak: none;
   text-align: center;
@@ -57,6 +45,10 @@
 
 input[type="checkbox"] + label:before {
   content: '\e81c';
+}
+
+.selector:before {
+  content: '\e885';
 }
 
 input[type="radio"] + label:before {
@@ -355,13 +347,6 @@ label {
   margin-top: 30px;
 }
 
-select {
-  width: 100%;
-  max-width: 368px;
-  -moz-appearance: toolbox;
-  text-overflow: ellipsis;
-}
-
 input[type='text'],
 input[type='password'],
 textarea {
@@ -436,6 +421,45 @@ input[type="radio"]:checked + label:before {
   color: #4d4d4d;
 }
 
+.selector {
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 3px;
+  background-clip: padding-box;
+  background-color: white;
+  display: inline-block;
+  border: 1px solid #cccccc;
+}
+.selector:hover {
+  border: 1px solid #666666;
+}
+.selector:before {
+  color: #4d4d4d;
+  position: absolute;
+  top: 3px;
+  right: 0;
+  font-size: 14px;
+  font-size: 0.875rem;
+  padding: 0 7px;
+}
+.selector select {
+  width: 100%;
+  cursor: pointer;
+  z-index: 4;
+  position: relative;
+  display: block;
+  padding: 5px 25px 4px 7px;
+  background: transparent;
+  border: none;
+  text-overflow: ellipsis;
+  -moz-appearance: window;
+  -moz-padding-end: 19px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .progress-bar-wrapper {
   background-color: #F5F5F5;
   border-radius: 4px;
@@ -449,8 +473,8 @@ input[type="radio"]:checked + label:before {
   float: left;
   background-color: #56b004;
   color: #FFFFFF;
-  font-size: 20px;
-  font-size: 1.25rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 2em;
   text-align: center;
   width: 0;
@@ -1073,11 +1097,6 @@ img.mfp-img {
     margin-right: -100%;
     margin-left: 0%;
     clear: none;
-  }
-  .field-name-field-user-phone-house-country select,
-  .field-name-field-user-phone-mobile-country select {
-    max-width: 160px;
-    -moz-appearance: none;
   }
 
   .field-name-field-user-phone-house,

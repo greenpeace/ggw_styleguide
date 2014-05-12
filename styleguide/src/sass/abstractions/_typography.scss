@@ -4,6 +4,12 @@
   font-size: ($font-size / $base-font-size)*1rem;
 }
 
+// Use REMs with a pixel fallback for font-sizing.
+@mixin line-height ($line-height){
+  line-height: $line-height;
+  line-height: ($line-height / $base-line-height)*1rem;
+}
+
 // Horizontal list
 %hlist {
   @include horizontal-list(false);

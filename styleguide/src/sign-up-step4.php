@@ -98,7 +98,7 @@
             <div class="form-description">The selected language will show content available in that language as well as serve as the preferred language for the interface and e-mails.</div>
             <div class="form-radios">
               <div class="form-type-radio">
-                <input type="radio" name="language" value="nl" checked="checked" class="form-radio" />
+                <input type="radio" name="language" id="edit-language-nl" value="nl" checked="checked" class="form-radio" />
                 <label class="option" for="edit-language-nl">Dutch (Nederlands) </label>
               </div>
               <div class="form-type-radio">
@@ -112,11 +112,11 @@
             <div class="form-description">When selected you will also see content that is available for this language.</div>
             <div class="form-radios">
               <div class="form-type-radio">
-                <input type="radio" name="language" value="en-us" checked="checked" class="form-radio" />
-                <label class="option" for="edit-language-en-us">English, US </label>
+                <input type="radio" name="language2" id="edit-language-en-us2" value="en-us" checked="checked" class="form-radio" />
+                <label class="option" for="edit-language-en-us2">English, US </label>
               </div>
               <div class="form-type-radio">
-                <input type="radio" name="language" value="nl" class="form-radio" /> <label class="option" for="edit-language-nl">Dutch </label>
+                <input type="radio" name="language2" id="edit-language-nl2" value="nl" class="form-radio" /> <label class="option" for="edit-language-nl2">Dutch </label>
               </div>
             </div>
           </div>

@@ -11,7 +11,7 @@
   line-height: 36px;
   border-radius: 4px 0;
   color: $white;
-  font-size: $h5;
+  @include font-size($h2);
 }
 
 .main-content,

@@ -1,5 +1,9 @@
+html {
+  font-size: 100%;
+}
+
 body {
-  font-size: $base-font-size;
+  @include font-size(14px);
   line-height: $base-line-height;
   font-family: $base-font-family;
   color: $base;

@@ -49,454 +49,82 @@ select {
 input[type='text'],
 input[type='password'],
 textarea {
-  padding:4px 6px;
+  padding:.4em .5em .3em .5em;
   border: 1px solid $grey-l;
-  border-radius: 4px;
+  border-radius: 3px;
   width: 100%;
   max-width: 400px;
 
   &:focus {
-    border-color: $grey-m;
-    box-shadow: 0 1px 3px 0 $grey-l;
+    border-color: $green1;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,.2);
   }
 
   &:hover {
     border-color: $grey-m;
   }
 
-}
-
-// UNIFORM v 2.1.2
-// https://github.com/pixelmatrix/uniform
-// base theme + default theme
-// We only use the defined form elements
-
-@mixin use-backgrounds($sprite, $sprite-size, $input, $input-focus, $input-size) {
-  #{$class-wrapper} {
-    &#{$class-select},
-    &#{$class-select} span,
-    &#{$class-checkbox} span,
-    &#{$class-radio} span,
-    &#{$class-upload},
-    &#{$class-upload} span#{$class-action} {
-      background-image: $sprite;
-
-      @if $sprite-size > 0 {
-        background-size: $sprite-size;
-      }
-    }
-  }
-
-  #{$class-wrapper-element}#{$class-wrapper} input#{$class-input},
-    #{$class-wrapper-element}#{$class-wrapper} select#{$class-multiselect},
-    #{$class-wrapper-element}#{$class-wrapper} textarea#{$class-textarea} {
-    background-image: $input;
-
-    @if $sprite-size > 0 {
-      background-size: $input-size;
-    }
-
-    @include whenActive {
-      background-image: $input-focus;
-    }
-  }
-}
-
-@mixin whenActive {
-  &#{$class-active} {
-    @content
-  }
-}
-
-@mixin whenHover {
-  &#{$class-hover}, &#{$class-focus} {
-    @content
-  }
-}
-
-@mixin whenDisabled {
-  &#{$class-disabled}, &#{$class-disabled}#{$class-active} {
-    @content
-  }
-}
-
-@mixin whenChecked {
-  &#{$class-checked} {
-    @content
-  }
-}
-
-$sprite: "../images/sprite.png";
-$sprite-size: 493px;
-$checkbox-height: 19px;
-$checkbox-width: 19px;
-$input-padding: 3px;
-$radio-height: 18px;
-$radio-width: 18px;
-$select-fixed-width: 190px;
-$select-height: 26px;
-$select-margin-left: 10px;
-$select-margin-right: 25px;
-$select-select-height: 22px;
-$select-select-top: 2px;
-$upload-action-width: 82px;
-$upload-filename-margin-top: 2px;
-$upload-filename-margin-bottom: 2px;
-$upload-filename-margin-left: 2px;
-$upload-filename-width: 85px;
-$upload-filename-padding: 0 10px;
-$upload-height: 28px;
-$upload-width: 190px;
-
-$checkbox-voffset: (-10 * $select-height);
-$radio-voffset: ($checkbox-voffset - $checkbox-height);
-$upload-voffset: ($radio-voffset - $radio-height);
-
-$class-action: ".action" !default;
-$class-active: ".active" !default;
-$class-checkbox: ".checker" !default;
-$class-checked: ".checked" !default;
-$class-disabled: ".disabled" !default;
-$class-input: ".uniform-input" !default;
-$class-filename: ".filename" !default;
-$class-focus: ".focus" !default;
-$class-hover: ".hover" !default;
-$class-multiselect: ".uniform-multiselect" !default;
-$class-radio: ".radio" !default;
-$class-select: ".selector" !default;
-$class-upload: ".uploader" !default;
-$class-wrapper: "" !default;
-
-$class-wrapper-element: "";
-@if $class-wrapper != "" {
-  $class-wrapper-element: "span"
-}
-
-/* General settings */
-
-div#{$class-wrapper} {
-  &#{$class-select},
-  &#{$class-select} span,
-  &#{$class-checkbox} span,
-  &#{$class-radio} span,
-  &#{$class-upload},
-  &#{$class-upload} span#{$class-action} {
-    background-image: url($sprite);
-    background-repeat: no-repeat;
-    -webkit-font-smoothing: antialiased;
+  &:disabled {
+    border: 1px solid $grey-l;
+    background: #F3F3F3;
   }
 
 }
 
-/* Select */
-#{$class-wrapper}#{$class-select} {
-  background-position: 0 (-5 * $select-height);
-  line-height: $select-height;
-  height: $select-height;
-  padding: 0 0 0 $select-margin-left;
-  position: relative;
-  overflow: hidden;
-  font-size: $small;
+// CHECK BOXES & RADIO BUTTONS
 
-  span {
-    @include ellipsis();
-    background-position: right 0;
-    height: $select-height;
-    line-height: $select-height;
-    padding-right: $select-margin-right;
-    cursor: pointer;
-    width: 100%;
-    display: block;
-    color: $grey-d;
-  }
-
-  &.fixedWidth{
-    width: $select-fixed-width;
-
-    span {
-      width: ($select-fixed-width - $select-margin-left - $select-margin-right);
-    }
-  }
-
-  select {
-    @extend %hideYetClickable;
-    position: absolute;
-    height: $select-select-height;
-    top: $select-select-top;
-    left: 0px;
-    width: 100%;
-  }
-
-  @include whenActive {
-    background-position: 0 (-6 * $select-height);
-
-    span {
-      background-position: right (-1 * $select-height);
-    }
-  }
-
-  @include whenHover {
-    background-position: 0 (-7 * $select-height);
-
-    span {
-      background-position: right (-2 * $select-height);
-    }
-
-    @include whenActive {
-      background-position: 0 (-8 * $select-height);
-
-      span {
-        background-position: right (-3 * $select-height);
-      }
-    }
-  }
-
-  @include whenDisabled {
-    background-position: 0 (-9 * $select-height);
-
-    span {
-      background-position: right (-4 * $select-height);
-    }
-  }
+input[type="radio"],
+input[type="checkbox"] {
+  @extend %hideYetClickable;
 }
 
-
-/* Checkbox */
-
-#{$class-wrapper}#{$class-checkbox} {
-  position: relative;
-  margin-right: 5px;
+.form-type-radio {
   display: inline-block;
-  vertical-align: middle;
-
-  &, span, input {
-    width: $checkbox-width;
-    height: $checkbox-height;
-  }
-
-  span {
-    display: inline-block;
-    text-align: center;
-    background-position: 0 $checkbox-voffset;
-
-    @include whenChecked {
-      background-position: (-4 * $checkbox-width) $checkbox-voffset;
-    }
-  }
-
-  input {
-    @extend %hideYetClickable;
-    display: inline-block;
-  }
-
-  @include whenActive {
-    span {
-      background-position: (-1 * $checkbox-width) $checkbox-voffset;
-
-      @include whenChecked {
-        background-position: (-5 * $checkbox-width) $checkbox-voffset;
-      }
-    }
-  }
-
-  @include whenHover {
-    span {
-      background-position: (-2 * $checkbox-width) $checkbox-voffset;
-
-      @include whenChecked {
-        background-position: (-6 * $checkbox-width) $checkbox-voffset;
-      }
-    }
-
-    @include whenActive {
-      span {
-        background-position: (-3 * $checkbox-width) $checkbox-voffset;
-
-        @include whenChecked {
-          background-position: (-7 * $checkbox-width) $checkbox-voffset;
-        }
-      }
-    }
-  }
-
-  @include whenDisabled {
-    background-position: (-8 * $checkbox-width) $checkbox-voffset;
-
-    span {
-      color: $grey-l;
-
-      @include whenChecked {
-        background-position: (-9 * $checkbox-width) $checkbox-voffset;
-      }
-    }
-  }
 }
-
-/* Radio */
 
 .form-type-radio,
-#{$class-wrapper}#{$class-radio} {
+.form-type-checkbox {
   position: relative;
-  display: inline-block;
-  margin-right: 3px;
+  margin-right: 1em;
 
-  span {
+  .option {
     display: inline-block;
-    text-align: center;
-    width: $radio-width;
-    background-position: 0 $radio-voffset;
+    @include line-height(24px);
+    padding-left: .2em;
+    font-weight: 300;
 
-    @include whenChecked {
-      background-position: (-4 * $radio-width) $radio-voffset;
-    }
-  }
-
-  input {
-    @extend %hideYetClickable;
-    display: inline-block;
-    text-align: center;
-  }
-
-  @include whenActive {
-    span {
-      background-position: (-1 * $radio-width) $radio-voffset;
-
-      @include whenChecked {
-        background-position: (-5 * $radio-width) $radio-voffset;
-      }
-    }
-  }
-
-  @include whenHover {
-    span {
-      background-position: (-2 * $radio-width) $radio-voffset;
-
-      @include whenChecked {
-        background-position: (-6 * $radio-width) $radio-voffset;
-      }
+    &:before {
+      position: absolute;
+      left: .3em;
+      bottom: .4em;
+      background-color: $white;
+      border: 1px solid #CCCCCC;
+      height: 1.3em;
+      width: 1.3em;
+      padding: 0 0.22em;
+      color: $white;
+      @include font-size(10px);
+      @include line-height(16px);
+      @extend %load-icon;
     }
 
-    @include whenActive {
-      span {
-        background-position: (-3 * $radio-width) $radio-voffset;
-
-        @include whenChecked {
-          background-position: (-7 * $radio-width) $radio-voffset;
-        }
-      }
-    }
   }
 
-  @include whenDisabled {
-    span {
-      background-position: (-8 * $radio-width) $radio-voffset;
-
-      @include whenChecked {
-        background-position: (-9 * $radio-width) $radio-voffset;
-      }
-    }
-  }
 }
 
-/* Uploader */
+input[type="checkbox"] + label:before {
+  @extend %icon-check;
+  border-radius: 3px;
+}
 
-#{$class-wrapper}#{$class-upload} {
-  background-position: 0 $upload-voffset;
-  height: $upload-height;
-  width: $upload-width;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
+input[type="radio"] + label:before {
+  @extend %icon-record;
+  border-radius: 8px;
+}
 
-  #{$class-action} {
-    background-position: right ($upload-voffset + (-4 * $upload-height));
-    height: $upload-height;
-    line-height: $upload-height;
-    width: $upload-action-width;
-    text-align: center;
-    float: left;
-    display: inline;
-    overflow: hidden;
-    cursor: pointer;
-    text-shadow: #fff 0px 1px 0px;
-    background-color: #fff;
-    font-size: 11px;
-    font-weight: bold;
-  }
-
-  #{$class-filename} {
-    @include ellipsis();
-    float: left;
-    cursor: default;
-    height: ($upload-height - $upload-filename-margin-top - $upload-filename-margin-bottom);
-    margin: $upload-filename-margin-top 0 $upload-filename-margin-bottom $upload-filename-margin-left;
-    line-height: ($upload-height - $upload-filename-margin-top - $upload-filename-margin-bottom);
-    width: $upload-filename-width;
-    padding: $upload-filename-padding;
-    color: #777;
-    border-right: solid 1px #bbb;
-    font-size: 11px;
-  }
-
-  input {
-    @extend %hideYetClickable;
-    position: absolute;
-    top: 0;
-    right: 0;
-    float: right;
-    cursor: default;
-    width: 100%;
-    height: 100%;
-  }
-
-  @include whenActive {
-    #{$class-action} {
-      background-position: right ($upload-voffset + (-6 * $upload-height));
-    }
-  }
-
-  @include whenHover {
-    background-position: 0 ($upload-voffset + (-2 * $upload-height));
-
-    #{$class-action} {
-      background-position: right ($upload-voffset + (-5 * $upload-height));
-    }
-
-    @include whenActive {
-      #{$class-action} {
-        background-position: right ($upload-voffset + (-7 * $upload-height));
-      }
-    }
-  }
-
-  @include whenDisabled {
-    background-position: 0 ($upload-voffset + (-1 * $upload-height));
-
-    #{$class-action} {
-      color: $grey-l;
-      background-position: right ($upload-voffset + (-3 * $upload-height));
-    }
-
-    #{$class-filename} {
-      border-color: $grey-m;
-      color: $grey-l;
-    }
-  }
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+  color: $base;
 }
 
 
-/* INPUT & TEXTAREA */
-
-#{$class-wrapper-element}#{$class-wrapper} select#{$class-multiselect} {
-  font-size: $small;
-  border-top: solid 1px #aaa;
-  border-left: solid 1px #aaa;
-  border-bottom: solid 1px #ccc;
-  border-right: solid 1px #ccc;
-  border-radius: $input-padding;
-
-  @include whenHover {
-    @include box-shadow(0px 0px 4px rgba(0,0,0,0.3));
-    border-color: #999;
-  }
-}

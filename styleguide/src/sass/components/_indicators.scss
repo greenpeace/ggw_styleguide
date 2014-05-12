@@ -11,7 +11,7 @@
   float: left;
   background-color: $green2;
   color: #FFFFFF;
-  font-size: $base-font-size;
+  @include font-size($h2);
   line-height: 2em;
   text-align: center;
   width: 0;

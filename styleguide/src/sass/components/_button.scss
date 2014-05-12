@@ -3,12 +3,14 @@
   background-image: linear-gradient($secondary, darken($secondary, 3%));
   display: inline-block;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: .1em;
   border: 1px solid $grey-l;
   color: $base;
   padding: 4px 12px;
   line-height: 1rem;
   text-align: center;
+  font-size: 1.2em;
+  font-weight: 700;
 
   &:hover,
   &.hover,
@@ -54,14 +56,11 @@
 
 .btn-l {
   padding: 8px 10px;
-  font-size: $h5;
-  border-radius: 5px;
 }
 
 .btn-s {
   padding: 2px 4px;
   font-size: $small;
-  border-radius: 2px;
 }
 
 // Block buttons, 1 button per line

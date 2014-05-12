@@ -24,12 +24,17 @@ body {
   }
 }
 
+.block,
 .main-content {
-  @extend %block-element;
+  @include block-mobile;
 
-  .content {
-    margin-top: $def-mar;
+  @include breakpoint($tab) {
+    @include block-tab;
   }
+}
+
+.main-content .content {
+  margin-top: $def-mar;
 }
 
 

@@ -1,17 +1,20 @@
-@mixin block-element {
+@mixin block-mobile {
   background-color: $white;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px 0 $grey-m;
   padding: $def-mar;
   position: relative;
 }
 
+@mixin block-tab {
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 $grey-m;
+}
+
 %block-element {
-   @include block-element;
+   @include block-tab;
 }
 
 @mixin white-popup {
-  @include block-element;
+  @include block-tab;
   width: auto;
   max-width: 700px;
   margin: 20px auto;

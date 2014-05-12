@@ -1,18 +1,7 @@
 @charset "UTF-8";
-.main-content, .block {
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px 0 #999999;
-  padding: 15px;
-  position: relative;
-}
-
 .white-popup {
-  background-color: white;
   border-radius: 4px;
   box-shadow: 0 1px 3px 0 #999999;
-  padding: 15px;
-  position: relative;
   width: auto;
   max-width: 700px;
   margin: 20px auto;
@@ -132,6 +121,20 @@ body {
   .logo {
     height: 34px;
     background-size: auto 34px;
+  }
+}
+
+.block,
+.main-content {
+  background-color: white;
+  padding: 15px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .block,
+  .main-content {
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0 #999999;
   }
 }
 

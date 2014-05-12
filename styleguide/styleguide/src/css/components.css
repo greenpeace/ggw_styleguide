@@ -97,10 +97,17 @@ Adding the class `.row` alongside `.form-wrapper` display those forms inline-blo
     <div class="form-wrapper row">
       <div class="form-item">
         <label for="edit-text2">
-          Input type text <span class="form-required" title="This field is required.">`*`</span>
+          Input type text 1<span class="form-required" title="This field is required.">`*`</span>
         </label>
         <div class="form-description">input description, comes before the input.</div>
         <input id="edit-text2" class="form-text" type="text" value="" />
+      </div>
+      <div class="form-item">
+        <label for="edit-text3">
+          Input type text 2<span class="form-required" title="This field is required.">`*`</span>
+        </label>
+        <div class="form-description">input description, comes before the input.</div>
+        <input id="edit-text3" class="form-text" type="text" value="" />
       </div>
     </div>
     <div class="form-actions form-wrapper row">
@@ -112,10 +119,16 @@ Adding the class `.row` alongside `.form-wrapper` display those forms inline-blo
   <div class="inline-form2">
     <div class="form-wrapper row">
       <div class="form-item">
-        <label for="edit-text3">
-          Input type text <span class="form-required" title="This field is required.">`*`</span>
+        <label for="edit-text4">
+          Input type text 1<span class="form-required" title="This field is required.">`*`</span>
         </label>
-        <input id="edit-text3" class="form-text" type="text" value="" />
+        <input id="edit-text4" class="form-text" type="text" value="" />
+      </div>
+      <div class="form-item">
+        <label for="edit-text5">
+          Input type text 2<span class="form-required" title="This field is required.">`*`</span>
+        </label>
+        <input id="edit-text5" class="form-text" type="text" value="" />
       </div>
     </div>
     <div class="form-actions form-wrapper row">

@@ -1,5 +1,5 @@
 .form-wrapper {
-  @include clearfix;
+  @extend %cf;
   margin: $def-mar 0;
 }
 

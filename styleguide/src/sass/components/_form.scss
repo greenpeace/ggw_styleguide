@@ -3,6 +3,16 @@
   margin: $def-mar 0;
 }
 
+.form-wrapper.row {
+  display: inline-block;
+  vertical-align: bottom;
+  .form-item {
+    display: inline-table;
+    margin-bottom: 0;
+    margin-right: 1em;
+  }
+}
+
 .form-item {
   margin-bottom: (1.5 * $def-mar);
 }

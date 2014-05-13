@@ -240,12 +240,14 @@ article h6 {
   background-image: linear-gradient(#f5f5f5, #ededed);
   display: inline-block;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: .1em;
   border: 1px solid #cccccc;
   color: #4d4d4d;
-  padding: 4px 12px;
+  padding: .3em 1.8em;
   line-height: 1rem;
   text-align: center;
+  font-size: 1.2em;
+  font-weight: 700;
 }
 .btn:hover, .btn.hover, .btn:focus {
   box-shadow: 0 1px 2px 0 #cccccc;
@@ -277,15 +279,12 @@ article h6 {
 }
 
 .btn-l {
-  padding: 8px 10px;
-  font-size: 14px;
-  border-radius: 5px;
+  padding: .5em 2em;
 }
 
 .btn-s {
-  padding: 2px 4px;
+  padding: .1em .5em;
   font-size: 12px;
-  border-radius: 2px;
 }
 
 .btn-block {
@@ -306,6 +305,16 @@ article h6 {
   content: "";
   display: table;
   clear: both;
+}
+
+.form-wrapper.row {
+  display: inline-block;
+  vertical-align: bottom;
+}
+.form-wrapper.row .form-item {
+  display: inline-table;
+  margin-bottom: 0;
+  margin-right: 1em;
 }
 
 .form-item {

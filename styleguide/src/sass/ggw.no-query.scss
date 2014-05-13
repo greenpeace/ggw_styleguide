@@ -10,6 +10,8 @@ $legacy-support-for-ie8: true;
 $breakpoint-no-queries: true;
 $breakpoint-no-query-fallbacks: true;
 
+$old-ie: true;
+
 // Import external libraries.
 @import "compass";
 @import "breakpoint";

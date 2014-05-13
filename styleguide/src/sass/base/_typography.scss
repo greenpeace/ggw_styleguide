@@ -72,7 +72,12 @@ article {
 
   @each $a in $head-size {
     #{nth($a, 1)} {
-      font-size: nth($a, 2);
+      @if $old-ie {
+        font-size: nth($a, 2);
+      }
+      @else {
+        font-size: (nth($a, 2) / $base-font-size)*1rem;
+      }
     }
   }
 

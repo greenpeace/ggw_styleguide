@@ -1,13 +1,11 @@
 // Use REMs with a pixel fallback for font-sizing.
 @mixin font-size ($font-size){
-  font-size: $font-size;
-  font-size: ($font-size / $base-font-size)*1rem;
-}
-
-// Use REMs with a pixel fallback for font-sizing.
-@mixin line-height ($line-height){
-  line-height: $line-height;
-  line-height: ($line-height / $base-line-height)*1rem;
+  @if $old-ie {
+    font-size: $font-size;
+  }
+  @else {
+    font-size: ($font-size / $base-font-size)*1rem;
+  }
 }
 
 // Horizontal list

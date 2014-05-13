@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  @include font-size(14px);
+  @include font-size($p);
   line-height: $base-line-height;
   font-family: $base-font-family;
   color: $base;
@@ -26,10 +26,10 @@ body {
 
 .block,
 .main-content {
-  @include block-mobile;
+  @include block-simple;
 
   @include breakpoint($tab) {
-    @include block-tab;
+    @include block-rich;
   }
 }
 

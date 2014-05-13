@@ -26,7 +26,7 @@
 
 
 // CLEARFIXES
-@mixin clear {
+@mixin cf {
   &:after {
     content: '';
     display: table;

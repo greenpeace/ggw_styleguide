@@ -14,7 +14,7 @@ If you are on a Mac, you'll require a package manager like Homebrew and the late
 
 ## Ruby Gems ##
 
-* Navigate to the theme folder in your terminal and run `bundle install`.
+* Navigate to the theme folder in your terminal and run `bundle install` or `bundle update`.
 It will read the Gems specified in the Gemfile and install them (and all their dependencies) one by one
 
 ## Gulp ##

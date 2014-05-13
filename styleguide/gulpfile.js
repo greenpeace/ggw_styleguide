@@ -24,9 +24,11 @@ gulp.task('compass-quick', function() {
   return gulp.src('src/sass/ggw.styles.scss')
     .pipe(compass({
       config_file: 'config.rb',
+      css: 'src/css',
+      sass: 'src/sass'
     }))
     .pipe(autoprefixer('last 2 versions', '> 1%'))
-    .pipe(gulp.dest('src/css'))
+    .pipe(gulp.dest('src/css'));
 });
 
 // Run compass to compile all files
@@ -34,9 +36,11 @@ gulp.task('compass-all', function() {
   return gulp.src('src/sass/**/*.scss')
     .pipe(compass({
       config_file: 'config.rb',
+      css: 'src/css',
+      sass: 'src/sass'
     }))
     .pipe(autoprefixer('last 2 versions', '> 1%'))
-    .pipe(gulp.dest('src/css'))
+    .pipe(gulp.dest('src/css'));
 });
 
 
@@ -45,10 +49,12 @@ gulp.task('modern', function() {
   return gulp.src('src/sass/ggw.styles.scss')
     .pipe(compass({
       config_file: 'config.rb',
+      css: 'src/css',
+      sass: 'src/sass'
     }))
     .pipe(autoprefixer('last 2 versions', '> 1%'))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(minifycss())
+    .pipe(minifycss({keepSpecialComments:0}))
     .pipe(size())
     .pipe(gulp.dest('dist/css'));
 });
@@ -56,14 +62,15 @@ gulp.task('modern', function() {
 
 // Make production-ready for no query version
 gulp.task('oldie', function() {
-  return gulp.src('src/styles/ndp.no-query.scss')
+  return gulp.src('src/sass/ggw.no-query.scss')
     .pipe(compass({
-      config_file: 'config.rb'
+      config_file: 'config.rb',
+      css: 'src/css',
+      sass: 'src/sass'
     }))
-    .pipe(gulp.dest('css'))
     .pipe(autoprefixer('ie 8'))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(minifycss())
+    .pipe(minifycss({keepSpecialComments:0}))
     .pipe(size())
     .pipe(gulp.dest('dist/css'));
 });
@@ -73,23 +80,26 @@ gulp.task('oldie', function() {
 ///
 
 // Concatenate scripts
-gulp.task('scripts-quick', function() {
-  return gulp.src('src/js/**/*.js')
-    .pipe(changed('src/js'))
+gulp.task('checkjs', function() {
+  return gulp.src('src/js/custom/*.js')
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
+    .pipe(notify({ message: 'Scripts are checked' }));
+});
+
+// Concatenate scripts
+gulp.task('concatjs', function() {
+  return gulp.src(['src/js/base/*.js', 'src/js/contrib/*.js', 'src/js/custom/*.js'])
     .pipe(concat('theme.js'))
     .pipe(gulp.dest('src/js'))
-    .pipe(notify({ message: 'Scripts are changed' }));
+    .pipe(notify({ message: 'Scripts are concatenated' }));
 });
 
 
 // Make scripts production-ready
-gulp.task('scripts-prod', function() {
-  return gulp.src('src/js/**/*.js')
+gulp.task('build-scripts', function() {
+  return gulp.src(['src/js/base/*.js', 'src/js/contrib/*.js', 'src/js/custom/*.js'])
     .pipe(changed('dist/js'))
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'))
     .pipe(concat('theme.js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
@@ -104,12 +114,29 @@ gulp.task('scripts-prod', function() {
 
 // Optimize images
 gulp.task('images', function() {
-  return gulp.src('images/**/*')
+  return gulp.src('src/images/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('src/images'))
-    .pipe(notify({ message: 'New images optimized' }));
+    .pipe(gulp.dest('dist/images'))
+    .pipe(notify({ message: 'New image copied and optimized' }));
 });
 
+///
+/// CLEAN
+///
+
+gulp.task('clean-dist', function() {
+  return gulp.src(['dist/css', 'dist/scripts', 'dist/images'], {read: false})
+    .pipe(clean());
+});
+
+///
+/// BUILD Production
+///
+
+// compile both sass base files, create one js file and optimize and copy images
+gulp.task('build', ['clean-dist'], function() {
+    gulp.start('modern', 'oldie', 'build-scripts', 'images');
+});
 
 ///
 /// WATCH
@@ -118,22 +145,41 @@ gulp.task('images', function() {
 gulp.task('watch', function() {
   gulp.watch('src/sass/**/*.scss', ['compass-quick']);
   gulp.watch('src/js/**/*.js', ['scripts-quick']);
-  gulp.watch('src/images/**/*', ['images']);
 });
 
 
 ///
 /// STYLEGUIDE
 ///
+//// styleguide.css needs to be updated manually
 
-gulp.task('strip-comments', function() {
-  return gulp.src('src/css/normalize.css')
-    .pipe(cache(minifycss({keepSpecialComments:0})))
-    .pipe(gulp.dest('src/styleguide/'));
+gulp.task('css-styleguide', function() {
+  return gulp.src(['src/css/ggw.styleguide.css', 'dist/css/ggw.styles.min.css'])
+    .pipe(concat('styleguide.css'))
+    .pipe(gulp.dest('styleguide/src/css'));
 });
 
-gulp.task('strip-comments', function() {
-  return gulp.src('src/css/normalize.css')
-    .pipe(cache(minifycss({keepSpecialComments:0})))
-    .pipe(gulp.dest('src/styleguide/'));
+gulp.task('docs-styleguide', function() {
+  return gulp.src('src/css/styleguide/*.css')
+    .pipe(gulp.dest('styleguide/src/css'));
+});
+
+gulp.task('js-styleguide', function() {
+  return gulp.src('dist/js/*.js')
+    .pipe(gulp.dest('styleguide/src/js'));
+});
+
+gulp.task('img-styleguide', function() {
+  return gulp.src('src/images/**/*')
+    .pipe(gulp.dest('styleguide/src/images'));
+});
+
+gulp.task('font-styleguide', function() {
+  return gulp.src('src/font/*')
+    .pipe(gulp.dest('styleguide/src/font'));
+});
+
+// Build style guide out of other tasks and make sure 'modern' is run before the tasks
+gulp.task('build-styleguide', ['modern'], function() {
+  gulp.start('css-styleguide', 'docs-styleguide', 'js-styleguide', 'img-styleguide', 'font-styleguide');
 });

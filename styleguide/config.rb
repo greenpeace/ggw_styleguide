@@ -14,7 +14,7 @@ require 'sass-globbing'
 
 # You can select your preferred output style here (:expanded, :nested, :compact
 # or :compressed).
-output_style = :compressed
+output_style = :expanded
 
 # To enable relative paths to assets via compass helper functions. Since Drupal
 # themes can be installed in multiple locations, we don't need to worry about

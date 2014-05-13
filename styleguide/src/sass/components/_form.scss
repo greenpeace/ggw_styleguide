@@ -145,7 +145,7 @@ input[type="radio"]:checked + label:before {
     @extend %icon-arrow-combo;
     color: $base;
     position: absolute;
-    top: 3px;
+    top: 2px;
     right: 0;
     @include font-size($h5);
     padding: 0 7px;
@@ -157,7 +157,7 @@ input[type="radio"]:checked + label:before {
     z-index: 4;
     position: relative;
     display: block;
-    padding: 5px 25px 4px 7px;
+    padding: 4px 24px 3px 7px;
     background: transparent;
     border: none;
     text-overflow: ellipsis;

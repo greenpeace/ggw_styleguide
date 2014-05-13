@@ -14,8 +14,6 @@
 <meta name="Generator" content="Drupal 7 (http://drupal.org)" />
 <meta name="viewport" content="width=device-width" />
 
-<link rel="stylesheet" href="css/ggw.normalize.css" />
-
 <!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
 <link rel="stylesheet" href="css/ggw.styles.css" />
 <!--<![endif]-->
@@ -26,8 +24,6 @@
 <script src="libraries/html5shiv/html5shiv-print.min.js"></script>
 <![endif]-->
 
-<script src="js/jquery.1.11.0.js"></script>
-<script src="js/jquery-plugins/jquery.magnific-popup.0.9.9.js"></script>
-<script src="js/jquery.runscripts.js"></script>
+<script src="js/theme.js"></script>
 
 </head>

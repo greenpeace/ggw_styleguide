@@ -112,18 +112,18 @@
               <?php //many extra wrappers can be removed ?>
               <div class="form-radios">
                 <div class="form-type-radio">
-                  <input class="form-radio" type="radio" value="male" name="field_user_gender[und]">
-                  <label class="option" for="edit-field-user-gender-und-male">Male </label>
+                  <input class="form-radio" type="radio" id="male"value="male" name="field_user_gender[und]">
+                  <label class="option" for="male">Male </label>
                 </div>
 
                 <div class="form-type-radio">
-                  <input class="form-radio" type="radio" value="female" name="field_user_gender[und]">
-                  <label class="option" for="edit-field-user-gender-und-female">Female </label>
+                  <input class="form-radio" type="radio" id="female" value="female" name="field_user_gender[und]">
+                  <label class="option" for="female">Female </label>
                 </div>
 
                 <div class="form-type-radio">
-                  <input class="form-radio" type="radio" value="irrelevant" name="field_user_gender[und]">
-                  <label class="option" for="edit-field-user-gender-und-irrelevant">Not relevant </label>
+                  <input class="form-radio" type="radio" id="irrelevant" value="irrelevant" name="field_user_gender[und]">
+                  <label class="option" for="irrelevant">Not relevant </label>
                 </div>
 
               </div> <?php // end form-radios ?>

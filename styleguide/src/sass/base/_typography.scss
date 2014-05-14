@@ -19,10 +19,6 @@ a {
   color: $green5;
   text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-  }
-
   &:focus {
     text-decoration: underline;
     outline: thin dotted;
@@ -37,6 +33,10 @@ article {
 
   p {
     margin: 0.65em 0 0.95em;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   ul,

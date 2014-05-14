@@ -20,20 +20,23 @@
         <!--<a id="main-menu-hide" href="#" class="icon-menu"><span class="element-invisible">Hide Navigation</span></a>-->
       </div>
 
-      <div id="primary-nav">
-      <!-- remove .block for all header blocks so we can style the rest of the blocks with a single selector -->
-        <div class="block-search">
-          <?php include('modules/search.php'); ?>
-        </div>
+      <div id="primary-nav" class="off-canvas">
+        <div class="nav-inner-wrap">
+          <!-- remove .block for all header blocks so we can style the rest of the blocks with a single selector -->
+          <div class="block-search">
+            <?php include('modules/search.php'); ?>
+          </div>
 
-        <nav class="main-menu" role="navigation">
-          <?php include('modules/main-menu.php'); ?>
-        </nav>
+          <nav class="main-menu" role="navigation">
+            <?php include('modules/main-menu.php'); ?>
+          </nav>
+        </div>
 
       </div>
 
-      <div id="secondary-nav">
-
+      <div id="secondary-nav" class="off-canvas">
+        <div class="nav-inner-wrap">
+        </div>
       </div>
 
 

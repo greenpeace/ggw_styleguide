@@ -1,34 +1,131 @@
 .nav-btn {
-  left: .2em;
+  left: 10px;
   position: absolute;
   top: 0;
   font-size: 2.4em;
-  line-height: 1em;
+  line-height: 34px;
   color: $white;
 }
 
 .nav-btn + .nav-btn {
   left: auto;
-  right: .5em;
-  top: .1em;
+  right: 10px;
   font-size: 1.8em;
 }
 
-#primary-nav, #secondary-nav {
+.off-canvas {
   z-index: 200;
+  position: relative;
   overflow: hidden;
   width: 100%;
-  padding-top: 1rem;
-  background: #FFFFFF;
-  position: absolute;
-  top: 0;
+}
 
-  .js & {
+#primary-nav,
+#secondary-nav {
+  &:not(:target) {
+    z-index: 1;
+    height: 0;
+  }
+}
+
+.nav-inner-wrap {
+  z-index: 2;
+  position: relative;
+  padding: 0.75em 1.25em;
+  background: $white;
+}
+
+// Execute when css transform does not work
+.js {
+
+  .off-canvas {
     background: $white;
     height: 100%;
-    width: 80%;
-    transform: translate3d(-100%, 0, 0);
+    width: $nav-off-canvas-width;
     backface-visibility: hidden;
+    left: -$nav-off-canvas-width;
+  }
+
+  #inner-wrap {
+    left: 0;
+  }
+
+  .nav-inner-wrap {
+    background: transparent;
+  }
+
+  #primary-nav {
+    left: -$nav-off-canvas-width;
+  }
+
+  #secondary-nav {
+    right: -(2 * $nav-off-canvas-width + 1);
+  }
+
+  .primary-nav {
+
+    #inner-wrap {
+      left: $nav-off-canvas-width;
+    }
+
+    #primary-nav {
+      left: -$nav-off-canvas-width;
+    }
+
+  }
+
+  .secondary-nav {
+
+    #inner-wrap {
+      right: -$nav-off-canvas-width;
+    }
+
+    #secondary-nav {
+      right: -(2 * $nav-off-canvas-width + 1);
+    }
+
+  }
+
+}
+
+// Best performance animation, depends on Modernizr
+.csstransforms3d {
+
+  .off-canvas {
+    left: 0;
+    transform: translate3d(-100%, 0px, 0px);
+  }
+
+  .nav-inner-wrap {
+    opacity: 0.4;
+    transition: opacity 300ms 100ms ease, transform 500ms ease;
+    transform: translate3d(10%, 0, 0) scale3d(0.9, 0.9, 0.9);
+    transform-origin: -50% 0%;
+  }
+
+  .primary-nav,
+  .secondary-nav {
+    .nav-inner-wrap {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  #inner-wrap {
+    left: 0;
+    transform: translate3d(0, 0, 0);
+    transition: transform 500ms ease;
+    backface-visibility: hidden;
+  }
+
+  .primary-nav #inner-wrap {
+      left: 0;
+      transform: translate3d($nav-off-canvas-width, 0, 0) scale3d(1, 1, 1);
+  }
+
+  .secondary-nav #inner-wrap {
+      left: 0;
+      transform: translate3d(-$nav-off-canvas-width, 0, 0) scale3d(1, 1, 1);
   }
 
 }

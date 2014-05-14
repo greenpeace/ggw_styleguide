@@ -10,6 +10,17 @@ body {
   background-color: $background;
 }
 
+// For off-canvas-nav
+#outer-wrap,
+#inner-wrap {
+  position: relative;
+  width: 100%;
+}
+
+#outer-wrap {
+  overflow: hidden;
+}
+
 .logo {
   background-image: url(../images/logo.svg);
   background-repeat: no-repeat;

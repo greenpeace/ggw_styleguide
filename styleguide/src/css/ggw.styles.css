@@ -347,6 +347,16 @@ body {
   background-color: #eeeeee;
 }
 
+#outer-wrap,
+#inner-wrap {
+  position: relative;
+  width: 100%;
+}
+
+#outer-wrap {
+  overflow: hidden;
+}
+
 .logo {
   background-image: url(../images/logo.svg);
   background-repeat: no-repeat;
@@ -405,9 +415,6 @@ a {
   color: #559f0c;
   text-decoration: none;
 }
-a:hover {
-  text-decoration: underline;
-}
 a:focus {
   text-decoration: underline;
   outline: thin dotted;
@@ -419,6 +426,9 @@ strong, b {
 
 article p {
   margin: 0.65em 0 0.95em;
+}
+article a:hover {
+  text-decoration: underline;
 }
 article ul,
 article ol {
@@ -1250,10 +1260,12 @@ img.mfp-img {
 
 .header {
   background-color: #66cc00;
-  height: 88px;
+  height: 50px;
 }
-
 @media (min-width: 768px) {
+  .header {
+    height: 88px;
+  }
   .header:after {
     display: block;
     background-color: #56b004;
@@ -1264,39 +1276,114 @@ img.mfp-img {
     width: 100%;
   }
 }
+
 .nav-btn {
-  left: .2em;
+  left: 10px;
   position: absolute;
   top: 0;
   font-size: 2.4em;
-  line-height: 1em;
+  line-height: 34px;
   color: white;
 }
 
 .nav-btn + .nav-btn {
   left: auto;
-  right: .5em;
-  top: .1em;
+  right: 10px;
   font-size: 1.8em;
 }
 
-#primary-nav, #secondary-nav {
+.off-canvas {
   z-index: 200;
+  position: relative;
   overflow: hidden;
   width: 100%;
-  padding-top: 1rem;
-  background: #FFFFFF;
-  position: absolute;
-  top: 0;
 }
-.js #primary-nav, .js #secondary-nav {
+
+#primary-nav:not(:target),
+#secondary-nav:not(:target) {
+  z-index: 1;
+  height: 0;
+}
+
+.nav-inner-wrap {
+  z-index: 2;
+  position: relative;
+  padding: 0.75em 1.25em;
+  background: white;
+}
+
+.js .off-canvas {
   background: white;
   height: 100%;
   width: 80%;
-  -webkit-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  left: -80%;
+}
+.js #inner-wrap {
+  left: 0;
+}
+.js .nav-inner-wrap {
+  background: transparent;
+}
+.js #primary-nav {
+  left: -80%;
+}
+.js #secondary-nav {
+  right: -161%;
+}
+.js .primary-nav #inner-wrap {
+  left: 80%;
+}
+.js .primary-nav #primary-nav {
+  left: -80%;
+}
+.js .secondary-nav #inner-wrap {
+  right: -80%;
+}
+.js .secondary-nav #secondary-nav {
+  right: -161%;
+}
+
+.csstransforms3d .off-canvas {
+  left: 0;
+  -webkit-transform: translate3d(-100%, 0px, 0px);
+  transform: translate3d(-100%, 0px, 0px);
+}
+.csstransforms3d .nav-inner-wrap {
+  opacity: 0.4;
+  -webkit-transition: opacity 300ms 100ms ease, -webkit-transform 500ms ease;
+  transition: opacity 300ms 100ms ease, transform 500ms ease;
+  -webkit-transform: translate3d(10%, 0, 0) scale3d(0.9, 0.9, 0.9);
+  transform: translate3d(10%, 0, 0) scale3d(0.9, 0.9, 0.9);
+  -webkit-transform-origin: -50% 0%;
+  -ms-transform-origin: -50% 0%;
+  transform-origin: -50% 0%;
+}
+.csstransforms3d .primary-nav .nav-inner-wrap,
+.csstransforms3d .secondary-nav .nav-inner-wrap {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.csstransforms3d #inner-wrap {
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.csstransforms3d .primary-nav #inner-wrap {
+  left: 0;
+  -webkit-transform: translate3d(80%, 0, 0) scale3d(1, 1, 1);
+  transform: translate3d(80%, 0, 0) scale3d(1, 1, 1);
+}
+.csstransforms3d .secondary-nav #inner-wrap {
+  left: 0;
+  -webkit-transform: translate3d(-80%, 0, 0) scale3d(1, 1, 1);
+  transform: translate3d(-80%, 0, 0) scale3d(1, 1, 1);
 }
 
 .main-menu {

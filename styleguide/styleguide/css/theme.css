@@ -26,6 +26,10 @@ body {
   background-color: #fff;
 }
 
+.kalei-style-menu-container .menu-items {
+  width: 100%;
+}
+
 .kalei-styleguide-menu {
   height: 100%;
   overflow-y: auto;
@@ -201,7 +205,11 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
 *:not(.codedemo) .kalei-styleguide-menu-heading,
 .styleguide-menu-heading:visited {
   text-decoration: none;
+  background: #444;
 }
+  .logotype{
+    padding-left: 1em;
+  }
 
 *:not(.codedemo) .kalei-styleguide-menu-heading:hover {
   color: #222;

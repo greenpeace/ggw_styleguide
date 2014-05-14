@@ -135,7 +135,7 @@ gulp.task('clean-dist', function() {
 
 // compile both sass base files, create one js file and optimize and copy images
 gulp.task('build', ['clean-dist'], function() {
-    gulp.start('modern', 'oldie', 'build-scripts', 'images');
+  gulp.start('modern', 'oldie', 'build-scripts', 'images');
 });
 
 ///
@@ -144,7 +144,7 @@ gulp.task('build', ['clean-dist'], function() {
 
 gulp.task('watch', function() {
   gulp.watch('src/sass/**/*.scss', ['compass-quick']);
-  gulp.watch('src/js/**/*.js', ['scripts-quick']);
+  gulp.watch('src/js/**/*.js', ['concatjs']);
 });
 
 

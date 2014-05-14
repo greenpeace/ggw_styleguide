@@ -1,9 +1,16 @@
-// render this file for IE8 which doesn't support media queries
+// Generate normalize.css.
+@import "normalize";
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 // Legacy support.
-$legacy-support-for-ie6: false;
-$legacy-support-for-ie7: true;
-$legacy-support-for-ie8: true;
+$browser-minimum-versions: (
+  'ie': "7"
+);
 
 // Force the breakpoint mixin to discard all media queries except the ones with
 // $no-query set to true.
@@ -16,7 +23,7 @@ $old-ie: true;
 @import "compass";
 @import "breakpoint";
 @import "singularitygs";
-@import "toolkit-no-css";
+@import "toolkit";
 
 // Defining reusable values
 // should not contain any CSS output

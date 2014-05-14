@@ -1,56 +1,9 @@
-<?php include('modules/header.php'); ?>
+<?php include('modules/head.php'); ?>
 <body class="not-front not-logged-in domain-usa page-register page-register-step2 l-has-sidebar">
 
 <noscript><div id="javascript-disabled">Your JavaScript seems to be disabled, this might affect your experience on Greenpeace Greenwire.</div></noscript>
 
-<header class="l-header header" role="banner">
-
-  <div class="container">
-
-    <div class="l-branding">
-
-      <a href="#" title="Home" rel="home" class="logo"> <span class="element-invisible">Greenpeace Greenwire Nederland </span></a>
-
-    </div>
-
-    <div class="l-header-navigation">
-      <div class="mobile-nav">
-        <a id="main-menu-show" href="#primary-navigation" class="icon-menu"><span class="element-invisible">Show Navigation</span></a>
-        <a id="main-menu-hide" href="#" class="icon-menu"><span class="element-invisible">Hide Navigation</span></a>
-      </div>
-      <div id="primary-navigation">
-      <!-- remove .block for all header blocks so we can style the rest of the blocks with a single selector -->
-        <div class="block-search">
-          <?php include('modules/search.php'); ?>
-        </div>
-
-        <nav class="main-menu" role="navigation">
-          <?php include('modules/main-menu.php'); ?>
-        </nav>
-
-      </div>
-
-      <div class="l-secondary-navigation">
-        <div class="mobile-nav">
-          <a id="secondary-menu-show" href="#secondary-menu" class="icon-user">
-            <span class="element-invisible">Show Navigation</span>
-          </a>
-          <a id="secondary-menu-hide" href="#" class="icon-user">
-            <span class="element-invisible">Hide Navigation</span>
-          </a>
-        </div>
-
-        <div id="secondary-navigation">
-
-        </div>
-
-      </div> <!-- end l-secondary-navigation -->
-
-    </div> <!-- end l-header-navigation -->
-
-  </div>
-
-</header>
+<?php include('modules/header.php'); ?>
 
 <div id="main" class="l-main container">
 
@@ -108,18 +61,18 @@
               <?php //many extra wrappers can be removed ?>
               <div class="form-radios">
                 <div class="form-type-radio">
-                  <input class="form-radio" type="radio" value="male" name="field_user_gender[und]">
-                  <label class="option" for="edit-field-user-gender-und-male">Male </label>
+                  <input class="form-radio" type="radio" id="male"value="male" name="field_user_gender[und]">
+                  <label class="option" for="male">Male </label>
                 </div>
 
                 <div class="form-type-radio">
-                  <input class="form-radio" type="radio" value="female" name="field_user_gender[und]">
-                  <label class="option" for="edit-field-user-gender-und-female">Female </label>
+                  <input class="form-radio" type="radio" id="female" value="female" name="field_user_gender[und]">
+                  <label class="option" for="female">Female </label>
                 </div>
 
                 <div class="form-type-radio">
-                  <input class="form-radio" type="radio" value="irrelevant" name="field_user_gender[und]">
-                  <label class="option" for="edit-field-user-gender-und-irrelevant">Not relevant </label>
+                  <input class="form-radio" type="radio" id="irrelevant" value="irrelevant" name="field_user_gender[und]">
+                  <label class="option" for="irrelevant">Not relevant </label>
                 </div>
 
               </div> <?php // end form-radios ?>

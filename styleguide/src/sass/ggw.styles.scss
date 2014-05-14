@@ -1,7 +1,16 @@
+// Generate normalize.css.
+@import "normalize";
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 // Legacy support.
-$legacy-support-for-ie6: false;
-$legacy-support-for-ie7: false;
-$legacy-support-for-ie8: false;
+$browser-minimum-versions: (
+  'ie': "9"
+);
 
 $old-ie: false;
 
@@ -9,7 +18,7 @@ $old-ie: false;
 @import "compass";
 @import "breakpoint";
 @import "singularitygs";
-@import "toolkit-no-css";
+@import "toolkit";
 
 // Defining reusable values
 // should not contain any CSS output

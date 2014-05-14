@@ -9,11 +9,18 @@
     </div>
 
     <div class="l-header-navigation">
+
       <div class="mobile-nav">
-        <a id="main-menu-show" href="#primary-navigation" class="icon-menu"><span class="element-invisible">Show Navigation</span></a>
-        <a id="main-menu-hide" href="#" class="icon-menu"><span class="element-invisible">Hide Navigation</span></a>
+        <a id="main-menu-show" href="#primary-nav" data-nav="js-nav" class="nav-btn icon-menu">
+          <span class="element-invisible">Show primary navigation</span>
+        </a>
+        <a id="secondary-menu-show" href="#secondary-nav" data-nav="js-nav2" class="nav-btn icon-user">
+          <span class="element-invisible">Show secondary navigation</span>
+        </a>
+        <!--<a id="main-menu-hide" href="#" class="icon-menu"><span class="element-invisible">Hide Navigation</span></a>-->
       </div>
-      <div id="primary-navigation">
+
+      <div id="primary-nav">
       <!-- remove .block for all header blocks so we can style the rest of the blocks with a single selector -->
         <div class="block-search">
           <?php include('modules/search.php'); ?>
@@ -25,21 +32,10 @@
 
       </div>
 
-      <div class="l-secondary-navigation">
-        <div class="mobile-nav">
-          <a id="secondary-menu-show" href="#secondary-menu" class="icon-user">
-            <span class="element-invisible">Show Navigation</span>
-          </a>
-          <a id="secondary-menu-hide" href="#" class="icon-user">
-            <span class="element-invisible">Hide Navigation</span>
-          </a>
-        </div>
+      <div id="secondary-nav">
 
-        <div id="secondary-navigation">
+      </div>
 
-        </div>
-
-      </div> <!-- end l-secondary-navigation -->
 
     </div> <!-- end l-header-navigation -->
 

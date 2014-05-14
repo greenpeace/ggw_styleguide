@@ -144,7 +144,7 @@ gulp.task('build', ['clean-dist'], function() {
 
 gulp.task('watch', function() {
   gulp.watch('src/sass/**/*.scss', ['compass-quick']);
-  gulp.watch('src/js/**/*.js', ['scripts-quick']);
+  gulp.watch('src/js/**/*.js', ['concatjs']);
 });
 
 

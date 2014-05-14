@@ -17,33 +17,39 @@
   }
 }
 
-
 .l-branding {
-  @include grid-span(6, 4);
+  width: 134px;
+  margin: 0 auto;
+  position: relative;
+
+  @include breakpoint($desk) {
+    @include grid-span(2, 1);
+  }
 }
 
 .l-navigation {
-  @include grid-span(3, 1);
+  @include breakpoint($desk) {
+    @include grid-span(3, 1);
+  }
 }
 
 .l-interface {
   @include grid-span(3, 9);
 }
 
-@include breakpoint($tab) {
+.l-header-navigation {
 
-  .l-branding {
-    @include grid-span(2, 1);
-  }
-
-  .l-header-navigation {
+  @include breakpoint($tab) {
     @include isolation-span(12, 1, 'both');
     position: relative;
     bottom: -11px;
     z-index: 2;
   }
+}
 
-  .block-search {
+.block-search {
+
+  @include breakpoint($tab) {
     @include grid-span(3, 9);
     bottom: 36px;
     position: absolute;

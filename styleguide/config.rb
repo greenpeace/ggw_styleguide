@@ -1,8 +1,8 @@
 environment = :production
 
 # Location of the theme's resources.
-css_dir = "dist/styles"
-sass_dir = "src/styles"
+css_dir = "src/css"
+sass_dir = "src/sass"
 images_dir = "src/images"
 javascripts_dir = "src/js"
 

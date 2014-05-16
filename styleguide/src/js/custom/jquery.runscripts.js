@@ -9,4 +9,12 @@ jQuery(document).ready(function ($) {
 
   $('.form-item select').wrap('<div class="selector"></div>');
 
+  // make sure links with submenus are accesible
+  $('.off-canvas li:has(ul)').doubleTapToGo();
+
+  // attach fastclick
+  $(function() {
+    FastClick.attach(document.body);
+  });
+
 });

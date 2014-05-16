@@ -46,18 +46,12 @@ module.exports = function (grunt) {
         config: 'config.rb',
         bundleExec: true
       },
-      dev: {
-        options: {
-          environment: 'development',
-          force: true
-        }
-      },
       dist: {
         options: {
           environment: 'production',
           force: true
         }
-      }
+      },
     },
 
     autoprefixer: {
@@ -192,7 +186,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('styleguide', [
     'compass:dist',
-    //'autoprefixer:src',
+    'autoprefixer:src',
     'comments:normalize',
     'concat',
     'uglify:styleguide',

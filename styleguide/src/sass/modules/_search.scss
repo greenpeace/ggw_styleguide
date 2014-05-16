@@ -1,9 +1,14 @@
 .block-search .form-actions {
+  @extend %element-hidden;
   @extend %load-icon;
   @extend %icon-search;
+
+  @include breakpoint($desk) {
+    display: block;
+  }
 }
 
-@include breakpoint($tab) {
+@include breakpoint($desk) {
   .search-form {
     position: relative;
 

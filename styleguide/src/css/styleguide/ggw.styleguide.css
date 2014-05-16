@@ -1,3 +1,10 @@
+
+/* Styling for styles guide */
+
+@import url('base.css');
+@import url('components.css');
+@import url('modules.css');
+
 @charset "UTF-8";
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
@@ -336,7 +343,7 @@ html {
 }
 
 body {
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.5em;
   font-family: Arial, Helvetica, sans-serif;
   color: #4d4d4d;
@@ -367,6 +374,13 @@ body {
   background-color: white;
   padding: 15px;
   position: relative;
+}
+@media (min-width: 768px) {
+  .block,
+  .main-content {
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0 #999999;
+  }
 }
 
 .main-content .content {
@@ -438,22 +452,22 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
   line-height: 1.5em;
 }
 article h1 {
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 article h2 {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 article h3 {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 article h4 {
-  font-size: 16px;
+  font-size: 1rem;
 }
 article h5 {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 article h6 {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .title-prefix {
@@ -624,7 +638,7 @@ textarea:disabled {
   width: 1.3em;
   top: .2rem;
   color: white;
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 
 input[type="checkbox"] + label:before {
@@ -659,7 +673,7 @@ input[type="radio"]:checked + label:before {
   position: absolute;
   top: 2px;
   right: 0;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 0 7px;
 }
 .selector select {
@@ -1199,7 +1213,12 @@ img.mfp-img {
   line-height: 36px;
   border-radius: 0 0 4px 0;
   color: white;
-  font-size: 20px;
+  font-size: 1.25rem;
+}
+@media (min-width: 768px) {
+  .block-icon {
+    border-radius: 4px 0;
+  }
 }
 
 .main-content .block-title,
@@ -1231,6 +1250,20 @@ img.mfp-img {
 .header {
   background-color: #66cc00;
   height: 50px;
+}
+@media (min-width: 768px) {
+  .header {
+    height: 88px;
+  }
+  .header:after {
+    display: block;
+    background-color: #56b004;
+    content: '';
+    height: 28px;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+  }
 }
 
 .nav-btn {
@@ -1346,6 +1379,22 @@ img.mfp-img {
   border-radius: 0 0 4px 4px;
 }
 
+@media (min-width: 768px) {
+  .mobile-nav {
+    display: none;
+  }
+
+  .menu-item {
+    white-space: nowrap;
+    display: inline-block;
+    float: left;
+    padding-right: 15px;
+  }
+
+  .expanded .menu {
+    display: none;
+  }
+}
 .page-register-step1 .progress-bar {
   background: none;
   color: #4d4d4d;
@@ -1362,6 +1411,44 @@ img.mfp-img {
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .field-name-field-user-first-name {
+    width: 48.93617%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 2.12766%;
+  }
+
+  .field-name-field-user-last-name {
+    width: 48.93617%;
+    clear: right;
+    float: right;
+    margin-right: 0;
+  }
+
+  .field-name-field-user-birthdate {
+    clear: both;
+  }
+
+  .field-name-field-user-phone-house-country,
+  .field-name-field-user-phone-mobile-country {
+    width: 31.91489%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+  }
+
+  .field-name-field-user-phone-house,
+  .field-name-field-user-phone-mobile {
+    width: 31.91489%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 34.04255%;
+    clear: "right";
+  }
+}
 #landline,
 #mobileline {
   background: white;
@@ -1378,8 +1465,65 @@ img.mfp-img {
   display: block;
 }
 
+@media (min-width: 768px) {
+  .search-form {
+    position: relative;
+  }
+  .search-form .form-text {
+    font-size: 12px;
+    border: 1px solid #56b004;
+    border-radius: 3px;
+    padding: 3px 6px;
+  }
+  .search-form .form-submit {
+    opacity: 0;
+    border: none;
+    background: none;
+    position: absolute;
+    top: 0;
+    width: 16px;
+    padding: 0;
+    left: 0;
+    text-indent: -9999em;
+  }
+  .search-form .form-actions {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 16px;
+    line-height: 1rem;
+    height: 16px;
+    border-radius: 3px;
+    background: #56b004;
+    padding: 0 0 0 2px;
+    color: white;
+    font-size: 14px;
+  }
+}
 .sidebar .content {
   margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+  .domain-nl .field-name-field-user-initials {
+    width: 14.89362%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 2.12766%;
+  }
+  .domain-nl .field-name-field-user-first-name {
+    width: 40.42553%;
+    clear: right;
+    float: left;
+    margin-right: 2.12766%;
+  }
+  .domain-nl .field-name-field-user-last-name {
+    width: 40.42553%;
+    clear: right;
+    float: right;
+    margin-right: 0;
+  }
 }
 
 .container {
@@ -1391,15 +1535,45 @@ img.mfp-img {
   display: table;
   clear: both;
 }
+@media (min-width: 1024px) {
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  }
+}
 
 .l-header {
   padding-top: 7px;
+}
+@media (min-width: 768px) {
+  .l-header {
+    padding-top: 15px;
+  }
 }
 
 .l-branding {
   width: 134px;
   margin: 0 auto;
   position: relative;
+}
+@media (min-width: 1024px) {
+  .l-branding {
+    width: 14.89362%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 2.12766%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .l-navigation {
+    width: 23.40426%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 2.12766%;
+  }
 }
 
 .l-interface {
@@ -1409,6 +1583,51 @@ img.mfp-img {
   margin-right: 2.12766%;
 }
 
+@media (min-width: 768px) {
+  .l-header-navigation {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: "both";
+    position: relative;
+    bottom: -11px;
+    z-index: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .block-search {
+    width: 23.40426%;
+    clear: right;
+    float: left;
+    margin-right: 2.12766%;
+    bottom: 36px;
+    position: absolute;
+    right: 0;
+  }
+}
+
 .l-main {
   margin: 15px auto;
+}
+
+@media (min-width: 768px) {
+  .l-has-sidebar .l-main-column {
+    width: 65.95745%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 2.12766%;
+  }
+}
+
+@media (min-width: 768px) {
+  .l-has-sidebar .l-sidebar {
+    width: 31.91489%;
+    clear: right;
+    float: right;
+    margin-right: 0;
+    display: block;
+  }
 }

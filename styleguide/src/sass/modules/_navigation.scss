@@ -15,7 +15,8 @@
 
 .off-canvas {
   z-index: 200;
-  position: relative;
+  position: absolute;
+  top: -7px; // to get over the header padding
   overflow: hidden;
   width: 100%;
 }
@@ -31,7 +32,6 @@
 .nav-inner-wrap {
   z-index: 2;
   position: relative;
-  padding: 0.75em 1.25em;
   background: $white;
 }
 
@@ -39,8 +39,6 @@
 .js {
 
   .off-canvas {
-    background: $white;
-    height: 100%;
     width: $nav-off-canvas-width;
     backface-visibility: hidden;
     left: -$nav-off-canvas-width;
@@ -62,36 +60,41 @@
     right: -(2 * $nav-off-canvas-width + 1);
   }
 
-  .primary-nav {
+}
 
-    #inner-wrap {
-      left: $nav-off-canvas-width;
-    }
+.primary-nav {
 
-    #primary-nav {
-      left: -$nav-off-canvas-width;
-    }
-
+  #inner-wrap {
+    left: $nav-off-canvas-width;
+    border-left: 1px solid $grey-l;
   }
 
-  .secondary-nav {
-
-    #inner-wrap {
-      right: -$nav-off-canvas-width;
-    }
-
-    #secondary-nav {
-      right: -(2 * $nav-off-canvas-width + 1);
-    }
-
+  #primary-nav {
+    left: -$nav-off-canvas-width;
   }
 
 }
 
+.secondary-nav {
+
+  #inner-wrap {
+    right: -$nav-off-canvas-width;
+    border-right: 1px solid $grey-l;
+  }
+
+  #secondary-nav {
+    right: -(2 * $nav-off-canvas-width + 1);
+  }
+
+}
+
+
+
 // Best performance animation, depends on Modernizr
 .csstransforms3d {
 
-  .off-canvas {
+  .primary-nav #primary-nav,
+  .secondary-nav #secondary-nav {
     left: 0;
     transform: translate3d(-100%, 0px, 0px);
   }
@@ -132,25 +135,63 @@
 
 .main-menu {
   position: relative;
-
-  .menu-link {
-    color: $white;
-    font-weight: bold;
-    line-height: 28px;
-    padding: 0 $def-mar-half;
-    display: block;
-
-    &:hover {
-      background: $green1;
-      color: $green3;
-      border-radius: 0 0 4px 4px;
-    }
-  }
-
 }
 
+.menu .menu {
+  @extend %element-hidden;
+  position: static;
+  top: 100%;
+}
 
-@include breakpoint($tab) {
+.menu-item:hover .menu {
+  display: block;
+}
+
+.off-canvas .expanded > .menu-link {
+  @extend %load-icon;
+  @extend %icon-right-open;
+
+  &:before {
+    position: absolute;
+    right: 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+.off-canvas .expanded:hover > .menu-link {
+  @extend %icon-down-open;
+}
+
+.menu-item {
+  border-top: 1px solid $grey-l;
+}
+
+.menu-link {
+  display: block;
+  color: $base;
+  padding: 1em;
+}
+
+@include breakpoint($desk) {
+
+  .main-menu {
+    position: relative;
+
+    .menu-link {
+      color: $white;
+      font-weight: bold;
+      line-height: 28px;
+      padding: 0 $def-mar-half;
+      display: block;
+
+      &:hover {
+        background: $green1;
+        color: $green3;
+        border-radius: 0 0 4px 4px;
+      }
+    }
+
+  }
 
   .mobile-nav {
     @include element-hidden;

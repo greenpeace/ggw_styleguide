@@ -13,7 +13,7 @@ All forms fields are wrapped in a `.form-item`. This provides the white-space ar
 <form>
 <div class="form-wrapper">
 
-<!-- Input type text -->
+<!-- Input type text-->
   <div class="form-item">
     <label for="edit-text1">
       Input type text <span class="form-required" title="This field is required.">`*`</span>

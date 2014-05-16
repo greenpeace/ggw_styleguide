@@ -573,7 +573,7 @@ label {
 input[type='text'],
 input[type='password'],
 textarea {
-  padding: .4em .5em .3em .5em;
+  padding: .4em .5em .4em .5em;
   border: 1px solid #cccccc;
   border-radius: 3px;
   width: 100%;
@@ -658,7 +658,7 @@ input[type="radio"]:checked + label:before {
 .selector:before {
   color: #4d4d4d;
   position: absolute;
-  top: 3px;
+  top: 2px;
   right: 0;
   font-size: 14px;
   padding: 0 7px;
@@ -669,7 +669,7 @@ input[type="radio"]:checked + label:before {
   z-index: 4;
   position: relative;
   display: block;
-  padding: 5px 25px 4px 7px;
+  padding: 4px 24px 2px 7px;
   background: transparent;
   border: none;
   text-overflow: ellipsis;

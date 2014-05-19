@@ -138,7 +138,7 @@
 
   <aside class="l-sidebar sidebar">
 
-    <div class="block">
+    <div class="block block-no-icon">
 
       <h2 class="block-title">Help us save Planet Earth</h2>
       <div class="content">

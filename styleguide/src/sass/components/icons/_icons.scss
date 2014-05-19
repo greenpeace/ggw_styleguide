@@ -9,18 +9,10 @@
   font-style: normal;
 }
 
-[class*="icon-"] {
-  @extend %load-icon;
-}
+[class*="icon-"] { @extend %load-icon; }
 
-.icon-user-add {
-  @extend %icon-user-add;
-}
-
-.icon-menu {
-  @extend %icon-menu;
-}
-
-.icon-user {
-  @extend %icon-user;
-}
+.icon-users {     @extend %icon-users; }
+.icon-user-add {  @extend %icon-user-add; }
+.icon-menu {      @extend %icon-menu; }
+.icon-user {      @extend %icon-user; }
+.icon-news {      @extend %icon-book-open; }

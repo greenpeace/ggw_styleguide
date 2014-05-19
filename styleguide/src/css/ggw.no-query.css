@@ -500,7 +500,7 @@ article h6 {
   border: 1px solid #cccccc;
   color: #4d4d4d;
   padding: .3em 1.8em;
-  line-height: 1rem;
+  line-height: normal;
   text-align: center;
   font-size: 1.2em;
   font-weight: 700;

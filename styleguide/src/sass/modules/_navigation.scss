@@ -143,6 +143,7 @@
 
 .main-menu {
   position: relative;
+  @include font-size(16px);
 }
 
 .menu .menu {
@@ -155,18 +156,15 @@
   display: block;
 }
 
-.off-canvas .expanded > .menu-link {
+.off-canvas .caret:before {
+  position: absolute;
   @extend %load-icon;
   @extend %icon-right-open;
-
-  &:before {
-    position: absolute;
-    right: 1.5rem;
-    font-size: 1rem;
-  }
+  right: 1.5rem;
+  font-size: 1rem;
 }
 
-.off-canvas .expanded:hover > .menu-link {
+.off-canvas .open .caret:before {
   @extend %icon-down-open;
 }
 
@@ -182,10 +180,7 @@
 
 @include breakpoint($desk) {
 
-  .main-menu {
-    position: relative;
-
-    .menu-link {
+  .main-menu .menu-link {
       color: $white;
       font-weight: bold;
       line-height: 28px;
@@ -197,8 +192,6 @@
         color: $green3;
         border-radius: 0 0 4px 4px;
       }
-    }
-
   }
 
   .mobile-nav {

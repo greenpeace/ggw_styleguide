@@ -621,7 +621,7 @@ button {
 
 // IE7 support
 // Styles that make popup look nicier in old IE
-@if $mfp-IE7support {
+@if $old-ie {
   .mfp-ie7 {
     .mfp-img {
       padding: 0;

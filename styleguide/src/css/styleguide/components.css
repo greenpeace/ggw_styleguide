@@ -78,8 +78,8 @@ All forms fields are wrapped in a `.form-item`. This provides the white-space ar
 </div>
 
 <div class="form-actions form-wrapper">
-   <input class="btn btn-primary" type="submit" value="Submit">
-   <input class="btn" type="reset" value="Cancel">
+   <input class="button btn-primary" type="submit" value="Submit">
+   <input class="button" type="reset" value="Cancel">
 </div>
 </form>
 
@@ -112,8 +112,8 @@ Adding the class `.row` alongside `.form-wrapper` display those forms inline-blo
       </div>
     </div>
     <div class="form-actions form-wrapper row">
-       <input class="btn btn-primary" type="submit" value="Submit">
-       <input class="btn" type="reset" value="Cancel">
+       <input class="button btn-primary" type="submit" value="Submit">
+       <input class="button" type="reset" value="Cancel">
     </div>
   </div>
 <!-- Text input with label and input -->
@@ -133,8 +133,8 @@ Adding the class `.row` alongside `.form-wrapper` display those forms inline-blo
       </div>
     </div>
     <div class="form-actions form-wrapper row">
-       <input class="btn btn-primary" type="submit" value="Submit">
-       <input class="btn" type="reset" value="Cancel">
+       <input class="button btn-primary" type="submit" value="Submit">
+       <input class="button" type="reset" value="Cancel">
     </div>
   </div>
 </form>
@@ -146,20 +146,20 @@ Buttons
 
 <h2> Options </h2>
 
-Buttons get a standard `.btn` class, the element type should have no effect
+Buttons get a standard `.button` class, the element type should have no effect
 
 ```
 <!-- Standard button -->
 <p>
-<input type="submit" value="input type=submit" class="btn">
-<button type="button" class="btn">button</button>
-<a href="#" role="button" class="btn">button link</a>
+<input type="submit" value="input type=submit" class="button">
+<button type="button" class="button">button</button>
+<a href="#" role="button" class="button">button link</a>
 </p>
 <!-- Primary button for form submits, navigation etc. -->
 <p>
-<input type="submit" value="input type=submit" class="btn btn-primary">
-<button type="button" class="btn btn-primary">button</button>
-<a href="#" role="button" class="btn btn-primary">button link</a>
+<input type="submit" value="input type=submit" class="button btn-primary">
+<button type="button" class="button btn-primary">button</button>
+<a href="#" role="button" class="button btn-primary">button link</a>
 </p>
 ```
 
@@ -170,28 +170,28 @@ Fancy larger or smaller buttons? Add .btn-large or .btn-small for additional siz
 ```
 <!-- Standard button -->
 <p>
-<button type="button" class="btn">Standard button</button>
-<button type="button" class="btn btn-primary">Standard button</button>
+<button type="button" class="button">Standard button</button>
+<button type="button" class="button btn-primary">Standard button</button>
 </p>
 
 <!-- Small button -->
 <p>
-<button type="button" class="btn btn-s">Small button</button>
-<button type="button" class="btn btn-primary btn-s">Small button</button>
+<button type="button" class="button btn-s">Small button</button>
+<button type="button" class="button btn-primary btn-s">Small button</button>
 </p>
 
 <!-- large button -->
 <p>
-<button type="button" class="btn btn-l">Large button</button>
-<button type="button" class="btn btn-primary btn-l">Large button</button>
+<button type="button" class="button btn-l">Large button</button>
+<button type="button" class="button btn-primary btn-l">Large button</button>
 </p>
 ```
 Create block level buttons—those that span the full width of a parent— by adding .btn-block.
 ```
 <div class="well" style="max-width: 400px; margin: 0 auto 10px;">
 <!-- Block button -->
-<button type="button" class="btn btn-block">Block button</button>
-<button type="button" class="btn btn-primary btn-block">Block button</button>
+<button type="button" class="button btn-block">Block button</button>
+<button type="button" class="button btn-primary btn-block">Block button</button>
 </div>
 ```
 
@@ -202,10 +202,19 @@ Buttons will appear without text decoration and a soft box-shadow when hovered. 
 ```
 <!-- Hover button (we need to add the class now to present it) -->
 <p>
-<button type="button" class="btn hover">Hovered standard button</button>
-<button type="button" class="btn btn-primary hover">Hovered primary button</button>
+<button type="button" class="button hover">Hovered standard button</button>
+<button type="button" class="button btn-primary hover">Hovered primary button</button>
 </p>
 ```
+*/
+.button.hover {
+  -webkit-box-shadow: 0 1px 2px 0 #CCC;
+  box-shadow: 0 1px 2px 0 #CCC;
+  text-decoration: none;
+  outline: 0;
+}
+
+/*
 
 <h2> Active state </h2>
 
@@ -214,8 +223,8 @@ Buttons will appear pressed (with an inset shadow) when active. For `<button>` e
 ```
 <!-- Active button (we need to add the class now to present it) -->
 <p>
-<button type="button" class="btn active">Active standard button</button>
-<button type="button" class="btn btn-primary active">Active primary button</button>
+<button type="button" class="button active">Active standard button</button>
+<button type="button" class="button btn-primary active">Active primary button</button>
 </p>
 ```
 
@@ -229,8 +238,8 @@ Add the disabled attribute to `<button>` buttons.
 
 ```
 <p>
-<button type="button" class="btn" disabled="disabled">Button</button>
-<button type="button" class="btn btn-primary" disabled="disabled">Primary button</button>
+<button type="button" class="button" disabled="disabled">Button</button>
+<button type="button" class="button btn-primary" disabled="disabled">Primary button</button>
 </p>
 ```
 
@@ -240,8 +249,8 @@ Add the .disabled class to `<a>` buttons.
 
 ```
 <p>
-<a href="#" role="button" class="btn disabled">button link</a>
-<a href="#" role="button" class="btn btn-primary disabled">primary button link</a>
+<a href="#" role="button" class="button disabled">button link</a>
+<a href="#" role="button" class="button btn-primary disabled">primary button link</a>
 </p>
 ```
 */

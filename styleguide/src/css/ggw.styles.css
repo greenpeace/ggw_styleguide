@@ -518,7 +518,7 @@ article h6 {
   font-size: 1.2em;
   font-weight: 700;
 }
-.button:hover, .button.hover, .button:focus {
+.button:hover, .button:focus {
   -webkit-box-shadow: 0 1px 2px 0 #cccccc;
   box-shadow: 0 1px 2px 0 #cccccc;
   text-decoration: none;
@@ -566,7 +566,7 @@ article h6 {
   width: 100%;
 }
 
-.btn + .btn-block {
+.button + .btn-block {
   margin-top: 5px;
 }
 
@@ -1178,28 +1178,6 @@ img.mfp-img {
     padding-right: 6px;
   }
 }
-.mfp-ie7 .mfp-img {
-  padding: 0;
-}
-.mfp-ie7 .mfp-bottom-bar {
-  width: 600px;
-  left: 50%;
-  margin-left: -300px;
-  margin-top: 5px;
-  padding-bottom: 5px;
-}
-.mfp-ie7 .mfp-container {
-  padding: 0;
-}
-.mfp-ie7 .mfp-content {
-  padding-top: 44px;
-}
-.mfp-ie7 .mfp-close {
-  top: 0;
-  right: 0;
-  padding-top: 0;
-}
-
 .icon-bg-default {
   background: #56b004;
 }

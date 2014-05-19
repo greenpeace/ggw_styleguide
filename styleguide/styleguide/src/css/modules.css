@@ -8,8 +8,22 @@ Blocks to wrap content
 
 ### Standard block
 
+If there is no icon in the block (which is in the minority of blocks) we need to add an extra class to pull the title to the left.
+
 ```
-<div class="block">
+<div class="block block-no-icon">
+  <h2 class="block-title"> This is the block title</h2>
+  <div class="content">
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+  </div>
+</div>
+```
+
+### Block with an icon
+
+```
+<div class="block ">
+  <i class="block-icon icon-bg-news-media icon-news"></i>
   <h2 class="block-title"> This is the block title</h2>
   <div class="content">
      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
@@ -21,19 +35,7 @@ Blocks to wrap content
 
 ```
 <div class="block block-with-icon">
-  <i class="block-icon icon-bg-news-media icon-book-open"></i>
-  <h2 class="block-title"> This is the block title</h2>
-  <div class="content">
-     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
-  </div>
-</div>
-```
-
-### Block with an icon
-
-```
-<div class="block block-with-icon">
-  <i class="block-icon icon-user icon-book-open"></i>
+  <i class="block-icon icon-bg-action icon-user-add"></i>
   <h2 class="block-title"> This is the block title</h2>
   <div class="content">
      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>

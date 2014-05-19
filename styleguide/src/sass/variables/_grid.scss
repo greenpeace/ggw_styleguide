@@ -1,12 +1,14 @@
 // Set consistent vertical and horizontal spacing units.
 $vert-spacing-unit: 1em;
-$horz-spacing-unit: 20px;
+$def-mar: 15px;
+$def-mar-half: 7px;
 
 $tab: 768px;
 $desk: 1024px;
 $wide: 1200px;
 
-$grids: 4;
-$grids: add-grid(12 at $tab);
+$nav-off-canvas-width: 80%;
 
-$gutters: 1/3;
+@include add-grid(12);
+@include add-gutter(1/3);
+@include sgs-change('output', 'float');

@@ -1,0 +1,79 @@
+.page-register-step1 .progress-bar {
+  background: none;
+  color: $base;
+  width: 100%;
+}
+
+.page-register .date-padding .form-item {
+  display: inline-block;
+  width: auto;
+  margin:0;
+}
+
+// let the image in the sidebar align in the center
+.page-register .sidebar .content {
+  text-align: center;
+}
+
+@include breakpoint($tab) {
+
+  .field-name-field-user-first-name {
+    @include grid-span(6, 1);
+  }
+
+  .field-name-field-user-last-name {
+    @include grid-span(6, 7);
+  }
+
+  .field-name-field-user-birthdate {
+    @include inline-cf;
+  }
+
+  .field-name-field-user-phone-house-country,
+  .field-name-field-user-phone-mobile-country {
+    @include isolation-span(4, 1);
+  }
+
+  .field-name-field-user-phone-house,
+  .field-name-field-user-phone-mobile {
+    @include isolation-span(4, 5, 'right');
+  }
+
+}
+
+.phone-wrapper {
+  @extend %cf;
+}
+
+.wrapper {
+  @extend %wrapper;
+}
+
+
+// Showing and hiding of phone options
+
+.phone-switch {
+  @extend %block;
+}
+
+#landline,
+#mobileline {
+  background: $white;
+
+}
+
+#landline {
+  position: absolute;
+  top:0;
+  width: 100%;
+}
+
+#landline:not( :target ) {
+  @extend %element-hidden;
+}
+
+#mobileline:target,
+#landline:target {
+  display:block;
+}
+

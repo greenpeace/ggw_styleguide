@@ -22,8 +22,7 @@
 // manner should be kept concise, to avoid unnecessary burden on the user.
 // "!important" is used to prevent unintentional overrides.
 @mixin element-invisible {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
   height: 1px;
@@ -35,7 +34,7 @@
 
 // Reverts 'element-invisible'.
 @mixin element-visible {
-  position: inherit !important;
+  position: inherit;
   clip: inherit;
   overflow: inherit;
   height: inherit;
@@ -44,6 +43,18 @@
 %element-visible {
   @include element-visible;
 }
+
+@mixin element-placeholder {
+  position: relative;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  opacity: 0;
+}
+
+%element-placeholder {
+  @include element-placeholder;
+}
+
 
 // The .element-focusable class extends the .element-invisible class to allow
 // the element to be focusable when navigated to via the keyboard.
@@ -61,3 +72,30 @@
   @include element-focusable;
 }
 
+@mixin hideYetClickable() {
+  opacity: 0;
+  border: none;
+  background: none;
+}
+
+%hideYetClickable {
+  @include hideYetClickable;
+}
+
+// for all '<a>'s that just need to display as a block.
+%block {
+  display: block;
+}
+
+// to catch absolute positioned elements
+%wrapper {
+  position: relative;
+}
+
+@mixin transition-default {
+  transition: all 0.2s linear;
+}
+
+%transition-default {
+  @include transition-default;
+}

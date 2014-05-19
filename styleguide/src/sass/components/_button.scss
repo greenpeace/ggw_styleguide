@@ -1,0 +1,76 @@
+.button {
+  background: $secondary;
+  background-image: linear-gradient($secondary, darken($secondary, 3%));
+  display: inline-block;
+  cursor: pointer;
+  border-radius: .1em;
+  border: 1px solid $grey-l;
+  color: $base;
+  padding: .3em 1.8em;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 700;
+
+  &:hover,
+  &.hover,
+  &:focus {
+    box-shadow: 0 1px 2px 0 $grey-l;
+    text-decoration: none;
+    outline: 0;
+  }
+
+  &:active,
+  &.active {
+    top: 1px;
+    position: relative;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+  }
+
+  &[disabled],
+  &.disabled {
+    background: $white;
+    border-color: $grey-l;
+    color: $grey-l;;
+    cursor: default;
+
+    &:active,
+    &:hover,
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:active {
+      top:0;
+    }
+
+  }
+
+}
+
+.btn-primary {
+  background: $primary;
+  border: 1px solid darken($primary, 10%);
+  color: $white;
+}
+
+.btn-l {
+  padding: .5em 2em;
+}
+
+.btn-s {
+  padding: .1em .5em;
+  font-size: $small;
+}
+
+// Block buttons, 1 button per line
+.btn-block {
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+.btn + .btn-block {
+  margin-top: 5px;
+}

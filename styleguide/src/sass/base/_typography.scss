@@ -1,0 +1,94 @@
+h1, h2, h3, h4 ,h5 ,h6 {
+  margin: 0;
+  line-height: 1.2em;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none outside none;
+}
+
+.block-title {
+  text-transform: uppercase;
+  color: $heading;
+  font-size: $h5;
+}
+
+a {
+  color: $green5;
+  text-decoration: none;
+
+  &:focus {
+    text-decoration: underline;
+    outline: thin dotted;
+  }
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+article {
+
+  p {
+    margin: 0.65em 0 0.95em;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 10px 0;
+    padding: 0 0 0 (2 * $def-mar);
+  }
+
+  ol ol,
+  ul ul {
+    margin-bottom: 0;
+    padding: 0 0 0 $def-mar;
+  }
+
+  ul li {
+    list-style: square inside;
+  }
+
+  ol li {
+    list-style: decimal inside;
+  }
+
+  // headings
+  #{headings()} {
+    margin: 10px 0;
+    line-height: 1.5em;
+  }
+
+  $headings: h1, h2, h3, h4, h5, h6;
+  $size: $h1, $h2, $h3, $h4, $h5, $h6;
+
+  $head-size: zip($headings, $size);
+
+  @each $a in $head-size {
+    #{nth($a, 1)} {
+      @if $old-ie {
+        font-size: nth($a, 2);
+      }
+      @else {
+        font-size: (nth($a, 2) / $base-font-size)*1rem;
+      }
+    }
+  }
+
+
+}
+
+.title-prefix {
+  color: $grey-m;
+  font-size: $small;
+  position: relative;
+  text-transform: uppercase;
+  margin-top: -14px;
+  display: block;
+}

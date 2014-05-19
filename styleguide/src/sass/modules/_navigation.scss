@@ -1,0 +1,213 @@
+.nav-btn {
+  left: 10px;
+  position: absolute;
+  top: 0;
+  font-size: 2.4em;
+  line-height: 34px;
+  color: $white;
+
+  @include breakpoint($tab) {
+    left: 15px;
+  }
+}
+
+.nav-btn + .nav-btn {
+  left: auto;
+  right: 10px;
+  font-size: 1.8em;
+
+    @include breakpoint($tab) {
+    right: 15px;
+  }
+}
+
+.off-canvas {
+  z-index: 200;
+  position: absolute;
+  top: -7px; // to get over the header padding
+  overflow: hidden;
+  width: 100%;
+}
+
+#primary-nav,
+#secondary-nav {
+  &:not(:target) {
+    z-index: 1;
+    height: 0;
+  }
+}
+
+.nav-inner-wrap {
+  z-index: 2;
+  position: relative;
+  background: $white;
+}
+
+// Execute when css transform does not work
+.js {
+
+  .off-canvas {
+    width: $nav-off-canvas-width;
+    backface-visibility: hidden;
+    left: -$nav-off-canvas-width;
+  }
+
+  #inner-wrap {
+    left: 0;
+  }
+
+  .nav-inner-wrap {
+    background: transparent;
+  }
+
+  #primary-nav {
+    left: -$nav-off-canvas-width;
+  }
+
+  #secondary-nav {
+    right: -(2 * $nav-off-canvas-width + 1);
+  }
+
+}
+
+.primary-nav {
+
+  #inner-wrap {
+    left: $nav-off-canvas-width;
+    border-left: 1px solid $grey-l;
+  }
+
+  #primary-nav {
+    left: -$nav-off-canvas-width;
+  }
+
+}
+
+.secondary-nav {
+
+  #inner-wrap {
+    right: -$nav-off-canvas-width;
+    border-right: 1px solid $grey-l;
+  }
+
+  #secondary-nav {
+    right: -(2 * $nav-off-canvas-width + 1);
+  }
+
+}
+
+
+
+// Best performance animation, depends on Modernizr
+.csstransforms3d {
+
+  .primary-nav #primary-nav,
+  .secondary-nav #secondary-nav {
+    left: 0;
+    transform: translate3d(-100%, 0px, 0px);
+  }
+
+  .nav-inner-wrap {
+    opacity: 0.4;
+    transition: opacity 300ms 100ms ease, transform 500ms ease;
+    transform: translate3d(10%, 0, 0) scale3d(0.9, 0.9, 0.9);
+    transform-origin: -50% 0%;
+  }
+
+  .primary-nav,
+  .secondary-nav {
+    .nav-inner-wrap {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  #inner-wrap {
+    left: 0;
+    transform: translate3d(0, 0, 0);
+    transition: transform 500ms ease;
+    backface-visibility: hidden;
+  }
+
+  .primary-nav #inner-wrap {
+      left: 0;
+      transform: translate3d($nav-off-canvas-width, 0, 0) scale3d(1, 1, 1);
+  }
+
+  .secondary-nav #inner-wrap {
+      left: 0;
+      transform: translate3d(-$nav-off-canvas-width, 0, 0) scale3d(1, 1, 1);
+  }
+
+}
+
+.main-menu {
+  position: relative;
+  @include font-size(16px);
+}
+
+.menu .menu {
+  @extend %element-hidden;
+  position: static;
+  top: 100%;
+}
+
+.menu-item:hover .menu {
+  display: block;
+}
+
+.off-canvas .caret:before {
+  position: absolute;
+  @extend %load-icon;
+  @extend %icon-right-open;
+  right: 1.5rem;
+  font-size: 1rem;
+}
+
+.off-canvas .open .caret:before {
+  @extend %icon-down-open;
+}
+
+.menu-item {
+  border-top: 1px solid $grey-l;
+}
+
+.menu-link {
+  display: block;
+  color: $base;
+  padding: 1em;
+}
+
+@include breakpoint($desk) {
+
+  .main-menu .menu-link {
+      color: $white;
+      font-weight: bold;
+      line-height: 28px;
+      padding: 0 $def-mar-half;
+      display: block;
+
+      &:hover {
+        background: $green1;
+        color: $green3;
+        border-radius: 0 0 4px 4px;
+      }
+  }
+
+  .mobile-nav {
+    @include element-hidden;
+  }
+
+  .menu-item {
+    white-space: nowrap;
+    display: inline-block;
+    float: left;
+    padding-right: $def-mar;
+  }
+
+  .expanded .menu {
+    @include element-hidden;
+  }
+
+}
+

@@ -1,0 +1,48 @@
+@mixin block-simple {
+  background-color: $white;
+  padding: $def-mar;
+  position: relative;
+}
+
+@mixin block-rich {
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 $grey-m;
+}
+
+%block-element {
+   @include block-rich;
+}
+
+@mixin white-popup {
+  @include block-rich;
+  width: auto;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+%white-popup {
+  @include white-popup;
+}
+
+
+// CLEARFIXES
+@mixin cf {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+%cf {
+  @include cf;
+}
+
+// clear floats inside a container before moving to next line
+@mixin inline-cf {
+  clear: both;
+}
+
+%inline-cf {
+  @include inline-cf;
+}

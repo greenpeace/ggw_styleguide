@@ -1,0 +1,247 @@
+@charset "UTF-8";
+/*
+
+Forms
+====
+
+<h2>Basic form example</h2>
+
+All forms are wrapped in a `.form-wrapper`. This provides the white-space around each form. <br />
+All forms fields are wrapped in a `.form-item`. This provides the white-space around each field.
+
+```
+<form>
+<div class="form-wrapper">
+
+<!-- Input type text-->
+  <div class="form-item">
+    <label for="edit-text1">
+      Input type text <span class="form-required" title="This field is required.">`*`</span>
+    </label>
+    <div class="form-description">input description, comes before the input.</div>
+    <input id="edit-text1" class="form-text" type="text" value="" />
+  </div>
+
+<!-- Password field -->
+  <div class="form-item">
+    <label for="password">
+      Password field <span class="form-required" title="This field is required.">`*`</span>
+    </label>
+    <input id="password" class="form-text" type="password" value=""  />
+  </div>
+
+<!-- Checkbox -->
+  <div class="form-item form-type-checkbox">
+    <input type="checkbox" id="check1" value="1" checked="checked" class="form-checkbox" />
+    <label class="option" for="check1">checkbox field that is checked by default </label>
+  </div>
+
+<!-- Radios -->
+  <div class="form-item">
+    <label>Radios</label>
+    <div class="form-radios">
+      <div class="form-type-radio">
+        <input class="form-radio" type="radio" value="one" name="one" id="one">
+        <label class="option" for="one">one </label>
+      </div>
+      <div class="form-type-radio">
+        <input class="form-radio" type="radio" value="two" name="one" id="two" checked>
+        <label class="option" for="two">two </label>
+      </div>
+      <div class="form-type-radio">
+        <input class="form-radio" type="radio" value="three" id="three" name="one">
+        <label class="option" for="three">three </label>
+      </div>
+    </div>
+  </div>
+
+<!-- Select field -->
+   <div class="form-item">
+    <label class="form-label">Select field</label>
+    <div class="selector">
+      <select class="form-select">
+        <option value="">Please select</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+  </div>
+
+<!-- Textarea -->
+  <div class="form-item">
+    <label>Textarea</label>
+    <textarea>Default textarea</textarea>
+  </div>
+
+</div>
+
+<div class="form-actions form-wrapper">
+   <input class="btn btn-primary" type="submit" value="Submit">
+   <input class="btn" type="reset" value="Cancel">
+</div>
+</form>
+
+```
+
+<h2>Form variations</h2>
+
+<h3>Horizontal form - Inline form </h3>
+
+Adding the class `.row` alongside `.form-wrapper` display those forms inline-block with vertical align in the middle, and the classes `.form-item` inside display inline-table.
+
+```
+<form>
+<!-- Text input with label, description and input -->
+  <div class="inline-form1">
+    <div class="form-wrapper row">
+      <div class="form-item">
+        <label for="edit-text2">
+          Input type text 1<span class="form-required" title="This field is required.">`*`</span>
+        </label>
+        <div class="form-description">input description, comes before the input.</div>
+        <input id="edit-text2" class="form-text" type="text" value="" />
+      </div>
+      <div class="form-item">
+        <label for="edit-text3">
+          Input type text 2<span class="form-required" title="This field is required.">`*`</span>
+        </label>
+        <div class="form-description">input description, comes before the input.</div>
+        <input id="edit-text3" class="form-text" type="text" value="" />
+      </div>
+    </div>
+    <div class="form-actions form-wrapper row">
+       <input class="btn btn-primary" type="submit" value="Submit">
+       <input class="btn" type="reset" value="Cancel">
+    </div>
+  </div>
+<!-- Text input with label and input -->
+  <div class="inline-form2">
+    <div class="form-wrapper row">
+      <div class="form-item">
+        <label for="edit-text4">
+          Input type text 1<span class="form-required" title="This field is required.">`*`</span>
+        </label>
+        <input id="edit-text4" class="form-text" type="text" value="" />
+      </div>
+      <div class="form-item">
+        <label for="edit-text5">
+          Input type text 2<span class="form-required" title="This field is required.">`*`</span>
+        </label>
+        <input id="edit-text5" class="form-text" type="text" value="" />
+      </div>
+    </div>
+    <div class="form-actions form-wrapper row">
+       <input class="btn btn-primary" type="submit" value="Submit">
+       <input class="btn" type="reset" value="Cancel">
+    </div>
+  </div>
+</form>
+
+```
+
+Buttons
+===
+
+<h2> Options </h2>
+
+Buttons get a standard `.btn` class, the element type should have no effect
+
+```
+<!-- Standard button -->
+<p>
+<input type="submit" value="input type=submit" class="btn">
+<button type="button" class="btn">button</button>
+<a href="#" role="button" class="btn">button link</a>
+</p>
+<!-- Primary button for form submits, navigation etc. -->
+<p>
+<input type="submit" value="input type=submit" class="btn btn-primary">
+<button type="button" class="btn btn-primary">button</button>
+<a href="#" role="button" class="btn btn-primary">button link</a>
+</p>
+```
+
+<h2> Size </h2>
+
+Fancy larger or smaller buttons? Add .btn-large or .btn-small for additional sizes. To display a button that stretches to full width of the parent container add .btn-block.
+
+```
+<!-- Standard button -->
+<p>
+<button type="button" class="btn">Standard button</button>
+<button type="button" class="btn btn-primary">Standard button</button>
+</p>
+
+<!-- Small button -->
+<p>
+<button type="button" class="btn btn-s">Small button</button>
+<button type="button" class="btn btn-primary btn-s">Small button</button>
+</p>
+
+<!-- large button -->
+<p>
+<button type="button" class="btn btn-l">Large button</button>
+<button type="button" class="btn btn-primary btn-l">Large button</button>
+</p>
+```
+Create block level buttons—those that span the full width of a parent— by adding .btn-block.
+```
+<div class="well" style="max-width: 400px; margin: 0 auto 10px;">
+<!-- Block button -->
+<button type="button" class="btn btn-block">Block button</button>
+<button type="button" class="btn btn-primary btn-block">Block button</button>
+</div>
+```
+
+<h2> Hover state </h2>
+
+Buttons will appear without text decoration and a soft box-shadow when hovered. For `<button>` elements, this is done via :hover. For `<a>` elements, it's done with .hover. We use .hover on `<button>`s here to replicate the active state progammatically.
+
+```
+<!-- Hover button (we need to add the class now to present it) -->
+<p>
+<button type="button" class="btn hover">Hovered standard button</button>
+<button type="button" class="btn btn-primary hover">Hovered primary button</button>
+</p>
+```
+
+<h2> Active state </h2>
+
+Buttons will appear pressed (with an inset shadow) when active. For `<button>` elements, this is done via :active. For `<a>` elements, it's done with .active. We use .active on `<button>`s here to replicate the active state progammatically.
+
+```
+<!-- Active button (we need to add the class now to present it) -->
+<p>
+<button type="button" class="btn active">Active standard button</button>
+<button type="button" class="btn btn-primary active">Active primary button</button>
+</p>
+```
+
+<h2> Disabled state </h2>
+
+Make buttons look unclickable by making them white.
+
+<h3> Button element </h3>
+
+Add the disabled attribute to `<button>` buttons.
+
+```
+<p>
+<button type="button" class="btn" disabled="disabled">Button</button>
+<button type="button" class="btn btn-primary" disabled="disabled">Primary button</button>
+</p>
+```
+
+<h3> Anchor element </h3>
+
+Add the .disabled class to `<a>` buttons.
+
+```
+<p>
+<a href="#" role="button" class="btn disabled">button link</a>
+<a href="#" role="button" class="btn btn-primary disabled">primary button link</a>
+</p>
+```
+*/

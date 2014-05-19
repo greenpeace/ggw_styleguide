@@ -1,0 +1,25 @@
+.breadcrumbs {
+  @extend %element-hidden;
+  @extend %hlist;
+  margin-bottom: $def-mar;
+
+  @include breakpoint($tab) {
+    display: block;
+  }
+}
+
+.breadcrumb-item {
+  margin-right: 3px;
+}
+
+.breadcrumb-link {
+  font-weight: 700;
+  display: block;
+
+  &:after {
+    color: #4D4D4D;
+    content: ' › ';
+    font-weight: 300;
+  }
+
+} // breadcrumb-link

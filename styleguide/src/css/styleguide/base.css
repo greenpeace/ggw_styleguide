@@ -1,0 +1,153 @@
+/*
+
+# Base #
+
+Typography
+===
+
+<h2> Paragraphs </h2>
+
+Paragraphs inside an article element get extra margin, otherwise the style is inherit from the body
+```
+<article>
+<p>Nullam ultricies tellus eget pretium faucibus. Vestibulum in tellus non urna consequat pharetra ut eget purus. Mauris scelerisque cursus mattis. Suspendisse in tincidunt mauris; eu dignissim massa. Proin consequat scelerisque nisl vitae dapibus. Aliquam iaculis, leo vitae dictum consectetur; leo tellus fringilla erat, et eleifend ligula nunc id ipsum. Vestibulum quis quam sit amet nibh pharetra posuere et a metus. Donec vestibulum sem sit amet turpis ultricies mattis ut ut leo. Pellentesque volutpat aliquam nunc eget posuere. Donec nec nisl varius orci scelerisque tempor sit amet in metus. Ut adipiscing justo ac nisl luctus, eget scelerisque risus tincidunt. In blandit dui id fermentum viverra.</p>
+
+<p>
+Ut in diam ornare eros volutpat malesuada vitae pharetra arcu? Integer ultricies sem in risus lobortis, eget facilisis neque scelerisque? Sed eu urna a enim scelerisque blandit in at tellus. Morbi tempus volutpat turpis, eget vehicula lacus placerat nec. Phasellus lacinia tempus elementum. Donec a vestibulum magna, quis euismod elit! Sed id accumsan erat. Proin vestibulum ut quam quis sagittis. Nunc ac justo sed diam tempus vehicula in sodales sapien. Cras sit amet faucibus risus! Nullam a velit vitae lacus ultrices accumsan? Nam mattis eget metus a imperdiet? Suspendisse sollicitudin ut est in lacinia. In suscipit, ipsum vel fermentum auctor, dui turpis lacinia augue, ut tincidunt tellus augue elementum dui. Aenean adipiscing iaculis dolor interdum ornare.
+</p>
+
+<p>
+Curabitur sodales rutrum augue; fermentum porta quam molestie vitae. Nullam egestas lorem quis nisi sollicitudin, nec euismod tellus mollis. Pellentesque porttitor felis ut risus iaculis volutpat. Etiam vestibulum, neque sed elementum dictum, odio nibh pharetra nulla, vel ullamcorper nisl justo in odio? Suspendisse potenti. Ut a pellentesque orci. Donec erat lorem, ultrices ut lacinia in, faucibus at nibh. Aliquam commodo pulvinar nulla sed molestie. Nam eu lacinia mi. Aenean eget bibendum libero, et vestibulum elit? Donec id metus velit. Mauris suscipit dolor sed blandit mattis. Etiam in mi arcu!
+</p>
+</article>
+```
+
+<h2> Listings </h2>
+
+Lists only get a default style when they are in an `<article>` element.
+
+<h3> Unordered List </h3>
+
+```
+<article>
+
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+  <li>Item 4
+    <ul>
+      <li> Subitem 1</li>
+      <li> Subitem 2</li>
+      <li> Subitem 3</li>
+    </ul>
+  </li>
+  <li>Item 5</li>
+  <li>Item 6</li>
+</ul>
+
+</article>
+```
+
+<h3> Ordered List </h3>
+
+```
+<article>
+
+<ol>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+  <li>Item 4
+    <ol>
+      <li> Subitem 1</li>
+      <li> Subitem 2</li>
+      <li> Subitem 3</li>
+    </ol>
+  </li>
+  <li>Item 5</li>
+  <li>Item 6</li>
+</ol>
+
+</article>
+```
+
+<h2> Headings </h2>
+
+```
+<article>
+<h1>h1. Greenpeace Greenwire heading</h1>
+<h2>h2. Greenpeace Greenwire heading</h2>
+<h3>h3. Greenpeace Greenwire heading</h3>
+<h4>h4. Greenpeace Greenwire heading</h4>
+<h5>h5. Greenpeace Greenwire heading</h5>
+<h6>h6. Greenpeace Greenwire heading</h6>
+</article>
+```
+
+<h3> Headings with text</h3>
+
+```
+<article>
+<h1>h1. Greenpeace Greenwire heading</h1>
+<p>
+Ut in diam ornare eros volutpat malesuada vitae pharetra arcu? Integer ultricies sem in risus lobortis, eget facilisis neque scelerisque? Sed eu urna a enim scelerisque blandit in at tellus. Morbi tempus volutpat turpis, eget vehicula lacus placerat nec. Phasellus lacinia tempus elementum. Donec a vestibulum magna, quis euismod elit! Sed id accumsan erat. Proin vestibulum ut quam quis sagittis. Nunc ac justo sed diam tempus vehicula in sodales sapien. Cras sit amet faucibus risus! Nullam a velit vitae lacus ultrices accumsan? Nam mattis eget metus a imperdiet? Suspendisse sollicitudin ut est in lacinia. In suscipit, ipsum vel fermentum auctor, dui turpis lacinia augue, ut tincidunt tellus augue elementum dui. Aenean adipiscing iaculis dolor interdum ornare.
+</p>
+<h2>h2. Greenpeace Greenwire heading</h2>
+<p>
+Ut in diam ornare eros volutpat malesuada vitae pharetra arcu? Integer ultricies sem in risus lobortis, eget facilisis neque scelerisque? Sed eu urna a enim scelerisque blandit in at tellus. Morbi tempus volutpat turpis, eget vehicula lacus placerat nec. Phasellus lacinia tempus elementum. Donec a vestibulum magna, quis euismod elit! Sed id accumsan erat. Proin vestibulum ut quam quis sagittis. Nunc ac justo sed diam tempus vehicula in sodales sapien. Cras sit amet faucibus risus! Nullam a velit vitae lacus ultrices accumsan? Nam mattis eget metus a imperdiet? Suspendisse sollicitudin ut est in lacinia. In suscipit, ipsum vel fermentum auctor, dui turpis lacinia augue, ut tincidunt tellus augue elementum dui. Aenean adipiscing iaculis dolor interdum ornare.
+</p>
+<h3>h3. Greenpeace Greenwire heading</h3>
+<p>
+Ut in diam ornare eros volutpat malesuada vitae pharetra arcu? Integer ultricies sem in risus lobortis, eget facilisis neque scelerisque? Sed eu urna a enim scelerisque blandit in at tellus. Morbi tempus volutpat turpis, eget vehicula lacus placerat nec. Phasellus lacinia tempus elementum. Donec a vestibulum magna, quis euismod elit! Sed id accumsan erat. Proin vestibulum ut quam quis sagittis. Nunc ac justo sed diam tempus vehicula in sodales sapien. Cras sit amet faucibus risus! Nullam a velit vitae lacus ultrices accumsan? Nam mattis eget metus a imperdiet? Suspendisse sollicitudin ut est in lacinia. In suscipit, ipsum vel fermentum auctor, dui turpis lacinia augue, ut tincidunt tellus augue elementum dui. Aenean adipiscing iaculis dolor interdum ornare.
+</p>
+<h4>h4. Greenpeace Greenwire heading</h4>
+<p>
+Ut in diam ornare eros volutpat malesuada vitae pharetra arcu? Integer ultricies sem in risus lobortis, eget facilisis neque scelerisque? Sed eu urna a enim scelerisque blandit in at tellus. Morbi tempus volutpat turpis, eget vehicula lacus placerat nec. Phasellus lacinia tempus elementum. Donec a vestibulum magna, quis euismod elit! Sed id accumsan erat. Proin vestibulum ut quam quis sagittis. Nunc ac justo sed diam tempus vehicula in sodales sapien. Cras sit amet faucibus risus! Nullam a velit vitae lacus ultrices accumsan? Nam mattis eget metus a imperdiet? Suspendisse sollicitudin ut est in lacinia. In suscipit, ipsum vel fermentum auctor, dui turpis lacinia augue, ut tincidunt tellus augue elementum dui. Aenean adipiscing iaculis dolor interdum ornare.
+</p>
+<h5>h5. Greenpeace Greenwire heading</h5>
+<p>
+Ut in diam ornare eros volutpat malesuada vitae pharetra arcu? Integer ultricies sem in risus lobortis, eget facilisis neque scelerisque? Sed eu urna a enim scelerisque blandit in at tellus. Morbi tempus volutpat turpis, eget vehicula lacus placerat nec. Phasellus lacinia tempus elementum. Donec a vestibulum magna, quis euismod elit! Sed id accumsan erat. Proin vestibulum ut quam quis sagittis. Nunc ac justo sed diam tempus vehicula in sodales sapien. Cras sit amet faucibus risus! Nullam a velit vitae lacus ultrices accumsan? Nam mattis eget metus a imperdiet? Suspendisse sollicitudin ut est in lacinia. In suscipit, ipsum vel fermentum auctor, dui turpis lacinia augue, ut tincidunt tellus augue elementum dui. Aenean adipiscing iaculis dolor interdum ornare.
+</p>
+<h6>h6. Greenpeace Greenwire heading</h6>
+<p>
+Ut in diam ornare eros volutpat malesuada vitae pharetra arcu? Integer ultricies sem in risus lobortis, eget facilisis neque scelerisque? Sed eu urna a enim scelerisque blandit in at tellus. Morbi tempus volutpat turpis, eget vehicula lacus placerat nec. Phasellus lacinia tempus elementum. Donec a vestibulum magna, quis euismod elit! Sed id accumsan erat. Proin vestibulum ut quam quis sagittis. Nunc ac justo sed diam tempus vehicula in sodales sapien. Cras sit amet faucibus risus! Nullam a velit vitae lacus ultrices accumsan? Nam mattis eget metus a imperdiet? Suspendisse sollicitudin ut est in lacinia. In suscipit, ipsum vel fermentum auctor, dui turpis lacinia augue, ut tincidunt tellus augue elementum dui. Aenean adipiscing iaculis dolor interdum ornare.
+</p>
+</article>
+```
+
+<h2> Links </h2>
+
+**`:visited`** - When the link is visited, it keeps the color and has no decoration. <br />
+**`:hover`** - When the link is hovered, the cursor became a pointer and the link is underlined. <br />
+**`:focus`** - When the link is focused, the link is underlined and with a thin dotted outline.
+
+```
+Velit aliquam magna <a href="#">convallis venenatis vulputate</a> neque egestas eget vitae.
+```
+
+<h2> Common </h2>
+
+```
+<!-- Strong -->
+<p>Ipsum venenatis magna <strong>strong</strong> porta velit iaculis a. </p>
+<!-- Bold -->
+<p>Eros accumsan et <b>bold</b> in eget dui vestibulum.</p>
+<!-- Emphasis -->
+<p>Erat eget lorem <em>emphasis</em> sit euismod vitae elit. </p>
+<!-- Italic -->
+<p>Amet massa dui <i>italic</i> vestibulum nunc sit vitae.</p>
+<!-- Strikethrough -->
+<p>Lorem pellentesque in <s>strikethrough</s> nunc eros dui vulputate.</p>
+<!-- Underline -->
+<p>Est elit elit <u>underline</u> velit dolor euismod aliquam.</p>
+<!-- Small -->
+<p>Est felis ut <small>small</small> turpis vitae convallis auctor.</p>
+<!-- Subscript -->
+<p>Velit duis nam <sub>subscript</sub> aliquam tempor id erat.</p>
+<!-- Superscript -->
+<p>Neque luctus aliquam <sup>superscript</sup> turpis mattis pellentesque sit.</p>
+
+```
+
+*/

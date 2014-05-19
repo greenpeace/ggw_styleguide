@@ -1,0 +1,19 @@
+.header {
+  background-color: $green1;
+  height: 50px;
+
+  @include breakpoint($desk) {
+    height: 88px;
+
+    // the background is inserted via pseudo element because it is not present on mobile
+    &:after {
+      display: block;
+      background-color: $green2;
+      content:'';
+      height: 28px;
+      position: absolute;
+      top: 60px;
+      width: 100%;
+    }
+  }
+}

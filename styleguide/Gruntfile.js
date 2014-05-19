@@ -4,7 +4,8 @@ module.exports = function (grunt) {
 
   var config = {
     src: 'src',
-    styleguide: 'styleguide'
+    dist: 'dist',
+    styleguide: 'styleguide/src/'
   };
 
 /** Configuration */
@@ -15,24 +16,28 @@ module.exports = function (grunt) {
 
     watch: {
       options: {
-        livereload: true
+       // livereload: true
       },
       sass: {
-        files: ['<%= config.src %>/sass/{,**/}*.{scss,sass}'],
-        tasks: ['compass:dev'],
+        files: ['<%= config.src %>/sass/{,**/}*.scss'],
+        tasks: ['compass:dist'],
         options: {
-          livereload: false
+          livereload: 8000
         }
       },
       images: {
         files: ['<%= config.src %>/images/**']
       },
       css: {
-        files: ['<%= config.src %>/css/{,**/}*.css']
+        files: ['<%= config.src %>/css/{,**/}*.css'],
       },
       js: {
         files: ['<%= config.src %>/js/{,**/}*.js', '!<%= config.src %>/js/{,**/}*.js'],
         tasks: ['jshint', 'uglify:dev']
+      },
+      styles: {
+        files: ['<%= config.src %>/css/{,**/}*.css'],
+        tasks: ['autoprefixer:src']
       }
     },
 
@@ -41,26 +46,79 @@ module.exports = function (grunt) {
         config: 'config.rb',
         bundleExec: true
       },
-      dev: {
-        options: {
-          environment: 'development',
-          force: true
-        }
-      },
       dist: {
         options: {
           environment: 'production',
           force: true
         }
+      },
+    },
+
+    autoprefixer: {
+      src: {
+        src: '<%= config.src %>/css/ggw.styleguide.css, <%= config.src %>/css/ggw.styles.css '
       }
     },
 
     copy: {
       styleguide: {
         nonull: true,
-        src: '<%= config.src %>/css/styleguide.css',
-        dest: '<%= config.styleguide %>/css/styleguide.css'
+        files: [
+          { expand: true,
+            flatten: true,
+            src: ['<%= config.src %>/css/styleguide/*'],
+            dest: '<%= config.styleguide %>/css/'
+          }
+        ]
       },
+      styleguideImages: {
+        files: [
+          { expand: true,
+            cwd: '<%= config.src %>/images/',
+            src: ['*'],
+            dest: '<%= config.styleguide %>/images/'
+          }
+        ]
+      },
+      styleguideFont: {
+        files: [
+          { expand: true,
+            cwd: '<%= config.src %>/font/',
+            src: ['*'],
+            dest: '<%= config.styleguide %>/font/'
+          }
+        ]
+      }
+    },
+
+    comments: {
+      normalize: {
+        src: [ '<%= config.src %>/css/ggw.normalize.css' ]
+      },
+      styleguide: {
+        src: [ '<%= config.src %>/css/styleguide/ggw.styleguide.css' ]
+      }
+    },
+
+    concat: {
+      css: {
+        files: {
+          '<%= config.src %>/css/styleguide/ggw.styleguide.css':[
+            '<%= config.src %>/css/ggw.styleguide.css',
+            '<%= config.src %>/css/ggw.normalize.css',
+            '<%= config.src %>/css/ggw.styles.css'
+          ]
+        }
+      },
+      styleguideJS: {
+        files: {
+          '<%= config.src %>/js/styleguide.js': [
+            '<%= config.src %>/js/jquery.1.11.0.js',
+            '<%= config.src %>/js/jquery-plugins/*.js',
+            '<%= config.src %>/js/jquery.runscripts.js',
+          ]
+        }
+      }
     },
 
     jshint: {
@@ -71,6 +129,16 @@ module.exports = function (grunt) {
     },
 
     uglify: {
+      styleguide: {
+        options: {
+          preserveComments: 'all',
+          mangle: true
+        },
+        files: {
+          '<%= config.styleguide %>/js/styleguide.min.js': '<%= config.src %>/js/styleguide.js'
+        }
+      },
+
       dev: {
         options: {
           mangle: false,
@@ -101,6 +169,9 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-stripcomments');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -113,9 +184,13 @@ module.exports = function (grunt) {
     'jshint'
   ]);
 
-  grunt.registerTask('css', [
+  grunt.registerTask('styleguide', [
     'compass:dist',
-    'copy:styleguide'
+    'autoprefixer:src',
+    'comments:normalize',
+    'concat',
+    'uglify:styleguide',
+    'copy'
   ]);
 
 };

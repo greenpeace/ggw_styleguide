@@ -2,12 +2,10 @@
   background-color: $green1;
   height: 50px;
 
-  @include breakpoint($tab) {
-
+  @include breakpoint($desk) {
     height: 88px;
 
     // the background is inserted via pseudo element because it is not present on mobile
-
     &:after {
       display: block;
       background-color: $green2;

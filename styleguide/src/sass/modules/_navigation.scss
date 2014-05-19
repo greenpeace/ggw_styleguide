@@ -5,12 +5,20 @@
   font-size: 2.4em;
   line-height: 34px;
   color: $white;
+
+  @include breakpoint($tab) {
+    left: 15px;
+  }
 }
 
 .nav-btn + .nav-btn {
   left: auto;
   right: 10px;
   font-size: 1.8em;
+
+    @include breakpoint($tab) {
+    right: 15px;
+  }
 }
 
 .off-canvas {

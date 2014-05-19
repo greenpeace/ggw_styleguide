@@ -135,7 +135,7 @@ gulp.task('clean-dist', function() {
 
 // compile both sass base files, create one js file and optimize and copy images
 gulp.task('build', ['clean-dist'], function() {
-    gulp.start('modern', 'oldie', 'build-scripts', 'images');
+  gulp.start('modern', 'oldie', 'build-scripts', 'images');
 });
 
 ///
@@ -179,7 +179,11 @@ gulp.task('font-styleguide', function() {
     .pipe(gulp.dest('styleguide/src/font'));
 });
 
-// Build style guide out of other tasks and make sure 'modern' is run before the tasks
-gulp.task('build-styleguide', ['modern'], function() {
+// Build style guide out of other tasks and make sure 'compass-all' and 'modern' is run before the tasks
+gulp.task('build-styleguide', ['compass-all', 'modern'], function() {
   gulp.start('css-styleguide', 'docs-styleguide', 'js-styleguide', 'img-styleguide', 'font-styleguide');
+});
+
+gulp.task('watch-styleguide', function() {
+  gulp.watch('src/sass/**/*.scss', ['build-styleguide']);
 });

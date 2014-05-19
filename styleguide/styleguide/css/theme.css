@@ -10,6 +10,8 @@ The menu is **fixed** and the page contained simply aligns itself 200px from the
 html, body, .kalei {
   height: 100% !important;
   background: #f6f4f4;
+  width: 1200px; /* (280+20)+900 */
+  margin: 5em auto;
 }
 
 body {
@@ -20,10 +22,15 @@ body {
 
 .kalei-style-menu-container {
   position: fixed;
-  width: 300px;
+  width: 280px;
+  margin-right: 20px;
   height: 100%;
   border-right: 1px solid #ccc;
   background-color: #fff;
+}
+
+.kalei-style-menu-container .menu-items {
+  width: 100%;
 }
 
 .kalei-styleguide-menu {
@@ -33,9 +40,10 @@ body {
 }
 
 .kalei-style-page {
+  width: 900px;
   margin-left: 300px;
-  padding: 20px;
   background-color: #f6f4f4;
+  padding-bottom: 0;
 }
 
 /*
@@ -201,7 +209,11 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
 *:not(.codedemo) .kalei-styleguide-menu-heading,
 .styleguide-menu-heading:visited {
   text-decoration: none;
+  background: #444;
 }
+  .logotype{
+    padding-left: 1em;
+  }
 
 *:not(.codedemo) .kalei-styleguide-menu-heading:hover {
   color: #222;

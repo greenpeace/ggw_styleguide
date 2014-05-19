@@ -122,6 +122,10 @@ figure {
 
 hr {
   -moz-box-sizing: content-box;
+<<<<<<< HEAD
+=======
+  -webkit-box-sizing: content-box;
+>>>>>>> develop
   box-sizing: content-box;
   height: 0;
 }
@@ -183,6 +187,11 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
+<<<<<<< HEAD
+=======
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+>>>>>>> develop
   box-sizing: border-box;
   padding: 0;
 }
@@ -242,6 +251,10 @@ th {
 
 .white-popup {
   border-radius: 4px;
+<<<<<<< HEAD
+=======
+  -webkit-box-shadow: 0 1px 3px 0 #999999;
+>>>>>>> develop
   box-shadow: 0 1px 3px 0 #999999;
   width: auto;
   max-width: 700px;
@@ -269,18 +282,24 @@ th {
   content: '\e807';
 }
 
+<<<<<<< HEAD
 .icon-user:before {
   content: '\e812';
 }
 
+=======
+>>>>>>> develop
 .icon-user-add:before {
   content: '\e811';
 }
 
+<<<<<<< HEAD
 .icon-menu:before {
   content: '\e804';
 }
 
+=======
+>>>>>>> develop
 input[type="checkbox"] + label:before {
   content: '\e81c';
 }
@@ -350,6 +369,7 @@ body {
   background-color: #eeeeee;
 }
 
+<<<<<<< HEAD
 #outer-wrap,
 #inner-wrap {
   position: relative;
@@ -367,6 +387,23 @@ body {
   display: block;
   width: 100%;
   height: 34px;
+=======
+.logo {
+  background-image: url(../images/logo.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size: auto 28px;
+  background-size: auto 28px;
+  display: block;
+  width: 100%;
+  height: 28px;
+}
+@media (min-width: 768px) {
+  .logo {
+    height: 34px;
+    -webkit-background-size: auto 34px;
+    background-size: auto 34px;
+  }
+>>>>>>> develop
 }
 
 .block,
@@ -379,6 +416,10 @@ body {
   .block,
   .main-content {
     border-radius: 4px;
+<<<<<<< HEAD
+=======
+    -webkit-box-shadow: 0 1px 3px 0 #999999;
+>>>>>>> develop
     box-shadow: 0 1px 3px 0 #999999;
   }
 }
@@ -395,6 +436,16 @@ body {
   float: left;
 }
 
+<<<<<<< HEAD
+=======
+@font-face {
+  font-family: "greenwire-10";
+  src: url("../font/greenwire-10.eot?26487031");
+  src: url("../font/greenwire-10.eot?26487031#iefix") format("embedded-opentype"), url("../font/greenwire-10.woff?26487031") format("woff"), url("../font/greenwire-10.ttf?26487031") format("truetype"), url("../font/greenwire-10.svg?26487031#greenwire-10") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+>>>>>>> develop
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   line-height: 1.2em;
@@ -416,6 +467,12 @@ a {
   color: #559f0c;
   text-decoration: none;
 }
+<<<<<<< HEAD
+=======
+a:hover {
+  text-decoration: underline;
+}
+>>>>>>> develop
 a:focus {
   text-decoration: underline;
   outline: thin dotted;
@@ -428,9 +485,12 @@ strong, b {
 article p {
   margin: 0.65em 0 0.95em;
 }
+<<<<<<< HEAD
 article a:hover {
   text-decoration: underline;
 }
+=======
+>>>>>>> develop
 article ul,
 article ol {
   margin: 0 0 10px 0;
@@ -481,6 +541,11 @@ article h6 {
 
 .btn {
   background: whitesmoke;
+<<<<<<< HEAD
+=======
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#ededed));
+  background-image: -webkit-linear-gradient(#f5f5f5, #ededed);
+>>>>>>> develop
   background-image: linear-gradient(#f5f5f5, #ededed);
   display: inline-block;
   cursor: pointer;
@@ -494,6 +559,10 @@ article h6 {
   font-weight: 700;
 }
 .btn:hover, .btn.hover, .btn:focus {
+<<<<<<< HEAD
+=======
+  -webkit-box-shadow: 0 1px 2px 0 #cccccc;
+>>>>>>> develop
   box-shadow: 0 1px 2px 0 #cccccc;
   text-decoration: none;
   outline: 0;
@@ -501,6 +570,10 @@ article h6 {
 .btn:active, .btn.active {
   top: 1px;
   position: relative;
+<<<<<<< HEAD
+=======
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+>>>>>>> develop
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
 }
 .btn[disabled], .btn.disabled {
@@ -510,6 +583,10 @@ article h6 {
   cursor: default;
 }
 .btn[disabled]:active, .btn[disabled]:hover, .btn[disabled]:focus, .btn.disabled:active, .btn.disabled:hover, .btn.disabled:focus {
+<<<<<<< HEAD
+=======
+  -webkit-box-shadow: none;
+>>>>>>> develop
   box-shadow: none;
 }
 .btn[disabled]:active, .btn.disabled:active {
@@ -588,7 +665,11 @@ label {
 input[type='text'],
 input[type='password'],
 textarea {
+<<<<<<< HEAD
   padding: .4em .5em .3em .5em;
+=======
+  padding: .4em .5em .4em .5em;
+>>>>>>> develop
   border: 1px solid #cccccc;
   border-radius: 3px;
   width: 100%;
@@ -603,6 +684,10 @@ input[type='text']:focus,
 input[type='password']:focus,
 textarea:focus {
   border-color: #66cc00;
+<<<<<<< HEAD
+=======
+  -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+>>>>>>> develop
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 input[type='text']:disabled,
@@ -660,6 +745,10 @@ input[type="radio"]:checked + label:before {
   cursor: pointer;
   position: relative;
   border-radius: 3px;
+<<<<<<< HEAD
+=======
+  -webkit-background-clip: padding-box;
+>>>>>>> develop
   background-clip: padding-box;
   background-color: white;
   display: inline-block;
@@ -682,7 +771,11 @@ input[type="radio"]:checked + label:before {
   z-index: 4;
   position: relative;
   display: block;
+<<<<<<< HEAD
   padding: 4px 24px 3px 7px;
+=======
+  padding: 4px 24px 2px 7px;
+>>>>>>> develop
   background: transparent;
   border: none;
   text-overflow: ellipsis;
@@ -695,6 +788,10 @@ input[type="radio"]:checked + label:before {
 .progress-bar-wrapper {
   background-color: #F5F5F5;
   border-radius: 4px;
+<<<<<<< HEAD
+=======
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+>>>>>>> develop
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
   min-height: 20px;
   margin-bottom: 15px;
@@ -783,7 +880,10 @@ img, media {
 }
 
 .mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+<<<<<<< HEAD
   cursor: -moz-zoom-out;
+=======
+>>>>>>> develop
   cursor: -webkit-zoom-out;
   cursor: zoom-out;
 }
@@ -791,7 +891,10 @@ img, media {
 .mfp-zoom {
   cursor: pointer;
   cursor: -webkit-zoom-in;
+<<<<<<< HEAD
   cursor: -moz-zoom-in;
+=======
+>>>>>>> develop
   cursor: zoom-in;
 }
 
@@ -805,6 +908,10 @@ img, media {
 .mfp-counter {
   -webkit-user-select: none;
   -moz-user-select: none;
+<<<<<<< HEAD
+=======
+  -ms-user-select: none;
+>>>>>>> develop
   user-select: none;
 }
 
@@ -1006,6 +1113,10 @@ button::-moz-focus-inner {
   left: 0;
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
+=======
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+>>>>>>> develop
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
   background: black;
 }
@@ -1039,6 +1150,10 @@ img.mfp-img {
   width: auto;
   height: auto;
   z-index: -1;
+<<<<<<< HEAD
+=======
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+>>>>>>> develop
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
   background: #444444;
 }
@@ -1129,16 +1244,28 @@ img.mfp-img {
 @media all and (max-width: 900px) {
   .mfp-arrow {
     -webkit-transform: scale(0.75);
+<<<<<<< HEAD
+=======
+    -ms-transform: scale(0.75);
+>>>>>>> develop
     transform: scale(0.75);
   }
 
   .mfp-arrow-left {
     -webkit-transform-origin: 0;
+<<<<<<< HEAD
+=======
+    -ms-transform-origin: 0;
+>>>>>>> develop
     transform-origin: 0;
   }
 
   .mfp-arrow-right {
     -webkit-transform-origin: 100%;
+<<<<<<< HEAD
+=======
+    -ms-transform-origin: 100%;
+>>>>>>> develop
     transform-origin: 100%;
   }
 
@@ -1197,6 +1324,7 @@ img.mfp-img {
   background: #d50d00;
 }
 
+<<<<<<< HEAD
 @font-face {
   font-family: "greenwire-10";
   src: url("../font/greenwire-10.eot?26487031");
@@ -1204,6 +1332,8 @@ img.mfp-img {
   font-weight: normal;
   font-style: normal;
 }
+=======
+>>>>>>> develop
 .block-icon {
   position: absolute;
   left: 0;
@@ -1249,12 +1379,19 @@ img.mfp-img {
 
 .header {
   background-color: #66cc00;
+<<<<<<< HEAD
   height: 50px;
 }
 @media (min-width: 768px) {
   .header {
     height: 88px;
   }
+=======
+  height: 88px;
+}
+
+@media (min-width: 768px) {
+>>>>>>> develop
   .header:after {
     display: block;
     background-color: #56b004;
@@ -1265,6 +1402,7 @@ img.mfp-img {
     width: 100%;
   }
 }
+<<<<<<< HEAD
 
 .nav-btn {
   left: 10px;
@@ -1363,6 +1501,8 @@ img.mfp-img {
   transform: translate3d(-80%, 0, 0) scale3d(1, 1, 1);
 }
 
+=======
+>>>>>>> develop
 .main-menu {
   position: relative;
 }
@@ -1552,6 +1692,7 @@ img.mfp-img {
 }
 
 .l-branding {
+<<<<<<< HEAD
   width: 134px;
   margin: 0 auto;
   position: relative;
@@ -1574,6 +1715,20 @@ img.mfp-img {
     margin-left: 0;
     margin-right: 2.12766%;
   }
+=======
+  width: 48.93617%;
+  clear: right;
+  float: left;
+  margin-right: 2.12766%;
+}
+
+.l-navigation {
+  width: 23.40426%;
+  clear: right;
+  float: left;
+  margin-left: 0;
+  margin-right: 2.12766%;
+>>>>>>> develop
 }
 
 .l-interface {
@@ -1584,6 +1739,17 @@ img.mfp-img {
 }
 
 @media (min-width: 768px) {
+<<<<<<< HEAD
+=======
+  .l-branding {
+    width: 14.89362%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 2.12766%;
+  }
+
+>>>>>>> develop
   .l-header-navigation {
     width: 100%;
     float: right;
@@ -1594,9 +1760,13 @@ img.mfp-img {
     bottom: -11px;
     z-index: 2;
   }
+<<<<<<< HEAD
 }
 
 @media (min-width: 768px) {
+=======
+
+>>>>>>> develop
   .block-search {
     width: 23.40426%;
     clear: right;
@@ -1607,7 +1777,10 @@ img.mfp-img {
     right: 0;
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
 .l-main {
   margin: 15px auto;
 }

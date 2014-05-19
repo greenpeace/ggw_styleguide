@@ -12,6 +12,8 @@ All forms fields are wrapped in a `.form-item`. This provides the white-space ar
 ```
 <form>
 <div class="form-wrapper">
+
+<!-- Input type text-->
   <div class="form-item">
     <label for="edit-text1">
       Input type text <span class="form-required" title="This field is required.">`*`</span>
@@ -20,6 +22,7 @@ All forms fields are wrapped in a `.form-item`. This provides the white-space ar
     <input id="edit-text1" class="form-text" type="text" value="" />
   </div>
 
+<!-- Password field -->
   <div class="form-item">
     <label for="password">
       Password field <span class="form-required" title="This field is required.">`*`</span>
@@ -27,16 +30,16 @@ All forms fields are wrapped in a `.form-item`. This provides the white-space ar
     <input id="password" class="form-text" type="password" value=""  />
   </div>
 
-  <div class="form-item">
+<!-- Checkbox -->
+  <div class="form-item form-type-checkbox">
     <input type="checkbox" id="check1" value="1" checked="checked" class="form-checkbox" />
     <label class="option" for="check1">checkbox field that is checked by default </label>
   </div>
 
+<!-- Radios -->
   <div class="form-item">
-
     <label>Radios</label>
     <div class="form-radios">
-
       <div class="form-type-radio">
         <input class="form-radio" type="radio" value="one" name="one" id="one">
         <label class="option" for="one">one </label>
@@ -49,29 +52,27 @@ All forms fields are wrapped in a `.form-item`. This provides the white-space ar
         <input class="form-radio" type="radio" value="three" id="three" name="one">
         <label class="option" for="three">three </label>
       </div>
-
     </div>
-
   </div>
 
+<!-- Select field -->
    <div class="form-item">
-
-    <label>Select field</label>
-    <select>
-      <option value="">Please select</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-
+    <label class="form-label">Select field</label>
+    <div class="selector">
+      <select class="form-select">
+        <option value="">Please select</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
   </div>
 
+<!-- Textarea -->
   <div class="form-item">
-
     <label>Textarea</label>
     <textarea>Default textarea</textarea>
-
   </div>
 
 </div>
@@ -92,7 +93,7 @@ Adding the class `.row` alongside `.form-wrapper` display those forms inline-blo
 
 ```
 <form>
-<!-- Full form with label, description and input -->
+<!-- Text input with label, description and input -->
   <div class="inline-form1">
     <div class="form-wrapper row">
       <div class="form-item">
@@ -115,7 +116,7 @@ Adding the class `.row` alongside `.form-wrapper` display those forms inline-blo
        <input class="btn" type="reset" value="Cancel">
     </div>
   </div>
-<!-- Form with label and input -->
+<!-- Text input with label and input -->
   <div class="inline-form2">
     <div class="form-wrapper row">
       <div class="form-item">

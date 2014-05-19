@@ -612,7 +612,7 @@ label {
 input[type='text'],
 input[type='password'],
 textarea {
-  padding: .4em .5em .3em .5em;
+  padding: .4em .5em .4em .5em;
   border: 1px solid #cccccc;
   border-radius: 3px;
   width: 100%;
@@ -708,7 +708,7 @@ input[type="radio"]:checked + label:before {
   z-index: 4;
   position: relative;
   display: block;
-  padding: 4px 24px 3px 7px;
+  padding: 4px 24px 2px 7px;
   background: transparent;
   border: none;
   text-overflow: ellipsis;

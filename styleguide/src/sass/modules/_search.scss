@@ -1,9 +1,27 @@
-.block-search .form-actions {
-  @extend %load-icon;
-  @extend %icon-search;
+.block-search .form-text {
+  border: none;
+  padding: .95em 1em;
+  max-width: 99.8%;
+  border-radius: 0;
+  @include font-size(16px); //prevents safari from zooming in on focus
+
+  &:focus {
+    box-shadow: none;
+    border: none;
+  }
 }
 
-@include breakpoint($tab) {
+.block-search .form-actions {
+  @extend %element-hidden;
+  @extend %load-icon;
+  @extend %icon-search;
+
+  @include breakpoint($desk) {
+    display: block;
+  }
+}
+
+@include breakpoint($desk) {
   .search-form {
     position: relative;
 

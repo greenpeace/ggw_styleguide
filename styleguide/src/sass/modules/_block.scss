@@ -1,26 +1,35 @@
+.sidebar .block {
+  margin-bottom: $def-mar;
+}
+
 .block-icon {
   position: absolute;
-  left: 0;
+  left: 15px;
   top: 0;
   width: 36px;
   height: 36px;
   line-height: 36px;
-  border-radius: 0 0 4px 0;
+  border-radius: 4px;
   color: $white;
   @include font-size($h2);
 
   @include breakpoint($tab) {
     border-radius: 4px 0;
+    left: 0;
+  }
+
+}
+
+.block-title,
+.title-prefix {
+  margin-left: 45px;
+  line-height: 1.4em;
+
+  @include breakpoint($tab) {
+    margin-left: 30px;
   }
 }
 
-.main-content,
-.block-with-icon {
-
-  .block-title,
-  .title-prefix {
-    margin-left: 30px;
-    line-height: 1.3em;
-  }
-
+.block-no-icon .block-title {
+  margin-left: 0;
 }

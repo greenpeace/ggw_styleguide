@@ -3,6 +3,8 @@
 
 <noscript><div id="javascript-disabled">Your JavaScript seems to be disabled, this might affect your experience on Greenpeace Greenwire.</div></noscript>
 
+<div id="outer-wrap">
+<div id="inner-wrap">
 
 <?php include('modules/header.php'); ?>
 
@@ -78,7 +80,7 @@
 
   <aside class="l-sidebar sidebar">
 
-    <div class="block">
+    <div class="block block-no-icon">
 
       <h2 class="block-title">Help us save Planet Earth</h2>
       <div class="content">
@@ -97,5 +99,7 @@
 
 </footer>
 <!-- put js here -->
+
+</div></div>
 </body>
 </html>

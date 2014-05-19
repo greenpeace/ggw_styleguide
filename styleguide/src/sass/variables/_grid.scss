@@ -7,6 +7,8 @@ $tab: 768px;
 $desk: 1024px;
 $wide: 1200px;
 
+$nav-off-canvas-width: 80%;
+
 @include add-grid(12);
 @include add-gutter(1/3);
 @include sgs-change('output', 'float');

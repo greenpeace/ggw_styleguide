@@ -1,6 +1,10 @@
 .container {
-  position:   relative;
+  position: relative;
   @include pie-clearfix;
+
+  @include breakpoint($tab) {
+    padding: 0 $def-mar;
+  }
 
   @include breakpoint($desk) {
     width:  960px;
@@ -12,38 +16,34 @@
 .l-header {
   padding-top: $def-mar-half;
 
-  @include breakpoint($tab) {
+  @include breakpoint($desk) {
     padding-top: $def-mar;
   }
 }
 
-
 .l-branding {
-  @include grid-span(6, 4);
-}
+  width: 134px;
+  margin: 0 auto;
+  position: relative;
 
-.l-navigation {
-  @include grid-span(3, 1);
-}
-
-.l-interface {
-  @include grid-span(3, 9);
-}
-
-@include breakpoint($tab) {
-
-  .l-branding {
+  @include breakpoint($desk) {
     @include grid-span(2, 1);
   }
+}
 
-  .l-header-navigation {
+.l-header-navigation {
+
+  @include breakpoint($desk) {
     @include isolation-span(12, 1, 'both');
     position: relative;
     bottom: -11px;
     z-index: 2;
   }
+}
 
-  .block-search {
+.block-search {
+
+  @include breakpoint($desk) {
     @include grid-span(3, 9);
     bottom: 36px;
     position: absolute;

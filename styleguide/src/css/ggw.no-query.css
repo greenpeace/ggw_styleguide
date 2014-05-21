@@ -496,14 +496,15 @@ article h6 {
   background-image: linear-gradient(#f5f5f5, #ededed);
   display: inline-block;
   cursor: pointer;
-  border-radius: .1em;
+  border-radius: .15em;
   border: 1px solid #cccccc;
   color: #4d4d4d;
-  padding: .3em 1.8em;
+  padding: .35em .5em;
   line-height: normal;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.15em;
   font-weight: 700;
+  text-transform: lowercase;
 }
 .button:hover, .button:focus {
   -webkit-box-shadow: 0 1px 2px 0 #cccccc;

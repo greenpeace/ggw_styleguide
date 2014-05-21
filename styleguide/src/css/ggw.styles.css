@@ -432,7 +432,7 @@ ul, li {
 .block-title {
   text-transform: uppercase;
   color: #1a1a1a;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 a {
@@ -473,24 +473,25 @@ article ol li {
 article h1, article h2, article h3, article h4, article h5, article h6 {
   margin: 10px 0;
   line-height: 1.5em;
+  font-family: Helvetica, Arial, sans-serif;
 }
 article h1 {
-  font-size: 1.375rem;
+  font-size: 1.75rem;
 }
 article h2 {
-  font-size: 1.25rem;
+  font-size: 1.375rem;
 }
 article h3 {
-  font-size: 1.125rem;
+  font-size: 1.1875rem;
 }
 article h4 {
   font-size: 1rem;
 }
 article h5 {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
 }
 article h6 {
-  font-size: 0.875rem;
+  font-size: 0.6875rem;
 }
 
 .title-prefix {
@@ -700,7 +701,7 @@ input[type="radio"]:checked + label:before {
   position: absolute;
   top: 2px;
   right: 0;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   padding: 0 7px;
 }
 .selector select {
@@ -1227,7 +1228,7 @@ img.mfp-img {
   line-height: 36px;
   border-radius: 4px;
   color: white;
-  font-size: 1.25rem;
+  font-size: 1.375rem;
 }
 @media (min-width: 768px) {
   .block-icon {
@@ -1596,7 +1597,7 @@ img.mfp-img {
     background: #56b004;
     padding: 0 0 0 2px;
     color: white;
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 .sidebar .content {

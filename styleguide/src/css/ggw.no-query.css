@@ -419,7 +419,7 @@ ul, li {
 .block-title {
   text-transform: uppercase;
   color: #1a1a1a;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 a {
@@ -460,24 +460,25 @@ article ol li {
 article h1, article h2, article h3, article h4, article h5, article h6 {
   margin: 10px 0;
   line-height: 1.5em;
+  font-family: Helvetica, Arial, sans-serif;
 }
 article h1 {
-  font-size: 22px;
+  font-size: 28px;
 }
 article h2 {
-  font-size: 20px;
+  font-size: 22px;
 }
 article h3 {
-  font-size: 18px;
+  font-size: 19px;
 }
 article h4 {
   font-size: 16px;
 }
 article h5 {
-  font-size: 14px;
+  font-size: 13px;
 }
 article h6 {
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .title-prefix {
@@ -687,7 +688,7 @@ input[type="radio"]:checked + label:before {
   position: absolute;
   top: 2px;
   right: 0;
-  font-size: 14px;
+  font-size: 13px;
   padding: 0 7px;
 }
 .selector select {
@@ -1236,7 +1237,7 @@ img.mfp-img {
   line-height: 36px;
   border-radius: 4px;
   color: white;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .block-title,

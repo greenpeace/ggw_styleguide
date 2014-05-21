@@ -1,0 +1,23 @@
+.l-footer {
+
+  @include breakpoint($desk) {
+    .footer-container {
+      background: $green1;
+      color: $white;
+      height: 70px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+
+      .footer-holder {
+        width: 960px;
+        margin: 0 auto;      
+      }
+      
+      .l-branding {
+        padding-top: 15px;
+      }
+
+    }   
+  }
+}

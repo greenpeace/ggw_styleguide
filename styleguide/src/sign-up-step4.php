@@ -113,11 +113,8 @@
 
 </div>
 
+<?php include('modules/footer.php'); ?>
 
-
-<footer class="l-footer">
-
-</footer>
 <!-- put js here -->
 </body>
 </html>

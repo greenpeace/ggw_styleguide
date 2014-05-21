@@ -1276,6 +1276,24 @@ img.mfp-img {
   font-weight: 300;
 }
 
+@media (min-width: 1024px) {
+  .l-footer .footer-container {
+    background: #66cc00;
+    color: white;
+    height: 70px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+  .l-footer .footer-container .footer-holder {
+    width: 960px;
+    margin: 0 auto;
+  }
+  .l-footer .footer-container .l-branding {
+    padding-top: 15px;
+  }
+}
+
 .header {
   background-color: #66cc00;
   height: 50px;

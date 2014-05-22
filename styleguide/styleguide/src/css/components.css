@@ -197,7 +197,7 @@ Create block level buttons—those that span the full width of a parent— by ad
 
 <h2> Hover state </h2>
 
-Buttons will appear without text decoration and a soft box-shadow when hovered. For `<button>` elements, this is done via :hover. For `<a>` elements, it's done with .hover. We use .hover on `<button>`s here to replicate the active state progammatically.
+Buttons will appear without text decoration and a soft box-shadow when hovered. For `<button>` elements, this is done via :hover. For `<a>` elements, it's done with .hover. We use .hover on `<button>`s here to replicate the hover state progammatically.
 
 ```
 <!-- Hover button (we need to add the class now to present it) -->
@@ -240,7 +240,7 @@ Add the disabled attribute to `<button>` buttons.
 <p>
 <button type="button" class="button" disabled="disabled">Button</button>
 <button type="button" class="button btn-primary" disabled="disabled">Primary button</button>
-</p>
+</p> 
 ```
 
 <h3> Anchor element </h3>
@@ -251,6 +251,120 @@ Add the .disabled class to `<a>` buttons.
 <p>
 <a href="#" role="button" class="button disabled">button link</a>
 <a href="#" role="button" class="button btn-primary disabled">primary button link</a>
+</p>
+```
+*/
+/*
+
+<h2> Icons </h2>
+
+Buttons with icons.
+
+<h3> Button with icon </h3>
+
+Bla bla bla description here.
+
+```
+<!-- Small buttons -->
+<p>
+  <a href="#" class="button btn-s">
+    <i class="icon-reply"></i>
+    <span class="element-invisible">Reply</span>
+  </a>
+  <a href="#" class="button btn-s">
+    <i class="icon-pencil"></i>
+    <span class="element-invisible">Edit</span>
+  </a>
+  <a href="#" class="button btn-s">
+    <i class="icon-trash"></i>
+    <span class="element-invisible">Delete</span>
+  </a>
+</p>
+
+<!-- Standard buttons -->
+<p>
+  <a href="#" class="button">
+    <i class="icon-reply"></i>
+    <span class="element-invisible">Reply</span>
+  </a>
+  <a href="#" class="button">
+    <i class="icon-pencil"></i>
+    <span class="element-invisible">Edit</span>
+  </a>
+  <a href="#" class="button">
+    <i class="icon-trash"></i>
+    <span class="element-invisible">Delete</span>
+  </a>
+</p>
+
+<!-- Large buttons -->
+<p>
+  <a href="#" class="button btn-l">
+    <i class="icon-reply"></i>
+    <span class="element-invisible">Reply</span>
+  </a>
+  <a href="#" class="button btn-l">
+    <i class="icon-pencil"></i>
+    <span class="element-invisible">Edit</span>
+  </a>
+  <a href="#" class="button btn-l">
+    <i class="icon-trash"></i>
+    <span class="element-invisible">Delete</span>
+  </a>
+</p>
+```
+
+<h3> Button with icon and text </h3>
+
+Bla bla bla description here.
+
+```
+<!-- Small buttons -->
+<p>
+  <a href="#" class="button btn-s">
+    <i class="icon-reply"></i>
+    <span>Reply</span>
+  </a>
+  <a href="#" class="button btn-s">
+    <i class="icon-pencil"></i>
+    <span>Edit</span>
+  </a>
+  <a href="#" class="button btn-s">
+    <i class="icon-trash"></i>
+    <span>Delete</span>
+  </a>
+</p>
+
+<!-- Standard buttons -->
+<p>
+  <a href="#" class="button">
+    <i class="icon-reply"></i>
+    <span>Reply</span>
+  </a>
+  <a href="#" class="button">
+    <i class="icon-pencil"></i>
+    <span>Edit</span>
+  </a>
+  <a href="#" class="button">
+    <i class="icon-trash"></i>
+    <span>Delete</span>
+  </a>
+</p>
+
+<!-- Large buttons -->
+<p>
+  <a href="#" class="button btn-l">
+    <i class="icon-reply"></i>
+    <span>Reply</span>
+  </a>
+  <a href="#" class="button btn-l">
+    <i class="icon-pencil"></i>
+    <span>Edit</span>
+  </a>
+  <a href="#" class="button btn-l">
+    <i class="icon-trash"></i>
+    <span>Delete</span>
+  </a>
 </p>
 ```
 */

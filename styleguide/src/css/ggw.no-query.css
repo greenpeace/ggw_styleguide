@@ -262,6 +262,10 @@ th {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-trash:before {
+  content: '\e83e';
+}
+
 .block-search .form-actions:before {
   content: '\e807';
 }
@@ -284,6 +288,14 @@ th {
 
 input[type="checkbox"] + label:before {
   content: '\e81c';
+}
+
+.icon-reply:before {
+  content: '\e826';
+}
+
+.icon-pencil:before {
+  content: '\e809';
 }
 
 .icon-news:before {
@@ -544,7 +556,7 @@ article h6 {
 }
 
 .btn-s {
-  padding: .1em .5em;
+  padding: 2px 3px;
   font-size: 12px;
 }
 

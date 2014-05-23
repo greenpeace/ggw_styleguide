@@ -1289,6 +1289,54 @@ img.mfp-img {
 }
 
 @media (min-width: 1024px) {
+  .secondary-nav .country-selector .dropdown-controller a,
+  .secondary-nav .country-selector .dropdown-controller a:hover {
+    display: block;
+    padding: 1px 0 3px 2px;
+    height: .875em;
+    color: white;
+    text-decoration: none;
+    border: 2px solid #66cc00;
+    padding-right: 60px;
+  }
+  .secondary-nav .country-selector .dropdown-controller a .country-img,
+  .secondary-nav .country-selector .dropdown-controller a:hover .country-img {
+    background: #66cc00 url(https://secured.greenpeace.org/international/Global/international/code/p3/img/image-map.png) left -42px no-repeat;
+    position: absolute;
+    right: 0;
+    width: 51px;
+    height: 18px;
+    text-indent: -50000px;
+    line-height: 0;
+    color: transparent;
+    cursor: pointer;
+  }
+  .secondary-nav .country-selector .dropdown-controller a.dropdown-open,
+  .secondary-nav .country-selector .dropdown-controller a.dropdown-open:hover {
+    background-color: white;
+    color: #66cc00;
+    border: 2px solid white;
+  }
+  .secondary-nav .country-selector .dropdown-controller a.dropdown-open .country-img,
+  .secondary-nav .country-selector .dropdown-controller a.dropdown-open:hover .country-img {
+    background: white url(https://secured.greenpeace.org/international/Global/international/code/p3/img/image-map.png) -2px -64px no-repeat;
+  }
+  .secondary-nav .country-selector .dropdown {
+    width: 100%;
+  }
+  .secondary-nav .country-selector .dropdown .dropdown-list {
+    margin-top: 0.1429em;
+    font-size: 0.875em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lt-ie7 .country-selector {
+    width: 17.5em;
+  }
+}
+
+@media (min-width: 1024px) {
   .l-footer .footer-container {
     background: #66cc00;
     color: white;

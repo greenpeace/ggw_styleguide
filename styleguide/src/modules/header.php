@@ -36,6 +36,18 @@
 
       <div id="secondary-nav" class="off-canvas">
         <div class="nav-inner-wrap">
+
+          <div class="country-selector">
+              <div class="dropdown-controller">
+                  <a class="dropdown-open" href="#" data-dropdown="#dropdown-content-country">International<span class="country-img">.</span></a>
+              </div>
+              <div id="dropdown-content-country" class="dropdown dropdown-scroll" style="display:none;">
+                  <ul class="dropdown-list">
+                      <li><span>Select a country</span></li>
+                  </ul>
+              </div>
+          </div>
+
         </div>
       </div>
 

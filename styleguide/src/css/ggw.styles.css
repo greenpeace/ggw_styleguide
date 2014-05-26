@@ -1802,13 +1802,13 @@ img.mfp-img {
   }
 }
 
-.l-branding {
+.l-branding-header {
   width: 134px;
   margin: 0 auto;
   position: relative;
 }
 @media (min-width: 1024px) {
-  .l-branding {
+  .l-branding-header {
     width: 14.89362%;
     clear: right;
     float: left;

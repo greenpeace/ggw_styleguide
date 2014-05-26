@@ -52,7 +52,19 @@ article {
   }
 
   ul li {
-    list-style: square inside;
+    list-style: none;
+    &:before {
+      padding-right: 5px;
+      vertical-align: top;
+      color: $base;
+      font-family: 'greenwire-10';
+      font-size: 8px;
+      speak: none;
+      content: '\e848';
+      li:before {
+        padding-right: 0;
+      }
+    }
   }
 
   ol li {

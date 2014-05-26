@@ -485,6 +485,7 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
   margin: 10px 0;
   line-height: 1.5em;
   font-family: Helvetica, Arial, sans-serif;
+  color: #003300;
 }
 article h1 {
   font-size: 28px;

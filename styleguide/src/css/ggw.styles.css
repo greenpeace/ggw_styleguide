@@ -1336,7 +1336,15 @@ img.mfp-img {
   }
 }
 
+.l-footer {
+  display: none;
+  visibility: hidden;
+}
 @media (min-width: 1024px) {
+  .l-footer {
+    display: block;
+    visibility: visible;
+  }
   .l-footer:before {
     margin: 80px 0 0 0;
     height: 100px;

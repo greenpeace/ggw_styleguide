@@ -1280,6 +1280,11 @@ img.mfp-img {
   font-weight: 300;
 }
 
+.l-footer {
+  display: none;
+  visibility: hidden;
+}
+
 .header {
   background-color: #66cc00;
   height: 50px;

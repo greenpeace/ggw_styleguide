@@ -5,6 +5,8 @@
   font-size: 2.4em;
   line-height: 34px;
   color: $white;
+  min-width: 44px;
+  min-height: 44px;
 
   @include breakpoint($tab) {
     left: 15px;

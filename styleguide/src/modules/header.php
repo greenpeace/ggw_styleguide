@@ -2,7 +2,7 @@
 
   <div class="container">
 
-    <div class="l-branding">
+    <div class="l-branding-header">
 
       <a href="#" title="Home" rel="home" class="logo"> <span class="element-invisible">Greenpeace Greenwire Nederland </span></a>
 

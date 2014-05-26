@@ -54,6 +54,10 @@
 
 .l-main {
   margin: $def-mar auto;
+
+  @include breakpoint($desk) {
+    min-height: 701px; //space for the footer
+  }
 }
 
 .l-has-sidebar .l-main-column {

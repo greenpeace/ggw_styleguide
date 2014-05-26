@@ -1337,20 +1337,67 @@ img.mfp-img {
 }
 
 @media (min-width: 1024px) {
+  .l-footer:before {
+    margin: 80px 0 0 0;
+    height: 100px;
+    width: 100%;
+    display: table;
+    background: #e4e4e4;
+    content: "";
+    border-bottom: 3px solid #CCC;
+  }
   .l-footer .footer-container {
     background: #66cc00;
     color: white;
     height: 70px;
     width: 100%;
-    position: absolute;
-    bottom: 0;
   }
   .l-footer .footer-container .footer-holder {
     width: 960px;
     margin: 0 auto;
   }
-  .l-footer .footer-container .l-branding {
-    padding-top: 15px;
+  .l-footer .footer-container .l-branding-footer {
+    float: left;
+    margin: 2.2em 2.5em 2em 0;
+    position: static;
+    bottom: auto;
+    color: #ffffff;
+  }
+  .l-footer .footer-container .l-branding-footer span {
+    line-height: 1em;
+    float: left;
+  }
+  .l-footer .footer-container .l-branding-footer .logo-footer {
+    background: url(../images/GP_logo_footer.png) no-repeat;
+    width: 107px;
+    margin: -2px 3px 0 4px;
+    text-indent: -999px;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+  }
+  .l-footer .footer-container .legal-menu,
+  .l-footer .footer-container .bottom-menu {
+    padding-top: 1em;
+    float: left;
+  }
+  .l-footer .footer-container .bottom-menu {
+    float: right;
+  }
+  .l-footer .footer-container .legal-menu li,
+  .l-footer .footer-container .bottom-menu li {
+    float: left;
+  }
+  .l-footer .footer-container .legal-menu li a,
+  .l-footer .footer-container .bottom-menu li a {
+    display: block;
+    padding: 1em 0.5em;
+    text-align: left;
+    color: white;
+  }
+  .l-footer .footer-container .legal-menu li a:hover,
+  .l-footer .footer-container .bottom-menu li a:hover {
+    text-decoration: underline;
   }
 }
 
@@ -1776,6 +1823,11 @@ img.mfp-img {
 
 .l-main {
   margin: 15px auto;
+}
+@media (min-width: 1024px) {
+  .l-main {
+    min-height: 701px;
+  }
 }
 
 @media (min-width: 768px) {

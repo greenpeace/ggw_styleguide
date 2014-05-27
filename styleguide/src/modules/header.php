@@ -8,6 +8,24 @@
 
     </div>
 
+    <div class="country-selector">
+        <div class="dropdown-controller">
+            <a href="#" data-dropdown="#dropdown-content-country">International<span class="country-img">.</span></a>
+        </div>
+        <div id="dropdown-content-country" class="dropdown dropdown-scroll" style="display:none;">
+            <ul class="dropdown-list">
+                <li><a href="#">Belgium</a></li>
+                <li><a href="#">France</a></li>
+                <li><a href="#">India</a></li>
+                <li><a href="#">Netherlands</a></li>
+                <li><a href="#">Russia</a></li>
+                <li><a href="#">Thailand</a></li>
+                <li><a href="#">USA</a></li>
+                <li><a href="#">UK</a></li>
+            </ul>
+        </div>
+    </div>
+
     <div class="l-header-navigation">
 
       <div class="mobile-nav">
@@ -35,18 +53,8 @@
       </div>
 
       <div id="secondary-nav" class="off-canvas">
-        <div class="nav-inner-wrap">
 
-          <div class="country-selector">
-              <div class="dropdown-controller">
-                  <a class="dropdown-open" href="#" data-dropdown="#dropdown-content-country">International<span class="country-img">.</span></a>
-              </div>
-              <div id="dropdown-content-country" class="dropdown dropdown-scroll" style="display:none;">
-                  <ul class="dropdown-list">
-                      <li><span>Select a country</span></li>
-                  </ul>
-              </div>
-          </div>
+        <div class="nav-inner-wrap">
 
         </div>
       </div>

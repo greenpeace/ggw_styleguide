@@ -1293,6 +1293,11 @@ img.mfp-img {
   font-weight: 300;
 }
 
+.country-selector {
+  display: none;
+  visibility: hidden;
+}
+
 .l-footer {
   display: none;
   visibility: hidden;

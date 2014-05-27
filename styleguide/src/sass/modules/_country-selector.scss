@@ -1,14 +1,29 @@
-.secondary-nav {
+.country-selector {
+  display: none;
+  visibility: hidden;
+}
+
+.l-header {
   @include breakpoint($desk) {
+
+    .country-selector {
+      float: left;
+      width: 150px;
+      margin-top: 6px;
+      display: block;
+      visibility: visible;
+    }
+    .country-selector .dropdown-controller {
+      height: 24px;
+    }
     .country-selector .dropdown-controller a,
     .country-selector .dropdown-controller a:hover {
+      height: 100%;
       display: block;
-      padding: 1px 0 3px 2px;
-      height: .875em;
+      position: relative;
       color: $white;
       text-decoration: none;
-      border: 2px solid $green1;
-      padding-right: 60px;
+      padding-left: 5px;
     }
     .country-selector .dropdown-controller a .country-img,
     .country-selector .dropdown-controller a:hover .country-img {
@@ -25,25 +40,39 @@
     .country-selector .dropdown-controller a.dropdown-open,
     .country-selector .dropdown-controller a.dropdown-open:hover {
       background-color: $white;
-      color: $green1;
-      border: 2px solid $white;
+      color: $base;
+      display: block;
+      text-decoration: none;
+      padding-left: 5px;
     }
     .country-selector .dropdown-controller a.dropdown-open .country-img,
     .country-selector .dropdown-controller a.dropdown-open:hover .country-img {
       background: $white url(https://secured.greenpeace.org/international/Global/international/code/p3/img/image-map.png) -2px -64px no-repeat;
     }
     .country-selector .dropdown {
-      width: 100%; 
+      position: absolute;
+      z-index: 999;
     }
     .country-selector .dropdown .dropdown-list {
+      width: 150px;      
       margin-top: 0.1429em;
       font-size:0.875em;
+      max-height: 350px;
+      overflow: auto;
+      list-style: none;
+      background: $white;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      padding: 4px 0;
+      margin: 0;
     }
-  }
-}
-
-.lt-ie7 .country-selector {
-  @include breakpoint($desk) {
-    width: 17.5em; 
+    .country-selector .dropdown .dropdown-list a {
+      color: $base;
+      padding-left: 5px;
+      display: block;
+      &:hover {
+        color: $white;
+        background: $base;
+      }
+    }
   }
 }

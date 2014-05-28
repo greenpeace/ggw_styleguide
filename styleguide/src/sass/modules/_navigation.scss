@@ -149,13 +149,8 @@
 }
 
 .menu .menu {
-  @extend %element-hidden;
   position: static;
   top: 100%;
-}
-
-.menu-item:hover .menu {
-  display: block;
 }
 
 .off-canvas .caret:before {

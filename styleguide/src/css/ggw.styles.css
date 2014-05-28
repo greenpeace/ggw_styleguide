@@ -337,7 +337,7 @@ input[type="radio"] + label:before {
 }
 
 input[type="radio"],
-input[type="checkbox"], .breadcrumbs, .menu .menu, #landline:not(:target), .block-search .form-actions, .l-has-sidebar .l-sidebar {
+input[type="checkbox"], .breadcrumbs, #landline:not(:target), .block-search .form-actions, .l-has-sidebar .l-sidebar {
   display: none;
 }
 
@@ -1602,10 +1602,6 @@ img.mfp-img {
 .menu .menu {
   position: static;
   top: 100%;
-}
-
-.menu-item:hover .menu {
-  display: block;
 }
 
 .off-canvas .caret:before {

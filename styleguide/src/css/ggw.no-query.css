@@ -369,7 +369,7 @@ html {
 }
 
 body {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5em;
   font-family: Arial, Helvetica, sans-serif;
   color: #4d4d4d;
@@ -525,10 +525,10 @@ article h6 {
   border-radius: 3px;
   border: 1px solid #cccccc;
   color: #4d4d4d;
-  padding: .35em 1.2em;
+  padding: .44em 1.2em;
   line-height: normal;
   text-align: center;
-  font-size: 1.15em;
+  font-size: 1em;
   font-weight: 700;
   text-transform: lowercase;
 }

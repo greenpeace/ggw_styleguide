@@ -17,6 +17,7 @@
                 <li><a href="#">Belgium</a></li>
                 <li><a href="#">France</a></li>
                 <li><a href="#">India</a></li>
+                <li><a href="#">International</a></li>
                 <li><a href="#">Netherlands</a></li>
                 <li><a href="#">Russia</a></li>
                 <li><a href="#">Thailand</a></li>

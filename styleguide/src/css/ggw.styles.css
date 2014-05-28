@@ -369,7 +369,7 @@ html {
 }
 
 body {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   line-height: 1.5em;
   font-family: Arial, Helvetica, sans-serif;
   color: #4d4d4d;
@@ -538,10 +538,10 @@ article h6 {
   border-radius: 3px;
   border: 1px solid #cccccc;
   color: #4d4d4d;
-  padding: .35em 1.2em;
+  padding: .44em 1.2em;
   line-height: normal;
   text-align: center;
-  font-size: 1.15em;
+  font-size: 1em;
   font-weight: 700;
   text-transform: lowercase;
 }
@@ -1309,13 +1309,14 @@ img.mfp-img {
 @media (min-width: 1024px) {
   .l-header .country-selector {
     float: left;
-    width: 150px;
+    width: 165px;
     margin-top: 6px;
     display: block;
     visibility: visible;
   }
   .l-header .country-selector .dropdown-controller {
     height: 24px;
+    font-size: 1.15em;
   }
   .l-header .country-selector .dropdown-controller a,
   .l-header .country-selector .dropdown-controller a:hover {
@@ -1325,6 +1326,7 @@ img.mfp-img {
     color: white;
     text-decoration: none;
     padding-left: 5px;
+    padding-top: 4px;
   }
   .l-header .country-selector .dropdown-controller a .country-img,
   .l-header .country-selector .dropdown-controller a:hover .country-img {
@@ -1344,7 +1346,8 @@ img.mfp-img {
     color: #4d4d4d;
     display: block;
     text-decoration: none;
-    padding-left: 5px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
   .l-header .country-selector .dropdown-controller a.dropdown-open .country-img,
   .l-header .country-selector .dropdown-controller a.dropdown-open:hover .country-img {
@@ -1355,21 +1358,21 @@ img.mfp-img {
     z-index: 999;
   }
   .l-header .country-selector .dropdown .dropdown-list {
-    width: 150px;
+    width: 165px;
     margin-top: 0.1429em;
-    font-size: 0.875em;
+    font-size: 0.9em;
     max-height: 350px;
     overflow: auto;
     list-style: none;
     background: white;
     -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    padding: 4px 0;
+    padding-top: 4px;
     margin: 0;
   }
   .l-header .country-selector .dropdown .dropdown-list a {
     color: #4d4d4d;
-    padding-left: 5px;
+    padding: 1px 5px;
     display: block;
   }
   .l-header .country-selector .dropdown .dropdown-list a:hover {

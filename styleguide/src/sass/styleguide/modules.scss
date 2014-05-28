@@ -1,12 +1,11 @@
 /*
 
-# Modules #
-
-## Blocks
+Blocks
+===
 
 Blocks to wrap content
 
-### Standard block
+<h2>Standard block</h2>
 
 If there is no icon in the block (which is in the minority of blocks) we need to add an extra class to pull the title to the left.
 
@@ -19,7 +18,19 @@ If there is no icon in the block (which is in the minority of blocks) we need to
 </div>
 ```
 
-### Block with an icon
+<h2>Standard block with image</h2>
+
+
+```
+<div class="block block-no-icon">
+  <h2 class="block-title"> This is the block title</h2>
+  <div class="content" style="margin-top:15px;">
+     <img src="src/images/register-step4.png"></img>
+  </div>
+</div>
+```
+
+<h2>Block with an icon</h2>
 
 ```
 <div class="block ">
@@ -31,7 +42,7 @@ If there is no icon in the block (which is in the minority of blocks) we need to
 </div>
 ```
 
-### Block with an icon
+<h2>Block with an icon</h2>
 
 ```
 <div class="block block-with-icon">
@@ -43,7 +54,8 @@ If there is no icon in the block (which is in the minority of blocks) we need to
 </div>
 ```
 
-## Breadcrumbs ##
+Breadcrumbs
+===
 
 */
 

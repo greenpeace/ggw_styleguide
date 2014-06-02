@@ -442,9 +442,9 @@ ul, li {
 }
 
 .block-title {
-  text-transform: uppercase;
+  font-family: Helvetica, Arial;
   color: #1a1a1a;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 a {

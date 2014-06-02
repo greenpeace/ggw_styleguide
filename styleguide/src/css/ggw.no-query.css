@@ -369,7 +369,7 @@ html {
 }
 
 body {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5em;
   font-family: Arial, Helvetica, sans-serif;
   color: #4d4d4d;
@@ -417,6 +417,22 @@ body {
   float: left;
 }
 
+p,
+li,
+code,
+form input[type=text],
+form input[type=password],
+form input[type=email],
+form input[type=search],
+form input[type=tel],
+form textarea,
+form label,
+form legend,
+form select {
+  font-size: .875em;
+  /* 14px/16 */
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   line-height: 1.2em;
@@ -426,6 +442,10 @@ ul, li {
   margin: 0;
   padding: 0;
   list-style: none outside none;
+}
+
+li li {
+  font-size: 1em;
 }
 
 .block-title {
@@ -528,7 +548,8 @@ article h6 {
   padding: .44em 1.2em;
   line-height: normal;
   text-align: center;
-  font-size: 1em;
+  font-size: .875em;
+  /* 14px/16 */
   font-weight: 700;
   text-transform: lowercase;
 }
@@ -675,7 +696,7 @@ textarea:disabled {
   line-height: 1.2em;
   height: 1.3em;
   width: 1.3em;
-  top: .2rem;
+  top: 6px;
   color: white;
   font-size: 10px;
 }

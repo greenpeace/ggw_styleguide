@@ -93,7 +93,7 @@ input[type="checkbox"] {
       line-height: 1.2em;
       height: 1.3em;
       width: 1.3em;
-      top: .2rem;
+      top: 6px;
       color: $white;
       @include font-size(10px);
       @extend %load-icon;

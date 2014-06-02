@@ -369,7 +369,7 @@ html {
 }
 
 body {
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.5em;
   font-family: Arial, Helvetica, sans-serif;
   color: #4d4d4d;
@@ -430,6 +430,22 @@ body {
   float: left;
 }
 
+p,
+li,
+code,
+form input[type=text],
+form input[type=password],
+form input[type=email],
+form input[type=search],
+form input[type=tel],
+form textarea,
+form label,
+form legend,
+form select {
+  font-size: .875em;
+  /* 14px/16 */
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   line-height: 1.2em;
@@ -439,6 +455,10 @@ ul, li {
   margin: 0;
   padding: 0;
   list-style: none outside none;
+}
+
+li li {
+  font-size: 1em;
 }
 
 .block-title {
@@ -541,7 +561,8 @@ article h6 {
   padding: .44em 1.2em;
   line-height: normal;
   text-align: center;
-  font-size: 1em;
+  font-size: .875em;
+  /* 14px/16 */
   font-weight: 700;
   text-transform: lowercase;
 }
@@ -688,7 +709,7 @@ textarea:disabled {
   line-height: 1.2em;
   height: 1.3em;
   width: 1.3em;
-  top: .2rem;
+  top: 6px;
   color: white;
   font-size: 0.625rem;
 }
@@ -1310,7 +1331,6 @@ img.mfp-img {
   .l-header .country-selector {
     float: left;
     width: 165px;
-    margin-top: 6px;
     display: block;
     visibility: visible;
   }
@@ -1411,7 +1431,7 @@ img.mfp-img {
   }
   .l-footer .footer-container .l-branding-footer {
     float: left;
-    margin: 2.2em 2.5em 2em 0;
+    margin: 1.8em 2em 0 0;
     position: static;
     bottom: auto;
     color: #ffffff;
@@ -1431,7 +1451,7 @@ img.mfp-img {
   }
   .l-footer .footer-container .legal-menu,
   .l-footer .footer-container .bottom-menu {
-    padding-top: 1em;
+    padding-top: .7em;
     float: left;
   }
   .l-footer .footer-container .bottom-menu {
@@ -1877,7 +1897,7 @@ img.mfp-img {
 }
 @media (min-width: 1024px) {
   .l-main {
-    min-height: 701px;
+    min-height: 730px;
   }
 }
 

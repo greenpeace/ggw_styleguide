@@ -56,7 +56,7 @@
   margin: $def-mar auto;
 
   @include breakpoint($desk) {
-    min-height: 701px; //space for the footer
+    min-height: 730px; //space for the footer
   }
 }
 

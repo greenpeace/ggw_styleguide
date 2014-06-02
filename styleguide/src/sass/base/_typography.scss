@@ -1,3 +1,18 @@
+p,
+li,
+code,
+form input[type=text],
+form input[type=password],
+form input[type=email],
+form input[type=search],
+form input[type=tel], 
+form textarea,
+form label,
+form legend,
+form select {
+  font-size:.875em;	/* 14px/16 */
+}
+
 h1, h2, h3, h4 ,h5 ,h6 {
   margin: 0;
   line-height: 1.2em;
@@ -7,6 +22,10 @@ ul, li {
   margin: 0;
   padding: 0;
   list-style: none outside none;
+}
+
+li li {
+  font-size: 1em;
 }
 
 .block-title {

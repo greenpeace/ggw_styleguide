@@ -9,6 +9,7 @@
     &:after {
       display: block;
       background-color: $green2;
+      border-top: 1px solid darken($green2, 3%);
       content:'';
       height: 28px;
       position: absolute;

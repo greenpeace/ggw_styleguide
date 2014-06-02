@@ -28,7 +28,8 @@ gulp.task('compass-quick', function() {
       sass: 'src/sass'
     }))
     .pipe(autoprefixer('last 2 versions', '> 1%'))
-    .pipe(gulp.dest('src/css'));
+    .pipe(gulp.dest('src/css'))
+    .pipe(notify({ message: 'Compass finished' }));
 });
 
 // Run compass to compile all files

@@ -53,6 +53,30 @@ If there is no icon in the block (which is in the minority of blocks) we need to
   </div>
 </div>
 ```
+*/
+
+/*
+
+Images
+===
+
+Responsive images using <a href="http://scottjehl.github.io/picturefill/">Picturefill</a>.
+
+<h2>Image sample</h2>
+
+```
+<picture>
+	<!--[if IE 9]><video style="display: none;"><![endif]-->
+	<source srcset="src/images/pig750x600" media="(min-width: 1110px)">
+	<source srcset="src/images/pig350x250" media="(min-width: 710px)">
+	<source srcset="src/images/pig200x150">
+	<!--[if IE 9]></video><![endif]-->
+	<img srcset="src/images/pig200x150" alt="A beautiful and healthy pig enjoying the sun in the countryside">
+</picture>
+```
+*/
+
+/*
 
 Breadcrumbs
 ===

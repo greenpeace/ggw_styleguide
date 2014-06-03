@@ -77,8 +77,8 @@ All forms fields are wrapped in a `.form-item`. This provides the white-space ar
 </div>
 
 <div class="form-actions form-wrapper">
-   <input class="btn btn-primary" type="submit" value="Submit">
-   <input class="btn" type="reset" value="Cancel">
+   <input class="button btn-primary" type="submit" value="Submit">
+   <input class="button" type="reset" value="Cancel">
 </div>
 </form>
 
@@ -111,8 +111,8 @@ Adding the class `.row` alongside `.form-wrapper` display those forms inline-blo
       </div>
     </div>
     <div class="form-actions form-wrapper row">
-       <input class="btn btn-primary" type="submit" value="Submit">
-       <input class="btn" type="reset" value="Cancel">
+       <input class="button btn-primary" type="submit" value="Submit">
+       <input class="button" type="reset" value="Cancel">
     </div>
   </div>
 <!-- Text input with label and input -->
@@ -132,8 +132,8 @@ Adding the class `.row` alongside `.form-wrapper` display those forms inline-blo
       </div>
     </div>
     <div class="form-actions form-wrapper row">
-       <input class="btn btn-primary" type="submit" value="Submit">
-       <input class="btn" type="reset" value="Cancel">
+       <input class="button btn-primary" type="submit" value="Submit">
+       <input class="button" type="reset" value="Cancel">
     </div>
   </div>
 </form>
@@ -145,20 +145,20 @@ Buttons
 
 <h2> Options </h2>
 
-Buttons get a standard `.btn` class, the element type should have no effect
+Buttons get a standard `.button` class, the element type should have no effect
 
 ```
 <!-- Standard button -->
 <p>
-<input type="submit" value="input type=submit" class="btn">
-<button type="button" class="btn">button</button>
-<a href="#" role="button" class="btn">button link</a>
+<input type="submit" value="input type=submit" class="button">
+<button type="button" class="button">button</button>
+<a href="#" role="button" class="button">button link</a>
 </p>
 <!-- Primary button for form submits, navigation etc. -->
 <p>
-<input type="submit" value="input type=submit" class="btn btn-primary">
-<button type="button" class="btn btn-primary">button</button>
-<a href="#" role="button" class="btn btn-primary">button link</a>
+<input type="submit" value="input type=submit" class="button btn-primary">
+<button type="button" class="button btn-primary">button</button>
+<a href="#" role="button" class="button btn-primary">button link</a>
 </p>
 ```
 
@@ -169,42 +169,50 @@ Fancy larger or smaller buttons? Add .btn-large or .btn-small for additional siz
 ```
 <!-- Standard button -->
 <p>
-<button type="button" class="btn">Standard button</button>
-<button type="button" class="btn btn-primary">Standard button</button>
+<button type="button" class="button">Standard button</button>
+<button type="button" class="button btn-primary">Standard button</button>
 </p>
 
 <!-- Small button -->
 <p>
-<button type="button" class="btn btn-s">Small button</button>
-<button type="button" class="btn btn-primary btn-s">Small button</button>
+<button type="button" class="button btn-s">Small button</button>
+<button type="button" class="button btn-primary btn-s">Small button</button>
 </p>
 
 <!-- large button -->
 <p>
-<button type="button" class="btn btn-l">Large button</button>
-<button type="button" class="btn btn-primary btn-l">Large button</button>
+<button type="button" class="button btn-l">Large button</button>
+<button type="button" class="button btn-primary btn-l">Large button</button>
 </p>
 ```
 Create block level buttons—those that span the full width of a parent— by adding .btn-block.
 ```
 <div class="well" style="max-width: 400px; margin: 0 auto 10px;">
 <!-- Block button -->
-<button type="button" class="btn btn-block">Block button</button>
-<button type="button" class="btn btn-primary btn-block">Block button</button>
+<button type="button" class="button btn-block">Block button</button>
+<button type="button" class="button btn-primary btn-block">Block button</button>
 </div>
 ```
 
 <h2> Hover state </h2>
 
-Buttons will appear without text decoration and a soft box-shadow when hovered. For `<button>` elements, this is done via :hover. For `<a>` elements, it's done with .hover. We use .hover on `<button>`s here to replicate the active state progammatically.
+Buttons will appear without text decoration and a soft box-shadow when hovered. For `<button>` elements, this is done via :hover. For `<a>` elements, it's done with .hover. We use .hover on `<button>`s here to replicate the hover state progammatically.
 
 ```
 <!-- Hover button (we need to add the class now to present it) -->
 <p>
-<button type="button" class="btn hover">Hovered standard button</button>
-<button type="button" class="btn btn-primary hover">Hovered primary button</button>
+<button type="button" class="button hover">Hovered standard button</button>
+<button type="button" class="button btn-primary hover">Hovered primary button</button>
 </p>
 ```
+*/
+// buttons.scss
+.button.hover {
+  box-shadow: 0 1px 2px 0 #CCC;
+  text-decoration: none;
+  outline: 0;
+}
+/*
 
 <h2> Active state </h2>
 
@@ -213,8 +221,8 @@ Buttons will appear pressed (with an inset shadow) when active. For `<button>` e
 ```
 <!-- Active button (we need to add the class now to present it) -->
 <p>
-<button type="button" class="btn active">Active standard button</button>
-<button type="button" class="btn btn-primary active">Active primary button</button>
+<button type="button" class="button active">Active standard button</button>
+<button type="button" class="button btn-primary active">Active primary button</button>
 </p>
 ```
 
@@ -228,9 +236,9 @@ Add the disabled attribute to `<button>` buttons.
 
 ```
 <p>
-<button type="button" class="btn" disabled="disabled">Button</button>
-<button type="button" class="btn btn-primary" disabled="disabled">Primary button</button>
-</p>
+<button type="button" class="button" disabled="disabled">Button</button>
+<button type="button" class="button btn-primary" disabled="disabled">Primary button</button>
+</p> 
 ```
 
 <h3> Anchor element </h3>
@@ -239,8 +247,123 @@ Add the .disabled class to `<a>` buttons.
 
 ```
 <p>
-<a href="#" role="button" class="btn disabled">button link</a>
-<a href="#" role="button" class="btn btn-primary disabled">primary button link</a>
+<a href="#" role="button" class="button disabled">button link</a>
+<a href="#" role="button" class="button btn-primary disabled">primary button link</a>
+</p>
+```
+*/
+
+/*
+
+<h2> Icons </h2>
+
+Buttons with icons.
+
+<h3> Button with icon </h3>
+
+We use font icons in the buttons. They are used for shoutbox, friend request, private messges etc.
+
+```
+<!-- Small buttons -->
+<p>
+  <a href="#" class="button btn-s">
+    <i class="icon-reply"></i>
+    <span class="element-invisible">Reply</span>
+  </a>
+  <a href="#" class="button btn-s">
+    <i class="icon-pencil"></i>
+    <span class="element-invisible">Edit</span>
+  </a>
+  <a href="#" class="button btn-s">
+    <i class="icon-trash"></i>
+    <span class="element-invisible">Delete</span>
+  </a>
+</p>
+
+<!-- Standard buttons -->
+<p>
+  <a href="#" class="button">
+    <i class="icon-reply"></i>
+    <span class="element-invisible">Reply</span>
+  </a>
+  <a href="#" class="button">
+    <i class="icon-pencil"></i>
+    <span class="element-invisible">Edit</span>
+  </a>
+  <a href="#" class="button">
+    <i class="icon-trash"></i>
+    <span class="element-invisible">Delete</span>
+  </a>
+</p>
+
+<!-- Large buttons -->
+<p>
+  <a href="#" class="button btn-l">
+    <i class="icon-reply"></i>
+    <span class="element-invisible">Reply</span>
+  </a>
+  <a href="#" class="button btn-l">
+    <i class="icon-pencil"></i>
+    <span class="element-invisible">Edit</span>
+  </a>
+  <a href="#" class="button btn-l">
+    <i class="icon-trash"></i>
+    <span class="element-invisible">Delete</span>
+  </a>
+</p>
+```
+
+<h3> Button with icon and text </h3>
+
+We use the combination of text and icon in some buttons for the mobile app.
+
+```
+<!-- Small buttons -->
+<p>
+  <a href="#" class="button btn-s">
+    <i class="icon-reply"></i>
+    <span>Reply</span>
+  </a>
+  <a href="#" class="button btn-s">
+    <i class="icon-pencil"></i>
+    <span>Edit</span>
+  </a>
+  <a href="#" class="button btn-s">
+    <i class="icon-trash"></i>
+    <span>Delete</span>
+  </a>
+</p>
+
+<!-- Standard buttons -->
+<p>
+  <a href="#" class="button">
+    <i class="icon-reply"></i>
+    <span>Reply</span>
+  </a>
+  <a href="#" class="button">
+    <i class="icon-pencil"></i>
+    <span>Edit</span>
+  </a>
+  <a href="#" class="button">
+    <i class="icon-trash"></i>
+    <span>Delete</span>
+  </a>
+</p>
+
+<!-- Large buttons -->
+<p>
+  <a href="#" class="button btn-l">
+    <i class="icon-reply"></i>
+    <span>Reply</span>
+  </a>
+  <a href="#" class="button btn-l">
+    <i class="icon-pencil"></i>
+    <span>Edit</span>
+  </a>
+  <a href="#" class="button btn-l">
+    <i class="icon-trash"></i>
+    <span>Delete</span>
+  </a>
 </p>
 ```
 */

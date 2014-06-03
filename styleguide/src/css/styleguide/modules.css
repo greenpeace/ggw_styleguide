@@ -1,15 +1,16 @@
 /*
 
-# Modules #
-
-## Blocks
+Blocks
+===
 
 Blocks to wrap content
 
-### Standard block
+<h2>Standard block</h2>
+
+If there is no icon in the block (which is in the minority of blocks) we need to add an extra class to pull the title to the left.
 
 ```
-<div class="block">
+<div class="block block-no-icon">
   <h2 class="block-title"> This is the block title</h2>
   <div class="content">
      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
@@ -17,30 +18,65 @@ Blocks to wrap content
 </div>
 ```
 
-### Block with an icon
+<h2>Standard block with image</h2>
+
+
+```
+<div class="block block-no-icon">
+  <h2 class="block-title"> This is the block title</h2>
+  <div class="content" style="margin-top:15px;">
+     <img src="src/images/register-step4.png"></img>
+  </div>
+</div>
+```
+
+<h2>Block with an icon</h2>
+
+```
+<div class="block ">
+  <i class="block-icon icon-bg-news-media icon-news"></i>
+  <h2 class="block-title"> This is the block title</h2>
+  <div class="content">
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+  </div>
+</div>
+```
+
+<h2>Block with an icon</h2>
 
 ```
 <div class="block block-with-icon">
-  <i class="block-icon icon-bg-news-media icon-book-open"></i>
+  <i class="block-icon icon-bg-action icon-user-add"></i>
   <h2 class="block-title"> This is the block title</h2>
   <div class="content">
      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
   </div>
 </div>
 ```
+*/
+/*
 
-### Block with an icon
+Images
+===
+
+Responsive images using <a href="http://scottjehl.github.io/picturefill/">Picturefill</a>.
+
+<h2>Image sample</h2>
 
 ```
-<div class="block block-with-icon">
-  <i class="block-icon icon-user icon-book-open"></i>
-  <h2 class="block-title"> This is the block title</h2>
-  <div class="content">
-     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
-  </div>
-</div>
+<picture>
+	<!--[if IE 9]><video style="display: none;"><![endif]-->
+	<source srcset="src/images/pig750x600" media="(min-width: 1110px)">
+	<source srcset="src/images/pig350x250" media="(min-width: 710px)">
+	<source srcset="src/images/pig200x150">
+	<!--[if IE 9]></video><![endif]-->
+	<img srcset="src/images/pig200x150" alt="A beautiful and healthy pig enjoying the sun in the countryside">
+</picture>
 ```
+*/
+/*
 
-## Breadcrumbs ##
+Breadcrumbs
+===
 
 */

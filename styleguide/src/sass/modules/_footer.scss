@@ -1,0 +1,82 @@
+.l-footer {
+  display: none;
+  visibility: hidden;
+
+  @include breakpoint($desk) {
+    display: block;
+    visibility: visible;
+    &:before {
+      margin: 80px 0 0 0;
+      height: 100px;
+      width: 100%;
+      display: table;
+      background: #e4e4e4;
+      content: "";
+      border-bottom: 3px solid #CCC;
+    }
+
+    .footer-container {
+      background: $green1;
+      color: $white;
+      height: 70px;
+      width: 100%;
+
+      .footer-holder {
+        width: 960px;
+        margin: 0 auto;      
+      }
+      
+      .l-branding-footer {
+        float: left;
+        margin: 1.8em 2em 0 0;
+        position: static;
+        bottom: auto;
+        color: #ffffff;
+
+        span {
+          line-height: 1em;
+          float: left;
+        }
+
+        .logo-footer {
+          background: url(../images/GP_logo_footer.png) no-repeat;
+          width: 107px;
+          margin: -2px 3px 0 4px;
+          text-indent: -999px;
+          display: inline-block;
+          float: left;
+          overflow: hidden;
+        }
+      }
+
+      .legal-menu,
+      .bottom-menu {
+        padding-top: .7em;
+        float: left;
+      }
+
+      .bottom-menu {
+        float: right;
+      }
+
+      .legal-menu li,
+      .bottom-menu li {
+        float: left;
+      }
+
+      .legal-menu li a,
+      .bottom-menu li a {
+        display: block;
+        padding: 1em 0.5em;
+        text-align: left;
+        color: $white;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+    } //end footer container
+ 
+  } //end breakpoint($desk)
+
+} //end .l-footer

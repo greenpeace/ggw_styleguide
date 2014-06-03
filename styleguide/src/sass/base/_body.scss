@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  @include font-size($p);
+  @include font-size($base-font-size);
   line-height: $base-line-height;
   font-family: $base-font-family;
   color: $base;

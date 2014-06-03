@@ -93,7 +93,7 @@ input[type="checkbox"] {
       line-height: 1.2em;
       height: 1.3em;
       width: 1.3em;
-      top: .2rem;
+      top: 6px;
       color: $white;
       @include font-size(10px);
       @extend %load-icon;
@@ -146,6 +146,9 @@ input[type="radio"]:checked + label:before {
     @include font-size($h5);
     padding: 0 7px;
   }
+  select::-ms-expand {
+    display: none; /*removes the default arrow in ie*/
+  }
 
   select {
     width: 100%;
@@ -162,5 +165,15 @@ input[type="radio"]:checked + label:before {
     -webkit-appearance: none;
     appearance: none;
   }
+}
 
+/*browser specific*/
+
+.lt-ie10 {
+  .selector select {
+      width:105%;
+  }
+  .selector:before {
+      display:none;
+  }
 }

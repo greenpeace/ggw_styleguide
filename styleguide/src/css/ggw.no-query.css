@@ -262,6 +262,10 @@ th {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-trash:before {
+  content: '\e83e';
+}
+
 .block-search .form-actions:before {
   content: '\e807';
 }
@@ -284,6 +288,14 @@ th {
 
 input[type="checkbox"] + label:before {
   content: '\e81c';
+}
+
+.icon-reply:before {
+  content: '\e826';
+}
+
+.icon-pencil:before {
+  content: '\e809';
 }
 
 .icon-news:before {
@@ -325,7 +337,7 @@ input[type="radio"] + label:before {
 }
 
 input[type="radio"],
-input[type="checkbox"], .breadcrumbs, .menu .menu, #landline:not(:target), .block-search .form-actions, .l-has-sidebar .l-sidebar {
+input[type="checkbox"], .breadcrumbs, #landline:not(:target), .block-search .form-actions, .l-has-sidebar .l-sidebar {
   display: none;
 }
 
@@ -357,7 +369,7 @@ html {
 }
 
 body {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.5em;
   font-family: Arial, Helvetica, sans-serif;
   color: #4d4d4d;
@@ -405,6 +417,22 @@ body {
   float: left;
 }
 
+p,
+li,
+code,
+form input[type=text],
+form input[type=password],
+form input[type=email],
+form input[type=search],
+form input[type=tel],
+form textarea,
+form label,
+form legend,
+form select {
+  font-size: .875em;
+  /* 14px/16 */
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   line-height: 1.2em;
@@ -416,10 +444,14 @@ ul, li {
   list-style: none outside none;
 }
 
+li li {
+  font-size: 1em;
+}
+
 .block-title {
-  text-transform: uppercase;
+  font-family: Helvetica, Arial;
   color: #1a1a1a;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 a {
@@ -452,7 +484,19 @@ article ul ul {
   padding: 0 0 0 15px;
 }
 article ul li {
-  list-style: square inside;
+  list-style: none;
+}
+article ul li:before {
+  padding-right: 5px;
+  vertical-align: top;
+  color: #4d4d4d;
+  font-family: 'greenwire-10';
+  font-size: 8px;
+  speak: none;
+  content: '\e848';
+}
+article ul li:before li:before {
+  padding-right: 0;
 }
 article ol li {
   list-style: decimal inside;
@@ -460,24 +504,26 @@ article ol li {
 article h1, article h2, article h3, article h4, article h5, article h6 {
   margin: 10px 0;
   line-height: 1.5em;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #003300;
 }
 article h1 {
-  font-size: 22px;
+  font-size: 28px;
 }
 article h2 {
-  font-size: 20px;
+  font-size: 22px;
 }
 article h3 {
-  font-size: 18px;
+  font-size: 19px;
 }
 article h4 {
   font-size: 16px;
 }
 article h5 {
-  font-size: 14px;
+  font-size: 13px;
 }
 article h6 {
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .title-prefix {
@@ -496,16 +542,18 @@ article h6 {
   background-image: linear-gradient(#f5f5f5, #ededed);
   display: inline-block;
   cursor: pointer;
-  border-radius: .1em;
+  border-radius: 3px;
   border: 1px solid #cccccc;
   color: #4d4d4d;
-  padding: .3em 1.8em;
-  line-height: 1rem;
+  padding: .44em 1.2em;
+  line-height: normal;
   text-align: center;
-  font-size: 1.2em;
+  font-size: .875em;
+  /* 14px/16 */
   font-weight: 700;
+  text-transform: lowercase;
 }
-.button:hover, .button.hover, .button:focus {
+.button:hover, .button:focus {
   -webkit-box-shadow: 0 1px 2px 0 #cccccc;
   box-shadow: 0 1px 2px 0 #cccccc;
   text-decoration: none;
@@ -542,7 +590,7 @@ article h6 {
 }
 
 .btn-s {
-  padding: .1em .5em;
+  padding: 2px 3px;
   font-size: 12px;
 }
 
@@ -553,7 +601,7 @@ article h6 {
   width: 100%;
 }
 
-.btn + .btn-block {
+.button + .btn-block {
   margin-top: 5px;
 }
 
@@ -648,7 +696,7 @@ textarea:disabled {
   line-height: 1.2em;
   height: 1.3em;
   width: 1.3em;
-  top: .2rem;
+  top: 6px;
   color: white;
   font-size: 10px;
 }
@@ -686,8 +734,12 @@ input[type="radio"]:checked + label:before {
   position: absolute;
   top: 2px;
   right: 0;
-  font-size: 14px;
+  font-size: 13px;
   padding: 0 7px;
+}
+.selector select::-ms-expand {
+  display: none;
+  /*removes the default arrow in ie*/
 }
 .selector select {
   width: 100%;
@@ -703,6 +755,14 @@ input[type="radio"]:checked + label:before {
   -moz-padding-end: 19px;
   -webkit-appearance: none;
   appearance: none;
+}
+
+/*browser specific*/
+.lt-ie10 .selector select {
+  width: 105%;
+}
+.lt-ie10 .selector:before {
+  display: none;
 }
 
 .progress-bar-wrapper {
@@ -1235,7 +1295,7 @@ img.mfp-img {
   line-height: 36px;
   border-radius: 4px;
   color: white;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .block-title,
@@ -1266,6 +1326,16 @@ img.mfp-img {
   font-weight: 300;
 }
 
+.country-selector {
+  display: none;
+  visibility: hidden;
+}
+
+.l-footer {
+  display: none;
+  visibility: hidden;
+}
+
 .header {
   background-color: #66cc00;
   height: 50px;
@@ -1278,6 +1348,8 @@ img.mfp-img {
   font-size: 2.4em;
   line-height: 34px;
   color: white;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .nav-btn + .nav-btn {
@@ -1393,10 +1465,6 @@ img.mfp-img {
   top: 100%;
 }
 
-.menu-item:hover .menu {
-  display: block;
-}
-
 .off-canvas .caret:before {
   position: absolute;
   right: 1.5rem;
@@ -1411,6 +1479,10 @@ img.mfp-img {
   display: block;
   color: #4d4d4d;
   padding: 1em;
+}
+.menu-link:focus {
+  text-decoration: none;
+  outline: none;
 }
 
 .page-register-step1 .progress-bar {
@@ -1476,7 +1548,7 @@ img.mfp-img {
   padding-top: 7px;
 }
 
-.l-branding {
+.l-branding-header {
   width: 134px;
   margin: 0 auto;
   position: relative;

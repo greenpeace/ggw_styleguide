@@ -137,8 +137,8 @@
       </div>
 
         <div class="form-actions form-wrapper">
-          <input class="btn btn-primary pull-right" <?php // modify all classes here ?> type="submit" value="Next">
-          <input class="btn pull-left" <?php // modify all classes here ?> type="submit" value="Back to previous step">
+          <input class="button btn-primary pull-right" <?php // modify all classes here ?> type="submit" value="Next">
+          <input class="button pull-left" <?php // modify all classes here ?> type="submit" value="Back to previous step">
         </div>
 
        </form>
@@ -164,11 +164,8 @@
 
 </div>
 
+<?php include('modules/footer.php'); ?>
 
-
-<footer class="l-footer">
-
-</footer>
 <!-- put js here -->
 </body>
 </html>

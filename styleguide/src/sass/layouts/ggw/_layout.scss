@@ -22,7 +22,7 @@
   }
 }
 
-.l-branding {
+.l-branding-header {
   width: 134px;
   margin: 0 auto;
   position: relative;
@@ -56,6 +56,10 @@
 
 .l-main {
   margin: $def-mar auto;
+
+  @include breakpoint($desk) {
+    min-height: 730px; //space for the footer
+  }
 }
 
 .l-has-sidebar .l-main-column {

@@ -3,17 +3,17 @@
   background-image: linear-gradient($secondary, darken($secondary, 3%));
   display: inline-block;
   cursor: pointer;
-  border-radius: .1em;
+  border-radius: 3px;
   border: 1px solid $grey-l;
   color: $base;
-  padding: .3em 1.8em;
-  line-height: 1rem;
+  padding: .44em 1.2em;
+  line-height: normal; //line-heights can't be changed in FF inputs, instead use padding
   text-align: center;
-  font-size: 1.2em;
+  font-size: .875em; /* 14px/16 */
   font-weight: 700;
+  text-transform: lowercase;
 
   &:hover,
-  &.hover,
   &:focus {
     box-shadow: 0 1px 2px 0 $grey-l;
     text-decoration: none;
@@ -59,7 +59,7 @@
 }
 
 .btn-s {
-  padding: .1em .5em;
+  padding: 2px 3px;
   font-size: $small;
 }
 
@@ -71,6 +71,6 @@
   width: 100%;
 }
 
-.btn + .btn-block {
+.button + .btn-block {
   margin-top: 5px;
 }

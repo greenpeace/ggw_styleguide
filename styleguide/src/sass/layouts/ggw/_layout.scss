@@ -9,6 +9,10 @@
   @include breakpoint($desk) {
     max-width:  960px;
     margin:     0 auto;
+  }
+
+  // keep distance from the window untill there is enough space
+  @include breakpoint(1024px) {
     padding:    0;
   }
 

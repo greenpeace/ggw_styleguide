@@ -1952,6 +1952,10 @@ img.mfp-img {
   .container {
     max-width: 960px;
     margin: 0 auto;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
     padding: 0;
   }
 }

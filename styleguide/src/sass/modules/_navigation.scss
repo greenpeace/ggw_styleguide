@@ -8,6 +8,11 @@
   min-width: 44px;
   min-height: 44px;
 
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+
   @include breakpoint($tab) {
     left: 15px;
   }
@@ -26,17 +31,9 @@
 .off-canvas {
   z-index: 200;
   position: absolute;
-  top: -7px; // to get over the header padding
+  top: 43px;
   overflow: hidden;
   width: 100%;
-}
-
-#primary-nav,
-#secondary-nav {
-  &:not(:target) {
-    z-index: 1;
-    height: 0;
-  }
 }
 
 .nav-inner-wrap {
@@ -45,13 +42,15 @@
   background: $white;
 }
 
-// Execute when css transform does not work
+// Fallback for when css transform does not work
 .js {
 
-  .off-canvas {
+  #primary-nav,
+  #secondary-nav {
     width: $nav-off-canvas-width;
-    backface-visibility: hidden;
-    left: -$nav-off-canvas-width;
+    height: auto;
+    z-index: 200;
+    top: -7px;
   }
 
   #inner-wrap {
@@ -67,46 +66,39 @@
   }
 
   #secondary-nav {
-    right: -(2 * $nav-off-canvas-width + 1);
-  }
-
-}
-
-.primary-nav {
-
-  #inner-wrap {
-    left: $nav-off-canvas-width;
-    border-left: 1px solid $grey-l;
-  }
-
-  #primary-nav {
-    left: -$nav-off-canvas-width;
-  }
-
-}
-
-.secondary-nav {
-
-  #inner-wrap {
     right: -$nav-off-canvas-width;
-    border-right: 1px solid $grey-l;
-  }
-
-  #secondary-nav {
-    right: -(2 * $nav-off-canvas-width + 1);
   }
 
 }
 
+.primary-nav #inner-wrap,
+.secondary-nav #inner-wrap {
+  left: $nav-off-canvas-width;
+}
+
+.secondary-nav #inner-wrap {
+  left: -$nav-off-canvas-width;
+  border-right: 1px solid $grey-l;
+}
+
+.primary-nav #inner-wrap {
+  border-left: 1px solid $grey-l;
+}
 
 
 // Best performance animation, depends on Modernizr
 .csstransforms3d {
 
-  .primary-nav #primary-nav,
-  .secondary-nav #secondary-nav {
+  #primary-nav {
     left: 0;
     transform: translate3d(-100%, 0px, 0px);
+    backface-visibility: hidden;
+  }
+
+  #secondary-nav {
+    right: -162%;
+    transform: translate3d(-100%, 0px, 0px);
+    backface-visibility: hidden;
   }
 
   .nav-inner-wrap {
@@ -116,8 +108,8 @@
     transform-origin: -50% 0%;
   }
 
-  .primary-nav,
-  .secondary-nav {
+  &.primary-nav,
+  &.secondary-nav {
     .nav-inner-wrap {
       opacity: 1;
       transform: translate3d(0, 0, 0);
@@ -125,19 +117,17 @@
   }
 
   #inner-wrap {
-    left: 0;
+    left: 0 !important;
     transform: translate3d(0, 0, 0);
     transition: transform 500ms ease;
     backface-visibility: hidden;
   }
 
-  .primary-nav #inner-wrap {
-      left: 0;
+  &.primary-nav #inner-wrap {
       transform: translate3d($nav-off-canvas-width, 0, 0) scale3d(1, 1, 1);
   }
 
-  .secondary-nav #inner-wrap {
-      left: 0;
+  &.secondary-nav #inner-wrap {
       transform: translate3d(-$nav-off-canvas-width, 0, 0) scale3d(1, 1, 1);
   }
 
@@ -181,33 +171,103 @@
 
 @include breakpoint($desk) {
 
-  .main-menu .menu-link {
-      color: $white;
-      font-weight: bold;
-      line-height: 28px;
-      padding: 0 $def-mar-half;
-      display: block;
-
-      &:hover {
-        background: $green1;
-        color: $green3;
-        border-radius: 0 0 4px 4px;
-      }
+  %element-hidden1 {
+    @include element-hidden;
   }
 
-  .mobile-nav {
-    @include element-hidden;
+  .csstransforms3d .nav-inner-wrap {
+    opacity: 1;
+    transform: none;
+    transform-origin: none;
+  }
+
+  #inner-wrap #primary-nav,
+  #inner-wrap #secondary-nav {
+    left: auto;
+    right: auto;
+    top: auto;
+    overflow: visible;
+    width: auto;
+    position: relative;
+    transform: translate3d(0, 0 ,0);
+  }
+
+  #inner-wrap #secondary-nav {
+    float: right;
+  }
+
+  .mobile-nav,
+  .off-canvas .caret {
+    @extend %element-hidden1;
+  }
+
+  .menu-link {
+    color: $white;
+    font-weight: bold;
+    line-height: 28px;
+    padding: 0 $def-mar-half;
+    display: block;
+    @include font-size(13px);
+
+    &:hover {
+      background: $green1;
+      color: $green3;
+      border-radius: 0 0 4px 4px;
+    }
   }
 
   .menu-item {
+    position: relative; // needed to position submenu
     white-space: nowrap;
-    display: inline-block;
     float: left;
-    padding-right: $def-mar;
+    border: none;
+    padding: 0 10px 0 0;
   }
 
-  .expanded .menu {
-    @include element-hidden;
+  // submenu container
+  .menu .menu {
+    display: none;
+    position: absolute;
+    height: auto;
+    left: 0;
+    z-index: 100;
+    border: 1px solid $green2;
+    background-color: $white;
+
+
+    // submenu items
+    .menu-item {
+      float: none;
+      padding: 0;
+    }
+
+    .menu-link {
+      padding: 2px 0 2px 10px;
+      box-shadow: none;
+      border-radius: 0;
+      line-height: 1.5em;
+      font-weight: normal;
+      width: 13em;
+      color: $base;
+      background-color: $white;
+
+      &:hover {
+        color: $white;
+        background-color: $green2;
+        font-weight: bold;
+      }
+
+    }
+
+    .active {
+      font-weight: 700;
+    }
+
+  }
+
+  // show the submenu container when hovering the parent menu-item
+  .menu-item:hover > .menu {
+    display: block;
   }
 
 }

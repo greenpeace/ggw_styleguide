@@ -7,8 +7,9 @@
   }
 
   @include breakpoint($desk) {
-    width:  960px;
-    margin: 0 auto;
+    max-width:  960px;
+    margin:     0 auto;
+    padding:    0;
   }
 
 }
@@ -34,18 +35,19 @@
 .l-header-navigation {
 
   @include breakpoint($desk) {
-    @include isolation-span(12, 1, 'both');
+    @include isolation-span(12, 1);
     position: relative;
     bottom: -11px;
     z-index: 2;
+    @include cf;
   }
 }
 
 .block-search {
 
   @include breakpoint($desk) {
-    @include grid-span(3, 9);
-    bottom: 36px;
+    @include grid-span(3, 10, $output-style: 'isolation');
+    bottom: 10px;
     position: absolute;
     right: 0;
   }

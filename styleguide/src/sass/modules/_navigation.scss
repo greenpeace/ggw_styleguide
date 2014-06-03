@@ -6,6 +6,11 @@
   line-height: 34px;
   color: $white;
 
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+
   @include breakpoint($tab) {
     left: 15px;
   }
@@ -24,17 +29,9 @@
 .off-canvas {
   z-index: 200;
   position: absolute;
-  top: -7px; // to get over the header padding
+  top: 43px;
   overflow: hidden;
   width: 100%;
-}
-
-#primary-nav,
-#secondary-nav {
-  &:not(:target) {
-    z-index: 1;
-    height: 0;
-  }
 }
 
 .nav-inner-wrap {
@@ -43,13 +40,15 @@
   background: $white;
 }
 
-// Execute when css transform does not work
+// Fallback for when css transform does not work
 .js {
 
-  .off-canvas {
+  #primary-nav,
+  #secondary-nav {
     width: $nav-off-canvas-width;
-    backface-visibility: hidden;
-    left: -$nav-off-canvas-width;
+    height: auto;
+    z-index: 200;
+    top: -7px;
   }
 
   #inner-wrap {
@@ -65,46 +64,39 @@
   }
 
   #secondary-nav {
-    right: -(2 * $nav-off-canvas-width + 1);
-  }
-
-}
-
-.primary-nav {
-
-  #inner-wrap {
-    left: $nav-off-canvas-width;
-    border-left: 1px solid $grey-l;
-  }
-
-  #primary-nav {
-    left: -$nav-off-canvas-width;
-  }
-
-}
-
-.secondary-nav {
-
-  #inner-wrap {
     right: -$nav-off-canvas-width;
-    border-right: 1px solid $grey-l;
-  }
-
-  #secondary-nav {
-    right: -(2 * $nav-off-canvas-width + 1);
   }
 
 }
 
+.primary-nav #inner-wrap,
+.secondary-nav #inner-wrap {
+  left: $nav-off-canvas-width;
+}
+
+.secondary-nav #inner-wrap {
+  left: -$nav-off-canvas-width;
+  border-right: 1px solid $grey-l;
+}
+
+.primary-nav #inner-wrap {
+  border-left: 1px solid $grey-l;
+}
 
 
 // Best performance animation, depends on Modernizr
 .csstransforms3d {
 
-  .primary-nav #primary-nav,
-  .secondary-nav #secondary-nav {
+  #primary-nav {
     left: 0;
     transform: translate3d(-100%, 0px, 0px);
+    backface-visibility: hidden;
+  }
+
+  #secondary-nav {
+    right: -162%;
+    transform: translate3d(-100%, 0px, 0px);
+    backface-visibility: hidden;
   }
 
   .nav-inner-wrap {
@@ -114,8 +106,8 @@
     transform-origin: -50% 0%;
   }
 
-  .primary-nav,
-  .secondary-nav {
+  &.primary-nav,
+  &.secondary-nav {
     .nav-inner-wrap {
       opacity: 1;
       transform: translate3d(0, 0, 0);
@@ -123,19 +115,17 @@
   }
 
   #inner-wrap {
-    left: 0;
+    left: 0 !important;
     transform: translate3d(0, 0, 0);
     transition: transform 500ms ease;
     backface-visibility: hidden;
   }
 
-  .primary-nav #inner-wrap {
-      left: 0;
+  &.primary-nav #inner-wrap {
       transform: translate3d($nav-off-canvas-width, 0, 0) scale3d(1, 1, 1);
   }
 
-  .secondary-nav #inner-wrap {
-      left: 0;
+  &.secondary-nav #inner-wrap {
       transform: translate3d(-$nav-off-canvas-width, 0, 0) scale3d(1, 1, 1);
   }
 
@@ -190,14 +180,19 @@
     transform-origin: none;
   }
 
-  .js #primary-nav,
-  .js #secondary-nav {
+  #inner-wrap #primary-nav,
+  #inner-wrap #secondary-nav {
     left: auto;
     right: auto;
     top: auto;
     overflow: visible;
     width: auto;
     position: relative;
+    transform: translate3d(0, 0 ,0);
+  }
+
+  #inner-wrap #secondary-nav {
+    float: right;
   }
 
   .mobile-nav,
@@ -209,7 +204,7 @@
     color: $white;
     font-weight: bold;
     line-height: 28px;
-    padding: 0 10px;
+    padding: 0 $def-mar-half;
     display: block;
     @include font-size(13px);
 

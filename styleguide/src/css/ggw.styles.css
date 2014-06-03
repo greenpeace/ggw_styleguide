@@ -286,6 +286,10 @@ input[type="checkbox"] + label:before {
   content: '\e81c';
 }
 
+.icon-close:before {
+  content: '\e81d';
+}
+
 .icon-news:before {
   content: '\e830';
 }
@@ -1324,6 +1328,9 @@ img.mfp-img {
   line-height: 34px;
   color: white;
 }
+.nav-btn:focus, .nav-btn:hover {
+  text-decoration: none;
+}
 @media (min-width: 768px) {
   .nav-btn {
     left: 15px;
@@ -1344,15 +1351,9 @@ img.mfp-img {
 .off-canvas {
   z-index: 200;
   position: absolute;
-  top: -7px;
+  top: 43px;
   overflow: hidden;
   width: 100%;
-}
-
-#primary-nav:not(:target),
-#secondary-nav:not(:target) {
-  z-index: 1;
-  height: 0;
 }
 
 .nav-inner-wrap {
@@ -1361,11 +1362,12 @@ img.mfp-img {
   background: white;
 }
 
-.js .off-canvas {
+.js #primary-nav,
+.js #secondary-nav {
   width: 80%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  left: -80%;
+  height: auto;
+  z-index: 200;
+  top: -7px;
 }
 .js #inner-wrap {
   left: 0;
@@ -1377,30 +1379,36 @@ img.mfp-img {
   left: -80%;
 }
 .js #secondary-nav {
-  right: -161%;
+  right: -80%;
 }
 
-.primary-nav #inner-wrap {
+.primary-nav #inner-wrap,
+.secondary-nav #inner-wrap {
   left: 80%;
-  border-left: 1px solid #cccccc;
-}
-.primary-nav #primary-nav {
-  left: -80%;
 }
 
 .secondary-nav #inner-wrap {
-  right: -80%;
+  left: -80%;
   border-right: 1px solid #cccccc;
 }
-.secondary-nav #secondary-nav {
-  right: -161%;
+
+.primary-nav #inner-wrap {
+  border-left: 1px solid #cccccc;
 }
 
-.csstransforms3d .primary-nav #primary-nav,
-.csstransforms3d .secondary-nav #secondary-nav {
+.csstransforms3d #primary-nav {
   left: 0;
   -webkit-transform: translate3d(-100%, 0px, 0px);
   transform: translate3d(-100%, 0px, 0px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.csstransforms3d #secondary-nav {
+  right: -162%;
+  -webkit-transform: translate3d(-100%, 0px, 0px);
+  transform: translate3d(-100%, 0px, 0px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .csstransforms3d .nav-inner-wrap {
   opacity: 0.4;
@@ -1412,14 +1420,13 @@ img.mfp-img {
   -ms-transform-origin: -50% 0%;
   transform-origin: -50% 0%;
 }
-.csstransforms3d .primary-nav .nav-inner-wrap,
-.csstransforms3d .secondary-nav .nav-inner-wrap {
+.csstransforms3d.primary-nav .nav-inner-wrap, .csstransforms3d.secondary-nav .nav-inner-wrap {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 .csstransforms3d #inner-wrap {
-  left: 0;
+  left: 0 !important;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   -webkit-transition: -webkit-transform 500ms ease;
@@ -1427,13 +1434,11 @@ img.mfp-img {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.csstransforms3d .primary-nav #inner-wrap {
-  left: 0;
+.csstransforms3d.primary-nav #inner-wrap {
   -webkit-transform: translate3d(80%, 0, 0) scale3d(1, 1, 1);
   transform: translate3d(80%, 0, 0) scale3d(1, 1, 1);
 }
-.csstransforms3d .secondary-nav #inner-wrap {
-  left: 0;
+.csstransforms3d.secondary-nav #inner-wrap {
   -webkit-transform: translate3d(-80%, 0, 0) scale3d(1, 1, 1);
   transform: translate3d(-80%, 0, 0) scale3d(1, 1, 1);
 }
@@ -1484,21 +1489,27 @@ img.mfp-img {
     transform-origin: none;
   }
 
-  .js #primary-nav,
-  .js #secondary-nav {
+  #inner-wrap #primary-nav,
+  #inner-wrap #secondary-nav {
     left: auto;
     right: auto;
     top: auto;
     overflow: visible;
     width: auto;
     position: relative;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  #inner-wrap #secondary-nav {
+    float: right;
   }
 
   .menu-link {
     color: white;
     font-weight: bold;
     line-height: 28px;
-    padding: 0 10px;
+    padding: 0 7px;
     display: block;
     font-size: 0.8125rem;
   }
@@ -1755,20 +1766,26 @@ img.mfp-img {
     float: right;
     margin-left: 0;
     margin-right: 0;
-    clear: "both";
+    clear: none;
     position: relative;
     bottom: -11px;
     z-index: 2;
+  }
+  .l-header-navigation:after {
+    content: '';
+    display: table;
+    clear: both;
   }
 }
 
 @media (min-width: 900px) {
   .block-search {
     width: 23.40426%;
-    clear: right;
-    float: left;
-    margin-right: 2.12766%;
-    bottom: 36px;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    bottom: 10px;
     position: absolute;
     right: 0;
   }

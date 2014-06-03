@@ -17,7 +17,6 @@
         <a id="secondary-menu-show" href="#secondary-nav" data-nav="js-nav2" class="nav-btn icon-user">
           <span class="element-invisible">Show secondary navigation</span>
         </a>
-        <!--<a id="main-menu-hide" href="#" class="icon-menu"><span class="element-invisible">Hide Navigation</span></a>-->
       </div>
 
       <div id="primary-nav" class="off-canvas">
@@ -36,6 +35,7 @@
 
       <div id="secondary-nav" class="off-canvas">
         <div class="nav-inner-wrap">
+          <?php include('modules/user-menu.php'); ?>
         </div>
       </div>
 

@@ -1849,6 +1849,9 @@ img.mfp-img {
   .search-form {
     position: relative;
   }
+  .search-form .form-item-search {
+    line-height: 1em;
+  }
   .search-form .form-text {
     font-size: 12px;
     border: 1px solid #56b004;

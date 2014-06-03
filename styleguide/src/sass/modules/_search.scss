@@ -25,6 +25,10 @@
   .search-form {
     position: relative;
 
+    .form-item-search {
+      line-height: 1em;
+    }
+
     .form-text {
       font-size: $small;
       border: 1px solid $green2;

@@ -32,6 +32,15 @@
   }
 }
 
+.l-country-selector {
+  @include breakpoint($desk) {
+    position: absolute;
+    width: 165px;
+    left: 160px;
+    bottom: 20px;
+  }
+}
+
 .l-header-navigation {
 
   @include breakpoint($desk) {

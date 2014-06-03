@@ -1,16 +1,15 @@
-p,
-li,
-code,
-form input[type=text],
-form input[type=password],
-form input[type=email],
-form input[type=search],
-form input[type=tel], 
-form textarea,
-form label,
-form legend,
-form select {
-  font-size:.875em;	/* 14px/16 */
+@include breakpoint($desk, $no-query: true) {
+  p,
+  a,
+  li,
+  code,
+  .form-text,
+  textarea,
+  label,
+  legend,
+  select {
+    @include font-size (14px);
+  }
 }
 
 h1, h2, h3, h4 ,h5 ,h6 {

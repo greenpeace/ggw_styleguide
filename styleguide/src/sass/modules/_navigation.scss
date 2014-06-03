@@ -40,6 +40,7 @@
   z-index: 2;
   position: relative;
   background: $white;
+  border-bottom: 1px solid $grey-l;
 }
 
 // Fallback for when css transform does not work
@@ -96,7 +97,7 @@
   }
 
   #secondary-nav {
-    right: -162%;
+    right: -160%;
     transform: translate3d(-100%, 0px, 0px);
     backface-visibility: hidden;
   }
@@ -163,9 +164,9 @@
   display: block;
   color: $base;
   padding: 1em;
+  font-weight: 700;
   &:focus {
-    text-decoration: none;
-    outline: none;
+    @extend %no-deco;
   }
 }
 
@@ -179,6 +180,7 @@
     opacity: 1;
     transform: none;
     transform-origin: none;
+    border: none;
   }
 
   #inner-wrap #primary-nav,
@@ -192,7 +194,7 @@
     transform: translate3d(0, 0 ,0);
   }
 
-  #inner-wrap #secondary-nav {
+  #inner-wrap #secondary-nav .menu {
     float: right;
   }
 

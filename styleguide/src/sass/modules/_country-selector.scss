@@ -1,30 +1,73 @@
 .country-selector {
-  display: none;
-  visibility: hidden;
+  a {
+  border-top: 1px solid #CCCCCC;
+  color: $base;
+  display: block;
+  padding: 1em;
+  font-weight: 700;
+
+    &:focus {
+      @extend %no-deco;
+    }
+
+    &.trigger:after {
+      width: 0;
+      height: 0;
+      border: 0.313em solid transparent; /* 5 */
+      border-bottom: none;
+      border-top-color: $base;
+      content: '';
+      vertical-align: middle;
+      display: inline-block;
+      position: relative;
+      right: -0.313em; /* 5 */
+    }
+
+  }
+
+  .dropdown a {
+    color: $grey-d;
+    padding-left: 2em;
+    font-weight: 300;
+  }
+
+}
+
+.country-img {
+  @extend %element-hidden;
 }
 
 .l-header {
   @include breakpoint($desk) {
 
-    .country-selector {
-      float: left;
-      width: 165px;
-      display: block;
-      visibility: visible;
+    .country-selector a {
+      border: none;
+      font-weight: 300;
+
+      &.trigger {
+        @include font-size(16px);
+
+        &:after {
+          @include element-hidden;
+        }
+
+      }
+
     }
+
+    .country-img {
+      display: inline-block;
+    }
+
     .country-selector .dropdown-controller {
       height: 24px;
       font-size: 1.15em;
     }
-    .country-selector .dropdown-controller a,
-    .country-selector .dropdown-controller a:hover {
+    .country-selector .dropdown-controller a {
       height: 100%;
-      display: block;
       position: relative;
       color: $white;
-      text-decoration: none;
-      padding-left: 5px;
-      padding-top: 4px;
+      padding: 4px 0 0 5px;
     }
     .country-selector .dropdown-controller a .country-img,
     .country-selector .dropdown-controller a:hover .country-img {
@@ -56,7 +99,7 @@
       z-index: 999;
     }
     .country-selector .dropdown .dropdown-list {
-      width: 165px;      
+      width: 165px;
       margin-top: 0.1429em;
       font-size:0.9em;
       max-height: 350px;

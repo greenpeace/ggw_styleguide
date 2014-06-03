@@ -13,9 +13,18 @@
   @include horizontal-list(false);
 }
 
-@mixin ellipsis() {
+@mixin ellipsis {
   text-overflow: ellipsis;
   display: block;
   overflow: hidden;
   white-space: nowrap;
+}
+
+
+@mixin no-text-decoration {
+  text-decoration: none;
+}
+
+%no-deco {
+  @include no-text-decoration;
 }

@@ -770,6 +770,14 @@ input[type="radio"]:checked + label:before {
   appearance: none;
 }
 
+/*browser specific*/
+.lt-ie10 .selector select {
+  width: 105%;
+}
+.lt-ie10 .selector:before {
+  display: none;
+}
+
 .progress-bar-wrapper {
   background-color: #F5F5F5;
   border-radius: 4px;

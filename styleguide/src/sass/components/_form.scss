@@ -146,6 +146,9 @@ input[type="radio"]:checked + label:before {
     @include font-size($h5);
     padding: 0 7px;
   }
+  select::-ms-expand {
+    display: none; /*removes the default arrow in ie*/
+  }
 
   select {
     width: 100%;
@@ -162,5 +165,4 @@ input[type="radio"]:checked + label:before {
     -webkit-appearance: none;
     appearance: none;
   }
-
 }

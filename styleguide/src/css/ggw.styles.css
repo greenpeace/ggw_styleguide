@@ -750,6 +750,10 @@ input[type="radio"]:checked + label:before {
   font-size: 0.8125rem;
   padding: 0 7px;
 }
+.selector select::-ms-expand {
+  display: none;
+  /*removes the default arrow in ie*/
+}
 .selector select {
   width: 100%;
   cursor: pointer;

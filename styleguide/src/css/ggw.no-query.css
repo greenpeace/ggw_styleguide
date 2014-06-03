@@ -1468,6 +1468,10 @@ img.mfp-img {
   color: #4d4d4d;
   padding: 1em;
 }
+.menu-link:focus {
+  text-decoration: none;
+  outline: none;
+}
 
 .page-register-step1 .progress-bar {
   background: none;

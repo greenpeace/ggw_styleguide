@@ -173,6 +173,10 @@
   display: block;
   color: $base;
   padding: 1em;
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
 }
 
 @include breakpoint($desk) {

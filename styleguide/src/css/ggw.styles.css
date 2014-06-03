@@ -1642,6 +1642,10 @@ img.mfp-img {
   color: #4d4d4d;
   padding: 1em;
 }
+.menu-link:focus {
+  text-decoration: none;
+  outline: none;
+}
 
 @media (min-width: 1024px) {
   .main-menu .menu-link {

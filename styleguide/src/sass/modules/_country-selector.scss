@@ -1,34 +1,21 @@
-.country-selector {
-  a {
+.country-selector .selector {
   border-top: 1px solid #CCCCCC;
   color: $base;
   display: block;
   padding: 1em;
   font-weight: 700;
 
-    &:focus {
-      @extend %no-deco;
-    }
-
-    &.trigger:after {
-      width: 0;
-      height: 0;
-      border: 0.313em solid transparent; /* 5 */
-      border-bottom: none;
-      border-top-color: $base;
-      content: '';
-      vertical-align: middle;
-      display: inline-block;
-      position: relative;
-      right: -0.313em; /* 5 */
-    }
-
-  }
-
-  .dropdown a {
-    color: $grey-d;
-    padding-left: 2em;
-    font-weight: 300;
+  &:before {
+    width: 0;
+    height: 0;
+    border: 0.313em solid transparent; /* 5 */
+    border-bottom: none;
+    border-top-color: $base;
+    content: '';
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    right: -0.313em; /* 5 */
   }
 
 }
@@ -40,7 +27,7 @@
 .l-header {
   @include breakpoint($desk) {
 
-    .country-selector a {
+    .country-selector .chosen-single{
       border: none;
       font-weight: 300;
 

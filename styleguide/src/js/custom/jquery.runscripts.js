@@ -9,9 +9,17 @@ jQuery(document).ready(function ($) {
 
   $('.form-item select').wrap('<div class="selector"></div>');
 
+  // country selector, apply chosen styling
+  $('.country-selector .form-select').chosen({
+    disable_search: true
+  });
+
+  // hide button when JS is active
+  $('.country-selector .form-submit').hide();
+
   var resizeTimer; // Set resizeTimer to empty so it resets on page load
 
-    function resizeFunction() {
+  function resizeFunction() {
 
         // only for small devices
         if($(window).width() <= 901) {

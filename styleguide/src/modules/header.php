@@ -38,6 +38,14 @@
         <div class="nav-inner-wrap">
           <?php include('modules/user-menu.php'); ?>
 
+          <form class="l-country-selector country-selector">
+            <div class="form-item form-type-select form-item-countries">
+              <select class="form-select"><option value="belgium">Belgium</option><option value="france">France</option><option value="india">India</option><option value="international" selected="selected">International</option><option value="netherlands">Nederland</option><option value="russia">Russia</option><option value="thailand">Thailand</option><option value="usa">USA</option><option value="uk">United Kingdom</option></select>
+            </div>
+            <input type="submit" value="Switch country" class="form-submit" />
+          </form>
+
+          <!--
           <div class="l-country-selector country-selector">
             <div class="dropdown-controller">
                 <a class="trigger" href="#" data-dropdown="#dropdown-content-country">International
@@ -58,6 +66,8 @@
                 </ul>
             </div>
           </div>
+        -->
+
         </div>
       </div>
 

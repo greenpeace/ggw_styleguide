@@ -156,7 +156,7 @@ input[type="radio"]:checked + label:before {
     z-index: 4;
     position: relative;
     display: block;
-    padding: 4px 24px 2px 7px;
+    padding: 0.4em 24px 0.3em 7px;
     background: transparent;
     border: none;
     text-overflow: ellipsis;

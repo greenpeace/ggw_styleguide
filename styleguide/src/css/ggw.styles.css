@@ -344,12 +344,16 @@ input[type="radio"] + label:before {
   float: left;
 }
 
+.country-selector .form-item, .language-switcher .form-item {
+  margin: 0;
+}
+
 .menu-link:focus {
   text-decoration: none;
 }
 
 input[type="radio"],
-input[type="checkbox"], .breadcrumbs, .country-img, #landline:not(:target), .block-search .form-actions, .l-has-sidebar .l-sidebar {
+input[type="checkbox"], .breadcrumbs, .language-switcher .selector:before, #landline:not(:target), .block-search .form-actions, .l-has-sidebar .l-sidebar {
   display: none;
 }
 
@@ -1779,9 +1783,6 @@ img.mfp-img {
   font-weight: 300;
 }
 
-.country-selector .form-item {
-  margin: 0;
-}
 .country-selector .selector {
   color: #4d4d4d;
   padding: 1em 1em 1em 3em;
@@ -1876,70 +1877,6 @@ img.mfp-img {
   .l-header .country-selector .selector:before, .l-header .country-selector .selector:after {
     display: none;
   }
-  .l-header .country-img {
-    display: inline-block;
-  }
-  .l-header .country-selector .dropdown-controller {
-    height: 24px;
-    font-size: 1.15em;
-  }
-  .l-header .country-selector .dropdown-controller a {
-    height: 100%;
-    position: relative;
-    color: white;
-    padding: 4px 0 0 5px;
-  }
-  .l-header .country-selector .dropdown-controller a .country-img,
-  .l-header .country-selector .dropdown-controller a:hover .country-img {
-    background: #66cc00 url(https://secured.greenpeace.org/international/Global/international/code/p3/img/image-map.png) left -42px no-repeat;
-    position: absolute;
-    right: 0;
-    width: 51px;
-    height: 18px;
-    text-indent: -50000px;
-    line-height: 0;
-    color: transparent;
-    cursor: pointer;
-  }
-  .l-header .country-selector .dropdown-controller a.dropdown-open,
-  .l-header .country-selector .dropdown-controller a.dropdown-open:hover {
-    background-color: white;
-    color: #4d4d4d;
-    display: block;
-    text-decoration: none;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-  }
-  .l-header .country-selector .dropdown-controller a.dropdown-open .country-img,
-  .l-header .country-selector .dropdown-controller a.dropdown-open:hover .country-img {
-    background: white url(https://secured.greenpeace.org/international/Global/international/code/p3/img/image-map.png) -2px -64px no-repeat;
-  }
-  .l-header .country-selector .dropdown {
-    position: absolute;
-    z-index: 999;
-  }
-  .l-header .country-selector .dropdown .dropdown-list {
-    width: 165px;
-    margin-top: 0.1429em;
-    font-size: 0.9em;
-    max-height: 350px;
-    overflow: auto;
-    list-style: none;
-    background: white;
-    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    padding-top: 4px;
-    margin: 0;
-  }
-  .l-header .country-selector .dropdown .dropdown-list a {
-    color: #4d4d4d;
-    padding: 1px 5px;
-    display: block;
-  }
-  .l-header .country-selector .dropdown .dropdown-list a:hover {
-    color: white;
-    background: #4d4d4d;
-  }
 }
 
 .l-footer {
@@ -2032,6 +1969,118 @@ img.mfp-img {
     position: absolute;
     top: 60px;
     width: 100%;
+  }
+}
+
+.language-switcher .selector {
+  color: #4d4d4d;
+  padding: 1em 1em 1em 3em;
+  font-weight: 700;
+  border: none;
+  border-top: 1px solid #CCCCCC;
+  border-radius: 0;
+  background: none;
+  display: block;
+  max-width: 100%;
+}
+.language-switcher .selector:after {
+  width: 0;
+  height: 0;
+  border: .5em solid transparent;
+  /* 5 */
+  border-bottom: none;
+  border-top-color: #4d4d4d;
+  content: '';
+  position: absolute;
+  display: inline-block;
+  top: 1.5em;
+  right: 2em;
+  padding: 0;
+}
+.language-switcher .selector select {
+  padding: 0;
+}
+
+@media (min-width: 900px) {
+  .l-header .language-switcher .form-item {
+    float: right;
+  }
+  .l-header .language-switcher label {
+    position: absolute;
+    right: 90px;
+    top: 2px;
+    font-weight: 300;
+    color: white;
+    font-size: 0.8125rem;
+    display: inline-block;
+    margin-right: .5em;
+  }
+  .l-header .language-switcher label:after {
+    content: ":";
+    right: -.3em;
+    top: 0;
+    position: absolute;
+  }
+  .l-header .language-switcher .chosen-single {
+    border: none;
+    font-weight: 300;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 5px 5px 0 0;
+    width: auto;
+    position: relative;
+    padding: 0;
+    height: auto;
+    background: none;
+  }
+  .l-header .language-switcher .chosen-single span {
+    color: white;
+    font-size: 0.8125rem;
+    margin: 0;
+    display: inline-block;
+    overflow: visible;
+  }
+  .l-header .language-switcher .chosen-single div {
+    display: none;
+  }
+  .l-header .language-switcher .chosen-with-drop .chosen-single {
+    background-color: white;
+    background-position: 96% -40px;
+  }
+  .l-header .language-switcher .chosen-with-drop .chosen-single span {
+    color: #56b004;
+  }
+  .l-header .language-switcher .chosen-drop {
+    border: none;
+    padding: 6px 0 4px;
+    -webkit-box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+  }
+  .l-header .language-switcher .chosen-results {
+    margin: 0;
+    padding: 0;
+  }
+  .l-header .language-switcher .active-result {
+    font-weight: 300;
+    font-size: 0.8125rem;
+    color: #4d4d4d;
+    padding: 3px 0;
+    line-height: 1.2em;
+  }
+  .l-header .language-switcher .highlighted {
+    color: white;
+    background: #666666;
+  }
+  .l-header .language-switcher .selector {
+    padding: 0;
+    border: none;
+    float: right;
+  }
+  .l-header .language-switcher .selector:after {
+    border-top-color: white;
+    top: .9em;
+    right: 0;
+    border-width: .3em;
   }
 }
 
@@ -2489,6 +2538,15 @@ img.mfp-img {
     width: 170px;
     left: 200px;
     bottom: 14px;
+  }
+}
+
+@media (min-width: 900px) {
+  .l-language-switcher {
+    position: absolute;
+    width: auto;
+    right: 0;
+    bottom: 36px;
   }
 }
 

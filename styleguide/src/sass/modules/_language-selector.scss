@@ -1,4 +1,4 @@
-.country-selector {
+.language-switcher {
 
   .form-item {
     @extend %mnul;
@@ -30,13 +30,7 @@
     }
 
     &:before {
-      @extend %load-icon;
-      @extend %icon-globe;
-      position: absolute;
-      left:.5em;
-      right: auto;
-      top: .9em;
-      @include font-size(16px);
+      @extend %element-hidden;
     }
 
     select {
@@ -49,22 +43,44 @@
 .l-header {
   @include breakpoint($desk) {
 
-    .country-selector {
+    .language-switcher {
+
+      .form-item {
+        float: right;
+      }
+
+      label {
+        position: absolute;
+        right: 90px;
+        top: 2px;
+        font-weight: 300;
+        color: $white;
+        @include font-size(13px);
+        display: inline-block;
+        margin-right: .5em;
+
+        &:after {
+          content: ":";
+          right: -.3em;
+          top: 0;
+          position: absolute;
+        }
+      }
 
       .chosen-single {
         border: none;
         font-weight: 300;
-        background: url("../images/langmap.png") no-repeat scroll 96% 4px;
-        padding: 4px 100px 2px 10px;
         box-shadow: none;
         border-radius: 5px 5px 0 0;
         width: auto;
         position: relative;
+        padding:0;
         height: auto;
+        background: none;
 
         span {
-          color: #FFFFFF;
-          @include font-size($h4);
+          color: $white;
+          @include font-size(13px);
           margin:0;
           display: inline-block;
           overflow: visible;
@@ -100,7 +116,7 @@
         font-weight: 300;
         @include font-size(13px);
         color: $base;
-        padding: 3px 10px;
+        padding: 3px 0;
         line-height: 1.2em;
       }
 
@@ -112,10 +128,14 @@
       .selector {
         padding:0;
         border: none;
+        float: right;
 
-        &:before,
         &:after {
-          @include element-hidden;
+          border-top-color: $white;
+          top: .9em;
+          right:0;
+          border-width: .3em;
+
         }
       }
 

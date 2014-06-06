@@ -5166,7 +5166,7 @@ jQuery(document).ready(function ($) {
   $('.form-item select').wrap('<div class="selector"></div>');
 
   // Redirect user on a change event of the country switcher select.
-  $('.country-selector select').change(function() {
+  $('.country-selector select, .language-switcher select').change(function() {
     window.location = window.location.protocol + '//' + window.location.host + '/' + $(this).val();
   });
 
@@ -5176,7 +5176,13 @@ jQuery(document).ready(function ($) {
   });
 
   // hide button when JS is active
-  $('.country-selector .form-submit').hide();
+  $('.country-selector .form-submit, .language-switcher .form-submit').hide();
+
+  $('.language-switcher .form-select').chosen({
+    disable_search: true,
+    width: "100%"
+  });
+
 
   // Special resize function for better performance
 

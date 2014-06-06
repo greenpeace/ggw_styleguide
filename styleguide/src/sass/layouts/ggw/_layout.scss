@@ -45,6 +45,15 @@
   }
 }
 
+.l-language-switcher {
+  @include breakpoint($desk) {
+    position: absolute;
+    width: auto;
+    right: 0;
+    bottom: 36px;
+  }
+}
+
 .l-header-navigation {
 
   @include breakpoint($desk) {

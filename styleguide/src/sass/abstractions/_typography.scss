@@ -20,6 +20,13 @@
   white-space: nowrap;
 }
 
+@mixin mnul {
+  margin:0;
+}
+
+%mnul {
+  @include mnul;
+}
 
 @mixin no-text-decoration {
   text-decoration: none;

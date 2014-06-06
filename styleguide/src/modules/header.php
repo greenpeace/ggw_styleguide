@@ -45,28 +45,13 @@
             <input type="submit" value="Switch country" class="form-submit" />
           </form>
 
-          <!--
-          <div class="l-country-selector country-selector">
-            <div class="dropdown-controller">
-                <a class="trigger" href="#" data-dropdown="#dropdown-content-country">International
-                  <span class="country-img">.</span>
-                </a>
+          <form class="l-language-switcher language-switcher" action="/belgium/fr/" method="post" accept-charset="UTF-8">
+            <div class="form-item form-type-select form-item-languages">
+              <label for="edit-languages">Language </label>
+              <select class="form-select" id="edit-languages"><option value="fr" selected="selected">Français</option><option value="nl">Nederlands</option></select>
             </div>
-            <div id="dropdown-content-country" class="dropdown dropdown-scroll" style="display:none;">
-                <ul class="dropdown-list">
-                    <li><a href="#">Belgium</a></li>
-                    <li><a href="#">France</a></li>
-                    <li><a href="#">India</a></li>
-                    <li><a href="#">International</a></li>
-                    <li><a href="#">Netherlands</a></li>
-                    <li><a href="#">Russia</a></li>
-                    <li><a href="#">Thailand</a></li>
-                    <li><a href="#">USA</a></li>
-                    <li><a href="#">UK</a></li>
-                </ul>
-            </div>
-          </div>
-        -->
+            <input type="submit" value="Switch language" class="form-submit" />
+          </form>
 
         </div>
       </div>

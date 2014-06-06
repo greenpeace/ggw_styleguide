@@ -7,7 +7,16 @@ jQuery(document).ready(function ($) {
     alignTop: true
   });
 
+  //
+  // Selector + chosen
+  //
+
   $('.form-item select').wrap('<div class="selector"></div>');
+
+  // Redirect user on a change event of the country switcher select.
+  $('.country-selector select').change(function() {
+    window.location = window.location.protocol + '//' + window.location.host + '/' + $(this).val();
+  });
 
   // country selector, apply chosen styling
   $('.country-selector .form-select').chosen({
@@ -16,6 +25,8 @@ jQuery(document).ready(function ($) {
 
   // hide button when JS is active
   $('.country-selector .form-submit').hide();
+
+  // Special resize function for better performance
 
   var resizeTimer; // Set resizeTimer to empty so it resets on page load
 

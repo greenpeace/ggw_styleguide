@@ -39,9 +39,9 @@
 .l-country-selector {
   @include breakpoint($desk) {
     position: absolute;
-    width: 165px;
-    left: 160px;
-    bottom: 20px;
+    width: 170px;
+    left: 200px;
+    bottom: 14px;
   }
 }
 

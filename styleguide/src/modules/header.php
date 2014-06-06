@@ -38,7 +38,7 @@
         <div class="nav-inner-wrap">
           <?php include('modules/user-menu.php'); ?>
 
-          <form class="l-country-selector country-selector">
+          <form class="l-country-selector country-selector" accept-charset="UTF-8" action="/usa/en/" method="post">
             <div class="form-item form-type-select form-item-countries">
               <select class="form-select"><option value="belgium">Belgium</option><option value="france">France</option><option value="india">India</option><option value="international" selected="selected">International</option><option value="netherlands">Nederland</option><option value="russia">Russia</option><option value="thailand">Thailand</option><option value="usa">USA</option><option value="uk">United Kingdom</option></select>
             </div>

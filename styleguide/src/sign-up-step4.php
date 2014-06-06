@@ -29,7 +29,6 @@
     <div class="main-content">
 
       <i class="block-icon icon-bg-user icon-user-add"></i>
-      <span class="title-prefix">Overview</span>
       <h1 id="page-title" class="block-title">Register (step 4/4)</h1>  <?php // add extra class here ?>
 
       <div class="content">

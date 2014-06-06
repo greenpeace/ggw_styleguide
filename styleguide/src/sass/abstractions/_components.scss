@@ -1,6 +1,6 @@
 @mixin block-simple {
   background-color: $white;
-  padding: $def-mar;
+  padding: 0 $def-mar $def-mar;
   position: relative;
 }
 

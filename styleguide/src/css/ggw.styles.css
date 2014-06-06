@@ -414,7 +414,7 @@ body {
 .block,
 .main-content {
   background-color: white;
-  padding: 15px;
+  padding: 0 15px 15px;
   position: relative;
 }
 @media (min-width: 768px) {
@@ -464,12 +464,6 @@ ul, li {
 
 li li {
   font-size: 1em;
-}
-
-.block-title {
-  font-family: Helvetica, Arial;
-  color: #1a1a1a;
-  font-size: 16px;
 }
 
 a {
@@ -1747,14 +1741,15 @@ img.mfp-img {
   }
 }
 
-.block-title,
-.title-prefix {
+.block-title {
+  font-family: Helvetica, Arial;
+  color: #1a1a1a;
+  font-size: 1rem;
   margin-left: 45px;
-  line-height: 1.4em;
+  line-height: 36px;
 }
 @media (min-width: 768px) {
-  .block-title,
-  .title-prefix {
+  .block-title {
     margin-left: 30px;
   }
 }

@@ -395,6 +395,7 @@ body {
   color: #4d4d4d;
   background-color: white;
   height: 100%;
+  word-break: break-all;
 }
 @media (min-width: 768px) {
   body {
@@ -1277,7 +1278,7 @@ input[type="radio"]:checked + label:before {
   width: 0;
 }
 
-img, media {
+img, picture, media {
   max-width: 100%;
 }
 

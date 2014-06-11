@@ -4,6 +4,10 @@
     @extend %mnul;
   }
 
+  label {
+    display: none;
+  }
+
   .selector {
     color: $base;
     padding: 1em 1em 1em 3em;

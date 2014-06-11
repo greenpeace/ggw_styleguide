@@ -22,7 +22,6 @@
 <!--[if (gte IE 6)&(lte IE 8)]>
 <link rel="stylesheet" href="css/ggw.no-query.css" />
 <![endif]-->
-
-<script src="js/theme.js"></script>
+<script async="true" src="js/theme.js"></script>
 
 </head>

@@ -1,6 +1,6 @@
 // Use REMs with a pixel fallback for font-sizing.
 @mixin font-size ($font-size){
-  @if $old-ie {
+  @if $oldie {
     font-size: $font-size;
   }
   @else {

@@ -25,10 +25,11 @@
   color: $heading;
   @include font-size($h4);
   margin-left: 45px;
-  line-height: 36px; // match icon height
+  line-height: 1rem; // must be able to span multiple lines
 
   @include breakpoint($tab) {
     margin-left: 30px;
+    padding-top: 10px;
   }
 }
 

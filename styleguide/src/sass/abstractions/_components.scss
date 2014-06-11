@@ -24,6 +24,14 @@
   @include white-popup;
 }
 
+@mixin media {
+  overflow:hidden;
+  @if $oldie {
+    _overflow:visible;
+    zoom:1;
+  }
+}
+
 
 // CLEARFIXES
 @mixin cf {

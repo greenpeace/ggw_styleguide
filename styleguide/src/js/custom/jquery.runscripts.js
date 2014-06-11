@@ -20,7 +20,8 @@ jQuery(document).ready(function ($) {
 
   // country selector, apply chosen styling
   $('.country-selector .form-select').chosen({
-    disable_search: true
+    disable_search: true,
+    width: 'auto'
   });
 
   // hide button when JS is active
@@ -28,7 +29,7 @@ jQuery(document).ready(function ($) {
 
   $('.language-switcher .form-select').chosen({
     disable_search: true,
-    width: "100%"
+    width: '100%'
   });
 
 

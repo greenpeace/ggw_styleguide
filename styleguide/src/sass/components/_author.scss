@@ -1,0 +1,33 @@
+.submitted {
+  margin:$def-mar 0;
+  border-top: 1px solid $grey-l;
+  padding-top: $def-mar;
+}
+
+.submitted,
+.submitted-info {
+  @include media;
+
+}
+
+.submitted-image {
+  float: left;
+  margin-right: 10px;
+
+  img {
+    display: block;
+  }
+}
+
+.submitted-date {
+  text-transform: uppercase;
+  font-style: italic;
+  color: $grey-m;
+  @include font-size(12px);
+
+  &:before {
+    @extend %load-icon;
+    @extend %icon-clock;
+    padding: 0 .2em 0 .1em;
+  }
+}

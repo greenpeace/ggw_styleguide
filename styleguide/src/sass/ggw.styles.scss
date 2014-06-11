@@ -12,7 +12,7 @@ $browser-minimum-versions: (
   'ie': "9"
 );
 
-$old-ie: false;
+$oldie: false;
 
 // Import external libraries.
 @import "compass";

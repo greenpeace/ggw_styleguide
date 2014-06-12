@@ -172,6 +172,10 @@
 
 @include breakpoint($desk) {
 
+  .nav-inner-wrap {
+    border: none;
+  }
+
   %element-hidden1 {
     @include element-hidden;
   }

@@ -2,22 +2,15 @@
 
   .form-item {
     @extend %mnul;
+    position: relative;
+    height: 57px;
   }
 
   label {
-    display: none;
-  }
-
-  .selector {
-    color: $base;
-    padding: 1em 1em 1em 3em;
-    font-weight: 700;
-    border: none;
-    border-top: 1px solid #CCCCCC;
-    border-radius: 0;
-    background: none;
+    position: relative;
     display: block;
-    max-width: 100%;
+    padding: 1em;
+    border-top: 1px solid #CCCCCC;
 
     &:after {
       width: 0;
@@ -32,6 +25,13 @@
       right: 2em;
       padding:0;
     }
+  }
+
+  .selector {
+    opacity: 0;
+    top:0;
+    padding: 1em;
+    //transform: translate3d(0px, -100%, 0px);
 
     &:before {
       @extend %element-hidden;
@@ -49,24 +49,31 @@
 
     .language-switcher {
 
-      .form-item {
-        float: right;
-      }
-
       label {
-        position: absolute;
-        right: 90px;
-        top: 2px;
+        right: 0;
+        top: 2em;
+        position: relative;
+        background: $green1;
+        padding: 0 1.2em 0 0;
         font-weight: 300;
         color: $white;
+        width: auto;
+        border: none;
+        word-break: keep-all;
+        z-index: 4;
         @include font-size(13px);
-        display: inline-block;
-        margin-right: .5em;
+        display: block;
 
         &:after {
-          content: ":";
-          right: -.3em;
-          top: 0;
+          width: 0;
+          height: 0;
+          border: .4em solid transparent; /* 5 */
+          border-bottom: none;
+          border-top-color: $white;
+          content: '';
+          display: inline-block;
+          right: 0;
+          top: .8em;
           position: absolute;
         }
       }
@@ -81,6 +88,9 @@
         padding:0;
         height: auto;
         background: none;
+        z-index: 5;
+        opacity: 0;
+        word-break: keep-all;
 
         span {
           color: $white;
@@ -88,27 +98,27 @@
           margin:0;
           display: inline-block;
           overflow: visible;
+          padding: 0 10px;
         }
 
-        div {
-          @include element-hidden;
-        }
 
       }
 
       .chosen-with-drop .chosen-single {
-        background-color: $white;
-        background-position: 96% -40px;
+          background-color: $white;
+          background-position: 96% -40px;
+          opacity: 1;
 
-         span {
-          color: $green2;
-         }
+          span {
+            color: $grey-d;
+          }
       }
 
       .chosen-drop {
         border: none;
         padding: 6px 0 4px;
         box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+        word-break: keep-all;
       }
 
       .chosen-results {
@@ -120,7 +130,7 @@
         font-weight: 300;
         @include font-size(13px);
         color: $base;
-        padding: 3px 0;
+        padding: 3px 10px;
         line-height: 1.2em;
       }
 
@@ -131,15 +141,12 @@
 
       .selector {
         padding:0;
+        position: relative;
         border: none;
-        float: right;
+        background: none;
 
         &:after {
-          border-top-color: $white;
-          top: .9em;
-          right:0;
-          border-width: .3em;
-
+          display: none;
         }
       }
 

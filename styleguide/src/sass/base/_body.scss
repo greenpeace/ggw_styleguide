@@ -10,7 +10,6 @@ body {
   color: $base;
   background-color: $white;
   height: 100%;
-  word-break: break-all; //prevent long words from overflowing the container
 
   @include breakpoint($tab) {
     background-color: $background;

@@ -48,7 +48,7 @@
           <form class="l-language-switcher language-switcher" action="/belgium/fr/" method="post" accept-charset="UTF-8">
             <div class="form-item form-type-select form-item-languages">
               <label for="edit-languages">Language </label>
-              <select class="form-select" id="edit-languages"><option value="fr" selected="selected">Français</option><option value="nl">Nederlands</option></select>
+              <select class="form-select" id="edit-languages"><option value="fr">Français</option><option value="nl">Nederlands</option></select>
             </div>
             <input type="submit" value="Switch language" class="form-submit" />
           </form>

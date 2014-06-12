@@ -78,6 +78,12 @@
   background: none;
 }
 
+@mixin showClickable() {
+  opacity: 1;
+  border: inherit;
+  background: inherit;
+}
+
 %hideYetClickable {
   @include hideYetClickable;
 }

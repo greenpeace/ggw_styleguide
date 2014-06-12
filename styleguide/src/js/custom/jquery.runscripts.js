@@ -29,7 +29,7 @@ jQuery(document).ready(function ($) {
 
   $('.language-switcher .form-select').chosen({
     disable_search: true,
-    width: '100%'
+    width: '100px'
   });
 
 

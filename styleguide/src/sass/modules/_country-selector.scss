@@ -2,11 +2,12 @@
 
   .form-item {
     @extend %mnul;
+    position: relative;
   }
 
   .selector {
     color: $base;
-    padding: 1em 1em 1em 3em;
+    padding: 1em;
     font-weight: 700;
     border: none;
     border-top: 1px solid #CCCCCC;
@@ -30,13 +31,7 @@
     }
 
     &:before {
-      @extend %load-icon;
-      @extend %icon-globe;
-      position: absolute;
-      left:.5em;
-      right: auto;
-      top: .9em;
-      @include font-size(16px);
+      display: none;
     }
 
     select {

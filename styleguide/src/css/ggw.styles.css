@@ -254,7 +254,7 @@ th {
   clear: both;
 }
 
-.submitted-date:before, .form-type-radio .option:before,
+.form-type-radio .option:before,
 .form-type-checkbox .option:before, .selector:before, [class*="icon-"], .off-canvas .caret:before, .block-search .form-actions {
   font-family: 'greenwire-10';
   speak: none;
@@ -285,6 +285,14 @@ th {
   content: '\e811';
 }
 
+.icon-video:before {
+  content: '\e80c';
+}
+
+.icon-photo:before {
+  content: '\e80d';
+}
+
 .icon-menu:before {
   content: '\e804';
 }
@@ -297,6 +305,18 @@ input[type="checkbox"] + label:before {
   content: '\e81d';
 }
 
+.icon-document:before {
+  content: '\e839';
+}
+
+.icon-tag:before {
+  content: '\e835';
+}
+
+.icon-idea:before {
+  content: '\e821';
+}
+
 .icon-reply:before {
   content: '\e826';
 }
@@ -305,11 +325,15 @@ input[type="checkbox"] + label:before {
   content: '\e809';
 }
 
+.icon-blog:before {
+  content: '\e831';
+}
+
 .icon-news:before {
   content: '\e830';
 }
 
-.submitted-date:before, .icon-clock:before {
+.icon-clock:before {
   content: '\e81b';
 }
 
@@ -327,6 +351,10 @@ input[type="checkbox"] + label:before {
 
 input[type="radio"] + label:before {
   content: '\e848';
+}
+
+.icon-material:before {
+  content: '\e81a';
 }
 
 .breadcrumbs {
@@ -510,7 +538,7 @@ article ul {
   list-style-type: disc;
 }
 article ol {
-  list-style: decimal inside;
+  list-style: decimal;
 }
 article h1, article h2, article h3, article h4, article h5, article h6 {
   margin: 10px 0;
@@ -556,13 +584,27 @@ article q, article blockquote {
 
 .submitted {
   margin: 15px 0;
-  border-top: 1px solid #cccccc;
   padding-top: 15px;
+}
+
+.submitted,
+.submitted a {
+  font-size: 0.875rem;
 }
 
 .submitted,
 .submitted-info {
   overflow: hidden;
+}
+
+.submitted .icon:before {
+  margin: 0 .2em 0 .1em;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+.submitted-origin {
+  display: inline-block;
 }
 
 .submitted-image {
@@ -574,13 +616,12 @@ article q, article blockquote {
 }
 
 .submitted-date {
-  text-transform: uppercase;
-  font-style: italic;
-  color: #999999;
-  font-size: 0.75rem;
+  display: inline-block;
 }
-.submitted-date:before {
-  padding: 0 .2em 0 .1em;
+
+.tags {
+  text-transform: lowercase;
+  font-style: italic;
 }
 
 .button {

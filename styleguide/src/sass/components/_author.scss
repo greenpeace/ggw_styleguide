@@ -1,13 +1,26 @@
 .submitted {
   margin:$def-mar 0;
-  border-top: 1px solid $grey-l;
   padding-top: $def-mar;
+}
+
+.submitted,
+.submitted a {
+  @include font-size(14px);
 }
 
 .submitted,
 .submitted-info {
   @include media;
+}
 
+.submitted .icon:before {
+  margin: 0 .2em 0 .1em;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+.submitted-origin {
+  display: inline-block;
 }
 
 .submitted-image {
@@ -20,14 +33,10 @@
 }
 
 .submitted-date {
-  text-transform: uppercase;
-  font-style: italic;
-  color: $grey-m;
-  @include font-size(12px);
+  display: inline-block;
+}
 
-  &:before {
-    @extend %load-icon;
-    @extend %icon-clock;
-    padding: 0 .2em 0 .1em;
-  }
+.tags {
+  text-transform: lowercase;
+  font-style: italic;
 }

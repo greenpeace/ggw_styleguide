@@ -85,12 +85,13 @@
 
       <div class="submitted">
         <div class="submitted-image">
-          <img src="http://placehold.it/50x50" alt="Name of the author" /> <?php // change img size to 50px ?>
+          <img src="http://placehold.it/75x75" alt="Name of the author" /> <?php // change img size to 50px ?>
         </div>
 
         <div class="submitted-info">
-          <a href="#">author_username</a>
+            <a href="#" class="icon icon-news">News</a> by <a href="#">author_username</a> in <a href="#">Group name</a>,
           <div class="submitted-date">5 June, 2014 - 11:29</div>
+          <div class="tags"><a class="tag" href="#">oceans</a>, <a class="tag" href="#">Sustainable Fishery</a>, <a class="tag" href="#">conservation</a> </div>
         </div>
 </article>
 

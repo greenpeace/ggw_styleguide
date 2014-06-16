@@ -15,9 +15,17 @@
 .icon-user-add {  @extend %icon-user-add; }
 .icon-menu {      @extend %icon-menu; }
 .icon-user {      @extend %icon-user; }
-.icon-news {      @extend %icon-book-open; }
 .icon-close {     @extend %icon-cancel; }
 .icon-reply {     @extend %icon-reply; }
 .icon-pencil {    @extend %icon-pencil; }
 .icon-trash {     @extend %icon-trash; }
 .icon-clock {     @extend %icon-clock; }
+.icon-tag {       @extend %icon-tag; }
+
+.icon-news {      @extend %icon-book-open; }
+.icon-blog {      @extend %icon-feather; }
+.icon-photo {     @extend %icon-camera; }
+.icon-video {     @extend %icon-video; }
+.icon-document {  @extend %icon-attach; }
+.icon-idea {      @extend %icon-thumbs-up; }
+.icon-material {  @extend %icon-bucket; }

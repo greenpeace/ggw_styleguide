@@ -1,5 +1,6 @@
 .sidebar .block {
   margin-bottom: $def-mar;
+  position: relative;
 }
 
 .block-icon {
@@ -18,6 +19,21 @@
   }
 
 }
+
+.sidebar .block-icon {
+  background: none;
+  color: $base;
+}
+
+.sidebar .content {
+  display: none;
+
+  a {
+    display: block;
+  }
+}
+
+
 
 .block-title {
   font-family: Helvetica, Arial;

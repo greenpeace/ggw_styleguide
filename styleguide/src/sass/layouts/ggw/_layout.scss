@@ -81,7 +81,17 @@
   }
 }
 
+.l-has-sidebar .l-main {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
 .l-has-sidebar .l-main-column {
+  order: 1;
+  flex: 1 100%;
+  position: relative;
+  margin-top: $def-mar;
 
   @include breakpoint($desk) {
     @include grid-span(8, 1);
@@ -90,7 +100,20 @@
 }
 
 .l-has-sidebar .l-sidebar {
-  @extend %element-hidden;
+  order: 0;
+  flex: 1 100%;
+  display: flex;
+  margin-left: -$def-mar;
+  margin-right: -$def-mar;
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  .block {
+    flex-grow: 1;
+    background: $background;
+    height: 50px;
+    margin: 0;
+  }
 
   @include breakpoint($desk) {
     @include grid-span(4, 9);

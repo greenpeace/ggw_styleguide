@@ -384,7 +384,7 @@ input[type="radio"] + label:before {
 }
 
 input[type="radio"],
-input[type="checkbox"], .breadcrumbs, .language-switcher label, .language-switcher .selector:before, #landline:not(:target), .block-search .form-actions, .l-has-sidebar .l-sidebar {
+input[type="checkbox"], .breadcrumbs, .language-switcher label, .language-switcher .selector:before, #landline:not(:target), .block-search .form-actions {
   display: none;
 }
 
@@ -1709,6 +1709,7 @@ img.mfp-img {
 }
 .sidebar .block {
   margin-bottom: 15px;
+  position: relative;
 }
 
 .block-icon {
@@ -1726,6 +1727,18 @@ img.mfp-img {
     border-radius: 4px 0;
     left: 0;
   }
+}
+
+.sidebar .block-icon {
+  background: none;
+  color: #4d4d4d;
+}
+
+.sidebar .content {
+  display: none;
+}
+.sidebar .content a {
+  display: block;
 }
 
 .block-title {
@@ -2572,6 +2585,31 @@ img.mfp-img {
   }
 }
 
+.l-has-sidebar .l-main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+}
+
+.l-has-sidebar .l-main-column {
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 100%;
+  -ms-flex: 1 100%;
+  flex: 1 100%;
+  position: relative;
+  margin-top: 15px;
+}
 @media (min-width: 900px) {
   .l-has-sidebar .l-main-column {
     width: 65.95745%;
@@ -2582,6 +2620,38 @@ img.mfp-img {
   }
 }
 
+.l-has-sidebar .l-sidebar {
+  -webkit-box-ordinal-group: 1;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 100%;
+  -ms-flex: 1 100%;
+  flex: 1 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -15px;
+  margin-right: -15px;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.l-has-sidebar .l-sidebar .block {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  background: #eeeeee;
+  height: 50px;
+  margin: 0;
+}
 @media (min-width: 900px) {
   .l-has-sidebar .l-sidebar {
     width: 31.91489%;

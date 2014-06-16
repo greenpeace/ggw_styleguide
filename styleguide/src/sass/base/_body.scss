@@ -11,7 +11,7 @@ body {
   background-color: $white;
   height: 100%;
 
-  @include breakpoint($tab) {
+  @include breakpoint($desk) {
     background-color: $background;
   }
 
@@ -40,9 +40,8 @@ body {
 
 .block,
 .main-content {
-  @include block-simple;
 
-  @include breakpoint($tab) {
+  @include breakpoint($desk) {
     @include block-rich;
   }
 }

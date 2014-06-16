@@ -3,7 +3,7 @@
   @extend %hlist;
   margin-bottom: $def-mar;
 
-  @include breakpoint($tab) {
+  @include breakpoint($desk) {
     display: block;
   }
 }

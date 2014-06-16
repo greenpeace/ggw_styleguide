@@ -1,3 +1,8 @@
 img, picture, media {
   max-width: 100%;
 }
+
+article picture,
+article img {
+  width: 100%;
+}

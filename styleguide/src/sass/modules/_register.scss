@@ -59,13 +59,14 @@
 #landline,
 #mobileline {
   background: $white;
-
+  z-index: 3;
 }
 
 #landline {
   position: absolute;
   top:0;
   width: 100%;
+  z-index: 4;
 }
 
 #landline:not( :target ) {

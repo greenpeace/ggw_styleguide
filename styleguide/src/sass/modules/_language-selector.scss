@@ -3,13 +3,31 @@
   .form-item {
     @extend %mnul;
     position: relative;
-    height: 57px;
   }
 
   label {
-    position: relative;
-    display: block;
+    @extend %element-hidden;
     padding: 1em;
+    width: auto;
+    z-index: 4;
+    font-weight: 300;
+    &:after {
+      display: inline-block;
+      content: ":";
+      position: absolute;
+      top: 1em;
+      right: -.5em;
+    }
+  }
+
+  .selector {
+    padding: 1em;
+    z-index: 5;
+    font-weight: 700;
+    border-radius: 0;
+    border: none;
+    background: none;
+    max-width: none;
     border-top: 1px solid #CCCCCC;
 
     &:after {
@@ -25,13 +43,6 @@
       right: 2em;
       padding:0;
     }
-  }
-
-  .selector {
-    opacity: 0;
-    top:0;
-    padding: 1em;
-    //transform: translate3d(0px, -100%, 0px);
 
     &:before {
       @extend %element-hidden;
@@ -44,39 +55,11 @@
 
 }
 
-.l-header {
-  @include breakpoint($desk) {
+@include breakpoint($desk) {
+
+  .l-header {
 
     .language-switcher {
-
-      label {
-        right: 0;
-        top: 2em;
-        position: relative;
-        background: $green1;
-        padding: 0 1.2em 0 0;
-        font-weight: 300;
-        color: $white;
-        width: auto;
-        border: none;
-        word-break: keep-all;
-        z-index: 4;
-        @include font-size(13px);
-        display: block;
-
-        &:after {
-          width: 0;
-          height: 0;
-          border: .4em solid transparent; /* 5 */
-          border-bottom: none;
-          border-top-color: $white;
-          content: '';
-          display: inline-block;
-          right: 0;
-          top: .8em;
-          position: absolute;
-        }
-      }
 
       .chosen-single {
         border: none;
@@ -85,12 +68,24 @@
         border-radius: 5px 5px 0 0;
         width: auto;
         position: relative;
-        padding:0;
+        padding:0 1em 0 0;
         height: auto;
         background: none;
         z-index: 5;
-        opacity: 0;
         word-break: keep-all;
+
+        &:after {
+          width: 0;
+          height: 0;
+          border: .4em solid transparent; /* 5 */
+          border-bottom: none;
+          border-top-color: $white;
+          content: '';
+          position: absolute;
+          display: inline-block;
+          top: .8em;
+          right: .3em;
+        }
 
         span {
           color: $white;
@@ -101,17 +96,22 @@
           padding: 0 10px;
         }
 
+        div {
+          display: none;
+        }
 
       }
 
       .chosen-with-drop .chosen-single {
-          background-color: $white;
-          background-position: 96% -40px;
-          opacity: 1;
+        background-color: $white;
+        &:after {
+          border-top-color: $grey-d;
+        }
 
-          span {
-            color: $grey-d;
-          }
+        span {
+          color: $grey-d;
+        }
+
       }
 
       .chosen-drop {

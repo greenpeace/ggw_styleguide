@@ -1,12 +1,9 @@
-@mixin block-simple {
-  background-color: $white;
-  padding: 0 $def-mar $def-mar;
-  position: relative;
-}
-
 @mixin block-rich {
   border-radius: 4px;
   box-shadow: 0 1px 3px 0 $grey-m;
+  background-color: $white;
+  padding: 0 $def-mar $def-mar;
+  position: relative;
 }
 
 %block-element {

@@ -85,7 +85,7 @@
 
       <div class="submitted">
         <div class="submitted-image">
-          <img src="http://placekitten.com/g/50/50" alt="Name of the author" /> <?php // change img size to 50px ?>
+          <img src="http://placehold.it/50x50" alt="Name of the author" /> <?php // change img size to 50px ?>
         </div>
 
         <div class="submitted-info">
@@ -132,9 +132,7 @@
 
 
 
-<footer class="l-footer">
-
-</footer>
+<?php include('modules/footer.php'); ?>
 <!-- put js here -->
 
 </div></div>

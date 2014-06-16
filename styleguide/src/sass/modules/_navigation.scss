@@ -14,7 +14,7 @@
   }
 
   @include breakpoint($tab) {
-    left: 15px;
+    left: 10px;
   }
 }
 
@@ -30,7 +30,7 @@
 
 .off-canvas {
   z-index: 200;
-  position: absolute;
+  position: fixed;
   top: 43px;
   overflow: hidden;
   width: 100%;

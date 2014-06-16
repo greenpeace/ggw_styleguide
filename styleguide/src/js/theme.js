@@ -5807,20 +5807,23 @@ jQuery(document).ready(function ($) {
     window.location = window.location.protocol + '//' + window.location.host + '/' + $(this).val();
   });
 
+  // hide button when JS is active
+  $('.country-selector .form-submit, .language-switcher .form-submit').hide();
+
   // country selector, apply chosen styling
-  $('.country-selector .form-select').chosen({
+  $('.desktop .country-selector .form-select').chosen({
     disable_search: true,
     width: 'auto'
   });
 
-  // hide button when JS is active
-  $('.country-selector .form-submit, .language-switcher .form-submit').hide();
-
-  $('.language-switcher .form-select').chosen({
+  $('.desktop .language-switcher .form-select').chosen({
     disable_search: true,
     width: '100px'
   });
 
+  var LabelText = $('.language-switcher label').text();
+  $('.language-switcher .form-select').prepend('<option value="" disabled selected>' + LabelText + '</option>');
+  $('.language-switcher label').hide();
 
   // Special resize function for better performance
 

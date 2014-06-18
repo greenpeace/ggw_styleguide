@@ -4590,6 +4590,89 @@ $.magnificPopup.registerModule(RETINA_NS, {
   };
 })(jQuery);
 
+/**
+ * jQuery Plugin to obtain touch gestures from iPhone, iPod Touch and iPad, should also work with Android mobile phones (not tested yet!)
+ * Common usage: wipe images (left and right to show the previous or next image)
+ * 
+ * @author Andreas Waltl, netCU Internetagentur (http://www.netcu.de)
+ * @version 1.1.1 (9th December 2010) - fix bug (older IE's had problems)
+ * @version 1.1 (1st September 2010) - support wipe up and wipe down
+ * @version 1.0 (15th July 2010)
+ */
+(function($) { 
+   $.fn.touchwipe = function(settings) {
+     var config = {
+    		min_move_x: 20,
+    		min_move_y: 20,
+ 			wipeLeft: function(e) { },
+ 			wipeRight: function(e) { },
+ 			wipeUp: function(e) { },
+ 			wipeDown: function(e) { },
+			preventDefaultEvents: false
+	 };
+     
+     if (settings) $.extend(config, settings);
+ 
+     this.each(function() {
+    	 var startX;
+    	 var startY;
+		 var isMoving = false;
+
+    	 function cancelTouch() {
+    		 this.removeEventListener('touchmove', onTouchMove);
+    		 startX = null;
+    		 isMoving = false;
+    	 }	
+    	 
+    	 function onTouchMove(e) {
+    		 if(config.preventDefaultEvents) {
+    			 e.preventDefault();
+    		 }
+    		 if(isMoving) {
+	    		 var x = e.touches[0].pageX;
+	    		 var y = e.touches[0].pageY;
+	    		 var dx = startX - x;
+	    		 var dy = startY - y;
+	    		 if(Math.abs(dx) >= config.min_move_x) {
+	    			cancelTouch();
+	    			if(dx > 0) {
+	    				config.wipeLeft(e);
+	    			}
+	    			else {
+	    				config.wipeRight(e);
+	    			}
+	    		 }
+	    		 else if(Math.abs(dy) >= config.min_move_y) {
+		    			cancelTouch();
+		    			if(dy > 0) {
+		    				config.wipeDown(e);
+		    			}
+		    			else {
+		    				config.wipeUp(e);
+		    			}
+		    		 }
+    		 }
+    	 }
+    	 
+    	 function onTouchStart(e)
+    	 {
+    		 if (e.touches.length == 1) {
+    			 startX = e.touches[0].pageX;
+    			 startY = e.touches[0].pageY;
+    			 isMoving = true;
+    			 this.addEventListener('touchmove', onTouchMove, false);
+    		 }
+    	 }    	 
+    	 if ('ontouchstart' in document.documentElement) {
+    		 this.addEventListener('touchstart', onTouchStart, false);
+    	 }
+     });
+ 
+     return this;
+   };
+ 
+ })(jQuery);
+
 /* Modernizr 2.8.1 (Custom Build) | MIT & BSD
  * Build: http://modernizr.com/download/#-fontface-backgroundsize-borderradius-boxshadow-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-csstransforms-csstransforms3d-csstransitions-svg-printshiv-cssclasses-teststyles-testprop-testallprops-prefixes-domprefixes-load
  */
@@ -5879,14 +5962,72 @@ jQuery(document).ready(function ($) {
 jQuery(document).ready(function ($) {
   'use strict';
 
+  // Open and close the primary-nav clicking on
   $('#main-menu-show').click(function(e) {
     $(document.documentElement).toggleClass('primary-nav');
     e.preventDefault();
   });
 
+  // When the primary-nav is open, you can close it with a left swipe
+  $(document.documentElement).touchwipe({
+    wipeLeft: function(e) {
+      e.preventDefault();
+      if(checkOpenMenu()==1)
+      {
+        $('html').toggleClass('primary-nav');
+      }
+    }
+  });
+
+  // Open and close the secondary-nav clicking on
   $('#secondary-menu-show').click(function(e) {
     $(document.documentElement).toggleClass('secondary-nav');
     e.preventDefault();
   });
 
+  // When the secondary-nav is open, you can close it with a right swipe
+  $(document.documentElement).touchwipe({
+    wipeRight: function(e) {
+      e.preventDefault();
+      if(checkOpenMenu()==2)
+      {
+        $('html').toggleClass('secondary-nav');
+      }
+    }
+  });
+
+  //function to check if the primary-nav or secondary-nav is opened
+  var menuOpen=0;
+
+  function checkOpenMenu() {
+    var tempOpenMenuVar = $('html').attr('class').split(/\s+/);
+    var rightopen = false;
+    var leftopen = false;
+    for(var i = 0 ; i < tempOpenMenuVar.length ; i ++)
+    {
+      if(tempOpenMenuVar[i] == "primary-nav")
+      {
+        leftopen = true;
+        i = tempOpenMenuVar.length;
+      }
+      if(tempOpenMenuVar[i] == "secondary-nav")
+      {
+        rightopen = true;
+        i = tempOpenMenuVar.length;
+      }
+    }
+    if(!rightopen && !leftopen)
+    {
+      menuOpen = 0;
+    }
+    if(leftopen)
+    {
+      menuOpen = 1;
+    }
+    if(rightopen )
+    {
+      menuOpen = 2;
+    }
+    return menuOpen;
+  }
 });

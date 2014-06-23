@@ -1,58 +1,62 @@
-* Greenpeace Greenwire Styleguide *
+# Kalei - Style guide
 
-The aim of this project is to create reusable and optimized front-
-end code for Greenwire.
+This project aims at making sure your style sheets are fully documented whilst being synchronized with your webpages styles. To do this it actually uses your live stylesheets in so that at anytime you can review how your styleguide looks.
 
-# Ruby #
 
-* Make sure you have Ruby, Bundler and RVM installed, we use RVM version 1.9.3
-If you are on a Mac, you'll require a package manager like Homebrew and the latest version of XCode Development Tools, as well as the Xcode Command Line Tools. Although Mac comes with Ruby, it may not be the right version.
-* Install RVM with Ruby with
-`\curl -L https://get.rvm.io | bash -s stable --ruby`.
+## Main goals and benefits
 
-* After installing RVM, run `rvm requirements` in your terminal to see if anything else is required to install Ruby and Rails.
+* Fully documented CSS - No need to explain the benefits
+* No dependencies, simply download the repository and run in your browser
+* Automatic generation of demo UI components
+* Easy access for anyone, designer, developer, manager and users
+* Rapid development of projects by allowing developers to find the correct CSS and HTML for any given UI component
+* Open sourced so that all great ideas can be included
 
-## Ruby Gems ##
 
-* Navigate to the theme folder in your terminal and run `bundle install` or `bundle update`.
-It will read the Gems specified in the Gemfile and install them (and all their dependencies) one by one
 
-## Gulp ##
 
-### Installing gulp ###
 
-We use gulp for many tasks which you can find in gulpfile.js. You need to install gulp on your local environment and in the project:
+## Getting started
 
-* `npm install gulp -g // global install`
-* `npm install gulp --save-dev // local install`
+1. Download the repository (`git clone git://github.com/kaleistyleguide/kaleistyleguide.git`)
+2. Serve it on a HTTP server and it should work!
+3. Edit `js/config.js` to point at your own `styles.css`
 
-### Installing gulp plugins ###
 
-Install the plugins we use:
+## Author
 
-* Compass, with sass dependencies (gulp-compass)
-* Autoprefixer (gulp-autoprefixer)
-* Minify CSS (gulp-minify-css)
-* Concatenation (gulp-concat)
-* JSHint (gulp-jshint)
-* Uglify (gulp-uglify)
-* Compress images (gulp-imagemin)
-* Clean files for a clean build (gulp-clean)
-* Rename (gulp-rename)
-* Chnaged, only pass through changed files (gulp-changed)
-* Caching of images so only changed images are compressed (gulp-cache)
-* Size (gulp-size)
-* Notify of changes (gulp-notify)
+[Thomas Davis](http://thomasdavis.github.com)
+Luke Brooker
+Richard Barret
 
-Command for single install
 
-* `npm install gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-rename gulp-changed gulp-cache gulp-size gulp-notify --save-dev`
 
-This will install all necessary plugins and save them to devDependencies in package.json.
+## Inspiration
 
-### Use Gulp ###
+Kalei is heavily influenced by the following projects and blog posts.
 
-Just run one of the tasks in the gulpfile
- * `gulp watch` to start watching files for changes
- * `gulp compass` to compile scss to css
- * `gulp images` to optimize images
+[Pea.rs](http://pea.rs/)
+
+[KSS](http://warpspire.com/posts/kss/)
+
+[StyleDocco](http://jacobrask.github.com/styledocco/)
+
+[RJ Metrics](http://info.rjmetrics.com/blog/bid/52753/Our-Living-Style-Guide-Writing-maintainable-HTML-CSS)
+
+[Anchoring Your Design Language in a Live Style Guide](http://uxmag.com/articles/anchoring-your-design-language-in-a-live-style-guide)
+
+
+## Technologies
+
+* [marked](https://github.com/chjj/marked)
+* [jscssp](http://www.glazman.org/JSCSSP/)
+* cssbeautify
+* [fixie](http://fixiejs.com/)
+* [highlight](http://softwaremaniacs.org/soft/highlight/en/)
+* [backbone](http://backbonejs.org/)
+* [underscore](http://underscorejs.org/)
+* [jquery](http://jquery.com)
+
+## License
+
+Public domain: http://unlicense.org/

@@ -44,6 +44,7 @@ gulp.task('compass-all', function() {
     .pipe(gulp.dest('src/css'));
 });
 
+// Split css files into separate media-query based files
 gulp.task('media', function () {
   gulp.src('src/css/ggw.styles.css')
     .pipe(cmq({

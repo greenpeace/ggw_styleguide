@@ -17,18 +17,6 @@ body {
 
 }
 
-// For off-canvas-nav
-#outer-wrap,
-#inner-wrap {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-}
-
-#outer-wrap {
-  overflow: hidden;
-}
-
 .logo {
   background-image: url(../images/logo.svg);
   background-repeat: no-repeat;

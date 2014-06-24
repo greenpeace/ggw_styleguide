@@ -1,6 +1,27 @@
+// For off-canvas-nav
+#outer-wrap,
+#inner-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#outer-wrap {
+  overflow: hidden;
+}
+
+#inner-wrap {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+//
+// Outer containers
+//
+
 .container {
   position: relative;
-  @include pie-clearfix;
   padding: 0 $def-mar;
 
   @include breakpoint($desk) {
@@ -23,13 +44,35 @@
   }
 }
 
+.l-main {
+  flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  margin: $def-mar auto;
+}
+
+.l-footer {
+  display: none;
+
+  @include breakpoint($desk) {
+    display: block;
+  }
+}
+
+//
+// Inner containers
+//
+
 .l-branding-header {
   width: 134px;
   margin: 0 auto;
   position: relative;
 
   @include breakpoint($desk) {
-    @include grid-span(3, 1);
+    position: absolute;
+    left: 0;
   }
 }
 
@@ -38,7 +81,7 @@
     position: absolute;
     width: 200px;
     left: 200px;
-    bottom: 14px;
+    bottom: 20px;
   }
 }
 
@@ -54,11 +97,9 @@
 .l-header-navigation {
 
   @include breakpoint($desk) {
-    @include isolation-span(12, 1);
     position: relative;
-    bottom: -11px;
+    top: 44px;
     z-index: 2;
-    @include cf;
   }
 }
 
@@ -73,71 +114,45 @@
 
 }
 
-.l-main {
-  margin: $def-mar auto;
+.breadcrumb {
+  @extend %element-hidden;
 
   @include breakpoint($desk) {
-    min-height: 730px; //space for the footer
+    display: block;
+    flex: 1 1 100%;
+    order: 0;
   }
-}
 
-.l-has-sidebar .l-main {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
 }
 
 .l-has-sidebar .l-main-column {
+  flex: 1 1 100%;
   order: 1;
-  flex: 1 100%;
   position: relative;
-  margin-top: $def-mar;
 
   @include breakpoint($desk) {
-    @include grid-span(8, 1);
+    flex: 3 1 (100%/1.5);
   }
 
 }
 
 .l-has-sidebar .l-sidebar {
-  order: 0;
-  flex: 1 100%;
-  display: flex;
-  margin-left: -$def-mar;
-  margin-right: -$def-mar;
-  flex-flow: row nowrap;
-  justify-content: center;
-
-  .block {
-    flex-grow: 1;
-    background: $background;
-    height: 50px;
-    margin: 0;
-  }
-
-  @include breakpoint($desk) {
-    @include grid-span(4, 9);
-    display: block;
-  }
-}
-
-.l-footer {
-  display: none;
+  @extend %element-hidden;
 
   @include breakpoint($desk) {
     display: block;
+    flex: 1 1 auto;
+    order: 2;
+    margin: 0 auto;
+    padding-left: 1em;
   }
 }
 
 @include breakpoint($desk) {
 
   .footer-offset {
-    margin: 80px 0 0 0;
     height: 100px;
-    width: 100%;
-    display: table;
     background: #e4e4e4;
-    content: "";
     border-bottom: 3px solid #CCC;
   }
 }

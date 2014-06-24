@@ -41,7 +41,7 @@
           <div class="l-country-selector country-selector">
              <div class="dropdown-controller">
                  <a class="trigger" href="#" data-dropdown="#dropdown-content-country">International
-                   <span class="country-img">.</span>
+                   <span class="country-img"></span>
                  </a>
              </div>
              <div id="dropdown-content-country" class="dropdown dropdown-scroll" style="display:none;">

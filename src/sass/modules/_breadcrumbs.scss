@@ -1,11 +1,6 @@
 .breadcrumbs {
-  @extend %element-hidden;
   @extend %hlist;
   margin-bottom: $def-mar;
-
-  @include breakpoint($desk) {
-    display: block;
-  }
 }
 
 .breadcrumb-item {

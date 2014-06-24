@@ -1,6 +1,11 @@
 *.DS_Store
-sass-cache/
-.sass-cache/*
+
+# SASS #
+########
+.sass-cache
+*.sass-cache*
+**/sass/*.css
+
 /node_modules
 /tmp
 *.log

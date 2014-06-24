@@ -13,7 +13,6 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     changed = require('gulp-changed'),
     cmq = require('gulp-combine-media-queries'),
-    nmq = require('gulp-no-media-queries'),
     size = require('gulp-size');
 
 ///
@@ -27,9 +26,6 @@ gulp.task('compass-quick', function() {
       config_file: 'config.rb',
       css: 'src/css',
       sass: 'src/sass'
-    }))
-    .pipe(cmq({
-      use_external: true
     }))
     .pipe(autoprefixer('last 2 versions', '> 1%'))
     .pipe(gulp.dest('src/css'))
@@ -46,6 +42,14 @@ gulp.task('compass-all', function() {
     }))
     .pipe(autoprefixer('last 2 versions', '> 1%'))
     .pipe(gulp.dest('src/css'));
+});
+
+gulp.task('media', function () {
+  gulp.src('src/css/ggw.styles.css')
+    .pipe(cmq({
+      use_external: true
+    }))
+    .pipe(gulp.dest('dist/css'));
 });
 
 

@@ -38,12 +38,26 @@
         <div class="nav-inner-wrap">
           <?php include('modules/user-menu.php'); ?>
 
-          <form class="l-country-selector country-selector" accept-charset="UTF-8" action="/usa/en/" method="post">
-            <div class="form-item form-type-select form-item-countries">
-              <select class="form-select"><option value="belgium">Belgium</option><option value="france">France</option><option value="india">India</option><option value="international" selected="selected">International</option><option value="netherlands">Nederland</option><option value="russia">Russia</option><option value="thailand">Thailand</option><option value="usa">USA</option><option value="uk">United Kingdom</option></select>
-            </div>
-            <input type="submit" value="Switch country" class="form-submit" />
-          </form>
+          <div class="l-country-selector country-selector">
+             <div class="dropdown-controller">
+                 <a class="trigger" href="#" data-dropdown="#dropdown-content-country">International
+                   <span class="country-img">.</span>
+                 </a>
+             </div>
+             <div id="dropdown-content-country" class="dropdown dropdown-scroll" style="display:none;">
+                 <ul class="dropdown-list">
+                     <li><a href="#">Belgium</a></li>
+                     <li><a href="#">France</a></li>
+                     <li><a href="#">India</a></li>
+                     <li><a href="#">International</a></li>
+                     <li><a href="#">Netherlands</a></li>
+                     <li><a href="#">Russia</a></li>
+                     <li><a href="#">Thailand</a></li>
+                     <li><a href="#">USA</a></li>
+                     <li><a href="#">UK</a></li>
+                 </ul>
+             </div>
+           </div>
 
           <form class="l-language-switcher language-switcher" action="/belgium/fr/" method="post" accept-charset="UTF-8">
             <div class="form-item form-type-select form-item-languages">

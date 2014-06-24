@@ -9,6 +9,13 @@
 
 <?php include('modules/header.php'); ?>
 
+<div class="action-menu">
+  <ul>
+    <li><a href="#"><i class="icon icon-user"></i> Login</a></li>
+    <li><a href="#"><i class="icon icon-user-add"></i> Register</a></li>
+  </ul>
+</div>
+
 <div id="main" class="l-main container">
 
   <nav class="breadcrumb" role="navigation">

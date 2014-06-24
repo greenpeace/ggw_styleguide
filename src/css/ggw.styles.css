@@ -2461,7 +2461,7 @@ img.mfp-img {
   overflow: hidden;
 }
 
-#inner-wrap {
+.layout-base {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2519,6 +2519,7 @@ img.mfp-img {
   -ms-flex-align: start;
   align-items: flex-start;
   margin: 15px auto;
+  width: 100%;
 }
 
 .l-footer {
@@ -2608,20 +2609,20 @@ img.mfp-img {
 }
 @media (min-width: 900px) {
   .l-has-sidebar .l-main-column {
-    -webkit-box-flex: 3;
-    -webkit-flex: 3 1 66.66667%;
-    -ms-flex: 3 1 66.66667%;
-    flex: 3 1 66.66667%;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 66.66667%;
+    -ms-flex: 0 1 66.66667%;
+    flex: 0 1 66.66667%;
   }
 }
 
 @media (min-width: 900px) {
   .l-has-sidebar .l-sidebar {
     display: block;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 33.33333%;
+    -ms-flex: 0 1 33.33333%;
+    flex: 0 1 33.33333%;
     -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
     -ms-flex-order: 2;

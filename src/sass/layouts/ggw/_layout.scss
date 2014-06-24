@@ -9,8 +9,7 @@
 #outer-wrap {
   overflow: hidden;
 }
-
-#inner-wrap {
+.layout-base {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -51,6 +50,7 @@
   align-content: flex-start;
   align-items: flex-start;
   margin: $def-mar auto;
+  width: 100%;
 }
 
 .l-footer {
@@ -131,7 +131,7 @@
   position: relative;
 
   @include breakpoint($desk) {
-    flex: 3 1 (100%/1.5);
+    flex: 0 1 (100%/1.5);
   }
 
 }
@@ -141,7 +141,7 @@
 
   @include breakpoint($desk) {
     display: block;
-    flex: 1 1 auto;
+    flex: 0 1 (100%/3);
     order: 2;
     margin: 0 auto;
     padding-left: 1em;

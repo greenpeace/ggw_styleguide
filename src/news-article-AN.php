@@ -4,7 +4,8 @@
 <noscript><div id="javascript-disabled">Your JavaScript seems to be disabled, this might affect your experience on Greenpeace Greenwire.</div></noscript>
 
 <div id="outer-wrap">
-<div id="inner-wrap">
+  <div id="inner-wrap">
+    <div class="layout-base">
 
 <?php include('modules/header.php'); ?>
 
@@ -103,27 +104,23 @@
 
   </div>
 
-  <aside class="l-sidebar sidebar">
+    <aside class="l-sidebar sidebar">
 
-    <div class="block">
-
-      <i class="block-icon icon-bg-action icon-user-add"></i>
-      <h2 class="block-title">Create an account</h2>
-      <div class="content">
-        <p>Do not have an account yet? Click below to register!</p>
-        <a href="#" class="button btn-primary">Get wired</a>
-      </div>
-
-    </div>
+    <a data-replace="modules/an-article-sidebar" data-media="(min-width: 900px)"><span class="element-invisible">
+    Register instructions</span></a>
 
   </aside>
 
 </div>
 
-<?php include('modules/footer.php'); ?>
+<footer class="l-footer footer">
+  <a data-replace="modules/footer" data-media="(min-width: 900px)"><span class="element-invisible">
+    Footer</span></a>
+</footer>
 
 <!-- put js here -->
-
-</div></div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

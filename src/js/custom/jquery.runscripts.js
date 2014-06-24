@@ -36,7 +36,9 @@ jQuery(document).ready(function ($) {
   $('.language-switcher .form-select').prepend('<option value="" disabled selected>' + LabelText + '</option>');
   $('.language-switcher label').hide();
 
+  //
   // Special resize function for better performance
+  //
 
   var resizeTimer; // Set resizeTimer to empty so it resets on page load
 
@@ -84,5 +86,11 @@ jQuery(document).ready(function ($) {
     });
 
     resizeFunction();
+
+    //
+    // Ajax include
+    //
+
+    $("[data-append],[data-replace],[data-after],[data-before]").ajaxInclude();
 
 });

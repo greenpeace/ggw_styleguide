@@ -1,4 +1,3 @@
-<footer class="l-footer footer">
   <div class="footer-offset"></div>
   <div class="container">
     <div class="l-branding-footer">
@@ -23,4 +22,4 @@
         </li>
     </ul>
   </div>
-</footer>
+

@@ -1,7 +1,7 @@
 .nav-btn {
   left: 10px;
   position: absolute;
-  top: 0;
+  top: 6px;
   font-size: 2.4em;
   line-height: 34px;
   color: $white;
@@ -30,7 +30,7 @@
 
 .off-canvas {
   z-index: 200;
-  position: fixed;
+  position: absolute;
   top: 43px;
   overflow: hidden;
   width: 100%;
@@ -51,7 +51,7 @@
     width: $nav-off-canvas-width;
     height: auto;
     z-index: 200;
-    top: -7px;
+    top: 0;
   }
 
   #inner-wrap {

@@ -27,7 +27,10 @@ gulp.task('compass-quick', function() {
       css: 'src/css',
       sass: 'src/sass'
     }))
-    .pipe(autoprefixer('last 2 versions', '> 1%'))
+    .pipe(autoprefixer('last 2 versions', '> 1%', 'Explorer >= 9'))
+    .pipe(cmq({
+      use_external: true
+    }))
     .pipe(gulp.dest('src/css'))
     .pipe(notify({ message: 'Compass finished' }));
 });
@@ -40,7 +43,7 @@ gulp.task('compass-all', function() {
       css: 'src/css',
       sass: 'src/sass'
     }))
-    .pipe(autoprefixer('last 2 versions', '> 1%'))
+    .pipe(autoprefixer('last 2 versions', '> 1%', 'Explorer >= 9'))
     .pipe(gulp.dest('src/css'));
 });
 
@@ -65,7 +68,7 @@ gulp.task('modern', function() {
     .pipe(cmq({
       use_external: true
     }))
-    .pipe(autoprefixer('last 2 versions', '> 1%'))
+    .pipe(autoprefixer('last 2 versions', '> 1%', '>= ie 9'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss({keepSpecialComments:0}))
     .pipe(size())
@@ -81,7 +84,7 @@ gulp.task('oldie', function() {
       css: 'src/css',
       sass: 'src/sass'
     }))
-    .pipe(autoprefixer('ie 8'))
+    .pipe(autoprefixer('ie 8', 'ie 7' ))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss({keepSpecialComments:0}))
     .pipe(size())

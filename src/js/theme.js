@@ -156,7 +156,6 @@
   win.AjaxInclude = AI;
 }( jQuery, this ));
 
-
 /**
  * @preserve FastClick: polyfill to remove click delays on browsers with touch UIs.
  *
@@ -6198,12 +6197,12 @@ jQuery(document).ready(function ($) {
  * awesome.
  */
 
-;(function($) {
+(function($) {
 
   'use strict';
 
       // Define the context we will be operating in.
-      var list = '.action-menu';
+      var list = '.action-menu ul';
       var break_width = 68;
 
       // Act only if the more tab is not created yet.
@@ -6234,35 +6233,35 @@ jQuery(document).ready(function ($) {
             // Final check to see if we actually have to do something.
             if ((listitems_width - break_width) >= list_width) {
               // Add our new container div.
-              $(list).append('<div class="awesomebox-more"><a href="#" class="tab-more">' + Drupal.t('More') + '</a><ul class="dropdown"></ul></div>');
+              $(list).append('<li class="action-overflowing"><a class="action-overflowing-trigger" href="#"><i class="icon icon-menu"></i> More </a><ul class="dropdown"></ul></li>');
 
               // Foreach items that need to moved place them in the newly created
               // awesomebox dropdown.
               $.each(items_to_move, function(index, value) {
-                $('.awesomebox-more ul', list).append(value);
-                $('.awesomebox-more ul').hide();
+                $('.action-overflowing .dropdown', list).append(value);
+                $('.action-overflowing .dropdown').hide();
               });
             }
           }
 
 
           // Clicking on anything else than more tab should close the dropdown.
-          $(':not(.awesomebox-more a.tab-more)').click(function() {
-            $('.awesomebox-more ul.dropdown', list).hide();
+          $(':not(.action-overflowing-trigger)').click(function() {
+            $('.action-overflowing .dropdown', list).hide();
           });
 
           // Clicking on the more tab will open or hide the other tabs.
-          $('.awesomebox-more a.tab-more', list).click(function() {
-            $('.awesomebox-more ul.dropdown', list).toggle();
+          $('.action-overflowing-trigger', list).click(function() {
+            $('.action-overflowing .dropdown', list).toggle();
             return false;
           });
 
           // Fix active class not doing the thing it should.
-          $('.awesomebox-more li a', list).click(function() {
+          $('.action-overflowing a', list).click(function() {
             $('li.active', list).removeClass('active');
           });
           $('li a', list).click(function() {
-            $('.awesomebox-more li.active', list).removeClass('active');
+            $('.action-overflowing li.active', list).removeClass('active');
           });
         }
       }

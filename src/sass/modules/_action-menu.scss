@@ -1,13 +1,16 @@
 .action-menu ul {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  //display: flex;
+  //flex-flow: row nowrap;
+  //justify-content: center;
   border-bottom: 1px solid $grey-l;
 }
 
 .action-menu li {
-  flex: 1 1 auto;
+  //flex: 0 0 50%;
+  display: inline-block;
+  width: 49.5%;
   border-right: 1px solid $grey-l;
+  white-space: nowrap;
 
   &:last-child {
     border: none;

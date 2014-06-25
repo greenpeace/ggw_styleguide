@@ -13,6 +13,9 @@
   <ul>
     <li><a href="#"><i class="icon icon-plus"></i> Create Content</a></li>
     <li><a href="#"><i class="icon icon-user-add"></i> Register</a></li>
+    <li><a href="#"><i class="icon icon-user-add"></i> Register 2</a></li>
+    <li><a href="#"><i class="icon icon-user-add"></i> Register 3</a></li>
+    <li><a href="#"><i class="icon icon-user-add"></i> Register 4</a></li>
   </ul>
 </div>
 

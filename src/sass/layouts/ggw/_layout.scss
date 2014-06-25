@@ -3,15 +3,23 @@
 #inner-wrap {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  margin: 0 auto;
 }
 
 #outer-wrap {
-  overflow: hidden;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left:0;
 }
+
 .layout-base {
   display: flex;
-  min-height: 100vh;
+  min-height: 100%;
   flex-direction: column;
 }
 
@@ -36,7 +44,6 @@
 }
 
 .l-header {
-  padding-top: $def-mar-half;
 
   @include breakpoint($desk) {
     padding-top: $def-mar;
@@ -44,7 +51,7 @@
 }
 
 .l-main {
-  flex: 1;
+  flex: 0 1 auto;
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
@@ -69,10 +76,12 @@
   width: 134px;
   margin: 0 auto;
   position: relative;
+  top: $def-mar-half;
 
   @include breakpoint($desk) {
     position: absolute;
     left: 0;
+    top: 0;
   }
 }
 

@@ -1,5 +1,6 @@
 .sidebar .block {
   margin-bottom: $def-mar;
+  margin-left: 1em;
   position: relative;
 }
 
@@ -18,11 +19,6 @@
     left: 0;
   }
 
-}
-
-.sidebar .block-icon {
-  background: none;
-  color: $base;
 }
 
 

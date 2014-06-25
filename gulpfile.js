@@ -29,21 +29,22 @@ gulp.task('compass-quick', function() {
     }))
     .pipe(autoprefixer('last 2 versions', '> 1%', 'Explorer >= 9'))
     .pipe(cmq({
-      use_external: true
+      use_external: true,
+      log: true
     }))
     .pipe(gulp.dest('src/css'))
     .pipe(notify({ message: 'Compass finished' }));
 });
 
 // Run compass to compile all files
-gulp.task('compass-all', function() {
-  return gulp.src('src/sass/**/*.scss')
+gulp.task('compass-oldie', function() {
+  return gulp.src('src/sass/ggw.no-query.scss')
     .pipe(compass({
       config_file: 'config.rb',
       css: 'src/css',
       sass: 'src/sass'
     }))
-    .pipe(autoprefixer('last 2 versions', '> 1%', 'Explorer >= 9'))
+    .pipe(autoprefixer('ie 8', 'ie 7'))
     .pipe(gulp.dest('src/css'));
 });
 
@@ -51,7 +52,8 @@ gulp.task('compass-all', function() {
 gulp.task('media', function () {
   gulp.src('src/css/ggw.styles.css')
     .pipe(cmq({
-      use_external: true
+      use_external: 1,
+      log: true
     }))
     .pipe(gulp.dest('dist/css'));
 });
@@ -159,7 +161,7 @@ gulp.task('build', ['clean-dist'], function() {
 ///
 
 gulp.task('watch', function() {
-  gulp.watch('src/sass/**/*.scss', ['compass-quick']);
+  gulp.watch('src/sass/**/*.scss', ['compass-quick', 'compass-oldie'] );
   gulp.watch('src/js/**/*.js', ['concatjs']);
 });
 

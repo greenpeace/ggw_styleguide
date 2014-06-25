@@ -32,13 +32,16 @@
   padding: 0 $def-mar;
 
   @include breakpoint($desk) {
-    max-width:  960px;
     margin:     0 auto;
-  }
-
-  // keep distance from the window untill there is enough space
-  @include breakpoint(1024px) {
     padding:    0;
+
+    @if $oldie {
+      width: 960px;
+    }
+
+    @else {
+      max-width:  960px;
+    }
   }
 
 }
@@ -58,6 +61,11 @@
   align-items: flex-start;
   margin: $def-mar auto;
   width: 100%;
+
+  .no-flexbox & {
+    overflow: hidden;
+  }
+
 }
 
 .l-footer {
@@ -140,7 +148,14 @@
   position: relative;
 
   @include breakpoint($desk) {
-    flex: 0 1 (100%/1.5);
+    .no-flexbox & {
+      float:left;
+      width: (100%/1.5);
+    }
+
+    .flexbox & {
+      flex: 0 1 (100%/1.5);
+    }
   }
 
 }
@@ -150,11 +165,28 @@
 
   @include breakpoint($desk) {
     display: block;
-    flex: 0 1 (100%/3);
-    order: 2;
-    margin: 0 auto;
-    padding-left: 1em;
+
+    // non-js fallback
+    @if $oldie {
+      float: right;
+      width: (100%/3);
+    }
+    @else {
+      .no-flexbox & {
+        float: right;
+        width: (100%/3);
+      }
+
+      .flexbox & {
+        flex: 0 1 (100%/3);
+        order: 2;
+        margin-left: auto;
+      }
+
+    }
+
   }
+
 }
 
 @include breakpoint($desk) {

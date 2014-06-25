@@ -103,6 +103,7 @@
           <a href="#">author_username</a>
           <div class="submitted-date">5 June, 2014 - 11:29</div>
         </div>
+      </div>
 </article>
 
       </div>
@@ -113,7 +114,7 @@
 
     <aside class="l-sidebar sidebar">
 
-    <a data-replace="modules/an-article-sidebar" data-media="(min-width: 900px)"><span class="element-invisible">
+    <a data-replace="modules/an-article-sidebar" <?php echo ($detect->isMobile() ? "data-media='(min-width: 900px)'" : ""); ?>><span class="element-invisible">
     Register instructions</span></a>
 
   </aside>

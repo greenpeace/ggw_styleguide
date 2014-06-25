@@ -104,6 +104,7 @@
           <div class="submitted-date">5 June, 2014 - 11:29</div>
           <div class="tags"><a class="tag" href="#">oceans</a>, <a class="tag" href="#">Sustainable Fishery</a>, <a class="tag" href="#">conservation</a> </div>
         </div>
+      </div>
 </article>
 
       </div>
@@ -113,7 +114,7 @@
   </div>
 <aside class="l-sidebar sidebar">
 
-    <a data-replace="modules/lu-article-sidebar" data-media="(min-width: 900px)"><span class="element-invisible">
+    <a data-replace="modules/lu-article-sidebar" <?php echo ($detect->isMobile() ? "data-media='(min-width: 900px)'" : ""); ?>><span class="element-invisible">
     Register instructions</span></a>
 
   </aside>

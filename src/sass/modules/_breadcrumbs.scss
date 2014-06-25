@@ -1,6 +1,6 @@
 .breadcrumbs {
   @extend %hlist;
-  margin-bottom: $def-mar;
+  margin: .8em 0;
 }
 
 .breadcrumb-item {

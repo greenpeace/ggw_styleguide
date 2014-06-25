@@ -145,7 +145,7 @@
 
     <aside class="l-sidebar sidebar">
 
-    <a data-replace="modules/register-sidebar" data-media="(min-width: 900px)"><span class="element-invisible">
+    <a data-replace="modules/register-sidebar" <?php echo ($detect->isMobile() ? "data-media='(min-width: 900px)'" : ""); ?>><span class="element-invisible">
     Register instructions</span></a>
 
   </aside>

@@ -3,8 +3,8 @@ $vert-spacing-unit: 1em;
 $def-mar: 15px;
 $def-mar-half: 7px;
 
-$tab: 768px;
-$desk: 900px;
+$tab: 768px, 'no-query' true;
+$desk: 900px, 'no-query' true;
 $wide: 1200px;
 
 $nav-off-canvas-width: 80%;

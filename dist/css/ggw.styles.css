@@ -320,6 +320,10 @@ input[type="checkbox"] + label:before {
 	content: '\e81d';
 }
 
+.icon-plus:before {
+	content: '\e80e';
+}
+
 .icon-document:before {
 	content: '\e839';
 }
@@ -346,6 +350,10 @@ input[type="checkbox"] + label:before {
 
 .icon-news:before {
 	content: '\e830';
+}
+
+.icon-login:before {
+	content: '\e817';
 }
 
 .icon-clock:before {
@@ -447,6 +455,7 @@ body {
 	color: #4d4d4d;
 	background-color: white;
 	height: 100%;
+	min-height: 100%;
 }
 
 .logo {
@@ -1724,6 +1733,42 @@ img.mfp-img {
 	font-style: normal;
 }
 
+.action-menu ul {
+	border-bottom: 1px solid #cccccc;
+}
+
+.action-menu li {
+	display: inline-block;
+	width: 49.5%;
+	border-right: 1px solid #cccccc;
+	white-space: nowrap;
+}
+
+.action-menu li:last-child {
+	border: none;
+}
+
+.action-menu a {
+	color: #4d4d4d;
+	line-height: 44px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.action-menu .icon {
+	font-size: 1.875rem;
+	margin-right: .5em;
+}
+
 .sidebar .block {
 	margin-bottom: 15px;
 	position: relative;
@@ -1918,7 +1963,7 @@ img.mfp-img {
 .nav-btn {
 	left: 10px;
 	position: absolute;
-	top: 0;
+	top: 6px;
 	font-size: 2.4em;
 	line-height: 34px;
 	color: white;
@@ -1939,7 +1984,7 @@ img.mfp-img {
 
 .off-canvas {
 	z-index: 200;
-	position: fixed;
+	position: absolute;
 	top: 43px;
 	overflow: hidden;
 	width: 100%;
@@ -1957,7 +2002,7 @@ img.mfp-img {
 	width: 80%;
 	height: auto;
 	z-index: 200;
-	top: -7px;
+	top: 0;
 }
 
 .js #inner-wrap {
@@ -2123,11 +2168,18 @@ img.mfp-img {
 #inner-wrap {
 	position: relative;
 	width: 100%;
-	min-height: 100vh;
+	margin: 0 auto;
 }
 
 #outer-wrap {
-	overflow: hidden;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
 }
 
 .layout-base {
@@ -2135,7 +2187,7 @@ img.mfp-img {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	min-height: 100vh;
+	min-height: 100%;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
@@ -2148,15 +2200,11 @@ img.mfp-img {
 	padding: 0 15px;
 }
 
-.l-header {
-	padding-top: 7px;
-}
-
 .l-main {
-	-webkit-box-flex: 1;
-	-webkit-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 1 auto;
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -2183,6 +2231,7 @@ img.mfp-img {
 	width: 134px;
 	margin: 0 auto;
 	position: relative;
+	top: 7px;
 }
 
 .l-has-sidebar .l-main-column {
@@ -2318,6 +2367,10 @@ article p a {
 
 article p a:hover {
 	color: #3c7008;
+}
+
+.action-menu {
+	display: none;
 }
 
 .block-icon {
@@ -2668,6 +2721,7 @@ article p a:hover {
 .l-branding-header {
 	position: absolute;
 	left: 0;
+	top: 0;
 }
 
 .l-country-selector {

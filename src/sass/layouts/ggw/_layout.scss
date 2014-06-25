@@ -34,14 +34,7 @@
   @include breakpoint($desk) {
     margin:     0 auto;
     padding:    0;
-
-    @if $oldie {
-      width: 960px;
-    }
-
-    @else {
-      max-width:  960px;
-    }
+    width:  960px;
   }
 
 }
@@ -60,7 +53,6 @@
   align-content: flex-start;
   align-items: flex-start;
   margin: $def-mar auto;
-  width: 100%;
 
   .no-flexbox & {
     overflow: hidden;
@@ -73,6 +65,7 @@
 
   @include breakpoint($desk) {
     display: block;
+    margin-top: 2em;
   }
 }
 

@@ -3,6 +3,10 @@
   color: $white;
 }
 
+.no-flexbox .footer .container {
+  @extend %cf;
+}
+
 .l-branding-footer {
   float: left;
   margin: 1.8em 2em 0 0;

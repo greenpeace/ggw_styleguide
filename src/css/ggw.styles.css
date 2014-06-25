@@ -259,6 +259,7 @@ th {
 }
 
 .form-wrapper:after,
+.no-flexbox .footer .container:after,
 .phone-wrapper:after {
 	content: '';
 	display: table;
@@ -2216,7 +2217,6 @@ img.mfp-img {
 	-ms-flex-align: start;
 	align-items: flex-start;
 	margin: 15px auto;
-	width: 100%;
 }
 
 .no-flexbox .l-main {
@@ -2708,7 +2708,7 @@ article p a:hover {
 .container {
 	margin: 0 auto;
 	padding: 0;
-	max-width: 960px;
+	width: 960px;
 }
 
 .l-header {
@@ -2717,6 +2717,7 @@ article p a:hover {
 
 .l-footer {
 	display: block;
+	margin-top: 2em;
 }
 
 .l-branding-header {

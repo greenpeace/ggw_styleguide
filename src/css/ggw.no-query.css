@@ -239,7 +239,7 @@ th {
   margin: 20px auto;
 }
 
-.form-wrapper:after, .phone-wrapper:after {
+.form-wrapper:after, .no-flexbox .footer .container:after, .phone-wrapper:after {
   content: '';
   display: table;
   clear: both;
@@ -2415,7 +2415,6 @@ img.mfp-img {
   align-content: flex-start;
   align-items: flex-start;
   margin: 15px auto;
-  width: 100%;
 }
 .no-flexbox .l-main {
   overflow: hidden;
@@ -2424,6 +2423,7 @@ img.mfp-img {
 .l-footer {
   display: none;
   display: block;
+  margin-top: 2em;
 }
 
 .l-branding-header {

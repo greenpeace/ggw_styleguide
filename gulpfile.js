@@ -20,7 +20,7 @@ var gulp = require('gulp'),
 ///
 
 // Run compass to watch (should remain quick)
-gulp.task('compass-quick', function() {
+gulp.task('modern', function() {
   return gulp.src('src/sass/ggw.styles.scss')
     .pipe(compass({
       config_file: 'config.rb',
@@ -28,16 +28,13 @@ gulp.task('compass-quick', function() {
       sass: 'src/sass'
     }))
     .pipe(autoprefixer('last 2 versions', '> 1%', 'Explorer >= 9'))
-    .pipe(cmq({
-      use_external: true,
-      log: true
-    }))
+    .pipe(cmq())
     .pipe(gulp.dest('src/css'))
     .pipe(notify({ message: 'Compass finished' }));
 });
 
 // Run compass to compile all files
-gulp.task('compass-oldie', function() {
+gulp.task('oldie', function() {
   return gulp.src('src/sass/ggw.no-query.scss')
     .pipe(compass({
       config_file: 'config.rb',
@@ -48,45 +45,21 @@ gulp.task('compass-oldie', function() {
     .pipe(gulp.dest('src/css'));
 });
 
-// Split css files into separate media-query based files
-gulp.task('media', function () {
+// Split styles.css file into separate media-query based files
+gulp.task('split-css', ['modern'], function () {
   gulp.src('src/css/ggw.styles.css')
+    .pipe(rename({ basename: 'ggw.mobile' }))
     .pipe(cmq({
-      use_external: 1,
+      use_external: true,
       log: true
     }))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('src/css'));
 });
 
 
-// Make production-ready for modern browsers
-gulp.task('modern', function() {
-  return gulp.src('src/sass/ggw.styles.scss')
-    .pipe(compass({
-      config_file: 'config.rb',
-      css: 'src/css',
-      sass: 'src/sass'
-    }))
-    .pipe(cmq({
-      use_external: true
-    }))
-    .pipe(autoprefixer('last 2 versions', '> 1%', '>= ie 9'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(minifycss({keepSpecialComments:0}))
-    .pipe(size())
-    .pipe(gulp.dest('dist/css'));
-});
-
-
-// Make production-ready for no query version
-gulp.task('oldie', function() {
-  return gulp.src('src/sass/ggw.no-query.scss')
-    .pipe(compass({
-      config_file: 'config.rb',
-      css: 'src/css',
-      sass: 'src/sass'
-    }))
-    .pipe(autoprefixer('ie 8', 'ie 7' ))
+// Make production-ready for all browsers
+gulp.task('dist-css', ['split-css' , 'oldie'], function() {
+  return gulp.src(['src/css/ggw.styles.css', 'src/css/ggw.mobile.css', 'src/css/ggw.mobile.responsive.css', 'src/css/ggw.no-query.css'])
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss({keepSpecialComments:0}))
     .pipe(size())
@@ -105,25 +78,42 @@ gulp.task('checkjs', function() {
     .pipe(notify({ message: 'Scripts are checked' }));
 });
 
+
 // Concatenate scripts
-gulp.task('concatjs', function() {
+gulp.task('concat-after', function() {
   return gulp.src(['src/js/base/*.js', 'src/js/contrib/*.js', 'src/js/custom/*.js'])
     .pipe(concat('theme.js'))
     .pipe(gulp.dest('src/js'))
     .pipe(notify({ message: 'Scripts are concatenated' }));
 });
 
+gulp.task('concat-before', function() {
+  return gulp.src(['src/js/before/*.js'])
+    .pipe(concat('before.js'))
+    .pipe(gulp.dest('src/js'))
+    .pipe(notify({ message: 'Scripts are concatenated' }));
+});
+
 
 // Make scripts production-ready
-gulp.task('build-scripts', function() {
+gulp.task('build-after', function() {
   return gulp.src(['src/js/base/*.js', 'src/js/contrib/*.js', 'src/js/custom/*.js'])
     .pipe(changed('dist/js'))
     .pipe(concat('theme.js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
     .pipe(size())
-    .pipe(gulp.dest('dist/js'))
-    .pipe(notify({ message: 'Scripts are copied to dist' }));
+    .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('build-before', function() {
+  return gulp.src(['src/js/before/*.js'])
+    .pipe(changed('dist/js'))
+    .pipe(concat('before.js'))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(uglify())
+    .pipe(size())
+    .pipe(gulp.dest('dist/js'));
 });
 
 ///
@@ -153,7 +143,7 @@ gulp.task('clean-dist', function() {
 
 // compile both sass base files, create one js file and optimize and copy images
 gulp.task('build', ['clean-dist'], function() {
-  gulp.start('modern', 'oldie', 'build-scripts', 'images');
+  gulp.start('distcss', 'build-before', 'build-after', 'images');
 });
 
 ///
@@ -161,8 +151,8 @@ gulp.task('build', ['clean-dist'], function() {
 ///
 
 gulp.task('watch', function() {
-  gulp.watch('src/sass/**/*.scss', ['compass-quick', 'compass-oldie'] );
-  gulp.watch('src/js/**/*.js', ['concatjs']);
+  gulp.watch('src/sass/**/*.scss', ['split-css', 'oldie'] );
+  gulp.watch('src/js/**/*.js', ['concat-after', 'concat-before']);
 });
 
 
@@ -183,7 +173,7 @@ gulp.task('docs-styleguide', function() {
 });
 
 gulp.task('js-styleguide', function() {
-  return gulp.src('dist/js/*.js')
+  return gulp.src('dist/js/theme.min.js')
     .pipe(gulp.dest('styleguide/src/js'));
 });
 
@@ -198,7 +188,7 @@ gulp.task('font-styleguide', function() {
 });
 
 // Build style guide out of other tasks and make sure 'compass-all' and 'modern' is run before the tasks
-gulp.task('build-styleguide', ['compass-all', 'modern'], function() {
+gulp.task('build-styleguide', ['compass-modern', 'dist-css'], function() {
   gulp.start('css-styleguide', 'docs-styleguide', 'js-styleguide', 'img-styleguide', 'font-styleguide');
 });
 

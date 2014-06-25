@@ -18,13 +18,27 @@ $detect = new Mobile_Detect;
 <meta name="Generator" content="Drupal 7 (http://drupal.org)" />
 <meta name="viewport" content="width=device-width" />
 
-<!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
-<link rel="stylesheet" href="css/ggw.styles.css" />
-<!--<![endif]-->
+<!-- INLINE THIS FILE -->
+<script src="js/before/eCSSential.min.js"></script>
+<script>
+  eCSSential({
+    "all": "css/ggw.mobile.css",
+    "(min-width: 768px)": "css/ggw.mobile.responsive.css",
+    "IE6 IE7 IE8": "css/ggw.no-query.css"
+  });
+</script>
 
-<!--[if (gte IE 6)&(lte IE 8)]>
-<link rel="stylesheet" href="css/ggw.no-query.css" />
-<![endif]-->
+<noscript>
+  <!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
+    <link rel="stylesheet" href="css/ggw.styles.css" />
+  <!--<![endif]-->
+
+  <!--[if (gte IE 6)&(lte IE 8)]>
+    <link rel="stylesheet" href="css/ggw.no-query.css" />
+  <![endif]-->
+</noscript>
+
+
 <script async="true" src="js/theme.js"></script>
 
 </head>

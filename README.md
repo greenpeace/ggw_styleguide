@@ -39,9 +39,10 @@ Install the plugins we use:
 * Compress images (gulp-imagemin)
 * Clean files for a clean build (gulp-clean)
 * Rename (gulp-rename)
-* Chnaged, only pass through changed files (gulp-changed)
+* Changed, only pass through changed files (gulp-changed)
 * Caching of images so only changed images are compressed (gulp-cache)
 * Size (gulp-size)
+* Combine media queries (gulp-combine-media-queries)
 * Notify of changes (gulp-notify)
 
 Command for single install
@@ -56,3 +57,5 @@ Just run one of the tasks in the gulpfile
  * `gulp watch` to start watching files for changes
  * `gulp compass` to compile scss to css
  * `gulp images` to optimize images
+
+

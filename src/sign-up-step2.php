@@ -64,7 +64,7 @@
               <?php //many extra wrappers can be removed ?>
               <div class="form-radios">
                 <div class="form-type-radio">
-                  <input class="form-radio" type="radio" id="male"value="male" name="field_user_gender[und]">
+                  <input class="form-radio" type="radio" id="male" value="male" name="field_user_gender[und]">
                   <label class="option" for="male">Male </label>
                 </div>
 

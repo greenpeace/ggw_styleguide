@@ -50,8 +50,7 @@ gulp.task('split-css', ['modern'], function () {
   gulp.src('src/css/ggw.styles.css')
     .pipe(rename({ basename: 'ggw.mobile' }))
     .pipe(cmq({
-      use_external: true,
-      log: true
+      use_external: true
     }))
     .pipe(gulp.dest('src/css'));
 });

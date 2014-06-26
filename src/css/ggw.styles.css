@@ -512,11 +512,6 @@ a {
 	text-decoration: none;
 }
 
-a:focus {
-	text-decoration: underline;
-	outline: thin dotted;
-}
-
 strong,
 b {
 	font-weight: 700;
@@ -528,6 +523,11 @@ article p {
 
 article a:hover {
 	text-decoration: underline;
+}
+
+article:focus {
+	text-decoration: underline;
+	outline: thin dotted;
 }
 
 article ul,
@@ -1103,6 +1103,58 @@ article blockquote {
 
 .chosen-disabled .chosen-choices .search-choice .search-choice-close {
 	cursor: default;
+}
+
+.dropdown {
+	position: absolute;
+	z-index: 9999999;
+	display: none;
+}
+
+.dropdown .dropdown-menu,
+.dropdown .dropdown-panel {
+	background: #FFF;
+	border: 1px solid #cccccc;
+	overflow: visible;
+	padding: 4px 0;
+	margin: 0;
+}
+
+.dropdown .dropdown-panel {
+	padding: 10px;
+}
+
+.dropdown.dropdown-tip {
+	margin-top: 8px;
+}
+
+.dropdown.dropdown-tip:before {
+	position: absolute;
+	top: -6px;
+	left: 9px;
+	content: '';
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid #CCC;
+	border-bottom-color: rgba(0, 0, 0, 0.2);
+	display: inline-block;
+}
+
+.dropdown.dropdown-tip:after {
+	position: absolute;
+	top: -5px;
+	left: 10px;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #FFF;
+	display: inline-block;
+}
+
+.dropdown.dropdown-scroll .dropdown-menu,
+.dropdown.dropdown-scroll .dropdown-panel {
+	max-height: 358px;
+	overflow: auto;
 }
 
 .form-wrapper {
@@ -1734,18 +1786,21 @@ img.mfp-img {
 	font-style: normal;
 }
 
-.action-menu ul {
+.action-menu > ul {
 	border-bottom: 1px solid #cccccc;
+	height: 44px;
 }
 
-.action-menu li {
-	display: inline-block;
-	width: 49.5%;
-	border-right: 1px solid #cccccc;
+.action-menu > ul > li {
+	display: block;
+	width: 49.9%;
 	white-space: nowrap;
+	position: relative;
+	float: left;
+	border-right: 1px solid #cccccc;
 }
 
-.action-menu li:last-child {
+.action-menu > ul > li:last-child {
 	border: none;
 }
 
@@ -1768,6 +1823,24 @@ img.mfp-img {
 .action-menu .icon {
 	font-size: 1.875rem;
 	margin-right: .5em;
+}
+
+.action-menu .dropdown {
+	width: 102%;
+	margin: -1px 0 0 -1px;
+}
+
+.action-menu .dropdown li {
+	display: block;
+	border: none;
+	padding: 0 1em;
+}
+
+.action-menu .dropdown a {
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
 }
 
 .sidebar .block {
@@ -2217,6 +2290,7 @@ img.mfp-img {
 	-ms-flex-align: start;
 	align-items: flex-start;
 	margin: 15px auto;
+	width: 100%;
 }
 
 .no-flexbox .l-main {

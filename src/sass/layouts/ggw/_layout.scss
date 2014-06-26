@@ -53,6 +53,7 @@
   align-content: flex-start;
   align-items: flex-start;
   margin: $def-mar auto;
+  width: 100%;
 
   .no-flexbox & {
     overflow: hidden;

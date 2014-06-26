@@ -34,11 +34,6 @@ li li {
 a {
   color: $green5;
   text-decoration: none;
-
-  &:focus {
-    text-decoration: underline;
-    outline: thin dotted;
-  }
 }
 
 strong, b {
@@ -53,6 +48,11 @@ article {
 
   a:hover {
     text-decoration: underline;
+  }
+
+  &:focus {
+    text-decoration: underline;
+    outline: thin dotted;
   }
 
   ul,

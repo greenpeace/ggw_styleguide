@@ -121,10 +121,9 @@ gulp.task('build-before', function() {
 
 // Optimize images
 gulp.task('images', function() {
-  return gulp.src('src/images/**/*')
-    .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('dist/images'))
-    .pipe(notify({ message: 'New image copied and optimized' }));
+  return gulp.src(['src/images/**/*'])
+    .pipe(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))
+    .pipe(gulp.dest('dist/images'));
 });
 
 ///
@@ -142,7 +141,7 @@ gulp.task('clean-dist', function() {
 
 // compile both sass base files, create one js file and optimize and copy images
 gulp.task('build', ['clean-dist'], function() {
-  gulp.start('distcss', 'build-before', 'build-after', 'images');
+  gulp.start('dist-css', 'build-before', 'build-after', 'images');
 });
 
 ///

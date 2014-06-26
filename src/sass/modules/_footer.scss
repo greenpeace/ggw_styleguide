@@ -1,10 +1,10 @@
 .footer {
   background: $green1;
   color: $white;
-}
 
-.no-flexbox .footer .container {
-  @extend %cf;
+  .container {
+    @extend %cf;
+  }
 }
 
 .l-branding-footer {

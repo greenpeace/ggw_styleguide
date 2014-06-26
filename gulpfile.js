@@ -132,7 +132,7 @@ gulp.task('images', function() {
 ///
 
 gulp.task('clean-dist', function() {
-  return gulp.src(['dist/css', 'dist/scripts', 'dist/images'], {read: false})
+  return gulp.src(['dist/css', 'dist/js', 'dist/images'], {read: false})
     .pipe(clean());
 });
 

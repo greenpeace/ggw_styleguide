@@ -16,6 +16,14 @@
     <li><a href="#"><i class="icon icon-user-add"></i> Register 2</a></li>
     <li><a href="#"><i class="icon icon-user-add"></i> Register 3</a></li>
     <li><a href="#"><i class="icon icon-user-add"></i> Register 4</a></li>
+    <li><a href="#"><i class="icon icon-user-add"></i> Register 5</a></li>
+    <li><a href="#"><i class="icon icon-user-add"></i> Register 6</a></li>
+    <li><a href="#"><i class="icon icon-user-add"></i> Register 7</a></li>
+    <li><a href="#"><i class="icon icon-user-add"></i> Register 8</a></li>
+    <li><a href="#"><i class="icon icon-user-add"></i> Register 9</a></li>
+    <li><a href="#"><i class="icon icon-user-add"></i> Register 10</a></li>
+    <li><a href="#"><i class="icon icon-user-add"></i> Register 11</a></li>
+    <li><a href="#"><i class="icon icon-user-add"></i> Register 12</a></li>
   </ul>
 </div>
 

@@ -156,9 +156,10 @@ input[type="radio"]:checked + label:before {
     z-index: 4;
     position: relative;
     display: block;
-    padding: 0.4em 24px 0.3em 7px;
+    padding: 0.4em 24px;
     background: transparent;
     border: none;
+    line-height: normal;
     text-overflow: ellipsis;
     -moz-appearance: window;
     -moz-padding-end: 19px;

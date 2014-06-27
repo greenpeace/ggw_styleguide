@@ -15,6 +15,13 @@
   text-align: center;
 }
 
+.field-name-field-user-phone-house,
+.field-name-field-user-phone-mobile {
+  label {
+    display: none;
+  }
+}
+
 @include breakpoint($tab) {
 
   .field-name-field-user-first-name {
@@ -31,12 +38,19 @@
 
   .field-name-field-user-phone-house-country,
   .field-name-field-user-phone-mobile-country {
-    @include isolation-span(4, 1);
+    width: 190px;
+    float: left;
   }
 
   .field-name-field-user-phone-house,
   .field-name-field-user-phone-mobile {
-    @include isolation-span(4, 5, 'right');
+    width: 210px;
+    float: left;
+    padding-left: 1em;
+
+    label {
+      display: block;
+    }
   }
 
 }

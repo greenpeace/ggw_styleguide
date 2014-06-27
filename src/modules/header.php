@@ -44,7 +44,7 @@
                    <span class="country-img"></span>
                  </a>
              </div>
-             <div id="dropdown-content-country" class="dropdown dropdown-scroll" style="display:none;">
+             <div id="dropdown-content-country" class="dropdown dropdown-scroll">
                  <ul class="dropdown-list">
                      <li><a href="#">Belgium</a></li>
                      <li><a href="#">France</a></li>
@@ -59,13 +59,17 @@
              </div>
            </div>
 
-          <form class="l-language-switcher language-switcher" action="/belgium/fr/" method="post" accept-charset="UTF-8">
-            <div class="form-item form-type-select form-item-languages">
-              <label for="edit-languages">Language </label>
-              <select class="form-select" id="edit-languages"><option value="fr">Français</option><option value="nl">Nederlands</option></select>
+          <div class="l-language-selector language-selector">
+            <div class="dropdown-controller">
+                 <a class="trigger" href="#" data-dropdown="#dropdown-content-language">Language</a>
+             </div>
+            <div id="dropdown-content-language" class="dropdown dropdown-scroll">
+              <ul class="dropdown-list">
+                <li><a href="#">Francais</a></li>
+                <li><a href="#">Nederlands</a></li>
+              </ul>
             </div>
-            <input type="submit" value="Switch language" class="form-submit" />
-          </form>
+          </div>
 
         </div>
       </div>

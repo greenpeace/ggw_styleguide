@@ -47,7 +47,6 @@ jQuery(document).ready(function ($) {
           // awesomebox dropdown.
           $.each(items_to_move, function(index, value) {
             $('#dropdown-action-menu ul', list).append(value);
-            $('#dropdown-action-menu').hide();
           });
         }
       }

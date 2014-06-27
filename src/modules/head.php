@@ -17,9 +17,10 @@ $detect = new Mobile_Detect;
 <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
 <meta name="Generator" content="Drupal 7 (http://drupal.org)" />
 <meta name="viewport" content="width=device-width" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 <!-- INLINE THIS FILE -->
-<script src="js/before/eCSSential.min.js"></script>
+<script src="js/before.js"></script>
 <script>
   eCSSential({
     "all": "css/ggw.mobile.css",
@@ -39,6 +40,6 @@ $detect = new Mobile_Detect;
 </noscript>
 
 
-<script async="true" src="js/theme.js"></script>
+<script src="js/theme.js"></script>
 
 </head>

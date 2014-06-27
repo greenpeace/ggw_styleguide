@@ -144,6 +144,7 @@
   top: 100%;
 }
 
+.trigger:before,
 .off-canvas .caret:before {
   position: absolute;
   @extend %load-icon;
@@ -152,6 +153,7 @@
   font-size: 1rem;
 }
 
+.trigger.dropdown-open:before,
 .off-canvas .open .caret:before {
   @extend %icon-down-open;
 }

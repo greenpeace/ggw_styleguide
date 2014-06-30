@@ -1,0 +1,32 @@
+.node-teaser {
+
+  overflow: hidden;
+  margin-bottom: $def-mar;
+
+  .field-type-image {
+    float: left;
+    margin-right: .5em;
+    width: 100px;
+    height: 80px; //temp
+  }
+
+  .field-type-wrapper {
+    overflow: hidden;
+  }
+
+  .node-title {
+    @include font-size(16px);
+    color: $green5;
+  }
+
+  .submitted {
+    padding: 0;
+    margin: 0;
+  }
+
+  label {
+    display: inline-block;
+    margin-right: .3em;
+  }
+
+}

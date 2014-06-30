@@ -185,7 +185,7 @@ gulp.task('font-styleguide', function() {
     .pipe(gulp.dest('styleguide/src/font'));
 });
 
-// Build style guide out of other tasks and make sure 'compass-all' and 'modern' is run before the tasks
+// Build style guide out of other tasks and make sure 'dist-css' is run before the tasks
 gulp.task('build-styleguide', ['dist-css'], function() {
   gulp.start('css-styleguide', 'docs-styleguide', 'js-styleguide', 'img-styleguide', 'font-styleguide');
 });

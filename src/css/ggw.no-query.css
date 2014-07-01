@@ -416,20 +416,13 @@ body {
   background-color: white;
   height: 100%;
   min-height: 100%;
+  overflow-x: hidden;
   background-color: #eeeeee;
-}
-
-.logo {
-  background-image: url(../images/logo.svg);
-  background-repeat: no-repeat;
-  background-size: auto 34px;
-  display: block;
-  width: 100%;
-  height: 34px;
 }
 
 .block,
 .main-content {
+  position: relative;
   border-radius: 4px;
   box-shadow: 0 1px 3px 0 #999999;
   background-color: white;
@@ -1878,8 +1871,6 @@ img.mfp-img {
 }
 
 .header {
-  background-color: #66cc00;
-  height: 50px;
   height: 88px;
 }
 .header:after {
@@ -2148,63 +2139,62 @@ img.mfp-img {
 }
 
 .off-canvas {
-  z-index: 200;
   position: absolute;
-  top: 43px;
-  overflow: hidden;
-  width: 100%;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: auto;
+  width: 280px;
+  height: auto;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: width 0.3s ease;
 }
 
 .nav-inner-wrap {
-  z-index: 2;
-  position: relative;
   background: white;
   border-bottom: 1px solid #cccccc;
 }
 
-.js #primary-nav,
-.js #secondary-nav {
-  width: 80%;
-  height: auto;
-  z-index: 200;
-  top: 0;
-}
-.js #inner-wrap {
-  left: 0;
-}
-.js .nav-inner-wrap {
-  background: transparent;
-}
 .js #primary-nav {
-  left: -80%;
+  left: 0;
+  z-index: 1;
 }
 .js #secondary-nav {
-  right: -80%;
+  right: 0;
+  z-index: 1;
+}
+.js.primary-nav .l-main {
+  left: 280px;
+}
+.js.secondary-nav .l-main {
+  right: 280px;
+}
+.js.primary-nav .l-branding-header {
+  left: 281px;
+}
+.js.secondary-nav .l-branding-header {
+  right: 281px;
 }
 
-.primary-nav #inner-wrap,
-.secondary-nav #inner-wrap {
-  left: 80%;
+.csstransforms3d.primary-nav #secondary-nav, .csstransforms3d.secondary-nav #primary-nav {
+  display: none;
 }
-
-.secondary-nav #inner-wrap {
-  left: -80%;
-  border-right: 1px solid #cccccc;
+.csstransforms3d.primary-nav .l-branding-header, .csstransforms3d.secondary-nav .l-branding-header, .csstransforms3d.primary-nav .l-main, .csstransforms3d.secondary-nav .l-main {
+  left: auto;
+  right: auto;
 }
-
-.primary-nav #inner-wrap {
-  border-left: 1px solid #cccccc;
+.csstransforms3d.primary-nav .l-main {
+  transform: translate3d(280px, 0px, 0px);
 }
-
-.csstransforms3d #primary-nav {
-  left: 0;
-  transform: translate3d(-100%, 0px, 0px);
-  backface-visibility: hidden;
+.csstransforms3d.primary-nav .l-branding-header {
+  transform: translate3d(281px, 0px, 0px);
 }
-.csstransforms3d #secondary-nav {
-  right: -160%;
-  transform: translate3d(-100%, 0px, 0px);
-  backface-visibility: hidden;
+.csstransforms3d.secondary-nav .l-main {
+  transform: translate3d(-280px, 0px, 0px);
+}
+.csstransforms3d.secondary-nav .l-branding-header {
+  transform: translate3d(-281px, 0px, 0px);
 }
 .csstransforms3d .nav-inner-wrap {
   opacity: 0.4;
@@ -2215,18 +2205,6 @@ img.mfp-img {
 .csstransforms3d.primary-nav .nav-inner-wrap, .csstransforms3d.secondary-nav .nav-inner-wrap {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-}
-.csstransforms3d #inner-wrap {
-  left: 0 !important;
-  transform: translate3d(0, 0, 0);
-  transition: transform 500ms ease;
-  backface-visibility: hidden;
-}
-.csstransforms3d.primary-nav #inner-wrap {
-  transform: translate3d(80%, 0, 0) scale3d(1, 1, 1);
-}
-.csstransforms3d.secondary-nav #inner-wrap {
-  transform: translate3d(-80%, 0, 0) scale3d(1, 1, 1);
 }
 
 .main-menu {
@@ -2494,23 +2472,8 @@ img.mfp-img {
   margin-right: 0;
 }
 
-#outer-wrap,
-#inner-wrap {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-}
-
-#outer-wrap {
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-}
-
 .layout-base {
+  overflow: hidden;
   display: flex;
   min-height: 100%;
   min-height: 100vh;
@@ -2526,12 +2489,29 @@ img.mfp-img {
 }
 
 .l-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
   padding-top: 15px;
 }
 
 .l-main {
-  margin: 15px auto;
+  margin: 0 auto;
+  padding: 65px 15px 15px;
   width: 100%;
+  background: #FFF;
+  transition: transform 500ms ease;
+  z-index: 2;
+  overflow: auto;
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  transform: translate3d(0, 0, 0);
+  border-right: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
   flex: 1;
   display: flex;
   flex-flow: row wrap;
@@ -2550,10 +2530,26 @@ img.mfp-img {
 }
 
 .l-branding-header {
+  background-color: #66cc00;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  transition: transform 500ms ease;
+}
+
+.logo {
   width: 134px;
   margin: 0 auto;
   position: relative;
   top: 7px;
+  background-image: url(../images/logo.svg);
+  background-repeat: no-repeat;
+  background-size: auto 34px;
+  display: block;
+  height: 34px;
   position: absolute;
   left: 15px;
   top: 0;

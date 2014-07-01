@@ -1,25 +1,12 @@
-// For off-canvas-nav
-#outer-wrap,
-#inner-wrap {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-}
-
-#outer-wrap {
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-}
-
 .layout-base {
-  display: flex;
-  min-height: 100%;
-  min-height: 100vh; // needed for sticky footer
-  flex-direction: column;
+  overflow: hidden;
+
+  @include breakpoint($desk) {
+    display: flex;
+    min-height: 100%;
+    min-height: 100vh; // needed for sticky footer
+    flex-direction: column;
+  }
 }
 
 //
@@ -39,6 +26,13 @@
 }
 
 .l-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
 
   @include breakpoint($desk) {
     padding-top: $def-mar;
@@ -46,8 +40,18 @@
 }
 
 .l-main {
-  margin: $def-mar auto;
+  margin: 0 auto;
+  padding: 65px 15px 15px;
   width: 100%;
+  background:#FFF;
+  transition: transform 500ms ease;
+  z-index: 2;
+  overflow: auto;
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  transform: translate3d(0, 0, 0);
+  border-right: 1px solid $grey-l;
+  border-left: 1px solid $grey-l;
 
   @include breakpoint($desk) {
     flex: 1;
@@ -77,12 +81,27 @@
 //
 // Inner containers
 //
-
 .l-branding-header {
+  background-color: $green1;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  transition: transform 500ms ease;
+}
+
+.logo {
   width: 134px;
   margin: 0 auto;
   position: relative;
   top: $def-mar-half;
+  background-image: url(../images/logo.svg);
+  background-repeat: no-repeat;
+  background-size: auto 34px;
+  display:block;
+  height: 34px;
 
   @include breakpoint($desk) {
     position: absolute;

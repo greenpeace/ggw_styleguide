@@ -1,6 +1,4 @@
 .header {
-  background-color: $green1;
-  height: 50px;
 
   @include breakpoint($desk) {
     height: 88px;

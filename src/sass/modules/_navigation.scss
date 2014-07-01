@@ -29,79 +29,92 @@
 }
 
 .off-canvas {
-  z-index: 200;
   position: absolute;
-  top: 43px;
-  overflow: hidden;
-  width: 100%;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: auto;
+  width: 280px;
+  height: auto;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: width 0.3s ease;
 }
 
 .nav-inner-wrap {
-  z-index: 2;
-  position: relative;
   background: $white;
   border-bottom: 1px solid $grey-l;
 }
 
+
 // Fallback for when css transform does not work
 .js {
 
-  #primary-nav,
-  #secondary-nav {
-    width: $nav-off-canvas-width;
-    height: auto;
-    z-index: 200;
-    top: 0;
-  }
-
-  #inner-wrap {
-    left: 0;
-  }
-
-  .nav-inner-wrap {
-    background: transparent;
-  }
-
   #primary-nav {
-    left: -$nav-off-canvas-width;
+    left: 0;
+    z-index: 1;
   }
 
   #secondary-nav {
-    right: -$nav-off-canvas-width;
+    right: 0;
+    z-index: 1;
   }
 
-}
+  &.primary-nav .l-main {
+    left: 280px;
+  }
 
-.primary-nav #inner-wrap,
-.secondary-nav #inner-wrap {
-  left: $nav-off-canvas-width;
-}
+  &.secondary-nav .l-main {
+    right: 280px;
+  }
 
-.secondary-nav #inner-wrap {
-  left: -$nav-off-canvas-width;
-  border-right: 1px solid $grey-l;
-}
+  &.primary-nav .l-branding-header {
+    left: 281px;
+  }
 
-.primary-nav #inner-wrap {
-  border-left: 1px solid $grey-l;
+  &.secondary-nav .l-branding-header {
+    right: 281px;
+  }
+
 }
 
 
 // Best performance animation, depends on Modernizr
 .csstransforms3d {
 
-  #primary-nav {
-    left: 0;
-    transform: translate3d(-100%, 0px, 0px);
-    backface-visibility: hidden;
+  // prevent the other menu from showing
+  &.primary-nav #secondary-nav,
+  &.secondary-nav #primary-nav {
+    display: none;
   }
 
-  #secondary-nav {
-    right: -160%;
-    transform: translate3d(-100%, 0px, 0px);
-    backface-visibility: hidden;
+  &.primary-nav .l-branding-header,
+  &.secondary-nav .l-branding-header,
+  &.primary-nav .l-main,
+  &.secondary-nav .l-main {
+    left: auto;
+    right: auto;
   }
 
+  // class is set html element with JS, push content to the left
+  &.primary-nav .l-main {
+    transform: translate3d(280px, 0px, 0px);
+  }
+
+  // push the header 1px more so the vertical border continues along it
+  &.primary-nav .l-branding-header{
+    transform: translate3d(281px, 0px, 0px);
+  }
+
+  &.secondary-nav .l-main {
+    transform: translate3d(-280px, 0px, 0px);
+  }
+
+  &.secondary-nav .l-branding-header{
+    transform: translate3d(-281px, 0px, 0px);
+  }
+
+  // animate the menu like it comes forward
   .nav-inner-wrap {
     opacity: 0.4;
     transition: opacity 300ms 100ms ease, transform 500ms ease;
@@ -117,22 +130,8 @@
     }
   }
 
-  #inner-wrap {
-    left: 0 !important;
-    transform: translate3d(0, 0, 0);
-    transition: transform 500ms ease;
-    backface-visibility: hidden;
-  }
-
-  &.primary-nav #inner-wrap {
-      transform: translate3d($nav-off-canvas-width, 0, 0) scale3d(1, 1, 1);
-  }
-
-  &.secondary-nav #inner-wrap {
-      transform: translate3d(-$nav-off-canvas-width, 0, 0) scale3d(1, 1, 1);
-  }
-
 }
+
 
 .main-menu {
   position: relative;

@@ -311,3 +311,58 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
   min-height: 20px;
   padding: 19px;
 }
+
+@media (max-width: 1200px) {
+  html, 
+  body,
+  .kalei {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .kalei,
+  .kalei-style-menu-container {
+    position: static;
+    width: 100%;
+    height: initial;
+    margin: 0 auto;
+    background: #f6f4f4;
+  }
+    .kalei-style-menu-container .kalei-styleguide-menu-heading {
+      display: block;
+      position: static;
+      width: 90%;
+      height: initial;
+      margin: 0 auto;
+    }
+    .kalei-style-menu-container .menu-items {
+      position: static;
+      width: 90%;
+      margin: 0 auto;
+      background: #fff;
+      border-right: 1px solid #bfbfbf;
+      border-left: 1px solid #bfbfbf;
+    }
+    .kalei-style-menu-container .menu-items .kalei-styleguide-menu {
+      overflow-y: initial;
+      overflow-x: initial;
+    }
+      .kalei-style-menu-container .menu-items .kalei-styleguide-menu li {
+        display: inline-block;
+      }
+    .kalei-style-menu-container .menu-items .kalei-styleguide-menu-link {
+      padding-right: 5em;
+      padding-left: 4em;
+    }
+    .kalei-style-menu-container .menu-items .kalei-sheet-submenu{
+      display: none !important;
+    }
+  .kalei-style-page {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+@media (max-width: 768px) {
+  .kalei-style-menu-container .menu-items .kalei-styleguide-menu li {
+    display: inline;
+  }
+}

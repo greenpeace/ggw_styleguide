@@ -64,14 +64,23 @@ Responsive images using <a href="http://scottjehl.github.io/picturefill/">Pictur
 <h2>Image sample</h2>
 
 ```
-<picture>
-	<!--[if IE 9]><video style="display: none;"><![endif]-->
-	<source srcset="src/images/pig750x600" media="(min-width: 1110px)">
-	<source srcset="src/images/pig350x250" media="(min-width: 710px)">
-	<source srcset="src/images/pig200x150">
-	<!--[if IE 9]></video><![endif]-->
-	<img srcset="src/images/pig200x150" alt="A beautiful and healthy pig enjoying the sun in the countryside">
-</picture>
+<div id="content" class="l-main-column">
+  <div class="main-content">
+    <h1>Image sample</h1>
+    <div class="content">
+      <article class="view-mode-full">
+        <div class="field-name-body">
+          <picture>
+            <source media="(min-width: 64em)" srcset="http://placehold.it/603x250, http://placehold.it/1440x500 2x">
+            <source media="(min-width: 48em)" srcset="http://placehold.it/768x384, http://placehold.it/1536x768 2x">
+            <source media="(min-width: 24em)" srcset="http://placehold.it/640x320, http://placehold.it/1280x640 2x">
+            <img src="http://placehold.it/320x160" srcset="http://placehold.it/640x320 2x" alt="The president giving an award.">
+          </picture>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
 ```
 */
 /*

@@ -82,7 +82,7 @@ input[type="checkbox"] {
 
   .option {
     display: inline-block;
-    padding-left: 1.6em;
+    padding-left: 2em;
     font-weight: 300;
 
     &:before {
@@ -145,7 +145,7 @@ input[type="radio"]:checked + label:before {
     top: 4px;
     right: 0;
     @include font-size($h5);
-    padding: 0 7px;
+    padding: 0 4px;
   }
   select::-ms-expand {
     display: none; /*removes the default arrow in ie*/

@@ -180,6 +180,9 @@ input[type="radio"]:checked + label:before {
       padding-left: 0;
     }
   }
+  .page-register .date-padding .form-item {
+    width: 100px;
+  }
 }
 
 .lt-ie10 {

@@ -1194,6 +1194,9 @@ input[type="radio"]:checked + label:before {
 .lt-ie9 .form-type-checkbox .option {
   padding-left: 0;
 }
+.lt-ie9 .page-register .date-padding .form-item {
+  width: 100px;
+}
 
 .lt-ie10 .selector:before {
   display: none;

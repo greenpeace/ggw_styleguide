@@ -135,8 +135,8 @@
   <a data-replace="modules/footer" data-media="(min-width: 900px)"><span class="element-invisible">
     Footer</span></a>
 </footer>
-<!-- put js here -->
 
 </div>
+<script src="js/theme.js"></script>
 </body>
 </html>

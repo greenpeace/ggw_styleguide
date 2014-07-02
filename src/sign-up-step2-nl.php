@@ -157,8 +157,7 @@
     Footer</span></a>
 </footer>
 
-<!-- put js here -->
 </div>
-
+<script src="js/theme.js"></script>
 </body>
 </html>

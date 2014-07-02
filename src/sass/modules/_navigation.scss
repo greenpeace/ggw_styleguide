@@ -39,6 +39,14 @@
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   transition: width 0.3s ease;
+
+  @include breakpoint($desk) {
+    z-index: 200;
+    bottom: auto;
+    overflow: visible;
+    width: 100%;
+  }
+
 }
 
 .nav-inner-wrap {
@@ -188,8 +196,8 @@
     border: none;
   }
 
-  #inner-wrap #primary-nav,
-  #inner-wrap #secondary-nav {
+  #primary-nav,
+  #secondary-nav {
     left: auto;
     right: auto;
     top: auto;
@@ -199,7 +207,7 @@
     transform: translate3d(0, 0 ,0);
   }
 
-  #inner-wrap #secondary-nav .menu {
+  #secondary-nav .menu {
     float: right;
   }
 

@@ -26,8 +26,6 @@
   }
 
   @include breakpoint($desk) {
-    height: 24px;
-    font-size: 1.15em;
 
     .trigger {
       border: none;

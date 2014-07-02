@@ -1,6 +1,8 @@
 <header class="l-header header" role="banner">
 
-  <div id="primary-nav" class="off-canvas">
+  <div class="container">
+
+    <div id="primary-nav" class="off-canvas">
         <div class="nav-inner-wrap">
           <!-- remove .block for all header blocks so we can style the rest of the blocks with a single selector -->
           <div class="block-search">
@@ -54,5 +56,7 @@
 
         </div>
       </div>
+
+  </div>
 
 </header>

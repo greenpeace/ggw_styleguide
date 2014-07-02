@@ -65,6 +65,7 @@ Responsive images using <a href="http://scottjehl.github.io/picturefill/">Pictur
 
 ```
 <div id="content" class="l-main-column">
+<<<<<<< HEAD
 <div class="main-content">
 <h1>Image sample</h1>
 <div class="content">
@@ -80,6 +81,23 @@ Responsive images using <a href="http://scottjehl.github.io/picturefill/">Pictur
 </article>
 </div>
 </div>
+=======
+  <div class="main-content">
+    <h1>Image sample</h1>
+    <div class="content">
+      <article class="view-mode-full">
+        <div class="field-name-body">
+          <picture>
+            <source media="(min-width: 64em)" srcset="http://placehold.it/603x250, http://placehold.it/1440x500 2x">
+            <source media="(min-width: 48em)" srcset="http://placehold.it/768x384, http://placehold.it/1536x768 2x">
+            <source media="(min-width: 24em)" srcset="http://placehold.it/640x320, http://placehold.it/1280x640 2x">
+            <img src="http://placehold.it/320x160" srcset="http://placehold.it/640x320 2x" alt="The president giving an award.">
+          </picture>
+        </div>
+      </article>
+    </div>
+  </div>
+>>>>>>> develop
 </div>
 ```
 */

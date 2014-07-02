@@ -166,7 +166,12 @@ gulp.task('css-styleguide', function() {
 });
 
 gulp.task('docs-styleguide', function() {
-  return gulp.src('src/css/styleguide/*.css')
+  return gulp.src('src/sass/styleguide/*.scss')
+   .pipe(compass({
+      config_file: 'config.rb',
+      css: 'src/css',
+      sass: 'src/sass'
+    }))
     .pipe(gulp.dest('styleguide/src/css'));
 });
 

@@ -789,7 +789,7 @@ article blockquote {
 	display: block;
 	width: 12px;
 	height: 12px;
-	background: url('../images/chosen-sprite.png?1404121953') -42px 1px no-repeat;
+	background: url('../images/chosen-sprite.png?1404126134') -42px 1px no-repeat;
 	font-size: 1px;
 }
 
@@ -814,7 +814,7 @@ article blockquote {
 	display: block;
 	width: 100%;
 	height: 100%;
-	background: url('../images/chosen-sprite.png?1404121953') no-repeat 0px 2px;
+	background: url('../images/chosen-sprite.png?1404126134') no-repeat 0px 2px;
 }
 
 .chosen-container-single .chosen-search {
@@ -835,8 +835,8 @@ article blockquote {
 	height: auto;
 	outline: 0;
 	border: 1px solid #aaa;
-	background: white url('../images/chosen-sprite.png?1404121953') no-repeat 100% -20px;
-	background: url('../images/chosen-sprite.png?1404121953') no-repeat 100% -20px;
+	background: white url('../images/chosen-sprite.png?1404126134') no-repeat 100% -20px;
+	background: url('../images/chosen-sprite.png?1404126134') no-repeat 100% -20px;
 	font-size: 1em;
 	font-family: sans-serif;
 	line-height: normal;
@@ -1002,7 +1002,7 @@ article blockquote {
 	display: block;
 	width: 12px;
 	height: 12px;
-	background: url('../images/chosen-sprite.png?1404121953') -42px 1px no-repeat;
+	background: url('../images/chosen-sprite.png?1404126134') -42px 1px no-repeat;
 	font-size: 1px;
 }
 
@@ -1230,7 +1230,7 @@ textarea:disabled {
 .form-type-radio .option,
 .form-type-checkbox .option {
 	display: inline-block;
-	padding-left: 1.6em;
+	padding-left: 2em;
 	font-weight: 300;
 }
 
@@ -1288,7 +1288,7 @@ input[type="radio"]:checked + label:before {
 	top: 4px;
 	right: 0;
 	font-size: 0.8125rem;
-	padding: 0 7px;
+	padding: 0 4px;
 }
 
 .selector select::-ms-expand {
@@ -1316,8 +1316,13 @@ input[type="radio"]:checked + label:before {
 
 /*browser specific*/
 
-.lt-ie10 .selector select {
-	width: 105%;
+.lt-ie9 .form-type-radio .option,
+.lt-ie9 .form-type-checkbox .option {
+	padding-left: 0;
+}
+
+.lt-ie9 .page-register .date-padding .form-item {
+	width: 100px;
 }
 
 .lt-ie10 .selector:before {
@@ -2313,7 +2318,7 @@ img.mfp-img {
 .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
 .chosen-container .chosen-results-scroll-down span,
 .chosen-container .chosen-results-scroll-up span {
-	background-image: url('../images/chosen-sprite@2x.png?1404121953') !important;
+	background-image: url('../images/chosen-sprite@2x.png?1404126134') !important;
 	-webkit-background-size: 52px 37px !important;
 	background-size: 52px 37px !important;
 	background-repeat: no-repeat !important;

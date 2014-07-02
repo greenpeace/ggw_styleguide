@@ -1,14 +1,21 @@
 jQuery(document).ready(function ($) {
   'use strict';
 
+  var root = $(document.documentElement)
+
   // Open and close the primary-nav clicking on
   $('#main-menu-show').click(function(e) {
-    $(document.documentElement).toggleClass('primary-nav');
+    root.toggleClass('primary-nav');
+
+    if(root.hasClass('secondary-nav')) {
+      root.removeClass('secondary-nav')
+    }
     e.preventDefault();
+
   });
 
   // When the primary-nav is open, you can close it with a left swipe
-  $(document.documentElement).touchwipe({
+  root.touchwipe({
     wipeLeft: function(e) {
       e.preventDefault();
       if(checkOpenMenu()==1)
@@ -20,7 +27,11 @@ jQuery(document).ready(function ($) {
 
   // Open and close the secondary-nav clicking on
   $('#secondary-menu-show').click(function(e) {
-    $(document.documentElement).toggleClass('secondary-nav');
+    root.toggleClass('secondary-nav');
+
+    if(root.hasClass('primary-nav')) {
+      root.removeClass('primary-nav')
+    }
     e.preventDefault();
   });
 

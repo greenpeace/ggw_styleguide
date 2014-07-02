@@ -1,25 +1,12 @@
-// For off-canvas-nav
-#outer-wrap,
-#inner-wrap {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-}
-
-#outer-wrap {
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-}
-
 .layout-base {
-  display: flex;
-  min-height: 100%;
-  min-height: 100vh; // needed for sticky footer
-  flex-direction: column;
+  overflow: hidden;
+
+  @include breakpoint($desk) {
+    display: flex;
+    min-height: 100%;
+    min-height: 100vh; // needed for sticky footer
+    flex-direction: column;
+  }
 }
 
 //
@@ -27,29 +14,52 @@
 //
 
 .container {
-  position: relative;
-  padding: 0 $def-mar;
-  margin: 0 auto;
 
   @include breakpoint($deskplus) {
-    padding: 0;
     width: 960px;
+    position: relative;
+    margin: 0 auto;
   }
 
 }
 
 .l-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  z-index: 1;
 
   @include breakpoint($desk) {
-    padding-top: $def-mar;
+    top: 60px;
+    z-index: 3;
   }
 }
 
 .l-main {
-  margin: $def-mar auto;
+  margin: 0 auto;
+  padding: 50px 0 0;
   width: 100%;
+  background:#FFF;
+  transition: transform 500ms ease;
+  z-index: 1;
+  position: relative;
+  overflow: auto;
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  transform: translate3d(0, 0, 0);
+  border-right: 1px solid $grey-l;
+  border-left: 1px solid $grey-l;
 
   @include breakpoint($desk) {
+    background: transparent;
+    padding:88px 15px 0;
+    border: none;
+    min-height: none;
+    overflow: visible;
     flex: 1;
     display: flex;
     flex-flow: row wrap;
@@ -61,6 +71,15 @@
       overflow: hidden;
     }
 
+    // .container doesn't get applied
+    @if $oldie {
+      width: 960px;
+    }
+
+  }
+
+  @include breakpoint($deskplus) {
+    padding: 88px 0 0;
   }
 
 }
@@ -77,17 +96,48 @@
 //
 // Inner containers
 //
-
 .l-branding-header {
+  background-color: $green1;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  transition: transform 500ms ease;
+
+  @include breakpoint($desk) {
+    height: 88px;
+
+    // the background is inserted via pseudo element because it is not present on mobile
+    &:after {
+      display: block;
+      background-color: $green2;
+      border-top: 1px solid darken($green2, 3%);
+      content:'';
+      height: 28px;
+      position: fixed;
+      top: 60px;
+      width: 100%;
+    }
+  }
+}
+
+.logo {
   width: 134px;
   margin: 0 auto;
   position: relative;
   top: $def-mar-half;
+  background-image: url(../images/logo.svg);
+  background-repeat: no-repeat;
+  background-size: auto 34px;
+  display:block;
+  height: 34px;
 
   @include breakpoint($desk) {
     position: absolute;
     left: 15px;
-    top: 0;
+    top: $def-mar;
   }
 
   @include breakpoint($deskplus) {
@@ -109,8 +159,12 @@
   @include breakpoint($desk) {
     position: absolute;
     width: auto;
-    right: 0;
+    right: 15px;
     bottom: 32px;
+  }
+
+  @include breakpoint($deskplus) {
+    right: 0;
   }
 }
 
@@ -129,6 +183,10 @@
     @include grid-span(3, 10, $output-style: 'isolation');
     bottom: 10px;
     position: absolute;
+    right: 15px;
+  }
+
+  @include breakpoint($deskplus) {
     right: 0;
   }
 
@@ -143,6 +201,14 @@
     order: 0;
   }
 
+}
+
+.l-main-column {
+  margin: 15px;
+
+  @include breakpoint($desk) {
+    margin: 0;
+  }
 }
 
 .l-has-sidebar .l-main-column {

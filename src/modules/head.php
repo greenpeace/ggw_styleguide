@@ -39,7 +39,4 @@ $detect = new Mobile_Detect;
   <![endif]-->
 </noscript>
 
-
-<script src="js/theme.js"></script>
-
 </head>

@@ -3,13 +3,13 @@
 
 <noscript><div id="javascript-disabled">Your JavaScript seems to be disabled, this might affect your experience on Greenpeace Greenwire.</div></noscript>
 
-<div id="outer-wrap">
-  <div id="inner-wrap">
-    <div class="layout-base">
+<div class="layout-base">
+
+<?php include('modules/mobilenav.php'); ?>
 
 <?php include('modules/header.php'); ?>
 
-<div id="main" class="l-main container">
+  <div id="main" class="l-main container">
 
   <nav class="breadcrumb" role="navigation">
 
@@ -35,7 +35,7 @@
       <div class="content">
 
        <div class="progress-bar-wrapper">
-          <div class="progress-bar" style="width: 25%;">Progress: 25%</div>
+          <div class="progress-bar" style="width: 25%;">25%</div>
        </div>
 
        <form>
@@ -153,9 +153,8 @@
     Footer</span></a>
 </footer>
 
-<!-- put js here -->
-    </div>
-  </div>
 </div>
+
+<script src="js/theme.js"></script>
 </body>
 </html>

@@ -208,7 +208,6 @@ Buttons will appear without text decoration and a soft box-shadow when hovered. 
 ```
 */
 .button.hover {
-  -webkit-box-shadow: 0 1px 2px 0 #CCC;
   box-shadow: 0 1px 2px 0 #CCC;
   text-decoration: none;
   outline: 0;

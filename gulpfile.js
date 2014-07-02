@@ -149,7 +149,7 @@ gulp.task('build', ['clean-dist'], function() {
 ///
 
 gulp.task('watch', function() {
-  gulp.watch('src/sass/**/*.scss', ['split-css', 'oldie'] );
+  gulp.watch('src/sass/**/*.scss', ['split-css', 'oldie']);
   gulp.watch('src/js/**/*.js', ['concat-after', 'concat-before']);
 });
 

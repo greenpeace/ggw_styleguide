@@ -36,6 +36,7 @@
   @include breakpoint($desk) {
     top: 60px;
     z-index: 3;
+    bottom: auto;
   }
 }
 

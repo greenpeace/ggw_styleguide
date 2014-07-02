@@ -121,6 +121,8 @@
 
     </div>
 
+    <a data-replace="modules/comments-lu"><span class="element-invisible">load comments</span></a>
+
   </div>
 <aside class="l-sidebar sidebar">
 

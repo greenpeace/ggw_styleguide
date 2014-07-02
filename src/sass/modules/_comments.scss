@@ -1,0 +1,28 @@
+.block-comments {
+  margin-top: $def-mar;
+}
+
+.sort-comments {
+  @extend %hlist;
+  position: absolute;
+  right: 15px;
+  top: 5px;
+
+  li {
+    border-left: 1px solid #dbdbdb;
+    margin-left: 10px;
+    padding-left: 10px;
+
+    &:first-child {
+      border:none;
+    }
+  }
+
+  a {
+    color: $base;
+  }
+
+  .active {
+    font-weight: 700;
+  }
+}

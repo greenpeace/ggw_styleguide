@@ -27,11 +27,13 @@ body {
   @include breakpoint($desk) {
     @include block-rich;
   }
+
+  .content {
+    margin-top: $def-mar;
+  }
+
 }
 
-.main-content .content {
-  margin-top: $def-mar;
-}
 
 
 .pull-right {

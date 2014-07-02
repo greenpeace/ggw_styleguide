@@ -339,8 +339,6 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
       width: 90%;
       margin: 0 auto;
       background: #fff;
-      border-right: 1px solid #bfbfbf;
-      border-left: 1px solid #bfbfbf;
     }
     .kalei-style-menu-container .menu-items .kalei-styleguide-menu {
       overflow-y: initial;
@@ -350,8 +348,7 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
         display: inline-block;
       }
     .kalei-style-menu-container .menu-items .kalei-styleguide-menu-link {
-      padding-right: 5em;
-      padding-left: 4em;
+      padding: .3em 2em;
     }
     .kalei-style-menu-container .menu-items .kalei-sheet-submenu{
       display: none !important;
@@ -360,6 +357,14 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
     width: 90%;
     margin: 0 auto;
   }
+
+@media (max-width: 1024px) {
+  .kalei-style-menu-container .kalei-styleguide-menu-heading,
+  .kalei-style-menu-container .menu-items,
+  .kalei-style-page {
+    width: 100%;
+  }
+}
 
 @media (max-width: 768px) {
   .kalei-style-menu-container .menu-items .kalei-styleguide-menu li {

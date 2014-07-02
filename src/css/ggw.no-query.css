@@ -2429,7 +2429,7 @@ img.mfp-img {
   top: 3px;
   right: 3px;
   width: 16px;
-  line-height: 1rem;
+  line-height: 16px;
   height: 16px;
   border-radius: 3px;
   background: #56b004;
@@ -2480,6 +2480,7 @@ img.mfp-img {
   left: 0;
   width: auto;
   height: auto;
+  z-index: 1;
   top: 60px;
   z-index: 3;
 }
@@ -2491,6 +2492,7 @@ img.mfp-img {
   background: #FFF;
   transition: transform 500ms ease;
   z-index: 1;
+  position: relative;
   overflow: auto;
   min-height: 100vh;
   -webkit-overflow-scrolling: touch;
@@ -2508,6 +2510,7 @@ img.mfp-img {
   align-content: flex-start;
   align-items: flex-start;
   -ms-flex-preferred-size: auto;
+  width: 960px;
   padding: 88px 0 0;
 }
 .no-flexbox .l-main {

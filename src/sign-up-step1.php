@@ -35,7 +35,7 @@
       <div class="content">
 
        <div class="progress-bar-wrapper">
-          <div class="progress-bar">Progress: 0%</div>
+          <div class="progress-bar">0%</div>
        </div>
 
        <form>

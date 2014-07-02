@@ -31,6 +31,7 @@
   left: 0;
   width: auto;
   height: auto;
+  z-index: 1;
 
   @include breakpoint($desk) {
     top: 60px;
@@ -45,6 +46,7 @@
   background:#FFF;
   transition: transform 500ms ease;
   z-index: 1;
+  position: relative;
   overflow: auto;
   min-height: 100vh;
   -webkit-overflow-scrolling: touch;
@@ -67,6 +69,11 @@
 
     .no-flexbox & {
       overflow: hidden;
+    }
+
+    // .container doesn't get applied
+    @if $oldie {
+      width: 960px;
     }
 
   }

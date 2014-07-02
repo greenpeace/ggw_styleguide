@@ -2250,6 +2250,7 @@ img.mfp-img {
 	left: 0;
 	width: auto;
 	height: auto;
+	z-index: 1;
 }
 
 .l-main {
@@ -2260,6 +2261,7 @@ img.mfp-img {
 	-webkit-transition: -webkit-transform 500ms ease;
 	transition: transform 500ms ease;
 	z-index: 1;
+	position: relative;
 	overflow: auto;
 	min-height: 100vh;
 	-webkit-overflow-scrolling: touch;

@@ -1,5 +1,28 @@
 
-/* Styling for styles guide */
+/* 
+
+##What is this?
+
+<article>
+  <p><strong>Greenpeace Greenwire Styleguide<strong> is based on <a href="https://github.com/thomasdavis/kaleistyleguide">Kalei Styleguide</a></p>
+
+  <p>In words of the author:</p>
+
+  <blockquote cite="https://github.com/thomasdavis/kaleistyleguide">
+  "This project aims at making sure your style sheets are fully documented whilst being synchronized with your webpages styles. To do this it actually uses your live stylesheets in so that at anytime you can review how your styleguide looks."
+  </blockquote>
+
+  <h3>Main goals and benefits</h3>
+    <ul>
+      <li>Fully documented CSS - No need to explain the benefits.</li>
+      <li>No dependencies, simply download the repository and run in your browser.</li>
+      <li>Automatic generation of demo UI components.</li>
+      <li>Easy access for anyone, designer, developer, manager and users.</li>
+      <li>Rapid development of projects by allowing developers to find the correct CSS and HTML for any given UI component.</li>
+      <li>Open sourced so that all great ideas can be included.</li>
+    </ul>
+</article>
+*/
 
 @import url('base.css');
 @import url('components.css');

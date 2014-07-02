@@ -2067,7 +2067,7 @@ img.mfp-img {
 	right: auto;
 	bottom: 0;
 	left: auto;
-	width: 280px;
+	width: 265px;
 	height: auto;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
@@ -2091,19 +2091,19 @@ img.mfp-img {
 }
 
 .js.primary-nav .l-main {
-	left: 280px;
+	left: 265px;
 }
 
 .js.secondary-nav .l-main {
-	right: 280px;
+	right: 265px;
 }
 
 .js.primary-nav .l-branding-header {
-	left: 281px;
+	left: 266px;
 }
 
 .js.secondary-nav .l-branding-header {
-	right: 281px;
+	right: 266px;
 }
 
 .csstransforms3d.primary-nav #secondary-nav,
@@ -2120,23 +2120,23 @@ img.mfp-img {
 }
 
 .csstransforms3d.primary-nav .l-main {
-	-webkit-transform: translate3d(280px, 0px, 0px);
-	transform: translate3d(280px, 0px, 0px);
+	-webkit-transform: translate3d(265px, 0px, 0px);
+	transform: translate3d(265px, 0px, 0px);
 }
 
 .csstransforms3d.primary-nav .l-branding-header {
-	-webkit-transform: translate3d(281px, 0px, 0px);
-	transform: translate3d(281px, 0px, 0px);
+	-webkit-transform: translate3d(266px, 0px, 0px);
+	transform: translate3d(266px, 0px, 0px);
 }
 
 .csstransforms3d.secondary-nav .l-main {
-	-webkit-transform: translate3d(-280px, 0px, 0px);
-	transform: translate3d(-280px, 0px, 0px);
+	-webkit-transform: translate3d(-265px, 0px, 0px);
+	transform: translate3d(-265px, 0px, 0px);
 }
 
 .csstransforms3d.secondary-nav .l-branding-header {
-	-webkit-transform: translate3d(-281px, 0px, 0px);
-	transform: translate3d(-281px, 0px, 0px);
+	-webkit-transform: translate3d(-266px, 0px, 0px);
+	transform: translate3d(-266px, 0px, 0px);
 }
 
 .csstransforms3d .nav-inner-wrap {

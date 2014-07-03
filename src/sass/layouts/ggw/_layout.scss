@@ -184,6 +184,9 @@
     bottom: 10px;
     position: absolute;
     right: 15px;
+    .icon-search {
+      display: none;
+    }
   }
 
   @include breakpoint($deskplus) {

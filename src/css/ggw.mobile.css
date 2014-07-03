@@ -2912,6 +2912,10 @@ article p a:hover {
 	right: 15px;
 }
 
+.block-search .icon-search {
+	display: none;
+}
+
 .breadcrumb {
 	display: block;
 	-webkit-box-flex: 1;

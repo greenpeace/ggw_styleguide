@@ -2607,6 +2607,9 @@ img.mfp-img {
   right: 15px;
   right: 0;
 }
+.block-search .icon-search {
+  display: none;
+}
 
 .breadcrumb {
   display: block;

@@ -260,7 +260,7 @@ th {
   content: '\e83e';
 }
 
-.block-search .form-actions:before {
+.icon-search:before, .block-search .form-actions:before {
   content: '\e807';
 }
 
@@ -2390,11 +2390,20 @@ img.mfp-img {
   display: block;
 }
 
+.block-search .icon-search {
+  position: absolute;
+  top: 11px;
+  left: 18px;
+  font-size: 20px;
+  color: #aaa;
+}
+
 .block-search .form-text {
   border: none;
-  padding: .95em 1em;
+  padding: .95em 3em;
   max-width: 99.8%;
   border-radius: 0;
+  font-style: italic;
   font-size: 16px;
 }
 .block-search .form-text:focus {

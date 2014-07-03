@@ -22,7 +22,7 @@
 .icon-trash {     @extend %icon-trash; }
 .icon-clock {     @extend %icon-clock; }
 .icon-tag {       @extend %icon-tag; }
-.icon-plus {       @extend %icon-plus; }
+.icon-plus {      @extend %icon-plus; }
 
 .icon-news {      @extend %icon-book-open; }
 .icon-blog {      @extend %icon-feather; }
@@ -31,3 +31,5 @@
 .icon-document {  @extend %icon-attach; }
 .icon-idea {      @extend %icon-thumbs-up; }
 .icon-material {  @extend %icon-bucket; }
+
+.icon-search {    @extend %icon-search; }

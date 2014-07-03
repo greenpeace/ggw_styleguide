@@ -2010,6 +2010,10 @@ img.mfp-img {
   padding: 1em 1em 1em 2em;
   font-weight: 700;
 }
+.off-canvas .dropdown-list a {
+  font-weight: 400;
+  color: #7d7d7d;
+}
 .off-canvas .trigger {
   border: none;
   font-weight: 300;
@@ -2226,6 +2230,12 @@ img.mfp-img {
   font-weight: 700;
 }
 
+.menu-item .menu-item .menu-link {
+  font-weight: 400;
+  padding-left: 2.5em;
+  color: #7d7d7d;
+}
+
 .nav-inner-wrap {
   border: none;
 }
@@ -2394,13 +2404,13 @@ img.mfp-img {
   position: absolute;
   top: 11px;
   left: 18px;
-  font-size: 20px;
+  font-size: 18px;
   color: #aaa;
 }
 
 .block-search .form-text {
   border: none;
-  padding: .95em 3em;
+  padding: .95em 2.5em;
   max-width: 99.8%;
   border-radius: 0;
   font-style: italic;

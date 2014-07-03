@@ -20,6 +20,10 @@
     padding: 1em 1em 1em 2em;
     font-weight: 700;
   }
+  .dropdown-list a {
+    font-weight: 400;
+    color: #7d7d7d;
+  }
 
   .country-img {
     @extend %element-hidden;

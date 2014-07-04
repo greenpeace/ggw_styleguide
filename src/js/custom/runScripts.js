@@ -23,7 +23,7 @@ jQuery(document).ready(function ($) {
   // run these functions once
   overflowDropdown();
   function resizeFunction() {
-    stickyForm()
+    //stickyForm()
     // when enabling this the browser freezes ???
     //overflowDropdown()
   };

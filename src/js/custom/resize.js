@@ -3,8 +3,8 @@
   var resizeTimer; // Set resizeTimer to empty so it resets on page load
 
   function resizeFunction() {
-    mobileNav(),
-    stickyForm()
+    mobileNav()
+    //stickyForm()
     // when enabling this the browser freezes ???
     //overflowDropdown()
   };

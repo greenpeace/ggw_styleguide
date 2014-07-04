@@ -259,8 +259,7 @@ th {
 	padding: .44em 1.2em;
 	line-height: normal;
 	text-align: center;
-	font-size: 0.875rem; /* 14px/16 */
-	font-weight: 700;
+	font-size: 0.875rem;
 	text-transform: lowercase;
 }
 
@@ -2100,6 +2099,12 @@ img.mfp-img {
 	align-items: flex-end;
 }
 
+.IOSfocused .comment-form {
+	position: absolute;
+	bottom: auto;
+	top: 60px;
+}
+
 .touch .fixfixed .comment-form {
 	position: absolute;
 }
@@ -2517,6 +2522,10 @@ img.mfp-img {
 	transition: transform 500ms ease;
 }
 
+.IOSfocused .l-branding-header {
+	position: absolute;
+}
+
 .logo {
 	width: 134px;
 	margin: 0 auto;
@@ -2652,8 +2661,7 @@ img.mfp-img {
 	padding: .44em 1.2em;
 	line-height: normal;
 	text-align: center;
-	font-size: 0.875rem; /* 14px/16 */
-	font-weight: 700;
+	font-size: 0.875rem;
 	text-transform: lowercase;
 	padding: 0 1.2em;
 	margin-left: 7px;

@@ -107,6 +107,10 @@
   transform: translate3d(0, 0, 0);
   transition: transform 500ms ease;
 
+  .IOSfocused & {
+    position: absolute;
+  }
+
   @include breakpoint($desk) {
     height: 88px;
 

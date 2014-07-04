@@ -240,8 +240,6 @@ th {
   line-height: normal;
   text-align: center;
   font-size: 14px;
-  /* 14px/16 */
-  font-weight: 700;
   text-transform: lowercase;
 }
 .button:hover, .button:focus {
@@ -2008,6 +2006,11 @@ img.mfp-img {
   position: relative;
   background: transparent;
 }
+.IOSfocused .comment-form {
+  position: absolute;
+  bottom: auto;
+  top: 60px;
+}
 
 .touch .fixfixed .comment-form {
   position: absolute;
@@ -2073,8 +2076,6 @@ img.mfp-img {
   line-height: normal;
   text-align: center;
   font-size: 14px;
-  /* 14px/16 */
-  font-weight: 700;
   text-transform: lowercase;
   padding: 0 1.2em;
   margin-left: 7px;
@@ -2819,6 +2820,9 @@ img.mfp-img {
   transform: translate3d(0, 0, 0);
   transition: transform 500ms ease;
   height: 88px;
+}
+.IOSfocused .l-branding-header {
+  position: absolute;
 }
 .l-branding-header:after {
   display: block;

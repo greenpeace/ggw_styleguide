@@ -139,6 +139,12 @@
   justify-content: space-around;
   align-items: flex-end;
 
+  .IOSfocused & {
+    position: absolute;
+    bottom: auto;
+    top: 60px;
+  }
+
   @include breakpoint($tab) {
     padding: 15px 5px;
     height: auto;

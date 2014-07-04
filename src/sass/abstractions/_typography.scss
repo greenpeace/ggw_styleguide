@@ -1,13 +1,3 @@
-// Use REMs with a pixel fallback for font-sizing.
-@mixin font-size ($font-size){
-  @if $oldie {
-    font-size: $font-size;
-  }
-  @else {
-    font-size: ($font-size / $base-font-size)*1rem;
-  }
-}
-
 // Horizontal list
 %hlist {
   @include horizontal-list(false);

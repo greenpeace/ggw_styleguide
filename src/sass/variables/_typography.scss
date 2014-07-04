@@ -17,3 +17,14 @@ $h5: 13px;
 $h6: 11px;
 
 $small: 12px;
+
+// we need this here because it is used in abstractions already
+// Use REMs with a pixel fallback for font-sizing.
+@mixin font-size ($font-size){
+  @if $oldie {
+    font-size: $font-size;
+  }
+  @else {
+    font-size: ($font-size / $base-font-size)*1rem;
+  }
+}

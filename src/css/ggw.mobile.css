@@ -259,7 +259,7 @@ th {
 	padding: .44em 1.2em;
 	line-height: normal;
 	text-align: center;
-	font-size: .875em; /* 14px/16 */
+	font-size: 0.875rem; /* 14px/16 */
 	font-weight: 700;
 	text-transform: lowercase;
 }

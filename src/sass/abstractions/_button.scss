@@ -9,7 +9,7 @@
   padding: .44em 1.2em;
   line-height: normal; //line-heights can't be changed in FF inputs, instead use padding
   text-align: center;
-  font-size: .875em; /* 14px/16 */
+  @include font-size(14px); /* 14px/16 */
   font-weight: 700;
   text-transform: lowercase;
 

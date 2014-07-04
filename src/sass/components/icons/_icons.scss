@@ -9,22 +9,26 @@
   font-style: normal;
 }
 
-[class*="icon-"] { @extend %load-icon; }
+[class*="icon-"] { @extend %load-icon }
 
-.icon-users {     @extend %icon-users; }
-.icon-user-add {  @extend %icon-user-add; }
-.icon-menu {      @extend %icon-menu; }
-.icon-user {      @extend %icon-user; }
-.icon-login {     @extend %icon-login; }
-.icon-close {     @extend %icon-cancel; }
-.icon-reply {     @extend %icon-reply; }
-.icon-pencil {    @extend %icon-pencil; }
-.icon-trash {     @extend %icon-trash; }
-.icon-clock {     @extend %icon-clock; }
-.icon-tag {       @extend %icon-tag; }
-.icon-plus {      @extend %icon-plus; }
-.icon-comment {   @extend %icon-comment; }
+.icon-users {     @extend %icon-users }
+.icon-user-add {  @extend %icon-user-add }
+.icon-menu {      @extend %icon-menu }
+.icon-user {      @extend %icon-user }
+.icon-login {     @extend %icon-login }
+.icon-close {     @extend %icon-cancel }
+.icon-reply {     @extend %icon-reply }
+.icon-pencil {    @extend %icon-pencil }
+.icon-trash {     @extend %icon-trash }
+.icon-clock {     @extend %icon-clock }
+.icon-tag {       @extend %icon-tag }
+.icon-plus {      @extend %icon-plus }
+.icon-comment {   @extend %icon-comment }
+.icon-dot {       @extend %icon-dot}
+.icon-eye {       @extend %icon-eye}
+.icon-search {       @extend %icon-search}
 
+.icon-event {     @extend %icon-calendar; }
 .icon-news {      @extend %icon-book-open; }
 .icon-blog {      @extend %icon-feather; }
 .icon-photo {     @extend %icon-camera; }

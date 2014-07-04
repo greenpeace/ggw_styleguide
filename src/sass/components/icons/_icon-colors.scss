@@ -1,6 +1,7 @@
 // ICON BACKGROUNDS
 
-.icon-bg-default {
+.icon-bg-default,
+.icon-bg-event {
   background: $green2;
 }
 .icon-bg-news-media {
@@ -9,8 +10,8 @@
 .icon-bg-action {
   background: $primary;
 }
-.icon-bg-event {
-  background: $green4;
+.icon-bg-group {
+  background: $group;
 }
 .icon-bg-user {
   background: $user;

@@ -51,3 +51,13 @@
 %inline-cf {
   @include inline-cf;
 }
+
+// remove default button styling
+@mixin debuttonize {
+  background: transparent;
+  border: none;
+}
+
+%debuttonize {
+  @include debuttonize;
+}

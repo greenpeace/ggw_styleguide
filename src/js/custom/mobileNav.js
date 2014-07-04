@@ -1,27 +1,4 @@
-jQuery(document).ready(function ($) {
-  'use strict';
-
-  // Universal selector for modal windows with external source
-  $('.modal').magnificPopup({
-    type: 'ajax',
-    alignTop: true
-  });
-
-  //
-  // Selector + chosen
-  //
-
-  $('.form-item select').wrap('<div class="selector"></div>');
-
-  $('.dropdown').hide();
-
-  //
-  // Special resize function for better performance
-  //
-
-  var resizeTimer; // Set resizeTimer to empty so it resets on page load
-
-  function resizeFunction() {
+  function mobileNav() {
 
         // only for small devices
         if($(window).width() <= 901) {
@@ -56,20 +33,3 @@ jQuery(document).ready(function ($) {
           $('.main-menu .menu .menu').removeAttr('style');
         }
     };
-
-    // On resize, run the function and reset the timeout
-    // 250 is the delay in milliseconds. Change as you see fit.
-    $(window).resize(function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(resizeFunction, 250);
-    });
-
-    resizeFunction();
-
-    //
-    // Ajax include
-    //
-
-    $("[data-append],[data-replace],[data-after],[data-before]").ajaxInclude();
-
-});

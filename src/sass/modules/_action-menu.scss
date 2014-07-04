@@ -1,14 +1,13 @@
 .action-menu > ul {
   border-bottom: 1px solid $grey-l;
   height: 44px;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .action-menu > ul > li {
-  display: block;
-  width: 49.9%;
+  flex: 1;
   white-space: nowrap;
-  position: relative;
-  float:left;
   border-right: 1px solid $grey-l;
 
   &:last-child {
@@ -31,8 +30,9 @@
 }
 
 .action-menu .dropdown {
-  width: 102%;
+  width: 100%;
   margin: -1px 0 0 -1px;
+  left: 0;
 }
 
 .action-menu .dropdown li {

@@ -15,6 +15,7 @@ body {
 
   @include breakpoint($desk) {
     background-color: $background;
+    color: $base-desk;
   }
 
 }

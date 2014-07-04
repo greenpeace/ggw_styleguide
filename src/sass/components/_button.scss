@@ -1,51 +1,5 @@
 .button {
-  background: $secondary;
-  background-image: linear-gradient($secondary, darken($secondary, 3%));
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 3px;
-  border: 1px solid $grey-l;
-  color: $base;
-  padding: .44em 1.2em;
-  line-height: normal; //line-heights can't be changed in FF inputs, instead use padding
-  text-align: center;
-  font-size: .875em; /* 14px/16 */
-  font-weight: 700;
-  text-transform: lowercase;
-
-  &:hover,
-  &:focus {
-    box-shadow: 0 1px 2px 0 $grey-l;
-    text-decoration: none;
-    outline: 0;
-  }
-
-  &:active,
-  &.active {
-    top: 1px;
-    position: relative;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
-  }
-
-  &[disabled],
-  &.disabled {
-    background: $white;
-    border-color: $grey-l;
-    color: $grey-l;;
-    cursor: default;
-
-    &:active,
-    &:hover,
-    &:focus {
-      box-shadow: none;
-    }
-
-    &:active {
-      top:0;
-    }
-
-  }
-
+  @extend %button;
 }
 
 .btn-primary {

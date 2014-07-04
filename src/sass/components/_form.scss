@@ -39,14 +39,15 @@ label {
   color: $grey-d;
 }
 
-input[type='text'],
-input[type='password'],
+.form-text,
+.form-password,
 textarea {
   padding:.4em .5em .4em .5em;
   border: 1px solid $grey-l;
   border-radius: 3px;
   width: 100%;
   max-width: 400px;
+  -webkit-appearance: none;
 
   &:hover {
     border-color: $grey-m;

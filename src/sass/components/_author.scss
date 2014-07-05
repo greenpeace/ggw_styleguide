@@ -1,8 +1,19 @@
 .submitted {
-  margin:$def-mar 0;
-  padding-top: $def-mar;
+  margin:(2 * $def-mar) 0 0;
 }
 
+.submitted-extended {
+  padding: $def-mar;
+  background: $background;
+  border-radius: 3px;
+}
+
+.comments-shortcut {
+  float: right;
+}
+
+.tags,
+.shortcut,
 .submitted,
 .submitted a {
   @include font-size(14px);
@@ -36,7 +47,7 @@
   display: inline-block;
 }
 
-.tags {
+.tags a {
   text-transform: lowercase;
   font-style: italic;
 }

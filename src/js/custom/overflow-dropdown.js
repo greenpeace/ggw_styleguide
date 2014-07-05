@@ -2,16 +2,16 @@
 
 function overflowDropdown() {
 
-  'use strict';
-
   // Define the context we will be operating in.
-  var list = '.action-menu ul';
+  var list = $('.original-action-menu ul').clone();
+  $('.original-action-menu').hide();
 
-  // Act only if the more tab is not created yet.
-  if (typeof $(list) != 'undefined' && $(list) != false && $(list).length > 0) {
+  if ( $('.action-menu').length ) {
+    $('.action-menu').remove();
+  }
 
-    // We will store any items here that we want to move.
-    var itemsToMove = new Array();
+  // We will store any items here that we want to move.
+  var itemsToMove = new Array();
 
     // get window width
     var windowWidth = $(window).width();
@@ -48,7 +48,8 @@ function overflowDropdown() {
       });
     }
 
-  }
+    list.insertAfter('.original-action-menu');
+    list.wrapAll('<div class="action-menu">');
 
 };
 

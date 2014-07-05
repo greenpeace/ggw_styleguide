@@ -20,11 +20,6 @@
             }
           });
 
-          // attach fastclick
-          $(function() {
-            FastClick.attach(document.body);
-          });
-
           // undo the removing of style attr when switching from wide display
           $('.main-menu .menu .menu').css('display', 'none');
         }

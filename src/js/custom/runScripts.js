@@ -1,5 +1,11 @@
+
 jQuery(document).ready(function ($) {
   'use strict';
+
+  FastClick.attach(document.body);
+
+  // Ajax include
+  $("[data-append],[data-replace],[data-after],[data-before]").ajaxInclude();
 
   // Universal selector for modal windows with external source
   $('.modal').magnificPopup({
@@ -14,22 +20,21 @@ jQuery(document).ready(function ($) {
   // Selector styling wrapper
   $('.form-item select').wrap('<div class="selector"></div>');
 
+  $('input[type=file]').nicefileinput();
+
   // hide all dropdowns by default
   $('.dropdown').hide();
 
-  // Ajax include
-  $("[data-append],[data-replace],[data-after],[data-before]").ajaxInclude();
-
   // run these functions once
-  overflowDropdown();
+
   function resizeFunction() {
-    //stickyForm()
-    // when enabling this the browser freezes ???
-    //overflowDropdown()
+    mobileNav(),
+    // this method is required because comments are loaded via ajaxInclude
+    NiceCommentForm()
   };
 
   var resizeTimer; // Set resizeTimer to empty so it resets on page load
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(resizeFunction, 1000);
+  resizeTimer = setTimeout(resizeFunction, 200);
 
 });

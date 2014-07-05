@@ -1,7 +1,7 @@
 .block-comments {
   margin-top: 3 * $def-mar;
   @include font-size(14px);
-  line-height: 1em;
+  line-height: 1.1em;
 
   &:before {
     display: block;
@@ -55,11 +55,7 @@
 }
 
 .comments {
-  margin: $def-mar 0 60px;
-
-  @include breakpoint($desk) {
-     margin: $def-mar 0;
-  }
+  margin: $def-mar 0 $def-mar-half;
 }
 
 .comment {
@@ -98,12 +94,6 @@
   margin-bottom: 0.3em;
 }
 
-.comment-author {
-  font-weight: 700;
-  color: $base;
-}
-
-
 .comment-footer {
   color: $grey-m;
   @include font-size(13px);
@@ -123,14 +113,12 @@
 }
 
 .comment-form {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  position: relative;
+  bottom: -15px;
+  margin: 0 -15px;
   z-index: 999;
   padding: 5px;
-  height: 44px;
+  min-height: 44px;
   background: $white;
   border-top: 1px solid rgba(0,0,0,.2);
   background: $background;
@@ -138,12 +126,6 @@
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: flex-end;
-
-  .IOSfocused & {
-    position: absolute;
-    bottom: auto;
-    top: 60px;
-  }
 
   @include breakpoint($tab) {
     padding: 15px 5px;
@@ -214,6 +196,7 @@
   position: relative;
   flex: 4;
   max-width: none;
+  @include font-size(16px);
 }
 
 .form-comment-submit {

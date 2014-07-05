@@ -1,4 +1,4 @@
-<div class="block block-comments">
+<div class="block block-comments" id="block-comments">
 
   <i class="block-icon icon-comment icon-bg-action"></i>
   <h2 class="block-title">Comments</h2>
@@ -60,7 +60,7 @@
 
           <div class="comment-head">
             <a href="#" title="View profile" class="comment-author">
-              Chico Konink
+              Chico Konink (Greenpeace staff)
             </a>
           </div>
 
@@ -96,7 +96,7 @@
 
           <div class="comment-head">
             <a href="#" title="View profile" class="comment-author">
-              Chico Konink
+              Chico Konink (Greenpeace staff)
             </a>
           </div>
 
@@ -126,7 +126,7 @@
 
           <div class="comment-head">
             <a href="#" title="View profile" class="comment-author">
-              Chico Konink
+              Chico Konink (Greenpeace staff)
             </a>
           </div>
 

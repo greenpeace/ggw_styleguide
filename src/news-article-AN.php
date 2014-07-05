@@ -11,7 +11,7 @@
 
 <div id="main" class="l-main container">
 
-<div class="action-menu">
+<div class="original-action-menu">
   <ul>
     <li><a href="#"><i class="icon icon-user"></i> Login</a></li>
     <li><a href="#"><i class="icon icon-user-add"></i> Register</a></li>

@@ -6,7 +6,7 @@
 .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
 .chosen-container .chosen-results-scroll-down span,
 .chosen-container .chosen-results-scroll-up span {
-	background-image: url('../images/chosen-sprite@2x.png?1404121953') !important;
+	background-image: url('../images/chosen-sprite@2x.png?1404468460') !important;
 	-webkit-background-size: 52px 37px !important;
 	background-size: 52px 37px !important;
 	background-repeat: no-repeat !important;
@@ -254,10 +254,6 @@ article p a:hover {
 
 .block-comments:before {
 	display: none;
-}
-
-.comments {
-	margin: 15px 0;
 }
 
 .comment-reply {

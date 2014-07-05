@@ -11,7 +11,7 @@
 
 <div id="main" class="l-main container">
 
-<div class="action-menu">
+<div class="original-action-menu">
   <ul>
     <li><a href="#"><i class="icon icon-plus"></i> Create Content</a></li>
     <li><a href="#"><i class="icon icon-user-add"></i> Register</a></li>
@@ -55,6 +55,9 @@
       <div class="content">
 
       <article class="view-mode-full">
+
+        <div class="submitted"><a href="#">News</a> by <a href="#">Willie Mackenzie</a> - <span class="submitted-date">June 5th 2014 - 11:29</span>
+        <a class="comments-shortcut" href="#block-comments"><i class="icon-comment"></i> 10 <span class="element-invisible">comments</span></a></div>
 
           <div class="field-name-body">
 
@@ -104,15 +107,21 @@
 <p>The point being: there are ways to successfully eliminate the click delay <em>without</em> negatively impacting performance. Until more browsers start solving this themselves, in the present day, preserving scaling and finding another way to combat the 300ms delay is our best option.</p>
       </div>
 
-      <div class="submitted">
+       <div class="tags">Tags: <a class="tag" href="#">oceans</a>, <a class="tag" href="#">Sustainable Fishery</a>, <a class="tag" href="#">conservation</a> </div>
+
+
+      <div class="submitted submitted-extended">
         <div class="submitted-image">
           <img src="http://placehold.it/75x75" alt="Name of the author" /> <?php // change img size to 50px ?>
         </div>
 
         <div class="submitted-info">
-            <a href="#" class="icon icon-news">News</a> by <a href="#">author_username</a> in <a href="#">Group name</a>,
-          <div class="submitted-date">5 June, 2014 - 11:29</div>
-          <div class="tags"><a class="tag" href="#">oceans</a>, <a class="tag" href="#">Sustainable Fishery</a>, <a class="tag" href="#">conservation</a> </div>
+            <div><a href="#">News</a> by <a href="#">Willie MacKenzie (community coach)</a></div>
+            <div class="submitted-bio">
+              <p>Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.</p>
+            </div>
+            <div class="submitted-all-reference"><a href="#">All News by Willy MacKenzie</a>.</div>
+
         </div>
       </div>
 </article>

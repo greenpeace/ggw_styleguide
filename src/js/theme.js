@@ -2237,52 +2237,6 @@ if (typeof define !== 'undefined' && define.amd) {
   window.FastClick = FastClick;
 }
 
-/*! fixed-fixed - v0.1.0 - 2014-05-23
-* Copyright (c) 2014 ; Licensed MIT */
-/*! Fixedfixed: a CSS position:fixed qualifier. (c)2012 @scottjehl, Filament Group, Inc. Dual license: MIT and/or GPLv2 */
-(function(w, undefined) {
-    var htmlclass = "fixed-supported", el = w.document.createElement("div"), ua = w.navigator.userAgent, docEl = w.document.documentElement;
-    // fix the test element
-    el.style.position = "fixed";
-    el.style.top = 0;
-    // support test
-    function checkFixed() {
-        var scroll = "scrollTop" in w.document.body ? w.document.body.scrollTop : docEl.scrollTop;
-        // only run test if there's a scroll we can compare
-        if (scroll !== undefined && scroll > 0 && w.document.body) {
-            w.document.body.insertBefore(el, w.document.body.firstChild);
-            if (!el.getBoundingClientRect || el.getBoundingClientRect().top !== 0) {
-                // Fixed is not working or can't be tested
-                docEl.className = docEl.className.replace(htmlclass, "");
-            }
-            // remove the test element
-            w.document.body.removeChild(el);
-            // unbind the handlers
-            if (w.removeEventListener) {
-                w.removeEventListener("scroll", checkFixed, false);
-            } else {
-                w.detachEvent("onscroll", checkFixed);
-            }
-        }
-    }
-    // if a particular UA is known to return false results with this feature test, try and avoid that UA here.
-    if (// Android 2.1, 2.2, 2.5, and 2.6 Webkit
-    !(ua.match(/Android 2\.[1256]/) && ua.indexOf("AppleWebKit") > -1) || // Opera Mobile less than version 11.0 (7458)
-    !(ua.match(/Opera Mobi\/([0-9]+)/) && RegExp.$1 < 7458) || // Opera Mini
-    !(w.operamini && {}.toString.call(w.operamini) === "[object OperaMini]") || // Firefox Mobile less than version 6
-    !(ua.match(/Fennec\/([0-9]+)/) && RegExp.$1 < 6)) {
-        //add the HTML class for now.
-        docEl.className += " " + htmlclass;
-        // bind to scroll event so we can test and potentially degrade
-        if (w.addEventListener) {
-            w.addEventListener("scroll", checkFixed, false);
-        } else {
-            w.attachEvent("onscroll", checkFixed);
-        }
-    }
-    w.FixedFixed = checkFixed;
-})(this);
-
 
 /*!
  * jQuery Cookie Plugin v1.3.1
@@ -5688,42 +5642,8 @@ window.matchMedia || (window.matchMedia = function() {
     }
 })(jQuery);
 
-function stickyForm() {
-
-  'use strict';
-
-  var Form = $('.comment-form')
-
-  //check if the element exists
-  if(Form != undefined) {
-
-    // only for small devices
-    if($(window).width() <= 900) {
-
-      $('.comment-form-holder > .comment-form').insertBefore('.l-footer');
-      $('input[type=file]').nicefileinput();
-
-    } else if ($(window).width() >= 901) {
-
-      $('.layout-base > .comment-form').insertAfter('.comment-form-title');
-      $('input[type=file]').nicefileinput();
-
-    }
-
-  }
-
-  if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-    $(document).on('focus', 'input, textarea', function() {
-        $(document).addClass('IOSfocused');
-        $(window).scrollTop(0)
-    });
-    $(document).on('blur', 'input, textarea', function() {
-      if ($(document).hasClass('IOSfocused')) {
-        $(document).removeClass('IOSfocused');
-      }
-    });
-  }
-
+function NiceCommentForm() {
+  $('input[type=file]').nicefileinput();
 };
 
   function mobileNav() {
@@ -5850,16 +5770,16 @@ jQuery(document).ready(function ($) {
 
 function overflowDropdown() {
 
-  'use strict';
-
   // Define the context we will be operating in.
-  var list = '.action-menu ul';
+  var list = $('.original-action-menu ul').clone();
+  $('.original-action-menu').hide();
 
-  // Act only if the more tab is not created yet.
-  if (typeof $(list) != 'undefined' && $(list) != false && $(list).length > 0) {
+  if ( $('.action-menu').length ) {
+    $('.action-menu').remove();
+  }
 
-    // We will store any items here that we want to move.
-    var itemsToMove = new Array();
+  // We will store any items here that we want to move.
+  var itemsToMove = new Array();
 
     // get window width
     var windowWidth = $(window).width();
@@ -5896,7 +5816,8 @@ function overflowDropdown() {
       });
     }
 
-  }
+    list.insertAfter('.original-action-menu');
+    list.wrapAll('<div class="action-menu">');
 
 };
 
@@ -5908,25 +5829,28 @@ function overflowDropdown() {
   var resizeTimer; // Set resizeTimer to empty so it resets on page load
 
   function resizeFunction() {
-    mobileNav()
-    //stickyForm()
+    mobileNav(),
     // when enabling this the browser freezes ???
-    //overflowDropdown()
+    overflowDropdown()
   };
 
   // On resize, run the function and reset the timeout
   // 250 is the delay in milliseconds. Change as you see fit.
   $(window).resize(function() {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(resizeFunction, 1000);
+    resizeTimer = setTimeout(resizeFunction, 250);
   });
 
   resizeFunction();
 
 })(jQuery);
 
+
 jQuery(document).ready(function ($) {
   'use strict';
+
+  // Ajax include
+  $("[data-append],[data-replace],[data-after],[data-before]").ajaxInclude();
 
   // Universal selector for modal windows with external source
   $('.modal').magnificPopup({
@@ -5941,22 +5865,21 @@ jQuery(document).ready(function ($) {
   // Selector styling wrapper
   $('.form-item select').wrap('<div class="selector"></div>');
 
+  $('input[type=file]').nicefileinput();
+
   // hide all dropdowns by default
   $('.dropdown').hide();
 
-  // Ajax include
-  $("[data-append],[data-replace],[data-after],[data-before]").ajaxInclude();
-
   // run these functions once
-  overflowDropdown();
+  //overflowDropdown();
+
   function resizeFunction() {
-    //stickyForm()
-    // when enabling this the browser freezes ???
-    //overflowDropdown()
+    mobileNav(),
+    NiceCommentForm()
   };
 
   var resizeTimer; // Set resizeTimer to empty so it resets on page load
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(resizeFunction, 1000);
+  resizeTimer = setTimeout(resizeFunction, 200);
 
 });

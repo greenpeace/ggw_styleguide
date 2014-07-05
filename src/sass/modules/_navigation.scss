@@ -178,6 +178,11 @@
     @extend %no-deco;
   }
 }
+.menu-item .menu-item .menu-link {
+  font-weight: 400;
+  padding-left: 2.5em;
+  color: #7d7d7d;
+}
 
 @include breakpoint($desk) {
 

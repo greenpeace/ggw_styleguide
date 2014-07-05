@@ -2272,6 +2272,11 @@ img.mfp-img {
 	font-weight: 700;
 }
 
+.off-canvas .dropdown-list a {
+	font-weight: 400;
+	color: #7d7d7d;
+}
+
 .nav-btn {
 	left: 10px;
 	position: absolute;
@@ -2418,6 +2423,12 @@ img.mfp-img {
 	font-weight: 700;
 }
 
+.menu-item .menu-item .menu-link {
+	font-weight: 400;
+	padding-left: 2.5em;
+	color: #7d7d7d;
+}
+
 .page-register-step1 .progress-bar {
 	background: none;
 	color: #333333;
@@ -2457,11 +2468,20 @@ img.mfp-img {
 	display: block;
 }
 
+.block-search .icon-search {
+	position: absolute;
+	top: 11px;
+	left: 18px;
+	font-size: 18px;
+	color: #aaa;
+}
+
 .block-search .form-text {
 	border: none;
-	padding: .95em 1em;
+	padding: .95em 2.5em;
 	max-width: 99.8%;
 	border-radius: 0;
+	font-style: italic;
 	font-size: 1rem;
 }
 
@@ -2540,34 +2560,6 @@ img.mfp-img {
 
 .l-main-column {
 	margin: 15px;
-}
-
-.fixedsticky {
-	position: -webkit-sticky;
-	position: -moz-sticky;
-	position: -ms-sticky;
-	position: -o-sticky;
-	position: sticky;
-}
-
-/* When position: sticky is supported but native behavior is ignored */
-
-.fixedsticky-withoutfixedfixed .fixedsticky-off,
-.fixed-supported .fixedsticky-off {
-	position: static;
-}
-
-.fixedsticky-withoutfixedfixed .fixedsticky-on,
-.fixed-supported .fixedsticky-on {
-	position: fixed;
-}
-
-.fixedsticky-dummy {
-	display: none;
-}
-
-.fixedsticky-on + .fixedsticky-dummy {
-	display: block;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
@@ -3303,6 +3295,10 @@ article p a:hover {
 	bottom: 10px;
 	position: absolute;
 	right: 15px;
+}
+
+.block-search .icon-search {
+	display: none;
 }
 
 .breadcrumb {

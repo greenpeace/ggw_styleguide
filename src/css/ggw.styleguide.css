@@ -1,5 +1,54 @@
 
-/* Styling for styles guide */
+/* 
+
+##What is this?
+
+<article>
+  <p><strong>Greenpeace Greenwire Styleguide<strong> is based on <a href="https://github.com/thomasdavis/kaleistyleguide">Kalei Styleguide</a></p>
+
+  <p>In words of the author:</p>
+
+  <blockquote cite="https://github.com/thomasdavis/kaleistyleguide">
+  "This project aims at making sure your style sheets are fully documented whilst being synchronized with your webpages styles. To do this it actually uses your live stylesheets in so that at anytime you can review how your styleguide looks."
+  </blockquote>
+
+  <h3>Main goals and benefits</h3>
+  <p>On <a href="http://blog.rjmetrics.com/2012/02/20/our-living-style-guide-writing-maintainable-htmlcss/">RJMetrics</a>, Matt Monihan counts some goals and benefits when using a Styleguide:</p>
+    <ul>
+      <li>Create a workflow for creating and understanding new markup.</li>
+      <li>Improve the maintainability of the markup.</li>
+      <li>Give developers a logical and consistent way to markup HTML.</li>
+      <li>Impose markup standards within a growing organization.</li>
+      <li>Make it obvious when something strays from being consistent with an organization’s style. It's an experiment, and hopefully generates feedback.</li>
+      <li>Save time.</li>
+    </ul>
+</article>
+
+##Why?
+
+<article>
+	<p>After reading all the goals and benefits, why not? Anyway, here we have an example:</p>
+	<p>Imagine that you want to add some new style or a new component into one of the pages of Greenwire. As a new developer you first have to download the repository from <a href="https://github.com/greenpeace/ggw_styleguide">Github Greenpeace</a>, and once you have everything downloaded, you may want to check what do you have.</p>
+	<div class="block block-no-icon">
+	  <h2 class="block-title">General view of some of the files inside 'ggw_styleguide'</h2>
+	  <div class="content" style="margin-top:15px;">
+	     <img src="src/images/dev-tree.png"></img>
+	  </div>
+  </div>
+	<p>At first glance, you can see a lot of files which seem to be well organized. For experienced developers, the organization could be intuitive and easy to understand. For not so experienced as me, at the begining, this could be overwhelming.</p>
+	<p>Considering the benefits explained before, using the styleguide may save some time to the first group. But a lot of time to the not so experienced developers. Believe me.</p>
+</article>
+
+##OK, you persuade me. What next?
+
+<article>
+	<h3>GitHub. Clone Greenwire repository.</h3>
+	<p>If you are reading this, I guess you have already cloned Greenwire GitHub repository into your developing branch. Don't know what is Github, repository and/or how to clone? Check <a href="https://help.github.com/articles/set-up-git">GitHub documentation</a>. Set it up and learn some basics if you haven't yet.</p>
+	<p>Once you setup GitHub, you can clone Greenwire repository in your developing branch using the terminal:</p>
+	<code>'$ git clone git@github.com:greenpeace/ggw_styleguide.git'</code>
+</article>
+
+*/
 
 @import url('base.css');
 @import url('components.css');

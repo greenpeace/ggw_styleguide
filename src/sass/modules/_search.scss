@@ -1,8 +1,17 @@
+.block-search .icon-search {
+  position: absolute;
+  top: 11px;
+  left: 18px;
+  font-size: 18px;
+  color: #aaa;
+}
+
 .block-search .form-text {
   border: none;
-  padding: .95em 1em;
+  padding: .95em 2.5em;
   max-width: 99.8%;
   border-radius: 0;
+  font-style: italic;
   @include font-size(16px); //prevents safari from zooming in on focus
 
   &:focus {

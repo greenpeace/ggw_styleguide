@@ -13,19 +13,15 @@
 
 <div class="original-action-menu">
   <ul>
-    <li><a href="#"><i class="icon icon-plus"></i> Create Content</a></li>
-    <li><a href="#"><i class="icon icon-user-add"></i> Register</a></li>
-    <li><a href="#"><i class="icon icon-user-add"></i> Register 2</a></li>
-    <li><a href="#"><i class="icon icon-user-add"></i> Register 3</a></li>
-    <li><a href="#"><i class="icon icon-user-add"></i> Register 4</a></li>
-    <li><a href="#"><i class="icon icon-user-add"></i> Register 5</a></li>
-    <li><a href="#"><i class="icon icon-user-add"></i> Register 6</a></li>
-    <li><a href="#"><i class="icon icon-user-add"></i> Register 7</a></li>
-    <li><a href="#"><i class="icon icon-user-add"></i> Register 8</a></li>
-    <li><a href="#"><i class="icon icon-user-add"></i> Register 9</a></li>
-    <li><a href="#"><i class="icon icon-user-add"></i> Register 10</a></li>
-    <li><a href="#"><i class="icon icon-user-add"></i> Register 11</a></li>
-    <li><a href="#"><i class="icon icon-user-add"></i> Register 12</a></li>
+    <li><a href="#"><i class="icon icon-users"></i> Go to group</a></li>
+    <li><a href="#"><i class="icon icon-plus"></i> Get involved</a></li>
+    <li><a href="#"><i class="icon icon-eye"></i> Follow</a></li>
+    <li><a href="#"><i class="icon icon-user"></i> Example 4</a></li>
+    <li><a href="#"><i class="icon icon-tag"></i> Example 4</a></li>
+    <li><a href="#"><i class="icon icon-user-add"></i> Example 5</a></li>
+    <li><a href="#"><i class="icon icon-news"></i> Example 6</a></li>
+    <li><a href="#"><i class="icon icon-blog"></i> Example 7</a></li>
+    <li><a href="#"><i class="icon icon-photo"></i> Example 8</a></li>
   </ul>
 </div>
 

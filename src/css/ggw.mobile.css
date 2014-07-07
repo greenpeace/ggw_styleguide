@@ -2123,10 +2123,10 @@ img.mfp-img {
 	-webkit-justify-content: space-around;
 	-ms-flex-pack: distribute;
 	justify-content: space-around;
-	-webkit-box-align: end;
-	-webkit-align-items: flex-end;
-	-ms-flex-align: end;
-	align-items: flex-end;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;
 }
 
 .touch .fixfixed .comment-form {
@@ -2161,14 +2161,13 @@ img.mfp-img {
 	-webkit-flex: 4;
 	-ms-flex: 4;
 	flex: 4;
-	height: 34px;
 }
 
 .form-comment-message textarea {
 	resize: none;
 	overflow: hidden;
-	line-height: 34px;
-	padding: 0 .5em;
+	line-height: 1.1em;
+	padding: .5em;
 	height: 34px;
 	position: relative;
 	font-size: 1rem;

@@ -2030,7 +2030,7 @@ img.mfp-img {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items: flex-start;
   padding: 15px 5px;
   height: auto;
   position: relative;
@@ -2069,7 +2069,6 @@ img.mfp-img {
   cursor: pointer;
   border-radius: 3px;
   border: 1px solid #cccccc;
-  margin-right: 7px;
 }
 
 .nfi-filename {
@@ -2078,13 +2077,12 @@ img.mfp-img {
 
 .form-comment-message {
   flex: 4;
-  height: 34px;
 }
 .form-comment-message textarea {
   resize: none;
   overflow: hidden;
-  line-height: 34px;
-  padding: 0 .5em;
+  line-height: 1.1em;
+  padding: .5em;
   height: 34px;
   position: relative;
   font-size: 16px;

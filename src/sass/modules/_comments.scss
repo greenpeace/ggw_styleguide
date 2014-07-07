@@ -129,7 +129,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items: flex-start;
 
   @include breakpoint($tab) {
     padding: 15px 5px;
@@ -186,7 +186,6 @@
     cursor: pointer;
     border-radius: 3px;
     border: 1px solid $grey-l;
-    margin-right: $def-mar-half;
   }
 
 }
@@ -198,13 +197,12 @@
 // autogrow js gets applied on this element
 .form-comment-message {
   flex: 4;
-  height: 34px;
 
   textarea{
     resize: none;
     overflow: hidden;
-    line-height: 34px;
-    padding: 0 .5em;
+    line-height: 1.1em;
+    padding: .5em;
     height: 34px;
     position: relative;
     @include font-size(16px);

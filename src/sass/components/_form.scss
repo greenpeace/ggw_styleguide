@@ -89,6 +89,7 @@ input[type="checkbox"] {
     display: inline-block;
     padding-left: 2em;
     font-weight: 300;
+    cursor: pointer;
 
     &:before {
       position: absolute;
@@ -98,10 +99,8 @@ input[type="checkbox"] {
       background-color: $white;
       background-image: url('../images/form_elements.svg');
       background-repeat: no-repeat;
-      background-size: 135px;
-      height: 1.3em;
+      height: 1.5rem;
       width: 1.3em;
-
     }
 
   }
@@ -109,19 +108,19 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"] + label:before {
-  background-position: -43px -55px;
+  background-position: -7px -27px;
 }
 
 input[type="checkbox"]:checked + label:before {
-  background-position: -71px -55px;
+  background-position: -31px -27px;
 }
 
 input[type="radio"] + label:before {
-  background-position: -43px -28px;
+  background-position: -7px -7px;
 }
 
 input[type="radio"]:checked + label:before {
-  background-position: -71px -28px;
+  background-position: -31px -7px;
 }
 
 // SELECT
@@ -143,14 +142,14 @@ input[type="radio"]:checked + label:before {
 
 // arrow style
   &:before {
-    @extend %load-icon;
-    @extend %icon-arrow-combo;
-    color: $base;
     position: absolute;
-    top: 4px;
+    content:'';
+    display: inline-block;
+    background: $white url('../images/form_elements.svg') no-repeat -31px -47px;
+    height: 1.5rem;
+    width: 1.3em;
+    top: 3px;
     right: 0;
-    @include font-size($h5);
-    padding: 0 4px;
   }
   select::-ms-expand {
     display: none; /*removes the default arrow in ie*/

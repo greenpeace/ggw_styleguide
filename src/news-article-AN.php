@@ -46,6 +46,9 @@
 
         <article class="view-mode-full">
 
+          <div class="submitted"><a href="#">News</a> by willie_mackenzie - <span class="submitted-date">June 5th 2014 - 11:29</span>
+          </div>
+
           <div class="field-name-body">
 
         <p>On touch devices, a click event has a 300ms delay before firing. The reason for this the delay is that browsers need that buffer to make sure you aren’t going to double-tap on anything. The result is that if you use click events blindly, that delay creates a noticeable lag as users interact with elements on your page.</p>
@@ -94,14 +97,21 @@
 <p>The point being: there are ways to successfully eliminate the click delay <em>without</em> negatively impacting performance. Until more browsers start solving this themselves, in the present day, preserving scaling and finding another way to combat the 300ms delay is our best option.</p>
       </div>
 
-      <div class="submitted">
+ <div class="tags">Tags: <a class="tag" href="#">oceans</a>, <a class="tag" href="#">Sustainable Fishery</a>, <a class="tag" href="#">conservation</a> </div>
+
+
+      <div class="submitted submitted-extended">
         <div class="submitted-image">
-          <img src="http://placekitten.com/g/50/50" alt="Name of the author" /> <?php // change img size to 50px ?>
+          <img src="http://placehold.it/75x75" alt="Name of the author" /> <?php // change img size to 50px ?>
         </div>
 
         <div class="submitted-info">
-          <a href="#">author_username</a>
-          <div class="submitted-date">5 June, 2014 - 11:29</div>
+            <div><a href="#">News</a> by willie_mackenzie</div>
+            <div class="submitted-bio">
+              <p>Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.</p>
+            </div>
+            <div class="submitted-all-reference"><a href="#">All News by willy_mackenzie</a>.</div>
+
         </div>
       </div>
 </article>

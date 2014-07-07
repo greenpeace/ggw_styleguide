@@ -135,8 +135,10 @@
   </div>
 <aside class="l-sidebar sidebar">
 
-    <a data-replace="modules/lu-article-sidebar" <?php echo ($detect->isMobile() ? "data-media='(min-width: 900px)'" : ""); ?>><span class="element-invisible">
-    Register instructions</span></a>
+    <?php include('modules/block/go-to-group.php'); ?>
+<?php include('modules/block/get-involved.php'); ?>
+<?php include('modules/block/subscribe.php'); ?>
+<?php include('modules/block/find-events.php'); ?>
 
   </aside>
 

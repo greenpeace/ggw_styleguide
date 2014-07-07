@@ -21,6 +21,7 @@
 	position: absolute;
 	z-index: 999;
 	opacity: 0;
+	display: block;
 	-webkit-transition: opacity 300ms 100ms ease, -webkit-transform 500ms ease;
 	transition: opacity 300ms 100ms ease, transform 500ms ease;
 	-webkit-transform: translate3d(10%, 0, 0) scale3d(0.9, 0.9, 0.9);

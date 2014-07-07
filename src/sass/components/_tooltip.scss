@@ -6,6 +6,7 @@
     position:absolute;
     z-index: 999;
     opacity: 0;
+    display: block;
     transition: opacity 300ms 100ms ease, transform 500ms ease;
     transform: translate3d(10%, 0, 0) scale3d(0.9, 0.9, 0.9);
     transform-origin: -50% 0%;
@@ -37,6 +38,13 @@
   .tooltip:hover:after {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+  }
+
+  @if $oldie {
+    .tooltip:before,
+    .tooltip:after {
+      display: none;
+    }
   }
 
 }

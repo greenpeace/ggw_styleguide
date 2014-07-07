@@ -282,7 +282,7 @@ th {
   clear: both;
 }
 
-.selector:before, .item-list a, [class*="icon-"], .comment-actionlink:before, .nfi-button, .trigger:before,
+.selector:before, .item-list a:before, [class*="icon-"], .comment-actionlink:before, .nfi-button, .trigger:before,
 .off-canvas .caret:before, .block-search .form-actions {
   font-family: 'greenwire-10';
   speak: none;
@@ -1073,6 +1073,9 @@ article p a:hover {
 .form-item {
   margin-bottom: 22.5px;
 }
+.sidebar .form-item {
+  margin-bottom: 7px;
+}
 
 label {
   font-weight: 700;
@@ -1730,6 +1733,7 @@ img.mfp-img {
   position: absolute;
   z-index: 999;
   opacity: 0;
+  display: block;
   transition: opacity 300ms 100ms ease, transform 500ms ease;
   transform: translate3d(10%, 0, 0) scale3d(0.9, 0.9, 0.9);
   transform-origin: -50% 0%;
@@ -1762,6 +1766,11 @@ img.mfp-img {
 .tooltip:hover:after {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+}
+
+.tooltip:before,
+.tooltip:after {
+  display: none;
 }
 
 .icon-bg-default,
@@ -1808,9 +1817,18 @@ img.mfp-img {
 }
 
 .action-menu > ul > li {
-  flex: 1;
   white-space: nowrap;
   border-right: 1px solid #cccccc;
+}
+.no-flexbox .action-menu > ul > li {
+  display: inline-block;
+  position: relative;
+  width: auto;
+  padding: 0 1em;
+  line-height: 1em;
+}
+.flexbox .action-menu > ul > li {
+  flex: 1;
 }
 .action-menu > ul > li:last-child {
   border: none;
@@ -1823,10 +1841,19 @@ img.mfp-img {
   flex-flow: row wrap;
   justify-content: center;
 }
+.no-flexbox .action-menu a {
+  display: block;
+  line-height: 2.5em;
+}
 
 .action-menu .icon {
   font-size: 30px;
   margin-right: .5em;
+}
+.no-flexbox .action-menu .icon {
+  top: .1em;
+  margin-right: .2em;
+  position: relative;
 }
 
 .action-menu .dropdown {
@@ -1998,7 +2025,7 @@ img.mfp-img {
   padding: 5px;
   min-height: 44px;
   background: white;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid #eeeeee;
   background: #eeeeee;
   display: flex;
   flex-flow: row wrap;
@@ -2008,6 +2035,9 @@ img.mfp-img {
   height: auto;
   position: relative;
   background: transparent;
+}
+.comment-form else {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .touch .fixfixed .comment-form {
@@ -2025,6 +2055,10 @@ img.mfp-img {
   height: 34px;
   overflow: hidden;
   margin: 0 7px;
+}
+.no-flexbox .nfi-wrapper {
+  float: left;
+  width: 40px;
 }
 
 .nfi-button {
@@ -2057,6 +2091,9 @@ img.mfp-img {
   max-width: none;
   font-size: 16px;
 }
+.no-flexbox .form-comment-message {
+  width: 75%;
+}
 
 .form-comment-submit {
   background: transparent;
@@ -2078,6 +2115,10 @@ img.mfp-img {
   text-transform: lowercase;
   padding: 0 1.2em;
   margin-left: 7px;
+}
+.no-flexbox .form-comment-submit {
+  float: right;
+  width: 60px;
 }
 .form-comment-submit:hover, .form-comment-submit:focus {
   box-shadow: 0 1px 2px 0 #cccccc;

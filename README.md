@@ -43,11 +43,12 @@ Install the plugins we use:
 * Caching of images so only changed images are compressed (gulp-cache)
 * Size (gulp-size)
 * Combine media queries (gulp-combine-media-queries)
+* Gulp Plumber, make sure gulp doesn't stop on errors (gulp-plumber)
 * Notify of changes (gulp-notify)
 
 Command for single install
 
-* `npm install gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-rename gulp-changed gulp-cache gulp-size gulp-notify --save-dev`
+* `npm install gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-rename gulp-changed gulp-cache gulp-size gulp-plumber gulp-notify --save-dev`
 
 This will install all necessary plugins and save them to devDependencies in package.json.
 

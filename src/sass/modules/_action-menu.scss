@@ -6,9 +6,20 @@
 }
 
 .action-menu > ul > li {
-  flex: 1;
   white-space: nowrap;
   border-right: 1px solid $grey-l;
+
+  .no-flexbox & {
+    display: inline-block;
+    position: relative;
+    width: auto;
+    padding: 0 1em;
+    line-height: 1em;
+  }
+
+  .flexbox & {
+    flex: 1;
+  }
 
   &:last-child {
     border: none;
@@ -22,11 +33,23 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+
+   .no-flexbox & {
+    display: block;
+    line-height: 2.5em;
+  }
+
 }
 
 .action-menu .icon {
   @include font-size(30px);
   margin-right: .5em;
+
+    .no-flexbox & {
+      top: .1em;
+      margin-right: .2em;
+      position: relative;
+    }
 }
 
 .action-menu .dropdown {

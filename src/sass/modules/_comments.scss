@@ -120,7 +120,11 @@
   padding: 5px;
   min-height: 44px;
   background: $white;
-  border-top: 1px solid rgba(0,0,0,.2);
+  @if $oldie {
+    border-top: 1px solid $background;
+  } else {
+    border-top: 1px solid rgba(0,0,0,.2);
+  }
   background: $background;
   display: flex;
   flex-flow: row wrap;
@@ -159,6 +163,12 @@
   height: 34px;
   overflow: hidden;
   margin: 0 $def-mar-half;
+
+  .no-flexbox & {
+    float: left;
+    width: 40px;
+  }
+
 }
 
 .nfi-button {
@@ -197,6 +207,10 @@
   flex: 4;
   max-width: none;
   @include font-size(16px);
+
+  .no-flexbox & {
+    width: 75%;
+  }
 }
 
 .form-comment-submit {
@@ -204,6 +218,11 @@
   padding: .3em;
   flex: 1;
   height: 34px;
+
+  .no-flexbox & {
+    float: right;
+    width: 60px;
+  }
 
   @include breakpoint($tab) {
     @include button;

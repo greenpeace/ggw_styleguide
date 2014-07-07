@@ -15,6 +15,10 @@
 
 .form-item {
   margin-bottom: (1.5 * $def-mar);
+
+  .sidebar & {
+    margin-bottom: $def-mar-half;
+  }
 }
 
 label {

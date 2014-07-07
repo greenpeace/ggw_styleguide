@@ -30,7 +30,7 @@ Based on previous work of:
         var wrapper = $("<div>")
           .css({
             'overflow': 'hidden',
-            'position': 'relative',
+            'position': 'relative'
           })
           .addClass('nfi-button nfi'+guid)
 
@@ -57,7 +57,7 @@ Based on previous work of:
             'padding': 0,
             'top': 0,
             'right': 0,
-            'cursor': 'pointer',
+            'cursor': 'pointer'
           })
           .addClass('nfi-current');
         $(self).on("change", function() {

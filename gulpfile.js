@@ -13,6 +13,7 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     changed = require('gulp-changed'),
     cmq = require('gulp-combine-media-queries'),
+    plumber = require('gulp-plumber'),
     size = require('gulp-size');
 
 ///
@@ -22,6 +23,7 @@ var gulp = require('gulp'),
 // Run compass to watch (should remain quick)
 gulp.task('modern', function() {
   return gulp.src('src/sass/ggw.styles.scss')
+    .pipe(plumber())
     .pipe(compass({
       config_file: 'config.rb',
       css: 'src/css',
@@ -36,6 +38,7 @@ gulp.task('modern', function() {
 // Run compass to compile all files
 gulp.task('oldie', function() {
   return gulp.src('src/sass/ggw.no-query.scss')
+    .pipe(plumber())
     .pipe(compass({
       config_file: 'config.rb',
       css: 'src/css',
@@ -48,6 +51,7 @@ gulp.task('oldie', function() {
 // Split styles.css file into separate media-query based files
 gulp.task('split-css', ['modern'], function () {
   gulp.src('src/css/ggw.styles.css')
+    .pipe(plumber())
     .pipe(rename({ basename: 'ggw.mobile' }))
     .pipe(cmq({
       use_external: true
@@ -81,6 +85,7 @@ gulp.task('checkjs', function() {
 // Concatenate scripts
 gulp.task('concat-after', function() {
   return gulp.src(['src/js/base/*.js', 'src/js/contrib/*.js', 'src/js/custom/*.js'])
+    .pipe(plumber())
     .pipe(concat('theme.js'))
     .pipe(gulp.dest('src/js'))
     .pipe(notify({ message: 'Scripts are concatenated' }));
@@ -88,6 +93,7 @@ gulp.task('concat-after', function() {
 
 gulp.task('concat-before', function() {
   return gulp.src(['src/js/before/*.js'])
+    .pipe(plumber())
     .pipe(concat('before.js'))
     .pipe(gulp.dest('src/js'))
     .pipe(notify({ message: 'Scripts are concatenated' }));

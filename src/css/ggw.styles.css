@@ -2169,7 +2169,6 @@ img.mfp-img {
 	line-height: 1.1em;
 	padding: .5em;
 	height: 34px;
-	position: relative;
 	font-size: 1rem;
 	max-width: 100%;
 }
@@ -2821,7 +2820,7 @@ article p a:hover {
 	background: #333333;
 	color: white;
 	padding: .3em .5em;
-	bottom: 50px;
+	top: -18px;
 	left: 0;
 }
 
@@ -2832,7 +2831,7 @@ article p a:hover {
 	border-bottom: none;
 	content: '';
 	border-top-color: #333333;
-	bottom: 43px;
+	top: 3px;
 	left: 22px;
 }
 

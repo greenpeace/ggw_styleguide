@@ -217,7 +217,7 @@ article p a:hover {
 	background: #333333;
 	color: white;
 	padding: .3em .5em;
-	bottom: 50px;
+	top: -18px;
 	left: 0;
 }
 
@@ -228,7 +228,7 @@ article p a:hover {
 	border-bottom: none;
 	content: '';
 	border-top-color: #333333;
-	bottom: 43px;
+	top: 3px;
 	left: 22px;
 }
 

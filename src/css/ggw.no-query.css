@@ -1746,7 +1746,7 @@ img.mfp-img {
   background: #333333;
   color: white;
   padding: .3em .5em;
-  bottom: 50px;
+  top: -18px;
   left: 0;
 }
 
@@ -1758,7 +1758,7 @@ img.mfp-img {
   border-bottom: none;
   content: '';
   border-top-color: #333333;
-  bottom: 43px;
+  top: 3px;
   left: 22px;
 }
 
@@ -2084,7 +2084,6 @@ img.mfp-img {
   line-height: 1.1em;
   padding: .5em;
   height: 34px;
-  position: relative;
   font-size: 16px;
   max-width: 100%;
 }

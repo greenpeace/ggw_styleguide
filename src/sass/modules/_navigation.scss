@@ -2,7 +2,7 @@
   left: 10px;
   position: absolute;
   top: 6px;
-  font-size: 2.4em;
+  font-size: 2.2em;
   line-height: 34px;
   color: $white;
   min-width: 44px;
@@ -21,7 +21,7 @@
 .nav-btn + .nav-btn {
   left: auto;
   right: 10px;
-  font-size: 1.8em;
+  font-size: 1.6em;
 
     @include breakpoint($tab) {
     right: 15px;

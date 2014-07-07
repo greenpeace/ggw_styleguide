@@ -40,7 +40,10 @@
       <li class="breadcrumb-item">
         <a class="breadcrumb-link" href="#">Home</a> <?php // add extra class here ?>
       </li>
-      <li class="breadcrumb-item">Register</li>
+      <li class="breadcrumb-item">
+        <a class="breadcrumb-link" href="#">News</a> <?php // add extra class here ?>
+      </li>
+      <li class="breadcrumb-item">Random news article</li>
     </ol>
 
   </nav>

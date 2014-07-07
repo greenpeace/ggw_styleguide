@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
     alignTop: true
   });
 
-  $(".form-comment-message").autogrow({
+  $(".form-comment-message textarea").autogrow({
     animate: false
   });
 

@@ -122,7 +122,7 @@
   background: $white;
   @if $oldie {
     border-top: 1px solid $background;
-  } else {
+  } @else {
     border-top: 1px solid rgba(0,0,0,.2);
   }
   background: $background;
@@ -161,7 +161,6 @@
 
 .nfi-wrapper {
   height: 34px;
-  overflow: hidden;
   margin: 0 $def-mar-half;
 
   .no-flexbox & {
@@ -198,15 +197,19 @@
 
 // autogrow js gets applied on this element
 .form-comment-message {
-  resize: none;
-  overflow: hidden;
-  height: 34px;
-  line-height: 34px;
-  padding: 0 0.5em;
-  position: relative;
   flex: 4;
-  max-width: none;
-  @include font-size(16px);
+  height: 34px;
+
+  textarea{
+    resize: none;
+    overflow: hidden;
+    line-height: 34px;
+    padding: 0 .5em;
+    height: 34px;
+    position: relative;
+    @include font-size(16px);
+    max-width: 100%;
+  }
 
   .no-flexbox & {
     width: 75%;

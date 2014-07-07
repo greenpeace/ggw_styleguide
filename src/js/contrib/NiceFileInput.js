@@ -29,7 +29,6 @@ Based on previous work of:
           .addClass('nfi-filename nfi'+guid);
         var wrapper = $("<div>")
           .css({
-            'overflow': 'hidden',
             'position': 'relative'
           })
           .addClass('nfi-button nfi'+guid)

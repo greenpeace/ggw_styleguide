@@ -1746,7 +1746,7 @@ img.mfp-img {
   background: #333333;
   color: white;
   padding: .3em .5em;
-  bottom: 46px;
+  bottom: 50px;
   left: 0;
 }
 
@@ -1758,8 +1758,8 @@ img.mfp-img {
   border-bottom: none;
   content: '';
   border-top-color: #333333;
-  bottom: 41px;
-  left: 15px;
+  bottom: 43px;
+  left: 22px;
 }
 
 .tooltip:hover:before,
@@ -2036,9 +2036,6 @@ img.mfp-img {
   position: relative;
   background: transparent;
 }
-.comment-form else {
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-}
 
 .touch .fixfixed .comment-form {
   position: absolute;
@@ -2053,7 +2050,6 @@ img.mfp-img {
 
 .nfi-wrapper {
   height: 34px;
-  overflow: hidden;
   margin: 0 7px;
 }
 .no-flexbox .nfi-wrapper {
@@ -2081,15 +2077,18 @@ img.mfp-img {
 }
 
 .form-comment-message {
+  flex: 4;
+  height: 34px;
+}
+.form-comment-message textarea {
   resize: none;
   overflow: hidden;
-  height: 34px;
   line-height: 34px;
-  padding: 0 0.5em;
+  padding: 0 .5em;
+  height: 34px;
   position: relative;
-  flex: 4;
-  max-width: none;
   font-size: 16px;
+  max-width: 100%;
 }
 .no-flexbox .form-comment-message {
   width: 75%;
@@ -2459,7 +2458,6 @@ img.mfp-img {
   width: 265px;
   height: auto;
   overflow: auto;
-  -webkit-overflow-scrolling: touch;
   transition: width 0.3s ease;
   z-index: 200;
   bottom: auto;
@@ -2739,7 +2737,6 @@ img.mfp-img {
 }
 .block-search .form-text:focus {
   box-shadow: none;
-  border: none;
 }
 
 .block-search .form-actions {
@@ -2839,7 +2836,7 @@ img.mfp-img {
   transition: transform 500ms ease;
   z-index: 1;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
   min-height: 100vh;
   -webkit-overflow-scrolling: touch;
   transform: translate3d(0, 0, 0);

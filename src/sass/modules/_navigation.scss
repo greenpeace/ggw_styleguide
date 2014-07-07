@@ -37,7 +37,7 @@
   width: 265px;
   height: auto;
   overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  //-webkit-overflow-scrolling: touch;
   transition: width 0.3s ease;
 
   @include breakpoint($desk) {

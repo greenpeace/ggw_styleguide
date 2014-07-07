@@ -223,7 +223,7 @@
       <h2 class="comment-form-title">Add new comment</h2>
       <form class="comment-form">
         <input data-tip="Attach a photo" type="file" class="tooltip form-comment-file" accept="image/*" />
-        <textarea class="form-comment-message" rows="1" placeholder="Write a comment..."></textarea>
+        <div class="form-comment-message"><textarea rows="1" placeholder="Write a comment..."></textarea></div>
         <input class="form-comment-submit" type="submit" value="post" />
       </form>
     </div>

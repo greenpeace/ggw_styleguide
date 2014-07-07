@@ -48,7 +48,7 @@
   transition: transform 500ms ease;
   z-index: 1;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
   min-height: 100vh;
   -webkit-overflow-scrolling: touch;
   transform: translate3d(0, 0, 0);

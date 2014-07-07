@@ -1930,6 +1930,10 @@ img.mfp-img {
 	line-height: 2.5em;
 }
 
+.action-menu a.active {
+	color: #999999;
+}
+
 .action-menu .icon {
 	font-size: 1.875rem;
 	margin-right: .5em;

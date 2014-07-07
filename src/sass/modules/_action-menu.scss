@@ -39,6 +39,10 @@
     line-height: 2.5em;
   }
 
+  &.active {
+    color: $grey-m;
+  }
+
 }
 
 .action-menu .icon {

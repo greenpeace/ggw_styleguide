@@ -1845,6 +1845,9 @@ img.mfp-img {
   display: block;
   line-height: 2.5em;
 }
+.action-menu a.active {
+  color: #999999;
+}
 
 .action-menu .icon {
   font-size: 30px;

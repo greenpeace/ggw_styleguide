@@ -1185,11 +1185,12 @@ input[type="radio"]:checked + label:before {
   position: absolute;
   content: '';
   display: inline-block;
-  background: white url("../images/form_elements.svg") no-repeat -31px -47px;
-  height: 1.5rem;
-  width: 1.3em;
+  background: white url("../images/form_elements.svg") no-repeat -33px -47px;
+  height: 1.3rem;
+  width: 1em;
+  top: 5px;
+  right: 3px;
   top: 3px;
-  right: 0;
 }
 .selector select::-ms-expand {
   display: none;
@@ -1202,7 +1203,7 @@ input[type="radio"]:checked + label:before {
   z-index: 4;
   position: relative;
   display: block;
-  padding: .4em 1em .4em .4em;
+  padding: .4em 1.3em .4em .4em;
   background: transparent;
   border: none;
   line-height: normal;
@@ -1225,6 +1226,9 @@ input[type="radio"]:checked + label:before {
 
 .lt-ie10 .selector:before {
   display: none;
+}
+.lt-ie10 select {
+  padding: .4em;
 }
 
 .progress-bar-wrapper {

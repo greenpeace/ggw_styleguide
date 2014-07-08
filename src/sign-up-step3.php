@@ -177,5 +177,8 @@
 
 </div>
 <script src="js/theme.js"></script>
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="js/oldie.js"></script>
+<![endif]-->
 </body>
 </html>

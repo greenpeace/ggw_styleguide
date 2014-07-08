@@ -17,6 +17,6 @@
 		<polyline fill="none" stroke="#4D4D4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 		36.275,39.604 39.498,43.511 44.479,35.404 	"/>
 </g>
-<polygon id="arrowUp" fill="#4D4D4D" points="10.775,63.661 21.795,63.661 16.333,54.462 "/>
-<polygon id="arrowDown" fill="#4D4D4D" points="35.175,54.611 46.195,54.611 40.732,63.811 "/>
+<polygon id="arrowUp" fill="#4D4D4D" points="10.775,60.661 21.795,60.661 16.333,54.462 "/>
+<polygon id="arrowDown" fill="#4D4D4D" points="35.175,54.611 46.195,54.611 40.732,60.811 "/>
 </svg>

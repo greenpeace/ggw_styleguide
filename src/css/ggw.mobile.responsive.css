@@ -195,6 +195,10 @@ article p a:hover {
 	color: #3c7008;
 }
 
+.selector:before {
+	top: 3px;
+}
+
 .tooltip:before,
 .tooltip:after {
 	position: absolute;

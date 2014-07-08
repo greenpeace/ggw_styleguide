@@ -88,7 +88,7 @@ gulp.task('concat-after', function() {
     .pipe(plumber())
     .pipe(concat('theme.js'))
     .pipe(gulp.dest('src/js'))
-    .pipe(notify({ message: 'Scripts are concatenated' }));
+    .pipe(notify({ message: 'Theme is concatenated' }));
 });
 
 gulp.task('concat-before', function() {
@@ -96,7 +96,15 @@ gulp.task('concat-before', function() {
     .pipe(plumber())
     .pipe(concat('before.js'))
     .pipe(gulp.dest('src/js'))
-    .pipe(notify({ message: 'Scripts are concatenated' }));
+    .pipe(notify({ message: 'Before is concatenated' }));
+});
+
+gulp.task('concat-ie', function() {
+  return gulp.src(['src/js/oldie/*.js'])
+    .pipe(plumber())
+    .pipe(concat('oldie.js'))
+    .pipe(gulp.dest('src/js'))
+    .pipe(notify({ message: 'Oldie is concatenated' }));
 });
 
 
@@ -115,6 +123,16 @@ gulp.task('build-before', function() {
   return gulp.src(['src/js/before/*.js'])
     .pipe(changed('dist/js'))
     .pipe(concat('before.js'))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(uglify())
+    .pipe(size())
+    .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('build-oldiejs', function() {
+  return gulp.src(['src/js/oldie/*.js'])
+    .pipe(changed('dist/js'))
+    .pipe(concat('oldie.js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
     .pipe(size())
@@ -147,7 +165,7 @@ gulp.task('clean-dist', function() {
 
 // compile both sass base files, create one js file and optimize and copy images
 gulp.task('build', ['clean-dist'], function() {
-  gulp.start('dist-css', 'build-before', 'build-after', 'images');
+  gulp.start('dist-css', 'build-before', 'build-after', 'build-oldiejs', 'images');
 });
 
 ///

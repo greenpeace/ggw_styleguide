@@ -21,6 +21,7 @@ $detect = new Mobile_Detect;
 
 <!-- INLINE THIS FILE -->
 <script src="js/before.js"></script>
+
 <script>
   eCSSential({
     "all": "css/ggw.mobile.css",

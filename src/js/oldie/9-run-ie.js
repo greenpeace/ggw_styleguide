@@ -1,0 +1,3 @@
+$(function(){
+  $.Placeholder.init();
+});

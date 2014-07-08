@@ -688,6 +688,6 @@ References:
   };
 })(this);
 
-$(function(){
+jQuery(document).ready(function ($) {
   $.Placeholder.init();
 });

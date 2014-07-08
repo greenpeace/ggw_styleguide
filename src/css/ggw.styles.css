@@ -1289,20 +1289,20 @@ textarea:disabled {
 	width: 1.3em;
 }
 
-input[type="checkbox"] + label:before {
-	background-position: -7px -27px;
-}
-
-input[type="checkbox"]:checked + label:before {
-	background-position: -31px -27px;
-}
-
 input[type="radio"] + label:before {
 	background-position: -7px -7px;
 }
 
 input[type="radio"]:checked + label:before {
 	background-position: -31px -7px;
+}
+
+input[type="checkbox"] + label:before {
+	background-position: -7px -27px;
+}
+
+input[type="checkbox"]:checked + label:before {
+	background-position: -31px -27px;
 }
 
 .selector {
@@ -1357,11 +1357,6 @@ input[type="radio"]:checked + label:before {
 }
 
 /*browser specific*/
-
-.lt-ie9 .form-type-radio .option,
-.lt-ie9 .form-type-checkbox .option {
-	padding-left: 0;
-}
 
 .lt-ie9 .page-register .date-padding .form-item {
 	width: 100px;

@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     changed = require('gulp-changed'),
     cmq = require('gulp-combine-media-queries'),
     plumber = require('gulp-plumber'),
+    svg2png = require('gulp-svg2png'),
     size = require('gulp-size');
 
 ///
@@ -148,6 +149,13 @@ gulp.task('images', function() {
   return gulp.src(['src/images/**/*'])
     .pipe(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))
     .pipe(gulp.dest('dist/images'));
+});
+
+// Create a png of an svg file
+gulp.task('svg2png', function () {
+  gulp.src(['src/images/**/*.svg'])
+    .pipe(svg2png())
+    .pipe(gulp.dest('src/images'));
 });
 
 ///

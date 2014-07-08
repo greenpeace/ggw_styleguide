@@ -74,6 +74,12 @@ textarea {
 input[type="radio"],
 input[type="checkbox"] {
   @extend %element-hidden;
+
+  @if $oldie {
+    display: inline;
+    position: relative;
+    top: 2px;
+  }
 }
 
 .form-type-radio {
@@ -91,6 +97,11 @@ input[type="checkbox"] {
     font-weight: 300;
     cursor: pointer;
 
+    @if $oldie {
+      display: inline;
+      padding-left: .1em;
+    }
+
     &:before {
       position: absolute;
       left: .3em;
@@ -101,18 +112,14 @@ input[type="checkbox"] {
       background-repeat: no-repeat;
       height: 1.5rem;
       width: 1.3em;
+
+      @if $oldie {
+        @extend %element-hidden;
+      }
     }
 
   }
 
-}
-
-input[type="checkbox"] + label:before {
-  background-position: -7px -27px;
-}
-
-input[type="checkbox"]:checked + label:before {
-  background-position: -31px -27px;
 }
 
 input[type="radio"] + label:before {
@@ -121,6 +128,15 @@ input[type="radio"] + label:before {
 
 input[type="radio"]:checked + label:before {
   background-position: -31px -7px;
+}
+
+
+input[type="checkbox"] + label:before {
+  background-position: -7px -27px;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background-position: -31px -27px;
 }
 
 // SELECT
@@ -183,12 +199,6 @@ input[type="radio"]:checked + label:before {
 /*browser specific*/
 
 .lt-ie9 {
-  .form-type-radio,
-  .form-type-checkbox {
-    .option {
-      padding-left: 0;
-    }
-  }
   .page-register .date-padding .form-item {
     width: 100px;
   }

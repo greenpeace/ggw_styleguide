@@ -11,7 +11,7 @@
 
   <div id="main" class="l-main container">
 
-<div class="action-menu">
+<div class="original-action-menu">
   <ul>
     <li><a href="#"><i class="icon icon-user"></i> Login</a></li>
     <li><a href="#"><i class="icon icon-user-add"></i> Register</a></li>
@@ -45,128 +45,50 @@
       <div class="content">
 
         <div class="views-row"> <!-- NEWS -->
-
-          <article class="node-teaser-news node-teaser">
-
-            <div class="field-type-image">
-              <picture>
-                <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
-                <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="The president giving an award.">
-              </picture>
-            </div>
-
-            <div class="field-type-wrapper">
-
-              <h2 class="node-title">This is an example of a long news title</h2>
-
-              <div class="submitted">
-                <a href="#" class="news">News</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
-              </div>
-
-              <div class="field-name-body">
-                On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
-              </div>
-
-            </div>
-
-          </article>
-
+          <?php include('modules/teasers/news.php'); ?>
         </div>
 
-
+        <div class="views-row"> <!-- Blog -->
+          <?php include('modules/teasers/blog-with-image.php'); ?>
+        </div>
 
         <div class="views-row"> <!-- Event -->
-
-          <article class="node-teaser-event node-teaser">
-
-            <div class="field-type-image">
-              <picture>
-                <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
-                <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="The president giving an award.">
-              </picture>
-            </div>
-
-            <div class="field-type-wrapper">
-
-              <h2 class="node-title">This is an example of a long event title</h2>
-
-              <div class="submitted">
-                <a href="#" class="event">Event</a>, 23rd July 2014
-              </div>
-
-              <div class="field-group-format">
-
-                <div class="field-type-date"> <label>Time:</label>August 10th, 8:00PM until 11:30 PM</div>
-                <div class="field-type-location"> <label> Address</label>Oude Markt 9B, Enschede (Market Square )</div>
-
-              </div>
-
-            </div>
-
-          </article>
-
+          <?php include('modules/teasers/events-with-image.php'); ?>
         </div>
 
+        <div class="views-row"> <!-- Event -->
+          <?php include('modules/teasers/events-no-image.php'); ?>
+        </div>
 
         <div class="views-row"> <!-- Group -->
-
-          <article class="node-teaser-group node-teaser">
-
-            <div class="field-type-image">
-              <picture>
-                <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
-                <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="The president giving an award.">
-              </picture>
-            </div>
-
-            <div class="field-type-wrapper">
-
-              <h2 class="node-title">This is an example of a long group title</h2>
-
-              <div class="submitted">
-                <a href="#" class="group">Group</a>, 3rd October 2013
-              </div>
-
-              <div class="field-group-format">
-
-                <div class="field-type-taxonomy-term-reference"> <label>Group type:</label>Campaign group</div>
-
-              </div>
-
-            </div>
-
-          </article>
-
+          <?php include('modules/teasers/groups.php'); ?>
         </div>
 
-
         <div class="views-row"> <!-- Album -->
+          <?php include('modules/teasers/photos.php'); ?>
+        </div>
 
-          <article class="node-teaser-album node-teaser">
+        <div class="views-row"> <!-- Video -->
+          <?php include('modules/teasers/videos.php'); ?>
+        </div>
 
-            <div class="field-type-image">
-              <picture>
-                <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
-                <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="The president giving an award.">
-              </picture>
-            </div>
+        <div class="views-row"> <!-- Document -->
+          <?php include('modules/teasers/documents.php'); ?>
+        </div>
 
-            <div class="field-type-wrapper">
+        <div class="views-row"> <!-- Idea -->
+          <?php include('modules/teasers/idea-with-image.php'); ?>
+        </div>
+        <div class="views-row"> <!-- Idea -->
+          <?php include('modules/teasers/idea-no-image.php'); ?>
+        </div>
 
-              <h2 class="node-title">This is an example of a long photo album title</h2>
+        <div class="views-row"> <!-- Faq -->
+          <?php include('modules/teasers/faqs.php'); ?>
+        </div>
 
-              <div class="submitted">
-                <a href="#" class="album">Photos</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
-              </div>
-
-              <div class="field-name-body">
-                On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
-              </div>
-
-            </div>
-
-          </article>
-
+        <div class="views-row"> <!-- Pages -->
+          <?php include('modules/teasers/pages.php'); ?>
         </div>
 
       </div>

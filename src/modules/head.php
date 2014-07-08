@@ -16,7 +16,7 @@ $detect = new Mobile_Detect;
 <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
 <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
 <meta name="Generator" content="Drupal 7 (http://drupal.org)" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 <!-- INLINE THIS FILE -->
@@ -25,7 +25,7 @@ $detect = new Mobile_Detect;
 <script>
   eCSSential({
     "all": "css/ggw.mobile.css",
-    "(min-width: 768px)": "css/ggw.mobile.responsive.css",
+    "(min-width: 480px)": "css/ggw.mobile.responsive.css",
     "IE6 IE7 IE8": "css/ggw.no-query.css"
   });
 </script>

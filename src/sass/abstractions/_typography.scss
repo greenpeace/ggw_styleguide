@@ -25,3 +25,7 @@
 %no-deco {
   @include no-text-decoration;
 }
+
+%fontsizesmall {
+  @include font-size(14px);
+}

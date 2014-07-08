@@ -16,7 +16,7 @@
 .shortcut,
 .submitted,
 .submitted a {
-  @include font-size(14px);
+  @extend %fontsizesmall
 }
 
 .submitted,

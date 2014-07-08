@@ -5538,6 +5538,17 @@ window.matchMedia || (window.matchMedia = function() {
 
 } )( this, this.document );
 
+/*
+ * Copyright (c) 2013 Mike King (@micjamking)
+ *
+ * jQuery Succinct plugin
+ * Version 1.0.1 (July 2013)
+ *
+ * Licensed under the MIT License
+ */
+
+(function(a){a.fn.succinct=function(b){var c={size:240,omission:"...",ignore:true},b=a.extend(c,b);return this.each(function(){var e,d,h=a(this),g=/[!-\/:-@\[-`{-~]$/;var f=function(){h.each(function(){e=a(this).text();if(e.length>b.size){d=a.trim(e).substring(0,b.size).split(" ").slice(0,-1).join(" ");if(b.ignore){d=d.replace(g,"")}a(this).text(d+b.omission)}})};var i=function(){f()};i()})}})(jQuery);
+
 ;(function($){
     //pass in just the context as a $(obj) or a settings JS object
     $.fn.autogrow = function(opts) {
@@ -5638,6 +5649,53 @@ window.matchMedia || (window.matchMedia = function() {
 function NiceCommentForm() {
   $('input[type=file]').nicefileinput();
 };
+
+// var didScroll;
+// var lastScrollTop = 0;
+// var delta = 5;
+// var actionbarHeight = 100;
+
+// // on scroll, let the interval function know the user has scrolled
+// $('#main').scroll(function(event){
+//   didScroll = true;
+// });
+
+//   // run hasScrolled() and reset didScroll status
+// setInterval(function() {
+
+//     if (didScroll) {
+//       hasScrolled();
+//       didScroll = false;
+//     }
+
+// }, 250);
+
+// function hasScrolled() {
+
+//   var st = $(this).scrollTop();
+
+//     // Make sure they scroll more than delta
+//     if(Math.abs(lastScrollTop - st) <= delta)
+//         return;
+
+//     // If they scrolled down and are past the navbar, add class .nav-up.
+//     // This is necessary so you never see what is "behind" the navbar.
+//     if (st > lastScrollTop && st > actionbarHeight){
+//         // Scroll Down
+//         $('.action-menu').addClass('hidden');
+//         $('#dropdown-action-menu').hide();
+//     } else {
+//         // Scroll Up
+//         if(st + $(window).height() < $(document).height()) {
+//           $('.action-menu').removeClass('hidden');
+//           $('#dropdown-action-menu').hide();
+//         }
+//     }
+
+//     lastScrollTop = st;
+//   }
+
+
 
   function mobileNav() {
 
@@ -5836,6 +5894,20 @@ function overflowDropdown() {
 jQuery(document).ready(function ($) {
   'use strict';
 
+  var mobile_timer = false;
+  if(navigator.userAgent.match(/iPhone/i)) {
+    $('#viewport').attr('content','width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0');
+    $(window).bind('gesturestart',function () {
+      clearTimeout(mobile_timer);
+      $('#viewport').attr('content','width=device-width,minimum-scale=1.0,maximum-scale=10.0');
+    }).bind('touchend',function () {
+      clearTimeout(mobile_timer);
+      mobile_timer = setTimeout(function () {
+        $('#viewport').attr('content','width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0');
+      },1000);
+    });
+  }
+
   FastClick.attach(document.body);
 
   // Ajax include
@@ -5871,4 +5943,27 @@ jQuery(document).ready(function ($) {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(resizeFunction, 200);
 
+
+
 });
+
+function truncateNodeTitle() {
+
+var windowWidth = $(window).width();
+
+  // define how much characters will fit one the screen
+  var textFit = 48;
+
+  if (windowWidth > 450) {
+    textFit = 60;
+  }
+
+  if (windowWidth > 600) {
+    textFit = 100;
+  }
+
+  $('.node-teaser .node-title').succinct({
+    size: textFit
+  });
+
+}

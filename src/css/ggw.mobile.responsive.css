@@ -14,7 +14,51 @@
 
 }
 
+@media (min-width: 480px) {
+
+.node-teaser .field-group-format,
+.node-teaser .field-name-body {
+	display: block;
+	font-size: 0.875rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+}
+
 @media (min-width: 768px) {
+
+.node-teaser {
+	height: 90px;
+}
+
+.node-teaser .field-type-image {
+	width: 130px;
+	height: 90px;
+}
+
+.node-teaser .field-type-image:before {
+	line-height: 90px;
+	font-size: 3.5rem;
+}
+
+.node-teaser .node-title {
+	margin-bottom: .5em;
+}
+
+.node-teaser .submitted {
+	margin-bottom: .2em;
+}
+
+.node-teaser .field-group-format,
+.node-teaser .field-name-body {
+	overflow: hidden;
+	text-overflow: unset;
+	height: 4em;
+	white-space: normal;
+	line-height: 1.5em;
+}
 
 .comment-form {
 	padding: 15px 5px;
@@ -187,11 +231,11 @@ select {
 	font-size: 0.875rem;
 }
 
-article p a {
+.view-mode-full p a {
 	text-decoration: underline;
 }
 
-article p a:hover {
+.view-mode-full p a:hover {
 	color: #3c7008;
 }
 

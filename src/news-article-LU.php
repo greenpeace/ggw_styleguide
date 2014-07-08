@@ -11,6 +11,7 @@
 
 <div id="main" class="l-main container">
 
+
 <div class="original-action-menu">
   <ul>
     <li><a href="#"><i class="icon icon-users"></i> Go to group</a></li>
@@ -24,7 +25,6 @@
     <li><a href="#"><i class="icon icon-photo"></i> Example 8</a></li>
   </ul>
 </div>
-
 
 
   <nav class="breadcrumb" role="navigation">

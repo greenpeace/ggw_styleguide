@@ -2,12 +2,51 @@
 
   overflow: hidden;
   margin-bottom: $def-mar;
+  height: 60px;
+  line-height: 1.2em;
+
+  @include breakpoint($tab) {
+    height: 90px;
+  }
 
   .field-type-image {
     float: left;
     margin-right: .5em;
-    width: 100px;
-    height: 80px; //temp
+    width: 90px;
+    height: 60px; //temp
+    background-color: $grey-l;
+    overflow: hidden;
+    position: relative;
+
+    @include breakpoint($tab) {
+      width: 130px;
+      height: 90px;
+    }
+
+    &:before {
+      color: $white;
+      position: relative;
+      font-size: 2.5rem;
+      z-index: 2;
+      line-height: 60px;
+      width: 100%;
+      @extend %load-icon;
+
+      @include breakpoint($tab) {
+        line-height: 90px;
+        font-size: 3.5rem;
+      }
+    }
+
+  }
+
+  picture {
+    position: relative;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
   }
 
   .field-type-wrapper {
@@ -17,16 +56,146 @@
   .node-title {
     @include font-size(16px);
     color: $green5;
+    margin: 0 0 .2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @include breakpoint($tab) {
+      margin-bottom: .5em;
+    }
   }
 
   .submitted {
     padding: 0;
     margin: 0;
+
+    a:before {
+      @extend %load-icon;
+      margin-right: .2em;
+    }
+
+    @include breakpoint($tab) {
+      margin-bottom: .2em;
+    }
+
   }
 
   label {
     display: inline-block;
     margin-right: .3em;
+  }
+
+  .field-group-format,
+  .field-name-body {
+    @extend %element-hidden;
+
+    @include breakpoint($smalltab) {
+      display: block;
+      @include font-size(14px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    @include breakpoint($tab) {
+      overflow: hidden;
+      text-overflow: unset;
+      height: 4em;
+      white-space: normal;
+      line-height: 1.5em
+    }
+
+  }
+
+}
+
+
+// List all background-images for types which will show if there is no image present
+.field-type-image {
+
+  .node-teaser-event & {
+    @extend .icon-event;
+  }
+
+  .node-teaser-news & {
+    @extend %icon-book-open;
+  }
+
+  .node-teaser-blog & {
+    @extend %icon-feather;
+  }
+
+  .node-teaser-group & {
+    @extend %icon-users;
+  }
+
+  .node-teaser-album & {
+    @extend %icon-camera;
+  }
+
+  .node-teaser-video & {
+    @extend %icon-video;
+  }
+
+  .node-teaser-document & {
+    @extend %icon-attach;
+  }
+
+  .node-teaser-idea & {
+    @extend .icon-idea;
+  }
+
+  .node-teaser-faq & {
+    @extend %icon-help;
+  }
+
+  .node-teaser-page & {
+    @extend %icon-newspaper;
+  }
+
+}
+
+.submitted {
+
+  .news {
+    @extend %icon-book-open;
+  }
+
+  .blog {
+    @extend %icon-feather;
+  }
+
+  .event {
+    @extend %icon-calendar;
+  }
+
+  .group {
+    @extend %icon-users;
+  }
+
+  .album {
+    @extend %icon-camera;
+  }
+
+  .video {
+    @extend %icon-video;
+  }
+
+  .document {
+    @extend %icon-attach;
+  }
+
+  .idea {
+    @extend %icon-thumbs-up;
+  }
+
+  .faq {
+    @extend %icon-help;
+  }
+
+  .page {
+    @extend %icon-newspaper;
   }
 
 }

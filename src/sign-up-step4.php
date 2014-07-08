@@ -9,14 +9,14 @@
 
 <?php include('modules/header.php'); ?>
 
-  <div id="main" class="l-main container">
-
-    <div class="original-action-menu">
+<div class="original-action-menu">
   <ul>
     <li><a href="#" class="active"><i class="icon icon-user-add"></i> Get wired</a></li>
     <li><a href="#"><i class="icon icon-login"></i> Login</a></li>
   </ul>
 </div>
+
+  <div id="main" class="l-main container">
 
   <nav class="breadcrumb" role="navigation">
 

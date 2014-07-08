@@ -3,6 +3,7 @@
   height: 44px;
   display: flex;
   flex-flow: row wrap;
+  background: $background;
 }
 
 .action-menu > ul > li {
@@ -45,35 +46,41 @@
 
 }
 
-.action-menu .icon {
-  @include font-size(30px);
-  margin-right: .5em;
+.action-menu {
+
+  .icon {
+    @include font-size(30px);
+    margin-right: .5em;
 
     .no-flexbox & {
       top: .1em;
       margin-right: .2em;
       position: relative;
     }
-}
+  }
 
-.action-menu .dropdown {
-  width: 100%;
-  margin: -1px 0 0 -1px;
-  left: 0;
-}
+  .dropdown {
+    width: 100%;
+    margin: -1px 0 0 -1px;
+    left: 0;
+  }
 
-.action-menu .dropdown li {
-  display: block;
-  border: none;
-  padding: 0 1em;
-}
 
-.action-menu .dropdown a {
-  justify-content: flex-start;
-}
+  .dropdown li {
+    display: block;
+    border: none;
+    padding: 0 1em;
+  }
 
-@include breakpoint($desk) {
-  .action-menu {
+  .dropdown a {
+    justify-content: flex-start;
+  }
+
+  .dropdown-menu {
+    background: $background;
+  }
+
+  @include breakpoint($desk) {
     @include element-hidden;
   }
 }

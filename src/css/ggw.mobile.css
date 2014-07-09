@@ -349,12 +349,12 @@ th {
 	content: '\e807';
 }
 
+.node-teaser-group .field-type-image:before,
+.submitted .group:before,
 .icon-user:before {
 	content: '\e812';
 }
 
-.node-teaser-group .field-type-image:before,
-.submitted .group:before,
 .icon-users:before {
 	content: '\e806';
 }
@@ -407,9 +407,9 @@ th {
 	content: '\e835';
 }
 
+.node-teaser-idea .field-type-image:before,
 .submitted .idea:before,
-.icon-idea:before,
-.node-teaser-idea .field-type-image:before {
+.icon-idea:before {
 	content: '\e821';
 }
 
@@ -442,9 +442,9 @@ th {
 	content: '\e830';
 }
 
+.node-teaser-event .field-type-image:before,
 .submitted .event:before,
-.icon-event:before,
-.node-teaser-event .field-type-image:before {
+.icon-event:before {
 	content: '\e813';
 }
 
@@ -475,6 +475,8 @@ th {
 	content: '\e86a';
 }
 
+.node-teaser-material .field-type-image:before,
+.submitted .material:before,
 .icon-material:before {
 	content: '\e81a';
 }
@@ -1233,6 +1235,19 @@ b {
 
 .sidebar .form-item {
 	margin-bottom: 7px;
+}
+
+.sidebar .form-type-checkbox {
+	margin-bottom: 2px;
+}
+
+.sidebar .views-exposed-widget {
+	margin-top: 15px;
+}
+
+.views-submit-button,
+.views-reset-button {
+	display: inline-block;
 }
 
 label {

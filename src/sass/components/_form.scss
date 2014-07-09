@@ -21,6 +21,19 @@
   }
 }
 
+.sidebar .form-type-checkbox {
+  margin-bottom: 2px;
+}
+
+.sidebar .views-exposed-widget {
+  margin-top: $def-mar;
+}
+
+.views-submit-button,
+.views-reset-button {
+  display: inline-block;
+}
+
 label {
   font-weight: 700;
   display: block;

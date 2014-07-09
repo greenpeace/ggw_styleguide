@@ -112,90 +112,17 @@
 
 
 // List all background-images for types which will show if there is no image present
-.field-type-image {
+// and list all submitted type icons
 
-  .node-teaser-event & {
-    @extend .icon-event;
+@each $type, $icon in (news: book-open, blog: feather, event: calendar, group: user, album: camera, document: attach, video: video, idea: thumbs-up, page: newspaper, material: bucket, faq: help) {
+
+  .node-teaser-#{$type} .field-type-image {
+    @extend %icon-#{$icon};
   }
 
-  .node-teaser-news & {
-    @extend %icon-book-open;
-  }
-
-  .node-teaser-blog & {
-    @extend %icon-feather;
-  }
-
-  .node-teaser-group & {
-    @extend %icon-users;
-  }
-
-  .node-teaser-album & {
-    @extend %icon-camera;
-  }
-
-  .node-teaser-video & {
-    @extend %icon-video;
-  }
-
-  .node-teaser-document & {
-    @extend %icon-attach;
-  }
-
-  .node-teaser-idea & {
-    @extend .icon-idea;
-  }
-
-  .node-teaser-faq & {
-    @extend %icon-help;
-  }
-
-  .node-teaser-page & {
-    @extend %icon-newspaper;
+  .submitted .#{$type} {
+    @extend %icon-#{$icon};
   }
 
 }
 
-.submitted {
-
-  .news {
-    @extend %icon-book-open;
-  }
-
-  .blog {
-    @extend %icon-feather;
-  }
-
-  .event {
-    @extend %icon-calendar;
-  }
-
-  .group {
-    @extend %icon-users;
-  }
-
-  .album {
-    @extend %icon-camera;
-  }
-
-  .video {
-    @extend %icon-video;
-  }
-
-  .document {
-    @extend %icon-attach;
-  }
-
-  .idea {
-    @extend %icon-thumbs-up;
-  }
-
-  .faq {
-    @extend %icon-help;
-  }
-
-  .page {
-    @extend %icon-newspaper;
-  }
-
-}

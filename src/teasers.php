@@ -83,6 +83,10 @@
           <?php include('modules/teasers/idea-no-image.php'); ?>
         </div>
 
+        <div class="views-row"> <!-- Material -->
+          <?php include('modules/teasers/material.php'); ?>
+        </div>
+
         <div class="views-row"> <!-- Faq -->
           <?php include('modules/teasers/faqs.php'); ?>
         </div>
@@ -99,7 +103,7 @@
 
     <aside class="l-sidebar sidebar">
 
-    <a data-replace="modules/an-article-sidebar" <?php echo ($detect->isMobile() ? "data-media='(min-width: 900px)'" : ""); ?>><span class="element-invisible">
+    <a data-replace="modules/teaser-sidebar" <?php echo ($detect->isMobile() ? "data-media='(min-width: 900px)'" : ""); ?>><span class="element-invisible">
     Register instructions</span></a>
 
   </aside>

@@ -803,6 +803,7 @@ select {
 
 .l-main-column {
 	margin: 0;
+	padding-bottom: 0;
 }
 
 .no-flexbox .l-has-sidebar .l-main-column {

@@ -3004,9 +3004,6 @@ img.mfp-img {
   transition: transform 500ms ease;
   height: 88px;
 }
-.IOSfocused .l-branding-header {
-  position: absolute;
-}
 .l-branding-header:after {
   display: block;
   background-color: #56b004;
@@ -3078,7 +3075,9 @@ img.mfp-img {
 
 .l-main-column {
   margin: 15px;
+  padding-bottom: 50px;
   margin: 0;
+  padding-bottom: 0;
 }
 
 .no-flexbox .l-has-sidebar .l-main-column {

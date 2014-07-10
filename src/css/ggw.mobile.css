@@ -2734,10 +2734,6 @@ img.mfp-img {
 	transition: transform 500ms ease;
 }
 
-.IOSfocused .l-branding-header {
-	position: absolute;
-}
-
 .logo {
 	width: 134px;
 	margin: 0 auto;
@@ -2753,5 +2749,6 @@ img.mfp-img {
 
 .l-main-column {
 	margin: 15px;
+	padding-bottom: 50px;
 }
 

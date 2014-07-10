@@ -2734,10 +2734,6 @@ img.mfp-img {
 	transition: transform 500ms ease;
 }
 
-.IOSfocused .l-branding-header {
-	position: absolute;
-}
-
 .logo {
 	width: 134px;
 	margin: 0 auto;
@@ -2753,6 +2749,7 @@ img.mfp-img {
 
 .l-main-column {
 	margin: 15px;
+	padding-bottom: 50px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
@@ -3560,6 +3557,7 @@ select {
 
 .l-main-column {
 	margin: 0;
+	padding-bottom: 0;
 }
 
 .no-flexbox .l-has-sidebar .l-main-column {

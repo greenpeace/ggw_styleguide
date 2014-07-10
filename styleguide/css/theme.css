@@ -20,6 +20,22 @@ body {
   padding: 0 !important;
 }
 
+.terminal {
+ background: #ddd;
+ color: #444;
+ padding: 0 5px;
+}
+
+.terminal a{
+ color: #444;
+}
+
+.terminal::before {
+  content: "$";
+  padding-right: 5px;
+  color: #559f0c;
+}
+
 .kalei-style-menu-container {
   position: fixed;
   width: 280px;

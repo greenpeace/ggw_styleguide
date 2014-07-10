@@ -4,7 +4,7 @@
 <noscript><div id="javascript-disabled">Your JavaScript seems to be disabled, this might affect your experience on Greenpeace Greenwire.</div></noscript>
 
 <div class="layout-base">
-
+<?php include('modules/members-quicknav.php'); ?>
 <?php include('modules/mobilenav.php'); ?>
 
 <?php include('modules/header.php'); ?>

@@ -16,6 +16,24 @@
 
 @media (min-width: 480px) {
 
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
+article picture.pull-left,
+article img.pull-left {
+	margin: 0 1em 1em 0;
+}
+
+article picture.pull-right,
+article img.pull-right {
+	margin: 0 0 1em 1em;
+}
+
 .node-teaser .field-group-format,
 .node-teaser .field-name-body {
 	display: block;
@@ -414,6 +432,10 @@ select {
 	display: none;
 }
 
+.members-quicknav {
+	display: none;
+}
+
 .off-canvas .trigger {
 	border: none;
 	font-weight: 300;
@@ -799,6 +821,7 @@ select {
 
 .l-main-column {
 	margin: 0;
+	padding-bottom: 0;
 }
 
 .no-flexbox .l-has-sidebar .l-main-column {

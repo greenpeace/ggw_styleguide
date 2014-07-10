@@ -68,11 +68,13 @@
     z-index: 1;
   }
 
-  &.primary-nav .l-main {
+  &.primary-nav .l-main,
+  &.primary-nav .members-quicknav {
     left: 265px;
   }
 
-  &.secondary-nav .l-main {
+  &.secondary-nav .l-main,
+  &.secondary-nav .members-quicknav {
     right: 265px;
   }
 
@@ -96,6 +98,8 @@
     display: none;
   }
 
+  &.primary-nav .members-quicknav,
+  &.secondary-nav .members-quicknav,
   &.primary-nav .l-branding-header,
   &.secondary-nav .l-branding-header,
   &.primary-nav .l-main,
@@ -105,6 +109,7 @@
   }
 
   // class is set html element with JS, push content to the left
+  &.primary-nav .members-quicknav,
   &.primary-nav .l-main {
     transform: translate3d(265px, 0px, 0px);
   }
@@ -114,6 +119,7 @@
     transform: translate3d(266px, 0px, 0px);
   }
 
+  &.secondary-nav .members-quicknav,
   &.secondary-nav .l-main {
     transform: translate3d(-265px, 0px, 0px);
   }

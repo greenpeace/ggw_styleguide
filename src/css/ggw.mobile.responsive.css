@@ -414,6 +414,10 @@ select {
 	display: none;
 }
 
+.members-quicknav {
+	display: none;
+}
+
 .off-canvas .trigger {
 	border: none;
 	font-weight: 300;

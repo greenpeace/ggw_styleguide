@@ -1,0 +1,72 @@
+.members-quicknav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  transform: translate3d(0, 0, 0);
+  transition: transform 500ms ease;
+
+  @include breakpoint($desk) {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    background: $background;
+    width: 100%;
+  }
+
+  li {
+    white-space: nowrap;
+
+    .no-flexbox & {
+      display: inline-block;
+      position: relative;
+      width: auto;
+      padding: 0 1em;
+      line-height: 1em;
+    }
+
+    .flexbox & {
+      flex: 1;
+    }
+
+  }
+
+  a {
+    padding-top: 2em;
+    text-align: center;
+    display: block;
+    position: relative;
+    color: $base;
+    text-transform: lowercase;
+    @include font-size(13px);
+
+    &:before {
+      @extend %load-icon;
+      position: absolute;
+      left: 50%;
+      margin-left: -10px;
+      top: 5px;
+      @include font-size(24px);
+    }
+  }
+
+  .home {
+    @extend %icon-book-open;
+  }
+
+  .shouts {
+    @extend %icon-megaphone;
+  }
+
+  .events {
+    @extend %icon-calendar;
+  }
+
+  .messages {
+    @extend %icon-comment;
+  }
+
+}

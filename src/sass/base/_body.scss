@@ -35,12 +35,13 @@ body {
 
 }
 
+@include breakpoint($smalltab) {
+  // used for images for example, but it can be applied on other elements as well
+  .pull-right {
+    float: right;
+  }
 
-
-.pull-right {
-  float: right;
-}
-
-.pull-left {
-  float: left;
+  .pull-left {
+    float: left;
+  }
 }

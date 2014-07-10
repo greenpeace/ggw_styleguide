@@ -2,7 +2,19 @@ img, picture, media {
   max-width: 100%;
 }
 
+@include breakpoint($smalltab) {
+
 article picture,
 article img {
-  width: 100%;
+
+    &.pull-left {
+      margin: 0 1em 1em 0;
+    }
+
+    &.pull-right {
+      margin: 0 0 1em 1em;
+    }
+
+  }
+
 }

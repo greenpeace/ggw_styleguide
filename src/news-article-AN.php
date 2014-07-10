@@ -51,7 +51,12 @@
 
           <div class="field-name-body">
 
+
+              <img  class="field-type-image pull-right" src="http://placehold.it/320x320" alt="The president giving an award." />
+
+
         <p>On touch devices, a click event has a 300ms delay before firing. The reason for this the delay is that browsers need that buffer to make sure you aren’t going to double-tap on anything. The result is that if you use click events blindly, that delay creates a noticeable lag as users interact with elements on your page.</p>
+
 
         <p>There has been a Google + post by Rick Byers floating around the last few days claiming the best way to deal with the delay was to eliminate the double-tap zoom altogether. With no double-tap gesture to worry about, browsers no longer need that 300ms buffer and can now fire click events immediately.</p>
 
@@ -91,6 +96,7 @@
 <p>So what’s a performance and accessibility loving developer to do if they want to get rid of the delay?</p>
 
 <p>At the end of the post, Rick states to “just switch to using FastClick”. That’s frequently my recommendation as well. FastClick does a good job of dealing with the issue—without losing the ability to pinch-to-zoom and does so at ~10kb minimized. That’s not super lightweight, but it’s not too painful either.</p>
+<img  class="field-type-image pull-left" src="http://placehold.it/100x100" alt="The president giving an award." />
 
 <p>Another option is to use something like <a href="https://github.com/filamentgroup/tappy/">Tappy!</a>, a normalized tap event from the always-clever folks at Filament Group. Tappy! lets you use a “tap” event that works for touch, mouse and keyboard. Not only do you avoid the 300ms delay, but the script is under 1kb when minimized (though it does require the use of jQuery or a similar framework).</p>
 

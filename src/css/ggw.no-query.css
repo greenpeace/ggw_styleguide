@@ -1292,9 +1292,13 @@ img, picture, media {
   max-width: 100%;
 }
 
-article picture,
-article img {
-  width: 100%;
+article picture.pull-left,
+article img.pull-left {
+  margin: 0 1em 1em 0;
+}
+article picture.pull-right,
+article img.pull-right {
+  margin: 0 0 1em 1em;
 }
 
 /* Magnific Popup CSS */

@@ -591,14 +591,6 @@ body {
 	margin-top: 15px;
 }
 
-.pull-right {
-	float: right;
-}
-
-.pull-left {
-	float: left;
-}
-
 h1,
 h2,
 h3,
@@ -1454,11 +1446,6 @@ img,
 picture,
 media {
 	max-width: 100%;
-}
-
-article picture,
-article img {
-	width: 100%;
 }
 
 /* Magnific Popup CSS */

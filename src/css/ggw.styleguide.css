@@ -39,7 +39,7 @@
 	<p>Considering the benefits explained before, using the styleguide may save some time to the first group. But a lot of time to the not so experienced developers. Believe me.</p>
 </article>
 
-##Setting up.
+##Setting up
 
 <article class="view-mode-full">
   <p>To setup your developing branch, you should follow the next steps:</p>
@@ -55,11 +55,11 @@
 	<div class="block block-no-icon">
 	  <h2 class="block-title">2. Ruby</h2>
 	  <div class="content" style="margin-top:15px;">
-		  <p>Make sure you have Ruby, Bundler and RVM installed, we use RVM version 1.9.3</p>
+		  <p>Make sure you have <a href="https://www.ruby-lang.org/en/">Ruby</a>, <a href="http://bundler.io/">Bundler</a> and <a href="https://rvm.io/">RVM</a> installed, we use RVM version 1.9.3</p>
 		  <p>If you are on a Mac, you'll require a package manager like Homebrew and the latest version of XCode Development Tools, as well as the Xcode Command Line Tools. Although Mac comes with Ruby, it may not be the right version.</p>
 		  <p>Install RVM with Ruby with:</p>
 		  <p><code class="terminal">\curl -L https://get.rvm.io | bash -s stable --ruby</code></p>
-		  <p>After installing RVM, run `rvm requirements` in your terminal to see if anything else is required to install Ruby and Rails.</p>
+		  <p>After installing RVM, run <code class="terminal">rvm requirements</code> in your terminal to see if anything else is required to install Ruby and Rails.</p>
 	  </div>
 	</div>
 
@@ -72,14 +72,21 @@
 </div>
 
 <div class="block block-no-icon">
-  <h2 class="block-title">4. Gulp</h2>
+  <h2 class="block-title">4. Node.js and npm</h2>
+  <div class="content">
+	  <p>To use npm (node package manager) in the command line and install all the packages needed in gulp, we need first to install <a href="http://nodejs.org/">Node.js</a>.</p>
+  </div>
+</div>
+
+<div class="block block-no-icon">
+  <h2 class="block-title">5. Gulp</h2>
   <div class="content">
 
-    <p>We use gulp for many tasks which you can find in gulpfile.js. You need to install gulp on your local environment and in the project:</p>
+    <p>We use <a href="http://gulpjs.com/">gulp</a> for many tasks which you can find in gulpfile.js. You need to install gulp on your local environment and in the project:</p>
     <p><code class="terminal">npm install gulp -g</code> // global install</p>
     <p><code class="terminal">npm install gulp --save-dev</code> // local install</p>
 
-    <p>Install the plugins we use:</p>
+    <p>Install the <a href="http://gulpjs.com/plugins/">plugins</a> we use:</p>
     <ul>
 	    <li>Compass, with sass dependencies (gulp-compass)</li>
 	    <li>Autoprefixer (gulp-autoprefixer)</li>
@@ -104,6 +111,102 @@
 
   </div>
 </div>
+
+</article>
+
+##Folder Organization
+
+<article class="view-mode-full">
+
+	<p>In this subsection we will describe the content of the main folders on our developing branch</p>
+	<div class="block block-no-icon">
+	  <h2 class="block-title">View of the main folders and files hosted in root</h2>
+	  <div class="content" style="margin-top:15px;">
+	     <img src="src/images/root_elements.png"></img>
+	  </div>
+	</div>
+
+	<div class="block block-no-icon">
+	  <h2 class="block-title">dist</h2>
+	  <div class="content">
+	     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+	  </div>
+	</div>
+
+	<div class="block block-no-icon">
+	  <h2 class="block-title">node_modules</h2>
+	  <div class="content">
+	     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+	  </div>
+	</div>
+
+	<div class="block block-no-icon">
+	  <h2 class="block-title">src</h2>
+	  <div class="content">
+	     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+	  </div>
+	</div>
+
+	<div class="block block-no-icon">
+	  <h2 class="block-title">styleguide</h2>
+	  <div class="content">
+	     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+	  </div>
+	</div>
+
+</article>
+
+##Editing this Styleguide
+
+<article class="view-mode-full">
+
+	<p>In this subsection we will describe how to modify the content and the style on this styleguide.</p>
+
+	<div class="block block-no-icon">
+	  <h2 class="block-title">Home content</h2>
+	  <div class="content" style="margin-top:15px;">
+	  	<p>The content in 'Home' section (the one that you are reading just now) should be edited in ~/ggw_styleguide/src/css/ggw.styleguide.css</p>
+	  	<p>In this CSS file you will notice all the markup is written with commented html following the styleguide rules described in the other sections.</p>
+	  	<img src="src/images/Styleguide-content-sample.png">
+	  </div>
+	</div>
+
+	<div class="block block-no-icon">
+	  <h2 class="block-title">Sections content</h2>
+	  <div class="content" style="margin-top:15px;">
+	  	<p>The content in the different sections (base, components, modules...) should be edited in  '~/ggw_styleguide/src/sass/styleguide/*section*.scss'</p>
+	  	<p>You can add a new section following this 2 steps:</p>
+      <ul>
+	      <li>Create a new scss file in '~/ggw_styleguide/src/sass/styleguide/'</li>
+	      <li>
+          <p>Add at the end of '~/ggw_styleguide/src/css/ggw.styleguide.css' file this line: </p>
+          <p>'@import url('Name_of_the_new_added_section.css');'</p>
+        </li>
+      </ul>
+      <p>You will notice that the extension of the file is css instead of scss when you '@import' it, because we will call the compiled file after using gulp in the next step.</p>
+	  </div>
+	</div>
+
+  <div class="block block-no-icon">
+    <h2 class="block-title">Compiling after the modifications</h2>
+    <div class="content">
+      <p>To apply all these modifications, after saving it is necessary to execute <code class="terminal">gulp build-styleguide</code> in the root of the develping branch '~/ggw_styleguide/'.</p>
+      <p>This gulp task will compile and overwrite the css files based on this modifications and on the styles from greenwire in '~/ggw_styleguide/src/css/styleguide/' and '~/ggw_styleguide/styleguide/src/css/', necessary to run the styleguide.</p>
+    </div>
+  </div>
+
+  <div class="block block-no-icon">
+    <h2 class="block-title">Styleguide markup, style and js</h2>
+    <div class="content">
+      <p>These are the different files and locations to style and change the behaviour of the styleguide:</p>
+      <ul>
+	      <li>HTML: '~/ggw_styleguide/styleguide/index.html' and '~/ggw_styleguide/styleguide/templates/'</li>
+	      <li>CSS: '~/ggw_styleguide/styleguide/css/theme.css'</li>
+        <li>Images and fonts: '~/ggw_styleguide/styleguide/src'. Both folders receive a copy of all the images and fonts from greenwire when using gulp.</li>
+	      <li>JS: '~/ggw_styleguide/styleguide/js/'</li>
+      </ul>
+    </div>
+  </div>
 
 </article>
 

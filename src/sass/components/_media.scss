@@ -6,6 +6,7 @@ img, picture, media {
 
 article picture,
 article img {
+  display: block; // by default make sure the image gets it own line
 
     &.pull-left {
       margin: 0 1em 1em 0;

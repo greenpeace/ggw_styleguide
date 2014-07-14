@@ -2765,6 +2765,11 @@ img.mfp-img {
 	float: left;
 }
 
+article picture,
+article img {
+	display: block;
+}
+
 article picture.pull-left,
 article img.pull-left {
 	margin: 0 1em 1em 0;

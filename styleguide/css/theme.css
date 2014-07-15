@@ -20,6 +20,22 @@ body {
   padding: 0 !important;
 }
 
+.terminal {
+ background: #ddd;
+ color: #444;
+ padding: 0 5px;
+}
+
+.terminal a{
+ color: #444;
+}
+
+.terminal::before {
+  content: "$";
+  padding-right: 5px;
+  color: #559f0c;
+}
+
 .kalei-style-menu-container {
   position: fixed;
   width: 280px;
@@ -212,7 +228,8 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
   background: #444;
 }
   .logotype{
-    padding-left: 1em;
+    padding: 1em;
+    max-height: 100%;
   }
 
 *:not(.codedemo) .kalei-styleguide-menu-heading:hover {
@@ -334,6 +351,9 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
       height: initial;
       margin: 0 auto;
     }
+    .logotype {
+      width: 33%;
+    }
     .kalei-style-menu-container .menu-items {
       position: static;
       width: 90%;
@@ -367,7 +387,17 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
 }
 
 @media (max-width: 768px) {
+  .logotype {
+    width: 50%;
+    padding: 0 1em;
+  }
   .kalei-style-menu-container .menu-items .kalei-styleguide-menu li {
     display: inline;
+  }
+}
+
+@media (max-width: 480px) {
+  .logotype {
+    width: 80%;
   }
 }

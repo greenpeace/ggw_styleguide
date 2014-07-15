@@ -147,6 +147,12 @@
 
 }
 
+.lt-ie9 {
+  .logo {
+      background-image: url(../images/rsz_logo.png);
+  }
+}
+
 .l-country-selector {
   @include breakpoint($desk) {
     position: absolute;

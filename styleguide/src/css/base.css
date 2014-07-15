@@ -7,7 +7,7 @@ Typography
 
 Paragraphs inside an article element get extra margin, otherwise the style is inherit from the body
 ```
-<article>
+<article class="view-mode-full">
 <p>Nullam ultricies tellus eget pretium faucibus. Vestibulum in tellus non urna consequat pharetra ut eget purus. Mauris scelerisque cursus mattis. Suspendisse in tincidunt mauris; eu dignissim massa. Proin consequat scelerisque nisl vitae dapibus. Aliquam iaculis, leo vitae dictum consectetur; leo tellus fringilla erat, et eleifend ligula nunc id ipsum. Vestibulum quis quam sit amet nibh pharetra posuere et a metus. Donec vestibulum sem sit amet turpis ultricies mattis ut ut leo. Pellentesque volutpat aliquam nunc eget posuere. Donec nec nisl varius orci scelerisque tempor sit amet in metus. Ut adipiscing justo ac nisl luctus, eget scelerisque risus tincidunt. In blandit dui id fermentum viverra.</p>
 
 <p>
@@ -27,7 +27,7 @@ Lists only get a default style when they are in an `<article>` element.
 <h3> Unordered List </h3>
 
 ```
-<article>
+<article class="view-mode-full">
 
 <ul>
   <li>Item 1</li>
@@ -50,7 +50,7 @@ Lists only get a default style when they are in an `<article>` element.
 <h3> Ordered List </h3>
 
 ```
-<article>
+<article class="view-mode-full">
 
 <ol>
   <li>Item 1</li>
@@ -73,7 +73,7 @@ Lists only get a default style when they are in an `<article>` element.
 <h2> Headings </h2>
 
 ```
-<article>
+<article class="view-mode-full">
 <h1>h1. Greenpeace Greenwire heading</h1>
 <h2>h2. Greenpeace Greenwire heading</h2>
 <h3>h3. Greenpeace Greenwire heading</h3>
@@ -86,7 +86,7 @@ Lists only get a default style when they are in an `<article>` element.
 <h3> Headings with text</h3>
 
 ```
-<article>
+<article class="view-mode-full">
 <h1>h1. Greenpeace Greenwire heading</h1>
 <p>
 Ut in diam ornare eros volutpat malesuada vitae pharetra arcu? Integer ultricies sem in risus lobortis, eget facilisis neque scelerisque? Sed eu urna a enim scelerisque blandit in at tellus. Morbi tempus volutpat turpis, eget vehicula lacus placerat nec. Phasellus lacinia tempus elementum. Donec a vestibulum magna, quis euismod elit! Sed id accumsan erat. Proin vestibulum ut quam quis sagittis. Nunc ac justo sed diam tempus vehicula in sodales sapien. Cras sit amet faucibus risus! Nullam a velit vitae lacus ultrices accumsan? Nam mattis eget metus a imperdiet? Suspendisse sollicitudin ut est in lacinia. In suscipit, ipsum vel fermentum auctor, dui turpis lacinia augue, ut tincidunt tellus augue elementum dui. Aenean adipiscing iaculis dolor interdum ornare.

@@ -1,6 +1,6 @@
 <?php include('modules/head.php'); ?>
+<link rel="stylesheet" href="leaflet/leaflet.css" />
 <body class="not-front not-logged-in page-type-news l-has-sidebar">
-
 <noscript><div id="javascript-disabled">Your JavaScript seems to be disabled, this might affect your experience on Greenpeace Greenwire.</div></noscript>
 
 <div class="layout-base">
@@ -51,12 +51,17 @@
 
           <div class="field-name-body">
 
+            <img class="field-type-image" src="https://static.greenwire.greenpeace.org/sites/default/files/styles/extra_large/public/nl/event/6fe8b6ee-d5ad-4942-a26d-9e8d58cb89aa.jpg" alt="De héle Noordzeekust schoon van 1 t/m 31 augustus! Help je mee?" />
 
-              <img class="field-type-image" src="https://greenwire-stage.greenpeace.org/sites/default/files/styles/extra_large/public/nl/event/9ba6e262-b2f4-43c2-a746-8ec21aad9e04.jpg" alt="The president giving an award." />
 
-              <div class="field-group-format">
+            <div class="event-actions">
+              <a href="#" class="button btn-primary">Enroll</a>
+              <a href="#" class="button"> 343 attendees</a>
+            </div>
 
-                <div class="field-name-field-event-date">
+            <div class="field-group-format">
+
+                <div class="field field-name-field-event-date">
                   <div class="field-label">Date: </div>
                   <div>
                     <span class="date-display-start">13 July, 2014 - 09:00 CEST</span>
@@ -65,25 +70,26 @@
                   </div>
                 </div>
 
-                <div class="field-name-field-event-location">
+                <div class="field field-name-field-event-location">
                   <div class="field-label">Location: </div>
                   <div>
-                    <span>Spoorzone Tilburg</span> <span>Spoorzone</span><span>Tilburg</span>
+                    <a class="openMap" href="#"><span>Spoorzone Tilburg</span> <span>Spoorzone</span><span>Tilburg</span></a>
                   </div>
 
                 </div>
 
-                <div class="field-name-field-event-type">
+                <div class="field field-name-field-event-type">
 
                   <div class="field-label">Event type: </div>
                   <div>
-                    <span>Festival/Market</span> <span>Spoorzone</span><span>Tilburg</span>
+                    <span>Festival/Market</span>
                   </div>
 
                 </div>
 
-              </div>
+            </div>
 
+            <div id="desktopmap"></div>
 
         <p><strong>Festival Mundial</strong></p>
 <p>
@@ -125,8 +131,6 @@
 
     </div>
 
-    <a data-replace="modules/comments-an"><span class="element-invisible">load comments</span></a>
-
   </div>
 
     <aside class="l-sidebar sidebar">
@@ -144,8 +148,34 @@
 </footer>
 
 </div>
-
+<div id="mobilemap"></div>
+<a href="#" id="close-map" class="map-close-button"><span class="element-invisible">close</span></a>
 <script src="js/theme.js"></script>
+<script src="leaflet/leaflet.js"></script>
+<script>
+  // create a map in the "map" div, set the view to a given place and zoom
+  var map = L.map('<?php echo ($detect->isMobile() ? "mobilemap" : "desktopmap"); ?>').setView([51.505, -0.09], 13);
+
+  // add an OpenStreetMap tile layer
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+
+  var greenIcon = L.icon({
+    iconUrl: '/src/images/marker-green.png',
+    iconRetinaUrl: '/src/images/marker-green@2x.png',
+    shadowUrl: '/src/images/marker-shadow.png',
+    shadowRetinaUrl: '/src/images/marker-shadow.png',
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [41, 41], // size of the shadow
+    iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
+    shadowAnchor: [13, 41],  // the same for the shadow
+    popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
+  });
+
+  // add a marker in the given location, attach some popup content to it and open the popup
+  L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map)
+      .bindPopup('<h2 class="node-title"><a href="#">Ga mee naar Festival Mundial</a></h2> <div class="field field-name-field-event-date"><span class="date-display-single">25 September, 2014 - 14:57</span></div>');
+</script>
+
 <!--[if (gte IE 6)&(lte IE 8)]>
   <script type="text/javascript" src="js/oldie.js"></script>
 <![endif]-->

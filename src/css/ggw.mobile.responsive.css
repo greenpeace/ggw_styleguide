@@ -156,10 +156,6 @@ article img.pull-right {
 	top: 0;
 }
 
-.nav-btn {
-	left: 10px;
-}
-
 .nav-btn + .nav-btn {
 	right: 15px;
 }
@@ -264,6 +260,16 @@ select {
 
 .selector:before {
 	top: 3px;
+}
+
+#desktopmap {
+	display: block;
+	height: 300px;
+	width: 100%;
+}
+
+#mobilefull {
+	display: none;
 }
 
 .tooltip:before,
@@ -773,7 +779,7 @@ select {
 
 .logo {
 	position: absolute;
-	left: 15px;
+	left: 10px;
 	top: 15px;
 }
 
@@ -787,7 +793,7 @@ select {
 .l-language-selector {
 	position: absolute;
 	width: auto;
-	right: 15px;
+	right: 10px;
 	bottom: 32px;
 }
 
@@ -805,7 +811,7 @@ select {
 	clear: none;
 	bottom: 10px;
 	position: absolute;
-	right: 15px;
+	right: 10px;
 }
 
 .block-search .icon-search {

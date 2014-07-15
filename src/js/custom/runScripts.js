@@ -27,6 +27,18 @@ jQuery(document).ready(function ($) {
     alignTop: true
   });
 
+  $('.openMap').click(function(e) {
+    $('#mapfull, #close-map').addClass('ontop');
+    e.preventDefault();
+  });
+
+  if ($('#mapfull').has('.ontop')) {
+    $('#close-map').click( function(){
+      $('#mapfull, #close-map').removeClass('ontop');
+    });
+  }
+
+
   $(".form-comment-message textarea").autogrow({
     animate: false
   });

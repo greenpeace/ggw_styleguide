@@ -1,0 +1,43 @@
+.view-mode-full .field-group-format {
+  margin-bottom: 2 * $def-mar;
+
+  .field {
+    border-bottom: 1px solid $background;
+    padding: $def-mar-half $def-mar;
+    @include font-size(14px);
+  }
+
+  .field-label {
+    @extend %element-invisible;
+  }
+
+  .field-label + div:before {
+    @extend %load-icon;
+    @include font-size(22px);
+    margin: 0 0 0 -2em;;
+    position: absolute;
+  }
+
+  .field-label + div {
+    margin-left: 3em;
+  }
+
+}
+
+.field-name-field-event-date .field-label + div:before {
+  @extend %icon-calendar;
+}
+
+.field-name-field-event-location .field-label + div:before {
+  @extend %icon-location;
+}
+
+.field-name-field-event-type .field-label + div:before {
+  @extend %icon-info-circled;
+}
+
+.event-actions {
+  text-align: center;
+  border-bottom: 1px solid $background;
+  padding: $def-mar;
+}

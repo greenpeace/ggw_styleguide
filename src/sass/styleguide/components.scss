@@ -432,7 +432,6 @@ Responsive images using <a href="http://scottjehl.github.io/picturefill/">Pictur
 </div>
 ```
 
-
 Progress bar
 ====
 
@@ -457,6 +456,290 @@ In the registration process there are 4 steps with a progress bar showing graphi
 <div class="progress-bar-wrapper">
   <div class="progress-bar" style="width: 75%;">75%</div>
 </div>
+
+```
+
+*/
+
+/*
+
+Teassers
+====
+
+<h2>Blog</h2>
+
+```
+<article class="node-teaser-blog node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">Blog item with no image</h2>
+    <div class="submitted">
+      <a href="#" class="blog">Blog</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+
+```
+
+<h2>Document</h2>
+
+```
+<article class="node-teaser-document node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">Document item with no image</h2>
+    <div class="submitted">
+      <a href="#" class="document">Document</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+
+```
+
+<h2>Event</h2>
+
+```
+<article class="node-teaser-event node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">Event item with no image</h2>
+    <div class="submitted">
+      <a href="#" class="event">event</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+
+```
+
+<h2>Faq</h2>
+
+```
+<article class="node-teaser-faq node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">faq item with no image</h2>
+    <div class="submitted">
+      <a href="#" class="faq">faq</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+
+```
+<h2>Group</h2>
+
+```
+<article class="node-teaser-group node-teaser">
+
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">This is an example of a long group title</h2>
+    <div class="submitted">
+      <a href="#" class="group">Group</a>, 3rd October 2013
+    </div>
+    <div class="field-group-format">
+      <div class="field-type-taxonomy-term-reference"> <label>Group type:</label>Campaign group</div>
+    </div>
+  </div>
+</article>
+
+```
+
+<h2>Idea</h2>
+
+```
+<article class="node-teaser-idea node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">This is an example of an idea teaser with no image</h2>
+    <div class="submitted">
+      <a href="#" class="idea">Idea</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+
+```
+
+<h2>Material</h2>
+
+```
+<article class="node-teaser-material node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">Material title</h2>
+    <div class="submitted">
+      <a href="#" class="material">Material</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+      <?php //we need a truncate by php function here ?>
+    </div>
+  </div>
+</article>
+
+```
+
+<h2>News</h2>
+
+```
+<article class="node-teaser-news node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">This is an example of a long news item with photo</h2>
+    <div class="submitted">
+      <a href="#" class="news">News</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+
+```
+
+<h2>Pages</h2>
+
+```
+<article class="node-teaser-page node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">This is a page search result title</h2>
+    <div class="submitted">
+      <a href="#" class="page">Page</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+
+```
+
+<h2>Photos</h2>
+
+```
+<article class="node-teaser-album node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">This is an example of a long photo album title</h2>
+    <div class="submitted">
+      <a href="#" class="album">Photos</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+
+```
+
+<h2>Users</h2>
+
+```
+<article class="node-teaser-user node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">This is an example of a long photo album title</h2>
+    <div class="submitted">
+      <a href="#" class="user">User</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+
+```
+
+<h2>Video</h2>
+
+```
+<article class="node-teaser-video node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">This is an example of a long photo album title</h2>
+    <div class="submitted">
+      <a href="#" class="video">Video</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
 
 ```
 

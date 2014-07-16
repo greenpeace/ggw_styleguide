@@ -129,8 +129,25 @@
 	<div class="block block-no-icon">
 	  <h2 class="block-title">dist</h2>
 	  <div class="content">
-	     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+	    <p>In this folder are all the minified files compiled by gulp. Therefore, should be evident we must not make any modification here manually.</p>
 	  </div>
+    <h2 class="block-title">dist content</h2>
+    <div class="content" style="margin-top:15px;">
+        <img src="src/images/dist-cont.png"></img>
+        <p>css:</p>
+        <ul>
+          <li>ggw.mobile.min.css: </li>
+          <li>ggw.mobile.responsive.min.css: </li>
+          <li>ggw.no-query.min.css: </li>
+          <li>ggw.styles.min.css: </li>
+        </ul>
+        <p>images: </p>
+        <p>js:</p>
+        <ul>
+          <li>before.min.js: </li>
+          <li>theme.min.js: </li>
+        </ul>
+    </div>
 	</div>
 
 	<div class="block block-no-icon">

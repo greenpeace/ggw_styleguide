@@ -326,7 +326,7 @@ th {
 .item-list a:before,
 .map-close-button,
 .node-teaser .field-type-image:before,
-.node-teaser .submitted a:before,
+.node-teaser .submitted .type:before,
 [class*="icon-"],
 .comment-actionlink:before,
 .nfi-button,
@@ -352,12 +352,12 @@ th {
 	content: '\e807';
 }
 
-.node-teaser-group .field-type-image:before,
-.submitted .group:before,
 .icon-user:before {
 	content: '\e812';
 }
 
+.node-teaser-group .field-type-image:before,
+.submitted .group:before,
 .icon-users:before {
 	content: '\e806';
 }
@@ -721,6 +721,10 @@ b {
 	quotes: none;
 }
 
+.view-mode-full .field-name-body {
+	margin-top: 1em;
+}
+
 .view-mode-full .field-group-format {
 	margin-bottom: 30px;
 }
@@ -739,6 +743,10 @@ b {
 
 .view-mode-full .field-group-format .field-label + div {
 	margin-left: 3em;
+}
+
+.field-name-field-event-location span {
+	margin-right: .3em;
 }
 
 .event-actions {
@@ -896,7 +904,7 @@ b {
 	display: block;
 	width: 12px;
 	height: 12px;
-	background: url('../images/chosen-sprite.png?1404126134') -42px 1px no-repeat;
+	background: url('../images/chosen-sprite.png?1404468460') -42px 1px no-repeat;
 	font-size: 1px;
 }
 
@@ -921,7 +929,7 @@ b {
 	display: block;
 	width: 100%;
 	height: 100%;
-	background: url('../images/chosen-sprite.png?1404126134') no-repeat 0px 2px;
+	background: url('../images/chosen-sprite.png?1404468460') no-repeat 0px 2px;
 }
 
 .chosen-container-single .chosen-search {
@@ -942,8 +950,8 @@ b {
 	height: auto;
 	outline: 0;
 	border: 1px solid #aaa;
-	background: white url('../images/chosen-sprite.png?1404126134') no-repeat 100% -20px;
-	background: url('../images/chosen-sprite.png?1404126134') no-repeat 100% -20px;
+	background: white url('../images/chosen-sprite.png?1404468460') no-repeat 100% -20px;
+	background: url('../images/chosen-sprite.png?1404468460') no-repeat 100% -20px;
 	font-size: 1em;
 	font-family: sans-serif;
 	line-height: normal;
@@ -1109,7 +1117,7 @@ b {
 	display: block;
 	width: 12px;
 	height: 12px;
-	background: url('../images/chosen-sprite.png?1404126134') -42px 1px no-repeat;
+	background: url('../images/chosen-sprite.png?1404468460') -42px 1px no-repeat;
 	font-size: 1px;
 }
 
@@ -1491,7 +1499,7 @@ media {
 	display: none;
 }
 
-#mobilefull {
+#mobilemap {
 	width: 100%;
 	height: 100%;
 	position: fixed;
@@ -1949,6 +1957,7 @@ img.mfp-img {
 
 .node-teaser .field-type-wrapper {
 	overflow: hidden;
+	position: relative;
 }
 
 .node-teaser .node-title {
@@ -1956,17 +1965,28 @@ img.mfp-img {
 	color: #559f0c;
 	margin: 0 0 .2em;
 	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+	max-height: 2.5em;
 }
 
 .node-teaser .submitted {
 	padding: 0;
 	margin: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
-.node-teaser .submitted a:before {
-	margin-right: .2em;
+.node-teaser .submitted .type {
+	margin-right: 1em;
+	width: 0;
+	display: inline-block;
+	line-height: 1em;
+	overflow: hidden;
+}
+
+.node-teaser .submitted .type:before {
+	left: 0;
+	position: absolute;
 }
 
 .node-teaser label {
@@ -3311,7 +3331,7 @@ img.mfp-img {
 .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
 .chosen-container .chosen-results-scroll-down span,
 .chosen-container .chosen-results-scroll-up span {
-	background-image: url('../images/chosen-sprite@2x.png?1404126134') !important;
+	background-image: url('../images/chosen-sprite@2x.png?1404468460') !important;
 	-webkit-background-size: 52px 37px !important;
 	background-size: 52px 37px !important;
 	background-repeat: no-repeat !important;
@@ -3332,6 +3352,7 @@ img.mfp-img {
 article picture,
 article img {
 	display: block;
+	margin: 0 auto;
 }
 
 article picture.pull-left,
@@ -3377,6 +3398,18 @@ article img.pull-right {
 
 .node-teaser .submitted {
 	margin-bottom: .2em;
+}
+
+.node-teaser .submitted .type {
+	width: auto;
+	display: inline;
+	margin-right: .3em;
+	line-height: normal;
+}
+
+.node-teaser .submitted .type:before {
+	position: relative;
+	margin-right: .3em;
 }
 
 .node-teaser .field-group-format,
@@ -3563,6 +3596,12 @@ select {
 	color: #3c7008;
 }
 
+.field-name-field-event-location a {
+	pointer-events: none;
+	cursor: default;
+	color: #333333;
+}
+
 .selector:before {
 	top: 3px;
 }
@@ -3573,7 +3612,11 @@ select {
 	width: 100%;
 }
 
-#mobilefull {
+#mobilemap {
+	display: none;
+}
+
+.map-close-button {
 	display: none;
 }
 

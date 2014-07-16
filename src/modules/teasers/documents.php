@@ -12,7 +12,7 @@
               <h2 class="node-title">This is an example of a long photo album title</h2>
 
               <div class="submitted">
-                <a href="#" class="document">Document</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+                <a href="#" class="type document">Document</a> 24 Sep 2013, by <a href="#">Johnny extermeverykindoflonglastname</a>
               </div>
 
               <div class="field-name-body">

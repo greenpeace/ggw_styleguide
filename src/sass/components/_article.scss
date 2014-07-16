@@ -1,25 +1,33 @@
-.view-mode-full .field-group-format {
-  margin-bottom: 2 * $def-mar;
+.view-mode-full {
 
-  .field {
-    border-bottom: 1px solid $background;
-    padding: $def-mar-half $def-mar;
-    @include font-size(14px);
+  .field-name-body {
+    margin-top: 1em;
   }
 
-  .field-label {
-    @extend %element-invisible;
-  }
+  .field-group-format {
+    margin-bottom: 2 * $def-mar;
 
-  .field-label + div:before {
-    @extend %load-icon;
-    @include font-size(22px);
-    margin: 0 0 0 -2em;;
-    position: absolute;
-  }
+    .field {
+      border-bottom: 1px solid $background;
+      padding: $def-mar-half $def-mar;
+      @include font-size(14px);
+    }
 
-  .field-label + div {
-    margin-left: 3em;
+    .field-label {
+      @extend %element-invisible;
+    }
+
+    .field-label + div:before {
+      @extend %load-icon;
+      @include font-size(22px);
+      margin: 0 0 0 -2em;;
+      position: absolute;
+    }
+
+    .field-label + div {
+      margin-left: 3em;
+    }
+
   }
 
 }
@@ -34,6 +42,22 @@
 
 .field-name-field-event-type .field-label + div:before {
   @extend %icon-info-circled;
+}
+
+.field-name-field-event-location {
+  span {
+    margin-right: .3em;
+  }
+
+  @include breakpoint($desk) {
+    a {
+      pointer-events: none;
+      cursor: default;
+      color: $base;
+    }
+
+  }
+
 }
 
 .event-actions {

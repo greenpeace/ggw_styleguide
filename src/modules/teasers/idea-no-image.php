@@ -12,7 +12,7 @@
     <h2 class="node-title">This is an example of an idea teaser with no image</h2>
 
     <div class="submitted">
-      <a href="#" class="idea">Idea</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+      <a href="#" class="type idea">Idea</a> 9 Dec, by <a href="#">Ana Hristova</a>
     </div>
 
     <div class="field-name-body">

@@ -12,7 +12,7 @@
               <h2 class="node-title">Faq title and some extra text</h2>
 
               <div class="submitted">
-                <a href="#" class="faq">Faq</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+                <a href="#" class="type faq">Faq</a>
               </div>
 
               <div class="field-name-body">

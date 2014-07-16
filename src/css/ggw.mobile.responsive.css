@@ -27,6 +27,7 @@
 article picture,
 article img {
 	display: block;
+	margin: 0 auto;
 }
 
 article picture.pull-left,
@@ -72,6 +73,18 @@ article img.pull-right {
 
 .node-teaser .submitted {
 	margin-bottom: .2em;
+}
+
+.node-teaser .submitted .type {
+	width: auto;
+	display: inline;
+	margin-right: .3em;
+	line-height: normal;
+}
+
+.node-teaser .submitted .type:before {
+	position: relative;
+	margin-right: .3em;
 }
 
 .node-teaser .field-group-format,
@@ -258,6 +271,12 @@ select {
 	color: #3c7008;
 }
 
+.field-name-field-event-location a {
+	pointer-events: none;
+	cursor: default;
+	color: #333333;
+}
+
 .selector:before {
 	top: 3px;
 }
@@ -268,7 +287,11 @@ select {
 	width: 100%;
 }
 
-#mobilefull {
+#mobilemap {
+	display: none;
+}
+
+.map-close-button {
 	display: none;
 }
 

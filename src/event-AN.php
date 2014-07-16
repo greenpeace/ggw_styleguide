@@ -73,7 +73,7 @@
                 <div class="field field-name-field-event-location">
                   <div class="field-label">Location: </div>
                   <div>
-                    <a class="openMap" href="#"><span>Spoorzone Tilburg</span> <span>Spoorzone</span><span>Tilburg</span></a>
+                    <a class="openMap" href="#"><span>Somewhere downTown</span> <span>Sterry Street 342</span><span>London</span></a>
                   </div>
 
                 </div>
@@ -154,10 +154,13 @@
 <script src="leaflet/leaflet.js"></script>
 <script>
   // create a map in the "map" div, set the view to a given place and zoom
-  var map = L.map('<?php echo ($detect->isMobile() ? "mobilemap" : "desktopmap"); ?>').setView([51.505, -0.09], 13);
+  var mobileMap = L.map('mobilemap').setView([51.505, -0.09], 13);
+  var deskMap= L.map('desktopmap').setView([51.505, -0.09], 13);
+
 
   // add an OpenStreetMap tile layer
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(deskMap);
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mobileMap);
 
   var greenIcon = L.icon({
     iconUrl: '/src/images/marker-green.png',
@@ -172,7 +175,9 @@
   });
 
   // add a marker in the given location, attach some popup content to it and open the popup
-  L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map)
+  L.marker([51.5, -0.09], {icon: greenIcon}).addTo(deskMap)
+      .bindPopup('<h2 class="node-title"><a href="#">Ga mee naar Festival Mundial</a></h2> <div class="field field-name-field-event-date"><span class="date-display-single">25 September, 2014 - 14:57</span></div>');
+  L.marker([51.5, -0.09], {icon: greenIcon}).addTo(mobileMap)
       .bindPopup('<h2 class="node-title"><a href="#">Ga mee naar Festival Mundial</a></h2> <div class="field field-name-field-event-date"><span class="date-display-single">25 September, 2014 - 14:57</span></div>');
 </script>
 

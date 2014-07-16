@@ -12,7 +12,7 @@
               <h2 class="node-title">This is a page search result title</h2>
 
               <div class="submitted">
-                <a href="#" class="page">Page</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+                <a href="#" class="type page">Page</a>
               </div>
 
               <div class="field-name-body">

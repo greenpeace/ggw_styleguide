@@ -5920,13 +5920,13 @@ jQuery(document).ready(function ($) {
   });
 
   $('.openMap').click(function(e) {
-    $('#mapfull, #close-map').addClass('ontop');
+    $('#mobilemap, #close-map').addClass('ontop');
     e.preventDefault();
   });
 
-  if ($('#mapfull').has('.ontop')) {
+  if ($('#mobilemap').has('.ontop')) {
     $('#close-map').click( function(){
-      $('#mapfull, #close-map').removeClass('ontop');
+      $('#mobilemap, #close-map').removeClass('ontop');
     });
   }
 

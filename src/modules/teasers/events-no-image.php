@@ -11,7 +11,7 @@
 
     <h2 class="node-title">This event does have an image</h2>
     <div class="submitted">
-      <a href="#" class="event">Event</a>, 23rd July 2014
+      <a href="#" class="type event">Event</a> 1 May - 4 May
     </div>
     <div class="field-group-format">
       <div class="field-type-date"> <label>Time:</label>August 10th, 8:00PM until 11:30 PM</div>

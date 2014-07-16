@@ -12,7 +12,7 @@
     <h2 class="node-title">This is an example of a long news item with photo</h2>
 
     <div class="submitted">
-      <a href="#" class="news">News</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+      <a href="#" class="type news">News</a> 23 Jul, by <a href="#">Ana Hristova</a>
     </div>
 
     <div class="field-name-body">

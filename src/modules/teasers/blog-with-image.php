@@ -12,7 +12,7 @@
     <h2 class="node-title">Blog item with no image</h2>
 
     <div class="submitted">
-      <a href="#" class="blog">Blog</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+      <a href="#" class="type blog">Blog</a> 11 Aug 2014, by <a href="#">Ana Hristova</a>
     </div>
 
     <div class="field-name-body">

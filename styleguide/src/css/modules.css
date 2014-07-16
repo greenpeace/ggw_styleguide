@@ -76,3 +76,23 @@ Breadcrumbs
 
 ```
 */
+/*
+Action Menu (Mobile)
+===
+
+The action menu displays on screens less than 900px.
+
+<h2>Action Menu sample</h2>
+
+Resize the screen less than 900px to display the sample.
+
+```
+<div class="action-menu">
+  <ul style="width:100%">
+    <li style="width:50%"><a href="#"><i class="icon icon-user"></i> Login</a></li>
+    <li style="width:50%"><a href="#"><i class="icon icon-user-add"></i> Register</a></li>
+  </ul>
+</div>
+
+```
+*/

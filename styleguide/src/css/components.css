@@ -367,8 +367,6 @@ We use the combination of text and icon in some buttons for the mobile app.
 </p>
 ```
 
-
-
 Article
 ====
 
@@ -404,6 +402,32 @@ Information about the author of the article.
     </div>
   </div>
 </article>
+
+```
+Progress bar
+====
+
+<h2>Progress bar samples</h2>
+
+In the registration process there are 4 steps with a progress bar showing graphically the completed steps.
+
+```
+<!-- Step 1. Progress 0% -->
+  <div class="progress-bar-wrapper page-register-step1">
+    <div class="progress-bar">0%</div>
+  </div>
+<!-- Step 2. Progress 25% -->
+<div class="progress-bar-wrapper">
+  <div class="progress-bar" style="width: 25%;">25%</div>
+</div>
+<!-- Step 3. Progress 50% -->
+<div class="progress-bar-wrapper">
+  <div class="progress-bar" style="width: 50%;">50%</div>
+</div>
+<!-- Step 4. Progress 75% -->
+<div class="progress-bar-wrapper">
+  <div class="progress-bar" style="width: 75%;">75%</div>
+</div>
 
 ```
 

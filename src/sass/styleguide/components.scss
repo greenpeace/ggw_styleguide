@@ -412,6 +412,8 @@ Responsive images using <a href="http://scottjehl.github.io/picturefill/">Pictur
 
 <h2>Image sample</h2>
 
+Resize the screen window to check how it works with different screen width:
+
 ```
 <div id="content" class="l-main-column">
   <div class="main-content">
@@ -420,10 +422,10 @@ Responsive images using <a href="http://scottjehl.github.io/picturefill/">Pictur
       <article class="view-mode-full">
         <div class="field-name-body">
           <picture>
-            <source media="(min-width: 64em)" srcset="http://placehold.it/603x250, http://placehold.it/1440x500 2x">
-            <source media="(min-width: 48em)" srcset="http://placehold.it/768x384, http://placehold.it/1536x768 2x">
-            <source media="(min-width: 24em)" srcset="http://placehold.it/640x320, http://placehold.it/1280x640 2x">
-            <img src="http://placehold.it/320x160" srcset="http://placehold.it/640x320 2x" alt="Images">
+             <source media="(min-width: 1200px)" srcset="http://lorempixel.com/800/500/animals/6/, http://lorempixel.com/1600/1000/animals/6/ 2x">
+             <source media="(min-width: 1024px)" srcset="http://lorempixel.com/950/550/animals/3/, http://lorempixel.com/1900/1100/animals/3/ 2x">
+             <source media="(min-width: 768px)" srcset="http://lorempixel.com/650/500/animals/8/, http://lorempixel.com/1300/1000/animals/8/ 2x">
+             <img src="http://lorempixel.com/325/250/animals/9/" srcset="http://lorempixel.com/650/500/animals/9/ 2x" alt="Animal pictures.">
           </picture>
         </div>
       </article>

@@ -326,6 +326,14 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
   padding: 19px;
 }
 
+@media (max-height: 800px) {
+  html, 
+  body,
+  .kalei {
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 1200px) {
   html, 
   body,

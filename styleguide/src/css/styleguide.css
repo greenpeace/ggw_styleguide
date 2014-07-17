@@ -1,7 +1,8 @@
 
 /* 
 
-##What is this?
+What is this?
+====
 
 <article class="view-mode-full">
   <p><strong>Greenpeace Greenwire Styleguide<strong> is based on <a href="https://github.com/thomasdavis/kaleistyleguide">Kalei Styleguide</a></p>
@@ -24,7 +25,8 @@
     </ul>
 </article>
 
-##Why?
+Why?
+====
 
 <article class="view-mode-full">
 	<p>After reading all the goals and benefits, why not? Anyway, here we have an example:</p>
@@ -39,7 +41,8 @@
 	<p>Considering the benefits explained before, using the styleguide may save some time to the first group. But a lot of time to the not so experienced developers. Believe me.</p>
 </article>
 
-##Setting up
+Setting up
+====
 
 <article class="view-mode-full">
   <p>To setup your developing branch, you should follow the next steps:</p>
@@ -114,7 +117,8 @@
 
 </article>
 
-##Folder Organization
+Folder Organization
+====
 
 <article class="view-mode-full">
 
@@ -134,19 +138,19 @@
     <h2 class="block-title">dist content</h2>
     <div class="content" style="margin-top:15px;">
         <img src="src/images/dist-cont.png"></img>
-        <p>css: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
-        <ul>
-          <li>ggw.mobile.min.css: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</li>
-          <li>ggw.mobile.responsive.min.css: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</li>
-          <li>ggw.no-query.min.css: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</li>
-          <li>ggw.styles.min.css: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</li>
-        </ul>
-        <p>images: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
-        <p>js: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
-        <ul>
-          <li>before.min.js: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</li>
-          <li>theme.min.js: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</li>
-        </ul>
+        <p><u>css</u>: </p>
+          <ul>
+            <li>ggw.mobile.min.css: </li>
+            <li>ggw.mobile.responsive.min.css: </li>
+            <li>ggw.no-query.min.css: </li>
+            <li>ggw.styles.min.css: </li>
+          </ul>
+        <p><u>images</u>: </p>
+        <p><u>js</u>: </p>
+          <ul>
+            <li>before.min.js: </li>
+            <li>theme.min.js: </li>
+          </ul>
     </div>
 	</div>
 
@@ -162,8 +166,38 @@
 	<div class="block block-no-icon">
 	  <h2 class="block-title">src</h2>
 	  <div class="content">
-	     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+	     <p>This is the source branch for editing the content of Greenpeace Greenwire web page.</p>
 	  </div>
+    <h2 class="block-title">src content</h2>
+    <div class="content" style="margin-top:15px;">
+        <img src="src/images/src-cont.png"></img>
+        <p><u>css</u>: In this folder you can find the compiled but not minified css files by gulp task. Also you will find some css files related with this styleguide (you will find more information in the next subsection: "Editing this Styleguide".)</p>
+        <p><u>font</u>: </p>
+        <p><u>images</u>: </p>
+        <p><u>js</u>: </p>
+          <ul>
+            <li>base: </li>
+            <li>before: </li>
+            <li>contrib: </li>
+            <li>custom: </li>
+            <li>oldie: </li>
+            <li>js files: Compiled but not minified js files from by gulp task from previous folders.</li>
+          </ul>
+        <p><u>libraries</u>: </p>
+        <p><u>modules</u>: PHP modules/components from the different web pages in Greenpeace Greenwire.</p>
+        <p><u>sass</u>: </p>
+          <ul>
+            <li>abstractions: </li>
+            <li>base: </li>
+            <li>components: </li>
+            <li>layouts: </li>
+            <li>modules: </li>
+            <li>styleguide: scss files related with this styleguide. Check next next subsection: "Editing this Styleguide"</li>
+            <li>variables: </li>
+            <li>scss files: Compiled but not minified scss files from by gulp task from previous folders.</li>
+          </ul>
+        <p><u>php files</u>: PHP web pages from Greenpeace Greenwire.</p>
+    </div>
 	</div>
 
 	<div class="block block-no-icon">
@@ -176,7 +210,8 @@
 
 </article>
 
-##Editing this Styleguide
+Editing this Styleguide
+====
 
 <article class="view-mode-full">
 

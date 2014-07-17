@@ -20,7 +20,6 @@ If there is no icon in the block (which is in the minority of blocks) we need to
 
 <h2>Standard block with image</h2>
 
-
 ```
 <div class="block block-no-icon">
   <h2 class="block-title"> This is the block title</h2>
@@ -42,14 +41,103 @@ If there is no icon in the block (which is in the minority of blocks) we need to
 </div>
 ```
 
-<h2>Block with an icon</h2>
+<h2>Block "Go to group"</h2>
 
 ```
-<div class="block block-with-icon">
-  <i class="block-icon icon-bg-action icon-user-add"></i>
-  <h2 class="block-title"> This is the block title</h2>
+<div class="block">
+  <i class="block-icon icon-users icon-bg-group"></i>
+  <h2 class="block-title">Go to group</h2>
   <div class="content">
-     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+    <p>This belongs to <a href="#">local groups amsterdam</a>.</p>
+    <p><a class="button" href="#">Go to this group</a></p>
+  </div>
+</div>
+```
+
+<h2>Block "Get involved"</h2>
+
+```
+<div class="block">
+  <i class="block-icon icon-plus icon-bg-action"></i>
+  <h2 class="block-title">Get involved</h2>
+  <div class="content">
+    <div class="item-list">
+      <ul>
+        <li><a href="#">Add blog</a></li>
+        <li><a href="#">Add document</a></li>
+        <li><a href="#">Add event</a></li>
+        <li><a href="#">Add idea</a></li>
+        <li><a href="#">Add news</a></li>
+        <li><a href="#">Add photo album</a></li>
+        <li><a href="#">Add video</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+
+<h2>Block "Follow"</h2>
+
+```
+<div class="block">
+  <i class="block-icon icon-bg-action icon-eye"></i>
+  <h2 class="block-title">This article name updates</h2>
+  <div class="content">
+    <p>If you follow fbdfdf you will receive notifications when something changes or is added. You can choose how frequently you receive notifications in your <a href="#">profile settings</a>.</p>
+    <a href="#" class="button">Follow</a>
+  </div>
+</div>
+```
+
+<h2>Block "Find events"</h2>
+
+```
+<div class="block">
+  <i class="block-icon icon-search icon-bg-event"></i>
+  <h2 class="block-title">Find events</h2>
+  <div class="content">
+    <form>
+      <div class="views-exposed-widget">
+        <label>Author</label>
+        <div class="views-widget">
+          <div class="form-item form-type-textfield">
+            <input type="text" class="form-autocomplete form-text" />
+          </div>
+        </div>
+      </div>
+      <div class="views-exposed-widget">
+        <label>Tags</label>
+        <div class="views-widget">
+          <div class="form-item form-type-textfield">
+            <input type="text" class="form-autocomplete form-text" />
+          </div>
+        </div>
+      </div>
+      <div class="views-exposed-widget">
+        <label>City</label>
+        <div class="views-widget">
+          <div class="form-item form-type-textfield">
+            <input type="text" class="form-text" />
+          </div>
+        </div>
+      </div>
+      <div class="views-exposed-widget">
+        <label>From</label>
+        <div class="views-widget">
+          <div class="form-item form-type-textfield">
+            <input type="date" class="form-autocomplete form-text" />
+          </div>
+        </div>
+      </div>
+      <div class="views-exposed-widget">
+        <label>Until</label>
+        <div class="views-widget">
+          <div class="form-item form-type-textfield">
+            <input type="date" class="form-autocomplete form-text" />
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
 ```

@@ -703,10 +703,10 @@ Teassers
 ```
 <article class="node-teaser-user node-teaser">
   <div class="field-type-image">
-    <!--<picture>
+    <picture>
       <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
-         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
-    </picture>-->
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="user image">
+    </picture>
   </div>
   <div class="field-type-wrapper">
     <h2 class="node-title">This is an example of a long photo album title</h2>

@@ -106,7 +106,7 @@
     </ul>
 
     <p>Command for single install:</p>
-    <code class="terminal">npm install gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-rename gulp-changed gulp-cache gulp-size gulp-plumber gulp-notify --save-dev</code>
+    <code class="terminal">npm install gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-rename gulp-changed gulp-cache gulp-size gulp-combine-media-queries gulp-plumber gulp-notify --save-dev</code>
     <p>This will install all necessary plugins and save them to devDependencies in package.json.</p>
 
   </div>
@@ -134,18 +134,18 @@
     <h2 class="block-title">dist content</h2>
     <div class="content" style="margin-top:15px;">
         <img src="src/images/dist-cont.png"></img>
-        <p>css:</p>
+        <p>css: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
         <ul>
-          <li>ggw.mobile.min.css: </li>
-          <li>ggw.mobile.responsive.min.css: </li>
-          <li>ggw.no-query.min.css: </li>
-          <li>ggw.styles.min.css: </li>
+          <li>ggw.mobile.min.css: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</li>
+          <li>ggw.mobile.responsive.min.css: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</li>
+          <li>ggw.no-query.min.css: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</li>
+          <li>ggw.styles.min.css: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</li>
         </ul>
-        <p>images: </p>
-        <p>js:</p>
+        <p>images: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+        <p>js: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
         <ul>
-          <li>before.min.js: </li>
-          <li>theme.min.js: </li>
+          <li>before.min.js: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</li>
+          <li>theme.min.js: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</li>
         </ul>
     </div>
 	</div>
@@ -153,7 +153,9 @@
 	<div class="block block-no-icon">
 	  <h2 class="block-title">node_modules</h2>
 	  <div class="content">
-	     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+	     <p>Gulp plugins and other installed NodeJs modules for this project are stored in this folder.</p>
+       <p>When you use any gulp task, if you don't have one of the necessary modules, you will receive an error message saying you don't have that module. You can solve this issue easily running in your developing branch:</p>
+       <p><code class="terminal">npm install --save-dev Name_of_the_module</code></p>
 	  </div>
 	</div>
 
@@ -167,7 +169,8 @@
 	<div class="block block-no-icon">
 	  <h2 class="block-title">styleguide</h2>
 	  <div class="content">
-	     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+	     <p>The styleguide folder contains all the necessary files to run this Styleguide.</p>
+       <p>In the next sub-section "Editing this Styleguide", you will learn in detail the content of this folder and how you should edit it to make modifications in Greenwire Styleguide web page.</p>
 	  </div>
 	</div>
 

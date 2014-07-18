@@ -20,7 +20,6 @@ If there is no icon in the block (which is in the minority of blocks) we need to
 
 <h2>Standard block with image</h2>
 
-
 ```
 <div class="block block-no-icon">
   <h2 class="block-title"> This is the block title</h2>
@@ -42,44 +41,103 @@ If there is no icon in the block (which is in the minority of blocks) we need to
 </div>
 ```
 
-<h2>Block with an icon</h2>
+<h2>Block "Go to group"</h2>
 
 ```
-<div class="block block-with-icon">
-  <i class="block-icon icon-bg-action icon-user-add"></i>
-  <h2 class="block-title"> This is the block title</h2>
+<div class="block">
+  <i class="block-icon icon-users icon-bg-group"></i>
+  <h2 class="block-title">Go to group</h2>
   <div class="content">
-     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+    <p>This belongs to <a href="#">local groups amsterdam</a>.</p>
+    <p><a class="button" href="#">Go to this group</a></p>
   </div>
 </div>
 ```
-*/
 
-/*
-
-Images
-===
-
-Responsive images using <a href="http://scottjehl.github.io/picturefill/">Picturefill</a>.
-
-<h2>Image sample</h2>
+<h2>Block "Get involved"</h2>
 
 ```
-<div id="content" class="l-main-column">
-  <div class="main-content">
-    <h1>Title of the image sample</h1>
-    <div class="content">
-      <article class="view-mode-full">
-        <div class="field-name-body">
-          <picture>
-            <source media="(min-width: 1200px)" srcset="http://lorempixel.com/800/500/animals/6/, http://lorempixel.com/1600/1000/animals/6/ 2x">
-            <source media="(min-width: 1024px)" srcset="http://lorempixel.com/950/550/animals/6/, http://lorempixel.com/1900/1100/animals/6/ 2x">
-            <source media="(min-width: 768px)" srcset="http://lorempixel.com/650/500/animals/6/, http://lorempixel.com/1300/1000/animals/6/ 2x">
-            <img src="http://lorempixel.com/325/250/animals/6/" srcset="http://lorempixel.com/650/500/animals/6/ 2x" alt="Pretty pig enjoying the field.">
-          </picture>
-        </div>
-      </article>
+<div class="block">
+  <i class="block-icon icon-plus icon-bg-action"></i>
+  <h2 class="block-title">Get involved</h2>
+  <div class="content">
+    <div class="item-list">
+      <ul>
+        <li><a href="#">Add blog</a></li>
+        <li><a href="#">Add document</a></li>
+        <li><a href="#">Add event</a></li>
+        <li><a href="#">Add idea</a></li>
+        <li><a href="#">Add news</a></li>
+        <li><a href="#">Add photo album</a></li>
+        <li><a href="#">Add video</a></li>
+      </ul>
     </div>
+  </div>
+</div>
+```
+
+<h2>Block "Follow"</h2>
+
+```
+<div class="block">
+  <i class="block-icon icon-bg-action icon-eye"></i>
+  <h2 class="block-title">This article name updates</h2>
+  <div class="content">
+    <p>If you follow fbdfdf you will receive notifications when something changes or is added. You can choose how frequently you receive notifications in your <a href="#">profile settings</a>.</p>
+    <a href="#" class="button">Follow</a>
+  </div>
+</div>
+```
+
+<h2>Block "Find events"</h2>
+
+```
+<div class="block">
+  <i class="block-icon icon-search icon-bg-event"></i>
+  <h2 class="block-title">Find events</h2>
+  <div class="content">
+    <form>
+      <div class="views-exposed-widget">
+        <label>Author</label>
+        <div class="views-widget">
+          <div class="form-item form-type-textfield">
+            <input type="text" class="form-autocomplete form-text" />
+          </div>
+        </div>
+      </div>
+      <div class="views-exposed-widget">
+        <label>Tags</label>
+        <div class="views-widget">
+          <div class="form-item form-type-textfield">
+            <input type="text" class="form-autocomplete form-text" />
+          </div>
+        </div>
+      </div>
+      <div class="views-exposed-widget">
+        <label>City</label>
+        <div class="views-widget">
+          <div class="form-item form-type-textfield">
+            <input type="text" class="form-text" />
+          </div>
+        </div>
+      </div>
+      <div class="views-exposed-widget">
+        <label>From</label>
+        <div class="views-widget">
+          <div class="form-item form-type-textfield">
+            <input type="date" class="form-autocomplete form-text" />
+          </div>
+        </div>
+      </div>
+      <div class="views-exposed-widget">
+        <label>Until</label>
+        <div class="views-widget">
+          <div class="form-item form-type-textfield">
+            <input type="date" class="form-autocomplete form-text" />
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
 ```
@@ -89,6 +147,43 @@ Responsive images using <a href="http://scottjehl.github.io/picturefill/">Pictur
 
 Breadcrumbs
 ===
+<h2>Breadcrumbs sample</h2>
 
+```
+  <nav class="breadcrumb" role="navigation">
+    <h2 class="element-invisible">You are here</h2>
+    <ol class="breadcrumbs">       <li class="breadcrumb-item">You are here:</li>
+      <li class="breadcrumb-item">
+        <a class="breadcrumb-link" href="#">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a class="breadcrumb-link" href="#">News</a>
+      </li>
+      <li class="breadcrumb-item">Random news article</li>
+    </ol>
+  </nav>
+
+```
+*/
+
+/*
+Action Menu (Mobile)
+===
+
+The action menu displays on screens less than 900px.
+
+<h2>Action Menu sample</h2>
+
+Resize the screen less than 900px to display the sample.
+
+```
+<div class="action-menu">
+  <ul style="width:100%">
+    <li style="width:50%"><a href="#"><i class="icon icon-user"></i> Login</a></li>
+    <li style="width:50%"><a href="#"><i class="icon icon-user-add"></i> Register</a></li>
+  </ul>
+</div>
+
+```
 */
 

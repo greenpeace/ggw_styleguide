@@ -1,10 +1,11 @@
 
 /* 
 
-##What is this?
+What is this?
+====
 
 <article class="view-mode-full">
-  <p><strong>Greenpeace Greenwire Styleguide<strong> is based on <a href="https://github.com/thomasdavis/kaleistyleguide">Kalei Styleguide</a></p>
+  <p><strong>Greenpeace Greenwire Styleguide</strong> is based on <a href="https://github.com/thomasdavis/kaleistyleguide">Kalei Styleguide</a></p>
 
   <p>In words of the author:</p>
 
@@ -24,7 +25,8 @@
     </ul>
 </article>
 
-##Why?
+Why?
+====
 
 <article class="view-mode-full">
 	<p>After reading all the goals and benefits, why not? Anyway, here we have an example:</p>
@@ -39,7 +41,8 @@
 	<p>Considering the benefits explained before, using the styleguide may save some time to the first group. But a lot of time to the not so experienced developers. Believe me.</p>
 </article>
 
-##Setting up
+Setting up
+====
 
 <article class="view-mode-full">
   <p>To setup your developing branch, you should follow the next steps:</p>
@@ -106,7 +109,7 @@
     </ul>
 
     <p>Command for single install:</p>
-    <code class="terminal">npm install gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-rename gulp-changed gulp-cache gulp-size gulp-plumber gulp-notify --save-dev</code>
+    <code class="terminal">npm install gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-rename gulp-changed gulp-cache gulp-size gulp-combine-media-queries gulp-plumber gulp-notify --save-dev</code>
     <p>This will install all necessary plugins and save them to devDependencies in package.json.</p>
 
   </div>
@@ -114,7 +117,8 @@
 
 </article>
 
-##Folder Organization
+Folder Organization
+====
 
 <article class="view-mode-full">
 
@@ -129,34 +133,162 @@
 	<div class="block block-no-icon">
 	  <h2 class="block-title">dist</h2>
 	  <div class="content">
-	     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+	    <p>In this folder are all the minified files compiled by gulp. Therefore, should be evident we must not make any modification here manually.</p>
 	  </div>
+    <h2 class="block-title">dist content</h2>
+    <div class="content" style="margin-top:15px;">
+      <img src="src/images/dist-cont.png"></img>
+      <ul class="tree">
+        <li>
+          css: 
+            <p></p>
+            <ul>
+              <li>ggw.mobile.min.css: 
+                  <p></p>
+              </li>
+              <li>ggw.mobile.responsive.min.css: 
+                  <p></p>
+              </li>
+              <li>ggw.no-query.min.css: 
+                  <p></p>
+              </li>
+              <li>ggw.styles.min.css: 
+                  <p></p>
+              </li>
+            </ul>
+        </li>
+        <li>
+          images: 
+            <p></p>
+        </li>
+        <li>
+          js: 
+            <p></p>
+            <ul>
+              <li>before.min.js: 
+                  <p></p>
+              </li>
+              <li>theme.min.js: 
+                  <p></p>
+              </li>
+            </ul>
+        </li>
+      </ul>
+    </div>
 	</div>
 
 	<div class="block block-no-icon">
 	  <h2 class="block-title">node_modules</h2>
 	  <div class="content">
-	     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+	     <p>Gulp plugins and other installed NodeJs modules for this project are stored in this folder.</p>
+       <p>When you use any gulp task, if you don't have one of the necessary modules, you will receive an error message saying you don't have that module. You can solve this issue easily running in your developing branch:</p>
+       <p><code class="terminal">npm install --save-dev Name_of_the_module</code></p>
 	  </div>
 	</div>
 
 	<div class="block block-no-icon">
 	  <h2 class="block-title">src</h2>
 	  <div class="content">
-	     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+	     <p>This is the source branch for editing the content of Greenpeace Greenwire web page.</p>
 	  </div>
+    <h2 class="block-title">src content</h2>
+    <div class="content" style="margin-top:15px;">
+      <img src="src/images/src-cont.png"></img>
+      <ul class="tree">
+        <li>
+          css: 
+            <p>In this folder you can find the compiled but not minified css files by gulp task. Also you will find some css files related with this styleguide (you will find more information in the next subsection: "Editing this Styleguide".)</p>
+        </li>
+        <li>
+          font: 
+            <p></p>
+        </li>
+        <li>
+          images: 
+            <p></p>
+        </li>
+        <li>
+          js: 
+            <p></p>
+            <ul>
+              <li>base: 
+                  <p></p>
+              </li>
+              <li>before: 
+                  <p></p>
+              </li>
+              <li>contrib: 
+                  <p></p>
+              </li>
+              <li>custom: 
+                  <p></p>
+              </li>
+              <li>oldie: 
+                  <p></p>
+              </li>
+              <li>js files: 
+                  <p>Compiled but not minified js files by gulp task from previous folders.</p>
+              </li>
+            </ul>
+        </li>
+        <li>
+          libraries: 
+            <p></p>
+        </li>
+        <li>
+          modules: 
+            <p>PHP modules/components from the different web pages in Greenpeace Greenwire.</p>
+        </li>
+        <li>
+          sass: 
+            <p></p>
+            <ul>
+              <li>abstractions: 
+                  <p></p>
+              </li>
+              <li>base: 
+                  <p></p>
+              </li>
+              <li>components: 
+                  <p></p>
+              </li>
+              <li>layouts: 
+                  <p></p>
+              </li>
+              <li>modules: 
+                  <p></p>
+              </li>
+              <li>styleguide: 
+                  <p>scss files related with this styleguide. Check next next subsection: "Editing this Styleguide".</p>
+              </li>
+              <li>variables: 
+                  <p></p>
+              </li>
+              <li>scss files: 
+                  <p>Compiled but not minified scss files from by gulp task from previous folders.</p>
+              </li>
+            </ul>
+        </li>
+        <li>
+          PHP files: 
+            <p>PHP web pages from Greenpeace Greenwire.</p>
+        </li>
+      </ul>
+    </div>
 	</div>
 
 	<div class="block block-no-icon">
 	  <h2 class="block-title">styleguide</h2>
 	  <div class="content">
-	     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+	     <p>The styleguide folder contains all the necessary files to run this Styleguide.</p>
+       <p>In the next sub-section "Editing this Styleguide", you will learn in detail the content of this folder and how you should edit it to make modifications in Greenwire Styleguide web page.</p>
 	  </div>
 	</div>
 
 </article>
 
-##Editing this Styleguide
+Editing this Styleguide
+====
 
 <article class="view-mode-full">
 
@@ -199,11 +331,23 @@
     <h2 class="block-title">Styleguide markup, style and js</h2>
     <div class="content">
       <p>These are the different files and locations to style and change the behaviour of the styleguide:</p>
-      <ul>
-	      <li>HTML: '~/ggw_styleguide/styleguide/index.html' and '~/ggw_styleguide/styleguide/templates/'</li>
-	      <li>CSS: '~/ggw_styleguide/styleguide/css/theme.css'</li>
-        <li>Images and fonts: '~/ggw_styleguide/styleguide/src'. Both folders receive a copy of all the images and fonts from greenwire when using gulp.</li>
-	      <li>JS: '~/ggw_styleguide/styleguide/js/'</li>
+      <ul class="tree">
+	      <li>
+          HTML: 
+          <p>'~/ggw_styleguide/styleguide/index.html' and '~/ggw_styleguide/styleguide/templates/'</p>
+        </li>
+	      <li>
+          CSS: 
+          <p>'~/ggw_styleguide/styleguide/css/theme.css'</p>
+        </li>
+        <li>
+          Images and fonts: 
+          <p>'~/ggw_styleguide/styleguide/src'. Both folders receive a copy of all the images and fonts from greenwire when using gulp.</p>
+        </li>
+	      <li>
+          JS: 
+          <p>'~/ggw_styleguide/styleguide/js/'</p>
+        </li>
       </ul>
     </div>
   </div>

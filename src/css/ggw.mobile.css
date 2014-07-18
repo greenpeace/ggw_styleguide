@@ -257,6 +257,7 @@ th {
 	border: 1px solid #cccccc;
 	color: #333333;
 	padding: .44em 1.2em;
+	margin-top: 5px;
 	line-height: normal;
 	text-align: center;
 	font-size: 0.875rem;
@@ -3626,6 +3627,7 @@ input.form-shout-file {
 	border: 1px solid #cccccc;
 	color: #333333;
 	padding: .44em 1.2em;
+	margin-top: 5px;
 	line-height: normal;
 	text-align: center;
 	font-size: 0.875rem;

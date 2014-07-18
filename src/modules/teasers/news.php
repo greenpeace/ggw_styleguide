@@ -2,8 +2,9 @@
 
   <div class="field-type-image">
     <picture>
-      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
-         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="The president giving an award.">
+      <source srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x" media="(min-width: 48em)">
+      <source srcset="http://placehold.it/180x120 2x, http://placehold.it/90x60 1x">
+      <img src="http://placehold.it/90x60" alt="The president giving an award." />
     </picture>
   </div>
 

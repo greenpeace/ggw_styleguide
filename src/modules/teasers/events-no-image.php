@@ -15,7 +15,7 @@
     </div>
     <div class="field-group-format">
       <div class="field-type-date"> <label>Time:</label>August 10th, 8:00PM until 11:30 PM</div>
-      <div class="field-type-location"> <label> Address</label>Oude Markt 9B, Enschede (Market Square div>
+      <div class="field-type-location"> <label> Address</label>Oude Markt 9B, Enschede (Market Square </div>
     </div>
   </div>
 </article>

@@ -215,7 +215,7 @@
 
 .l-main-column {
   margin: 10px;
-  padding-bottom: 50px;
+  //padding-bottom: 50px;
 
   @include breakpoint($desk) {
     margin: 0;
@@ -240,6 +240,26 @@
   }
 
 }
+
+.l-two-column .l-main-column,
+.l-two-column .l-sidebar {
+
+  @include breakpoint($desk) {
+    .no-flexbox & {
+      float: left;
+      position: relative;
+      width: (100%/2);
+    }
+
+    .flexbox & {
+      flex: 0 1 (100%/2);
+      order: 1;
+    }
+
+  }
+
+}
+
 
 .l-has-sidebar .l-sidebar {
   @extend %element-hidden;
@@ -277,4 +297,37 @@
     background: #e4e4e4;
     border-bottom: 3px solid #CCC;
   }
+
+}
+
+.page-home {
+
+  #content,
+  #shoutbox,
+  #upcoming-events {
+    margin: 10px;
+    clear: both;
+    display: none;
+
+    &.current {
+      display: block;
+
+    }
+
+    @include breakpoint($desk) {
+      display: block;
+      clear: none;
+      margin: 0;
+    }
+
+  }
+
+  @include breakpoint($desk) {
+
+    #shoutbox,
+    #upcoming-events {
+      margin: 0 0 15px 1em;
+    }
+  }
+
 }

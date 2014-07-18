@@ -1,7 +1,11 @@
 .sidebar .block {
-  margin-bottom: $def-mar;
-  margin-left: 1em;
   position: relative;
+
+  @include breakpoint($desk) {
+    margin-bottom: $def-mar;
+    margin-left: 1em;
+  }
+
 }
 
 .block-icon {

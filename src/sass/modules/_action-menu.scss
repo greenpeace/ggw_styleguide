@@ -26,6 +26,10 @@
     border: none;
   }
 
+  &.current a {
+    background: $white;
+  }
+
 }
 
 .action-menu a {

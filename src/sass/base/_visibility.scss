@@ -1,3 +1,7 @@
+.element-hidden {
+  @extend %element-hidden;
+}
+
 .element-invisible {
   @extend %element-invisible;
 }

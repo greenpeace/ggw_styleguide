@@ -4,7 +4,9 @@
 
   function resizeFunction() {
     mobileNav(),
-    overflowDropdown()
+    overflowDropdown(),
+    TabableSections(),
+    showMap()
   };
 
   // On resize, run the function and reset the timeout

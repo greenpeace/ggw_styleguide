@@ -2,8 +2,9 @@
 
   <div class="field-type-image">
     <picture>
-      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
-        <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="The president giving an award.">
+      <source srcset="http://placekitten.com/130/90, http://placekitten.com/260/180 1.5x" media="(min-width: 48em)">
+      <source srcset="http://placekitten.com/180/120 2x, http://placekitten.com/90/60 1x">
+      <img src="http://placehold.it/90x60" alt="The president giving an award." />
     </picture>
   </div>
 
@@ -15,7 +16,7 @@
     </div>
     <div class="field-group-format">
       <div class="field-type-date"> <label>Time:</label>August 10th, 8:00PM until 11:30 PM</div>
-      <div class="field-type-location"> <label> Address</label>Oude Markt 9B, Enschede (Market Square div>
+      <div class="field-type-location"> <label> Address</label>Oude Markt 9B, Enschede (Market Square </div>
     </div>
   </div>
 </article>

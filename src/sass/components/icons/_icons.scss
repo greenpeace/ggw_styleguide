@@ -28,6 +28,8 @@
 .icon-eye {       @extend %icon-eye}
 .icon-search {    @extend %icon-search}
 .icon-comment {   @extend %icon-comment}
+.icon-shout {     @extend %icon-megaphone}
+.icon-map {       @extend %icon-location}
 
 .icon-event {     @extend %icon-calendar; }
 .icon-news {      @extend %icon-book-open; }
@@ -37,5 +39,3 @@
 .icon-document {  @extend %icon-attach; }
 .icon-idea {      @extend %icon-thumbs-up; }
 .icon-material {  @extend %icon-bucket; }
-
-.icon-search {    @extend %icon-search; }

@@ -18,3 +18,7 @@
   }
 
 } // breadcrumb-link
+
+.front .breadcrumbs {
+  @extend %element-hidden;
+}

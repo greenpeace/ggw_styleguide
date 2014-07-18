@@ -19,7 +19,7 @@ jQuery(document).ready(function ($) {
   FastClick.attach(document.body);
 
   // Ajax include
-  $("[data-append],[data-replace],[data-after],[data-before]").ajaxInclude();
+  $("[data-replace]").ajaxInclude();
 
   // Universal selector for modal windows with external source
   $('.modal').magnificPopup({
@@ -27,42 +27,38 @@ jQuery(document).ready(function ($) {
     alignTop: true
   });
 
-  $('.openMap').click(function(e) {
-    $('#mobilemap, #close-map').addClass('ontop');
-    e.preventDefault();
-  });
-
-  if ($('#mobilemap').has('.ontop')) {
-    $('#close-map').click( function(){
-      $('#mobilemap, #close-map').removeClass('ontop');
-    });
-  }
-
-
-  $(".form-comment-message textarea").autogrow({
+  $(".form-comment-message textarea, #shoutbox-comment").autogrow({
     animate: false
   });
 
   // Selector styling wrapper
   $('.form-item select').wrap('<div class="selector"></div>');
 
-  $('input[type=file]').nicefileinput();
-
   // hide all dropdowns by default
   $('.dropdown').hide();
+
+  //test slider
+  $('.flexslider').flexslider({
+    animation: "slide",
+    animationSpeed: Modernizr.touch ? 400 : 1000,
+    pauseOnHover: true
+  });
+
 
   // run these functions once
 
   function resizeFunction() {
     mobileNav(),
     // this method is required because comments are loaded via ajaxInclude
-    NiceCommentForm()
+    NiceCommentForm(),
+    maxLength(),
+    TabableSections(),
+    showMap()
   };
 
   var resizeTimer; // Set resizeTimer to empty so it resets on page load
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(resizeFunction, 200);
 
-
-
 });
+

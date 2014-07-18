@@ -29,3 +29,13 @@
 %fontsizesmall {
   @include font-size(14px);
 }
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%truncate {
+  @include truncate;
+}

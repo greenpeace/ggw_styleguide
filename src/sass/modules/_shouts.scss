@@ -1,0 +1,70 @@
+.block-shoutbox {
+  @include font-size(14px);
+  line-height: 1.1em;
+}
+
+.shouts {
+  @extend .comments;
+}
+
+.shout {
+  @extend .comment;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+
+
+.shout-form {
+  margin: 15px -15px;
+  min-height: 44px;
+  border-bottom: 1px solid $grey-l;
+  @include cf;
+  padding: 0 15px 15px;
+}
+
+input.form-shout-file {
+  width: 34px;
+}
+
+.shout-form .nfi-wrapper {
+  float:left;
+  margin: 0;
+}
+
+
+// autogrow js gets applied on this element
+.form-shout-message {
+  position: relative;
+  margin-bottom: .5em;
+
+  textarea{
+    resize: none;
+    overflow: hidden;
+    line-height: 1.1em;
+    padding: .5em;
+    @include font-size(16px);
+    max-width: 100%; //override default of 400px;
+  }
+}
+
+.form-shout-submit {
+  @include button;
+  padding: .3em 1em;
+  height: 34px;
+  width: auto;
+
+  @include breakpoint($smalltab) {
+    float: right;
+  }
+}
+
+// textarea with max character indication
+#remain {
+  margin: 0 .5em;
+  @include font-size(12px);
+  line-height: 34px;
+  display: inline-block;
+}

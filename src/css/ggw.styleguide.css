@@ -5,7 +5,7 @@ What is this?
 ====
 
 <article class="view-mode-full">
-  <p><strong>Greenpeace Greenwire Styleguide<strong> is based on <a href="https://github.com/thomasdavis/kaleistyleguide">Kalei Styleguide</a></p>
+  <p><strong>Greenpeace Greenwire Styleguide</strong> is based on <a href="https://github.com/thomasdavis/kaleistyleguide">Kalei Styleguide</a></p>
 
   <p>In words of the author:</p>
 
@@ -137,20 +137,43 @@ Folder Organization
 	  </div>
     <h2 class="block-title">dist content</h2>
     <div class="content" style="margin-top:15px;">
-        <img src="src/images/dist-cont.png"></img>
-        <p><u>css</u>: </p>
-          <ul>
-            <li>ggw.mobile.min.css: </li>
-            <li>ggw.mobile.responsive.min.css: </li>
-            <li>ggw.no-query.min.css: </li>
-            <li>ggw.styles.min.css: </li>
-          </ul>
-        <p><u>images</u>: </p>
-        <p><u>js</u>: </p>
-          <ul>
-            <li>before.min.js: </li>
-            <li>theme.min.js: </li>
-          </ul>
+      <img src="src/images/dist-cont.png"></img>
+      <ul class="tree">
+        <li>
+          css: 
+            <p></p>
+            <ul>
+              <li>ggw.mobile.min.css: 
+                  <p></p>
+              </li>
+              <li>ggw.mobile.responsive.min.css: 
+                  <p></p>
+              </li>
+              <li>ggw.no-query.min.css: 
+                  <p></p>
+              </li>
+              <li>ggw.styles.min.css: 
+                  <p></p>
+              </li>
+            </ul>
+        </li>
+        <li>
+          images: 
+            <p></p>
+        </li>
+        <li>
+          js: 
+            <p></p>
+            <ul>
+              <li>before.min.js: 
+                  <p></p>
+              </li>
+              <li>theme.min.js: 
+                  <p></p>
+              </li>
+            </ul>
+        </li>
+      </ul>
     </div>
 	</div>
 
@@ -170,33 +193,87 @@ Folder Organization
 	  </div>
     <h2 class="block-title">src content</h2>
     <div class="content" style="margin-top:15px;">
-        <img src="src/images/src-cont.png"></img>
-        <p><u>css</u>: In this folder you can find the compiled but not minified css files by gulp task. Also you will find some css files related with this styleguide (you will find more information in the next subsection: "Editing this Styleguide".)</p>
-        <p><u>font</u>: </p>
-        <p><u>images</u>: </p>
-        <p><u>js</u>: </p>
-          <ul>
-            <li>base: </li>
-            <li>before: </li>
-            <li>contrib: </li>
-            <li>custom: </li>
-            <li>oldie: </li>
-            <li>js files: Compiled but not minified js files from by gulp task from previous folders.</li>
-          </ul>
-        <p><u>libraries</u>: </p>
-        <p><u>modules</u>: PHP modules/components from the different web pages in Greenpeace Greenwire.</p>
-        <p><u>sass</u>: </p>
-          <ul>
-            <li>abstractions: </li>
-            <li>base: </li>
-            <li>components: </li>
-            <li>layouts: </li>
-            <li>modules: </li>
-            <li>styleguide: scss files related with this styleguide. Check next next subsection: "Editing this Styleguide"</li>
-            <li>variables: </li>
-            <li>scss files: Compiled but not minified scss files from by gulp task from previous folders.</li>
-          </ul>
-        <p><u>php files</u>: PHP web pages from Greenpeace Greenwire.</p>
+      <img src="src/images/src-cont.png"></img>
+      <ul class="tree">
+        <li>
+          css: 
+            <p>In this folder you can find the compiled but not minified css files by gulp task. Also you will find some css files related with this styleguide (you will find more information in the next subsection: "Editing this Styleguide".)</p>
+        </li>
+        <li>
+          font: 
+            <p></p>
+        </li>
+        <li>
+          images: 
+            <p></p>
+        </li>
+        <li>
+          js: 
+            <p></p>
+            <ul>
+              <li>base: 
+                  <p></p>
+              </li>
+              <li>before: 
+                  <p></p>
+              </li>
+              <li>contrib: 
+                  <p></p>
+              </li>
+              <li>custom: 
+                  <p></p>
+              </li>
+              <li>oldie: 
+                  <p></p>
+              </li>
+              <li>js files: 
+                  <p>Compiled but not minified js files by gulp task from previous folders.</p>
+              </li>
+            </ul>
+        </li>
+        <li>
+          libraries: 
+            <p></p>
+        </li>
+        <li>
+          modules: 
+            <p>PHP modules/components from the different web pages in Greenpeace Greenwire.</p>
+        </li>
+        <li>
+          sass: 
+            <p></p>
+            <ul>
+              <li>abstractions: 
+                  <p></p>
+              </li>
+              <li>base: 
+                  <p></p>
+              </li>
+              <li>components: 
+                  <p></p>
+              </li>
+              <li>layouts: 
+                  <p></p>
+              </li>
+              <li>modules: 
+                  <p></p>
+              </li>
+              <li>styleguide: 
+                  <p>scss files related with this styleguide. Check next next subsection: "Editing this Styleguide".</p>
+              </li>
+              <li>variables: 
+                  <p></p>
+              </li>
+              <li>scss files: 
+                  <p>Compiled but not minified scss files from by gulp task from previous folders.</p>
+              </li>
+            </ul>
+        </li>
+        <li>
+          PHP files: 
+            <p>PHP web pages from Greenpeace Greenwire.</p>
+        </li>
+      </ul>
     </div>
 	</div>
 
@@ -254,11 +331,23 @@ Editing this Styleguide
     <h2 class="block-title">Styleguide markup, style and js</h2>
     <div class="content">
       <p>These are the different files and locations to style and change the behaviour of the styleguide:</p>
-      <ul>
-	      <li>HTML: '~/ggw_styleguide/styleguide/index.html' and '~/ggw_styleguide/styleguide/templates/'</li>
-	      <li>CSS: '~/ggw_styleguide/styleguide/css/theme.css'</li>
-        <li>Images and fonts: '~/ggw_styleguide/styleguide/src'. Both folders receive a copy of all the images and fonts from greenwire when using gulp.</li>
-	      <li>JS: '~/ggw_styleguide/styleguide/js/'</li>
+      <ul class="tree">
+	      <li>
+          HTML: 
+          <p>'~/ggw_styleguide/styleguide/index.html' and '~/ggw_styleguide/styleguide/templates/'</p>
+        </li>
+	      <li>
+          CSS: 
+          <p>'~/ggw_styleguide/styleguide/css/theme.css'</p>
+        </li>
+        <li>
+          Images and fonts: 
+          <p>'~/ggw_styleguide/styleguide/src'. Both folders receive a copy of all the images and fonts from greenwire when using gulp.</p>
+        </li>
+	      <li>
+          JS: 
+          <p>'~/ggw_styleguide/styleguide/js/'</p>
+        </li>
       </ul>
     </div>
   </div>

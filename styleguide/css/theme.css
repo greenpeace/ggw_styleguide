@@ -21,19 +21,24 @@ body {
 }
 
 .terminal {
- background: #ddd;
- color: #444;
- padding: 0 5px;
+  background: #ddd;
+  color: #444;
+  padding: 0 5px;
 }
+  .terminal a{
+    color: #444;
+  }
+  .terminal::before {
+    content: "$";
+    padding-right: 5px;
+    color: #559f0c;
+  }
 
-.terminal a{
- color: #444;
+.tree li {
+  font-weight: 700;
 }
-
-.terminal::before {
-  content: "$";
-  padding-right: 5px;
-  color: #559f0c;
+.tree li p {
+  font-weight: 400;
 }
 
 .kalei-style-menu-container {

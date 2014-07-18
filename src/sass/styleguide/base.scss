@@ -28,22 +28,20 @@ Lists only get a default style when they are in an `<article>` element.
 
 ```
 <article class="view-mode-full">
-
-<ul>
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Item 3</li>
-  <li>Item 4
-    <ul>
-      <li> Subitem 1</li>
-      <li> Subitem 2</li>
-      <li> Subitem 3</li>
-    </ul>
-  </li>
-  <li>Item 5</li>
-  <li>Item 6</li>
-</ul>
-
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4
+      <ul>
+        <li> Subitem 1</li>
+        <li> Subitem 2</li>
+        <li> Subitem 3</li>
+      </ul>
+    </li>
+    <li>Item 5</li>
+    <li>Item 6</li>
+  </ul>
 </article>
 ```
 
@@ -74,12 +72,12 @@ Lists only get a default style when they are in an `<article>` element.
 
 ```
 <article class="view-mode-full">
-<h1>h1. Greenpeace Greenwire heading</h1>
-<h2>h2. Greenpeace Greenwire heading</h2>
-<h3>h3. Greenpeace Greenwire heading</h3>
-<h4>h4. Greenpeace Greenwire heading</h4>
-<h5>h5. Greenpeace Greenwire heading</h5>
-<h6>h6. Greenpeace Greenwire heading</h6>
+  <h1>h1. Greenpeace Greenwire heading</h1>
+  <h2>h2. Greenpeace Greenwire heading</h2>
+  <h3>h3. Greenpeace Greenwire heading</h3>
+  <h4>h4. Greenpeace Greenwire heading</h4>
+  <h5>h5. Greenpeace Greenwire heading</h5>
+  <h6>h6. Greenpeace Greenwire heading</h6>
 </article>
 ```
 
@@ -121,7 +119,17 @@ Ut in diam ornare eros volutpat malesuada vitae pharetra arcu? Integer ultricies
 **`:focus`** - When the link is focused, the link is underlined and with a thin dotted outline.
 
 ```
-Velit aliquam magna <a href="#">convallis venenatis vulputate</a> neque egestas eget vitae.
+<p>Velit aliquam magna <a href="#">convallis venenatis vulputate</a> neque egestas eget vitae.</p>
+```
+
+<h2> Blockquote </h2>
+
+```
+<article class="view-mode-full">
+  <blockquote cite="https://github.com/thomasdavis/kaleistyleguide">
+  "This project aims at making sure your style sheets are fully documented whilst being synchronized with your webpages styles. To do this it actually uses your live stylesheets in so that at anytime you can review how your styleguide looks."
+  </blockquote>
+</article>
 ```
 
 <h2> Common </h2>
@@ -146,6 +154,76 @@ Velit aliquam magna <a href="#">convallis venenatis vulputate</a> neque egestas 
 <!-- Superscript -->
 <p>Neque luctus aliquam <sup>superscript</sup> turpis mattis pellentesque sit.</p>
 
+```
+*/
+
+/*
+Colors
+===
+
+These are the base colors declared on ~/sass/variables/_colors.scss
+
+```
+<p><u><strong>TEXT</strong></u></p>
+<p>$background:  #EEEEEE</p>
+<div style="background-color:#EEEEEE; border: 1px solid black; height: 40px;"></div>
+
+<p>$base:        #333333</p>
+<div style="background-color:#333333; border: 1px solid black; height: 40px;"></div>
+
+<p>$base-desk:   #4D4D4D</p>
+<div style="background-color:#4D4D4D; border: 1px solid black; height: 40px;"></div>
+
+<p>$heading:     #1A1A1A</p>
+<div style="background-color:#1A1A1A; border: 1px solid black; height: 40px;"></div>
+
+<p>$white:       #FFFFFF</p>
+<div style="background-color:#FFFFFF; border: 1px solid black; height: 40px;"></div>
+
+<p>$primary:     #FF7704</p>
+<div style="background-color:#FF7704; border: 1px solid black; height: 40px;"></div>
+
+<p>$secondary:   #F5F5F5</p>
+<div style="background-color:#F5F5F5; border: 1px solid black; height: 40px;"></div>
+
+<p><u><strong>GREENS</strong></u></p>
+<p>$green1:      #66CC00</p>
+<div style="background-color:#66CC00; border: 1px solid black; height: 40px;"></div>
+
+<p>$green2:      #56B004</p>
+<div style="background-color:#56B004; border: 1px solid black; height: 40px;"></div>
+
+<p>$green3:      #055905</p>
+<div style="background-color:#055905; border: 1px solid black; height: 40px;"></div>
+
+<p>$green4:      #006532</p>
+<div style="background-color:#006532; border: 1px solid black; height: 40px;"></div>
+
+<p>$green5:      #559F0C</p>
+<div style="background-color:#559F0C; border: 1px solid black; height: 40px;"></div>
+
+<p><u><strong>SECTION COLORS</strong></u></p>
+<p>$group:       #0069AA</p>
+<div style="background-color:#0069AA; border: 1px solid black; height: 40px;"></div>
+
+<p>$user:        #FFCE00</p>
+<div style="background-color:#FFCE00; border: 1px solid black; height: 40px;"></div>
+
+<p>$admin:       #93005F</p>
+<div style="background-color:#93005F; border: 1px solid black; height: 40px;"></div>
+
+<p>$error:       #D50D00</p>
+<div style="background-color:#D50D00; border: 1px solid black; height: 40px;"></div>
+
+<p><u><strong>GREYS</strong></u></p>
+<p>$grey-l:   #CCC</p>
+<div style="background-color:#CCC; border: 1px solid black; height: 40px;"></div>
+
+<p>$grey-m:   #999</p>
+<div style="background-color:#999; border: 1px solid black; height: 40px;"></div>
+
+<p>$grey-d:   #666</p>
+<div style="background-color:#666; border: 1px solid black; height: 40px;"></div>
 ```
 
 */

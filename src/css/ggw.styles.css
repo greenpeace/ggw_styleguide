@@ -669,6 +669,15 @@ a {
 	text-decoration: none;
 }
 
+.content a:hover {
+	text-decoration: underline;
+}
+
+.content .button:hover,
+.content .item-list a:hover {
+	text-decoration: none;
+}
+
 strong,
 b {
 	font-weight: 700;
@@ -942,7 +951,7 @@ b {
 	display: block;
 	width: 12px;
 	height: 12px;
-	background: url('../images/chosen-sprite.png?1404468460') -42px 1px no-repeat;
+	background: url('../images/chosen-sprite.png?1404126134') -42px 1px no-repeat;
 	font-size: 1px;
 }
 
@@ -967,7 +976,7 @@ b {
 	display: block;
 	width: 100%;
 	height: 100%;
-	background: url('../images/chosen-sprite.png?1404468460') no-repeat 0px 2px;
+	background: url('../images/chosen-sprite.png?1404126134') no-repeat 0px 2px;
 }
 
 .chosen-container-single .chosen-search {
@@ -988,8 +997,8 @@ b {
 	height: auto;
 	outline: 0;
 	border: 1px solid #aaa;
-	background: white url('../images/chosen-sprite.png?1404468460') no-repeat 100% -20px;
-	background: url('../images/chosen-sprite.png?1404468460') no-repeat 100% -20px;
+	background: white url('../images/chosen-sprite.png?1404126134') no-repeat 100% -20px;
+	background: url('../images/chosen-sprite.png?1404126134') no-repeat 100% -20px;
 	font-size: 1em;
 	font-family: sans-serif;
 	line-height: normal;
@@ -1155,7 +1164,7 @@ b {
 	display: block;
 	width: 12px;
 	height: 12px;
-	background: url('../images/chosen-sprite.png?1404468460') -42px 1px no-repeat;
+	background: url('../images/chosen-sprite.png?1404126134') -42px 1px no-repeat;
 	font-size: 1px;
 }
 
@@ -3796,7 +3805,7 @@ input.form-shout-file {
 .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
 .chosen-container .chosen-results-scroll-down span,
 .chosen-container .chosen-results-scroll-up span {
-	background-image: url('../images/chosen-sprite@2x.png?1404468460') !important;
+	background-image: url('../images/chosen-sprite@2x.png?1404126134') !important;
 	-webkit-background-size: 52px 37px !important;
 	background-size: 52px 37px !important;
 	background-repeat: no-repeat !important;

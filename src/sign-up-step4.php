@@ -98,8 +98,8 @@
         </div> <?php //form-wrapper ?>
 
         <div class="form-actions form-wrapper">
-          <input class="button btn-primary pull-right" <?php // modify all classes here ?> type="submit" value="Next">
           <input class="button pull-left" <?php // modify all classes here ?> type="submit" value="Back to previous step">
+          <input class="button btn-primary pull-right" <?php // modify all classes here ?> type="submit" value="Next">
         </div>
 
        </form>

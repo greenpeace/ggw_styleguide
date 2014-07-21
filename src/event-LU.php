@@ -46,7 +46,7 @@
 
         <article class="view-mode-full">
 
-          <div class="submitted"><a href="#">Event</a> by milo_laureij - <span class="submitted-date">July 5th 2014 - 21:29</span>
+          <div class="submitted"><a href="#">Event</a> by <a href="#">Milo Laureij</a> - <span class="submitted-date">July 5th 2014 - 21:29</span>
           </div>
 
           <div class="field-name-body">
@@ -55,7 +55,7 @@
 
 
             <div class="event-actions">
-              <a href="modules/block/rsvp.php" class="modal button btn-l btn-primary">RSVP</a>
+              <a href="modules/block/enroll.php" class="modal button btn-l btn-primary">Enroll for this event</a>
             </div>
 
             <div class="field-group-format">
@@ -125,11 +125,11 @@
         </div>
 
         <div class="submitted-info">
-            <div><a href="#">Event</a> by milo_laureij</div>
+            <div><a href="#">Event</a> by <a href="#">Milo Laureij</a></div>
             <div class="submitted-bio">
               <p>Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.</p>
             </div>
-            <div class="submitted-all-reference"><a href="#">All Events by milo_laureij</a>.</div>
+            <div class="submitted-all-reference"><a href="#">All Events by Milo Laureij</a>.</div>
 
         </div>
       </div>
@@ -143,7 +143,7 @@
 
     <aside class="l-sidebar sidebar">
 
-    <a data-replace="modules/an-event-sidebar" <?php echo ($detect->isMobile() ? "data-media='(min-width: 900px)'" : ""); ?>><span class="element-invisible">
+    <a data-replace="modules/lu-event-sidebar" <?php echo ($detect->isMobile() ? "data-media='(min-width: 900px)'" : ""); ?>><span class="element-invisible">
     Register instructions</span></a>
 
   </aside>

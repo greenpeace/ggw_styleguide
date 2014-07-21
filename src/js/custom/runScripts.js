@@ -1,7 +1,53 @@
+// this method is required because ajaxInclude will not pass on functions to loaded content. This funtion is called whenever an ajax request is completed.
+
+function runAgain() {
+  'use strict';
+
+  // these element must autogrow as the user types on multiple lines
+  $('.form-comment-message textarea, #shoutbox-comment').autogrow({
+    animate: false
+  });
+
+  // hide all dropdowns by default
+  $('.dropdown').hide();
+
+  // show/hide event enrollment form
+  $('#togglEnrollForm').click(function() {
+    if ($('#event-signup-node-form').css('display') == 'none') {
+      $(this).text('Hide form');
+      $('#event-signup-node-form').slideDown("400");
+    } else {
+      $(this).text('Click here to change');
+      $('#event-signup-node-form').slideUp("400");
+    }
+  });
+
+  // Selector styling wrapper
+  $('.form-item select').wrap('<div class="selector"></div>');
+
+  // hide all dropdowns by default
+  $('.dropdown').hide();
+
+    // activate sliders
+  $('.flexslider').flexslider({
+    animation: "slide",
+    animationSpeed: Modernizr.touch ? 400 : 1000,
+    pauseOnHover: true
+  });
+
+  // run these functions when new blocks are added with ajax
+  mobileNav(),
+  NiceCommentForm(),
+  maxLength(),
+  TabableSections(),
+  showMap()
+}
+
 
 jQuery(document).ready(function ($) {
   'use strict';
 
+  //improve user experience by altering zooming on orientation change
   var mobile_timer = false;
   if(navigator.userAgent.match(/iPhone/i)) {
     $('#viewport').attr('content','width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0');
@@ -16,49 +62,28 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  // Activate fastclick function
   FastClick.attach(document.body);
 
   // Ajax include
-  $("[data-replace]").ajaxInclude();
+  $('[data-replace]').ajaxInclude();
+
+  // Whenever Ajax has been added run the script again once.
+  $(document).ajaxComplete(function() {
+    runAgain()
+    $(document).unbind('ajaxComplete');
+  });
 
   // Universal selector for modal windows with external source
   $('.modal').magnificPopup({
     type: 'ajax',
-    alignTop: true
+    callbacks: {
+      ajaxContentAdded: function() {
+        // Make functions available for content in modal windows
+        runAgain()
+      }
+    }
   });
-
-  $(".form-comment-message textarea, #shoutbox-comment").autogrow({
-    animate: false
-  });
-
-  // Selector styling wrapper
-  $('.form-item select').wrap('<div class="selector"></div>');
-
-  // hide all dropdowns by default
-  $('.dropdown').hide();
-
-  //test slider
-  $('.flexslider').flexslider({
-    animation: "slide",
-    animationSpeed: Modernizr.touch ? 400 : 1000,
-    pauseOnHover: true
-  });
-
-
-  // run these functions once
-
-  function resizeFunction() {
-    mobileNav(),
-    // this method is required because comments are loaded via ajaxInclude
-    NiceCommentForm(),
-    maxLength(),
-    TabableSections(),
-    showMap()
-  };
-
-  var resizeTimer; // Set resizeTimer to empty so it resets on page load
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(resizeFunction, 200);
 
 });
 

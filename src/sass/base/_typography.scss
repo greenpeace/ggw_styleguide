@@ -121,3 +121,9 @@ strong, b {
   }
 
 }
+
+@include breakpoint($desk) {
+  .sidebar p {
+    margin: .35em 0 .65em;
+  }
+}

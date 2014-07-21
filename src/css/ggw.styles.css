@@ -359,6 +359,7 @@ th {
 	content: '\e812';
 }
 
+.field-name-field-event-num-attendees .field-label + div:before,
 .node-teaser-group .field-type-image:before,
 .submitted .group:before,
 .icon-users:before {
@@ -621,6 +622,22 @@ body {
 	margin-top: 25px;
 }
 
+.mfp-wrap .block {
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 3px 0 #999999;
+	box-shadow: 0 1px 3px 0 #999999;
+	background-color: white;
+	padding: 0 15px 15px;
+	position: relative;
+	padding: 0;
+	max-width: 600px;
+	margin: auto;
+}
+
+.mfp-wrap .block .content {
+	padding: 0 15px 15px;
+}
+
 h1,
 h2,
 h3,
@@ -743,11 +760,11 @@ b {
 }
 
 .view-mode-full .field-group-format {
-	margin-bottom: 30px;
+	margin: 15px 0;
+	background: #eeeeee;
 }
 
 .view-mode-full .field-group-format .field {
-	border-bottom: 1px solid #eeeeee;
 	padding: 7px 15px;
 	font-size: 0.875rem;
 }
@@ -769,8 +786,7 @@ b {
 
 .event-actions {
 	text-align: center;
-	border-bottom: 1px solid #eeeeee;
-	padding: 15px;
+	margin: 15px 0;
 }
 
 .submitted {
@@ -1310,6 +1326,7 @@ b {
 	margin-bottom: 2px;
 }
 
+.sidebar .node-form,
 .sidebar .views-exposed-widget {
 	margin-top: 15px;
 }
@@ -4084,6 +4101,10 @@ select {
 	color: #3c7008;
 }
 
+.sidebar p {
+	margin: .35em 0 .65em;
+}
+
 .field-name-field-event-location a {
 	pointer-events: none;
 	cursor: default;
@@ -4206,6 +4227,7 @@ select {
 	position: relative;
 }
 
+.event-actions,
 .block-events .map-trigger {
 	display: none;
 }

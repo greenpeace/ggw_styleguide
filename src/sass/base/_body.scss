@@ -35,6 +35,17 @@ body {
 
 }
 
+.mfp-wrap .block {
+  @include block-rich;
+  padding: 0;
+  max-width: 600px;
+  margin: auto;
+
+  .content {
+    padding: 0 $def-mar $def-mar;
+  }
+}
+
 @include breakpoint($smalltab) {
   // used for images for example, but it can be applied on other elements as well
   .pull-right {

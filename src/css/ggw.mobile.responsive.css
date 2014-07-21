@@ -314,6 +314,10 @@ select {
 	color: #3c7008;
 }
 
+.sidebar p {
+	margin: .35em 0 .65em;
+}
+
 .field-name-field-event-location a {
 	pointer-events: none;
 	cursor: default;
@@ -436,6 +440,7 @@ select {
 	position: relative;
 }
 
+.event-actions,
 .block-events .map-trigger {
 	display: none;
 }

@@ -154,8 +154,10 @@
   cursor: pointer;
   }
 .leaflet-container {
+  cursor: move;
   cursor: -webkit-grab;
   cursor:    -moz-grab;
+  cursor:         grab;
   }
 .leaflet-popup-pane,
 .leaflet-control {
@@ -166,6 +168,7 @@
   cursor: move;
   cursor: -webkit-grabbing;
   cursor:    -moz-grabbing;
+  cursor:         grabbing;
   }
 
 

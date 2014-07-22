@@ -143,6 +143,22 @@
 
 }
 
+#secondary-nav img {
+  display: block;
+  max-width: none;
+  float: right;
+
+  @include breakpoint($desk) {
+    position: relative;
+    top: 4px;
+    float: left;
+    margin-right: 0.3em;
+  }
+}
+
+#secondary-nav .icon-comment {
+  @include font-size(20px);
+}
 
 .main-menu {
   position: relative;

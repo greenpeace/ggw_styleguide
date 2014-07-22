@@ -74,6 +74,8 @@ jQuery(document).ready(function ($) {
     $(document).unbind('ajaxComplete');
   });
 
+  NiceCommentForm()
+
   // Universal selector for modal windows with external source
   $('.modal').magnificPopup({
     type: 'ajax',

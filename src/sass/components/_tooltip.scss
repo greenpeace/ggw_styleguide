@@ -19,8 +19,8 @@
     background: $base;
     color: $white;
     padding: .3em .5em;
-    top: -18px;
-    left: 0;
+    margin-top: -22px;
+    margin-left: -20px;
   }
 
   .tooltip:after {
@@ -30,8 +30,8 @@
     border-bottom: none;
     content: '';
     border-top-color: $base;
-    top: 3px;
-    left: 22px;
+    margin-top: -35px;
+    margin-left: 10px;
   }
 
   .tooltip:hover:before,

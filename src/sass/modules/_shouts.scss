@@ -44,6 +44,7 @@ input.form-shout-file {
     resize: none;
     overflow: hidden;
     line-height: 1.1em;
+    height: 1.1em;
     padding: .5em;
     @include font-size(16px);
     max-width: 100%; //override default of 400px;

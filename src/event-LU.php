@@ -7,7 +7,7 @@
 
 <?php include('modules/mobilenav.php'); ?>
 
-<?php include('modules/header.php'); ?>
+<?php include('modules/header-LU.php'); ?>
 
 <div id="main" class="l-main container">
 

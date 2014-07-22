@@ -237,7 +237,7 @@ th {
   border: 1px solid #cccccc;
   color: #333333;
   padding: .44em 1.2em;
-  margin-top: 5px;
+  position: relative;
   line-height: normal;
   text-align: center;
   font-size: 14px;
@@ -250,7 +250,6 @@ th {
 }
 .button:active, .active.button {
   top: 1px;
-  position: relative;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
 }
 [disabled].button, .disabled.button {
@@ -398,7 +397,7 @@ th {
   content: '\e81b';
 }
 
-.trigger.dropdown-open:before,
+.icon-down-open:before, .trigger.dropdown-open:before,
 .off-canvas .open .caret:before {
   content: '\e886';
 }
@@ -657,6 +656,20 @@ strong, b {
   margin: .35em 0 .65em;
 }
 
+.num-notifications {
+  border-radius: 100%;
+  background: #ff7704;
+  width: 1.2em;
+  line-height: 1.2em;
+  display: inline-block;
+  position: relative;
+  top: -12px;
+  left: -5px;
+  text-align: center;
+  font-size: 11px;
+  color: white;
+}
+
 .view-mode-full .field-name-body {
   margin-top: 1em;
 }
@@ -768,6 +781,16 @@ strong, b {
 
 .button + .button {
   margin-top: 5px;
+}
+
+.btn-dropdown {
+  padding: .44em 1em;
+  margin: 0;
+  right: 0;
+  position: absolute;
+  border-top-color: #eeeeee;
+  border-radius: 0 0 3px 3px;
+  right: 15px;
 }
 
 .chosen-container {
@@ -1094,13 +1117,20 @@ strong, b {
   display: none;
 }
 
-.dropdown .dropdown-menu,
-.dropdown .dropdown-panel {
+.dropdown .dropdown-menu {
   background: #FFF;
   border: 1px solid #cccccc;
   overflow: visible;
   padding: 4px 0;
   margin: 0;
+}
+
+.dropdown .dropdown-panel {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .dropdown .dropdown-panel {
@@ -1142,6 +1172,9 @@ strong, b {
 
 .form-wrapper {
   margin: 15px 0;
+}
+.form-wrapper .button {
+  margin-top: 5px;
 }
 
 .form-wrapper.row {
@@ -1324,6 +1357,49 @@ input[type="checkbox"]:checked + label:before {
   -moz-padding-end: 19px;
   -webkit-appearance: none;
   appearance: none;
+}
+
+.dropdown-filter {
+  width: 100%;
+  right: 0;
+  top: 30px;
+  width: 50%;
+  right: 15px;
+  top: 30px;
+}
+
+.dropdown-filter.dropdown-tip:before {
+  left: auto;
+  right: 12px;
+}
+
+.dropdown-filter.dropdown-tip:after {
+  left: auto;
+  right: 13px;
+}
+
+.dropdown-panel .form-item {
+  margin: 0 0 .5em;
+  flex: 1 50%;
+  flex: 1 100%;
+  font-size: 12px;
+}
+
+.dropdown-panel p {
+  margin: 0;
+  flex: 1 100%;
+  font-size: 12px;
+}
+
+.dropdown-panel .form-wrapper {
+  margin: 0 0 10px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: stretch;
+}
+
+.dropdown-panel .form-actions .button {
+  margin-right: .5em;
 }
 
 /*browser specific*/
@@ -2217,8 +2293,8 @@ html[xmlns] .slides {
   background: #333333;
   color: white;
   padding: .3em .5em;
-  top: -18px;
-  left: 0;
+  margin-top: -22px;
+  margin-left: -20px;
 }
 
 .tooltip:after {
@@ -2229,8 +2305,8 @@ html[xmlns] .slides {
   border-bottom: none;
   content: '';
   border-top-color: #333333;
-  top: 3px;
-  left: 22px;
+  margin-top: -35px;
+  margin-left: 10px;
 }
 
 .tooltip:hover:before,
@@ -2582,7 +2658,7 @@ html[xmlns] .slides {
   border: 1px solid #cccccc;
   color: #333333;
   padding: .44em 1.2em;
-  margin-top: 5px;
+  position: relative;
   line-height: normal;
   text-align: center;
   font-size: 14px;
@@ -2601,7 +2677,6 @@ html[xmlns] .slides {
 }
 .form-comment-submit:active, .form-comment-submit.active {
   top: 1px;
-  position: relative;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
 }
 .form-comment-submit[disabled], .form-comment-submit.disabled {
@@ -3584,6 +3659,20 @@ html[xmlns] .slides {
   transform: translate3d(0, 0, 0);
 }
 
+#secondary-nav img {
+  display: block;
+  max-width: none;
+  float: right;
+  position: relative;
+  top: 4px;
+  float: left;
+  margin-right: 0.3em;
+}
+
+#secondary-nav .icon-comment {
+  font-size: 20px;
+}
+
 .main-menu {
   position: relative;
   font-size: 16px;
@@ -3881,6 +3970,7 @@ input.form-shout-file {
   resize: none;
   overflow: hidden;
   line-height: 1.1em;
+  height: 1.1em;
   padding: .5em;
   font-size: 16px;
   max-width: 100%;
@@ -3895,7 +3985,7 @@ input.form-shout-file {
   border: 1px solid #cccccc;
   color: #333333;
   padding: .44em 1.2em;
-  margin-top: 5px;
+  position: relative;
   line-height: normal;
   text-align: center;
   font-size: 14px;
@@ -3912,7 +4002,6 @@ input.form-shout-file {
 }
 .form-shout-submit:active, .form-shout-submit.active {
   top: 1px;
-  position: relative;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
 }
 .form-shout-submit[disabled], .form-shout-submit.disabled {

@@ -864,7 +864,7 @@ strong, b {
   display: block;
   width: 12px;
   height: 12px;
-  background: url('../images/chosen-sprite.png?1404126134') -42px 1px no-repeat;
+  background: url('../images/chosen-sprite.png?1404468460') -42px 1px no-repeat;
   font-size: 1px;
 }
 .chosen-container-single .chosen-single abbr:hover {
@@ -885,7 +885,7 @@ strong, b {
   display: block;
   width: 100%;
   height: 100%;
-  background: url('../images/chosen-sprite.png?1404126134') no-repeat 0px 2px;
+  background: url('../images/chosen-sprite.png?1404468460') no-repeat 0px 2px;
 }
 .chosen-container-single .chosen-search {
   position: relative;
@@ -902,8 +902,8 @@ strong, b {
   height: auto;
   outline: 0;
   border: 1px solid #aaa;
-  background: white url('../images/chosen-sprite.png?1404126134') no-repeat 100% -20px;
-  background: url('../images/chosen-sprite.png?1404126134') no-repeat 100% -20px;
+  background: white url('../images/chosen-sprite.png?1404468460') no-repeat 100% -20px;
+  background: url('../images/chosen-sprite.png?1404468460') no-repeat 100% -20px;
   font-size: 1em;
   font-family: sans-serif;
   line-height: normal;
@@ -1038,7 +1038,7 @@ strong, b {
   display: block;
   width: 12px;
   height: 12px;
-  background: url('../images/chosen-sprite.png?1404126134') -42px 1px no-repeat;
+  background: url('../images/chosen-sprite.png?1404468460') -42px 1px no-repeat;
   font-size: 1px;
 }
 .chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
@@ -1115,7 +1115,7 @@ strong, b {
   .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
   .chosen-container .chosen-results-scroll-down span,
   .chosen-container .chosen-results-scroll-up span {
-    background-image: url('../images/chosen-sprite@2x.png?1404126134') !important;
+    background-image: url('../images/chosen-sprite@2x.png?1404468460') !important;
     background-size: 52px 37px !important;
     background-repeat: no-repeat !important;
   }
@@ -3979,8 +3979,9 @@ input.form-shout-file {
   resize: none;
   overflow: hidden;
   line-height: 1.1em;
-  height: 1.1em;
-  padding: .5em;
+  height: 36px;
+  padding: 0.5em;
+  display: block;
   font-size: 16px;
   max-width: 100%;
 }

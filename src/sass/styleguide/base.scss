@@ -114,12 +114,16 @@ Ut in diam ornare eros volutpat malesuada vitae pharetra arcu? Integer ultricies
 
 <h2> Links </h2>
 
+Links inside .content class (except .button and .item-list) have the next properties:
+
 **`:visited`** - When the link is visited, it keeps the color and has no decoration. <br />
 **`:hover`** - When the link is hovered, the cursor became a pointer and the link is underlined. <br />
 **`:focus`** - When the link is focused, the link is underlined and with a thin dotted outline.
 
 ```
-<p>Velit aliquam magna <a href="#">convallis venenatis vulputate</a> neque egestas eget vitae.</p>
+<div class="content">
+  <p>Velit aliquam magna <a href="#">convallis venenatis vulputate</a> neque egestas eget vitae.</p>
+</div>
 ```
 
 <h2> Blockquote </h2>

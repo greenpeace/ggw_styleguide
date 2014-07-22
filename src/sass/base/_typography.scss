@@ -35,6 +35,13 @@ a {
   color: $green5;
   text-decoration: none;
 }
+  .content a:hover {
+    text-decoration: underline;
+  }
+  .content .button:hover,
+  .content .item-list a:hover{
+    text-decoration: none;
+  }
 
 strong, b {
   font-weight: 700;

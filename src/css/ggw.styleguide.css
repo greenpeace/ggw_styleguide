@@ -34,7 +34,7 @@ Why?
 	<div class="block block-no-icon">
 	  <h2 class="block-title">General view of some of the files inside 'ggw_styleguide'</h2>
 	  <div class="content" style="margin-top:15px;">
-	     <img src="src/images/dev-tree.png"></img>
+	     <img style="margin:0;" src="src/images/dev-tree.png"></img>
 	  </div>
   </div>
 	<p>At first glance, you can see a lot of files which seem to be well organized. For experienced developers, the organization could be intuitive and easy to understand. For not so experienced as me, at the begining, this could be overwhelming.</p>
@@ -126,7 +126,7 @@ Folder Organization
 	<div class="block block-no-icon">
 	  <h2 class="block-title">View of the main folders and files hosted in root</h2>
 	  <div class="content" style="margin-top:15px;">
-	     <img src="src/images/root_elements.png"></img>
+	     <img style="margin:0;" src="src/images/root_elements.png"></img>
 	  </div>
 	</div>
 
@@ -137,7 +137,9 @@ Folder Organization
 	  </div>
     <h2 class="block-title">dist content</h2>
     <div class="content" style="margin-top:15px;">
-      <img src="src/images/dist-cont.png"></img>
+      <img style="margin:0;" src="src/images/dist-cont.png"></img>
+    <div class="content" style="margin-top:15px;">
+    </div>
       <ul class="tree">
         <li>
           css: 
@@ -193,7 +195,9 @@ Folder Organization
 	  </div>
     <h2 class="block-title">src content</h2>
     <div class="content" style="margin-top:15px;">
-      <img src="src/images/src-cont.png"></img>
+      <img style="margin:0;" src="src/images/src-cont.png"></img>
+    </div>
+    <div class="content" style="margin-top:15px;">
       <ul class="tree">
         <li>
           css: 
@@ -299,7 +303,7 @@ Editing this Styleguide
 	  <div class="content" style="margin-top:15px;">
 	  	<p>The content in 'Home' section (the one that you are reading just now) should be edited in ~/ggw_styleguide/src/css/ggw.styleguide.css</p>
 	  	<p>In this CSS file you will notice all the markup is written with commented html following the styleguide rules described in the other sections.</p>
-	  	<img src="src/images/Styleguide-content-sample.png">
+	  	<img style="margin:0;" src="src/images/Styleguide-content-sample.png">
 	  </div>
 	</div>
 

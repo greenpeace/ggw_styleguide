@@ -34,6 +34,20 @@ body {
     color: #559f0c;
   }
 
+.kalei-comments pre code {
+  display: none;
+}
+  .kalei-comments pre:before {
+    content: "Hover here to see the code.";
+    color: #055905;
+  }
+
+  .kalei-comments pre:hover code,
+  .kalei-comments pre:active code,
+  .kalei-comments pre:focus code {
+    display: block;
+  }
+
 .tree li {
   font-weight: 700;
 }
@@ -67,90 +81,6 @@ body {
   padding-bottom: 0;
 }
 
-/*
-## Headings and paragraphs
-```
-<div class="kalei-comments">
-  <h1>Heading 1</h1>
-  <h2>Heading 2</h2>
-  <h3>Heading 3</h3>
-  <h4>Heading 4</h4>
-  <h5>Heading 5</h5>
-  <h6>Heading 6</h6>
-  <p class="fixie"></p>
-  <ul>
-    <li>List Item 1</li>
-    <li>List Item 2</li>
-    <li>List Item 3</li>
-  </ul>
-</div>
-
-```
-*/
-/*
-.kalei-comments > h1,
-.kalei-comments > h2,
-.kalei-comments > h3,
-.kalei-comments > h4,
-.kalei-comments > h5,
-.kalei-comments > h5,
-.kalei-comments > h6,
-.kalei-comments > ul,
-.kalei-comments > ol,
-.kalei-comments > p a,
-.kalei-comments > p a:visited,
-.kalei-comments > a:visited,
-.kalei-comments > a,
-.kalei-styleguide-menu-heading > h1,
-.kalei-styleguide-menu > li > h3,
-.kalei-sheet-submenu li,
-.kalei-styleguide-menu-stylesheets,
-.kalei-comments > p {
-  margin: 0;
-  padding: 10px;
-  color: #444;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-.kalei-comments> p a,
-.kalei-comments> p a:visited {
-  padding: 0;
-}
-
-.kalei-comments > iframe {
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
-.kalei-comments > ul,
-.kalei-comments > ol {
-  margin-left: 20px;
-}
-
-.kalei-comments > ul,
-.kalei-comments > ol,
-.kalei-comments > p {
-  font-size: 12px;
-}
-*/
-/*
-## CSS and Comments Layout
-
-These styles make sure the css code block is floated to the right correctly and the comments on the left
-
-```
-<div class="kalei-documentation">
-
-  <div class="kalei-comments-container ">
-    <div class="kalei-comments ">
-      <p>This is a test Kalei comment.</p>
-    </div>
-  </div>
-
-</div>
-```
-*/
-
 .kalei-style-page > .kalei-documentation {
   position: relative;
 }
@@ -159,25 +89,6 @@ These styles make sure the css code block is floated to the right correctly and 
   position: relative;
   width: 100%;
 }
-
-/*
-## Code demos
-
-When you use Markdown code blocks ```, Kalei automatically renders the code as HTML and beneath it shows the code block with syntax highlighting.
-```
-<pre>
-  <code>
-    .kalei-comments > pre > code,
-    .kalei-css-container > pre > code {
-      font-size: 11px;
-      opacity: 0.7;
-      white-space: pre-wrap;
-      padding: 10px;
-    }
-  </code>
-</pre>
-```
-*/
 
 .kalei-css-container {
   -webkit-box-sizing: border-box;
@@ -209,6 +120,12 @@ When you use Markdown code blocks ```, Kalei automatically renders the code as H
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #fff;
+}
+
+.kalei-comments h1,
+.kalei-comments h2,
+.kalei-comments h3 {
+  margin: 10px 0;
 }
 
 .codedemo {

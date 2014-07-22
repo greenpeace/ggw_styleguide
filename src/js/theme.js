@@ -6554,8 +6554,13 @@ jQuery(document).ready(function ($) {
 
   // Whenever Ajax has been added run the script again once.
   $(document).ajaxComplete(function() {
-    runAgain()
+    runAgain(),
     $(document).unbind('ajaxComplete');
+  });
+
+  // these element must autogrow as the user types on multiple lines
+  $('.form-comment-message textarea, #shoutbox-comment').autogrow({
+    animate: false
   });
 
   // Universal selector for modal windows with external source

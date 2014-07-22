@@ -134,3 +134,18 @@ strong, b {
     margin: .35em 0 .65em;
   }
 }
+
+
+.num-notifications {
+  border-radius: 100%;
+  background: $primary;
+  width: 1.2em;
+  line-height: 1.2em;
+  display: inline-block;
+  position: relative;
+  top: -12px;
+  left: -5px;
+  text-align: center;
+  @include font-size(11px);
+  color: $white;
+}

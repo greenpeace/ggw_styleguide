@@ -74,6 +74,11 @@ jQuery(document).ready(function ($) {
     $(document).unbind('ajaxComplete');
   });
 
+  // these element must autogrow as the user types on multiple lines
+  $('.form-comment-message textarea, #shoutbox-comment').autogrow({
+    animate: false
+  });
+
   // Universal selector for modal windows with external source
   $('.modal').magnificPopup({
     type: 'ajax',

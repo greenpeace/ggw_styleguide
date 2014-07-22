@@ -1,11 +1,15 @@
 .layout-base {
   overflow: hidden;
+  background: $white;
+  z-index: 1;
+  position: relative;
 
   @include breakpoint($desk) {
     display: flex;
     min-height: 100%;
     min-height: 100vh; // needed for sticky footer
     flex-direction: column;
+    background: $background;
   }
 }
 

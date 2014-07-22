@@ -4056,10 +4056,14 @@ input.form-shout-file {
 
 .layout-base {
   overflow: hidden;
+  background: white;
+  z-index: 1;
+  position: relative;
   display: flex;
   min-height: 100%;
   min-height: 100vh;
   flex-direction: column;
+  background: #eeeeee;
 }
 
 .container {

@@ -3816,6 +3816,9 @@ input.form-shout-file {
 
 .layout-base {
 	overflow: hidden;
+	background: white;
+	z-index: 1;
+	position: relative;
 }
 
 .l-header {
@@ -4758,6 +4761,7 @@ select {
 	-webkit-flex-direction: column;
 	-ms-flex-direction: column;
 	flex-direction: column;
+	background: #eeeeee;
 }
 
 .l-header {

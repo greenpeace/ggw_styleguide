@@ -4493,7 +4493,7 @@ html[xmlns] .slides {
   padding: 0 0 0 2.5em;
 }
 
-.flexbox .page-register-step1 form {
+.flexbox .page-register-step1 .l-main-column form {
   display: flex;
   flex-flow: row no-wrap;
 }
@@ -4502,7 +4502,7 @@ html[xmlns] .slides {
   flex: 1 1 50%;
 }
 
-.no-flexbox .page-register-step1 form:after {
+.no-flexbox .page-register-step1 .l-main-column form:after {
   content: '';
   display: table;
   clear: both;

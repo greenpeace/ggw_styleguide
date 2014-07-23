@@ -4803,7 +4803,7 @@ article img.pull-right {
 	padding: 0 0 0 2.5em;
 }
 
-.flexbox .page-register-step1 form {
+.flexbox .page-register-step1 .l-main-column form {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -4820,7 +4820,7 @@ article img.pull-right {
 	flex: 1 1 50%;
 }
 
-.no-flexbox .page-register-step1 form:after {
+.no-flexbox .page-register-step1 .l-main-column form:after {
 	content: '';
 	display: table;
 	clear: both;

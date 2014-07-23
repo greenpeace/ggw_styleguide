@@ -8,6 +8,11 @@
 
 }
 
+.form-title {
+  @include font-size(16px);
+  margin: .5em 0 1em;
+}
+
 .form-wrapper.row {
   display: inline-block;
   vertical-align: bottom;
@@ -60,6 +65,7 @@ label {
   margin-bottom: $def-mar-half;
   font-size: $small;
   color: $grey-d;
+  line-height: 1.2em;
 }
 
 .form-text,

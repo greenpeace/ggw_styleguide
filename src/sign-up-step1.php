@@ -11,14 +11,6 @@
 
   <div id="main" class="l-main container">
 
-
-      <div class="original-action-menu">
-  <ul>
-    <li><a href="#" class="active"><i class="icon icon-user-add"></i> Get wired</a></li>
-    <li><a href="#"><i class="icon icon-login"></i> Login</a></li>
-  </ul>
-</div>
-
   <nav class="breadcrumb" role="navigation">
 
     <h2 class="element-invisible">You are here</h2>
@@ -39,17 +31,26 @@
     <div class="main-content">
 
       <i class="block-icon icon-bg-user icon-user-add"></i>
-      <h1 id="page-title" class="block-title">Register (step 1/4)</h1>  <?php // add extra class here ?>
+      <h1 id="page-title" class="block-title">Register</h1>  <?php // add extra class here ?>
 
       <div class="content">
 
-       <div class="progress-bar-wrapper">
-          <div class="progress-bar">0%</div>
-       </div>
-
        <form>
 
+        <div class="signup-wrapper social-signup-wrapper" data-title="OR">
+
+          <h3 class="form-title">Sign up with social media</h3>
+
+          <a href="#" class="button btn-l btn-block btn-social-fb"><i class="icon icon-facebook"></i> Register with Facebook</a>
+          <a href="#" class="button btn-l btn-block btn-social-gp"><i class="icon icon-gplus"></i> Register with Google+</a>
+
+        </div>
+
+        <div class="signup-wrapper">
+
         <div class="form-wrapper">
+
+          <h3 class="form-title">Sign up with email</h3>
 
           <div class="form-item">
 
@@ -78,6 +79,8 @@
         <div class="form-actions form-wrapper">
           <input class="button btn-primary pull-right" <?php // modify all classes here ?> type="submit" value="Next">
         </div>
+
+      </div>
 
        </form>
 

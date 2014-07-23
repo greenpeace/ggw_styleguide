@@ -516,6 +516,14 @@ th {
 	content: '\e81a';
 }
 
+.icon-facebook:before {
+	content: '\e89f';
+}
+
+.icon-gplus:before {
+	content: '\e840';
+}
+
 .breadcrumbs,
 .sort-comments {
 	margin: 0;
@@ -902,6 +910,21 @@ b {
 	margin: 0;
 	right: 0;
 	position: absolute;
+}
+
+.button i {
+	margin-right: .5em;
+}
+
+.btn-social-fb {
+	border-color: #3b5998;
+	border-bottom-color: #263a63;
+	background: #3b5998;
+	color: white;
+}
+
+.btn-social-gp .icon-gplus {
+	color: #dd4b39;
 }
 
 .chosen-container {
@@ -1923,6 +1946,11 @@ b {
 	margin-top: 5px;
 }
 
+.form-title {
+	font-size: 1rem;
+	margin: .5em 0 1em;
+}
+
 .form-wrapper.row {
 	display: inline-block;
 	vertical-align: bottom;
@@ -1975,6 +2003,7 @@ label {
 	margin-bottom: 7px;
 	font-size: 12px;
 	color: #666666;
+	line-height: 1.2em;
 }
 
 .form-text,
@@ -4251,6 +4280,24 @@ html[xmlns] .slides {
 #mobileline:target,
 #landline:target {
 	display: block;
+}
+
+.social-signup-wrapper {
+	border-bottom: 1px solid #eeeeee;
+	padding: 0 0 1em 0;
+}
+
+.social-signup-wrapper:after {
+	display: inline-block;
+	background: white;
+	content: attr(data-title);
+	position: relative;
+	margin: 0 0 0 -2.5em;
+	bottom: -2.25em;
+	left: 50%;
+	width: 5em;
+	text-align: center;
+	padding: .5em;
 }
 
 .block-search .icon-search {

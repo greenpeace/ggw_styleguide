@@ -92,3 +92,67 @@
   display:block;
 }
 
+@include breakpoint($tab) {
+
+  .page-register .form-wrapper {
+    margin-top: 0;
+  }
+
+  .signup-wrapper {
+    padding: 0 0 0 2.5em;
+  }
+
+  .flexbox .page-register-step1 form {
+    display: flex;
+    flex-flow: row no-wrap;
+  }
+
+  .flexbox .signup-wrapper {
+    flex: 1 1 50%;
+  }
+
+  .no-flexbox .page-register-step1 form {
+    @include cf;
+  }
+
+  .no-flexbox .signup-wrapper {
+    float: left;
+    width: 49%;
+  }
+
+}
+
+.social-signup-wrapper {
+  border-bottom: 1px solid $background;
+  padding: 0 0 1em 0;
+
+  @include breakpoint($tab) {
+    border-bottom: none;
+    border-right: 1px solid $background;
+    padding: 0 2.5em 0 0;
+    position: relative;
+  }
+
+  &:after {
+    display: inline-block;
+    background: $white;
+    content: attr(data-title);
+    position: relative;
+    margin: 0 0 0 -2.5em;
+    bottom: -2.25em;
+    left: 50%;
+    width: 5em; //this means text cannot contains more than 5 characters
+    text-align: center;
+    padding: .5em;
+
+    @include breakpoint($tab) {
+      bottom: auto;
+      left: auto;
+      margin: -1.25em 0 0 -1.5em;
+      position: absolute;
+      right: -2.5em;
+      top: 50%;
+    }
+
+  }
+}

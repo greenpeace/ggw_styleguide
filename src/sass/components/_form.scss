@@ -88,6 +88,11 @@ textarea {
 
 }
 
+// fix for ios7 heights on date inputs
+input[type="date"] {
+  height: 30px;
+}
+
 // CHECK BOXES & RADIO BUTTONS
 
 input[type="radio"],

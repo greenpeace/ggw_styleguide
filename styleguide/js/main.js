@@ -9,6 +9,7 @@ require.config({
     jscssp: 'libs/jscssp/jscssp',
     fixie: 'libs/fixie/fixie',
 	  pagedown: 'libs/pagedown/converter',
+    picturefill: 'libs/picturefill/picturefill.2.1.0',
 	
     // Require.js plugins
     text: 'libs/require/text',

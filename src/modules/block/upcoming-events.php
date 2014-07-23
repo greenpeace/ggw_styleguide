@@ -50,10 +50,10 @@
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mobileMap);
 
   var greenIcon = L.icon({
-    iconUrl: '/src/images/marker-green.png',
-    iconRetinaUrl: '/src/images/marker-green@2x.png',
-    shadowUrl: '/src/images/marker-shadow.png',
-    shadowRetinaUrl: '/src/images/marker-shadow.png',
+    iconUrl: 'images/marker-green.png',
+    iconRetinaUrl: 'images/marker-green@2x.png',
+    shadowUrl: 'images/marker-shadow.png',
+    shadowRetinaUrl: 'images/marker-shadow.png',
     iconSize:     [25, 41], // size of the icon
     shadowSize:   [41, 41], // size of the shadow
     iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location

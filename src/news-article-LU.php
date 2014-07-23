@@ -129,7 +129,7 @@
 
     </div>
 
-    <a data-replace="modules/comments-lu"><span class="element-invisible">load comments</span></a>
+    <a data-replace="modules/comments-lu.php"><span class="element-invisible">load comments</span></a>
 
   </div>
 <aside class="l-sidebar sidebar">
@@ -143,7 +143,7 @@
 </div>
 
 <footer class="l-footer footer">
-  <a data-replace="modules/footer" data-media="(min-width: 900px)"><span class="element-invisible">
+  <a data-replace="modules/footer.php" data-media="(min-width: 900px)"><span class="element-invisible">
     Footer</span></a>
 </footer>
 

@@ -20,6 +20,7 @@ body {
   padding: 0 !important;
 }
 
+/* Code Style to have a terminal look like Ex. <code class="terminal"></code> */
 .terminal {
   background: #ddd;
   color: #444;
@@ -34,6 +35,7 @@ body {
     color: #559f0c;
   }
 
+/* The code in the style will appear when hover */
 .kalei-comments pre code {
   display: none;
 }
@@ -41,19 +43,19 @@ body {
     content: "Hover here to see the code.";
     color: #055905;
   }
-
   .kalei-comments pre:hover code,
   .kalei-comments pre:active code,
   .kalei-comments pre:focus code {
     display: block;
   }
 
+/* In Home, the ul have bold li and normal p. */
 .tree li {
   font-weight: 700;
 }
-.tree li p {
-  font-weight: 400;
-}
+  .tree li p {
+    font-weight: 400;
+  }
 
 .kalei-style-menu-container {
   position: fixed;

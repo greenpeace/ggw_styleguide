@@ -4795,6 +4795,58 @@ article img.pull-right {
 	display: block;
 }
 
+.page-register .form-wrapper {
+	margin-top: 0;
+}
+
+.signup-wrapper {
+	padding: 0 0 0 2.5em;
+}
+
+.flexbox .page-register-step1 form {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-flow: row no-wrap;
+	-ms-flex-flow: row no-wrap;
+	flex-flow: row no-wrap;
+}
+
+.flexbox .signup-wrapper {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 1 50%;
+	-ms-flex: 1 1 50%;
+	flex: 1 1 50%;
+}
+
+.no-flexbox .page-register-step1 form:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.no-flexbox .signup-wrapper {
+	float: left;
+	width: 49%;
+}
+
+.social-signup-wrapper {
+	border-bottom: none;
+	border-right: 1px solid #eeeeee;
+	padding: 0 2.5em 0 0;
+	position: relative;
+}
+
+.social-signup-wrapper:after {
+	bottom: auto;
+	left: auto;
+	margin: -1.25em 0 0 -1.5em;
+	position: absolute;
+	right: -2.5em;
+	top: 50%;
+}
+
 .domain-nl .field-name-field-user-initials {
 	width: 14.89362%;
 	clear: right;

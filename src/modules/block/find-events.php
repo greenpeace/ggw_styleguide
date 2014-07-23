@@ -35,7 +35,7 @@
         <label>From</label>
         <div class="views-widget">
           <div class="form-item form-type-textfield">
-            <input type="date" class="form-autocomplete form-text" />
+            <input type="date" class="form-text" />
           </div>
         </div>
       </div>
@@ -44,9 +44,13 @@
         <label>Until</label>
         <div class="views-widget">
           <div class="form-item form-type-textfield">
-            <input type="date" class="form-autocomplete form-text" />
+            <input type="date" class="form-text" />
           </div>
         </div>
+      </div>
+
+      <div class="views-exposed-widget views-submit-button">
+        <input class="button" type="submit" value="Search" />
       </div>
 
     </form>

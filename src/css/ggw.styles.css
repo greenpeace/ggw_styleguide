@@ -3024,6 +3024,7 @@ html[xmlns] .slides {
 	width: auto;
 	padding: 0 1em;
 	line-height: 1em;
+	width: 49.3%;
 }
 
 .flexbox .action-menu > ul > li {
@@ -3060,6 +3061,7 @@ html[xmlns] .slides {
 .no-flexbox .action-menu a {
 	display: block;
 	line-height: 2.5em;
+	text-align: center;
 }
 
 .action-menu a.active {
@@ -4561,6 +4563,14 @@ input.form-shout-file {
 
 }
 
+@media (min-width: 440px) {
+
+.no-flexbox .action-menu > ul > li {
+	width: 32.5%;
+}
+
+}
+
 @media (min-width: 480px) {
 
 .dropdown-filter {
@@ -4607,6 +4617,14 @@ article img.pull-right {
 
 .form-shout-submit {
 	float: right;
+}
+
+}
+
+@media (min-width: 615px) {
+
+.no-flexbox .action-menu > ul > li {
+	width: 24.3%;
 }
 
 }

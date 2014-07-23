@@ -16,6 +16,16 @@
     width: auto;
     padding: 0 1em;
     line-height: 1em;
+    width: 49.3%;
+
+    @include breakpoint(440px) {
+      width: 32.5%;
+    }
+
+    @include breakpoint(615px) {
+      width: 24.3%;
+    }
+
   }
 
   .flexbox & {
@@ -42,6 +52,7 @@
    .no-flexbox & {
     display: block;
     line-height: 2.5em;
+    text-align: center;
   }
 
   &.active {

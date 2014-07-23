@@ -2,8 +2,10 @@
 
   <div class="field-type-image">
     <picture>
+      <!--[if IE 9]><video style="display: none;"><![endif]-->
       <source srcset="http://placekitten.com/130/90, http://placekitten.com/260/180 1.5x" media="(min-width: 48em)">
       <source srcset="http://placekitten.com/180/120 2x, http://placekitten.com/90/60 1x">
+      <!--[if IE 9]></video><![endif]-->
       <img src="http://placehold.it/90x60" alt="The president giving an award." />
     </picture>
   </div>

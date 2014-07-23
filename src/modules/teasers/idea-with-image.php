@@ -1,10 +1,12 @@
 <article class="node-teaser-idea node-teaser">
 
   <div class="field-type-image">
-   <picture>
+    <picture>
+      <!--[if IE 9]><video style="display: none;"><![endif]-->
       <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+      <!--[if IE 9]></video><![endif]-->
       <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="The president giving an award.">
-  </picture>
+    </picture>
   </div>
 
   <div class="field-type-wrapper">

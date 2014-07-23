@@ -2988,6 +2988,7 @@ html[xmlns] .slides {
   width: auto;
   padding: 0 1em;
   line-height: 1em;
+  width: 49.3%;
 }
 .flexbox .action-menu > ul > li {
   flex: 1;
@@ -3009,6 +3010,7 @@ html[xmlns] .slides {
 .no-flexbox .action-menu a {
   display: block;
   line-height: 2.5em;
+  text-align: center;
 }
 .action-menu a.active {
   color: #999999;

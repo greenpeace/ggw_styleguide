@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 
 Blocks
@@ -29,67 +30,120 @@ If there is no icon in the block (which is in the minority of blocks) we need to
 </div>
 ```
 
-<h2>Block with an icon</h2>
-
-```
-<div class="block ">
-  <i class="block-icon icon-bg-news-media icon-news"></i>
-  <h2 class="block-title"> This is the block title</h2>
-  <div class="content">
-     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
-  </div>
-</div>
-```
-
-<h2>Block "Go to group"</h2>
+<h2>Create an account block</h2>
 
 ```
 <div class="block">
-  <i class="block-icon icon-users icon-bg-group"></i>
-  <h2 class="block-title">Go to group</h2>
+  <i class="block-icon icon-bg-action icon-user-add"></i>
+  <h2 class="block-title">Create an account</h2>
   <div class="content">
-    <p>This belongs to <a href="#">local groups amsterdam</a>.</p>
-    <p><a class="button" href="#">Go to this group</a></p>
+    <p>Do not have an account yet? Click below to register!</p>
+    <a href="#" class="button btn-primary">Get wired</a>
   </div>
 </div>
 ```
 
-<h2>Block "Get involved"</h2>
+<h2>Enroll block</h2>
 
 ```
 <div class="block">
-  <i class="block-icon icon-plus icon-bg-action"></i>
-  <h2 class="block-title">Get involved</h2>
+  <i class="block-icon icon-login icon-bg-action"></i>
+  <h2 class="block-title">RSVP for this event</h2>
   <div class="content">
-    <div class="item-list">
-      <ul>
-        <li><a href="#">Add blog</a></li>
-        <li><a href="#">Add document</a></li>
-        <li><a href="#">Add event</a></li>
-        <li><a href="#">Add idea</a></li>
-        <li><a href="#">Add news</a></li>
-        <li><a href="#">Add photo album</a></li>
-        <li><a href="#">Add video</a></li>
-      </ul>
-    </div>
+    <p>You are currently enrolled</p>
+    <a id="togglEnrollForm" class="button btn-primary" href="#">Click here to change</a>
+    <form id="event-signup-node-form" class="node-form node-event_signup-form" style="display:none;">
+      <div class="form-item form-type-radios">
+        <label for="edit-field-signup-status-und">Are you joining this event?
+          <span class="form-required" title="This field is required.">*</span>
+        </label>
+        <div id="edit-field-signup-status-und" class="form-radios">
+          <div class="form-type-radio">
+            <input type="radio" id="edit-field-signup-status-und-0" value="0" checked="checked" class="form-radio" /  >
+            <label class="option" for="edit-field-signup-status-und-0">Yes </label>
+          </div>
+          <div class="form-type-radio">
+            <input type="radio" id="edit-field-signup-status-und-1" value="1" class="form-radio" />
+            <label class="option" for="edit-field-signup-status-und-1">No </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-item form-type-textarea">
+        <label for="edit-body-und-0-value">Message </label>
+        <div class="form-textarea-wrapper resizable">
+          <textarea class="text-full form-textarea" id="edit-body-und-0-value">
+          </textarea>
+        </div>
+      </div>
+      <div class="form-actions">
+        <input class="button btn-primary" type="submit" value="Save" />
+      </div>
+    </form>
   </div>
 </div>
 ```
 
-<h2>Block "Follow"</h2>
+<h2>Filter search result block</h2>
 
 ```
 <div class="block">
-  <i class="block-icon icon-bg-action icon-eye"></i>
-  <h2 class="block-title">This article name updates</h2>
+  <i class="block-icon icon-bg-default icon-search"></i>
+  <h2 class="block-title">Filter search result</h2>
   <div class="content">
-    <p>If you follow fbdfdf you will receive notifications when something changes or is added. You can choose how frequently you receive notifications in your <a href="#">profile settings</a>.</p>
-    <a href="#" class="button">Follow</a>
+    <form>
+      <div class="views-exposed-widgets clearfix">
+      <div class="views-exposed-widget">
+        <div class="form-item form-type-checkbox">
+          <input type="checkbox" id="edit-type-all" value="all" checked="checked"  tabindex="1" />
+          <label class='option' for='edit-type-all'>All content types</label>
+        </div>
+        <div class="form-item form-type-checkbox">
+          <input type="checkbox" id="edit-type-document" value="document"  tabindex="1" />
+          <label class='option' for='edit-type-document'>Document</label>
+        </div>
+        <div class="form-item form-type-checkbox">
+          <input type="checkbox" id="edit-type-event" value="event"  tabindex="1" />
+          <label class='option' for='edit-type-event'>Event</label>
+        </div>
+        <div class="form-item form-type-checkbox">
+          <input type="checkbox" id="edit-type-blog" value="blog"  tabindex="1" />
+          <label class='option' for='edit-type-blog'>Blog</label>
+        </div>
+        <div class="form-item form-type-checkbox">
+          <input type="checkbox" id="edit-type-idea" value="idea"  tabindex="1" />
+          <label class='option' for='edit-type-idea'>Idea</label>
+        </div>
+        <div class="form-item form-type-checkbox">
+          <input type="checkbox" id="edit-type-faq" value="faq"  tabindex="1" />
+          <label class='option' for='edit-type-faq'>Faq</label>
+        </div>
+        <div class="form-item form-type-checkbox">
+          <input type="checkbox" id="edit-type-group" value="group"  tabindex="1" />
+          <label class='option' for='edit-type-group'>Group</label>
+        </div>
+        <div class="form-item form-type-checkbox">
+          <input type="checkbox" id="edit-type-material" value="material"  tabindex="1" />
+          <label class='option' for='edit-type-material'>Material</label>
+        </div>
+        <div class="form-item form-type-checkbox">
+          <input type="checkbox" id="edit-type-page" value="page"  tabindex="1" />
+          <label class='option' for='edit-type-page'>Page</label>
+        </div>
+      </div>
+      <div class="views-exposed-widget views-submit-button">
+        <input tabindex="1" type="submit" id="edit-submit-search-content" value="Filter search result" class="button btn-primary" />
+      </div>
+      <div class="views-exposed-widget views-reset-button">
+        <input tabindex="1" type="submit" id="edit-reset" value="Clear filters" class="button" />
+      </div>
+      </div>
+    </form>
   </div>
 </div>
+
 ```
 
-<h2>Block "Find events"</h2>
+<h2>Find events block</h2>
 
 ```
 <div class="block">
@@ -125,7 +179,7 @@ If there is no icon in the block (which is in the minority of blocks) we need to
         <label>From</label>
         <div class="views-widget">
           <div class="form-item form-type-textfield">
-            <input type="date" class="form-autocomplete form-text" />
+            <input type="date" class="form-text" />
           </div>
         </div>
       </div>
@@ -133,14 +187,521 @@ If there is no icon in the block (which is in the minority of blocks) we need to
         <label>Until</label>
         <div class="views-widget">
           <div class="form-item form-type-textfield">
-            <input type="date" class="form-autocomplete form-text" />
+            <input type="date" class="form-text" />
           </div>
         </div>
+      </div>
+      <div class="views-exposed-widget views-submit-button">
+        <input class="button" type="submit" value="Search" />
       </div>
     </form>
   </div>
 </div>
 ```
+
+<h2>Get involved block</h2>
+
+```
+<div class="block">
+  <i class="block-icon icon-plus icon-bg-action"></i>
+  <h2 class="block-title">Get involved</h2>
+  <div class="content">
+    <div class="item-list">
+      <ul>
+        <li><a href="#">Add blog</a></li>
+        <li><a href="#">Add document</a></li>
+        <li><a href="#">Add event</a></li>
+        <li><a href="#">Add idea</a></li>
+        <li><a href="#">Add news</a></li>
+        <li><a href="#">Add photo album</a></li>
+        <li><a href="#">Add video</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+
+<h2>Go to group block</h2>
+
+```
+<div class="block">
+  <i class="block-icon icon-users icon-bg-group"></i>
+  <h2 class="block-title">Go to group</h2>
+  <div class="content">
+    <p>This belongs to <a href="#">local groups amsterdam</a>.</p>
+    <p><a class="button" href="#">Go to this group</a></p>
+  </div>
+</div>
+```
+
+<h2>RSVP for this event block</h2>
+
+```
+<div class="block">
+  <i class="block-icon icon-login icon-bg-action"></i>
+  <h2 class="block-title">RSVP for this event</h2>
+  <div class="content">
+    <form>
+      <p>Already a Greenwire member? <a href="#">Log in now!</a></p>
+      <p>Not a member? RSVP below</p>
+      <div class="form-item form-type-textfield">
+        <label for="edit-firstname">First name
+          <span class="form-required" title="This field is required.">*</span>
+        </label>
+        <input type="text" id="edit-firstname" class="form-text required" value="" tabindex="1" />
+      </div>
+      <div class="form-item form-type-textfield">
+        <label for="edit-lastname">Last name
+          <span class="form-required" title="This field is required.">*</span>
+        </label>
+        <input type="text" id="edit-lastname" class="form-text required" value="" tabindex="1" />
+      </div>
+      <div class="form-item form-type-textfield">
+        <label for="edit-emailaddress">Email address
+          <span class="form-required" title="This field is required.">*</span>
+        </label>
+        <input type="text" id="edit-emailaddress" class="form-text required" value="" tabindex="1" />
+      </div>
+      <div class="form-item form-type-select">
+        <label for="edit-phonenumber-country">Phone (mobile)
+          <span class="form-required" title="This field is required.">*</span>
+        </label>
+        <select tabindex="1" id="edit-phonenumber-country" class="form-select required">
+          <option value="be">Belgium (+32)</option>
+          <option value="fr">France (+33)</option>
+          <option value="in">India (+91)</option>
+          <option selected="selected" value="nl">Netherlands (+31)</option>
+          <option value="ru">Russia (+7)</option>
+          <option value="th">Thailand (+66)</option>
+          <option value="uk">United Kingdom (+44)</option>
+          <option value="us">USA (+1)</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-item form-type-textfield">
+        <input tabindex="1" type="text" id="edit-phonenumber" value="" class="form-text" />
+      </div>
+      <div class="form-item form-type-textarea">
+        <label for="edit-message">Message </label>
+        <div class="form-textarea-wrapper resizable">
+          <textarea tabindex="1" id="edit-message" class="form-textarea">
+          </textarea>
+        </div>
+      </div>
+      <div class="form-actions">
+        <input class="button btn-primary" type="submit" value="Save" />
+      </div>
+    </form>
+  </div>
+</div>
+```
+
+<h2>Subscribe block</h2>
+
+```
+<div class="block">
+  <i class="block-icon icon-bg-action icon-eye"></i>
+  <h2 class="block-title">This article name updates</h2>
+  <div class="content">
+    <p>If you follow fbdfdf you will receive notifications when something changes or is added. You can choose how frequently you receive notifications in your <a href="#">profile settings</a>.</p>
+    <a href="#" class="button">Follow</a>
+  </div>
+</div>
+```
+
+<h2>Upcoming events block</h2>
+
+```
+<div class="block block-events" id="upcoming-events">
+  <i class="block-icon icon-bg-event icon-event"></i>
+  <h2 class="block-title">Upcoming events</h2>
+  <div class="content">
+    <div class="mapwrapper">
+      <a href="#" class="button btn-primary map-trigger js-show-mobile-map"><i class="icon-map"></i> View on map</a>
+      <div id="desktopmap"></div>
+    </div>
+    <article class="node-event-small">
+      <h2><a href="#">Heb jij interesse in een Act for Arctic training of webinar?</a></h2>
+      <div class="date-display-single">20 juli, 2014 - 09:00</div>
+    </article>
+    <article class="node-event-small">
+      <h2><a href="#">Act for Arctic Kick-Off training</a></h2>
+      <div class="date-display-single">24 juli, 2014 - 18:00</div>
+    </article>
+    <article class="node-event-small">
+      <h2><a href="#">De héle Noordzeekust schoon van 1 t/m 31 augustus! Help je mee?</a></h2>
+      <div class="date-display-single">1 augustus, 2014 - 00:00</div>
+    </article>
+    <article class="node-event-small">
+      <h2><a href="#">Netwerkborrel 28 augustus</a></h2>
+      <div class="date-display-single">28 augustus, 2014 - 17:00</div>
+    </article>
+    <article class="node-event-small">
+      <h2><a href="#">Opschonen Enschede</a></h2>
+      <div class="date-display-single">20 July, 2014 - 12:09</div>
+    </article>
+    <a class="button" href="#">See more events</a>
+  </div>
+</div>
+```
+
+<h2>Block "Follow"</h2>
+
+```
+<div class="block block-shoutbox" id="shoutbox">
+  <i class="block-icon icon-shout icon-bg-action"></i>
+  <h2 class="block-title">Shoutbox</h2>
+  <div class="content">
+    <form class="shout-form">
+      <div class="form-shout-message"><textarea id="shoutbox-comment" rows="1" cols="50" placeholder="Write a shout..."></textarea></div>
+        <input data-tip="Attach a photo" type="file" class="tooltip form-shout-file" accept="image/*" />
+        <span id="remain"></span>
+        <input class="form-shout-submit" type="submit" value="share" />
+    </form>
+    <section class="shouts">
+      <article class="shout">
+        <div class="avatar-holder">
+          <a title="View user profile" href="#">
+            <picture>
+                <img src="http://placehold.it/60x60" srcset="http://placehold.it/120x120 2x" alt="Dora Tilman">
+              </picture>
+          </a>
+        </div>
+        <div class="comment-holder">
+          <div class="comment-head">
+            <a href="#" title="View profile" class="comment-author">
+              Dora Tilman
+            </a>
+          </div>
+          <div class="comment-body">
+            I agree.
+          </div>
+          <div class="comment-footer">
+              <span class="comment-timestamp">5 minutes ago</span>
+              <span class="comment-actions">
+                <a href="#" class="comment-actionlink">reply</a>
+                <a href="#" class="comment-actionlink">edit</a>
+                <a href="#" class="comment-actionlink">delete</a>
+              </span>
+          </div>
+        </div>
+      </article>
+      <article class="shout">
+        <div class="avatar-holder">
+          <a title="View user profile" href="#">
+            <picture>
+                <img src="http://placehold.it/60x60" srcset="http://placehold.it/120x120 2x" alt="Chico Konink">
+              </picture>
+          </a>
+        </div>
+        <div class="comment-holder">
+          <div class="comment-head">
+            <a href="#" title="View profile" class="comment-author">
+              Chico Konink (Greenpeace staff)
+            </a>
+          </div>
+          <div class="comment-body">
+            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+          </div>
+          <div class="comment-footer">
+              <span class="comment-timestamp">1 hour ago</span>
+              <span class="comment-actions">
+                <a href="#" class="comment-actionlink">reply</a>
+                <a href="#" class="comment-actionlink">edit</a>
+                <a href="#" class="comment-actionlink">delete</a>
+              </span>
+          </div>
+        </div>
+      </article>
+      <article class="shout comment-reply">
+        <div class="avatar-holder">
+          <a title="View user profile" href="#">
+            <picture>
+                <img src="http://placehold.it/60x60" srcset="http://placehold.it/120x120 2x" alt="Chico Konink">
+              </picture>
+          </a>
+        </div>
+        <div class="comment-holder">
+          <div class="comment-head">
+            <a href="#" title="View profile" class="comment-author">
+              Chico Konink (Greenpeace staff)
+            </a>
+          </div>
+          <div class="comment-body">
+            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+          </div>
+          <div class="comment-footer">
+              <span class="comment-timestamp">30 minutes ago</span>
+          </div>
+        </div>
+      </article>
+      <article class="shout comment-reply">
+
+        <div class="avatar-holder">
+          <a title="View user profile" href="#">
+            <picture>
+                <img src="http://placehold.it/60x60" srcset="http://placehold.it/120x120 2x" alt="Chico Konink">
+              </picture>
+          </a>
+        </div>
+        <div class="comment-holder">
+          <div class="comment-head">
+            <a href="#" title="View profile" class="comment-author">
+              Chico Konink (Greenpeace staff)
+            </a>
+          </div>
+          <div class="comment-body">
+            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+          </div>
+          <div class="comment-footer">
+              <span class="comment-timestamp">15 minutes ago</span>
+              <span class="comment-actions">
+                <a href="#" class="comment-actionlink">edit</a>
+                <a href="#" class="comment-actionlink">delete</a>
+              </span>
+          </div>
+        </div>
+      </article>
+      <article class="shout">
+        <div class="avatar-holder">
+          <a title="View user profile" href="#">
+            <picture>
+                <img src="http://placehold.it/60x60" srcset="http://placehold.it/120x120 2x" alt="Erben de Bok">
+              </picture>
+          </a>
+        </div>
+        <div class="comment-holder">
+          <div class="comment-head">
+            <a href="#" title="View profile" class="comment-author">
+              Erben de Bok
+            </a>
+          </div>
+          <div class="comment-body">
+            “What do you think <a href="#" title="View Erben de Bok's profile">Erben de Bok</a>?
+          </div>
+          <div class="comment-footer">
+              <span class="comment-timestamp">12 May, 2014 - 13:56</span>
+              <span class="comment-actions">
+                <a href="#" class="comment-actionlink">reply</a>
+                <a href="#" class="comment-actionlink">edit</a>
+                <a href="#" class="comment-actionlink">delete</a>
+              </span>
+          </div>
+        </div>
+      </article>
+      <article class="shout">
+        <div class="avatar-holder">
+          <a title="View user profile" href="#">
+            <picture>
+                <img src="http://placehold.it/60x60" srcset="http://placehold.it/120x120 2x" alt="Erben de Bok">
+              </picture>
+          </a>
+        </div>
+        <div class="comment-holder">
+          <div class="comment-head">
+            <a href="#" title="View profile" class="comment-author">
+              Johnny with his extremelonglastname
+            </a>
+          </div>
+          <div class="comment-body">
+            “I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her rehabilitation exercises after each surgery. “People I have known who had [replacement surgery] and who didn’t do the therapy, it doesn’t work out for them.”
+          </div>
+          <div class="comment-footer">
+              <span class="comment-timestamp">2 November, 2013 - 08:56</span>
+              <span class="comment-actions">
+                <a href="#" class="comment-actionlink">reply</a>
+                <a href="#" class="comment-actionlink">edit</a>
+                <a href="#" class="comment-actionlink">delete</a>
+              </span>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>
+```
+
+<h2>Comments block</h2>
+
+```
+<div class="block block-comments" id="block-comments">
+  <i class="block-icon icon-comment icon-bg-action"></i>
+  <h2 class="block-title">Comments</h2>
+  <div class="content">
+    <ul class="sort-comments">
+       <li><a href="#" class="active">Oldest</a></li>
+       <li><a href="#">Newest</a></li>
+    </ul>
+    <section class="comments">
+      <article class="comment">
+        <div class="avatar-holder">
+          <a title="View user profile" href="#">
+            <picture>
+                <img src="http://placehold.it/60x60" srcset="http://placehold.it/120x120 2x" alt="Dora Tilman">
+              </picture>
+          </a>
+        </div>
+        <div class="comment-holder">
+          <div class="comment-head">
+            <a href="#" title="View profile" class="comment-author">
+              Dora Tilman
+            </a>
+          </div>
+          <div class="comment-body">
+            I agree.
+          </div>
+          <div class="comment-footer">
+              <span class="comment-timestamp">5 minutes ago</span>
+              <span class="comment-actions">
+                <a href="#" class="comment-actionlink">reply</a>
+                <a href="#" class="comment-actionlink">edit</a>
+                <a href="#" class="comment-actionlink">delete</a>
+              </span>
+          </div>
+        </div>
+      </article>
+      <article class="comment">
+        <div class="avatar-holder">
+          <a title="View user profile" href="#">
+            <picture>
+                <img src="http://placehold.it/60x60" srcset="http://placehold.it/120x120 2x" alt="Chico Konink">
+              </picture>
+          </a>
+        </div>
+        <div class="comment-holder">
+          <div class="comment-head">
+            <a href="#" title="View profile" class="comment-author">
+              Chico Konink (Greenpeace staff)
+            </a>
+          </div>
+          <div class="comment-body">
+            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+          </div>
+          <div class="comment-footer">
+              <span class="comment-timestamp">1 hour ago</span>
+              <span class="comment-actions">
+                <a href="#" class="comment-actionlink">reply</a>
+                <a href="#" class="comment-actionlink">edit</a>
+                <a href="#" class="comment-actionlink">delete</a>
+              </span>
+          </div>
+        </div>
+      </article>
+      <article class="comment comment-reply">
+        <div class="avatar-holder">
+          <a title="View user profile" href="#">
+            <picture>
+                <img src="http://placehold.it/60x60" srcset="http://placehold.it/120x120 2x" alt="Chico Konink">
+              </picture>
+          </a>
+        </div>
+        <div class="comment-holder">
+          <div class="comment-head">
+            <a href="#" title="View profile" class="comment-author">
+              Chico Konink (Greenpeace staff)
+            </a>
+          </div>
+          <div class="comment-body">
+            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+          </div>
+          <div class="comment-footer">
+              <span class="comment-timestamp">30 minutes ago</span>
+          </div>
+        </div>
+      </article>
+      <article class="comment comment-reply">
+        <div class="avatar-holder">
+          <a title="View user profile" href="#">
+            <picture>
+                <img src="http://placehold.it/60x60" srcset="http://placehold.it/120x120 2x" alt="Chico Konink">
+              </picture>
+          </a>
+        </div>
+        <div class="comment-holder">
+          <div class="comment-head">
+            <a href="#" title="View profile" class="comment-author">
+              Chico Konink (Greenpeace staff)
+            </a>
+          </div>
+          <div class="comment-body">
+            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+          </div>
+          <div class="comment-footer">
+              <span class="comment-timestamp">15 minutes ago</span>
+              <span class="comment-actions">
+                <a href="#" class="comment-actionlink">edit</a>
+                <a href="#" class="comment-actionlink">delete</a>
+              </span>
+          </div>
+        </div>
+      </article>
+      <article class="comment">
+        <div class="avatar-holder">
+          <a title="View user profile" href="#">
+            <picture>
+                <img src="http://placehold.it/60x60" srcset="http://placehold.it/120x120 2x" alt="Erben de Bok">
+              </picture>
+          </a>
+        </div>
+        <div class="comment-holder">
+          <div class="comment-head">
+            <a href="#" title="View profile" class="comment-author">
+              Erben de Bok
+            </a>
+          </div>
+          <div class="comment-body">
+            “What do you think <a href="#" title="View Erben de Bok's profile">Erben de Bok</a>?
+          </div>
+          <div class="comment-footer">
+              <span class="comment-timestamp">12 May, 2014 - 13:56</span>
+              <span class="comment-actions">
+                <a href="#" class="comment-actionlink">reply</a>
+                <a href="#" class="comment-actionlink">edit</a>
+                <a href="#" class="comment-actionlink">delete</a>
+              </span>
+          </div>
+        </div>
+      </article>
+      <article class="comment">
+        <div class="avatar-holder">
+          <a title="View user profile" href="#">
+            <picture>
+                <img src="http://placehold.it/60x60" srcset="http://placehold.it/120x120 2x" alt="Erben de Bok">
+              </picture>
+          </a>
+        </div>
+        <div class="comment-holder">
+          <div class="comment-head">
+            <a href="#" title="View profile" class="comment-author">
+              Johnny with his extremelonglastname
+            </a>
+          </div>
+          <div class="comment-body">
+            “I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her rehabilitation exercises after each surgery. “People I have known who had [replacement surgery] and who didn’t do the therapy, it doesn’t work out for them.”
+          </div>
+          <div class="comment-footer">
+              <span class="comment-timestamp">2 November, 2013 - 08:56</span>
+              <span class="comment-actions">
+                <a href="#" class="comment-actionlink">reply</a>
+                <a href="#" class="comment-actionlink">edit</a>
+                <a href="#" class="comment-actionlink">delete</a>
+              </span>
+          </div>
+        </div>
+      </article>
+    </section>
+    <div class="comment-form-holder">
+      <h2 class="comment-form-title">Add new comment</h2>
+      <form class="comment-form">
+        <input data-tip="Attach a photo" type="file" class="tooltip form-comment-file" accept="image/*" />
+        <div class="form-comment-message"><textarea rows="1" placeholder="Write a comment..."></textarea></div>
+        <input class="form-comment-submit" type="submit" value="post" />
+      </form>
+    </div>
+  </div>
+</div>
+```
+
 */
 /*
 
@@ -163,6 +724,301 @@ Breadcrumbs
   </nav>
 
 ```
+*/
+/*
+
+Teassers
+====
+
+<h2>Blog</h2>
+
+```
+<div class="content">
+<article class="node-teaser-blog node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">Blog item with no image</h2>
+    <div class="submitted">
+      <a href="#" class="type blog">Blog</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+</div>
+```
+
+<h2>Document</h2>
+
+```
+<div class="content">
+<article class="node-teaser-document node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">Document item with no image</h2>
+    <div class="submitted">
+      <a href="#" class="type document">Document</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+</div>
+```
+
+<h2>Event</h2>
+
+```
+<div class="content">
+<article class="node-teaser-event node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">Event item with no image</h2>
+    <div class="submitted">
+      <a href="#" class="type event">event</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+</div>
+```
+
+<h2>Faq</h2>
+
+```
+<div class="content">
+<article class="node-teaser-faq node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">faq item with no image</h2>
+    <div class="submitted">
+      <a href="#" class="type faq">faq</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+</div>
+```
+<h2>Group</h2>
+
+```
+<div class="content">
+<article class="node-teaser-group node-teaser">
+
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">This is an example of a long group title</h2>
+    <div class="submitted">
+      <a href="#" class="type group">Group</a>, 3rd October 2013
+    </div>
+    <div class="field-group-format">
+      <div class="field-type-taxonomy-term-reference"> <label>Group type:</label>Campaign group</div>
+    </div>
+  </div>
+</article>
+</div>
+```
+
+<h2>Idea</h2>
+
+```
+<div class="content">
+<article class="node-teaser-idea node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">This is an example of an idea teaser with no image</h2>
+    <div class="submitted">
+      <a href="#" class="type idea">Idea</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+</div>
+```
+
+<h2>Material</h2>
+
+```
+<div class="content">
+<article class="node-teaser-material node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">Material title</h2>
+    <div class="submitted">
+      <a href="#" class="type material">Material</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+      <?php //we need a truncate by php function here ?>
+    </div>
+  </div>
+</article>
+</div>
+```
+
+<h2>News</h2>
+
+```
+<div class="content">
+<article class="node-teaser-news node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">This is an example of a long news item with photo</h2>
+    <div class="submitted">
+      <a href="#" class="type news">News</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+</div>
+```
+
+<h2>Pages</h2>
+
+```
+<div class="content">
+<article class="node-teaser-page node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">This is a page search result title</h2>
+    <div class="submitted">
+      <a href="#" class="type page">Page</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+</div>
+```
+
+<h2>Photos</h2>
+
+```
+<div class="content">
+<article class="node-teaser-album node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">This is an example of a long photo album title</h2>
+    <div class="submitted">
+      <a href="#" class="type album">Photos</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+</div>
+```
+
+<h2>Users</h2>
+
+```
+<div class="content">
+<article class="node-teaser-user node-teaser">
+  <div class="field-type-image">
+    <picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="user image">
+    </picture>
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">This is an example of a long photo album title</h2>
+    <div class="submitted">
+      <a href="#" class="type user">User</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+</div>
+```
+
+<h2>Video</h2>
+
+```
+<div class="content">
+<article class="node-teaser-video node-teaser">
+  <div class="field-type-image">
+    <!--<picture>
+      <source media="(min-width: 48em)" srcset="http://placehold.it/130x90, http://placehold.it/260x180 2x">
+         <img src="http://placehold.it/90x60" srcset="http://placehold.it/180x120 2x" alt="image">
+    </picture>-->
+  </div>
+  <div class="field-type-wrapper">
+    <h2 class="node-title">This is an example of a long photo album title</h2>
+    <div class="submitted">
+      <a href="#" class="type video">Video</a> by <a href="#">Ana Hristova</a>, 23rd July 2014
+    </div>
+    <div class="field-name-body">
+      On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+    </div>
+  </div>
+</article>
+</div>
+```
+
 */
 /*
 Action Menu (Mobile)

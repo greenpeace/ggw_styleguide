@@ -4,6 +4,11 @@
   display: flex;
   flex-flow: row wrap;
   background: $background;
+
+  .no-flexbox & {
+    text-align: center;
+  }
+
 }
 
 .action-menu > ul > li {

@@ -65,6 +65,12 @@
     z-index: 1;
   }
 
+  // prevent the other menu from showing
+  &.primary-nav #secondary-nav,
+  &.secondary-nav #primary-nav {
+    display: none;
+  }
+
   &.primary-nav .l-main,
   &.primary-nav .members-quicknav {
     left: 265px;
@@ -88,12 +94,6 @@
 
 // Best performance animation, depends on Modernizr
 .csstransforms3d {
-
-  // prevent the other menu from showing
-  &.primary-nav #secondary-nav,
-  &.secondary-nav #primary-nav {
-    display: none;
-  }
 
   &.primary-nav .members-quicknav,
   &.secondary-nav .members-quicknav,

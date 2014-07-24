@@ -10016,16 +10016,16 @@ function showMap() {
     // with this function we set the z-index higher
     $('#mobilemap, #close-map').addClass('ontop');
     e.preventDefault();
-    // when we show the map the navigation should be disabled.
-    $('#main-menu-show, #secondary-menu-show').off('click');
   });
 
   if ($('#mobilemap').has('.ontop')) {
     $('#close-map').click(function(){
       //with this class we change the z-index back to 0
       $('#mobilemap, #close-map').removeClass('ontop');
-      // when we close the map the navigation should be activated again
-      $('#main-menu-show, #secondary-menu-show').on('click', offCanvasNav());
+    });
+    $('#main-menu-show, #secondary-menu-show').click(function(){
+      //with this class we change the z-index back to 0
+      $('#mobilemap, #close-map').removeClass('ontop');
     });
   }
 }
@@ -10071,11 +10071,8 @@ function TabableSections() {
   var resizeTimer; // Set resizeTimer to empty so it resets on page load
 
   function resizeFunction() {
-    mobileNav(),
     overflowDropdown(),
-    TabableSections(),
-    showMap(),
-    offCanvasNav()
+    TabableSections()
   };
 
   // On resize, run the function and reset the timeout
@@ -10146,7 +10143,10 @@ $( document ).ready(function() {
 $( window ).load(function() {
 
   function resizeFunction() {
-    NiceCommentForm()
+    NiceCommentForm(),
+    offCanvasNav(),
+    showMap(),
+    mobileNav()
   };
 
   var resizeTimer;

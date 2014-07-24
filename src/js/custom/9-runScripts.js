@@ -55,7 +55,10 @@ $( document ).ready(function() {
 $( window ).load(function() {
 
   function resizeFunction() {
-    NiceCommentForm()
+    NiceCommentForm(),
+    offCanvasNav(),
+    showMap(),
+    mobileNav()
   };
 
   var resizeTimer;

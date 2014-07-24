@@ -131,6 +131,10 @@
   justify-content: space-around;
   align-items: flex-start;
 
+  .no-flexbox & {
+    @extend %cf;
+  }
+
   @include breakpoint($tab) {
     padding: 15px 5px;
     height: auto;
@@ -210,6 +214,7 @@
 
   .no-flexbox & {
     width: 75%;
+    float: left;
   }
 }
 

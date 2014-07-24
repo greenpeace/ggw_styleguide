@@ -315,6 +315,7 @@ th {
 }
 
 .form-wrapper:after,
+.no-flexbox .comment-form:after,
 .footer .container:after,
 .phone-wrapper:after {
 	content: '';
@@ -3039,6 +3040,10 @@ html[xmlns] .slides {
 	background: #eeeeee;
 }
 
+.no-flexbox .action-menu > ul {
+	text-align: center;
+}
+
 .action-menu > ul > li {
 	white-space: nowrap;
 	border-right: 1px solid #cccccc;
@@ -3344,6 +3349,7 @@ html[xmlns] .slides {
 
 .no-flexbox .form-comment-message {
 	width: 75%;
+	float: left;
 }
 
 .form-comment-submit {
@@ -4154,6 +4160,11 @@ html[xmlns] .slides {
 	z-index: 1;
 }
 
+.js.primary-nav #secondary-nav,
+.js.secondary-nav #primary-nav {
+	display: none;
+}
+
 .js.primary-nav .l-main,
 .js.primary-nav .members-quicknav {
 	left: 265px;
@@ -4170,11 +4181,6 @@ html[xmlns] .slides {
 
 .js.secondary-nav .l-branding-header {
 	right: 266px;
-}
-
-.csstransforms3d.primary-nav #secondary-nav,
-.csstransforms3d.secondary-nav #primary-nav {
-	display: none;
 }
 
 .csstransforms3d.primary-nav .members-quicknav,

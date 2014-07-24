@@ -3,11 +3,8 @@
   var resizeTimer; // Set resizeTimer to empty so it resets on page load
 
   function resizeFunction() {
-    mobileNav(),
     overflowDropdown(),
-    TabableSections(),
-    showMap(),
-    offCanvasNav()
+    TabableSections()
   };
 
   // On resize, run the function and reset the timeout

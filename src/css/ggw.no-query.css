@@ -276,7 +276,7 @@ th {
   margin: 20px auto;
 }
 
-.form-wrapper:after, .footer .container:after, .phone-wrapper:after {
+.form-wrapper:after, .no-flexbox .comment-form:after, .footer .container:after, .phone-wrapper:after {
   content: '';
   display: table;
   clear: both;
@@ -3001,6 +3001,9 @@ html[xmlns] .slides {
   flex-flow: row wrap;
   background: #eeeeee;
 }
+.no-flexbox .action-menu > ul {
+  text-align: center;
+}
 
 .action-menu > ul > li {
   white-space: nowrap;
@@ -3282,6 +3285,7 @@ html[xmlns] .slides {
 }
 .no-flexbox .form-comment-message {
   width: 75%;
+  float: left;
 }
 
 .form-comment-submit {
@@ -4256,6 +4260,9 @@ html[xmlns] .slides {
   right: 0;
   z-index: 1;
 }
+.js.primary-nav #secondary-nav, .js.secondary-nav #primary-nav {
+  display: none;
+}
 .js.primary-nav .l-main, .js.primary-nav .members-quicknav {
   left: 265px;
 }
@@ -4269,9 +4276,6 @@ html[xmlns] .slides {
   right: 266px;
 }
 
-.csstransforms3d.primary-nav #secondary-nav, .csstransforms3d.secondary-nav #primary-nav {
-  display: none;
-}
 .csstransforms3d.primary-nav .members-quicknav, .csstransforms3d.secondary-nav .members-quicknav, .csstransforms3d.primary-nav .l-branding-header, .csstransforms3d.secondary-nav .l-branding-header, .csstransforms3d.primary-nav .l-main, .csstransforms3d.secondary-nav .l-main {
   left: auto;
   right: auto;

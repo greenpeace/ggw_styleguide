@@ -53,8 +53,7 @@
       <div class="form-item form-type-textarea">
         <label for="edit-message">Message </label>
         <div class="form-textarea-wrapper resizable">
-          <textarea tabindex="1" id="edit-message" class="form-textarea">
-          </textarea>
+          <textarea tabindex="1" id="edit-message" class="form-textarea"></textarea>
         </div>
       </div>
 

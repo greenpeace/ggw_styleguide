@@ -30,8 +30,7 @@
       <div class="form-item form-type-textarea">
         <label for="edit-body-und-0-value">Message </label>
         <div class="form-textarea-wrapper resizable">
-          <textarea class="text-full form-textarea" id="edit-body-und-0-value">
-          </textarea>
+          <textarea class="text-full form-textarea" id="edit-body-und-0-value"></textarea>
         </div>
       </div>
 

@@ -15,12 +15,12 @@
         </label>
         <div id="edit-field-signup-status-und" class="form-radios">
           <div class="form-type-radio">
-            <input type="radio" id="edit-field-signup-status-und-0" value="0" checked="checked" class="form-radio" /  >
+            <input type="radio" id="edit-field-signup-status-und-0" value="0" checked="checked" class="form-radio" name="joining-yes-no" /  >
             <label class="option" for="edit-field-signup-status-und-0">Yes </label>
           </div>
 
           <div class="form-type-radio">
-            <input type="radio" id="edit-field-signup-status-und-1" value="1" class="form-radio" />
+            <input type="radio" id="edit-field-signup-status-und-1" value="1" class="form-radio" name="joining-yes-no" />
             <label class="option" for="edit-field-signup-status-und-1">No </label>
           </div>
 

@@ -1,7 +1,10 @@
+.dropdown {
+  display: none;
+}
+
 .l-main .dropdown {
   position: absolute;
   z-index: 9999999;
-  display: none;
 }
 
 .dropdown .dropdown-menu {
@@ -58,6 +61,13 @@
   overflow: auto;
 }
 
+// No JS Fallback
 
+.no-js {
+  .country-selector:hover #dropdown-content-country,
+  .language-selector:hover #dropdown-content-language {
+    display: block;
+  }
+}
 
 

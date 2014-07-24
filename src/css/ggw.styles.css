@@ -912,7 +912,7 @@ b {
 	position: absolute;
 }
 
-.button i {
+.btn-block i {
 	margin-right: .5em;
 }
 
@@ -1878,10 +1878,13 @@ b {
 	position: relative;
 }
 
+.dropdown {
+	display: none;
+}
+
 .l-main .dropdown {
 	position: absolute;
 	z-index: 9999999;
-	display: none;
 }
 
 .dropdown .dropdown-menu {
@@ -1936,6 +1939,11 @@ b {
 .dropdown.dropdown-scroll .dropdown-panel {
 	max-height: 358px;
 	overflow: auto;
+}
+
+.no-js .country-selector:hover #dropdown-content-country,
+.no-js .language-selector:hover #dropdown-content-language {
+	display: block;
 }
 
 .form-wrapper {
@@ -2235,6 +2243,19 @@ img,
 picture,
 media {
 	max-width: 100%;
+}
+
+#javascript-disabled {
+	border-bottom: 1px solid #a20a00;
+	font-size: 1.25rem;
+	padding: .5em 0;
+	background-color: #d50d00;
+	color: white;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	z-index: 10;
 }
 
 /* Magnific Popup CSS */
@@ -2682,6 +2703,11 @@ img.mfp-img {
 	padding: 0 .5em;
 	text-align: center;
 	font-size: 0.75rem;
+}
+
+.slides button:active,
+.slides button.active {
+	top: auto;
 }
 
 .flex-pauseplay span {

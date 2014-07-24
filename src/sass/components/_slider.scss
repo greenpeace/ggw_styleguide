@@ -54,6 +54,11 @@
 .slides button {
   @extend %element-hidden;
 
+  &:active,
+  &.active {
+    top: auto;
+  }
+
   @include breakpoint($smalltab) {
     position: absolute;
     display: inline-block;

@@ -6,7 +6,8 @@
     mobileNav(),
     overflowDropdown(),
     TabableSections(),
-    showMap()
+    showMap(),
+    offCanvasNav()
   };
 
   // On resize, run the function and reset the timeout

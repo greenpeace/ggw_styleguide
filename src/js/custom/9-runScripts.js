@@ -3,9 +3,6 @@
 function runAgain() {
   'use strict';
 
-  // hide all dropdowns by default
-  $('.dropdown').hide();
-
   // show/hide event enrollment form
   $('#togglEnrollForm').click(function() {
     if ($('#event-signup-node-form').css('display') == 'none') {
@@ -52,19 +49,18 @@ $( document ).ready(function() {
   // Ajax include
   $('[data-replace]').ajaxInclude();
 
-    // hide all dropdowns by default
-  $('.dropdown').hide();
-
 });
 
 // This will run once the entire page (including ajax requests), not just the DOM, is ready
 $( window ).load(function() {
 
-  mobileNav(),
-  NiceCommentForm(),
-  maxLength(),
-  TabableSections(),
-  showMap()
+  function resizeFunction() {
+    NiceCommentForm()
+  };
+
+  var resizeTimer;
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(resizeFunction, 200);
 
     // these element must autogrow as the user types on multiple lines
   $('.form-comment-message textarea, #shoutbox-comment').autogrow({

@@ -9806,16 +9806,84 @@ window.matchMedia || (window.matchMedia = function() {
     }
 })(jQuery);
 
-function maxLength() {
-  $('#shoutbox-comment').maxlength({
-    max: 250,
-    feedbackTarget: '#remain'
+function truncateNodeTitle() {
+
+var windowWidth = $(window).width();
+
+  // define how much characters will fit one the screen
+  var textFit = 48;
+
+  if (windowWidth > 450) {
+    textFit = 60;
+  }
+
+  if (windowWidth > 600) {
+    textFit = 100;
+  }
+
+  $('.node-teaser .node-title').succinct({
+    size: textFit
   });
+
+}
+
+// This script creates a dropdown of the action menu, when there are more then 2 buttons.
+
+function overflowDropdown() {
+
+  // Define the context we will be operating in.
+  var list = $('.original-action-menu ul').clone();
+  $('.original-action-menu').hide();
+
+  if ( $('.action-menu').length ) {
+    $('.action-menu').remove();
+  }
+
+  // We will store any items here that we want to move.
+  var itemsToMove = new Array();
+
+    // get window width
+    var windowWidth = $(window).width();
+
+    // define how much items fit one the screen
+    var itemsFit = 1;
+
+    if (windowWidth > 450) {
+      itemsFit = 2;
+    }
+    if (windowWidth > 600) {
+      itemsFit = 3;
+    }
+
+    // Loop through all items and retrieve the index
+    $.each($('li', list), function(index, value) {
+
+      // Add everything except the first item to the items_to_move array.
+      if (index > (itemsFit - 1)) {
+       itemsToMove.push(value);
+      }
+
+    });
+
+    // If there is more than one item to move we proceed here.
+    if (itemsToMove.length > 1) {
+    // Add our new container div.
+      $(list).append('<li class="action-overflowing"><a data-dropdown="#dropdown-action-menu" class="action-overflowing-trigger" href="#"><i class="icon icon-menu"></i> More </a><div id="dropdown-action-menu" class="dropdown dropdown-scroll"><ul class="dropdown-menu"></ul></li>');
+
+      // Foreach items that need to moved place them in the newly created awesomebox dropdown.
+      $.each(itemsToMove, function(index, value) {
+        $('#dropdown-action-menu ul', list).append(value);
+        $('#dropdown-action-menu').hide();
+      });
+    }
+
+    list.insertAfter('.original-action-menu');
+    list.wrapAll('<div class="action-menu">');
+
 };
 
-function NiceCommentForm() {
-  $('input[type=file]').nicefileinput();
-};
+
+
 
   function mobileNav() {
 
@@ -9848,8 +9916,18 @@ function NiceCommentForm() {
         }
     };
 
-jQuery(document).ready(function ($) {
-  'use strict';
+function maxLength() {
+  $('#shoutbox-comment').maxlength({
+    max: 250,
+    feedbackTarget: '#remain'
+  });
+};
+
+function NiceCommentForm() {
+  $('input[type=file]').nicefileinput();
+};
+
+function offCanvasNav() {
 
   var root = $(document.documentElement)
 
@@ -9930,65 +10008,63 @@ jQuery(document).ready(function ($) {
     }
     return menuOpen;
   }
-});
 
-// This script creates a dropdown of the action menu, when there are more then 2 buttons.
+}
 
-function overflowDropdown() {
+function showMap() {
+  $('.js-show-mobile-map').click(function(e) {
+    // with this function we set the z-index higher
+    $('#mobilemap, #close-map').addClass('ontop');
+    e.preventDefault();
+    // when we show the map the navigation should be disabled.
+    $('#main-menu-show, #secondary-menu-show').off('click');
+  });
 
-  // Define the context we will be operating in.
-  var list = $('.original-action-menu ul').clone();
-  $('.original-action-menu').hide();
-
-  if ( $('.action-menu').length ) {
-    $('.action-menu').remove();
-  }
-
-  // We will store any items here that we want to move.
-  var itemsToMove = new Array();
-
-    // get window width
-    var windowWidth = $(window).width();
-
-    // define how much items fit one the screen
-    var itemsFit = 1;
-
-    if (windowWidth > 450) {
-      itemsFit = 2;
-    }
-    if (windowWidth > 600) {
-      itemsFit = 3;
-    }
-
-    // Loop through all items and retrieve the index
-    $.each($('li', list), function(index, value) {
-
-      // Add everything except the first item to the items_to_move array.
-      if (index > (itemsFit - 1)) {
-       itemsToMove.push(value);
-      }
-
+  if ($('#mobilemap').has('.ontop')) {
+    $('#close-map').click(function(){
+      //with this class we change the z-index back to 0
+      $('#mobilemap, #close-map').removeClass('ontop');
+      // when we close the map the navigation should be activated again
+      $('#main-menu-show, #secondary-menu-show').on('click', offCanvasNav());
     });
+  }
+}
 
-    // If there is more than one item to move we proceed here.
-    if (itemsToMove.length > 1) {
-    // Add our new container div.
-      $(list).append('<li class="action-overflowing"><a data-dropdown="#dropdown-action-menu" class="action-overflowing-trigger" href="#"><i class="icon icon-menu"></i> More </a><div id="dropdown-action-menu" class="dropdown dropdown-scroll"><ul class="dropdown-menu"></ul></li>');
+function TabableSections() {
 
-      // Foreach items that need to moved place them in the newly created awesomebox dropdown.
-      $.each(itemsToMove, function(index, value) {
-        $('#dropdown-action-menu ul', list).append(value);
-        $('#dropdown-action-menu').hide();
-      });
+  $('.page-home #content, .page-home .action-menu li:first').addClass('current');
+
+  $('.page-home .tab').click(function(e){
+
+    $('.action-menu li a, .l-main .current').removeClass('current');
+    $(this).parent().addClass('current');
+    var currentTab = $(this).attr('href');
+    $(currentTab).addClass('current');
+
+    e.preventDefault();
+
+    if ( $(this).attr('href') != ('#content') ) {
+      $('.slider').addClass('element-hidden');
+    }
+    else {
+      if ( $('.slider').hasClass('element-hidden') ) {
+        $('.slider').removeClass('element-hidden')
+      }
     }
 
-    list.insertAfter('.original-action-menu');
-    list.wrapAll('<div class="action-menu">');
+    $('input[type=file]').nicefileinput();
 
-};
+    // once link has been clicked
+    if ($('#dropdown-action-menu').is(":visible") ) {
+      //hide dropdown actionm-menu
+      $('#dropdown-action-menu').hide();
+      // reset class that inidcates dropdown is open
+      $('.action-overflowing a').removeClass('dropdown-open');
+    }
 
+  });
 
-
+}
 
 (function($) {
 
@@ -9998,7 +10074,8 @@ function overflowDropdown() {
     mobileNav(),
     overflowDropdown(),
     TabableSections(),
-    showMap()
+    showMap(),
+    offCanvasNav()
   };
 
   // On resize, run the function and reset the timeout
@@ -10016,9 +10093,6 @@ function overflowDropdown() {
 
 function runAgain() {
   'use strict';
-
-  // hide all dropdowns by default
-  $('.dropdown').hide();
 
   // show/hide event enrollment form
   $('#togglEnrollForm').click(function() {
@@ -10066,19 +10140,18 @@ $( document ).ready(function() {
   // Ajax include
   $('[data-replace]').ajaxInclude();
 
-    // hide all dropdowns by default
-  $('.dropdown').hide();
-
 });
 
 // This will run once the entire page (including ajax requests), not just the DOM, is ready
 $( window ).load(function() {
 
-  mobileNav(),
-  NiceCommentForm(),
-  maxLength(),
-  TabableSections(),
-  showMap()
+  function resizeFunction() {
+    NiceCommentForm()
+  };
+
+  var resizeTimer;
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(resizeFunction, 200);
 
     // these element must autogrow as the user types on multiple lines
   $('.form-comment-message textarea, #shoutbox-comment').autogrow({
@@ -10124,73 +10197,3 @@ $( window ).load(function() {
 
 });
 
-
-function showMap() {
-  $('.js-show-mobile-map').click(function(e) {
-    $('#mobilemap, #close-map').addClass('ontop');
-    e.preventDefault();
-  });
-
-  if ($('#mobilemap').has('.ontop')) {
-    $('#close-map').click( function(){
-      $('#mobilemap, #close-map').removeClass('ontop');
-    });
-  }
-}
-
-function TabableSections() {
-
-  $('.page-home #content, .page-home .action-menu li:first').addClass('current');
-
-  $('.page-home .tab').click(function(e){
-
-    $('.action-menu li a, .l-main .current').removeClass('current');
-    $(this).parent().addClass('current');
-    var currentTab = $(this).attr('href');
-    $(currentTab).addClass('current');
-
-    e.preventDefault();
-
-    if ( $(this).attr('href') != ('#content') ) {
-      $('.slider').addClass('element-hidden');
-    }
-    else {
-      if ( $('.slider').hasClass('element-hidden') ) {
-        $('.slider').removeClass('element-hidden')
-      }
-    }
-
-    $('input[type=file]').nicefileinput();
-
-    // once link has been clicked
-    if ($('#dropdown-action-menu').is(":visible") ) {
-      //hide dropdown actionm-menu
-      $('#dropdown-action-menu').hide();
-      // reset class that inidcates dropdown is open
-      $('.action-overflowing a').removeClass('dropdown-open');
-    }
-
-  });
-
-}
-
-function truncateNodeTitle() {
-
-var windowWidth = $(window).width();
-
-  // define how much characters will fit one the screen
-  var textFit = 48;
-
-  if (windowWidth > 450) {
-    textFit = 60;
-  }
-
-  if (windowWidth > 600) {
-    textFit = 100;
-  }
-
-  $('.node-teaser .node-title').succinct({
-    size: textFit
-  });
-
-}

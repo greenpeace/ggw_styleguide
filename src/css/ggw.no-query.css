@@ -810,7 +810,7 @@ strong, b {
   right: 15px;
 }
 
-.button i {
+.btn-block i {
   margin-right: .5em;
 }
 
@@ -1715,10 +1715,13 @@ strong, b {
   position: relative;
 }
 
+.dropdown {
+  display: none;
+}
+
 .l-main .dropdown {
   position: absolute;
   z-index: 9999999;
-  display: none;
 }
 
 .dropdown .dropdown-menu {
@@ -1772,6 +1775,11 @@ strong, b {
 .dropdown.dropdown-scroll .dropdown-panel {
   max-height: 358px;
   overflow: auto;
+}
+
+.no-js .country-selector:hover #dropdown-content-country,
+.no-js .language-selector:hover #dropdown-content-language {
+  display: block;
 }
 
 .form-wrapper {
@@ -2069,6 +2077,19 @@ article img.pull-left {
 article picture.pull-right,
 article img.pull-right {
   margin: 0 0 1em 1em;
+}
+
+#javascript-disabled {
+  border-bottom: 1px solid #a20a00;
+  font-size: 20px;
+  padding: .5em 0;
+  background-color: #d50d00;
+  color: white;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  z-index: 10;
 }
 
 /* Magnific Popup CSS */
@@ -2580,6 +2601,9 @@ img.mfp-img {
   right: 15px;
   bottom: 1em;
   right: 7%;
+}
+.slides button:active, .slides button.active {
+  top: auto;
 }
 
 .flex-pauseplay span {

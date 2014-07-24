@@ -1,5 +1,4 @@
-jQuery(document).ready(function ($) {
-  'use strict';
+function offCanvasNav() {
 
   var root = $(document.documentElement)
 
@@ -80,4 +79,5 @@ jQuery(document).ready(function ($) {
     }
     return menuOpen;
   }
-});
+
+}

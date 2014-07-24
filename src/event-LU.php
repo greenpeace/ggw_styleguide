@@ -141,8 +141,7 @@
   </div>
 
     <aside class="l-sidebar sidebar">
-        <a data-replace="modules/lu-event-sidebar.php" data-media="(min-width: 900px)"><span class="element-invisible">
-    show sidebar</span></a>
+        <a data-replace="modules/lu-event-sidebar.php" <?php echo ($detect->isMobile() ? "data-media='(min-width: 900px)'" : ""); ?>>show sidebar</a>
 
 
   </aside>
@@ -150,8 +149,7 @@
 </div>
 
 <footer class="l-footer footer">
-  <a data-replace="modules/footer.php" data-media="(min-width: 900px)"><span class="element-invisible">
-    Footer</span></a>
+  <a data-replace="modules/footer.php" <?php echo ($detect->isMobile() ? "data-media='(min-width: 900px)'" : ""); ?>>Footer</a>
 </footer>
 
 </div>

@@ -104,19 +104,18 @@
 
     <aside class="l-sidebar sidebar">
 
-    <a data-replace="modules/shoutbox.php"><span class="element-invisible">
-    Shoutbox</span></a>
+    <a href="modules/shoutbox.php" data-replace="modules/shoutbox.php">
+    Shoutbox</a>
 
-    <a data-replace="modules/block/upcoming-events.php"><span class="element-invisible">
-    Upcoming events</span></a>
+    <a data-replace="modules/block/upcoming-events.php">
+    Upcoming events</a>
 
   </aside>
 
 </div>
 
 <footer class="l-footer footer">
-  <a data-replace="modules/footer.php" data-media="(min-width: 900px)"><span class="element-invisible">
-    Footer</span></a>
+  <a data-replace="modules/footer.php" <?php echo ($detect->isMobile() ? "data-media='(min-width: 900px)'" : ""); ?>>Footer</a>
 </footer>
 
 </div>

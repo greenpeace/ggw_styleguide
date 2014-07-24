@@ -111,7 +111,11 @@ Setting up
     <p>Command for single install:</p>
     <code class="terminal">npm install gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-rename gulp-changed gulp-cache gulp-size gulp-combine-media-queries gulp-plumber gulp-notify --save-dev</code>
     <p>This will install all necessary plugins and save them to devDependencies in package.json.</p>
-
+    <p>The two main tasks we will run in our developing branch '~/ggw_styleguide/' in our terminal are:</p>
+    <ul>
+      <li><p><code class="terminal">gulp watch</code>: Will compile all the files on 'src/sass' and 'src/js' automatically everytime you modify or add a file in those folders. Once you run this task, you cannot use this opened terminal, until you stop the process. However, you can always open another terminal window if you need it.</p></li>
+      <li><p><code class="terminal">gulp build</code>: This task will compile both sass base files, create one js file and optimize and copy images. You can run this task everytime you want to compile big changes manually instead of using 'gulp watch'.</p></li>
+    </ul>
   </div>
 </div>
 
@@ -143,21 +147,22 @@ Folder Organization
       <ul class="tree">
         <li>
           css: 
-            <p>As you can see in the picture, here you can find the minified css files separated in 4 different groups: ggw.mobile.min.css, ggw.mobile.responsive.min.css, ggw.no-query.min.css and ggw.styles.min.css:</p>
+            <p>As you can see in the picture, here you can find the minified css files separated in 4 different groups: ggw.mobile.min.css, ggw.mobile.responsive.min.css, ggw.no-query.min.css and ggw.styles.min.css.</p>
         </li>
         <li>
-          images: 
-            <p></p>
+          images:
+            <p>All the images from '~/ggw-styleguide/src/images', are optimized and copied here by gulp.</p>
+            <p>It is possible in the future these images will be two maps of sprites: png images and svg images.</p>
         </li>
         <li>
           js: 
-            <p></p>
+            <p>We have two minified js files:</p>
             <ul>
               <li>before.min.js: 
-                  <p></p>
+                  <p>This one is the first running js on the page.</p>
               </li>
               <li>theme.min.js: 
-                  <p></p>
+                  <p>This one will run all the dynamic styles and contents of the page. All these scripts will run after 'before.js'.</p>
               </li>
             </ul>
         </li>
@@ -191,30 +196,30 @@ Folder Organization
         </li>
         <li>
           font: 
-            <p></p>
+            <p>We include here manually all the extensions files (eot, svg, ttf and woff) of the icon-fonts we use in Greenpeace Greenwire page.</p>
         </li>
         <li>
           images: 
-            <p></p>
+            <p>In this folder we store all the images we will use for the project.</p>
         </li>
         <li>
           js: 
-            <p></p>
+            <p>As you can imagine, here we store all the js files which will be compiled and minified.</p>
             <ul>
               <li>base: 
-                  <p></p>
+                  <p>jQuery.</p>
               </li>
               <li>before: 
-                  <p></p>
+                  <p>Scripts that should run before the other scripts.</p>
               </li>
               <li>contrib: 
-                  <p></p>
+                  <p>In this folder we keep all the scripts created by third parties.</p>
               </li>
               <li>custom: 
-                  <p></p>
+                  <p>Here we store the scripts we create ourselves.</p>
               </li>
               <li>oldie: 
-                  <p></p>
+                  <p>And here we include all the scripts necessary to run old IE browsers.</p>
               </li>
               <li>js files: 
                   <p>Compiled but not minified js files by gulp task from previous folders.</p>
@@ -223,7 +228,7 @@ Folder Organization
         </li>
         <li>
           libraries: 
-            <p></p>
+            <p>As the folder says, here we keep all the javascript libraries we use in the project.</p>
         </li>
         <li>
           modules: 
@@ -231,28 +236,28 @@ Folder Organization
         </li>
         <li>
           sass: 
-            <p></p>
+            <p>In this folder we create and modify all the scss files for the style of the project. All these files will be compiled into css thought gulp task.</p>
             <ul>
               <li>abstractions: 
-                  <p></p>
+                  <p>All the @mixins are here.</p>
               </li>
               <li>base: 
-                  <p></p>
+                  <p>Typography style, main estructure and visibility. You can check the typography styles and color variables in 'base.css' section in this Styleguide.</p>
               </li>
               <li>components: 
-                  <p></p>
+                  <p>Style of all the components of the project. You can check some of the components markup in the section 'components.css'.</p>
               </li>
               <li>layouts: 
-                  <p></p>
+                  <p>Different layouts to apply in the project.</p>
               </li>
               <li>modules: 
-                  <p></p>
+                  <p>Style of all the modules of the project. You can check some of the modules markup in the section 'modules.css'.</p>
               </li>
               <li>styleguide: 
                   <p>scss files related with this styleguide. Check next next subsection: "Editing this Styleguide".</p>
               </li>
               <li>variables: 
-                  <p></p>
+                  <p>Color, grid and typography variables. You can check all color variables in 'base.css' section.</p>
               </li>
               <li>scss files: 
                   <p>Compiled but not minified scss files from by gulp task from previous folders.</p>

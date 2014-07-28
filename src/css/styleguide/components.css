@@ -367,44 +367,6 @@ We use the combination of text and icon in some buttons for the mobile app.
 </p>
 ```
 
-Article
-====
-
-Article components in _author.scss
-
-<h2>Tags</h2>
-
-The style of the tags in an article.
-
-```
-<article>
-  <div class="tags">Tags: <a class="tag" href="#">oceans</a>, <a class="tag" href="#">Sustainable Fishery</a>, <a class="tag" href="#">conservation</a> </div>
-</article>
-
-```
-
-<h2>Submitted</h2>
-
-Information about the author of the article.
-
-```
-<article>
-  <div class="submitted submitted-extended">
-    <div class="submitted-image">
-      <img src="http://placehold.it/75x75" alt="Name of the author" />
-    </div>
-    <div class="submitted-info">
-        <div><a href="#">News</a> by willie_mackenzie</div>
-        <div class="submitted-bio">
-          <p>Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.</p>
-        </div>
-        <div class="submitted-all-reference"><a href="#">All News by willy_mackenzie</a>.</div>
-    </div>
-  </div>
-</article>
-
-```
-
 Images
 ===
 

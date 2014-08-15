@@ -1,5 +1,4 @@
 <?php include('modules/head.php'); ?>
-<link rel="stylesheet" href="leaflet/leaflet.css" />
 <body class="not-front not-logged-in page-type-news l-has-sidebar">
 <noscript><div id="javascript-disabled">Your JavaScript seems to be disabled, this might affect your experience on Greenpeace Greenwire.</div></noscript>
 

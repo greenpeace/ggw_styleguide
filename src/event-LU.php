@@ -71,7 +71,7 @@
                 <div class="field field-name-field-event-location">
                   <div class="field-label">Location: </div>
                   <div>
-                    <a class="js-show-mobile-map" href="#"><span>Somewhere downTown</span> <span>Sterry Street 342</span><span>London</span></a>
+                    <a class="js-show-mobile-map" href="#"><span>Somewhere downTown, </span><span>Sterry Street 342, </span><span>London</span></a>
                   </div>
 
                 </div>

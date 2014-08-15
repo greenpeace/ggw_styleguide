@@ -1,12 +1,13 @@
 .view-mode-full {
 
-  .field-name-body {
-    margin-top: 1em;
-  }
+    .field-group-format {
+      margin: $def-mar 0;
+      background: $background;
+    }
 
-  .field-group-format {
-    margin: $def-mar 0;
-    background: $background;
+    .field-name-body {
+      margin-top: 1em;
+    }
 
     .field {
       padding: $def-mar-half $def-mar;
@@ -29,7 +30,30 @@
       margin-left: 3em;
     }
 
-  }
+}
+
+.profile {
+
+    .field {
+      padding: $def-mar-half $def-mar;
+      @include font-size(14px);
+    }
+
+    .field-label {
+      @extend %element-invisible;
+    }
+
+    .field-label + div:before {
+      @extend %load-icon;
+      @include font-size(22px);
+      margin: 0 0 0 -1em;;
+      position: absolute;
+      width: 1em;
+    }
+
+    .field-label + div {
+      margin-left: 1em;
+    }
 
 }
 
@@ -37,6 +61,7 @@
   @extend %icon-calendar;
 }
 
+.field-name-field-location .field-label + div:before,
 .field-name-field-event-location .field-label + div:before {
   @extend %icon-location;
 }
@@ -68,4 +93,55 @@
 .event-actions {
   text-align: center;
   margin: $def-mar 0;
+}
+
+.profile {
+  overflow: hidden;
+  margin-bottom: $def-mar;
+  line-height: 1.2em;
+
+  .field-type-image {
+    float: left;
+    margin-right: .5em;
+    width: 90px;
+    height: 90px; //temp
+    background-color: $grey-l;
+    overflow: hidden;
+    position: relative;
+
+    @include breakpoint($tab) {
+      width: 130px;
+      height: 130px;
+    }
+
+    &:before {
+      color: $white;
+      position: relative;
+      font-size: 2.5rem;
+      z-index: 2;
+      line-height: 60px;
+      width: 100%;
+      @extend %load-icon;
+
+      @include breakpoint($tab) {
+        line-height: 90px;
+        font-size: 3.5rem;
+      }
+    }
+
+  }
+
+  img {
+    position: relative;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .field-type-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
 }

@@ -33,6 +33,17 @@
   margin-top: 5px;
 }
 
+.btn-group {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+
+  > .button {
+    float: left;
+    position: relative;
+  }
+}
+
 .btn-dropdown {
   padding: .44em 1em;
   margin: 0;
@@ -49,6 +60,7 @@
 
 .btn-block i {
   margin-right: .5em;
+  line-height: 1em;
 }
 
 .btn-social-fb {
@@ -61,5 +73,3 @@
 .btn-social-gp .icon-gplus {
   color: #dd4b39;
 }
-
-

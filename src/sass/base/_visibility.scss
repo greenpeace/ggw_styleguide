@@ -9,3 +9,7 @@
 .element-placeholder {
   @extend %element-placeholder;
 }
+
+.clear {
+  @extend %inline-cf;
+}

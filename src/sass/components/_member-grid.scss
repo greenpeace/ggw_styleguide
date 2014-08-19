@@ -1,0 +1,44 @@
+.member-grid {
+
+  ul {
+
+  }
+
+  li {
+    overflow: hidden;
+    display: block;
+    padding: .5em 0;
+    margin: .5em 0;
+    border-bottom: 1px solid $background;
+
+    @include breakpoint($tab) {
+      float:left;
+      width: 50%;
+    }
+  }
+
+  .field-type-image {
+    float: left;
+    margin: 0 1em 0 0;
+    width: 40%;
+    max-width: 200px;
+  }
+
+  .field-type-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .field {
+    @include font-size($p);
+  }
+
+  .field + .field {
+    margin: $def-mar-half 0;
+  }
+
+  .field-friend-status {
+
+  }
+
+}

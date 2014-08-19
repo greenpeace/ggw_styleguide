@@ -231,11 +231,9 @@
 
   @include breakpoint($desk) {
 
-    .no-flexbox & {
-      float: left;
-      position: relative;
-      width: (100%/1.5);
-    }
+    float: left;
+    position: relative;
+    width: (100%/1.5);
 
     .flexbox & {
       flex: 0 1 (100%/1.5);
@@ -249,45 +247,31 @@
 .l-two-column .l-sidebar {
 
   @include breakpoint($desk) {
-    .no-flexbox & {
-      float: left;
-      position: relative;
-      width: (100%/2);
-    }
+    float: left;
+    position: relative;
+    width: (100%/2);
+  }
 
-    .flexbox & {
-      flex: 0 1 (100%/2);
-      order: 1;
-    }
-
+  .flexbox & {
+    flex: 0 1 (100%/2);
+    order: 1;
   }
 
 }
 
 
 .l-has-sidebar .l-sidebar {
-  @extend %element-hidden;
+  //@extend %element-hidden;
 
   @include breakpoint($desk) {
     display: block;
+    float: right;
+    width: (100%/3);
 
-    // non-js fallback
-    @if $oldie {
-      float: right;
-      width: (100%/3);
-    }
-    @else {
-      .no-flexbox & {
-        float: right;
-        width: (100%/3);
-      }
-
-      .flexbox & {
-        flex: 0 1 (100%/3);
-        order: 2;
-        margin-left: auto;
-      }
-
+    .flexbox & {
+      flex: 0 1 (100%/3);
+      order: 2;
+      margin-left: auto;
     }
 
   }

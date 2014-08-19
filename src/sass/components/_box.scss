@@ -1,0 +1,133 @@
+.box-container {
+  margin: 10px;
+
+  .flexbox & {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  @include breakpoint($desk) {
+    margin: 0 0 0 1em;
+  }
+
+}
+
+.box {
+  float:left;
+  display: block;
+  width: 22.5%;
+  margin:0 1.25% 1em;
+  border-radius: 3px;
+  background-clip: border-box;
+  background: $white;
+  border: 1px solid $grey-l;
+  text-align: center;
+  color: $grey-d;
+  overflow: hidden;
+
+  .flexbox & {
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    width: auto;
+    flex: 0 1 24%;
+    margin: 0 0 1em;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint($desk) {
+      flex: 0 1 45%;
+      margin: 0 0 1em;
+    }
+
+  }
+
+  &:hover {
+    box-shadow: 0 1px 2px 0 $grey-l;
+    color: $base;
+  }
+
+}
+
+.box-friends {
+  text-align: left;
+
+  .box-label {
+    border-top: none;
+  }
+
+  .friend-image-wrapper {
+    background: $white;
+    padding: 3px;
+    border-top: 1px solid $grey-l;
+
+    .flexbox & {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+
+    div {
+      float: left;
+      width: 24%;
+      height: auto;
+      margin: 0 1.33% 0 0;
+
+      &:last-of-type {
+       margin: 0;
+      }
+
+      .flexbox & {
+       flex: 0 1 24%;
+       margin: 0;
+      }
+
+      img {
+        display: block;
+      }
+
+    }
+
+  }
+
+  .flexbox & {
+    flex: 0 1 100%;
+    flex-flow: column nowrap;
+
+    @include breakpoint($desk) {
+      flex: 0 1 100%;
+
+      .box-label {
+        background: $white;
+      }
+
+    }
+  }
+
+}
+
+
+.box-label {
+  @include font-size($small);
+  text-transform: uppercase;
+  line-height: 1.5em;
+  @extend %truncate;
+  width: 100%;
+  background: darken($background, 2%);
+  border-top: 1px solid $grey-m;
+  padding: .2em .5em 0;
+
+  span {
+    font-weight: 300;
+  }
+}
+
+.box-icon {
+  @include font-size($h1);
+  padding: 0.3em 0;
+
+  @include breakpoint($desk) {
+    @include font-size(40px);
+    padding: 0.5em 0;
+  }
+}

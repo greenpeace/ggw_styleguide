@@ -1,0 +1,82 @@
+// ---------------------
+// Social media
+// ---------------------
+.field-name-field-social-media {
+
+  .social-icon {
+    @include font-size($h2);
+    color: $base;
+    @extend %load-icon;
+    margin: 5px 5px 0 0;
+    display: inline-block;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+  }
+
+  .facebook {
+    @extend %icon-facebook-squared;
+    color: #3B5998;
+
+    &:hover {
+      color: #3B5998;
+    }
+  }
+
+  .twitter {
+    @extend %icon-twitter;
+    color: #019AD2;
+
+    &:hover {
+      color: #019AD2;
+    }
+  }
+
+  .linkedin {
+    @extend %icon-linkedin;
+    color: #4393BB;
+
+    &:hover {
+      color: #4393BB;
+    }
+  }
+
+  .pinterest {
+    @extend %icon-pinterest;
+    color: #CB2027;
+
+    &:hover {
+      color: #CB2027;
+    }
+  }
+
+  .googleplus {
+    @extend %icon-gplus;
+    color: #DB4A39;
+
+    &:hover {
+      color: #DB4A39;
+    }
+  }
+
+  .vk {
+    @extend %icon-vkontakte;
+    color: #45668E;
+
+    &:hover {
+      color: #45668E;
+    }
+  }
+
+}
+
+.icon-skype {
+  @include font-size($h2);
+  color: $base;
+  @extend %load-icon;
+  margin: 5px 5px 0 0;
+  display: inline-block;
+  color: #12A5F4;
+}

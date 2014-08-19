@@ -32,6 +32,11 @@
 .icon-map {       @extend %icon-location}
 .icon-down-open { @extend %icon-down-open}
 .icon-bell {      @extend %icon-bell}
+.icon-edit {      @extend %icon-pencil}
+.icon-subscription {      @extend %icon-bookmark}
+.icon-mail {      @extend %icon-mail}
+.icon-check {      @extend %icon-check}
+.icon-cancel {      @extend %icon-cancel}
 
 .icon-event {     @extend %icon-calendar; }
 .icon-news {      @extend %icon-book-open; }
@@ -44,3 +49,4 @@
 
 .icon-facebook { @extend %icon-facebook}
 .icon-gplus { @extend %icon-gplus}
+.icon-skype { @extend %icon-skype}

@@ -1,5 +1,5 @@
 <?php include('modules/head.php'); ?>
-<body class="not-front not-logged-in page-news l-has-sidebar">
+<body class="not-front not-logged-in page-profile l-has-sidebar">
 
 <noscript><div id="javascript-disabled">Your JavaScript seems to be disabled, this might affect your experience on Greenpeace Greenwire.</div></noscript>
 
@@ -40,14 +40,12 @@
 
         <div class="profile">
 
+          <a href="#" class="button btn-s btn-edit"><i class="icon-edit"></i> edit</a>
+
           <div class="field-type-image">
             <img src="http://lorempixel.com/130/130/people" alt="John Doe Claus">
           </div>
-
           <div class="field-type-wrapper">
-
-            <a href="#" class="button"><i class="icon-mail"></i> Send private message</a>
-            <a href="#" class="button"><i class="icon-user-add"></i> Send friend request</a>
 
             <div class="field field-name-field-social-media">
               <a href="#" class="social-icon twitter" target="_blank"><span class="element-hidden">twitter</span></a>
@@ -68,6 +66,24 @@
           <div class="clear"></div>
 
           <div class="field-type-wrapper">
+
+            <div class="field field-name-field-birthdate">
+
+              <div class="field-label">Date of birth:</div>
+              <div class="field-item">
+                October 25th, 1980
+              </div>
+
+            </div>
+
+            <div class="field field-name-field-mail">
+
+              <div class="field-label">Email:</div>
+              <div class="field-item">
+                john_doe_claus@greenpeace.org
+              </div>
+
+            </div>
 
             <div class="field field-name-field-user-about">
 
@@ -132,12 +148,12 @@
 
           <a href="#" class="box box-friends">
               <h3 class="box-label">Friends <span><i class="icon-dot"></i> 23</span></h3>
-                <div class="friend-image-wrapper">
-                  <div><img src="http://lorempixel.com/200/200/people/1" alt="John Doe Claus"></div>
-                  <div><img src="http://lorempixel.com/200/200/people/6" alt="John Doe Claus"></div>
-                  <div><img src="http://lorempixel.com/200/200/people/4" alt="John Doe Claus"></div>
-                  <div><img src="http://lorempixel.com/200/200/people/8" alt="John Doe Claus"></div>
-                </div>
+                <span class="friend-image-wrapper">
+                  <img src="http://lorempixel.com/200/200/people/1" alt="John Doe Claus">
+                  <img src="http://lorempixel.com/200/200/people/2" alt="John Doe Claus">
+                  <img src="http://lorempixel.com/200/200/people/4" alt="John Doe Claus">
+                  <img src="http://lorempixel.com/200/200/people/8" alt="John Doe Claus">
+                </span>
           </a>
 
           <a href="#" class="box box-activity">

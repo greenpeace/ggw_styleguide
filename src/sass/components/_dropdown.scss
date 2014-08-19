@@ -7,7 +7,7 @@
   z-index: 9999999;
 }
 
-.dropdown .dropdown-menu {
+.dropdown-menu {
   background: #FFF;
   border: 1px solid $grey-l;
   overflow: visible;
@@ -15,7 +15,27 @@
   margin: 0;
 }
 
-.dropdown .dropdown-panel {
+.dropdown-menu {
+  background-clip: padding-box;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+  display: none;
+  float: left;
+  font-size: 14px;
+  left: 0;
+  list-style: none outside none;
+  margin: 2px 0 0;
+  min-width: 160px;
+  padding: 5px 0;
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  z-index: 1000;
+}
+
+.dropdown-panel {
   background-color: white;
   border-radius: 3px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
@@ -23,15 +43,15 @@
   border: 1px solid rgba(0,0,0,0.2);
 }
 
-.dropdown .dropdown-panel {
+.dropdown-panel {
   padding: 10px;
 }
 
-.dropdown.dropdown-tip {
+.dropdown-tip {
   margin-top: 8px;
 }
 
-.dropdown.dropdown-tip:before {
+.dropdown-tip:before {
   position: absolute;
   top: -6px;
   left: 9px;
@@ -43,7 +63,7 @@
   display: inline-block;
 }
 
-.dropdown.dropdown-tip:after {
+.dropdown-tip:after {
   position: absolute;
   top: -5px;
   left: 10px;
@@ -55,8 +75,8 @@
 }
 
 
-.dropdown.dropdown-scroll .dropdown-menu,
-.dropdown.dropdown-scroll .dropdown-panel {
+.dropdown-scroll .dropdown-menu,
+.dropdown-scroll .dropdown-panel {
   max-height: 358px;
   overflow: auto;
 }
@@ -70,4 +90,18 @@
   }
 }
 
+.caret {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid;
+  display: inline-block;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  width: 0;
+}
 
+
+.btn .caret {
+  margin-left: 0;
+}

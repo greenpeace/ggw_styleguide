@@ -19,7 +19,13 @@
       <li class="breadcrumb-item">
         <a class="breadcrumb-link" href="#">Home</a> <?php // add extra class here ?>
       </li>
-      <li class="breadcrumb-item">Notifications</li>
+       <li class="breadcrumb-item">
+        <a class="breadcrumb-link" href="#">Members</a> <?php // add extra class here ?>
+      </li>
+       <li class="breadcrumb-item">
+        <a class="breadcrumb-link" href="#">John Doe Claus</a> <?php // add extra class here ?>
+      </li>
+      <li class="breadcrumb-item">Recent activity</li>
     </ol>
 
   </nav>
@@ -28,38 +34,69 @@
 
     <div class="main-content">
 
-      <i class="block-icon icon-bg-user icon-event"></i>
-      <h1 id="page-title" class="block-title">My Events</h1>  <?php // add extra class here ?>
+      <i class="block-icon icon-bg-user icon-clock"></i>
+      <h1 id="page-title" class="block-title">Recent activity</h1>
 
       <div class="content">
 
-      <div class="view-header">
-        <h2 class="section-heading">Upcoming events</h2>
-      </div>
+        <div class="view-ggw-user-activity">
 
-      <div class="views-row"> <!-- Event -->
-          <?php include('modules/teasers/events-with-image.php'); ?>
-      </div>
+          <div class="view-content">
 
-      <div class="views-row"> <!-- Event -->
-        <?php include('modules/teasers/events-no-image.php'); ?>
-      </div>
+            <div class="views-row">
 
-      <div class="view-header">
-        <h2 class="section-heading">Past events</h2>
-      </div>
+              <div class="views-field views-field-timestamp">
+                16 August 2014
+              </div>
 
-      <div class="views-row"> <!-- Event -->
-          <?php include('modules/teasers/events-with-image.php'); ?>
-      </div>
+              <div class="views-field views-field-rendered-entity">
+                <p><a href="#">John Doe Claus</a> created <a href="#">Kom wachtlopen aan boord van de Arctic Sunrise</a></p>
+              </div>
 
-      <div class="views-row"> <!-- Event -->
-        <?php include('modules/teasers/events-no-image.php'); ?>
-      </div>
+            </div>
 
+            <div class="views-row">
+
+              <div class="views-field views-field-timestamp">
+                14 July 2014
+              </div>
+
+              <div class="views-field views-field-rendered-entity">
+                <p><a href="#">John Doe Claus</a> created <a href="#" class="">Windenergy</a></p>
+              </div>
+
+            </div>
+
+            <div class="views-row">
+
+              <div class="views-field views-field-timestamp">
+                1 May 2014
+              </div>
+
+              <div class="views-field views-field-rendered-entity">
+                <p><a href="#">John Doe Claus</a> went to <a href="#" class="">Debating on solar energy solutions</a></p>
+                <p><a href="#">John Doe Claus</a> replied on <a href="#" class="">Forests in Europe</a></p>
+              </div>
+
+            </div>
+
+            <div class="views-row">
+
+              <div class="views-field views-field-timestamp">
+                29 April 2014
+              </div>
+
+              <div class="views-field views-field-rendered-entity">
+                <p><a href="#">John Doe Claus</a> replied on <a href="#" class="">Why bother?</a></p>
+              </div>
+
+            </div>
+
+          </div>
 
           <?php include('modules/pager-loadmore.php'); ?>
 
+        </div>
 
       </div>
 
@@ -67,7 +104,7 @@
 
   </div>
 
-  <aside class="l-sidebar sidebar">
+    <aside class="l-sidebar sidebar">
 
     <div class="box-container">
 
@@ -81,7 +118,7 @@
                 <i class="box-icon icon-users"></i>
           </a>
 
-          <a href="activity.php" class="box box-activity">
+          <a href="activity.php" class="box box-activity active">
               <h3 class="box-label">Activity</h3>
                 <i class="box-icon icon-clock"></i>
           </a>
@@ -91,7 +128,7 @@
                 <i class="box-icon icon-users"></i>
           </a>
 
-          <a href="my-events.php" class="box box-events active">
+          <a href="my-events.php" class="box box-events">
               <h3 class="box-label">Events</h3>
                 <i class="box-icon icon-event"></i>
           </a>
@@ -103,7 +140,6 @@
 
         </div>
 
-      <?php include('modules/block/suggested-upcoming-events.php'); ?>
 
   </aside>
 

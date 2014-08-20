@@ -113,6 +113,7 @@ article img.pull-right {
 	display: inline-block;
 	width: 49%;
 	border: 1px solid #eeeeee;
+	border-radius: 4px;
 	padding: .7em;
 }
 
@@ -710,10 +711,6 @@ select {
 }
 
 .l-header .language-switcher .selector:after {
-	display: none;
-}
-
-.members-quicknav {
 	display: none;
 }
 

@@ -156,7 +156,7 @@
                 <i class="box-icon icon-users"></i>
           </a>
 
-          <a href="#" class="box box-activity">
+          <a href="activity.php" class="box box-activity">
               <h3 class="box-label">Activity</h3>
                 <i class="box-icon icon-clock"></i>
           </a>

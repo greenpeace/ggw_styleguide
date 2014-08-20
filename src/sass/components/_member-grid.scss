@@ -1,6 +1,6 @@
 .member-grid {
 
-   > li {
+  > li {
     display: block;
     padding: .5em 0;
     margin: .2em 0;
@@ -11,6 +11,7 @@
       display: inline-block;
       width: 49%;
       border: 1px solid $background;
+      border-radius: 4px;
       padding: .7em;
     }
 

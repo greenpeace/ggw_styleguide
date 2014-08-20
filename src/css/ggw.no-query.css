@@ -286,7 +286,7 @@ th {
   clear: both;
 }
 
-.view-mode-full .field-label + div:before, .item-list a:before, .member-grid .field-name-field-location:before, .flex-direction-nav a:before, .field-name-field-social-media .social-icon, .icon-skype, .node-teaser .field-type-image:before, .node-teaser .submitted .type:before, [class*="icon-"], .comment-actionlink:before, .nfi-button, .node-event-small h2:before, .map-close-button, .members-quicknav a:before, .trigger:before,
+.view-mode-full .field-label + div:before, .item-list a:before, .member-grid .field-name-field-location:before, .flex-direction-nav a:before, .field-name-field-social-media .social-icon, .icon-skype, .node-teaser .field-type-image:before, .node-teaser .submitted .type:before, [class*="icon-"], .comment-actionlink:before, .nfi-button, .node-event-small h2:before, .map-close-button, .trigger:before,
 .off-canvas .caret:before, .profile .field-type-image:before, .block-search .form-actions {
   font-family: 'greenwire-10';
   speak: none;
@@ -389,7 +389,7 @@ th {
   content: '\e831';
 }
 
-.icon-comment:before, .members-quicknav .messages:before {
+.icon-comment:before {
   content: '\e810';
 }
 
@@ -405,11 +405,11 @@ th {
   content: '\e87e';
 }
 
-.node-teaser-news .field-type-image:before, .submitted .news:before, .icon-news:before, .members-quicknav .home:before {
+.node-teaser-news .field-type-image:before, .submitted .news:before, .icon-news:before {
   content: '\e830';
 }
 
-.field-name-field-event-date .field-label + div:before, .node-teaser-event .field-type-image:before, .submitted .event:before, .icon-event:before, .members-quicknav .events:before {
+.field-name-field-event-date .field-label + div:before, .node-teaser-event .field-type-image:before, .submitted .event:before, .icon-event:before {
   content: '\e813';
 }
 
@@ -447,7 +447,7 @@ th {
   content: '\e86a';
 }
 
-.icon-shout:before, .members-quicknav .shouts:before {
+.icon-shout:before {
   content: '\e800';
 }
 
@@ -2271,6 +2271,7 @@ article img.pull-right {
   display: inline-block;
   width: 49%;
   border: 1px solid #eeeeee;
+  border-radius: 4px;
   padding: .7em;
 }
 .member-grid .field-type-image {
@@ -4382,51 +4383,6 @@ html[xmlns] .slides {
   border: 1px solid #666;
 }
 
-.members-quicknav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 2;
-  transform: translate3d(0, 0, 0);
-  transition: transform 500ms ease;
-  display: none;
-}
-.members-quicknav ul {
-  display: flex;
-  flex-flow: row wrap;
-  background: #eeeeee;
-  width: 100%;
-}
-.members-quicknav li {
-  white-space: nowrap;
-}
-.no-flexbox .members-quicknav li {
-  display: inline-block;
-  position: relative;
-  width: auto;
-  padding: 0 1em;
-  line-height: 1em;
-}
-.flexbox .members-quicknav li {
-  flex: 1;
-}
-.members-quicknav a {
-  padding-top: 2em;
-  text-align: center;
-  display: block;
-  position: relative;
-  color: #333333;
-  text-transform: lowercase;
-  font-size: 13px;
-}
-.members-quicknav a:before {
-  position: absolute;
-  left: 50%;
-  margin-left: -10px;
-  top: 5px;
-  font-size: 24px;
-}
-
 .off-canvas .trigger {
   border-top: 1px solid #CCCCCC;
   color: #333333;
@@ -4822,6 +4778,18 @@ html[xmlns] .slides {
   position: absolute;
   top: 1em;
   right: 1em;
+}
+
+.view-ggw-user-activity .views-row {
+  padding: .5em 0;
+  margin: .2em 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.view-ggw-user-activity .views-field-timestamp {
+  font-weight: 700;
+}
+.view-ggw-user-activity p {
+  margin: 0;
 }
 
 .page-register-step1 .progress-bar {

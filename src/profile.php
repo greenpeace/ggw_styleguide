@@ -128,16 +128,16 @@
 
   <aside class="l-sidebar sidebar">
 
-        <div class="box-container">
+       <div class="box-container">
 
-          <a href="#" class="box box-friends">
-              <h3 class="box-label">Friends <span><i class="icon-dot"></i> 23</span></h3>
-                <div class="friend-image-wrapper">
-                  <div><img src="http://lorempixel.com/200/200/people/1" alt="John Doe Claus"></div>
-                  <div><img src="http://lorempixel.com/200/200/people/6" alt="John Doe Claus"></div>
-                  <div><img src="http://lorempixel.com/200/200/people/4" alt="John Doe Claus"></div>
-                  <div><img src="http://lorempixel.com/200/200/people/8" alt="John Doe Claus"></div>
-                </div>
+          <a href="profile.php" class="box box-profile active">
+              <h3 class="box-label">Profile</h3>
+                <i class="box-icon icon-user"></i>
+          </a>
+
+          <a href="friends.php" class="box box-friends">
+              <h3 class="box-label">Friends</h3>
+                <i class="box-icon icon-users"></i>
           </a>
 
           <a href="#" class="box box-activity">
@@ -145,22 +145,17 @@
                 <i class="box-icon icon-clock"></i>
           </a>
 
-          <a href="#" class="box box-groups">
+          <a href="groups.php" class="box box-groups">
               <h3 class="box-label">Groups</h3>
                 <i class="box-icon icon-users"></i>
           </a>
 
-          <a href="#" class="box box-events">
+          <a href="my-events.php" class="box box-events">
               <h3 class="box-label">Events</h3>
                 <i class="box-icon icon-event"></i>
           </a>
 
-          <a href="#" class="box box-subscriptions">
-              <h3 class="box-label">Subscriptions</h3>
-                <i class="box-icon icon-subscription"></i>
-          </a>
-
-        </div>
+      </div>
 
   </aside>
 

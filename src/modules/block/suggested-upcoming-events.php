@@ -1,4 +1,4 @@
-<div class="block block-events" id="upcoming-events">
+<div class="block block-events hidden-mobile" id="upcoming-events">
 
   <i class="block-icon icon-bg-event icon-event"></i>
   <h2 class="block-title">Upcoming events near you</h2>

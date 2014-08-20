@@ -61,18 +61,6 @@
                     Amersfoort, Netherlands
                   </div>
 
-                  <div class="field field-friend-status">
-                    <div class="btn-group">
-                      <a data-dropdown="#dropdown-friends-1" class="button btn-s">
-                      Wants to be friends <span class="caret"></span>
-                      </a>
-                      <div id="dropdown-friends-1" class="dropdown dropdown-scroll">
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#"><i class="icon-check"></i> Approve</a></li>
-                          <li><a href="#"><i class="icon-cancel"></i> Decline</a></li>
-                        </ul>
-                    </div>
-                  </div>
                 </div>
               </li>
               <li>
@@ -90,19 +78,6 @@
 
                   <div class="field field-name-field-location">
                     Utrecht, Netherlands
-                  </div>
-
-                  <div class="field field-friend-status">
-                    <div class="btn-group">
-                      <a data-dropdown="#dropdown-friends-2" class="button btn-s">
-                      Friend <span class="caret"></span>
-                      </a>
-                      <div id="dropdown-friends-2" class="dropdown dropdown-scroll">
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#"><i class="icon-trash"></i> Unfriend</a></li>
-                        </ul>
-                      </div>
-                    </div>
                   </div>
 
                 </div>
@@ -124,19 +99,6 @@
                     Antwerpen, Belgium
                   </div>
 
-                  <div class="field field-friend-status">
-                    <div class="btn-group">
-                      <a data-dropdown="#dropdown-friends-3" class="button btn-s">
-                      Friend <span class="caret"></span>
-                      </a>
-                      <div id="dropdown-friends-3" class="dropdown dropdown-scroll">
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#"><i class="icon-trash"></i> Unfriend</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
               </li>
               <li>
@@ -154,19 +116,6 @@
 
                   <div class="field field-name-field-location">
                     Rotterdam, Netherlands
-                  </div>
-
-                  <div class="field field-friend-status">
-                    <div class="btn-group">
-                      <a data-dropdown="#dropdown-friends-4" class="button btn-s">
-                      Friend <span class="caret"></span>
-                      </a>
-                      <div id="dropdown-friends-4" class="dropdown dropdown-scroll">
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#"><i class="icon-trash"></i> Unfriend</a></li>
-                        </ul>
-                      </div>
-                    </div>
                   </div>
 
                 </div>
@@ -188,19 +137,6 @@
                     Amersfoort, Netherlands
                   </div>
 
-                  <div class="field field-friend-status">
-                    <div class="btn-group">
-                      <a data-dropdown="#dropdown-friends-5" class="button btn-s">
-                      Friend <span class="caret"></span>
-                      </a>
-                      <div id="dropdown-friends-5" class="dropdown dropdown-scroll">
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#"><i class="icon-trash"></i> Unfriend</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
               </li>
               <li>
@@ -218,19 +154,6 @@
 
                   <div class="field field-name-field-location">
                     Groningen, Netherlands
-                  </div>
-
-                  <div class="field field-friend-status">
-                    <div class="btn-group">
-                      <a data-dropdown="#dropdown-friends-6" class="button btn-s">
-                      Friend <span class="caret"></span>
-                      </a>
-                      <div id="dropdown-friends-6" class="dropdown dropdown-scroll">
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#"><i class="icon-trash"></i> Unfriend</a></li>
-                        </ul>
-                      </div>
-                    </div>
                   </div>
 
                 </div>
@@ -254,12 +177,12 @@
 
         <div class="box-container">
 
-          <a href="my-profile.php" class="box box-profile">
+          <a href="profile.php" class="box box-profile">
               <h3 class="box-label">Profile</h3>
                 <i class="box-icon icon-user"></i>
           </a>
 
-          <a href="my-friends.php" class="box box-profile active">
+          <a href="friends.php" class="box box-profile active">
               <h3 class="box-label">Friends</h3>
                 <i class="box-icon icon-users"></i>
           </a>
@@ -269,7 +192,7 @@
                 <i class="box-icon icon-clock"></i>
           </a>
 
-          <a href="my-groups.php" class="box box-groups">
+          <a href="groups.php" class="box box-groups">
               <h3 class="box-label">Groups</h3>
                 <i class="box-icon icon-users"></i>
           </a>
@@ -279,14 +202,7 @@
                 <i class="box-icon icon-event"></i>
           </a>
 
-          <a href="#" class="box box-subscriptions">
-              <h3 class="box-label">Subscriptions</h3>
-                <i class="box-icon icon-subscription"></i>
-          </a>
-
         </div>
-
-        <?php include('modules/block/find-friends.php'); ?>
 
   </aside>
 

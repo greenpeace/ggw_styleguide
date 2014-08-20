@@ -109,9 +109,11 @@ article img.pull-right {
 
 @media (min-width: 768px) {
 
-.member-grid li {
-	float: left;
-	width: 50%;
+.member-grid > li {
+	display: inline-block;
+	width: 49%;
+	border: 1px solid #eeeeee;
+	padding: .7em;
 }
 
 .flexslider {
@@ -446,17 +448,6 @@ select {
 	margin: 0 0 1em;
 }
 
-.flexbox .box-friends {
-	-webkit-box-flex: 0;
-	-webkit-flex: 0 1 100%;
-	-ms-flex: 0 1 100%;
-	flex: 0 1 100%;
-}
-
-.flexbox .box-friends .box-label {
-	background: white;
-}
-
 .box-icon {
 	font-size: 2.5rem;
 	padding: 0.5em 0;
@@ -487,6 +478,10 @@ select {
 
 .dropdown-panel p {
 	font-size: 0.75rem;
+}
+
+.member-grid .field {
+	font-size: 0.8125rem;
 }
 
 .slides p {
@@ -1183,6 +1178,10 @@ select {
 .page-home #shoutbox,
 .page-home #upcoming-events {
 	margin: 0 0 15px 1em;
+}
+
+.hidden-mobile {
+	display: block;
 }
 
 }

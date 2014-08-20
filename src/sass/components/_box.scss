@@ -16,7 +16,7 @@
 .box {
   float:left;
   display: block;
-  width: 22.5%;
+  width: 30.5%;
   margin:0 1.25% 1em;
   border-radius: 3px;
   background-clip: border-box;
@@ -30,7 +30,7 @@
     display: flex;
     flex-flow: column-reverse nowrap;
     width: auto;
-    flex: 0 1 24%;
+    flex: 0 1 32%;
     margin: 0 0 1em;
     justify-content: space-between;
     align-items: center;
@@ -42,70 +42,18 @@
 
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     box-shadow: 0 1px 2px 0 $grey-l;
     color: $base;
   }
 
 }
 
-.box-friends {
-  text-align: left;
-
-  .box-label {
-    border-top: none;
-  }
-
-  .friend-image-wrapper {
-    background: $white;
-    padding: 3px;
-    border-top: 1px solid $grey-l;
-
-    .flexbox & {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-    }
-
-    div {
-      float: left;
-      width: 24%;
-      height: auto;
-      margin: 0 1.33% 0 0;
-
-      &:last-of-type {
-       margin: 0;
-      }
-
-      .flexbox & {
-       flex: 0 1 24%;
-       margin: 0;
-      }
-
-      img {
-        display: block;
-      }
-
-    }
-
-  }
-
-  .flexbox & {
-    flex: 0 1 100%;
-    flex-flow: column nowrap;
-
-    @include breakpoint($desk) {
-      flex: 0 1 100%;
-
-      .box-label {
-        background: $white;
-      }
-
-    }
-  }
-
+.box-container  .active {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+  color: $grey-l;
 }
-
 
 .box-label {
   @include font-size($small);
@@ -119,6 +67,10 @@
 
   span {
     font-weight: 300;
+  }
+
+  .active & {
+    border-top: 1px solid $grey-l;
   }
 }
 

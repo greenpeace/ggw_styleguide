@@ -3,6 +3,7 @@
 
   i {
     @include font-size(16px);
+    line-height: 1em;
   }
 }
 
@@ -17,7 +18,7 @@
 }
 
 .btn-s {
-  padding: 2px 3px;
+  padding: .2em .5em;
   font-size: $small;
 }
 
@@ -60,7 +61,21 @@
 
 .btn-block i {
   margin-right: .5em;
-  line-height: 1em;
+}
+
+.caret {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid;
+  display: inline-block;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  width: 0;
+}
+
+.button .caret {
+  margin-left: 0;
 }
 
 .btn-social-fb {

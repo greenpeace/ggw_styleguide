@@ -28,38 +28,26 @@
 
     <div class="main-content">
 
-      <i class="block-icon icon-bg-user icon-event"></i>
-      <h1 id="page-title" class="block-title">My Events</h1>  <?php // add extra class here ?>
+      <i class="block-icon icon-bg-user icon-users"></i>
+      <h1 id="page-title" class="block-title">My Groups</h1>  <?php // add extra class here ?>
 
       <div class="content">
 
-      <div class="view-header">
-        <h2 class="section-heading">Upcoming events</h2>
-      </div>
+        <div class="views-row">
+            <?php include('modules/teasers/group-with-image.php'); ?>
+        </div>
 
-      <div class="views-row"> <!-- Event -->
-          <?php include('modules/teasers/events-with-image.php'); ?>
-      </div>
+        <div class="views-row">
+          <?php include('modules/teasers/groups.php'); ?>
+        </div>
 
-      <div class="views-row"> <!-- Event -->
-        <?php include('modules/teasers/events-no-image.php'); ?>
-      </div>
+        <div class="views-row">
+            <?php include('modules/teasers/group-with-image.php'); ?>
+        </div>
 
-      <div class="view-header">
-        <h2 class="section-heading">Past events</h2>
-      </div>
-
-      <div class="views-row"> <!-- Event -->
-          <?php include('modules/teasers/events-with-image.php'); ?>
-      </div>
-
-      <div class="views-row"> <!-- Event -->
-        <?php include('modules/teasers/events-no-image.php'); ?>
-      </div>
-
-
-          <?php include('modules/pager-loadmore.php'); ?>
-
+        <div class="views-row">
+          <?php include('modules/teasers/groups.php'); ?>
+        </div>
 
       </div>
 
@@ -67,7 +55,7 @@
 
   </div>
 
-  <aside class="l-sidebar sidebar">
+    <aside class="l-sidebar sidebar">
 
     <div class="box-container">
 
@@ -86,12 +74,12 @@
                 <i class="box-icon icon-clock"></i>
           </a>
 
-          <a href="my-groups.php" class="box box-groups">
+          <a href="my-groups.php" class="box box-groups active">
               <h3 class="box-label">Groups</h3>
                 <i class="box-icon icon-users"></i>
           </a>
 
-          <a href="my-events.php" class="box box-events active">
+          <a href="my-events.php" class="box box-events">
               <h3 class="box-label">Events</h3>
                 <i class="box-icon icon-event"></i>
           </a>
@@ -103,7 +91,6 @@
 
         </div>
 
-      <?php include('modules/block/suggested-upcoming-events.php'); ?>
 
   </aside>
 

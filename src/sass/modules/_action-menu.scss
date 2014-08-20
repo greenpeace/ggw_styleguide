@@ -98,6 +98,7 @@
 
   .dropdown-menu {
     background: $background;
+    border: 1px solid $grey-l;
   }
 
   @include breakpoint($desk) {

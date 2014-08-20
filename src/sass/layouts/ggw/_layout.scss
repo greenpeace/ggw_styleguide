@@ -319,3 +319,12 @@
   }
 
 }
+
+
+.hidden-mobile {
+  display: none;
+
+  @include breakpoint($desk) {
+    display: block;
+  }
+}

@@ -4,6 +4,7 @@
 
   function resizeFunction() {
     overflowDropdown(),
+    mobileNav(),
     TabableSections()
   };
 

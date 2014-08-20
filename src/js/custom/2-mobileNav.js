@@ -5,7 +5,7 @@
 
           //add contrib navigation script
           $('.main-menu .menu').navgoco({
-            caretHtml: '<i class="caret"></i>',
+            caretHtml: '<i class="navcaret"></i>',
             accordion: true,
             openClass: 'open',
             save: true,

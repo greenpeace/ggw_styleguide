@@ -171,7 +171,7 @@
 }
 
 .trigger:before,
-.off-canvas .caret:before {
+.off-canvas .navcaret:before {
   position: absolute;
   @extend %load-icon;
   @extend %icon-right-open;
@@ -180,7 +180,7 @@
 }
 
 .trigger.dropdown-open:before,
-.off-canvas .open .caret:before {
+.off-canvas .open .navcaret:before {
   @extend %icon-down-open;
 }
 
@@ -236,7 +236,7 @@
   }
 
   .mobile-nav,
-  .off-canvas .caret {
+  .off-canvas .navcaret {
     @extend %element-hidden1;
   }
 

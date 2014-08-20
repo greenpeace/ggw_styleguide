@@ -1,5 +1,5 @@
 <ul class="menu">
-  <li class="menu-item"><a href="#" class="menu-link active">Home</a></li>
+  <li class="menu-item"><a href="home-LU.php" class="menu-link active">Home</a></li>
   <li class="menu-item expanded"><a href="#" class="menu-link">Community</a>
     <ul class="menu">
       <li class="menu-item"><a href="#" class="menu-link">Events</a></li>

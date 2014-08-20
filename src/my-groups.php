@@ -84,7 +84,7 @@
                 <i class="box-icon icon-event"></i>
           </a>
 
-          <a href="#" class="box box-subscriptions">
+          <a href="subscriptions.php" class="box box-subscriptions">
               <h3 class="box-label">Subscriptions</h3>
                 <i class="box-icon icon-subscription"></i>
           </a>

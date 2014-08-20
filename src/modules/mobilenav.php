@@ -2,7 +2,7 @@
 
   <div class="container">
 
-    <a href="#" title="Home" rel="home" class="logo"> <span class="element-invisible">Greenpeace Greenwire  Nederland </span></a>
+    <a href="home-LU.php" title="Home" rel="home" class="logo"> <span class="element-invisible">Greenpeace Greenwire  Nederland </span></a>
 
     <div class="mobile-nav">
       <a id="main-menu-show" href="#primary-nav" data-nav="js-nav" class="nav-btn icon-menu">

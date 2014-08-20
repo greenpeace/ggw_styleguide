@@ -481,7 +481,7 @@ select {
 	font-size: 0.75rem;
 }
 
-.member-grid .field {
+.member-grid > li {
 	font-size: 0.8125rem;
 }
 
@@ -840,7 +840,7 @@ select {
 }
 
 .mobile-nav,
-.off-canvas .caret {
+.off-canvas .navcaret {
 	display: none;
 }
 

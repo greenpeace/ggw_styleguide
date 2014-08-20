@@ -9,7 +9,7 @@ $detect = new Mobile_Detect;
 <!--[if !IE]><!--><html class="<?php echo ($detect->isMobile() ? "mobile" : "desktop"); ?> no-js" lang="en" dir="ltr"><!--<![endif]-->
 <head>
 
-<title>Discover Greenwire | Greenpeace Greenwire Nederland</title>
+<title>Prototype Responsive Greenpeace Greenwire</title>
 <meta charset="utf-8" />
 <meta name="HandheldFriendly" content="true" />
 <meta name="MobileOptimized" content="width" />

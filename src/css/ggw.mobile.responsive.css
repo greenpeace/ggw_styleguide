@@ -1142,6 +1142,7 @@ select {
 
 .l-has-sidebar .l-sidebar {
 	display: block;
+	margin: 0;
 	float: right;
 	width: 33.33333%;
 }

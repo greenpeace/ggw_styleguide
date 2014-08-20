@@ -913,7 +913,7 @@ a {
 }
 
 .btn-s {
-  padding: .2em .5em;
+  padding: .3em .6em;
   font-size: 12px;
 }
 
@@ -4782,7 +4782,6 @@ html[xmlns] .slides {
   margin: 0;
 }
 .profile .btn-edit {
-  line-height: 1em;
   display: inline-block;
   position: absolute;
   top: 1em;
@@ -5280,10 +5279,19 @@ input.form-shout-file {
   padding-bottom: 0;
 }
 
+.flexbox .l-has-sidebar .l-main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 .l-has-sidebar .l-main-column {
   float: left;
   position: relative;
   width: 66.66667%;
+}
+.flexbox .l-has-sidebar .l-main-column {
+  flex: 1;
 }
 .flexbox .l-has-sidebar .l-main-column {
   flex: 0 1 66.66667%;
@@ -5303,7 +5311,9 @@ input.form-shout-file {
 }
 
 .l-has-sidebar .l-sidebar {
+  margin-top: 5em;
   display: block;
+  margin: 0;
   float: right;
   width: 33.33333%;
 }

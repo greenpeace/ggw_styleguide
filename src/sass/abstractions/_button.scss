@@ -10,7 +10,7 @@
   position: relative;
   line-height: normal; //line-heights can't be changed in FF inputs, instead use padding
   text-align: center;
-  @include font-size(14px);
+  @include font-size($p);
   text-transform: lowercase;
 
   &:hover,

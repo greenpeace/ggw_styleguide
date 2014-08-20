@@ -227,7 +227,17 @@
   }
 }
 
+.flexbox .l-has-sidebar .l-main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 .l-has-sidebar .l-main-column {
+
+  .flexbox & {
+    flex: 1;
+  }
 
   @include breakpoint($desk) {
 
@@ -260,11 +270,13 @@
 }
 
 
+
 .l-has-sidebar .l-sidebar {
-  //@extend %element-hidden;
+  margin-top: 5em;
 
   @include breakpoint($desk) {
     display: block;
+    margin: 0;
     float: right;
     width: (100%/3);
 

@@ -40,7 +40,7 @@
 
         <div class="profile">
 
-          <a href="#" class="button btn-s btn-edit"><i class="icon-edit"></i> edit</a>
+          <a href="#" class="button btn-edit"><i class="icon-edit"></i> edit</a>
 
           <div class="field-type-image">
             <img src="http://lorempixel.com/130/130/people" alt="John Doe Claus">

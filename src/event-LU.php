@@ -54,7 +54,7 @@
 
 
             <div class="event-actions">
-              <a href="modules/block/enroll.php" class="modal button btn-l btn-primary">Enroll for this event</a>
+              <a href="modules/block/enroll.php" class="modal button btn-l btn-block btn-primary">Enroll for this event</a>
             </div>
 
             <div class="field-group-format">
@@ -71,7 +71,8 @@
                 <div class="field field-name-field-event-location">
                   <div class="field-label">Location: </div>
                   <div>
-                    <a class="js-show-mobile-map" href="#"><span>Somewhere downTown, </span><span>Sterry Street 342, </span><span>London</span></a>
+                    <a class="js-show-mobile-map" href="#" title="Open on map">
+                      Somewhere downTown<br />Sterry Street 342<br />London</a>
                   </div>
 
                 </div>
@@ -81,6 +82,15 @@
                   <div class="field-label">Event type: </div>
                   <div>
                     <span>Festival/Market</span>
+                  </div>
+
+                </div>
+
+                <div class="field field-name-field-event-organiser">
+
+                  <div class="field-label">Event Organiser: </div>
+                  <div>
+                    Organised by <a href="#" title="View profile"><span>Nicoal Sheen</span></a>
                   </div>
 
                 </div>

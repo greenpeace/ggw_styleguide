@@ -386,6 +386,7 @@ th {
 	content: '\e814';
 }
 
+.field-name-field-event-organiser .field-label + div:before,
 .node-teaser-notification .field-type-image:before,
 .submitted .notification:before,
 .icon-user:before {
@@ -6152,6 +6153,14 @@ select {
 .l-main-column {
 	margin: 0;
 	padding-bottom: 0;
+}
+
+.flexbox .l-has-sidebar .l-main {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
 }
 
 .l-has-sidebar .l-main-column {

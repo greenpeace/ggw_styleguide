@@ -54,7 +54,7 @@
 
 
             <div class="event-actions">
-              <a href="modules/block/rsvp.php" class="modal button btn-l btn-primary">RSVP</a>
+              <a href="modules/block/rsvp.php" class="modal button btn-l btn-block btn-primary">RSVP</a>
             </div>
 
             <div class="field-group-format">

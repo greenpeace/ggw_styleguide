@@ -40,6 +40,10 @@
   @extend %icon-location;
 }
 
+.field-name-field-event-organiser .field-label + div:before {
+  @extend %icon-user;
+}
+
 .field-name-field-event-type .field-label + div:before {
   @extend %icon-info-circled;
 }

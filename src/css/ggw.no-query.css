@@ -313,7 +313,7 @@ th {
   content: '\e814';
 }
 
-.node-teaser-notification .field-type-image:before, .submitted .notification:before, .icon-user:before {
+.field-name-field-event-organiser .field-label + div:before, .node-teaser-notification .field-type-image:before, .submitted .notification:before, .icon-user:before {
   content: '\e812';
 }
 
@@ -5283,6 +5283,7 @@ input.form-shout-file {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  flex-direction: row;
 }
 
 .l-has-sidebar .l-main-column {

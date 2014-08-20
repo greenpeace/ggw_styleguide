@@ -386,6 +386,7 @@ th {
 	content: '\e814';
 }
 
+.field-name-field-event-organiser .field-label + div:before,
 .node-teaser-notification .field-type-image:before,
 .submitted .notification:before,
 .icon-user:before {

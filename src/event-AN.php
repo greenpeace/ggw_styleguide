@@ -10,12 +10,12 @@
 
 <div id="main" class="l-main container">
 
-<div class="original-action-menu">
+<!--<div class="original-action-menu">
   <ul>
     <li><a href="#"><i class="icon icon-users"></i> Go to group</a></li>
     <li><a href="#"><i class="icon icon-user-add"></i> Register</a></li>
   </ul>
-</div>
+</div>-->
 
   <nav class="breadcrumb" role="navigation">
 
@@ -49,6 +49,8 @@
           </div>
 
           <div class="field-name-body">
+
+            <div class="field-group-wrapper">
 
             <img class="field-type-image" src="https://static.greenwire.greenpeace.org/sites/default/files/styles/extra_large/public/nl/event/6fe8b6ee-d5ad-4942-a26d-9e8d58cb89aa.jpg" alt="De héle Noordzeekust schoon van 1 t/m 31 augustus! Help je mee?" />
 
@@ -85,6 +87,15 @@
 
                 </div>
 
+                <div class="field field-name-field-event-organiser">
+
+                  <div class="field-label">Event Organiser: </div>
+                  <div>
+                    Organised by <span class="username">nicoal_sheen</span></a>
+                  </div>
+
+                </div>
+
                 <div class="field field-name-field-event-num-attendees">
 
                   <div class="field-label">Attendees: </div>
@@ -95,6 +106,8 @@
                 </div>
 
             </div>
+
+          </div>
 
             <div id="desktopmap"></div>
 
@@ -120,7 +133,7 @@
 
       <div class="submitted submitted-extended">
         <div class="submitted-image">
-          <img src="http://placehold.it/75x75" alt="Name of the author" /> <?php // change img size to 50px ?>
+          <img src="http://lorempixel.com/75/75/people/9" alt="Name of the author" />
         </div>
 
         <div class="submitted-info">
@@ -142,9 +155,11 @@
 
     <aside class="l-sidebar sidebar">
 
-    <a data-replace="modules/an-event-sidebar.php" <?php echo ($detect->isMobile() ? "data-media='(min-width: 900px)'" : ""); ?>>Register instructions</a>
+      <?php include('modules/block/create-account.php'); ?>
+      <?php include('modules/block/go-to-group.php'); ?>
+      <?php include('modules/block/rsvp.php'); ?>
 
-  </aside>
+    </aside>
 
 </div>
 

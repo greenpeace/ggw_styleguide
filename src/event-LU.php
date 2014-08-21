@@ -50,8 +50,7 @@
 
           <div class="field-name-body">
 
-            <img class="field-type-image" src="https://static.greenwire.greenpeace.org/sites/default/files/styles/extra_large/public/nl/event/6fe8b6ee-d5ad-4942-a26d-9e8d58cb89aa.jpg" alt="De héle Noordzeekust schoon van 1 t/m 31 augustus! Help je mee?" />
-
+            <div class="field-group-wrapper">
 
             <div class="event-actions">
               <a href="modules/block/enroll.php" class="modal button btn-l btn-block btn-primary">Enroll for this event</a>
@@ -104,6 +103,8 @@
 
                 </div>
 
+              </div>
+
             </div>
 
             <div id="desktopmap"></div>
@@ -130,7 +131,7 @@
 
       <div class="submitted submitted-extended">
         <div class="submitted-image">
-          <img src="http://placehold.it/75x75" alt="Name of the author" /> <?php // change img size to 50px ?>
+          <img src="http://lorempixel.com/75/75/people/9" alt="Name of the author" />
         </div>
 
         <div class="submitted-info">

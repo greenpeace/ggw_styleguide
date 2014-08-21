@@ -263,6 +263,30 @@ article img.pull-right {
 	top: 0;
 }
 
+.view-mode-full .field-group-wrapper {
+	background: #eeeeee;
+	padding: 15px 0 15px 15px;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+.view-mode-full .field-type-image {
+	float: left;
+	max-width: 60%;
+}
+
+.view-mode-full .field-group-format,
+.view-mode-full .event-actions {
+	overflow: hidden;
+	margin: 0;
+}
+
+.view-mode-full .event-actions {
+	padding: 0 15px;
+	margin-top: 0;
+	overflow: hidden;
+}
+
 .nav-btn + .nav-btn {
 	right: 15px;
 }
@@ -434,7 +458,7 @@ select {
 .field-name-field-event-location a {
 	pointer-events: none;
 	cursor: default;
-	color: #333333;
+	color: #4d4d4d;
 }
 
 .box-container {

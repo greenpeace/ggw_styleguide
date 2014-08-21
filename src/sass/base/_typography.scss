@@ -8,7 +8,7 @@
   label,
   legend,
   select {
-    @include font-size (14px);
+    @include font-size ($p);
   }
 }
 

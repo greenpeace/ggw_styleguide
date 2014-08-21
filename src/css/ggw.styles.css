@@ -889,27 +889,27 @@ a {
 
 .view-mode-full .field {
 	padding: 7px 15px;
-	font-size: 0.875rem;
+	font-size: 0.75rem;
+}
+
+.view-mode-full .field a {
+	font-size: 0.75rem;
 }
 
 .view-mode-full .field-label + div:before {
-	font-size: 1.375rem;
-	margin: 0 0 0 -2em;
+	font-size: 1.1875rem;
+	margin-left: -1.25em;
 	position: absolute;
 	width: 1em;
+	line-height: 1em;
 }
 
 .view-mode-full .field-label + div {
-	margin-left: 3em;
+	margin-left: 2em;
 }
 
 .field-name-field-event-location span {
 	margin-right: .3em;
-}
-
-.event-actions {
-	text-align: center;
-	margin: 15px 0;
 }
 
 .submitted {
@@ -3784,6 +3784,10 @@ html[xmlns] .slides {
 	width: 60px;
 }
 
+.event-actions {
+	margin: 15px 0;
+}
+
 .block-events .mapwrapper {
 	margin-bottom: 1em;
 }
@@ -5302,6 +5306,30 @@ article img.pull-right {
 	top: 0;
 }
 
+.view-mode-full .field-group-wrapper {
+	background: #eeeeee;
+	padding: 15px 0 15px 15px;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+.view-mode-full .field-type-image {
+	float: left;
+	max-width: 60%;
+}
+
+.view-mode-full .field-group-format,
+.view-mode-full .event-actions {
+	overflow: hidden;
+	margin: 0;
+}
+
+.view-mode-full .event-actions {
+	padding: 0 15px;
+	margin-top: 0;
+	overflow: hidden;
+}
+
 .nav-btn + .nav-btn {
 	right: 15px;
 }
@@ -5473,7 +5501,7 @@ select {
 .field-name-field-event-location a {
 	pointer-events: none;
 	cursor: default;
-	color: #333333;
+	color: #4d4d4d;
 }
 
 .box-container {

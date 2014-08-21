@@ -1,4 +1,4 @@
-<div class="block">
+<div class="block hidden-mobile">
   <i class="block-icon icon-users icon-bg-group"></i>
   <h2 class="block-title">Go to group</h2>
   <div class="content">

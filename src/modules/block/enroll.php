@@ -1,4 +1,4 @@
-<div class="block">
+<div class="block hidden-mobile">
   <i class="block-icon icon-login icon-bg-action"></i>
   <h2 class="block-title">RSVP for this event</h2>
   <div class="content">

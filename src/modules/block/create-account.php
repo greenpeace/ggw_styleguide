@@ -1,4 +1,4 @@
-<div class="block">
+<div class="block hidden-mobile">
 
   <i class="block-icon icon-bg-action icon-user-add"></i>
   <h2 class="block-title">Create an account</h2>

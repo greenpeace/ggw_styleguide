@@ -1,0 +1,41 @@
+---
+title: Style guide structure
+body_class: styleguide-structure
+layout: styleguide
+---
+
+%aside.sidebar-left
+  = partial :"nav/documentation"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Style guide structure
+    %article.view-mode-full.content
+
+      %h2.section-heading Root folders
+      :markdown
+        The project structure is based on Middleman. You can see the following folder in the root and this is what their function is:
+
+        #### Build
+        This folder contains the static website/style guide that is deployed on [http://prototype.goalgorilla.com/ggw/styleguide]. You should not work in this folder.
+
+        #### Data
+        This folder contains all data stored in .yml files. This is convenient when we want to reuse template files and run them with different sets of data. Yaml files are similar to JSON files and allow us to separate content form markup.
+
+        #### Helpers
+        In this folder we store special helper functions for Middleman
+
+        #### Source
+        This folder contains all our template files, CSS, Javascript, images, fonts and navigation. We are working from within this folder. When running middleman this folder is actively being watched and it triggers livereload upon changes in this folder.
+
+      %h2.section-heading CSS/SASS folders
+
+      :markdown
+        Within Middleman there is no active complilation from SCSS to CSS files.
+
+      %h2.section-heading Partials
+
+      %h2.section-heading Javascript
+
+      %h2.section-heading Vendor

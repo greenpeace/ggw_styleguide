@@ -47,7 +47,12 @@ layout: styleguide
         %ul
           %li unordered list item one
           %li unordered list item two
-          %li unordered list item three
+          %li
+            unordered list item three
+            %ul
+              %li subitem 1
+              %li subitem 2
+              %li subitem 3
           %li unordered list item four
           %li unordered list item five
         %ol
@@ -57,4 +62,71 @@ layout: styleguide
           %li ordered list item four
           %li ordered list item five
 
+  %section.block.block-no-icon
+    %h2.block-title Headings
+    :markdown
+      Article titles are generated from a separate field in Drupal. They are often accompanied with icons to highlight the content type. Therefore it is not advised to use `<h1>` elements in the body copy.
 
+    .codedemo
+      %article
+        %h1 This is an heading 1 element
+        %h2 This is an heading 2 element
+        %h3 This is an heading 3 element
+        %h4 This is an heading 4 element
+        %h5 This is an heading 5 element
+        %h6 This is an heading 6 element
+
+    #example
+      :code
+        # lang: html
+          <article>
+            <h1> This is an heading 1 element </h1>
+            <h2> This is an heading 2 element </h2>
+            <h3> This is an heading 3 element </h3>
+            <h4> This is an heading 4 element </h4>
+            <h5> This is an heading 5 element </h5>
+            <h6> This is an heading 6 element </h6>
+          </article>
+
+  %section.block.block-no-icon
+    %h2.block-title Links
+    :markdown
+      Links inside .content class (except .button and .item-list) have the next properties:
+
+      **`:visited`** - When the link is visited, it keeps the color and has no decoration.
+
+      **`:hover`** - When the link is hovered, the cursor became a pointer and the link is underlined.
+
+      **`:focus`** - When the link is focused, the link is underlined and with a thin dotted outline.
+
+
+    .codedemo
+      %article
+        %a{:href => "#", :title => "link title"} This is a link element
+
+
+    #example
+      :code
+        # lang: html
+          <article>
+            <a href="#" title="link title"> This is an link element </a>
+          </article>
+
+  %section.block.block-no-icon
+    %h2.block-title Quote
+    :markdown
+      Blockquotes can be used to quote people and style this consistently.
+
+    .codedemo
+      %article
+        %blockquote{:cite => "http://linktosource.com"}
+          %p
+            "This project aims at making sure your style sheets are fully documented whilst being synchronized with your webpages styles. To do this it actually uses your live stylesheets in so that at anytime you can review how your styleguide looks."
+    #example
+      :code
+        #lang: html
+          <article>
+            <blockquote cite="http://linktosource.com">
+              "This project aims at making sure your style sheets are fully documented whilst being synchronized with your webpages styles. To do this it actually uses your live stylesheets in so that at anytime you can review how your styleguide looks."
+            </blockquote>
+          </article>

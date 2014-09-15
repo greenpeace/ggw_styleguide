@@ -1,0 +1,44 @@
+---
+body_class: page-register
+---
+
+%nav.breadcrumb{:role => "navigation"}
+  %h2.element-invisible You are here
+  %ol.breadcrumbs
+    %li.breadcrumb-item You are here:
+    %li.breadcrumb-item
+      %a.breadcrumb-link{:href => "#"} Home
+    %li.breadcrumb-item Register
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-user.icon-user-add
+    %h1#page-title.block-title Register
+    .content
+      %form.flexrow
+        .signup-wrapper.social-signup-wrapper{"data-title" => "OR"}
+          %h3.form-title Sign up with social media
+          %a.button.btn-l.btn-block.btn-social-fb{:href => "#"}
+            %i.icon.icon-facebook
+            Register with Facebook
+          %a.button.btn-l.btn-block.btn-social-gp{:href => "#"}
+            %i.icon.icon-gplus
+            Register with Google+
+        .signup-wrapper
+          .form-wrapper
+            %h3.form-title Sign up with email
+            .form-item
+              %label.form-label{:for => "edit-name"}
+                Username
+                %span.form-required{:title => "This field is required."} *
+              .form-description Spaces are NOT allowed; punctuation is not allowed except for periods, hyphens, apostrophes, and underscores.
+              %input#edit-name.username.form-text{:maxlength => "60", :name => "name", :size => "60", :type => "text", :value => ""}/
+            .form-item
+              %label.form-label{:for => "edit-email"}
+                E-mail address
+                %span.form-required{:title => "This field is required."} *
+              .form-description A valid e-mail address. All e-mails from the system will be sent to this address. The e-mail address is not made public and will only be used if you wish to receive a new password or wish to receive certain news or notifications by e-mail.
+              %input#edit-email.email.form-text{:maxlength => "60", :name => "email", :size => "60", :type => "text", :value => ""}/
+          .form-actions.form-wrapper
+            %input.button.btn-primary.pull-right{:type => "submit", :value => "Next"}/
+%aside.l-sidebar.sidebar
+  = partial :"blocks/save_planet"

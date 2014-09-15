@@ -1,0 +1,144 @@
+.off-canvas {
+
+  .trigger {
+    border-top: 1px solid #CCCCCC;
+    color: $base;
+    display: block;
+    padding: 1em;
+    font-weight: 700;
+
+    &:focus {
+      @extend %no-deco;
+    }
+
+  }
+
+  .dropdown a {
+    border-top: 1px solid #CCCCCC;
+    color: $base;
+    display: block;
+    padding: 1em 1em 1em 2em;
+    font-weight: 700;
+  }
+  .dropdown-list a {
+    font-weight: 400;
+    color: #7d7d7d;
+  }
+
+  .country-img {
+    @extend %element-hidden;
+  }
+
+  @include breakpoint($desk) {
+
+    .trigger {
+      border: none;
+      font-weight: 300;
+      height: 100%;
+      position: relative;
+      color: $white;
+      padding: 5px;
+
+      &:before {
+        @include element-hidden;
+      }
+
+    }
+
+    .country-selector .trigger {
+      @include font-size(16px);
+    }
+
+    .language-selector .trigger {
+      @include font-size(13px);
+      padding-top: 0;
+      top: 5px;
+
+      &:after {
+        width: 0;
+        height: 0;
+        border: 0.313em solid transparent; /* 5 */
+        border-bottom: none;
+        content: '';
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        right: -0.313em; /* 5 */
+        border-top-color: $white;
+        margin: 0 .3em;
+      }
+
+      &.dropdown-open:after {
+        border-top-color: $base;
+      }
+
+    }
+
+    .language-selector {
+      text-align: right;
+      width: 100px;
+
+      .dropdown {
+        left: auto;
+        right: 0;
+      }
+    }
+
+    .dropdown {
+      width: 100%;
+      position: absolute;
+      z-index: 9999999;
+      text-align: left;
+    }
+
+    .country-img {
+      background: $green1 url(../images/langmap-white.png);
+      position: absolute;
+      right: 0;
+      width: 76px;
+      height: 20px;
+      text-indent: -50000px;
+      line-height: 0;
+      color: transparent;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .dropdown-open .country-img {
+      background: $white url(../images/langmap-green.png);
+    }
+
+    .dropdown-open {
+      background-color: $white;
+      color: $base;
+      display: block;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .dropdown-list {
+      width: 100%;
+      max-height: 350px;
+      overflow: auto;
+      list-style: none;
+      background: $white;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 0 0 4px 4px;
+      background-clip: padding-box;
+    }
+
+    .dropdown a {
+      padding: 3px 10px;
+      border: none;
+      font-weight: 300;
+      @include font-size(13px);
+
+      &:hover {
+        color: $white;
+        background: $base;
+      }
+
+    }
+
+  }
+
+}

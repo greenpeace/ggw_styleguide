@@ -48,7 +48,7 @@ Install the plugins we use:
 
 Command for single install
 
-* `npm install gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-rename gulp-changed gulp-cache gulp-size gulp-plumber gulp-notify --save-dev`
+* `npm install gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-rename gulp-changed gulp-cache gulp-size gulp-combine-media-queries gulp-plumber gulp-notify --save-dev`
 
 This will install all necessary plugins and save them to devDependencies in package.json.
 

@@ -1,0 +1,85 @@
+.box-container {
+  margin: 10px;
+
+  .flexbox & {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  @include breakpoint($desk) {
+    margin: 0 0 0 1em;
+  }
+
+}
+
+.box {
+  float:left;
+  display: block;
+  width: 30.5%;
+  margin:0 1.25% 1em;
+  border-radius: 3px;
+  background-clip: border-box;
+  background: $white;
+  border: 1px solid $grey-l;
+  text-align: center;
+  color: $grey-d;
+  overflow: hidden;
+
+  .flexbox & {
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    width: auto;
+    flex: 0 1 32%;
+    margin: 0 0 1em;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint($desk) {
+      flex: 0 1 45%;
+      margin: 0 0 1em;
+    }
+
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 1px 2px 0 $grey-l;
+    color: $base;
+  }
+
+}
+
+.box-container  .active {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+  color: $grey-l;
+}
+
+.box-label {
+  @include font-size($small);
+  text-transform: uppercase;
+  line-height: 1.5em;
+  @extend %truncate;
+  width: 100%;
+  background: darken($background, 2%);
+  border-top: 1px solid $grey-m;
+  padding: .2em .5em 0;
+
+  span {
+    font-weight: 300;
+  }
+
+  .active & {
+    border-top: 1px solid $grey-l;
+  }
+}
+
+.box-icon {
+  @include font-size($h1);
+  padding: 0.3em 0;
+
+  @include breakpoint($desk) {
+    @include font-size(40px);
+    padding: 0.5em 0;
+  }
+}

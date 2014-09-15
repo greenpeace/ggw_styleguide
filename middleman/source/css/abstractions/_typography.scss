@@ -1,0 +1,41 @@
+// Horizontal list
+%hlist {
+  @include horizontal-list(false);
+}
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin mnul {
+  margin:0;
+}
+
+%mnul {
+  @include mnul;
+}
+
+@mixin no-text-decoration {
+  text-decoration: none;
+}
+
+%no-deco {
+  @include no-text-decoration;
+}
+
+%fontsizesmall {
+  @include font-size(14px);
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%truncate {
+  @include truncate;
+}

@@ -1,0 +1,22 @@
+img, picture, media {
+  max-width: 100%;
+}
+
+@include breakpoint($smalltab) {
+
+article picture,
+article img {
+  display: block; // by default make sure the image gets it own line
+  margin: 0 auto;
+
+    &.pull-left {
+      margin: 0 1em 1em 0;
+    }
+
+    &.pull-right {
+      margin: 0 0 1em 1em;
+    }
+
+  }
+
+}

@@ -1,0 +1,156 @@
+.language-switcher {
+
+  .form-item {
+    @extend %mnul;
+    position: relative;
+  }
+
+  label {
+    @extend %element-hidden;
+    padding: 1em;
+    width: auto;
+    z-index: 4;
+    font-weight: 300;
+    &:after {
+      display: inline-block;
+      content: ":";
+      position: absolute;
+      top: 1em;
+      right: -.5em;
+    }
+  }
+
+  .selector {
+    padding: 1em;
+    z-index: 5;
+    font-weight: 700;
+    border-radius: 0;
+    border: none;
+    background: none;
+    max-width: none;
+    border-top: 1px solid #CCCCCC;
+
+    &:after {
+      width: 0;
+      height: 0;
+      border: .5em solid transparent; /* 5 */
+      border-bottom: none;
+      border-top-color: $base;
+      content: '';
+      position: absolute;
+      display: inline-block;
+      top: 1.5em;
+      right: 2em;
+      padding:0;
+    }
+
+    &:before {
+      @extend %element-hidden;
+    }
+
+    select {
+      padding: 0;
+    }
+  }
+
+}
+
+@include breakpoint($desk) {
+
+  .l-header {
+
+    .language-switcher {
+
+      .chosen-single {
+        border: none;
+        font-weight: 300;
+        box-shadow: none;
+        border-radius: 5px 5px 0 0;
+        width: auto;
+        position: relative;
+        padding:0 1em 0 0;
+        height: auto;
+        background: none;
+        z-index: 5;
+        word-break: keep-all;
+
+        &:after {
+          width: 0;
+          height: 0;
+          border: .4em solid transparent; /* 5 */
+          border-bottom: none;
+          border-top-color: $white;
+          content: '';
+          position: absolute;
+          display: inline-block;
+          top: .8em;
+          right: .3em;
+        }
+
+        span {
+          color: $white;
+          @include font-size(13px);
+          margin:0;
+          display: inline-block;
+          overflow: visible;
+          padding: 0 10px;
+        }
+
+        div {
+          display: none;
+        }
+
+      }
+
+      .chosen-with-drop .chosen-single {
+        background-color: $white;
+        &:after {
+          border-top-color: $grey-d;
+        }
+
+        span {
+          color: $grey-d;
+        }
+
+      }
+
+      .chosen-drop {
+        border: none;
+        padding: 6px 0 4px;
+        box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+        word-break: keep-all;
+      }
+
+      .chosen-results {
+        margin:0;
+        padding:0;
+      }
+
+      .active-result {
+        font-weight: 300;
+        @include font-size(13px);
+        color: $base;
+        padding: 3px 10px;
+        line-height: 1.2em;
+      }
+
+      .highlighted {
+        color: $white;
+        background: $grey-d;
+      }
+
+      .selector {
+        padding:0;
+        position: relative;
+        border: none;
+        background: none;
+
+        &:after {
+          display: none;
+        }
+      }
+
+    }
+
+  }
+}

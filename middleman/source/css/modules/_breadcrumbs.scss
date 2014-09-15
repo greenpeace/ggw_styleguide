@@ -1,0 +1,24 @@
+.breadcrumbs {
+  @extend %hlist;
+  margin: .8em 0;
+}
+
+.breadcrumb-item {
+  margin-right: 3px;
+}
+
+.breadcrumb-link {
+  font-weight: 700;
+  display: block;
+
+  &:after {
+    color: #4D4D4D;
+    content: ' › ';
+    font-weight: 300;
+  }
+
+} // breadcrumb-link
+
+.front .breadcrumbs {
+  @extend %element-hidden;
+}

@@ -1,0 +1,7 @@
+= wrap_layout :layout do
+  .l-main-column#content
+    = yield
+
+  %aside.l-sidebar.sidebar
+    = partial :designelements
+

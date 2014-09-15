@@ -1065,7 +1065,7 @@ a {
 
 .btn-l,
 .pager-load-more .pager-item {
-	padding: .5em 2em;
+	padding: .8em 2em;
 }
 
 .btn-s {
@@ -3444,7 +3444,14 @@ html[xmlns] .slides {
 
 .action-menu > ul {
 	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #cccccc;
 	height: 44px;
+	background: #eeeeee;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.flexbox .action-menu > ul {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -3452,11 +3459,6 @@ html[xmlns] .slides {
 	-webkit-flex-flow: row wrap;
 	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
-	background: #eeeeee;
-}
-
-.no-flexbox .action-menu > ul {
-	text-align: center;
 }
 
 .action-menu > ul > li {
@@ -3515,7 +3517,7 @@ html[xmlns] .slides {
 }
 
 .action-menu .icon {
-	font-size: 1.875rem;
+	font-size: 1.375rem;
 	margin-right: .5em;
 }
 
@@ -5026,9 +5028,9 @@ input.form-shout-file {
 .page-home #content,
 .page-home #shoutbox,
 .page-home #upcoming-events {
-	margin: 10px;
 	clear: both;
 	display: none;
+	margin: 10px;
 }
 
 .page-home #content.current,

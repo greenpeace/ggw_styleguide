@@ -1,0 +1,119 @@
+.style-guide {
+
+  .block,
+  .main-content {
+    margin: 1em 0;
+  }
+}
+
+.style-guide .sidebar-left .block {
+  padding: 5px 0;
+}
+
+//sections
+.cardbox {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+
+.cardholder {
+  flex: 0 1 50%;
+  padding: 0 1.5em 1.5em 0;
+
+  @include breakpoint($tab) {
+    flex: 0 1 33%;
+
+    &:nth-child(3n) {
+      padding-right: 0;
+    }
+  }
+
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 0 1px 0 rgba(black, 0.3);
+  backface-visibility: hidden;
+  background-clip: padding-box;
+  background: none repeat scroll 0 0 #fff;
+  position: relative;
+  text-align: center;
+  font-size: $p;
+  letter-spacing: 0.05em;
+
+  .color {
+    padding: .5em 0;
+    color: $white;
+  }
+
+  h3 {
+    padding: .5em 0;
+    font-size: $p;
+    font-weight: 300;
+    line-height: 1.5em;
+  }
+}
+
+// buttons for styleguide navigation
+.sg-navbtn {
+  display: block;
+  line-height: 1.2em;
+  padding: .8em 1em;
+  font-size: $p;
+  color: $base;
+  border-bottom: 1px solid $grey-l;
+  position: relative;
+
+  &:last-child {
+    border: none;
+  }
+
+  &:before {
+    float: right;
+    @extend %load-icon;
+    @extend %icon-right-open;
+  }
+
+  &:hover {
+    background: $background;
+  }
+
+  &.active {
+    background: $green2;
+    color: $white;
+  }
+}
+
+// label above the left navigation
+.sidebar-left .block-title {
+  margin: 0;
+  padding: 1em;
+  font-size: $p;
+  color: $heading;
+  border-bottom: 1px solid $grey-l;
+}
+
+.codedemo {
+  background-color: #FFFFFF;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #DDDDDD;
+  padding: 45px 15px 15px;
+  position: relative;
+  margin: 0 0 15px;
+}
+
+.codedemo:after {
+  color: #BBBBBB;
+  content: "Example";
+  font-size: 12px;
+  font-weight: 700;
+  left: 15px;
+  letter-spacing: 1px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 15px;
+}
+

@@ -1,0 +1,107 @@
+---
+title: Getting started
+body_class: index
+layout: styleguide
+---
+
+%aside.sidebar-left
+  = partial :"nav/documentation"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Getting started
+    %article.view-mode-full.content
+
+      %h2.section-heading Github
+      :markdown
+        If you are reading this, I guess you have already cloned Greenwire GitHub repository into your developing branch. Don't know what is Github? [Check GitHub documentation](https://help.github.com/articles/set-up-git). Set it up and learn some basics if you haven't yet.
+
+        Once you setup GitHub, you can clone Greenwire repository in your developing branch using the terminal:
+
+      #example
+        :code
+          #lang: bash
+            $ git clone git@github.com:greenpeace/ggw_styleguide.git
+      %h2.section-heading Middleman
+      :markdown
+        We are using [Middleman](http://middlemanapp.com/) to generate this styleguide. Middleman is a command-line tool for creating static websites using all the shortcuts and tools of the modern web development environment.
+
+        #### Installing
+        First of all, Middleman is a Ruby gem (a packaged Ruby library) so you’ll need Ruby running on your machine (see .ruby-version file in project root folder) along with [Bundler](http://bundler.io/) (A Ruby package management tool). There’s a comprehensive Ruby install guide for Mac [here](http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/), and for [Windows](http://rubyinstaller.org/) here. Although Middleman is a Ruby library, you won’t need to have an understanding of Ruby to get started.
+
+        You also need to be fairly comfortable with a terminal as Middleman requires the command line to run its tasks. However, you won’t need to know much, just how to run some simple commands.
+
+        To get started we need to install the Middleman gem. You can read all about what a Gem is and how it works here.
+
+      #example
+        :code
+          # lang: bash
+            $ gem install middleman
+      :markdown
+        You may need to run it with 'sudo', depending upon your system permissions.
+        If all has gone well, you should be able to run
+
+      #example
+        :code
+          # lang: bash
+            $ middleman version
+      %h4 Ruby gems
+      :markdown
+        Ruby Gems are a kind of library or plug-in. It’s some functionality that you’ll install to fill a specific need. Examples of ruby gems we use are Sass, Compass, Middleman and Autoprefix.
+
+        Navigate to the middleman folder in your terminal and run
+      #example
+        :code
+          # lang: bash
+            $ bundle install
+      :markdown
+          or
+      #example
+        :code
+          # lang: bash
+            $ bundle update
+      :markdown
+        This will read the gems listed in the Gemfile and install them (and their dependencies) on your machine. We have also set a ruby version for this project. This way you can use multiple ruby versions on your machine next to each other. (see .ruby-version file)
+
+      %h2.section-heading The Development Cycle (middleman server)
+
+      :markdown
+        see [middleman documentation](http://middlemanapp.com/basics/getting-started/) for more info.
+
+        The Middleman separates your development and production code from the start. This allows you to utilize a bevy of tools (such as Haml, Sass, CoffeeScript, etc.) during development that are unnecessary or undesirable in production. We refer to these environments as The Development Cycle and the Static Site.
+
+        The vast majority of time spent using Middleman will be in the Development Cycle.
+
+        From the command-line, start the preview web-server from inside your project folder:
+
+      #example
+        :code
+          # lang: bash
+            $ cd /path-to-project/middleman
+            $ bundle exec middleman server
+      :markdown
+        or use the short command:
+      #example
+        :code
+          # lang: bash
+            $ middleman
+      :markdown
+        This will start a local web server running at: http://localhost:4567/
+
+        You can create and edit files in the source folder and see the changes reflected on the preview web-server.
+
+        You can stop the preview server from the command-line using CTRL-C.
+
+      %h2.section-heading Exporting the Static Site (middleman build)
+      :markdown
+        Finally, when you are ready to deliver static code or, in the case of "blog mode", host a static blog, you will need to build the site. Using the command-line, from the project folder, run middleman build:
+
+      #example
+        :code
+          # lang: bash
+            $ bundle exec middleman build
+      :markdown
+        This will create a static file for each file located in your source folder. Template files will be compiled, static files will be copied and any enabled build-time features (such as compression) will be executed. Middleman will automatically clean out files from the build directory for you that are left over from earlier builds but would no longer be produced.
+
+

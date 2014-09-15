@@ -1,0 +1,13 @@
+.item-list a {
+
+  &:before {
+    padding-right: $def-mar-half;
+    @extend %load-icon;
+    @extend %icon-right-open-mini;
+  }
+
+  &:hover {
+    color: darken($green5, 10%);
+  }
+
+}

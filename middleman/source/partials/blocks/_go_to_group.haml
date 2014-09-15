@@ -1,0 +1,10 @@
+.block.hidden-mobile
+  %i.block-icon.icon-users.icon-bg-group
+  %h2.block-title Go to group
+  .content
+    %p
+      This belongs to
+      = succeed "." do
+        %a{:href => "#"} local groups amsterdam
+    %p
+      %a.button{:href => "#"} Go to this group

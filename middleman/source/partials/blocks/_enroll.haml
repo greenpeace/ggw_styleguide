@@ -1,0 +1,25 @@
+.block.hidden-mobile
+  %i.block-icon.icon-login.icon-bg-action
+  %h2.block-title RSVP for this event
+  .content
+    %p You are currently enrolled
+    %a#togglEnrollForm.button.btn-primary{:href => "#"} Click here to change
+    %form#event-signup-node-form.node-form.node-event_signup-form{:style => "display:none;"}
+      .form-item.form-type-radios
+        %label{:for => "edit-field-signup-status-und"}
+          Are you joining this event?
+          %span.form-required{:title => "This field is required."} *
+        #edit-field-signup-status-und.form-radios
+          .form-type-radio
+            %input#edit-field-signup-status-und-0.form-radio{:checked => "checked", :name => "joining-yes-no", :type => "radio", :value => "0"}>/
+            \/  >
+            %label.option{:for => "edit-field-signup-status-und-0"} Yes
+          .form-type-radio
+            %input#edit-field-signup-status-und-1.form-radio{:name => "joining-yes-no", :type => "radio", :value => "1"}/
+            %label.option{:for => "edit-field-signup-status-und-1"} No
+      .form-item.form-type-textarea
+        %label{:for => "edit-body-und-0-value"} Message
+        .form-textarea-wrapper.resizable
+          %textarea#edit-body-und-0-value.text-full.form-textarea
+      .form-actions
+        %input.button.btn-primary{:type => "submit", :value => "Save"}/

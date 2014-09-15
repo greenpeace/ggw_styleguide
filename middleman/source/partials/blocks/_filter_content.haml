@@ -1,0 +1,38 @@
+.block
+  %i.block-icon.icon-bg-default.icon-search
+  %h2.block-title Filter search result
+  .content
+    %form
+      .views-exposed-widgets.clearfix
+        .views-exposed-widget
+          .form-item.form-type-checkbox
+            %input#edit-type-all{:checked => "checked", :tabindex => "1", :type => "checkbox", :value => "all"}/
+            %label.option{:for => "edit-type-all"} All content types
+          .form-item.form-type-checkbox
+            %input#edit-type-document{:tabindex => "1", :type => "checkbox", :value => "document"}/
+            %label.option{:for => "edit-type-document"} Document
+          .form-item.form-type-checkbox
+            %input#edit-type-event{:tabindex => "1", :type => "checkbox", :value => "event"}/
+            %label.option{:for => "edit-type-event"} Event
+          .form-item.form-type-checkbox
+            %input#edit-type-blog{:tabindex => "1", :type => "checkbox", :value => "blog"}/
+            %label.option{:for => "edit-type-blog"} Blog
+          .form-item.form-type-checkbox
+            %input#edit-type-idea{:tabindex => "1", :type => "checkbox", :value => "idea"}/
+            %label.option{:for => "edit-type-idea"} Idea
+          .form-item.form-type-checkbox
+            %input#edit-type-faq{:tabindex => "1", :type => "checkbox", :value => "faq"}/
+            %label.option{:for => "edit-type-faq"} Faq
+          .form-item.form-type-checkbox
+            %input#edit-type-group{:tabindex => "1", :type => "checkbox", :value => "group"}/
+            %label.option{:for => "edit-type-group"} Group
+          .form-item.form-type-checkbox
+            %input#edit-type-material{:tabindex => "1", :type => "checkbox", :value => "material"}/
+            %label.option{:for => "edit-type-material"} Material
+          .form-item.form-type-checkbox
+            %input#edit-type-page{:tabindex => "1", :type => "checkbox", :value => "page"}/
+            %label.option{:for => "edit-type-page"} Page
+        .views-exposed-widget.views-submit-button
+          %input#edit-submit-search-content.button.btn-primary{:tabindex => "1", :type => "submit", :value => "Filter search result"}/
+        .views-exposed-widget.views-reset-button
+          %input#edit-reset.button{:tabindex => "1", :type => "submit", :value => "Clear filters"}/

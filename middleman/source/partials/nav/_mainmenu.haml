@@ -1,0 +1,19 @@
+<h2 class="element-invisible">Primary navigation</h2>
+<nav role="navigation" class="mainmenu">
+  <ul class="menu">
+
+  <% for item in data.navigation.mainmenu  %>
+  <li class="menu-item">
+    <a href="#" class="menu-link"><%= I18n.t(item.toplevel) %></a>
+      <% if item.submenu %>
+      <ul>
+        <% for subitem in item.submenu %>
+          <li><%= subitem.sublevel %></li>
+        <% end %>
+      </ul>
+      <% end %>
+  </li>
+  <% end %>
+
+  </ul>
+</nav>

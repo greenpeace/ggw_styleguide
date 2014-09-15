@@ -10043,15 +10043,6 @@ function TabableSections() {
 
     e.preventDefault();
 
-    if ( $(this).attr('href') != ('#content') ) {
-      $('.slider').addClass('element-hidden');
-    }
-    else {
-      if ( $('.slider').hasClass('element-hidden') ) {
-        $('.slider').removeClass('element-hidden')
-      }
-    }
-
     $('input[type=file]').nicefileinput();
 
     // once link has been clicked

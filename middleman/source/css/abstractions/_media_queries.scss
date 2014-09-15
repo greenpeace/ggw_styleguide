@@ -1,0 +1,30 @@
+// Media Queries with IE support: http://jakearchibald.github.io/sass-ie/
+// ----------------------------------------------------------------------------
+
+// Allows fixed media query export (for IE sheet)
+// Make sure you change in IE sheet
+$fix-mqs: false !default;
+
+// Check for export, otherwise build a media query
+@mixin respond-min($width) {
+  @if $fix-mqs {
+    @if $fix-mqs >= $width {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (min-width: $width) {
+      @content;
+    }
+  }
+}
+
+// Prevent IE styles from exporting, unless asked for
+$oldie: false !default;
+
+// Everything for IE8-
+@mixin old-ie {
+  @if $oldie {
+    @content;
+  }
+}

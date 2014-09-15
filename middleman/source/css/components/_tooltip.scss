@@ -1,0 +1,50 @@
+
+@include breakpoint($desk) {
+
+  .tooltip:before,
+  .tooltip:after {
+    position:absolute;
+    z-index: 999;
+    opacity: 0;
+    display: block;
+    transition: opacity 300ms 100ms ease, transform 500ms ease;
+    transform: translate3d(10%, 0, 0) scale3d(0.9, 0.9, 0.9);
+    transform-origin: -50% 0%;
+  }
+
+  .tooltip:before {
+    content: attr(data-tip);
+    @include font-size(14px);
+    white-space:nowrap;
+    background: $base;
+    color: $white;
+    padding: .3em .5em;
+    margin-top: -22px;
+    margin-left: -20px;
+  }
+
+  .tooltip:after {
+    width: 0;
+    height: 0;
+    border: 0.7em solid transparent; /* 5 */
+    border-bottom: none;
+    content: '';
+    border-top-color: $base;
+    margin-top: -35px;
+    margin-left: 10px;
+  }
+
+  .tooltip:hover:before,
+  .tooltip:hover:after {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  @if $oldie {
+    .tooltip:before,
+    .tooltip:after {
+      display: none;
+    }
+  }
+
+}

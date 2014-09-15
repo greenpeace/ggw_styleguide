@@ -1,0 +1,32 @@
+.block.hidden-mobile
+  %i.block-icon.icon-search.icon-bg-event
+  %h2.block-title Find events
+  .content
+    %form
+      .views-exposed-widget
+        %label Author
+        .views-widget
+          .form-item.form-type-textfield
+            %input.form-autocomplete.form-text{:type => "text"}/
+      .views-exposed-widget
+        %label Tags
+        .views-widget
+          .form-item.form-type-textfield
+            %input.form-autocomplete.form-text{:type => "text"}/
+      .views-exposed-widget
+        %label City
+        .views-widget
+          .form-item.form-type-textfield
+            %input.form-text{:type => "text"}/
+      .views-exposed-widget
+        %label From
+        .views-widget
+          .form-item.form-type-textfield
+            %input.form-text{:type => "date"}/
+      .views-exposed-widget
+        %label Until
+        .views-widget
+          .form-item.form-type-textfield
+            %input.form-text{:type => "date"}/
+      .views-exposed-widget.views-submit-button
+        %input.button{:type => "submit", :value => "Search"}/

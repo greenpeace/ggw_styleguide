@@ -1,0 +1,59 @@
+.footer {
+  background: $green1;
+  color: $white;
+
+  .container {
+    @extend %cf;
+  }
+}
+
+.l-branding-footer {
+  float: left;
+  margin: 1.8em 2em 0 0;
+  position: static;
+  bottom: auto;
+  color: #ffffff;
+
+  span {
+    line-height: 1em;
+    float: left;
+  }
+
+  .logo-footer {
+    background: url(../images/GP_logo_footer.png) no-repeat;
+    width: 107px;
+    margin: -2px 3px 0 4px;
+    text-indent: -999px;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+  }
+}
+
+.legal-menu,
+.bottom-menu {
+  padding-top: .7em;
+  float: left;
+}
+
+.bottom-menu {
+  float: right;
+}
+
+.legal-menu li,
+.bottom-menu li {
+  float: left;
+}
+
+.legal-menu li a,
+.bottom-menu li a {
+  display: block;
+  padding: 1em 0.5em;
+  text-align: left;
+  color: $white;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+

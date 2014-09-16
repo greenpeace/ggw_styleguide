@@ -3,12 +3,19 @@
     %nav.main-menu{:role => "navigation"}
       %ul.menu
         %li.menu-item.expanded
-          %a.menu-link.active{:href=>"/design-elements/colors"}
-            Styleguide
+          =nav_link 'Style guide', '/design-elements/colors.html',  :class => 'menu-link'
           %ul.menu
             %li.menu-item
-              %a.menu-link{:href=>"/design-elements/colors"} Design elements
-              %a.menu-link{:href=>"/ui-components/"} UI components
-              %a.menu-link{:href=>"#"} Prototype
+              =nav_link 'Design elements', '/design-elements/colors.html',  :class => 'menu-link'
+              =nav_link 'UI components', '/ui-components/buttons.html',  :class => 'menu-link'
+              =nav_link 'Prototype', '/prototype/index.html',  :class => 'menu-link'
         %li.menu-item
-          %a.menu-link{:href=>"/documentation/getting-started"} Documentation
+          =nav_link 'Documentation', '/documentation/getting-started.html', :class => 'menu-link'
+          %ul.menu
+            %li.menu-item
+              =nav_link 'Getting started', '/documentation/getting-started.html', :class => 'menu-link'
+              =nav_link 'Styleguide structure', '/documentation/styleguide-structure.html', :class => 'menu-link'
+              =nav_link 'Device & browser Support', '/documentation/browser-support.html', :class => 'menu-link'
+              =nav_link 'Progressive enhancement', '/documentation/porgessive-enhancement.html', :class => 'menu-link'
+              =nav_link 'Development principles', '/documentation/porgessive-enhancement.html', :class => 'menu-link'
+              =nav_link 'Editing the style guide', '/documentation/porgessive-enhancement.html', :class => 'menu-link'

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class='desktop no-js'>
+  <head>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width' name='viewport'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Style guide structure — GGW Style Guide</title>
+    <link href="../css/all-eb72c326.css" rel="stylesheet" type="text/css" />
+    <script src="../js/modernizr-aa17a69f.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+    <script src="../js/all-9cd12e89.js" type="text/javascript"></script>
+  </head>
+  <body class='style-guide'>
+    <!--[if lt IE 7]> <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p> <![endif]-->
+    <div class='layout-base'>
+      <div class='l-branding-header'>
+        <div class='container'>
+          <a class='logo' href='/'>
+            <span class='element-invisible'>Greenpeace Greenwire Styleguide</span>
+          </a>
+        </div>
+      </div>
+      <header class='l-header header'>
+        <div class='container'>
+          <div class='off-canvas' id='primary-nav'>
+            <div class='nav-inner-wrap'>
+              <nav class='main-menu' role='navigation'>
+                <ul class='menu'>
+                  <li class='menu-item expanded'>
+                    <a class="menu-link" page="/documentation/styleguide-structure.html" href="../design-elements/colors.html">Style guide</a>
+                    <ul class='menu'>
+                      <li class='menu-item'>
+                        <a class="menu-link" page="/documentation/styleguide-structure.html" href="../design-elements/colors.html">Design elements</a>
+                        <a class="menu-link" page="/documentation/styleguide-structure.html" href="/ui-components/buttons.html">UI components</a>
+                        <a class="menu-link" page="/documentation/styleguide-structure.html" href="/prototype/index.html">Prototype</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='menu-item'>
+                    <a class="menu-link" page="/documentation/styleguide-structure.html" href="getting-started.html">Documentation</a>
+                    <ul class='menu'>
+                      <li class='menu-item'>
+                        <a class="menu-link" page="/documentation/styleguide-structure.html" href="getting-started.html">Getting started</a>
+                        <a class="menu-link active" page="/documentation/styleguide-structure.html" href="styleguide-structure.html">Styleguide structure</a>
+                        <a class="menu-link" page="/documentation/styleguide-structure.html" href="/documentation/browser-support.html">Device & browser Support</a>
+                        <a class="menu-link" page="/documentation/styleguide-structure.html" href="/documentation/porgessive-enhancement.html">Progressive enhancement</a>
+                        <a class="menu-link" page="/documentation/styleguide-structure.html" href="/documentation/porgessive-enhancement.html">Development principles</a>
+                        <a class="menu-link" page="/documentation/styleguide-structure.html" href="/documentation/porgessive-enhancement.html">Editing the style guide</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class='l-main container' id='main'>
+        <aside class='sidebar-left'>
+          <div class='block'>
+            <h2 class='block-title'>Documentation</h2>
+            <a class="sg-navbtn" page="/documentation/styleguide-structure.html" href="getting-started.html">Getting started</a>
+            <a class="sg-navbtn active" page="/documentation/styleguide-structure.html" href="styleguide-structure.html">Styleguide structure</a>
+            <a class="sg-navbtn" page="/documentation/styleguide-structure.html" href="/documentation/browser-support.html">Device & browser Support</a>
+            <a class="sg-navbtn" page="/documentation/styleguide-structure.html" href="/documentation/porgessive-enhancement.html">Progressive enhancement</a>
+            <a class="sg-navbtn" page="/documentation/styleguide-structure.html" href="/documentation/porgessive-enhancement.html">Development principles</a>
+            <a class="sg-navbtn" page="/documentation/styleguide-structure.html" href="/documentation/porgessive-enhancement.html">Editing the style guide</a>
+          </div>
+        </aside>
+        <div class='l-main-column' id='content'>
+          <div class='main-content'>
+            <i class='block-icon icon-bg-default icon-info'></i>
+            <h1 class='block-title' id='page-title'>Style guide structure</h1>
+            <article class='view-mode-full content'></article>
+          </div>
+          <div class='block'>
+            <i class='block-icon icon-bg-default icon-info'></i>
+            <h1 class='block-title' id='page-title'>Root folders</h1>
+            <article class='view-mode-full content'>
+              <p>The project structure is based on Middleman. You can see the following folder in the root and this is what their function is:</p>
+              
+              <h4 id="build">Build</h4>
+              <p>This folder contains the static website/style guide that is deployed on <a href="http://prototype.goalgorilla.com/ggw/styleguide">prototype.goalgorilla.com</a>. You should not work in this folder.</p>
+              
+              <h4 id="data">Data</h4>
+              <p>This folder contains all data stored in .yml files. This is convenient when we want to reuse template files and run them with different sets of data. Yaml files are similar to JSON files and allow us to separate content form markup.</p>
+              
+              <h4 id="helpers">Helpers</h4>
+              <p>In this folder we store special helper functions for Middleman</p>
+              
+              <h4 id="source">Source</h4>
+              <p>This folder contains all our template files, CSS, Javascript, images, fonts and navigation. We are working from within this folder. When running middleman this folder is actively being watched and it triggers livereload upon changes in this folder.</p>
+            </article>
+          </div>
+          <div class='block'>
+            <i class='block-icon icon-bg-default icon-info'></i>
+            <h1 class='block-title' id='page-title'>Partials</h1>
+            <article class='view-mode-full content'>
+              <p>Partials are reusable snippets of code. They are a part of Middleman. With partials we can abstract snippets like menu's to be reused across layouts. Partials should be used when you keep repeating to create the same markup code in templates (mostly prototype).</p>
+            </article>
+          </div>
+          <div class='block'>
+            <i class='block-icon icon-bg-default icon-info'></i>
+            <h1 class='block-title' id='page-title'>CSS/SASS folders</h1>
+            <article class='view-mode-full content'>
+              <p>Within Middleman there is no active complilation from SCSS to CSS files. Middleman actively watches changes in this folder which is reflected in the browser by livereload. When making a build, the scss files are converted to css files. In the css folder we see there are several folder. This is the order they are included:</p>
+              
+              <h4 id="vars-variables">1 Vars (variables)</h4>
+              <p>Variables are reusable values which take care of style consistency and easy changing repeated patterns. Variables only live in SCSS files and they do not contain CSS selectors</p>
+              
+              <h4 id="abstractions">2 Abstractions</h4>
+              <p>Abstractions are reusable pieces of CSS, often called mixins as well. With abstractions we can avoid repeating selectors throughout the CSS which have the some declarations. Just like variables this folder never contains any CSS selectors.</p>
+              
+              <h4 id="components">3 Components</h4>
+              <p>Components are elements that are used across te site and are not limited to a specific block, section or page. So components must not be specified with parent wrappers.</p>
+              
+              <h4 id="modules">4 Modules</h4>
+              <p>Modules are specific blocks, pages and section on the site. These styles are usually not shareable with other modules.</p>
+              
+              <h4 id="layout">5 Layout</h4>
+              <p>Here we specify the responsive grid in which we positioning all components and modules.</p>
+              
+              <h4 id="styleguide">6 Styleguide</h4>
+              <p>There are some styles needed for the styleguide only, which will not be used on Greenwire itself. We list these styles here, so we can easily extract them from the production build.</p>
+            </article>
+          </div>
+          <div class='block'>
+            <i class='block-icon icon-bg-default icon-info'></i>
+            <h1 class='block-title' id='page-title'>Javascript</h1>
+            <article class='view-mode-full content'>
+              <p>Here we store all the javascript files which will be compiled and minified. There are several folders for the reason of controlling the order of loading and to separate their origin.</p>
+              
+              <h4 id="base">Base</h4>
+              <p>Contains all scripts that are needed by other scripts to run, for example the jquery library.</p>
+              
+              <h4 id="before">Before</h4>
+              <p>Here we store scripts that are necessary at the beginning of the page. Therefore these scripts are loaded in the head of the page.</p>
+              
+              <h4 id="contrib">Contrib</h4>
+              <p>These are scripts from third parties that we do not change. It is possible to update these scripts.</p>
+              
+              <h4 id="custom">Custom</h4>
+              <p>These scripts we have created ourselves and it contains the execution of contrib scripts.</p>
+              
+              <h4 id="oldie">Oldie</h4>
+              <p>These scripts are only parsed in old versions of internet explorer, usually to polyfill HTML5 or CSS3.</p>
+            </article>
+          </div>
+          <div class='block'>
+            <i class='block-icon icon-bg-default icon-info'></i>
+            <h1 class='block-title' id='page-title'>Vendor</h1>
+            <article class='view-mode-full content'>
+              <p>This folder conatins libraries we use that consist of more then one file type. So foe example a combination of Javascript, CSS and images.</p>
+            </article>
+          </div>
+          <div class='block'>
+            <i class='block-icon icon-bg-default icon-info'></i>
+            <h1 class='block-title' id='page-title'>Demo</h1>
+            <article class='view-mode-full content'>
+              <p>Here we store (mainly) images that are used for the prototype and are not needed for the site.</p>
+            </article>
+          </div>
+          <div class='block'>
+            <i class='block-icon icon-bg-default icon-info'></i>
+            <h1 class='block-title' id='page-title'>Images</h1>
+            <article class='view-mode-full content'>
+              <p>Images that are used for the site, such as CSS background images, form elements and the logo.</p>
+            </article>
+          </div>
+          <div class='block'>
+            <i class='block-icon icon-bg-default icon-info'></i>
+            <h1 class='block-title' id='page-title'>Font</h1>
+            <article class='view-mode-full content'></article>
+            <p>In this folder we store the fonts and font-icons used for Greenwire</p>
+          </div>
+          <div class='block'>
+            <i class='block-icon icon-bg-default icon-info'></i>
+            <h1 class='block-title' id='page-title'>Documentation - Design elements - UI components - Prototype</h1>
+            <article class='view-mode-full content'>
+              <p>In this folder we store all template files. These files are written in a combination of HAML and Markdown.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+      <footer class='l-footer footer'>
+        <div class='footer-offset'></div>
+        <div class='container'>
+          <div class='l-branding-footer'>
+            <span>&copy;</span>
+            <strong class='logo-footer'>GREENPEACE</strong>
+            <span>2014</span>
+          </div>
+          <ul class='legal-menu'>
+            <li>
+              <a href='#'>Privacy statement</a>
+            </li>
+            <li>
+              <a href='#'>Copyright</a>
+            </li>
+          </ul>
+          <ul class='bottom-menu'>
+            <li>
+              <a href='#'>Home</a>
+            </li>
+            <li>
+              <a href='#'>About us</a>
+            </li>
+            <li>
+              <a href='#'>Contact us</a>
+            </li>
+            <li>
+              <a href='#'>Press centre</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
+    <script>
+      window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.8.0.min.js"><\/script>')
+    </script>
+    <!--[if lt IE 9]>
+      <script src='/javascripts/html5shiv.js'></script>
+    <![endif]-->
+  </body>
+</html>

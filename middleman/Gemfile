@@ -30,3 +30,6 @@ gem 'middleman-automatic-clowncar'
 gem 'singularitygs', '~> 1.4.0'
 
 gem 'middleman-title'
+
+#Deploy Middleman build via rsync, ftp, sftp, or git (e.g. gh-pages on github).
+gem 'middleman-deploy', '~> 0.3.0'

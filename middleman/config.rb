@@ -21,10 +21,6 @@ activate :livereload
 
 activate :syntax
 
-activate :directory_indexes
-
-activate :relative_assets
-
 activate :asset_hash
 
 #with_layout :example do
@@ -92,7 +88,20 @@ activate :autoprefixer do |config|
   config.inline   = true
 end
 
+helpers do
+  def nav_link(name, url, options={})
+    options = {
+      class: "",
+      active_if: url,
+      page: current_page.url,
+    }.update options
+    active_url = options.delete(:active_if)
+    active = Regexp === active_url ? current_page.url =~ active_url : current_page.url == active_url
+    options[:class] += " active" if active
 
+    link_to name, url, options
+  end
+end
 
 #activate :automatic_clowncar,
 #  :sizes => {
@@ -123,7 +132,10 @@ configure :build do
   # activate :cache_buster
 
   # Use relative URLs
+  activate :relative_assets
+  set :relative_links, true
 
+  set :url_root, 'http://greenpeace.github.io/ggw_styleguide/'
 
   # Compress PNGs after build
   # First: gem install middleman-smusher
@@ -132,4 +144,15 @@ configure :build do
 
   # Or use a different image path
   # set :http_path, "/Content/images/"
+end
+
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.build_before = true # default: false
+  deploy.branch = "gh-pages"
+  # Optional Settings
+  # deploy.remote   = 'custom-remote' # remote name or git url, default: origin
+  # deploy.branch   = 'custom-branch' # default: gh-pages
+  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
+  # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
 end

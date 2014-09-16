@@ -1,11 +1,10 @@
 .block
   %h2.block-title Documentation
-  %a.sg-navbtn.active{:href=>"/documentation/getting-started"} Getting started
-  %a.sg-navbtn{:href=>"/documentation/styleguide-structure"} Styleguide structure
-  %a.sg-navbtn{:href=>"/design-elements/typography"} Progressive enhancement
-  %a.sg-navbtn{:href=>"#"}
-    &= "Device & browser Support"
-  %a.sg-navbtn{:href=>"#"} Development principles
-  %a.sg-navbtn{:href=>"#"} Editing the style guide
+  =nav_link 'Getting started', '/documentation/getting-started.html', :class => 'sg-navbtn'
+  =nav_link 'Styleguide structure', '/documentation/styleguide-structure.html',  :class => 'sg-navbtn'
+  =nav_link 'Device & browser Support', '/documentation/browser-support.html',  :class => 'sg-navbtn'
+  =nav_link 'Progressive enhancement', '/documentation/porgessive-enhancement.html',  :class => 'sg-navbtn'
+  =nav_link 'Development principles', '/documentation/porgessive-enhancement.html',  :class => 'sg-navbtn'
+  =nav_link 'Editing the style guide', '/documentation/porgessive-enhancement.html',  :class => 'sg-navbtn'
 
 

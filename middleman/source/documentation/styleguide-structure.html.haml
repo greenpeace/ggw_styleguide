@@ -13,12 +13,15 @@ layout: styleguide
     %h1#page-title.block-title Style guide structure
     %article.view-mode-full.content
 
-      %h2.section-heading Root folders
+  .block
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Root folders
+    %article.view-mode-full.content
       :markdown
         The project structure is based on Middleman. You can see the following folder in the root and this is what their function is:
 
         #### Build
-        This folder contains the static website/style guide that is deployed on [http://prototype.goalgorilla.com/ggw/styleguide]. You should not work in this folder.
+        This folder contains the static website/style guide that is deployed on [prototype.goalgorilla.com](http://prototype.goalgorilla.com/ggw/styleguide). You should not work in this folder.
 
         #### Data
         This folder contains all data stored in .yml files. This is convenient when we want to reuse template files and run them with different sets of data. Yaml files are similar to JSON files and allow us to separate content form markup.
@@ -29,13 +32,93 @@ layout: styleguide
         #### Source
         This folder contains all our template files, CSS, Javascript, images, fonts and navigation. We are working from within this folder. When running middleman this folder is actively being watched and it triggers livereload upon changes in this folder.
 
-      %h2.section-heading CSS/SASS folders
-
+  .block
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Partials
+    %article.view-mode-full.content
       :markdown
-        Within Middleman there is no active complilation from SCSS to CSS files.
+        Partials are reusable snippets of code. They are a part of Middleman. With partials we can abstract snippets like menu's to be reused across layouts. Partials should be used when you keep repeating to create the same markup code in templates (mostly prototype).
 
-      %h2.section-heading Partials
+  .block
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title CSS/SASS folders
+    %article.view-mode-full.content
+      :markdown
+        Within Middleman there is no active complilation from SCSS to CSS files. Middleman actively watches changes in this folder which is reflected in the browser by livereload. When making a build, the scss files are converted to css files. In the css folder we see there are several folder. This is the order they are included:
 
-      %h2.section-heading Javascript
+        #### 1 Vars (variables)
+        Variables are reusable values which take care of style consistency and easy changing repeated patterns. Variables only live in SCSS files and they do not contain CSS selectors
 
-      %h2.section-heading Vendor
+        #### 2 Abstractions
+        Abstractions are reusable pieces of CSS, often called mixins as well. With abstractions we can avoid repeating selectors throughout the CSS which have the some declarations. Just like variables this folder never contains any CSS selectors.
+
+        #### 3 Components
+        Components are elements that are used across te site and are not limited to a specific block, section or page. So components must not be specified with parent wrappers.
+
+        #### 4 Modules
+        Modules are specific blocks, pages and section on the site. These styles are usually not shareable with other modules.
+
+        #### 5 Layout
+        Here we specify the responsive grid in which we positioning all components and modules.
+
+        #### 6 Styleguide
+        There are some styles needed for the styleguide only, which will not be used on Greenwire itself. We list these styles here, so we can easily extract them from the production build.
+
+  .block
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Javascript
+    %article.view-mode-full.content
+      :markdown
+        Here we store all the javascript files which will be compiled and minified. There are several folders for the reason of controlling the order of loading and to separate their origin.
+
+        #### Base
+        Contains all scripts that are needed by other scripts to run, for example the jquery library.
+
+        #### Before
+        Here we store scripts that are necessary at the beginning of the page. Therefore these scripts are loaded in the head of the page.
+
+        #### Contrib
+        These are scripts from third parties that we do not change. It is possible to update these scripts.
+
+        #### Custom
+        These scripts we have created ourselves and it contains the execution of contrib scripts.
+
+        #### Oldie
+        These scripts are only parsed in old versions of internet explorer, usually to polyfill HTML5 or CSS3.
+
+  .block
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Vendor
+    %article.view-mode-full.content
+      :markdown
+        This folder conatins libraries we use that consist of more then one file type. So foe example a combination of Javascript, CSS and images.
+
+  .block
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Demo
+    %article.view-mode-full.content
+      :markdown
+        Here we store (mainly) images that are used for the prototype and are not needed for the site.
+
+  .block
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Images
+    %article.view-mode-full.content
+      :markdown
+        Images that are used for the site, such as CSS background images, form elements and the logo.
+
+  .block
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Font
+    %article.view-mode-full.content
+    :markdown
+      In this folder we store the fonts and font-icons used for Greenwire
+
+  .block
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Documentation - Design elements - UI components - Prototype
+    %article.view-mode-full.content
+      :markdown
+        In this folder we store all template files. These files are written in a combination of HAML and Markdown.
+
+

@@ -64,7 +64,9 @@ body_class: front not-logged-in page-home l-two-column
             %input.button{:type => "submit", :value => "Reset"}/
     %i.block-icon.icon-bg-news-media.icon-news
     %h1#page-title.block-title Updates
-    = partial :"teasers/event", :locals => { :layout => "teaser"}
+    .content
+      = partial :"teasers/event"
+      = partial :"teasers/blog-with-image"
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/upcoming_events"

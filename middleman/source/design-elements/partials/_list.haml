@@ -1,0 +1,81 @@
+%section.block.block-no-icon
+  %h2.block-title Lists
+  :markdown
+    By default lists are unstyled. This is because there are many other components who use this markup and ed  to display like something else. To get a proper list styling make sure it is placed in a `<article>`.
+  .demo
+    %article
+
+      %h4 Unordered list
+      %ul
+        %li unordered list item one
+        %li unordered list item two
+        %li
+          unordered list item three
+          %ul
+            %li subitem 1
+            %li subitem 2
+            %li subitem 3
+        %li unordered list item four
+        %li unordered list item five
+
+      %h4 Ordered list
+
+      %ol
+        %li ordered list item one
+        %li ordered list item two
+        %li
+          ordered list item three
+          %ul
+            %li unordered list item
+            %li second unordered list item
+        %li ordered list item four
+        %li
+          ordered list item five
+          %ol
+            %li ordered subitem
+            %li second ordered subitem
+
+  .code
+    :code
+      # lang: html
+        <article>
+
+          <h4>Unordered list</h4>
+
+          <ul>
+            <li>unordered list item one</li>
+            <li>unordered list item two</li>
+            <li>
+              unordered list item three
+              <ul>
+                <li>subitem 1</li>
+                <li>subitem 2</li>
+                <li>subitem 3</li>
+              </ul>
+            </li>
+            <li>unordered list item four</li>
+            <li>unordered list item five</li>
+          </ul>
+
+          <h4>Ordered list</h4>
+
+          <ol>
+            <li>ordered list item one</li>
+            <li>ordered list item two</li>
+            <li>
+              ordered list item three
+              <ul>
+                <li>unordered list item</li>
+                <li>second unordered list item</li>
+              </ul>
+            </li>
+            <li>ordered list item four</li>
+            <li>
+              ordered list item five
+              <ol>
+                <li>ordered subitem</li>
+                <li>second ordered subitem</li>
+              </ol>
+            </li>
+          </ol>
+        </article>

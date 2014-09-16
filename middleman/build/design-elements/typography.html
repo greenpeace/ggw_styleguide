@@ -7,10 +7,8 @@
     <meta content='width=device-width' name='viewport'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>Typography — GGW Style Guide</title>
-    <link href="../css/all-eb72c326.css" rel="stylesheet" type="text/css" />
-    <script src="../js/modernizr-aa17a69f.js" type="text/javascript"></script>
-    <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
-    <script src="../js/all-9cd12e89.js" type="text/javascript"></script>
+    <link href="../css/all-f1e5b002.css" rel="stylesheet" type="text/css" />
+    <script src="../js/before-d9f129f6.js" type="text/javascript"></script>
   </head>
   <body class='style-guide'>
     <!--[if lt IE 7]> <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p> <![endif]-->
@@ -34,7 +32,7 @@
                       <li class='menu-item'>
                         <a class="menu-link" page="/design-elements/typography.html" href="colors.html">Design elements</a>
                         <a class="menu-link" page="/design-elements/typography.html" href="/ui-components/buttons.html">UI components</a>
-                        <a class="menu-link" page="/design-elements/typography.html" href="/prototype/index.html">Prototype</a>
+                        <a class="menu-link" page="/design-elements/typography.html" href="../prototype/">Prototype</a>
                       </li>
                     </ul>
                   </li>
@@ -73,30 +71,73 @@
             <p></p>
           </section>
           <section class='block block-no-icon'>
-            <h2 class='block-title'>Paragraph</h2>
-            <p>Paragraphs inside an article element get extra margin, otherwise the style is inherit from the body</p>
-            <div class='codedemo'>
+            <h2 class='block-title'>Headings</h2>
+            <p>Article titles are generated from a separate field in Drupal. They are often accompanied with icons to ghlight the content type. Therefore it is not advised to use <code>&lt;h1&gt;</code> elements in the body copy.</p>
+            <div class='demo'>
+              <article>
+                <h1>This is an heading 1 element</h1>
+                <h2>This is an heading 2 element</h2>
+                <h3>This is an heading 3 element</h3>
+                <h4>This is an heading 4 element</h4>
+                <h5>This is an heading 5 element</h5>
+                <h6>This is an heading 6 element</h6>
+              </article>
+            </div>
+            <div class='code'>
+              <pre><code class="highlight html">  <span class="nt">&lt;article&gt;</span>&#x000A;    <span class="nt">&lt;h1&gt;</span> This is an heading 1 element <span class="nt">&lt;/h1&gt;</span>&#x000A;    <span class="nt">&lt;h2&gt;</span> This is an heading 2 element <span class="nt">&lt;/h2&gt;</span>&#x000A;    <span class="nt">&lt;h3&gt;</span> This is an heading 3 element <span class="nt">&lt;/h3&gt;</span>&#x000A;    <span class="nt">&lt;h4&gt;</span> This is an heading 4 element <span class="nt">&lt;/h4&gt;</span>&#x000A;    <span class="nt">&lt;h5&gt;</span> This is an heading 5 element <span class="nt">&lt;/h5&gt;</span>&#x000A;    <span class="nt">&lt;h6&gt;</span> This is an heading 6 element <span class="nt">&lt;/h6&gt;</span>&#x000A;  <span class="nt">&lt;/article&gt;</span>&#x000A;</code></pre>
+            </div>
+          </section>
+          <section class='block block-no-icon'>
+            <h2 class='block-title'>Body copy</h2>
+            <p></p>
+            <p>The default <code>font-size</code> is <strong>14px</strong> with a <code>line-height</code> of <strong>1.5em</strong>. This is applied on the <code>&lt;body&gt;</code> Paragraphs inherit this style. Inside an <code>&lt;article&gt;</code> they receive an extra top and bottom margin.</p>
+            <div class='demo'>
+              <article>
+                <p>Nullam ultricies tellus eget pretium faucibus. Vestibulum in tellus non urna consequat pharetra ut eget purus.</p>
+              </article>
+            </div>
+            <div class='code'>
+              <pre><code class="highlight html">  <span class="nt">&lt;article&gt;</span>&#x000A;    <span class="nt">&lt;p&gt;</span> Nullam ultricies tellus eget pretium faucibus. Vestibulum in tellus non urna consequat pharetra ut eget purus.<span class="nt">&lt;/p&gt;</span>&#x000A;  <span class="nt">&lt;/article&gt;</span>&#x000A;</code></pre>
+            </div>
+          </section>
+          <section class='block block-no-icon'>
+            <h2 class='block-title'>Inline text elements</h2>
+            <p>The following elements can be used across the site and are not limited not any parent selector.</p>
+            <div class='demo'>
               <article>
                 <p>
-                  Est qui placeat distinctio molestiae distinctio placeat. Odit at sit ut repellendus accusantium quaerat molestias voluptate et omnis nemo vel sapiente inventore. Tempora vel soluta nesciunt nesciunt neque qui repellat odio est dolorem voluptatem ut. Eos libero aut est quasi. A nihil ad quis vitae qui dolorem omnis similique aut quis. Eum aliquam amet voluptatibus sit quia veniam qui veniam illo harum amet. Quia enim asperiores nam adipisci aspernatur molestiae quas culpa omnis nostrum sed. Temporibus ea sed qui consequatur ut ratione molestiae officiis nisi sequi laborum rerum eum totam. Voluptatibus voluptatibus eligendi possimus excepturi qui quia vel officia ducimus. Ut sit voluptates eum similique
+                  <s>This line of text is meant to be treated as no longer accurate.</s>
                 </p>
                 <p>
-                  Et pariatur eum aut eaque fugiat libero excepturi recusandae blanditiis veritatis. Nihil nostrum nam et suscipit. Suscipit enim minus veritatis. Aut eveniet voluptatem sint qui porro unde id voluptas repellat. Ipsam excepturi fugiat at molestias expedita totam quaerat dolorem ducimus
+                  <u>This line of text will render as underlined</u>
                 </p>
                 <p>
-                  Numquam quibusdam aut nemo. Libero ea est magni aliquam praesentium rerum reiciendis qui. Sit praesentium rerum quae totam nostrum non porro at vel eos minima. Sint numquam non iure iusto et perferendis rerum dicta ratione iste sit consequatur repellat occaecati. Rerum amet odio modi debitis illum reiciendis ut ea perspiciatis. Dolorum ipsam nihil vitae eos non voluptatem modi necessitatibus blanditiis ea enim illo aut quaerat. Laborum perspiciatis in minus quasi cum dolores dolor non dicta voluptatem quisquam est. Et vel rerum corrupti doloribus. Ut iste nam sint praesentium nulla ea eum facilis laborum cupiditate. Perferendis consequatur expedita quas cumque non magni non. Voluptas rem tempora eveniet facilis ea eveniet deserunt est assumenda accusantium aut voluptas reprehenderit et. Esse dolor officiis officia. Velit dolores voluptatem veniam fugit dolore aliquid corporis fugit sapiente dolor id qui rem. Omnis voluptatibus nihil dolores cumque quod unde vel optio voluptatem sit alias optio ut. Occaecati iste quia et officia molestiae alias voluptatem
+                  <small>This line of text is meant to be treated as fine print.</small>
+                </p>
+                <p>
+                  <strong>This line of text is rendered as bold text.</strong>
+                </p>
+                <p>
+                  <i>This line of text is rendered as italicized text.</i>
+                </p>
+                <p>
+                  <sup>This line of text is rendered as superscript text.</sup>
+                </p>
+                <p>
+                  <sub>This line of text is rendered as subscript text.</sub>
                 </p>
               </article>
             </div>
-            <div id='example'>
-              <pre><code class="highlight html">  <span class="nt">&lt;article&gt;</span>&#x000A;    <span class="nt">&lt;p&gt;</span> Nullam ultricies tellus eget pretium faucibus.&#x000A;    Vestibulum in tellus non urna consequat pharetra ut eget purus.<span class="nt">&lt;/p&gt;</span>&#x000A;  <span class="nt">&lt;/article&gt;</span>&#x000A;&#x000A;</code></pre>
+            <div class='code'>
+              <pre><code class="highlight html">  <span class="nt">&lt;s&gt;</span>This line of text is meant to be treated as no longer accurate.<span class="nt">&lt;/s&gt;</span>&#x000A;  <span class="nt">&lt;u&gt;</span>This line of text will render as underlined<span class="nt">&lt;/u&gt;</span>&#x000A;  <span class="nt">&lt;small&gt;</span>This line of text is meant to be treated as fine print.<span class="nt">&lt;/small&gt;</span>&#x000A;  <span class="nt">&lt;strong&gt;</span>This line of text is rendered as bold text.<span class="nt">&lt;/strong&gt;</span>&#x000A;  <span class="nt">&lt;i&gt;</span>This line of text is rendered as italicized text.<span class="nt">&lt;/i&gt;</span>&#x000A;  <span class="nt">&lt;sup&gt;</span>This line of text is rendered as superscript text.<span class="nt">&lt;/sup&gt;</span>&#x000A;  <span class="nt">&lt;sub&gt;</span>This line of text is rendered as subscript text.<span class="nt">&lt;/sub&gt;</span>&#x000A;</code></pre>
             </div>
           </section>
           <section class='block block-no-icon'>
             <h2 class='block-title'>Lists</h2>
-            <p>By default lists are unstyled. This is because there are many other components who use this markup and need  to display like something else. To get a proper list styling make sure it is placed in a <code>&lt;article&gt;&lt;/article&gt;</code> tag.</p>
-            <div class='codedemo'>
+            <p>By default lists are unstyled. This is because there are many other components who use this markup and ed  to display like something else. To get a proper list styling make sure it is placed in a <code>&lt;article&gt;</code>.</p>
+            <div class='demo'>
               <article>
+                <h4>Unordered list</h4>
                 <ul>
                   <li>unordered list item one</li>
                   <li>unordered list item two</li>
@@ -111,65 +152,65 @@
                   <li>unordered list item four</li>
                   <li>unordered list item five</li>
                 </ul>
+                <h4>Ordered list</h4>
                 <ol>
                   <li>ordered list item one</li>
                   <li>ordered list item two</li>
-                  <li>ordered list item three</li>
+                  <li>
+                    ordered list item three
+                    <ul>
+                      <li>unordered list item</li>
+                      <li>second unordered list item</li>
+                    </ul>
+                  </li>
                   <li>ordered list item four</li>
-                  <li>ordered list item five</li>
+                  <li>
+                    ordered list item five
+                    <ol>
+                      <li>ordered subitem</li>
+                      <li>second ordered subitem</li>
+                    </ol>
+                  </li>
                 </ol>
               </article>
             </div>
+            <div class='code'>
+              <pre><code class="highlight html">  <span class="nt">&lt;article&gt;</span>&#x000A;&#x000A;    <span class="nt">&lt;h4&gt;</span>Unordered list<span class="nt">&lt;/h4&gt;</span>&#x000A;&#x000A;    <span class="nt">&lt;ul&gt;</span>&#x000A;      <span class="nt">&lt;li&gt;</span>unordered list item one<span class="nt">&lt;/li&gt;</span>&#x000A;      <span class="nt">&lt;li&gt;</span>unordered list item two<span class="nt">&lt;/li&gt;</span>&#x000A;      <span class="nt">&lt;li&gt;</span>&#x000A;        unordered list item three&#x000A;        <span class="nt">&lt;ul&gt;</span>&#x000A;          <span class="nt">&lt;li&gt;</span>subitem 1<span class="nt">&lt;/li&gt;</span>&#x000A;          <span class="nt">&lt;li&gt;</span>subitem 2<span class="nt">&lt;/li&gt;</span>&#x000A;          <span class="nt">&lt;li&gt;</span>subitem 3<span class="nt">&lt;/li&gt;</span>&#x000A;        <span class="nt">&lt;/ul&gt;</span>&#x000A;      <span class="nt">&lt;/li&gt;</span>&#x000A;      <span class="nt">&lt;li&gt;</span>unordered list item four<span class="nt">&lt;/li&gt;</span>&#x000A;      <span class="nt">&lt;li&gt;</span>unordered list item five<span class="nt">&lt;/li&gt;</span>&#x000A;    <span class="nt">&lt;/ul&gt;</span>&#x000A;&#x000A;    <span class="nt">&lt;h4&gt;</span>Ordered list<span class="nt">&lt;/h4&gt;</span>&#x000A;&#x000A;    <span class="nt">&lt;ol&gt;</span>&#x000A;      <span class="nt">&lt;li&gt;</span>ordered list item one<span class="nt">&lt;/li&gt;</span>&#x000A;      <span class="nt">&lt;li&gt;</span>ordered list item two<span class="nt">&lt;/li&gt;</span>&#x000A;      <span class="nt">&lt;li&gt;</span>&#x000A;        ordered list item three&#x000A;        <span class="nt">&lt;ul&gt;</span>&#x000A;          <span class="nt">&lt;li&gt;</span>unordered list item<span class="nt">&lt;/li&gt;</span>&#x000A;          <span class="nt">&lt;li&gt;</span>second unordered list item<span class="nt">&lt;/li&gt;</span>&#x000A;        <span class="nt">&lt;/ul&gt;</span>&#x000A;      <span class="nt">&lt;/li&gt;</span>&#x000A;      <span class="nt">&lt;li&gt;</span>ordered list item four<span class="nt">&lt;/li&gt;</span>&#x000A;      <span class="nt">&lt;li&gt;</span>&#x000A;        ordered list item five&#x000A;        <span class="nt">&lt;ol&gt;</span>&#x000A;          <span class="nt">&lt;li&gt;</span>ordered subitem<span class="nt">&lt;/li&gt;</span>&#x000A;          <span class="nt">&lt;li&gt;</span>second ordered subitem<span class="nt">&lt;/li&gt;</span>&#x000A;        <span class="nt">&lt;/ol&gt;</span>&#x000A;      <span class="nt">&lt;/li&gt;</span>&#x000A;    <span class="nt">&lt;/ol&gt;</span>&#x000A;  <span class="nt">&lt;/article&gt;</span>&#x000A;</code></pre>
+            </div>
           </section>
           <section class='block block-no-icon'>
-            <h2 class='block-title'>Headings</h2>
-            <p>Article titles are generated from a separate field in Drupal. They are often accompanied with icons to highlight the content type. Therefore it is not advised to use <code>&lt;h1&gt;</code> elements in the body copy.</p>
-            <div class='codedemo'>
+            <h2 class='block-title'>Quote</h2>
+            <p>Blockquotes can be used to quote people and style this consistently.</p>
+            <div class='demo'>
               <article>
-                <h1>This is an heading 1 element</h1>
-                <h2>This is an heading 2 element</h2>
-                <h3>This is an heading 3 element</h3>
-                <h4>This is an heading 4 element</h4>
-                <h5>This is an heading 5 element</h5>
-                <h6>This is an heading 6 element</h6>
+                <blockquote cite='http://linktosource.com'>
+                  <p>
+                    "This project aims at making sure your style sheets are fully documented whilst being synchronized th your webpages styles. To do this it actually uses your live stylesheets in so that at anytime u can review how your styleguide looks."
+                  </p>
+                </blockquote>
               </article>
             </div>
-            <div id='example'>
-              <pre><code class="highlight html">  <span class="nt">&lt;article&gt;</span>&#x000A;    <span class="nt">&lt;h1&gt;</span> This is an heading 1 element <span class="nt">&lt;/h1&gt;</span>&#x000A;    <span class="nt">&lt;h2&gt;</span> This is an heading 2 element <span class="nt">&lt;/h2&gt;</span>&#x000A;    <span class="nt">&lt;h3&gt;</span> This is an heading 3 element <span class="nt">&lt;/h3&gt;</span>&#x000A;    <span class="nt">&lt;h4&gt;</span> This is an heading 4 element <span class="nt">&lt;/h4&gt;</span>&#x000A;    <span class="nt">&lt;h5&gt;</span> This is an heading 5 element <span class="nt">&lt;/h5&gt;</span>&#x000A;    <span class="nt">&lt;h6&gt;</span> This is an heading 6 element <span class="nt">&lt;/h6&gt;</span>&#x000A;  <span class="nt">&lt;/article&gt;</span>&#x000A;&#x000A;</code></pre>
+            <div class='code'>
+              <pre><code class="highlight html">  <span class="nt">&lt;article&gt;</span>&#x000A;    <span class="nt">&lt;blockquote</span> <span class="na">cite=</span><span class="s">"http://linktosource.com"</span><span class="nt">&gt;</span>&#x000A;      "This project aims at making sure your style sheets are fully documented whilst being synchronized th your webpages styles. To do this it actually uses your live stylesheets in so that at anytime u can review how your styleguide looks."&#x000A;    <span class="nt">&lt;/blockquote&gt;</span>&#x000A;  <span class="nt">&lt;/article&gt;</span>&#x000A;</code></pre>
             </div>
           </section>
           <section class='block block-no-icon'>
             <h2 class='block-title'>Links</h2>
             <p>Links inside .content class (except .button and .item-list) have the next properties:</p>
             
-            <p><strong><code>:visited</code></strong> - When the link is visited, it keeps the color and has no decoration.</p>
-            
-            <p><strong><code>:hover</code></strong> - When the link is hovered, the cursor became a pointer and the link is underlined.</p>
-            
-            <p><strong><code>:focus</code></strong> - When the link is focused, the link is underlined and with a thin dotted outline.</p>
-            <div class='codedemo'>
+            <ul>
+              <li><code>:visited</code> When the link is visited, it keeps the color and has no decoration.</li>
+              <li><code>:hover</code> When the link is hovered, the cursor became a pointer and the link is underlined.</li>
+              <li><code>:focus</code> When the link is focused, the link is underlined and with a thin dotted outline.
+            <br /><br /></li>
+            </ul>
+            <div class='demo'>
               <article>
                 <a href='#' title='link title'>This is a link element</a>
               </article>
             </div>
-            <div id='example'>
-              <pre><code class="highlight html">  <span class="nt">&lt;article&gt;</span>&#x000A;    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">title=</span><span class="s">"link title"</span><span class="nt">&gt;</span> This is an link element <span class="nt">&lt;/a&gt;</span>&#x000A;  <span class="nt">&lt;/article&gt;</span>&#x000A;&#x000A;</code></pre>
-            </div>
-          </section>
-          <section class='block block-no-icon'>
-            <h2 class='block-title'>Quote</h2>
-            <p>Blockquotes can be used to quote people and style this consistently.</p>
-            <div class='codedemo'>
-              <article>
-                <blockquote cite='http://linktosource.com'>
-                  <p>
-                    "This project aims at making sure your style sheets are fully documented whilst being synchronized with your webpages styles. To do this it actually uses your live stylesheets in so that at anytime you can review how your styleguide looks."
-                  </p>
-                </blockquote>
-              </article>
-            </div>
-            <div id='example'>
-              <pre><code class="highlight html">  <span class="nt">&lt;article&gt;</span>&#x000A;    <span class="nt">&lt;blockquote</span> <span class="na">cite=</span><span class="s">"http://linktosource.com"</span><span class="nt">&gt;</span>&#x000A;      "This project aims at making sure your style sheets are fully documented whilst being synchronized with your webpages styles. To do this it actually uses your live stylesheets in so that at anytime you can review how your styleguide looks."&#x000A;    <span class="nt">&lt;/blockquote&gt;</span>&#x000A;  <span class="nt">&lt;/article&gt;</span>&#x000A;</code></pre>
+            <div class='code'>
+              <pre><code class="highlight html">  <span class="nt">&lt;article&gt;</span>&#x000A;    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">title=</span><span class="s">"link title"</span><span class="nt">&gt;</span> This is an link element <span class="nt">&lt;/a&gt;</span>&#x000A;  <span class="nt">&lt;/article&gt;</span>&#x000A;</code></pre>
             </div>
           </section>
         </div>
@@ -207,12 +248,6 @@
         </div>
       </footer>
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
-    <script>
-      window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.8.0.min.js"><\/script>')
-    </script>
-    <!--[if lt IE 9]>
-      <script src='/javascripts/html5shiv.js'></script>
-    <![endif]-->
+    <script src="../js/theme-80a72ef0.js" type="text/javascript"></script>
   </body>
 </html>

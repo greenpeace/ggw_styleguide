@@ -11,32 +11,28 @@
     %title=page_title
 
     = stylesheet_link_tag "all"
-    = javascript_include_tag "modernizr"
-    <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
-    = javascript_include_tag  "all"
+    = javascript_include_tag "before"
 
-  %body{:class => "#{current_page.data.body_class || page_classes} l-has-sidebar"}
+  %body{:class => "#{current_page.data.body_class || page_classes}"}
     /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
     .layout-base
       .l-branding-header
         .container
-          %a.logo{:href=>"/"}
-            %span.element-invisible Greenpeace Greenwire Styleguide
+          %a.logo{:href => "home-LU.php", :rel => "home", :title => "Home"}
+            %span.element-invisible Greenpeace Greenwire  Nederland
+          .mobile-nav
+            %a#main-menu-show.nav-btn.icon-menu{"data-nav" => "js-nav", :href => "#primary-nav"}
+              %span.element-invisible Show primary navigation
+            %a#secondary-menu-show.nav-btn.icon-user{"data-nav" => "js-nav2", :href => "#secondary-nav"}
+              %span.element-invisible Show secondary navigation
 
-      %header.l-header.header
-        .container
-          = partial :"nav/main"
+      = partial :"prototype-header"
 
       .l-main.container#main
         = yield
 
       = partial :"nav/footer"
 
-
-    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"
-    :javascript
-      window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.8.0.min.js"><\/script>')
-    /[if lt IE 9]
-      %script{:src=>"/javascripts/html5shiv.js"}
+    = javascript_include_tag  "theme"
 
 

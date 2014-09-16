@@ -1,0 +1,16 @@
+%section.slider
+  .flexslider
+    %ul.slides
+      %li
+        %a{:href => "#"}
+          =tag :img, :src => "/images/slide1.jpg"
+          %p This is a line of text with a link
+      %li
+        %a{:href => "#"}
+          =tag :img, :src => "/images/slide2.jpg"
+          %p We are now looking at the 2nd slide, this text is actually too long for the slide
+          %button.button.btn-primary take action
+      %li
+        %a{:href => "#"}
+          =tag :img, :src => "/images/slide3.jpg"
+          %p This is a campaign slide to a separate page

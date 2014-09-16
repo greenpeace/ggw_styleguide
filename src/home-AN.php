@@ -26,7 +26,14 @@
 
   <?php include('modules/slider.php'); ?>
 
-  <div class="l-main-column">
+<div class="original-action-menu">
+  <ul>
+    <li><a class="tab" href="#content"><i class="icon icon-news"></i> Updates</a></li>
+    <li><a class="tab" href="#upcoming-events"><i class="icon icon-event"></i> Events</a></li>
+  </ul>
+</div>
+
+  <div id="content" class="l-main-column">
 
     <div class="block block-no-icon">
 
@@ -38,19 +45,6 @@
       </div>
 
     </div>
-
-  </div>
-
-<div class="original-action-menu">
-  <ul>
-    <li><a class="tab" href="#content"><i class="icon icon-news"></i> Updates</a></li>
-    <li><a class="tab" href="#upcoming-events"><i class="icon icon-event"></i> Events</a></li>
-  </ul>
-</div>
-
-  <div id="content" class="l-main-column">
-
-
 
     <div class="main-content">
 

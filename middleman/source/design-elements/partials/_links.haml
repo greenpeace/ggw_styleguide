@@ -1,0 +1,18 @@
+%section.block.block-no-icon
+  %h2.block-title Links
+  :markdown
+    Links inside .content class (except .button and .item-list) have the next properties:
+
+    * `:visited` When the link is visited, it keeps the color and has no decoration.
+    * `:hover` When the link is hovered, the cursor became a pointer and the link is underlined.
+    * `:focus` When the link is focused, the link is underlined and with a thin dotted outline.
+    <br/><br/>
+  .demo
+    %article
+      %a{:href => "#", :title => "link title"} This is a link element
+  .code
+    :code
+      # lang: html
+        <article>
+          <a href="#" title="link title"> This is an link element </a>
+        </article>

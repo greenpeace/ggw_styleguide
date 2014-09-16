@@ -1,0 +1,1 @@
+function mobileNav(){$(window).width()<=901?($(".main-menu .menu").navgoco({caretHtml:'<i class="navcaret"></i>',accordion:!0,openClass:"open",save:!0,cookie:{name:"navgoco",expires:!1,path:"/"},slide:{duration:300,easing:"swing"}}),$(".main-menu .menu .menu").css("display","none")):$(".mobile-nav").is(":hidden")&&$(".main-menu .menu .menu").removeAttr("style")}

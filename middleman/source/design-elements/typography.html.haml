@@ -6,127 +6,14 @@ layout: styleguide
 
 %aside.sidebar-left
   = partial :"nav/designelements"
-
 #content.l-main-column
-
   %section.block
     %i.block-icon.icon-info.icon-bg-default
     %h2.block-title Greenwire typography
     %p
-
-  %section.block.block-no-icon
-    %h2.block-title Paragraph
-    %p Paragraphs inside an article element get extra margin, otherwise the style is inherit from the body
-
-    .codedemo
-      %article
-        %p
-          :erb
-            <%= lorem.sentences 10 %>
-        %p
-          :erb
-            <%= lorem.sentences 5 %>
-        %p
-          :erb
-            <%= lorem.sentences 15 %>
-    #example
-      :code
-        # lang: html
-          <article>
-            <p> Nullam ultricies tellus eget pretium faucibus.
-            Vestibulum in tellus non urna consequat pharetra ut eget purus.</p>
-          </article>
-
-  %section.block.block-no-icon
-    %h2.block-title Lists
-    :markdown
-      By default lists are unstyled. This is because there are many other components who use this markup and need  to display like something else. To get a proper list styling make sure it is placed in a `<article></article>` tag.
-
-    .codedemo
-      %article
-        %ul
-          %li unordered list item one
-          %li unordered list item two
-          %li
-            unordered list item three
-            %ul
-              %li subitem 1
-              %li subitem 2
-              %li subitem 3
-          %li unordered list item four
-          %li unordered list item five
-        %ol
-          %li ordered list item one
-          %li ordered list item two
-          %li ordered list item three
-          %li ordered list item four
-          %li ordered list item five
-
-  %section.block.block-no-icon
-    %h2.block-title Headings
-    :markdown
-      Article titles are generated from a separate field in Drupal. They are often accompanied with icons to highlight the content type. Therefore it is not advised to use `<h1>` elements in the body copy.
-
-    .codedemo
-      %article
-        %h1 This is an heading 1 element
-        %h2 This is an heading 2 element
-        %h3 This is an heading 3 element
-        %h4 This is an heading 4 element
-        %h5 This is an heading 5 element
-        %h6 This is an heading 6 element
-
-    #example
-      :code
-        # lang: html
-          <article>
-            <h1> This is an heading 1 element </h1>
-            <h2> This is an heading 2 element </h2>
-            <h3> This is an heading 3 element </h3>
-            <h4> This is an heading 4 element </h4>
-            <h5> This is an heading 5 element </h5>
-            <h6> This is an heading 6 element </h6>
-          </article>
-
-  %section.block.block-no-icon
-    %h2.block-title Links
-    :markdown
-      Links inside .content class (except .button and .item-list) have the next properties:
-
-      **`:visited`** - When the link is visited, it keeps the color and has no decoration.
-
-      **`:hover`** - When the link is hovered, the cursor became a pointer and the link is underlined.
-
-      **`:focus`** - When the link is focused, the link is underlined and with a thin dotted outline.
-
-
-    .codedemo
-      %article
-        %a{:href => "#", :title => "link title"} This is a link element
-
-
-    #example
-      :code
-        # lang: html
-          <article>
-            <a href="#" title="link title"> This is an link element </a>
-          </article>
-
-  %section.block.block-no-icon
-    %h2.block-title Quote
-    :markdown
-      Blockquotes can be used to quote people and style this consistently.
-
-    .codedemo
-      %article
-        %blockquote{:cite => "http://linktosource.com"}
-          %p
-            "This project aims at making sure your style sheets are fully documented whilst being synchronized with your webpages styles. To do this it actually uses your live stylesheets in so that at anytime you can review how your styleguide looks."
-    #example
-      :code
-        #lang: html
-          <article>
-            <blockquote cite="http://linktosource.com">
-              "This project aims at making sure your style sheets are fully documented whilst being synchronized with your webpages styles. To do this it actually uses your live stylesheets in so that at anytime you can review how your styleguide looks."
-            </blockquote>
-          </article>
+  = partial :"design-elements/partials/heading"
+  = partial :"design-elements/partials/body-copy"
+  = partial :"design-elements/partials/inline-text"
+  = partial :"design-elements/partials/list"
+  = partial :"design-elements/partials/blockquote"
+  = partial :"design-elements/partials/links"

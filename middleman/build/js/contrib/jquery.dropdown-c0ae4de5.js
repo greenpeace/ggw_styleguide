@@ -1,0 +1,9 @@
+/*
+ * jQuery dropdown: A simple dropdown plugin
+ *
+ * Inspired by Bootstrap: http://twitter.github.com/bootstrap/javascript.html#dropdowns
+ * Copyright 2013 Cory LaViska for A Beautiful Site, LLC. (http://abeautifulsite.net/)
+ * Dual licensed under the MIT / GPL Version 2 licenses
+ *
+*/
+jQuery&&function(d){function o(o){var n=d(this),e=d(n.attr("data-dropdown")),a=n.hasClass("dropdown-open");n!==o.target&&d(o.target).hasClass("dropdown-ignore")||(o.preventDefault(),o.stopPropagation(),r(),a||n.hasClass("dropdown-disabled")||(n.addClass("dropdown-open"),e.data("dropdown-trigger",n).show(),t(),e.trigger("show",{dropdown:e,trigger:n})))}function r(o){var r=o?d(o.target).parents().addBack():null;if(r&&r.is(".dropdown")){if(!r.is(".dropdown-list"))return;if(!r.is("a"))return}d(document).find(".dropdown:visible").each(function(){var o=d(this);o.hide().removeData("dropdown-trigger").trigger("hide",{dropdown:o})}),d(document).find(".dropdown-open").removeClass("dropdown-open")}function t(){{var o=d(".dropdown:visible").eq(0),r=o.data("dropdown-trigger");r?parseInt(r.attr("data-horizontal-offset")||0,10):null,r?parseInt(r.attr("data-vertical-offset")||0,10):null}0===o.length||!r}d.extend(d.fn,{dropdown:function(o,t){switch(o){case"hide":return r(),d(this);case"attach":return d(this).attr("data-dropdown",t);case"detach":return r(),d(this).removeAttr("data-dropdown");case"disable":return d(this).addClass("dropdown-disabled");case"enable":return r(),d(this).removeClass("dropdown-disabled")}}}),d(document).on("click.dropdown","[data-dropdown]",o),d(document).on("click.dropdown",r),d(window).on("resize",t)}(jQuery);

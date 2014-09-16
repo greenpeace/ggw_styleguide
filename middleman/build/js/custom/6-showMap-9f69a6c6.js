@@ -1,0 +1,1 @@
+function showMap(){$(".js-show-mobile-map").click(function(o){$("#mobilemap, #close-map").addClass("ontop"),o.preventDefault()}),$("#mobilemap").has(".ontop")&&($("#close-map").click(function(){$("#mobilemap, #close-map").removeClass("ontop")}),$("#main-menu-show, #secondary-menu-show").click(function(){$("#mobilemap, #close-map").removeClass("ontop")}))}

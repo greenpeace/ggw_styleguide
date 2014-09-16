@@ -7,52 +7,160 @@
     <meta content='width=device-width' name='viewport'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>GGW Style Guide</title>
-    <link href="../css/all-eb72c326.css" rel="stylesheet" type="text/css" />
-    <script src="../js/modernizr-aa17a69f.js" type="text/javascript"></script>
-    <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
-    <script src="../js/all-9cd12e89.js" type="text/javascript"></script>
+    <link href="../css/all-f1e5b002.css" rel="stylesheet" type="text/css" />
+    <script src="../js/before-d9f129f6.js" type="text/javascript"></script>
   </head>
-  <body class='page-register l-has-sidebar'>
+  <body class='page-register'>
     <!--[if lt IE 7]> <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p> <![endif]-->
     <div class='layout-base'>
       <div class='l-branding-header'>
         <div class='container'>
-          <a class='logo' href='/'>
-            <span class='element-invisible'>Greenpeace Greenwire Styleguide</span>
+          <a class='logo' href='home-LU.php' rel='home' title='Home'>
+            <span class='element-invisible'>Greenpeace Greenwire  Nederland</span>
           </a>
+          <div class='mobile-nav'>
+            <a class='nav-btn icon-menu' data-nav='js-nav' href='#primary-nav' id='main-menu-show'>
+              <span class='element-invisible'>Show primary navigation</span>
+            </a>
+            <a class='nav-btn icon-user' data-nav='js-nav2' href='#secondary-nav' id='secondary-menu-show'>
+              <span class='element-invisible'>Show secondary navigation</span>
+            </a>
+          </div>
         </div>
       </div>
-      <header class='l-header header'>
+      <header class='l-header header' role='banner'>
         <div class='container'>
           <div class='off-canvas' id='primary-nav'>
             <div class='nav-inner-wrap'>
+              <div class='block-search'>
+                <form accept-charset='UTF-8' action='#' class='search-form' method='post'>
+                  <div class='form-item-search'>
+                    <i class='icon-search'></i>
+                    <input class='form-text' maxlength='128' name='search' placeholder='Search Greenwire' size='60' type='text'>
+                  </div>
+                  <div class='form-actions'>
+                    <input class='form-submit' name='op' type='submit' value='Search'>
+                  </div>
+                </form>
+              </div>
               <nav class='main-menu' role='navigation'>
                 <ul class='menu'>
+                  <li class='menu-item'>
+                    <a class='menu-link active' href='home-LU.php'>Home</a>
+                  </li>
                   <li class='menu-item expanded'>
-                    <a class="menu-link" page="/prototype/register-step3.html" href="../design-elements/colors.html">Style guide</a>
+                    <a class='menu-link' href='#'>Community</a>
                     <ul class='menu'>
                       <li class='menu-item'>
-                        <a class="menu-link" page="/prototype/register-step3.html" href="../design-elements/colors.html">Design elements</a>
-                        <a class="menu-link" page="/prototype/register-step3.html" href="/ui-components/buttons.html">UI components</a>
-                        <a class="menu-link" page="/prototype/register-step3.html" href="/prototype/index.html">Prototype</a>
+                        <a class='menu-link' href='#'>Events</a>
+                      </li>
+                      <li class='menu-item'>
+                        <a class='menu-link' href='#'>Groups</a>
                       </li>
                     </ul>
                   </li>
-                  <li class='menu-item'>
-                    <a class="menu-link" page="/prototype/register-step3.html" href="../documentation/getting-started.html">Documentation</a>
+                  <li class='menu-item expanded'>
+                    <a class='menu-link' href='#'>News & media</a>
                     <ul class='menu'>
                       <li class='menu-item'>
-                        <a class="menu-link" page="/prototype/register-step3.html" href="../documentation/getting-started.html">Getting started</a>
-                        <a class="menu-link" page="/prototype/register-step3.html" href="../documentation/styleguide-structure.html">Styleguide structure</a>
-                        <a class="menu-link" page="/prototype/register-step3.html" href="/documentation/browser-support.html">Device & browser Support</a>
-                        <a class="menu-link" page="/prototype/register-step3.html" href="/documentation/porgessive-enhancement.html">Progressive enhancement</a>
-                        <a class="menu-link" page="/prototype/register-step3.html" href="/documentation/porgessive-enhancement.html">Development principles</a>
-                        <a class="menu-link" page="/prototype/register-step3.html" href="/documentation/porgessive-enhancement.html">Editing the style guide</a>
+                        <a class='menu-link' href='#'>News</a>
+                      </li>
+                      <li class='menu-item'>
+                        <a class='menu-link' href='#'>Blogs</a>
+                      </li>
+                      <li class='menu-item'>
+                        <a class='menu-link' href='#'>Photos</a>
+                      </li>
+                      <li class='menu-item'>
+                        <a class='menu-link' href='#'>Videos</a>
+                      </li>
+                      <li class='menu-item'>
+                        <a class='menu-link' href='#'>Documents</a>
+                      </li>
+                      <li class='menu-item'>
+                        <a class='menu-link' href='#'>Ideas</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='menu-item expanded'>
+                    <a class='menu-link' href='#'>About</a>
+                    <ul class='menu'>
+                      <li class='menu-item'>
+                        <a class='menu-link' href='#'>Contact</a>
+                      </li>
+                      <li class='menu-item'>
+                        <a class='menu-link' href='#'>FAQ</a>
                       </li>
                     </ul>
                   </li>
                 </ul>
               </nav>
+            </div>
+          </div>
+          <div class='off-canvas' id='secondary-nav'>
+            <div class='nav-inner-wrap'>
+              <ul class='menu'>
+                <li class='menu-item'>
+                  <a class='menu-link' href='#'>Login</a>
+                </li>
+                <li class='menu-item'>
+                  <a class='menu-link' href='#'>Sign up</a>
+                </li>
+              </ul>
+              <div class='l-country-selector country-selector'>
+                <div class='dropdown-controller'>
+                  <a class='trigger' data-dropdown='#dropdown-content-country' href='#'>
+                    International
+                    <span class='country-img'></span>
+                  </a>
+                </div>
+                <div class='dropdown dropdown-scroll' id='dropdown-content-country'>
+                  <ul class='dropdown-list'>
+                    <li>
+                      <a href='#'>Belgium</a>
+                    </li>
+                    <li>
+                      <a href='#'>France</a>
+                    </li>
+                    <li>
+                      <a href='#'>India</a>
+                    </li>
+                    <li>
+                      <a href='#'>International</a>
+                    </li>
+                    <li>
+                      <a href='#'>Netherlands</a>
+                    </li>
+                    <li>
+                      <a href='#'>Russia</a>
+                    </li>
+                    <li>
+                      <a href='#'>Thailand</a>
+                    </li>
+                    <li>
+                      <a href='#'>USA</a>
+                    </li>
+                    <li>
+                      <a href='#'>UK</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class='l-language-selector language-selector'>
+                <div class='dropdown-controller'>
+                  <a class='trigger' data-dropdown='#dropdown-content-language' href='#'>Language</a>
+                </div>
+                <div class='dropdown dropdown-scroll' id='dropdown-content-language'>
+                  <ul class='dropdown-list'>
+                    <li>
+                      <a href='#'>Francais</a>
+                    </li>
+                    <li>
+                      <a href='#'>Nederlands</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -303,12 +411,6 @@
         </div>
       </footer>
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
-    <script>
-      window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.8.0.min.js"><\/script>')
-    </script>
-    <!--[if lt IE 9]>
-      <script src='/javascripts/html5shiv.js'></script>
-    <![endif]-->
+    <script src="../js/theme-80a72ef0.js" type="text/javascript"></script>
   </body>
 </html>

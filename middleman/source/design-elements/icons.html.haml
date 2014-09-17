@@ -1,0 +1,25 @@
+---
+title: Icons
+body_class: page-icons
+layout: styleguide
+---
+
+%aside.sidebar-left
+  = partial :"nav/designelements"
+
+#content.l-main-column
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Greenwire icons
+    %p These are the icons we use on Greenwire for visual aid to clarify sections and blocks.
+  %section.cardbox
+    - for icon in data.icons.icons
+      .cardholder
+        .card.icon.demo
+          %h3=icon
+          %i{:class => "icon-#{icon}"}
+          .code
+            :code
+              # lang: html
+                <i class="icon-#{icon}"></i>

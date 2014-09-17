@@ -12,14 +12,33 @@ layout: styleguide
   %section.block
     %i.block-icon.icon-info.icon-bg-default
     %h2.block-title Greenwire icons
+    :markdown
+      We use font-icons for these icons. The fonts live in the font folder. The pattern for including them is to add a class to the dom element. We often use a `<i>` for icons.
+    .code
+      :code
+        # lang: css
+         .icon-user
+         .icon-login
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Section icons
     %p These are the icons we use on Greenwire for visual aid to clarify sections and blocks.
+
   %section.cardbox
-    - for icon in data.icons.icons
+    - for icon in data.icons.section
       .cardholder
-        .card.icon.demo
-          %h3=icon
+        .card.icon
           %i{:class => "icon-#{icon}"}
-          .code
-            :code
-              # lang: html
-                <i class="icon-#{icon}"></i>
+          %code #{icon}
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Interface icons
+    %p These are the icons we use in the interface, mainly for actions.
+
+  %section.cardbox
+    - for icon in data.icons.interface
+      .cardholder
+        .card.icon
+          %i{:class => "icon-#{icon}"}
+          %code #{icon}

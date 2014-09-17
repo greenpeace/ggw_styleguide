@@ -1,9 +1,27 @@
-icons:
+interface:
+- menu
+- close
+- cancel
+- check
+- reply
+- pencil
+- clock
+- tag
+- comment
+- dot
+- eye
+- search
+- map
+- bell
+- edit
+- mail
+- subscription
+- down-open
+section:
+- login
 - users
 - user
 - user-add
-- menu
-- login
 - event
 - news
 - blog
@@ -12,25 +30,11 @@ icons:
 - document
 - material
 - info
-- close
-- cancel
-- check
-- reply
-- pencil
-- clock
-- tag
 - plus
 - comment
-- dot
-- eye
-- search
 - shout
-- map
-- bell
-- edit
-- mail
-- subscription
+- pencil
+socialmedia:
 - facebook
 - gplus
 - skype
-

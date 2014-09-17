@@ -13,14 +13,16 @@
     = stylesheet_link_tag "all"
     = javascript_include_tag "before"
 
-
-  %body.style-guide
+  %body{:class => "#{current_page.data.body_class || page_classes} style-guide"}
     /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
     .layout-base
       .l-branding-header
         .container
-          %a.logo{:href=>"/"}
-            %span.element-invisible Greenpeace Greenwire Styleguide
+          %a.logo{:href => "index.html", :rel => "home", :title => "Home"}
+            %span.element-invisible Greenpeace Greenwire  Nederland
+          .mobile-nav
+            %a#main-menu-show.nav-btn.icon-menu{"data-nav" => "js-nav", :href => "#primary-nav"}
+              %span.element-invisible Show primary navigation
 
       %header.l-header.header
         .container

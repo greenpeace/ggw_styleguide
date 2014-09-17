@@ -1,10 +1,63 @@
+.flexbox .style-guide {
+
+  .sidebar-left {
+    flex: 0 1 25%;
+    order: 1;
+    padding: 0 1.5em 1.5em 0;
+  }
+
+  .l-main-column {
+    flex: 0 1 75%;
+    order: 2;
+  }
+
+}
+
 .style-guide {
 
   .block,
   .main-content {
     margin: 1em 0;
   }
+
+  p + p {
+    margin-top: 0;
+  }
 }
+
+.two-col {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: stretch;
+
+  .col {
+    flex: 1 100%;
+    padding: 0 1.5em 0 0;
+    display: flex;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: stretch;
+
+    &:nth-child(2n) {
+      padding-right: 0;
+    }
+
+    @include breakpoint($tab) {
+      flex: 0 1 50%;
+    }
+
+    .block {
+      display: flex;
+      flex: 1 100%;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+  }
+}
+
 
 .style-guide .sidebar-left .block {
   padding: 5px 0;
@@ -51,8 +104,6 @@
 
   i {
     @include font-size(30px);
-    line-height: 1.5em;
-    padding: .5em 0 0;
     color: $base;
   }
 
@@ -64,9 +115,11 @@
 
   }
 
-  &.icon h3 {
-    font-size: $h4;
-    font-weight: 700;
+  &.icon {
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -140,12 +193,52 @@ code {
   border-radius: 4px;
 }
 
+.code {
+  margin: 0 -15px;
+  border-radius: 0 0 4px 4px;
+  padding: 9px 14px;
+  background-color: #f7f7f9;
+  border-top: 1px solid #e1e1e8;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: -15px;
+  }
+}
+
 .demo + .code {
   margin: -16px 0 15px;
   border-radius: 0 0 4px 4px;
   padding: 9px 14px;
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
+}
+
+code.html,
+code.css {
+  &:after {
+    position: absolute;
+    top: 0;
+    right: -1px;
+    display: block;
+    padding: 5px 15px;
+    line-height: 1em;
+    font-size: 11px;
+    color: $grey-l;
+    border-radius: 0 0 0 4px;
+    background-color: $white;
+    border: 1px solid #DDDDDD;
+    border-top: 0;
+  }
+}
+
+code.css:after {
+  content: "CSS";
+  color: $admin;
+}
+code.html:after {
+  content: "HTML";
+  color: $group;
 }
 
 .code pre {
@@ -160,7 +253,7 @@ code {
   margin: 0;
   color: $base;
   background-color: transparent;
-  padding: 0;
+  padding: 0 40px 0 0;
   font-size: 13px;
   word-break: normal;
   word-wrap: break-word;

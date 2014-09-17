@@ -1,0 +1,110 @@
+#shoutbox.block.block-shoutbox
+  %i.block-icon.icon-shout.icon-bg-action
+  %h2.block-title Shoutbox
+  .content
+    %form.shout-form
+      .form-shout-message
+        %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a shout...", :rows => "1"}
+      %input.tooltip.form-shout-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}/
+      %span#remain
+      %input.form-shout-submit{:type => "submit", :value => "share"}/
+    %section.shouts
+      %article.shout
+        .avatar-holder
+          %a{:href => "#", :title => "View user profile"}
+            %picture
+              %img{:alt => "Dora Tilman", :src => "http://placehold.it/60x60", :srcset => "http://placehold.it/120x120 2x"}/
+        .comment-holder
+          .comment-head
+            %a.comment-author{:href => "#", :title => "View profile"}
+              Dora Tilman
+          .comment-body
+            I agree.
+          .comment-footer
+            %span.comment-timestamp 5 minutes ago
+            %span.comment-actions
+              %a.comment-actionlink{:href => "#"} reply
+              %a.comment-actionlink{:href => "#"} edit
+              %a.comment-actionlink{:href => "#"} delete
+      %article.shout
+        .avatar-holder
+          %a{:href => "#", :title => "View user profile"}
+            %picture
+              %img{:alt => "Chico Konink", :src => "http://placehold.it/60x60", :srcset => "http://placehold.it/120x120 2x"}/
+        .comment-holder
+          .comment-head
+            %a.comment-author{:href => "#", :title => "View profile"}
+              Chico Konink (Greenpeace staff)
+          .comment-body
+            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+          .comment-footer
+            %span.comment-timestamp 1 hour ago
+            %span.comment-actions
+              %a.comment-actionlink{:href => "#"} reply
+              %a.comment-actionlink{:href => "#"} edit
+              %a.comment-actionlink{:href => "#"} delete
+      %article.shout.comment-reply
+        .avatar-holder
+          %a{:href => "#", :title => "View user profile"}
+            %picture
+              %img{:alt => "Chico Konink", :src => "http://placehold.it/60x60", :srcset => "http://placehold.it/120x120 2x"}/
+        .comment-holder
+          .comment-head
+            %a.comment-author{:href => "#", :title => "View profile"}
+              Chico Konink (Greenpeace staff)
+          .comment-body
+            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+          .comment-footer
+            %span.comment-timestamp 30 minutes ago
+      %article.shout.comment-reply
+        .avatar-holder
+          %a{:href => "#", :title => "View user profile"}
+            %picture
+              %img{:alt => "Chico Konink", :src => "http://placehold.it/60x60", :srcset => "http://placehold.it/120x120 2x"}/
+        .comment-holder
+          .comment-head
+            %a.comment-author{:href => "#", :title => "View profile"}
+              Chico Konink (Greenpeace staff)
+          .comment-body
+            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+          .comment-footer
+            %span.comment-timestamp 15 minutes ago
+            %span.comment-actions
+              %a.comment-actionlink{:href => "#"} edit
+              %a.comment-actionlink{:href => "#"} delete
+      %article.shout
+        .avatar-holder
+          %a{:href => "#", :title => "View user profile"}
+            %picture
+              %img{:alt => "Erben de Bok", :src => "http://placehold.it/60x60", :srcset => "http://placehold.it/120x120 2x"}/
+        .comment-holder
+          .comment-head
+            %a.comment-author{:href => "#", :title => "View profile"}
+              Erben de Bok
+          .comment-body
+            “What do you think
+            = succeed "?" do
+              %a{:href => "#", :title => "View Erben de Bok's profile"} Erben de Bok
+          .comment-footer
+            %span.comment-timestamp 12 May, 2014 - 13:56
+            %span.comment-actions
+              %a.comment-actionlink{:href => "#"} reply
+              %a.comment-actionlink{:href => "#"} edit
+              %a.comment-actionlink{:href => "#"} delete
+      %article.shout
+        .avatar-holder
+          %a{:href => "#", :title => "View user profile"}
+            %picture
+              %img{:alt => "Erben de Bok", :src => "http://placehold.it/60x60", :srcset => "http://placehold.it/120x120 2x"}/
+        .comment-holder
+          .comment-head
+            %a.comment-author{:href => "#", :title => "View profile"}
+              Johnny with his extremelonglastname
+          .comment-body
+            “I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her rehabilitation exercises after each surgery. “People I have known who had [replacement surgery] and who didn’t do the therapy, it doesn’t work out for them.”
+          .comment-footer
+            %span.comment-timestamp 2 November, 2013 - 08:56
+            %span.comment-actions
+              %a.comment-actionlink{:href => "#"} reply
+              %a.comment-actionlink{:href => "#"} edit
+              %a.comment-actionlink{:href => "#"} delete

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class='desktop no-js'>
+  <head>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width' name='viewport'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Buttons — GGW Style Guide</title>
+    <link href="../css/all-6f87ee1e.css" rel="stylesheet" type="text/css" />
+    <script src="../js/before-d9f129f6.js" type="text/javascript"></script>
+  </head>
+  <body class='page-buttons style-guide'>
+    <!--[if lt IE 7]> <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p> <![endif]-->
+    <div class='layout-base'>
+      <div class='l-branding-header'>
+        <div class='container'>
+          <a class='logo' href='index.html' rel='home' title='Home'>
+            <span class='element-invisible'>Greenpeace Greenwire  Nederland</span>
+          </a>
+          <div class='mobile-nav'>
+            <a class='nav-btn icon-menu' data-nav='js-nav' href='#primary-nav' id='main-menu-show'>
+              <span class='element-invisible'>Show primary navigation</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <header class='l-header header'>
+        <div class='container'>
+          <div class='off-canvas' id='primary-nav'>
+            <div class='nav-inner-wrap'>
+              <div class='block-search'>
+                <h2 class='trigger pull-right'>Style guide</h2>
+              </div>
+              <nav class='main-menu' role='navigation'>
+                <ul class='menu'>
+                  <li class='menu-item'>
+                    <a class="menu-link" page="/components/buttons.html" href="../">Home</a>
+                  </li>
+                  <li class='menu-item'>
+                    <a class="menu-link" page="/components/buttons.html" href="../design-elements/colors.html">Design elements</a>
+                  </li>
+                  <li class='menu-item'>
+                    <a class="menu-link active" page="/components/buttons.html" href="buttons.html">UI components</a>
+                  </li>
+                  <li class='menu-item'>
+                    <a class="menu-link" page="/components/buttons.html" href="../prototype/">Prototype</a>
+                  </li>
+                  <li class='menu-item expanded'>
+                    <a class="menu-link" page="/components/buttons.html" href="../documentation/getting-started.html">Documentation</a>
+                    <ul class='menu'>
+                      <li class='menu-item'>
+                        <a class="menu-link" page="/components/buttons.html" href="../documentation/getting-started.html">Getting started</a>
+                        <a class="menu-link" page="/components/buttons.html" href="../documentation/styleguide-structure.html">Styleguide structure</a>
+                        <a class="menu-link" page="/components/buttons.html" href="/documentation/browser-support.html">Device & browser Support</a>
+                        <a class="menu-link" page="/components/buttons.html" href="/documentation/progessive-enhancement.html">Progressive enhancement</a>
+                        <a class="menu-link" page="/components/buttons.html" href="/documentation/progessive-enhancement.html">Development principles</a>
+                        <a class="menu-link" page="/components/buttons.html" href="/documentation/progessive-enhancement.html">Editing the style guide</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class='l-main container' id='main'>
+        <aside class='sidebar-left'>
+          <div class='block'>
+            <h2 class='block-title'>UI Components</h2>
+            <a class="sg-navbtn active" page="/components/buttons.html" href="buttons.html">Buttons</a>
+            <a class="sg-navbtn" page="/components/buttons.html" href="/components/forms.html">Forms</a>
+            <a class="sg-navbtn" page="/components/buttons.html" href="/components/blocks.html">Blocks</a>
+          </div>
+        </aside>
+        <div class='l-main-column' id='content'>
+          <section class='block'>
+            <i class='block-icon icon-info icon-bg-default'></i>
+            <h2 class='block-title'>Greenwire buttons</h2>
+            <p>Buttons get a standard .button class, the element type is not of influence on its appearance</p>
+          </section>
+          <div class='two-col'>
+            <div class='col'>
+              <section class='block block-no-icon'>
+                <h2 class='block-title'>Default button</h2>
+                <p>
+                  <a class='button'>button</a>
+                </p>
+                <div class='code'>
+                  <pre><code class="highlight html">  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span> button <span class="nt">&lt;/a&gt;</span>&#x000A;</code></pre>
+                </div>
+              </section>
+            </div>
+            <div class='col'>
+              <section class='block block-no-icon'>
+                <h2 class='block-title'>Primary button</h2>
+                <p>
+                  <a class='button btn-primary'>primary button</a>
+                </p>
+                <div class='code'>
+                  <pre><code class="highlight html">  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button btn-primary"</span><span class="nt">&gt;</span> primary button <span class="nt">&lt;/a&gt;</span>&#x000A;</code></pre>
+                </div>
+              </section>
+            </div>
+            <div class='col'>
+              <section class='block block-no-icon'>
+                <h2 class='block-title'>Button hovered</h2>
+                <p>Buttons will have a dropdown shadow when hovered.</p>
+                <p>
+                  <a class='button hover'>button hovered</a>
+                  <a class='button btn-primary hover'>button hovered</a>
+                </p>
+                <div class='code'>
+                  <pre><code class="highlight css">  <span class="nc">.button</span><span class="nd">:hover</span>&#x000A;</code></pre>
+                </div>
+                <div class='code'>
+                  <pre><code class="highlight html">  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button hover"</span><span class="nt">&gt;</span> button hovered <span class="nt">&lt;/a&gt;</span>&#x000A;</code></pre>
+                </div>
+              </section>
+            </div>
+            <div class='col'>
+              <section class='block block-no-icon'>
+                <h2 class='block-title'>Active button</h2>
+                <p>Buttons will appear pressed (with an inset shadow) when active.</p>
+                <p>
+                  <a class='button active'>active button</a>
+                  <a class='button btn-primary active'>active button</a>
+                </p>
+                <div class='code'>
+                  <pre><code class="highlight css">  <span class="nc">.button</span><span class="nd">:active</span>&#x000A;</code></pre>
+                </div>
+                <div class='code'>
+                  <pre><code class="highlight html">  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span> active button <span class="nt">&lt;/a&gt;</span>&#x000A;</code></pre>
+                </div>
+              </section>
+            </div>
+            <div class='col'>
+              <section class='block block-no-icon'>
+                <h2 class='block-title'>Disabled button</h2>
+                <p>
+                  <a class='button disabled'>disabled button</a>
+                </p>
+                <div class='code'>
+                  <pre><code class="highlight html">  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button"</span> <span class="na">disabled=</span><span class="s">"disabled"</span><span class="nt">&gt;</span> disabled button <span class="nt">&lt;/a&gt;</span>&#x000A;</code></pre>
+                </div>
+              </section>
+            </div>
+            <div class='col'>
+              <section class='block block-no-icon'>
+                <h2 class='block-title'>Block button</h2>
+                <p>
+                  Block buttons span the full width of a parent element
+                  <a class='button btn-block'>block button</a>
+                </p>
+                <div class='code'>
+                  <pre><code class="highlight html">  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button btn-block"</span><span class="nt">&gt;</span> block button <span class="nt">&lt;/a&gt;</span>&#x000A;</code></pre>
+                </div>
+              </section>
+            </div>
+            <div class='col'>
+              <section class='block block-no-icon'>
+                <h2 class='block-title'>Small button</h2>
+                <p>
+                  <a class='button btn-s'>small button</a>
+                </p>
+                <div class='code'>
+                  <pre><code class="highlight html">  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button btn-s"</span><span class="nt">&gt;</span> small button <span class="nt">&lt;/a&gt;</span>&#x000A;</code></pre>
+                </div>
+              </section>
+            </div>
+            <div class='col'>
+              <section class='block block-no-icon'>
+                <h2 class='block-title'>Large button</h2>
+                <p>
+                  <a class='button btn-l'>large button</a>
+                </p>
+                <div class='code'>
+                  <pre><code class="highlight html">  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button btn-l"</span><span class="nt">&gt;</span> large button <span class="nt">&lt;/a&gt;</span>&#x000A;</code></pre>
+                </div>
+              </section>
+            </div>
+            <div class='col'>
+              <section class='block block-no-icon'>
+                <h2 class='block-title'>Button icon</h2>
+                <p>Buttons can be combined with any icon. Icons should be placed inside the button as an <code>&lt;i&gt;</code></p>
+                <p>
+                  <a class='button'>
+                    <i class='icon-login'></i>
+                    login
+                  </a>
+                  <a class='button'>
+                    <i class='icon-user-add'></i>
+                    subscribe
+                  </a>
+                </p>
+                <div class='code'>
+                  <pre><code class="highlight html">  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>&#x000A;    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"icon-login"</span><span class="nt">&gt;&lt;/i&gt;</span>&#x000A;    login&#x000A;  <span class="nt">&lt;/a&gt;</span>&#x000A;</code></pre>
+                </div>
+              </section>
+            </div>
+            <div class='col'>
+              <section class='block block-no-icon'>
+                <h2 class='block-title'>Small icon - no text</h2>
+                <p>Buttons with no text and small, used in interface</p>
+                <p>
+                  <a class='button btn-s'>
+                    <i class='icon-check'></i>
+                  </a>
+                  <a class='button btn-s'>
+                    <i class='icon-cancel'></i>
+                  </a>
+                </p>
+                <div class='code'>
+                  <pre><code class="highlight html">  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button btn-s"</span><span class="nt">&gt;</span>&#x000A;    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"icon-check"</span><span class="nt">&gt;&lt;/i&gt;</span>&#x000A;  <span class="nt">&lt;/a&gt;</span>&#x000A;  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button btn-s"</span><span class="nt">&gt;</span>&#x000A;    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"icon-cancel"</span><span class="nt">&gt;&lt;/i&gt;</span>&#x000A;  <span class="nt">&lt;/a&gt;</span>&#x000A;</code></pre>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class='l-footer footer'>
+        <div class='footer-offset'></div>
+        <div class='container'>
+          <div class='l-branding-footer'>
+            <span>&copy;</span>
+            <strong class='logo-footer'>GREENPEACE</strong>
+            <span>2014</span>
+          </div>
+          <ul class='legal-menu'>
+            <li>
+              <a href='#'>Privacy statement</a>
+            </li>
+            <li>
+              <a href='#'>Copyright</a>
+            </li>
+          </ul>
+          <ul class='bottom-menu'>
+            <li>
+              <a href='#'>Home</a>
+            </li>
+            <li>
+              <a href='#'>About us</a>
+            </li>
+            <li>
+              <a href='#'>Contact us</a>
+            </li>
+            <li>
+              <a href='#'>Press centre</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script src="../js/theme-80a72ef0.js" type="text/javascript"></script>
+  </body>
+</html>

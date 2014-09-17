@@ -4,7 +4,7 @@
   i {
     @include font-size(16px);
     line-height: 1em;
-    width: 1em; //render all fonts as they were the same width
+    min-width: 1em;
   }
 }
 

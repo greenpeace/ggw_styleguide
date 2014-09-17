@@ -28,30 +28,3 @@
         %a{:href => "#"} Opschonen Enschede
       .date-display-single 20 July, 2014 - 12:09
     %a.button{:href => "#"} See more events
-%script{:src => "leaflet/leaflet.js"}
-:javascript
-  // create a map in the "map" div, set the view to a given place and zoom
-  var mobileMap = L.map('mobilemap').setView([51.505, -0.09], 13);
-  var deskMap= L.map('desktopmap').setView([51.505, -0.09], 13);
-
-  // add an OpenStreetMap tile layer
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(deskMap);
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mobileMap);
-
-  var greenIcon = L.icon({
-    iconUrl: 'images/marker-green.png',
-    iconRetinaUrl: 'images/marker-green@2x.png',
-    shadowUrl: 'images/marker-shadow.png',
-    shadowRetinaUrl: 'images/marker-shadow.png',
-    iconSize:     [25, 41], // size of the icon
-    shadowSize:   [41, 41], // size of the shadow
-    iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
-    shadowAnchor: [13, 41],  // the same for the shadow
-    popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
-  });
-
-  // add a marker in the given location, attach some popup content to it and open the popup
-  L.marker([51.5, -0.09], {icon: greenIcon}).addTo(deskMap)
-    .bindPopup('<h2 class="node-title"><a href="#">Ga mee naar Festival Mundial</a></h2> <div class="field field-name-field-event-date"><span class="date-display-single">25 September, 2014 - 14:57</span></div>');
-  L.marker([51.5, -0.09], {icon: greenIcon}).addTo(mobileMap)
-    .bindPopup('<h2 class="node-title"><a href="#">Ga mee naar Festival Mundial</a></h2> <div class="field field-name-field-event-date"><span class="date-display-single">25 September, 2014 - 14:57</span></div>');

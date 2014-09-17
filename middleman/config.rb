@@ -89,6 +89,10 @@ activate :autoprefixer do |config|
 end
 
 helpers do
+
+  #
+  # Check weather the current page is the same as the nav element and set active class
+  #
   def nav_link(name, url, options={})
     options = {
       class: "",
@@ -101,6 +105,7 @@ helpers do
 
     link_to name, url, options
   end
+
 end
 
 #activate :automatic_clowncar,

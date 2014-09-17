@@ -1,72 +1,20 @@
 ---
-title: Home page anonymous
-body_class: front not-logged-in page-home l-two-column
+title: Prototype index
+body_class: not-logged-in page-home l-has-sidebar style-guide
 ---
 
-%nav.breadcrumb{:role => "navigation"}
-  %h2.element-invisible You are here
-  %ol.breadcrumbs
-    %li.breadcrumb-item You are here:
-    %li.breadcrumb-item
-      Home
-
-= partial :"blocks/slider"
-
-.original-action-menu
-  %ul
-    %li
-      %a.tab{:href => "#content"}
-        %i.icon.icon-news
-        Updates
-    %li
-      %a.tab{:href => "#upcoming-events"}
-        %i.icon.icon-event
-        Events
-
-.l-main-column#content
-  .block.block-no-icon
-    %h2.block-title A platform for change-makers
-    .content
-      %p Welcome to Greenpeace Greenwire where people like you connect with other volunteers, activists and groups working on environmental campaigns all across the country.  This is your meeting place to start groups, host events, run campaigns, share photos,videos, blogs and join with other interested activists eager to help.
-      %a.button.btn-primary{:href => "#"} Get wired!
-      .clear
+#content.l-main-column
   .main-content
-    %a.button.btn-dropdown{"data-dropdown" => "#updates-filter", :href => "#", :title => "Filter content"}
-      %i.icon-down-open
-    #updates-filter.dropdown-filter.dropdown.dropdown-tip.dropdown-scroll
-      .dropdown-panel
-        %form
-          .form-wrapper
-            %p Select the content you wish to see
-            .form-item.form-type-checkbox
-              %input#check1.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-              %label.option{:for => "check1"} News
-            .form-item.form-type-checkbox
-              %input#check2.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-              %label.option{:for => "check2"} Blog
-            .form-item.form-type-checkbox
-              %input#check3.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-              %label.option{:for => "check3"} Event
-            .form-item.form-type-checkbox
-              %input#check4.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-              %label.option{:for => "check4"} Idea
-            .form-item.form-type-checkbox
-              %input#check5.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-              %label.option{:for => "check5"} Photo
-            .form-item.form-type-checkbox
-              %input#check6.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-              %label.option{:for => "check6"} Video
-            .form-item.form-type-checkbox
-              %input#check7.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-              %label.option{:for => "check7"} Document
-          .form-actions.form-wrapper
-            %input.button.btn-primary{:type => "submit", :value => "Submit"}/
-            %input.button{:type => "submit", :value => "Reset"}/
-    %i.block-icon.icon-bg-news-media.icon-news
-    %h1#page-title.block-title Updates
-    .content
-      = partial :"teasers/event"
-      = partial :"teasers/blog-with-image"
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Prototype index
+    %article.view-mode-full.content
+      :markdown
+        prototype text
+
+      %h2.section-heading Choose a role
+      =nav_link 'Anonymous homepage', '/prototype/an/index.html',  :class => 'button'
+      =nav_link 'Member homepage', '/prototype/an/index.html',  :class => 'button'
+      =nav_link 'Content manager homepage', '/prototype/cm/index.html',  :class => 'button'
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/upcoming_events"
+  = partial :"blocks/register_step5"

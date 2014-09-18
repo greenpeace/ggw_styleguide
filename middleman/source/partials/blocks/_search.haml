@@ -1,0 +1,7 @@
+.block-search
+  %form.search-form{"accept-charset" => "UTF-8", :action => "#", :method => "post"}
+    .form-item-search
+      %i.icon-search
+      %input.form-text{:maxlength => "128", :name => "search", :placeholder => "Search", :size => "60", :type => "text"}/
+    .form-actions
+      %input.form-submit{:name => "op", :type => "submit", :value => "Search"}/

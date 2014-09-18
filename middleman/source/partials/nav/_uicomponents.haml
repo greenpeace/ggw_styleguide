@@ -1,5 +1,4 @@
 .block
-  %h2.block-title UI Components
-  =nav_link 'Buttons', '/components/buttons.html', :class => 'sg-navbtn'
-  =nav_link 'Forms', '/components/forms.html', :class => 'sg-navbtn'
-  =nav_link 'Blocks', '/components/blocks.html', :class => 'sg-navbtn'
+  %h2.block-title Design elements
+  - data.nav.comp.each do |item|
+    =nav_link item.name , item.url, :class => 'sg-navbtn'

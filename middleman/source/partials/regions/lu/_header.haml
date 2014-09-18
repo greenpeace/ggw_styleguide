@@ -1,0 +1,48 @@
+%header.l-header.header{:role => "banner"}
+  .container
+    #primary-nav.off-canvas
+      .nav-inner-wrap
+        = partial :"blocks/search"
+        %nav.main-menu{:role => "navigation"}
+          %ul.menu
+            - data.nav.primary_an.each do |item|
+              %li.menu-item
+                %a.menu-link{:href => "#{item.url}"}
+                  = item.name
+                - if item.sub
+                  %ul.menu
+                    - item.sub.each do|hist|
+                      %li.menu-item
+                        %a.menu-link{:href => "#{hist.url}"}
+                          = hist.name
+    #secondary-nav.off-canvas
+      .nav-inner-wrap
+        %nav.user-menu{:role => "navigation"}
+          %ul.menu
+            %li.menu-item
+              %a.menu-link{:href => "/lu/my-profile.html"}
+                John Doe Claus
+                %i.icon-comment
+                %span.num-notifications 4
+            %li.menu-item
+              %a.menu-link{:href => "../an/index.html"} Log out
+        .l-country-selector.country-selector
+          .dropdown-controller
+            %a.trigger{"data-dropdown" => "#dropdown-content-country", :href => "#"}
+              International
+              %span.country-img
+          #dropdown-content-country.dropdown.dropdown-scroll
+            %ul.dropdown-list
+              - data.nav.nro.each do |item|
+                %li
+                  %a{:href => "#"}
+                    = item
+        .l-language-selector.language-selector
+          .dropdown-controller
+            %a.trigger{"data-dropdown" => "#dropdown-content-language", :href => "#"} Language
+          #dropdown-content-language.dropdown.dropdown-scroll
+            %ul.dropdown-list
+              %li
+                %a{:href => "#"} Francais
+              %li
+                %a{:href => "#"} Nederlands

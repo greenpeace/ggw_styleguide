@@ -1,5 +1,4 @@
 .block
   %h2.block-title Design elements
-  =nav_link 'Color Pallete', '/design-elements/colors.html', :class => 'sg-navbtn'
-  =nav_link 'Typography', '/design-elements/typography.html', :class => 'sg-navbtn'
-  =nav_link 'Icons', '/design-elements/icons.html', :class => 'sg-navbtn'
+  - data.nav.design.each do |item|
+    =nav_link item.name , item.url, :class => 'sg-navbtn'

@@ -1,4 +1,51 @@
-primary:
+
+# Design menu
+design:
+  -
+    name: "Color Pallete"
+    url: "/design-elements/colors.html"
+  -
+    name: "Typography"
+    url: "/design-elements/typography.html"
+  -
+    name: "Icons"
+    url: "/design-elements/icons.html"
+
+# Ui Components menu
+comp:
+  -
+    name: "Buttons"
+    url: "/components/buttons.html"
+  -
+    name: "Forms"
+    url: "/components/forms.html"
+  -
+    name: "Blocks"
+    url: "/components/blocks.html"
+
+# Documentation menu
+docs:
+  -
+    name: "Getting started"
+    url: "/documentation/getting-started.html"
+  -
+    name: "Style guide structure"
+    url: "/documentation/styleguide-structure.html"
+  -
+    name: "Device & browser support"
+    url: "/documentation/browser-support.html"
+  -
+    name: "Progressive enhancement"
+    url: "/documentation/progressive-enhancement.html"
+  -
+    name: "Development principles"
+    url: "/documentation/development.html"
+  -
+    name: "Editing the style guide"
+    url: "/documentation/editing.html"
+
+# Primary navigation in prototype for AN
+primary_an:
   -
     name: "Home"
     url: "/index.html"
@@ -45,14 +92,15 @@ primary:
         name: "FAQ"
         url: "/faq.html"
 
-secondary:
+# secondary menu, user menu for AN
+
+secondary_an:
   -
     name: "Log in"
     url: "/login.html"
   -
     name: "Sign up"
     url: "/register-step1.html"
-
 
 nro:
   - Belgium

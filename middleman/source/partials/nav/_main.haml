@@ -6,19 +6,24 @@
       %ul.menu
         %li.menu-item
           =nav_link 'Home', '/index.html',  :class => 'menu-link'
+        %li.menu-item.expanded
+          =nav_link 'Documentation', data.nav.docs.first['url'], :class => 'menu-link'
+          %ul.menu
+            - data.nav.docs.each do |item|
+              %li.menu-item
+                =nav_link item.name , item.url, :class => 'menu-link'
         %li.menu-item
-          =nav_link 'Design elements', '/design-elements/colors.html',  :class => 'menu-link'
+          =nav_link 'Design elements', data.nav.design.first['url'],  :class => 'menu-link'
+          %ul.menu
+            - data.nav.design.each do |item|
+              %li.menu-item
+                =nav_link item.name , item.url, :class => 'menu-link'
         %li.menu-item
-          =nav_link 'UI components', '/components/buttons.html',  :class => 'menu-link'
+          =nav_link 'UI components', data.nav.comp.first['url'],  :class => 'menu-link'
+          %ul.menu
+            - data.nav.comp.each do |item|
+              %li.menu-item
+                =nav_link item.name , item.url, :class => 'menu-link'
         %li.menu-item
           =nav_link 'Prototype', '/prototype/index.html',  :class => 'menu-link'
-        %li.menu-item.expanded
-          =nav_link 'Documentation', '/documentation/getting-started.html', :class => 'menu-link'
-          %ul.menu
-            %li.menu-item
-              =nav_link 'Getting started', '/documentation/getting-started.html', :class => 'menu-link'
-              =nav_link 'Styleguide structure', '/documentation/styleguide-structure.html', :class => 'menu-link'
-              =nav_link 'Device & browser Support', '/documentation/browser-support.html', :class => 'menu-link'
-              =nav_link 'Progressive enhancement', '/documentation/progessive-enhancement.html', :class => 'menu-link'
-              =nav_link 'Development principles', '/documentation/progessive-enhancement.html', :class => 'menu-link'
-              =nav_link 'Editing the style guide', '/documentation/progessive-enhancement.html', :class => 'menu-link'
+

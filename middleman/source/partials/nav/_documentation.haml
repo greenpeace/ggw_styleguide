@@ -1,10 +1,4 @@
 .block
   %h2.block-title Documentation
-  =nav_link 'Getting started', '/documentation/getting-started.html', :class => 'sg-navbtn'
-  =nav_link 'Styleguide structure', '/documentation/styleguide-structure.html',  :class => 'sg-navbtn'
-  =nav_link 'Device & browser Support', '/documentation/browser-support.html',  :class => 'sg-navbtn'
-  =nav_link 'Progressive enhancement', '/documentation/porgessive-enhancement.html',  :class => 'sg-navbtn'
-  =nav_link 'Development principles', '/documentation/porgessive-enhancement.html',  :class => 'sg-navbtn'
-  =nav_link 'Editing the style guide', '/documentation/porgessive-enhancement.html',  :class => 'sg-navbtn'
-
-
+  - data.nav.docs.each do |item|
+    =nav_link item.name , item.url, :class => 'sg-navbtn'

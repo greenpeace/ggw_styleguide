@@ -1,0 +1,173 @@
+---
+body_class: page-register
+---
+
+%nav.breadcrumb{:role => "navigation"}
+  %h2.element-invisible You are here
+  %ol.breadcrumbs
+    %li.breadcrumb-item You are here:
+    %li.breadcrumb-item
+      %a.breadcrumb-link{:href => "#"} Home
+    %li.breadcrumb-item Register
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-user.icon-user-add
+    %h1#page-title.block-title Register (step 3/4)
+    .content
+      .progress-bar-wrapper
+        .progress-bar{:style => "width: 50%;"} 50%
+      %form
+        .form-wrapper
+          .form-item
+            %label.form-label{:for => "edit-field-location-und-0-country"}
+              Country
+              %span.form-required{:title => "This field is required."} *
+            %select.form-select
+              %option{:value => ""} Please select
+              %option{:value => "xx"} NOT LISTED
+              %option{:value => "af"} Afghanistan
+              %option{:value => "ax"} Aland Islands
+              %option{:value => "al"} Albania
+              %option{:value => "dz"} Algeria
+              %option{:value => "as"} American Samoa
+              %option{:value => "ad"} Andorra
+              %option{:value => "ao"} Angola
+              %option{:value => "ai"} Anguilla
+              %option{:value => "aq"} Antarctica
+              %option{:value => "ag"} Antigua and Barbuda
+              %option{:value => "ar"} Argentina
+              %option{:value => "am"} Armenia
+              %option{:value => "aw"} Aruba
+              %option{:value => "au"} Australia
+              %option{:value => "at"} Austria
+              %option{:value => "az"} Azerbaijan
+              %option{:value => "bs"} Bahamas
+              %option{:value => "bh"} Bahrain
+              %option{:value => "bd"} Bangladesh
+              %option{:value => "bb"} Barbados
+              %option{:value => "by"} Belarus
+              %option{:value => "be"} Belgium
+              %option{:value => "bz"} Belize
+              %option{:value => "bj"} Benin
+              %option{:value => "bm"} Bermuda
+              %option{:value => "bt"} Bhutan
+              %option{:value => "bo"} Bolivia, Plurinational State of
+              %option{:value => "bq"} Bonaire, Sint Eustatius and Saba
+              %option{:value => "ba"} Bosnia and Herzegovina
+              %option{:value => "bw"} Botswana
+              %option{:value => "bv"} Bouvet Island
+              %option{:value => "br"} Brazil
+              %option{:value => "io"} British Indian Ocean Territory
+              %option{:value => "bn"} Brunei Darussalam
+              %option{:value => "bg"} Bulgaria
+              %option{:value => "bf"} Burkina Faso
+              %option{:value => "bi"} Burundi
+              %option{:value => "kh"} Cambodia
+              %option{:value => "cm"} Cameroon
+              %option{:value => "ca"} Canada
+              %option{:value => "cv"} Cape Verde
+              %option{:value => "ky"} Cayman Islands
+              %option{:value => "cf"} Central African Republic
+              %option{:value => "td"} Chad
+              %option{:value => "cl"} Chile
+              %option{:value => "cn"} China
+              %option{:value => "cx"} Christmas Island
+              %option{:value => "cc"} Cocos (Keeling) Islands
+              %option{:value => "co"} Colombia
+              %option{:value => "km"} Comoros
+              %option{:value => "cg"} Congo
+              %option{:value => "cd"} Congo, The Democratic Republic of the
+              %option{:value => "ck"} Cook Islands
+              %option{:value => "cr"} Costa Rica
+              %option{:value => "hr"} Croatia
+              %option{:value => "cu"} Cuba
+              %option{:value => "cw"} Curaçao
+              %option{:value => "cy"} Cyprus
+              %option{:value => "cz"} Czech Republic
+              %option{:value => "ci"} Côte d'Ivoire
+              %option{:value => "dk"} Denmark
+              %option{:value => "dj"} Djibouti
+              %option{:value => "dm"} Dominica
+              %option{:value => "do"} Dominican Republic
+              %option{:value => "ec"} Ecuador
+              %option{:value => "eg"} Egypt
+              %option{:value => "sv"} El Salvador
+              %option{:value => "gq"} Equatorial Guinea
+              %option{:value => "er"} Eritrea
+              %option{:value => "ee"} Estonia
+              %option{:value => "et"} Ethiopia
+              %option{:value => "fk"} Falkland Islands (Malvinas)
+              %option{:value => "fo"} Faroe Islands
+              %option{:value => "fj"} Fiji
+              %option{:value => "fi"} Finland
+              %option{:value => "fr"} France
+              %option{:value => "gf"} French Guiana
+              %option{:value => "pf"} French Polynesia
+              %option{:value => "tf"} French Southern Territories
+          .form-item
+            %label.form-label
+              Postal code
+              %span.form-required{:title => "This field is required."} *
+            %input.form-text{:type => "text", :value => ""}/
+          .form-item
+            %label.form-label
+              House number
+              %span.form-required{:title => "This field is required."} *
+            %input.form-text{:type => "text", :value => ""}/
+          .form-item
+            %label.form-label
+              Apartment number
+              %span.form-required{:title => "This field is required."} *
+            %input.form-text{:type => "text", :value => ""}/
+          .form-item
+            %label.form-label
+              Street
+              %span.form-required{:title => "This field is required."} *
+            %input.form-text{:type => "text", :value => ""}/
+          .form-item
+            %label.form-label
+              City
+              %span.form-required{:title => "This field is required."} *
+            %input.form-text{:type => "text", :value => ""}/
+          .wrapper
+            #mobileline
+              .phone-wrapper
+                .form-item.field-name-field-user-phone-mobile-country
+                  %label.form-label
+                    Phone (mobile)
+                    %span.form-required{:title => "This field is required."} *
+                  %select.form-select
+                    %option{:value => "be"} Belgium (+32)
+                    %option{:value => "fr"} France (+33)
+                    %option{:value => "in"} India (+91)
+                    %option{:selected => "selected", :value => "nl"} Netherlands (+31)
+                    %option{:value => "ru"} Russia (+7)
+                    %option{:value => "us"} USA (+1)
+                    %option{:value => "other"} Other
+                .form-item.field-name-field-user-phone-mobile
+                  %label.form-label.element-placeholder Phone (mobile)
+                  %input.form-text{:type => "text", :value => ""}/
+              %a.phone-switch{:href => "#landline"} I don't have a mobile phone
+            #landline
+              .phone-wrapper
+                .form-item.field-name-field-user-phone-house-country
+                  %label.form-label
+                    Phone (home)
+                    %span.form-required{:title => "This field is required."} *
+                  %select.form-select{:style => "width: 193px;"}
+                    %option{:value => "be"} Belgium (+32)
+                    %option{:value => "fr"} France (+33)
+                    %option{:value => "in"} India (+91)
+                    %option{:selected => "selected", :value => "nl"} Netherlands (+31)
+                    %option{:value => "ru"} Russia (+7)
+                    %option{:value => "us"} USA (+1)
+                    %option{:value => "other"} Other
+                .form-item.field-name-field-user-phone-house
+                  %label.form-label.element-placeholder Phone (home)
+                  %input.form-text{:type => "text", :value => ""}/
+              %a.phone-switch{:href => "#mobileline"} I'd rather use my mobile number
+        .form-actions.form-wrapper
+          %input.button.pull-left{:type => "submit", :value => "Back to previous step"}/
+          %input.button.btn-primary.pull-right{:type => "submit", :value => "Next"}/
+%aside.l-sidebar.sidebar
+  = partial :"blocks/save_planet"

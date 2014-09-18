@@ -11,44 +11,24 @@
               %input.form-submit{:name => "op", :type => "submit", :value => "Search"}/
         %nav.main-menu{:role => "navigation"}
           %ul.menu
-            %li.menu-item
-              %a.menu-link.active{:href => "home-LU.php"} Home
-            %li.menu-item.expanded
-              %a.menu-link{:href => "#"} Community
-              %ul.menu
-                %li.menu-item
-                  %a.menu-link{:href => "#"} Events
-                %li.menu-item
-                  %a.menu-link{:href => "#"} Groups
-            %li.menu-item.expanded
-              %a.menu-link{:href => "#"} News & media
-              %ul.menu
-                %li.menu-item
-                  %a.menu-link{:href => "#"} News
-                %li.menu-item
-                  %a.menu-link{:href => "#"} Blogs
-                %li.menu-item
-                  %a.menu-link{:href => "#"} Photos
-                %li.menu-item
-                  %a.menu-link{:href => "#"} Videos
-                %li.menu-item
-                  %a.menu-link{:href => "#"} Documents
-                %li.menu-item
-                  %a.menu-link{:href => "#"} Ideas
-            %li.menu-item.expanded
-              %a.menu-link{:href => "#"} About
-              %ul.menu
-                %li.menu-item
-                  %a.menu-link{:href => "#"} Contact
-                %li.menu-item
-                  %a.menu-link{:href => "#"} FAQ
+            - data.nav.primary.each do |item|
+              %li.menu-item
+                %a.menu-link{:href => "#{item.url}"}
+                  = item.name
+                - if item.sub
+                  %ul.menu
+                    - item.sub.each do|hist|
+                      %li.menu-item
+                        %a.menu-link{:href => "#{hist.url}"}
+                          = hist.name
     #secondary-nav.off-canvas
       .nav-inner-wrap
-        %ul.menu
-          %li.menu-item
-            %a.menu-link{:href => "#"} Login
-          %li.menu-item
-            %a.menu-link{:href => "#"} Sign up
+        %nav.user-menu{:role => "navigation"}
+          %ul.menu
+            - data.nav.secondary.each do |item|
+              %li.menu-item
+                %a.menu-link{:href => "#{item.url}"}
+                  = item.name
         .l-country-selector.country-selector
           .dropdown-controller
             %a.trigger{"data-dropdown" => "#dropdown-content-country", :href => "#"}
@@ -56,24 +36,10 @@
               %span.country-img
           #dropdown-content-country.dropdown.dropdown-scroll
             %ul.dropdown-list
-              %li
-                %a{:href => "#"} Belgium
-              %li
-                %a{:href => "#"} France
-              %li
-                %a{:href => "#"} India
-              %li
-                %a{:href => "#"} International
-              %li
-                %a{:href => "#"} Netherlands
-              %li
-                %a{:href => "#"} Russia
-              %li
-                %a{:href => "#"} Thailand
-              %li
-                %a{:href => "#"} USA
-              %li
-                %a{:href => "#"} UK
+              - data.nav.nro.each do |item|
+                %li
+                  %a{:href => "#"}
+                    = item
         .l-language-selector.language-selector
           .dropdown-controller
             %a.trigger{"data-dropdown" => "#dropdown-content-language", :href => "#"} Language

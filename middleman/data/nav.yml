@@ -1,0 +1,67 @@
+primary:
+  -
+    name: "Home"
+    url: "/index.html"
+  -
+    name: "Community"
+    url: "/groups.html"
+    sub:
+      -
+        name: "Events"
+        url: "/events.html"
+      -
+        name: "Groups"
+        url: "/groups.html"
+  -
+    name: "News & Media"
+    url: "/news.html"
+    sub:
+      -
+        name: "News"
+        url: "/news.html"
+      -
+        name: "Blogs"
+        url: "/blogs.html"
+      -
+        name: "Photos"
+        url: "/photos.html"
+      -
+        name: "Videos"
+        url: "/videos.html"
+      -
+        name: "Documents"
+        url: "/documents.html"
+      -
+        name: "Ideas"
+        url: "/ideas.html"
+  -
+    name: "About"
+    url: "/about.html"
+    sub:
+      -
+        name: "Contact"
+        url: "/contact.html"
+      -
+        name: "FAQ"
+        url: "/faq.html"
+
+secondary:
+  -
+    name: "Log in"
+    url: "/login.html"
+  -
+    name: "Sign up"
+    url: "/register-step1.html"
+
+
+nro:
+  - Belgium
+  - France
+  - India
+  - International
+  - Netherlands
+  - Nordic
+  - Russia
+  - Thailand
+  - USA
+  - United Kingdom

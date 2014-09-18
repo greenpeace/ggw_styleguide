@@ -1,0 +1,55 @@
+---
+body_class: page-register
+---
+
+%nav.breadcrumb{:role => "navigation"}
+  %h2.element-invisible You are here
+  %ol.breadcrumbs
+    %li.breadcrumb-item You are here:
+    %li.breadcrumb-item
+      %a.breadcrumb-link{:href => "#"} Home
+    %li.breadcrumb-item Register
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-user.icon-user-add
+    %h1#page-title.block-title Register (step 4/4)
+    .content
+      .progress-bar-wrapper
+        .progress-bar{:style => "width: 75%;"} 75%
+      %form
+        .form-wrapper
+          .form-item.form-type-checkbox
+            %input#check1.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
+            %label.option{:for => "check1"} Subscribe to the  newsletter
+          .form-item
+            %label.form-label Language
+            .form-description The selected language will show content available in that language as well as serve as the preferred language for the interface and e-mails.
+            .form-radios
+              .form-type-radio
+                %input#edit-language-nl.form-radio{:checked => "checked", :name => "language", :type => "radio", :value => "nl"}/
+                %label.option{:for => "edit-language-nl"} Dutch (Nederlands)
+              .form-type-radio
+                %input#edit-language-en-us.form-radio{:name => "language", :type => "radio", :value => "en-US"}/
+                %label.option{:for => "edit-language-en-us"} English, US
+          .form-item
+            %label.form-label Secondary language
+            .form-description When selected you will also see content that is available for this language.
+            .form-radios
+              .form-type-radio
+                %input#edit-language-en-us2.form-radio{:checked => "checked", :name => "language2", :type => "radio", :value => "en-us"}/
+                %label.option{:for => "edit-language-en-us2"} English, US
+              .form-type-radio
+                %input#edit-language-nl2.form-radio{:name => "language2", :type => "radio", :value => "nl"}/
+                %label.option{:for => "edit-language-nl2"} Dutch
+          .form-item.form-type-checkbox
+            %input#check2.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
+            %label.option{:for => "check2"}
+              I want to signup as a volunteer at Greenpeace and agree to the
+              = succeed "." do
+                %a.modal{:href => "modules/agreement.html"} user agreement
+              %span.form-required{:title => "This field is required."} *
+        .form-actions.form-wrapper
+          %input.button.pull-left{:type => "submit", :value => "Back to previous step"}/
+          %input.button.btn-primary.pull-right{:type => "submit", :value => "Next"}/
+%aside.l-sidebar.sidebar
+  = partial :"blocks/save_planet"

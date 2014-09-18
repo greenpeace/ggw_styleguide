@@ -1,0 +1,68 @@
+---
+title: Login
+body_class: not-front not-logged-in page-login l-has-sidebar
+---
+
+%nav.breadcrumb{:role => "navigation"}
+  %h2.element-invisible You are here
+  %ol.breadcrumbs
+    %li.breadcrumb-item You are here:
+    %li.breadcrumb-item
+      %a.breadcrumb-link{:href => "#"} Home
+    %li.breadcrumb-item Login
+
+.l-main-column#content
+
+  .main-content
+
+    %i.block-icon.icon-bg-user.icon-login
+    %h1.block-title#page-title Login
+
+    .content
+
+      %form.flexrow
+
+        .signup-wrapper.social-signup-wrapper{"data-title" => "OR"}
+
+          %h3.form-title Log in with social media
+
+          %a.button.btn-l.btn-block.btn-social-fb
+            %i.icon.icon-facebook
+              Log in with Facebook
+
+          %a.button.btn-l.btn-block.btn-social-gp
+            %i.icon.icon-gplus
+              Log in with Google+
+
+        .signup-wrapper
+
+          .form-wrapper
+
+            %h3.form-title Log in with email
+
+            .form-item
+
+              %label.form-label{:for=>"edit-name"}
+                Username
+                %span.form-required{:title=>"This field is required."} *
+
+              .form-description Enter your Greenpeace Greenwire Nederland username or email address.
+
+              %input{:type => "text", :class => "username form-text", "max-length" => "60"}
+
+            .form-item
+
+              %label.form-label{:for=>"edit-password"}
+                Password
+                %span.form-required{:title=>"This field is required."} *
+
+              .form-description Enter the password that accompanies your username.
+
+              %input{:type => "text", :class => "form-text", ":max-length" => "60"}
+
+          .form-actions.form-wrapper
+            %input{:type => "submit", :class => "button btn-primary pull-right", :value => "Log in"}
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/create_account"
+

@@ -1,0 +1,9 @@
+%nav.breadcrumb{:role => "navigation"}
+  %h2.element-invisible Pathway
+  %ol.breadcrumbs
+    %li.breadcrumb-item You are here:
+    - if current_page.parent
+      %li.breadcrumb-item
+        = nav_link current_page.parent.metadata[:page]['title'], current_page.parent
+    %li.breadcrumb-item
+      = current_page.data.title

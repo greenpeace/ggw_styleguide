@@ -1,22 +1,17 @@
 ---
 title: Login
 body_class: not-front not-logged-in page-login l-has-sidebar
+user_role: an
 ---
 
-%nav.breadcrumb{:role => "navigation"}
-  %h2.element-invisible You are here
-  %ol.breadcrumbs
-    %li.breadcrumb-item You are here:
-    %li.breadcrumb-item
-      %a.breadcrumb-link{:href => "#"} Home
-    %li.breadcrumb-item Login
+= partial :"blocks/breadcrumbs"
 
 .l-main-column#content
 
   .main-content
 
     %i.block-icon.icon-bg-user.icon-login
-    %h1.block-title#page-title Login
+    %h1.block-title#page-title = current_page.data.title
 
     .content
 

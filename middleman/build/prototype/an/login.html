@@ -6,11 +6,11 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <meta content='width=device-width' name='viewport'>
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title>GGW Style Guide</title>
-    <link href="../css/all-6f87ee1e.css" rel="stylesheet" type="text/css" />
-    <script src="../js/before-d9f129f6.js" type="text/javascript"></script>
+    <title>Login — GGW Style Guide</title>
+    <link href="../../css/all-6f87ee1e.css" rel="stylesheet" type="text/css" />
+    <script src="../../js/before-d9f129f6.js" type="text/javascript"></script>
   </head>
-  <body class='page-register'>
+  <body class='not-front not-logged-in page-login l-has-sidebar'>
     <!--[if lt IE 7]> <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p> <![endif]-->
     <div class='layout-base'>
       <div class='l-branding-header'>
@@ -36,7 +36,7 @@
                 <form accept-charset='UTF-8' action='#' class='search-form' method='post'>
                   <div class='form-item-search'>
                     <i class='icon-search'></i>
-                    <input class='form-text' maxlength='128' name='search' placeholder='Search Greenwire' size='60' type='text'>
+                    <input class='form-text' maxlength='128' name='search' placeholder='Search' size='60' type='text'>
                   </div>
                   <div class='form-actions'>
                     <input class='form-submit' name='op' type='submit' value='Search'>
@@ -46,50 +46,78 @@
               <nav class='main-menu' role='navigation'>
                 <ul class='menu'>
                   <li class='menu-item'>
-                    <a class='menu-link active' href='home-LU.php'>Home</a>
+                    <a class='menu-link' href='/index.html'>
+                      Home
+                    </a>
                   </li>
-                  <li class='menu-item expanded'>
-                    <a class='menu-link' href='#'>Community</a>
+                  <li class='menu-item'>
+                    <a class='menu-link' href='/groups.html'>
+                      Community
+                    </a>
                     <ul class='menu'>
                       <li class='menu-item'>
-                        <a class='menu-link' href='#'>Events</a>
+                        <a class='menu-link' href='/events.html'>
+                          Events
+                        </a>
                       </li>
                       <li class='menu-item'>
-                        <a class='menu-link' href='#'>Groups</a>
+                        <a class='menu-link' href='/groups.html'>
+                          Groups
+                        </a>
                       </li>
                     </ul>
                   </li>
-                  <li class='menu-item expanded'>
-                    <a class='menu-link' href='#'>News & media</a>
+                  <li class='menu-item'>
+                    <a class='menu-link' href='/news.html'>
+                      News & Media
+                    </a>
                     <ul class='menu'>
                       <li class='menu-item'>
-                        <a class='menu-link' href='#'>News</a>
+                        <a class='menu-link' href='/news.html'>
+                          News
+                        </a>
                       </li>
                       <li class='menu-item'>
-                        <a class='menu-link' href='#'>Blogs</a>
+                        <a class='menu-link' href='/blogs.html'>
+                          Blogs
+                        </a>
                       </li>
                       <li class='menu-item'>
-                        <a class='menu-link' href='#'>Photos</a>
+                        <a class='menu-link' href='/photos.html'>
+                          Photos
+                        </a>
                       </li>
                       <li class='menu-item'>
-                        <a class='menu-link' href='#'>Videos</a>
+                        <a class='menu-link' href='/videos.html'>
+                          Videos
+                        </a>
                       </li>
                       <li class='menu-item'>
-                        <a class='menu-link' href='#'>Documents</a>
+                        <a class='menu-link' href='/documents.html'>
+                          Documents
+                        </a>
                       </li>
                       <li class='menu-item'>
-                        <a class='menu-link' href='#'>Ideas</a>
+                        <a class='menu-link' href='/ideas.html'>
+                          Ideas
+                        </a>
                       </li>
                     </ul>
                   </li>
-                  <li class='menu-item expanded'>
-                    <a class='menu-link' href='#'>About</a>
+                  <li class='menu-item'>
+                    <a class='menu-link' href='/about.html'>
+                      About
+                    </a>
                     <ul class='menu'>
                       <li class='menu-item'>
-                        <a class='menu-link' href='#'>Contact</a>
+                        <a class='menu-link' href='/contact.html'>
+                          Contact
+                        </a>
                       </li>
                       <li class='menu-item'>
-                        <a class='menu-link' href='#'>FAQ</a>
+                        <a class='menu-link' href='/faq.html'>
+                          FAQ
+                        </a>
                       </li>
                     </ul>
                   </li>
@@ -99,14 +127,20 @@
           </div>
           <div class='off-canvas' id='secondary-nav'>
             <div class='nav-inner-wrap'>
-              <ul class='menu'>
-                <li class='menu-item'>
-                  <a class='menu-link' href='#'>Login</a>
-                </li>
-                <li class='menu-item'>
-                  <a class='menu-link' href='#'>Sign up</a>
-                </li>
-              </ul>
+              <nav class='user-menu' role='navigation'>
+                <ul class='menu'>
+                  <li class='menu-item'>
+                    <a class='menu-link' href='/prototype/an/login.html'>
+                      Log in
+                    </a>
+                  </li>
+                  <li class='menu-item'>
+                    <a class='menu-link' href='/prototype/an/register-step1.html'>
+                      Sign up
+                    </a>
+                  </li>
+                </ul>
+              </nav>
               <div class='l-country-selector country-selector'>
                 <div class='dropdown-controller'>
                   <a class='trigger' data-dropdown='#dropdown-content-country' href='#'>
@@ -117,31 +151,54 @@
                 <div class='dropdown dropdown-scroll' id='dropdown-content-country'>
                   <ul class='dropdown-list'>
                     <li>
-                      <a href='#'>Belgium</a>
+                      <a href='#'>
+                        Belgium
+                      </a>
                     </li>
                     <li>
-                      <a href='#'>France</a>
+                      <a href='#'>
+                        France
+                      </a>
                     </li>
                     <li>
-                      <a href='#'>India</a>
+                      <a href='#'>
+                        India
+                      </a>
                     </li>
                     <li>
-                      <a href='#'>International</a>
+                      <a href='#'>
+                        International
+                      </a>
                     </li>
                     <li>
-                      <a href='#'>Netherlands</a>
+                      <a href='#'>
+                        Netherlands
+                      </a>
                     </li>
                     <li>
-                      <a href='#'>Russia</a>
+                      <a href='#'>
+                        Nordic
+                      </a>
                     </li>
                     <li>
-                      <a href='#'>Thailand</a>
+                      <a href='#'>
+                        Russia
+                      </a>
                     </li>
                     <li>
-                      <a href='#'>USA</a>
+                      <a href='#'>
+                        Thailand
+                      </a>
                     </li>
                     <li>
-                      <a href='#'>UK</a>
+                      <a href='#'>
+                        USA
+                      </a>
+                    </li>
+                    <li>
+                      <a href='#'>
+                        United Kingdom
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -173,73 +230,63 @@
             <li class='breadcrumb-item'>
               <a class='breadcrumb-link' href='#'>Home</a>
             </li>
-            <li class='breadcrumb-item'>Register</li>
+            <li class='breadcrumb-item'>Login</li>
           </ol>
         </nav>
         <div class='l-main-column' id='content'>
           <div class='main-content'>
-            <i class='block-icon icon-bg-user icon-user-add'></i>
-            <h1 class='block-title' id='page-title'>Register (step 4/4)</h1>
+            <i class='block-icon icon-bg-user icon-login'></i>
+            <h1 class='block-title' id='page-title'>Login</h1>
             <div class='content'>
-              <div class='progress-bar-wrapper'>
-                <div class='progress-bar' style='width: 75%;'>75%</div>
-              </div>
-              <form>
-                <div class='form-wrapper'>
-                  <div class='form-item form-type-checkbox'>
-                    <input checked='checked' class='form-checkbox' id='check1' type='checkbox' value='1'>
-                    <label class='option' for='check1'>Subscribe to the  newsletter</label>
-                  </div>
-                  <div class='form-item'>
-                    <label class='form-label'>Language</label>
-                    <div class='form-description'>The selected language will show content available in that language as well as serve as the preferred language for the interface and e-mails.</div>
-                    <div class='form-radios'>
-                      <div class='form-type-radio'>
-                        <input checked='checked' class='form-radio' id='edit-language-nl' name='language' type='radio' value='nl'>
-                        <label class='option' for='edit-language-nl'>Dutch (Nederlands)</label>
-                      </div>
-                      <div class='form-type-radio'>
-                        <input class='form-radio' id='edit-language-en-us' name='language' type='radio' value='en-US'>
-                        <label class='option' for='edit-language-en-us'>English, US</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class='form-item'>
-                    <label class='form-label'>Secondary language</label>
-                    <div class='form-description'>When selected you will also see content that is available for this language.</div>
-                    <div class='form-radios'>
-                      <div class='form-type-radio'>
-                        <input checked='checked' class='form-radio' id='edit-language-en-us2' name='language2' type='radio' value='en-us'>
-                        <label class='option' for='edit-language-en-us2'>English, US</label>
-                      </div>
-                      <div class='form-type-radio'>
-                        <input class='form-radio' id='edit-language-nl2' name='language2' type='radio' value='nl'>
-                        <label class='option' for='edit-language-nl2'>Dutch</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class='form-item form-type-checkbox'>
-                    <input checked='checked' class='form-checkbox' id='check2' type='checkbox' value='1'>
-                    <label class='option' for='check2'>
-                      I want to signup as a volunteer at Greenpeace and agree to the
-                      <a class='modal' href='modules/agreement.html'>user agreement</a>.
-                      <span class='form-required' title='This field is required.'>*</span>
-                    </label>
-                  </div>
+              <form class='flexrow'>
+                <div class='signup-wrapper social-signup-wrapper' data-title='OR'>
+                  <h3 class='form-title'>Log in with social media</h3>
+                  <a class='button btn-l btn-block btn-social-fb'>
+                    <i class='icon icon-facebook'>
+                      Log in with Facebook
+                    </i>
+                  </a>
+                  <a class='button btn-l btn-block btn-social-gp'>
+                    <i class='icon icon-gplus'>
+                      Log in with Google+
+                    </i>
+                  </a>
                 </div>
-                <div class='form-actions form-wrapper'>
-                  <input class='button pull-left' type='submit' value='Back to previous step'>
-                  <input class='button btn-primary pull-right' type='submit' value='Next'>
+                <div class='signup-wrapper'>
+                  <div class='form-wrapper'>
+                    <h3 class='form-title'>Log in with email</h3>
+                    <div class='form-item'>
+                      <label class='form-label' for='edit-name'>
+                        Username
+                        <span class='form-required' title='This field is required.'>*</span>
+                      </label>
+                      <div class='form-description'>Enter your Greenpeace Greenwire Nederland username or email address.</div>
+                      <input class='username form-text' max-length='60' type='text'>
+                    </div>
+                    <div class='form-item'>
+                      <label class='form-label' for='edit-password'>
+                        Password
+                        <span class='form-required' title='This field is required.'>*</span>
+                      </label>
+                      <div class='form-description'>Enter the password that accompanies your username.</div>
+                      <input :max-length='60' class='form-text' type='text'>
+                    </div>
+                  </div>
+                  <div class='form-actions form-wrapper'>
+                    <input class='button btn-primary pull-right' type='submit' value='Log in'>
+                  </div>
                 </div>
               </form>
             </div>
           </div>
         </div>
         <aside class='l-sidebar sidebar'>
-          <div class='block block-no-icon'>
-            <h2 class='block-title'>Help us save Planet Earth</h2>
+          <div class='block hidden-mobile'>
+            <i class='block-icon icon-bg-action icon-user-add'></i>
+            <h2 class='block-title'>Create an account</h2>
             <div class='content'>
-              <img alt='Sign up' src='../images/register-step1-9ae2eaad.png'>
+              <p>Do not have an account yet? Click below to register!</p>
+              <a class='button btn-primary' href='#'>Get wired</a>
             </div>
           </div>
         </aside>
@@ -277,7 +324,7 @@
         </div>
       </footer>
     </div>
-    <script src="../js/theme-80a72ef0.js" type="text/javascript"></script>
+    <script src="../../js/theme-80a72ef0.js" type="text/javascript"></script>
     
     <script>
         // create a map in the "map" div, set the view to a given place and zoom
@@ -287,10 +334,10 @@
       L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(deskMap);
       L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mobileMap);
       var greenIcon = L.icon({
-        iconUrl: '../images/marker-green-4176c0dd.png',
-        iconRetinaUrl: '../images/marker-green@2x-aaf20a67.png',
-        shadowUrl: '../images/marker-shadow-1edd41cf.png',
-        shadowRetinaUrl: '../images/marker-shadow-1edd41cf.png',
+        iconUrl: './../images/marker-green.png',
+        iconRetinaUrl: './../images/marker-green@2x.png',
+        shadowUrl: './../images/marker-shadow.png',
+        shadowRetinaUrl: './../images/marker-shadow.png',
         iconSize:     [25, 41], // size of the icon
         shadowSize:   [41, 41], // size of the shadow
         iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location

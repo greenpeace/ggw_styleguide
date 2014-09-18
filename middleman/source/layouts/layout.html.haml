@@ -26,7 +26,10 @@
             %a#secondary-menu-show.nav-btn.icon-user{"data-nav" => "js-nav2", :href => "#secondary-nav"}
               %span.element-invisible Show secondary navigation
 
-      = partial :"regions/lu/header"
+      - if current_page.data.user_role == "lu"
+        = partial :"regions/lu/header"
+      - else
+        = partial :"regions/an/header"
 
       .l-main.container#main
         = yield

@@ -23,6 +23,7 @@ activate :syntax
 
 activate :asset_hash
 
+
 #with_layout :example do
 #  page "/examples/*"
 #end

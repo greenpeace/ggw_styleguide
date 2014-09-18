@@ -97,10 +97,10 @@ primary_an:
 secondary_an:
   -
     name: "Log in"
-    url: "/login.html"
+    url: "/prototype/an/login.html"
   -
     name: "Sign up"
-    url: "/register-step1.html"
+    url: "/prototype/an/register-step1.html"
 
 nro:
   - Belgium

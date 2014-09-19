@@ -1,13 +1,20 @@
 !!!5
-%html.desktop.no-js
+/[if (IE 7)&(!IEMobile)] <html class="no-js ie lt-ie10 lt-ie9 lt-ie8" lang="nl" dir="ltr">
+/[if IE 8] <html class="no-js ie lt-ie10 lt-ie9" lang="nl" dir="ltr">
+/[if IE 9] <html class="no-js ie lt-ie10" lang="nl" dir="ltr">
+/[if (gte IE 9)|(gt IEMobile 7)] <html class="no-js ie" lang="nl" dir="ltr">
+/ [if !IE]><!
+%html.no-js{:dir => "ltr", :lang => "en"}
+  / <![endif]
   %head
-    %meta{:charset => "utf-8"}
-
-    <!-- Always force latest IE rendering engine or request Chrome Frame -->
-    %meta{:content=>"IE=edge,chrome=1", "http-equiv"=>"X-UA-Compatible"}
-    %meta{:content => "width=device-width", :name => "viewport"}
-
-    <!-- Use title if it's in the page YAML frontmatter -->
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "true", :name => "HandheldFriendly"}/
+    %meta{:content => "width", :name => "MobileOptimized"}/
+    %link{:href => "http://www.w3.org/1999/xhtml/vocab", :rel => "profile"}/
+    %link{:href => "/images/favicon.ico", :rel => "shortcut icon", :type => "image/vnd.microsoft.icon"}/
+    %meta{:content => "Drupal 7 (http://drupal.org)", :name => "Generator"}/
+    %meta#viewport{:content => "width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-    scale=1.0", :name => "viewport"}/
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %title=page_title
 
     = stylesheet_link_tag "all"
@@ -26,10 +33,7 @@
             %a#secondary-menu-show.nav-btn.icon-user{"data-nav" => "js-nav2", :href => "#secondary-nav"}
               %span.element-invisible Show secondary navigation
 
-      - if current_page.data.user_role == "lu"
-        = partial :"regions/lu/header"
-      - else
-        = partial :"regions/an/header"
+        = partial :"regions/header"
 
       .l-main.container#main
         = yield
@@ -38,28 +42,34 @@
 
     = javascript_include_tag  "theme"
 
-    = javascript_include_tag "/vendor/leaflet/leaflet.js" if (current_page.data.index_options == "yes")
+    - if current_page.data.script == "leaflet"
 
-    :javascript
-        // create a map in the "map" div, set the view to a given place and zoom
-      var mobileMap = L.map('mobilemap').setView([51.505, -0.09], 13);
-      var deskMap= L.map('desktopmap').setView([51.505, -0.09], 13);
-      // add an OpenStreetMap tile layer
-      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(deskMap);
-      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mobileMap);
-      var greenIcon = L.icon({
-        iconUrl: './../images/marker-green.png',
-        iconRetinaUrl: './../images/marker-green@2x.png',
-        shadowUrl: './../images/marker-shadow.png',
-        shadowRetinaUrl: './../images/marker-shadow.png',
-        iconSize:     [25, 41], // size of the icon
-        shadowSize:   [41, 41], // size of the shadow
-        iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
-        shadowAnchor: [13, 41],  // the same for the shadow
-        popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
-      });
-      // add a marker in the given location, attach some popup content to it and open the popup
-      L.marker([51.5, -0.09], {icon: greenIcon}).addTo(deskMap)
-        .bindPopup('<h2 class="node-title"><a href="#">Ga mee naar Festival Mundial</a></h2> <div class="field    field-name-field-event-date"><span class="date-display-single">25 September, 2014 -    14:57</span></div>')  ;
-        L.marker([51.5, -0.09], {icon: greenIcon}).addTo(mobileMap)
-            .bindPopup('<h2 class="node-title"><a href="#">Ga mee naar Festival Mundial</a></h2> <div class="field    field-name-field-event-date"><span class="date-display-single">25 September, 2014 -   14:57</span></div>')  ;
+      #mobilemap
+      %a#close-map.map-close-button{:href => "#"}
+        %span.element-invisible close
+
+      = javascript_include_tag "/vendor/leaflet/leaflet.js"
+
+      :javascript
+          // create a map in the "map" div, set the view to a given place and zoom
+        var mobileMap = L.map('mobilemap').setView([51.505, -0.09], 13);
+        var deskMap= L.map('desktopmap').setView([51.505, -0.09], 13);
+        // add an OpenStreetMap tile layer
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(deskMap);
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mobileMap);
+        var greenIcon = L.icon({
+          iconUrl: '/images/marker-green.png',
+          iconRetinaUrl: '/images/marker-green@2x.png',
+          shadowUrl: '/images/marker-shadow.png',
+          shadowRetinaUrl: '/images/marker-shadow.png',
+          iconSize:     [25, 41], // size of the icon
+          shadowSize:   [41, 41], // size of the shadow
+          iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
+          shadowAnchor: [13, 41],  // the same for the shadow
+          popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
+        });
+        // add a marker in the given location, attach some popup content to it and open the popup
+        L.marker([51.5, -0.09], {icon: greenIcon}).addTo(deskMap)
+          .bindPopup('<h2 class="node-title"><a href="#">Ga mee naar Festival Mundial</a></h2> <div class="field    field-name-field-event-date"><span class="date-display-single">25 September, 2014 -    14:57</span></div>')  ;
+          L.marker([51.5, -0.09], {icon: greenIcon}).addTo(mobileMap)
+              .bindPopup('<h2 class="node-title"><a href="#">Ga mee naar Festival Mundial</a></h2> <div class="field    field-name-field-event-date"><span class="date-display-single">25 September, 2014 -   14:57</span></div>')  ;

@@ -1,0 +1,13 @@
+.views-row
+  %article.node-teaser-album.node-teaser
+    .field-type-image
+      = partial :"teasers/teaser-image"
+    .field-type-wrapper
+      %h2.node-title
+        = lorem.words 6
+      .submitted
+        %a.type.album{:href => "#"} Photos
+        4 Mar, by
+        %a{:href => "#"} Ana Hristova
+      .field-name-body
+        On touch devices, a click event has a 300ms delay before firing. The reason for this the  delay  is that browsers need that buffer to make sure you aren’t going to double-tap on  anything.

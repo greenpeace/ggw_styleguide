@@ -4,6 +4,6 @@
     %li.breadcrumb-item You are here:
     - if current_page.parent
       %li.breadcrumb-item
-        = nav_link current_page.parent.metadata[:page]['title'], current_page.parent
+        = nav_link current_page.parent.metadata[:page]['title'], current_page.parent, :class => 'breadcrumb-link'
     %li.breadcrumb-item
       = current_page.data.title

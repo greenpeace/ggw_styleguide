@@ -9,10 +9,7 @@
 }
 
 .l-main-column .block {
-  @include breakpoint($desk) {
-    margin-bottom: $def-mar;
-  }
-
+  margin-bottom: $def-mar;
 }
 
 .block-icon {

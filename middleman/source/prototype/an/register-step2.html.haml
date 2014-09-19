@@ -1,22 +1,20 @@
 ---
-body_class: page-register
+title: Register step 2/4
+body_class: page-register not-logged-in l-has-sidebar
+user_role: an
 ---
 
-%nav.breadcrumb{:role => "navigation"}
-  %h2.element-invisible You are here
-  %ol.breadcrumbs
-    %li.breadcrumb-item You are here:
-    %li.breadcrumb-item
-      %a.breadcrumb-link{:href => "#"} Home
-    %li.breadcrumb-item Register
+= partial :"blocks/breadcrumbs"
+
 #content.l-main-column
   .main-content
     %i.block-icon.icon-bg-user.icon-user-add
-    %h1#page-title.block-title Register (step 2/4)
+    %h1#page-title.block-title
+      = current_page.data.title
     .content
       .progress-bar-wrapper
         .progress-bar{:style => "width: 25%;"} 25%
-      %form
+      %form{:action => "/prototype/an/register-step3.html", :method => "post"}
         .form-wrapper
           .form-item.field-name-field-user-first-name
             %label.form-label{:for => "edit-field-user-first-name-und-0-value"} First name
@@ -196,4 +194,4 @@ body_class: page-register
           %input.button.pull-left{:type => "submit", :value => "Back to previous step"}/
           %input.button.btn-primary.pull-right{:type => "submit", :value => "Next"}/
 %aside.l-sidebar.sidebar
-  = partial :"blocks/save_planet"
+  = partial :"blocks/an/save_planet2"

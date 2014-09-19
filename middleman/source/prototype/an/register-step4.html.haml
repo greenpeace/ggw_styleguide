@@ -1,22 +1,20 @@
 ---
-body_class: page-register
+title: Register step 4/4
+body_class: page-register not-logged-in l-has-sidebar
+user_role: an
 ---
 
-%nav.breadcrumb{:role => "navigation"}
-  %h2.element-invisible You are here
-  %ol.breadcrumbs
-    %li.breadcrumb-item You are here:
-    %li.breadcrumb-item
-      %a.breadcrumb-link{:href => "#"} Home
-    %li.breadcrumb-item Register
+= partial :"blocks/breadcrumbs"
+
 #content.l-main-column
   .main-content
     %i.block-icon.icon-bg-user.icon-user-add
-    %h1#page-title.block-title Register (step 4/4)
+    %h1#page-title.block-title
+      = current_page.data.title
     .content
       .progress-bar-wrapper
         .progress-bar{:style => "width: 75%;"} 75%
-      %form
+      %form{:action => "/prototype/an/register-step5.html", :method => "post"}
         .form-wrapper
           .form-item.form-type-checkbox
             %input#check1.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
@@ -50,6 +48,6 @@ body_class: page-register
               %span.form-required{:title => "This field is required."} *
         .form-actions.form-wrapper
           %input.button.pull-left{:type => "submit", :value => "Back to previous step"}/
-          %input.button.btn-primary.pull-right{:type => "submit", :value => "Next"}/
+          %input.button.btn-primary.pull-right{:type => "submit", :value => "Subscribe"}/
 %aside.l-sidebar.sidebar
-  = partial :"blocks/save_planet"
+  = partial :"blocks/an/save_planet4"

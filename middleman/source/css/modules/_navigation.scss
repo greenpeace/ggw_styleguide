@@ -248,6 +248,7 @@
     display: block;
     @include font-size(13px);
 
+    &.active,
     &:hover {
       background: $green1;
       color: $green3;

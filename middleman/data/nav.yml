@@ -48,49 +48,103 @@ docs:
 primary_an:
   -
     name: "Home"
-    url: "/index.html"
+    url: "/prototype/an/index.html"
   -
     name: "Community"
-    url: "/groups.html"
+    url: "/prototype/an/groups.html"
     sub:
       -
         name: "Events"
-        url: "/events.html"
+        url: "/prototype/an/events.html"
       -
         name: "Groups"
-        url: "/groups.html"
+        url: "/prototype/an/groups.html"
   -
     name: "News & Media"
-    url: "/news.html"
+    url: "/prototype/an/news.html"
     sub:
       -
         name: "News"
-        url: "/news.html"
+        url: "/prototype/an/news.html"
       -
         name: "Blogs"
-        url: "/blogs.html"
+        url: "/prototype/an/blogs.html"
       -
         name: "Photos"
-        url: "/photos.html"
+        url: "/prototype/an/photos.html"
       -
         name: "Videos"
-        url: "/videos.html"
+        url: "/prototype/an/videos.html"
       -
         name: "Documents"
-        url: "/documents.html"
+        url: "/prototype/an/documents.html"
       -
         name: "Ideas"
-        url: "/ideas.html"
+        url: "/prototype/an/ideas.html"
   -
     name: "About"
-    url: "/about.html"
+    url: "/prototype/an/about.html"
     sub:
       -
         name: "Contact"
-        url: "/contact.html"
+        url: "/prototype/an/contact.html"
       -
         name: "FAQ"
-        url: "/faq.html"
+        url: "/prototype/an/faq.html"
+
+# Primary navigation in prototype for AN
+primary_lu:
+  -
+    name: "Home"
+    url: "/prototype/lu/index.html"
+  -
+    name: "Community"
+    url: "/prototype/lu/groups.html"
+    sub:
+      -
+        name: "Events"
+        url: "/prototype/lu/events.html"
+      -
+        name: "Groups"
+        url: "/prototype/lu/groups.html"
+      -
+        name: "Members"
+        url: "/prototype/lu/members.html"
+  -
+    name: "News & Media"
+    url: "/prototype/lu/news.html"
+    sub:
+      -
+        name: "News"
+        url: "/prototype/lu/news.html"
+      -
+        name: "Blogs"
+        url: "/prototype/lu/blogs.html"
+      -
+        name: "Photos"
+        url: "/prototype/lu/photos.html"
+      -
+        name: "Videos"
+        url: "/prototype/lu/videos.html"
+      -
+        name: "Documents"
+        url: "/prototype/lu/documents.html"
+      -
+        name: "Ideas"
+        url: "/prototype/lu/ideas.html"
+      -
+        name: "Materials"
+        url: "/prototype/lu/materials.html"
+  -
+    name: "About"
+    url: "/prototype/lu/about.html"
+    sub:
+      -
+        name: "Contact"
+        url: "/prototype/lu/contact.html"
+      -
+        name: "FAQ"
+        url: "/prototype/lu/faq.html"
 
 # secondary menu, user menu for AN
 

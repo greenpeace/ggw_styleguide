@@ -11,7 +11,8 @@ user_role: an
   .main-content
 
     %i.block-icon.icon-bg-user.icon-login
-    %h1.block-title#page-title = current_page.data.title
+    %h1.block-title#page-title
+      = current_page.data.title
 
     .content
 
@@ -59,5 +60,5 @@ user_role: an
             %input{:type => "submit", :class => "button btn-primary pull-right", :value => "Log in"}
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/create_account"
+  = partial :"blocks//an/create_account"
 

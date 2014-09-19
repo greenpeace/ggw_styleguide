@@ -1,8 +1,8 @@
 ---
-title: Home page anonymous
+title: Home
 body_class: front not-logged-in page-home l-two-column
-index_options: yes
 user_role: an
+script: leaflet
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -62,8 +62,19 @@ user_role: an
     %i.block-icon.icon-bg-news-media.icon-news
     %h1#page-title.block-title Updates
     .content
-      = partial :"teasers/event"
+      = partial :"teasers/news-no-image"
+      = partial :"teasers/news-with-image"
       = partial :"teasers/blog-with-image"
+      = partial :"teasers/blog-no-image"
+      = partial :"teasers/event-with-image"
+      = partial :"teasers/event-no-image"
+      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-with-image"
+      = partial :"teasers/idea-no-image"
+      = partial :"teasers/idea-with-image"
+      = partial :"teasers/photo"
+      = partial :"teasers/video"
+      = partial :"teasers/user"
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/upcoming_events"

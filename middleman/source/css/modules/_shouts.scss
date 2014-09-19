@@ -19,10 +19,11 @@
 
 .shout-form {
   margin: 15px -15px;
-  min-height: 44px;
+  min-height: 100px;
   border-bottom: 1px solid $grey-l;
-  @include cf;
+  @extend %cf;
   padding: 0 15px 15px;
+  position: relative;
 }
 
 input.form-shout-file {

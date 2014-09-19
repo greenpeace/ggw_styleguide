@@ -51,7 +51,7 @@ primary_an:
     url: "/prototype/an/index.html"
   -
     name: "Community"
-    url: "/prototype/an/groups.html"
+    url: "#"
     sub:
       -
         name: "Events"
@@ -61,7 +61,7 @@ primary_an:
         url: "/prototype/an/groups.html"
   -
     name: "News & Media"
-    url: "/prototype/an/news.html"
+    url: "#"
     sub:
       -
         name: "News"
@@ -82,15 +82,18 @@ primary_an:
         name: "Ideas"
         url: "/prototype/an/ideas.html"
   -
-    name: "About"
-    url: "/prototype/an/about.html"
+    name: "Info"
+    url: "#"
     sub:
       -
-        name: "Contact"
-        url: "/prototype/an/contact.html"
+        name: "About"
+        url: "/prototype/an/about.html"
       -
         name: "FAQ"
         url: "/prototype/an/faq.html"
+      -
+        name: "Contact"
+        url: "/prototype/an/contact.html"
 
 # Primary navigation in prototype for AN
 primary_lu:

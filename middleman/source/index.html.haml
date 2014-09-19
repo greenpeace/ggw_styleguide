@@ -15,11 +15,13 @@ layout: styleguide
       %h2.section-heading Summary
       %ul
         %li
-          %a{:href => "/documentation/getting-started"} Getting started
+          =nav_link 'Read documentation', data.nav.docs.first['url']
         %li
-          %a{:href => "/documentation/"} Documentation
+          =nav_link 'View design elements', data.nav.design.first['url']
         %li
-          %a{:href => "/styleguide/colors"} Styleguide
+          =nav_link 'View UI components', data.nav.comp.first['url']
+        %li
+          =nav_link 'Go to Prototype', data.nav.primary_an.first['url']
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/register_step5"
+  = partial :"blocks/an/save_planet5"

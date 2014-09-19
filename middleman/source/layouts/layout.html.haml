@@ -4,7 +4,7 @@
 /[if IE 9] <html class="no-js ie lt-ie10" lang="nl" dir="ltr">
 /[if (gte IE 9)|(gt IEMobile 7)] <html class="no-js ie" lang="nl" dir="ltr">
 / [if !IE]><!
-%html.no-js{:dir => "ltr", :lang => "en"}
+%html.no-js.mobile{:dir => "ltr", :lang => "en"}
   / <![endif]
   %head
     %meta{:charset => "utf-8"}/
@@ -25,7 +25,7 @@
     .layout-base
       .l-branding-header
         .container
-          %a.logo{:href => "home-LU.php", :rel => "home", :title => "Home"}
+          %a.logo{:href => "/index.html", :rel => "home", :title => "Home"}
             %span.element-invisible Greenpeace Greenwire  Nederland
           .mobile-nav
             %a#main-menu-show.nav-btn.icon-menu{"data-nav" => "js-nav", :href => "#primary-nav"}
@@ -33,7 +33,7 @@
             %a#secondary-menu-show.nav-btn.icon-user{"data-nav" => "js-nav2", :href => "#secondary-nav"}
               %span.element-invisible Show secondary navigation
 
-        = partial :"regions/header"
+      = partial :"regions/header"
 
       .l-main.container#main
         = yield

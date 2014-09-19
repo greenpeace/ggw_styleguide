@@ -300,9 +300,10 @@ input[type="checkbox"]:checked + label:before {
   }
 }
 
-
-form.flexrow {
-  @include cf;
-  display: flex;
-  flex-flow: row no-wrap;
+@include breakpoint($tab) {
+  form.flexrow {
+    @include cf;
+    display: flex;
+    flex-flow: row no-wrap;
+  }
 }

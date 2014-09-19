@@ -1,0 +1,28 @@
+---
+title: About Greenpeace Greenwire
+body_class: not-front not-logged-in page-about l-has-sidebar
+user_role: an
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column#content
+
+  .main-content
+
+    %i.block-icon.icon-bg-default.icon-info
+    %h1.block-title#page-title
+      = current_page.data.title
+
+    .content
+      %p
+        = lorem.paragraphs 2
+      %p
+        %img{:alt => "Example of image.", :src => "http://lorempixel.com/900/600/animals/6/Example-image"}/
+      %p
+        = lorem.paragraphs 3
+      %p
+        = lorem.paragraphs 2
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks//an/create_account"

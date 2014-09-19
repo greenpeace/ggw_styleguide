@@ -1,0 +1,21 @@
+.design-status {
+  position: fixed;
+  z-index: 99;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(#000,0.9);
+  padding: $def-mar-half;
+
+  .label {
+    color: $white;
+    font-size: $p;
+    margin: 0;
+
+    &:before {
+      @extend %load-icon;
+      @extend %icon-clock;
+    }
+
+  }
+
+}

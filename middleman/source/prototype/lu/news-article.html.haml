@@ -1,7 +1,7 @@
 ---
 title: News article example
-body_class: not-front not-logged-in page-type-news l-has-sidebar
-user_role: an
+body_class: not-front logged-in page-type-news l-has-sidebar
+user_role: lu
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -15,8 +15,16 @@ user_role: an
       %article.view-mode-full
         .submitted
           %a{:href => "#"} News
-          by willie_mackenzie -
+          by
+          %a{:href => "#"} Willie Mackenzie
+          -
           %span.submitted-date June 5th 2014 - 11:29
+
+          %a.comments-shortcut{:href => "#block-comments"}
+            %i.icon-comment
+            10
+            %span.element-invisible comments
+
         .field-name-body
           %img.field-type-image.pull-right{:alt => "Description of the image.", :src => "http://lorempixel.com/320/320/nature/9/image"}/
           %p
@@ -69,13 +77,17 @@ user_role: an
           .submitted-info
             %div
               %a{:href => "#"} News
-              by willie_mackenzie
+              by
+              %a{:href => "#"} Willie Mackenzie
             .submitted-bio
               %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
             .submitted-all-reference
-              %a{:href => "#"}> All News by willy_mackenzie
+              %a{:href => "#"}> All News by Willy Mackenzie
               \.
 
+  = partial :"blocks/lu/comments"
+
 %aside.l-sidebar.sidebar
-  = partial :"blocks/an/create_account"
   = partial :"blocks/go_to_group"
+  = partial :"blocks/lu/get_involved"
+  = partial :"blocks/lu/subscribe"

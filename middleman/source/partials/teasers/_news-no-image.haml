@@ -2,10 +2,16 @@
   %article.node-teaser-news.node-teaser
     .field-type-image
     .field-type-wrapper
-      %h2.node-title This is an example of a long news item with photo
+      %h2.node-title
+        %a{:href => "./news-article.html"}
+          = lorem.sentence
       .submitted
         %a.type.news{:href => "./news-article.html"} News
         23 Jul, by
-        %a{:href => "#"} Ana Hristova
+        - if current_page.data.user_role != "an"
+          %a{:href => "#"}
+            = lorem.name
+        - else
+          = lorem.first_name
       .field-name-body
         On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.

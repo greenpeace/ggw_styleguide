@@ -23,6 +23,10 @@
   %body{:class => "#{current_page.data.body_class || page_classes} style-guide"}
     /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
     .layout-base
+
+      - if current_page.data.design_status
+        = partial :status
+
       .l-branding-header
         .container
           %a.logo{:href => "index.html", :rel => "home", :title => "Home"}

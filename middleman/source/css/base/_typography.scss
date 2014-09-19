@@ -1,4 +1,4 @@
-@include breakpoint($desk, $no-query: true) {
+@include breakpoint($desk) {
   p,
   a,
   li,
@@ -35,13 +35,20 @@ a {
   color: $green5;
   text-decoration: none;
 }
-  .content a:hover {
-    text-decoration: underline;
-  }
-  .content .button:hover,
-  .content .item-list a:hover{
-    text-decoration: none;
-  }
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+.content .button:hover,
+.content .item-list a:hover{
+  text-decoration: none;
+}
+
+.content .external {
+  background: url('../images/extlink.svg') 100% 50%/.8em .8em no-repeat;
+  padding-right: 14px;
+}
 
 article {
 

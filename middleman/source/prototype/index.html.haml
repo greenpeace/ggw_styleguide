@@ -1,7 +1,9 @@
 ---
 title: Prototype index
-body_class: not-logged-in page-home l-has-sidebar style-guide
+body_class: not-logged-in page-home l-has-sidebar
 ---
+
+= partial :"blocks/breadcrumbs"
 
 #content.l-main-column
   .main-content
@@ -14,6 +16,9 @@ body_class: not-logged-in page-home l-has-sidebar style-guide
       %h2.section-heading Choose a role to go through the prototype
       =nav_link 'Homepage', '/prototype/an/index.html',  :class => 'button'
       =nav_link 'Member dashboard', '/prototype/lu/index.html',  :class => 'button'
+      <br/><br/>
+      =nav_link '404', '/prototype/404.html',  :class => 'button'
+      =nav_link 'Maintenance', '/prototype/maintenance.html',  :class => 'button'
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/an/save_planet5"

@@ -1,14 +1,17 @@
-.flexbox .style-guide {
+@include breakpoint($tab) {
+  .flexbox .style-guide {
 
-  .sidebar-left {
-    flex: 0 1 25%;
-    order: 1;
-    padding: 0 1.5em 1.5em 0;
-  }
+    .sidebar-left {
+      flex: 0 1 25%;
+      order: 1;
+      padding: 0 1.5em 1.5em 0;
+    }
 
-  .l-main-column {
-    flex: 0 1 75%;
-    order: 2;
+    .l-main-column {
+      flex: 0 1 75%;
+      order: 2;
+    }
+
   }
 
 }

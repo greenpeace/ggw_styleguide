@@ -1,0 +1,20 @@
+---
+title: Site under maintenance
+body_class: index l-has-sidebar page-not-found
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-error.icon-clock
+    %h1#page-title.block-title
+      = current_page.data.title
+    %article.view-mode-full.content
+      :markdown
+        Greenpeace Greenwire is currently under maintenance. We should be back shortly. Thank you for your patience.
+
+        In the meantime, go outside and save the world or visit [greenpeace.org](https://greenwire.greenpeace.org)
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/an/save_planet5"

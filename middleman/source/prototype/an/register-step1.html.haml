@@ -1,7 +1,6 @@
 ---
 title: Register step 1/4
 body_class: page-register not-logged-in l-has-sidebar
-index_options: yes
 user_role: an
 ---
 
@@ -13,7 +12,7 @@ user_role: an
     %h1#page-title.block-title
       = current_page.data.title
     .content
-      %form.flexrow{:action => "/prototype/an/register-step2.html", :method => "post"}
+      %form.flexrow{:action => "./register-step2.html", :method => "get"}
         .signup-wrapper.social-signup-wrapper{"data-title" => "OR"}
           %h3.form-title Sign up with social media
           %a.button.btn-l.btn-block.btn-social-fb{:href => "#"}

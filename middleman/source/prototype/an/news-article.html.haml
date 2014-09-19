@@ -1,12 +1,4 @@
-%nav.breadcrumb{:role => "navigation"}
-  %h2.element-invisible You are here
-  %ol.breadcrumbs
-    %li.breadcrumb-item You are here:
-    %li.breadcrumb-item
-      %a.breadcrumb-link{:href => "#"} Home
-    %li.breadcrumb-item
-      %a.breadcrumb-link{:href => "#"} News
-    %li.breadcrumb-item Random news article
+= partial :"blocks/breadcrumbs"
 #content.l-main-column
   .main-content
     %i.block-icon.icon-bg-news-media.icon-news
@@ -90,5 +82,5 @@
               \.
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/create_account"
+  = partial :"blocks/an/create_account"
   = partial :"blocks/go_to_group"

@@ -1,0 +1,26 @@
+---
+title: Forms
+body_class: page-forms
+layout: styleguide
+---
+
+%aside.sidebar-left
+  = partial :"nav/uicomponents"
+#content.l-main-column
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Forms
+    :markdown
+      Individual form controls automatically receive some global styling. All textual `<input>`, `<textarea>`, and `<select>` elements are set to `width: 100%`, with a maximum of `400px` by default. Wrap labels and controls in `.form-item` for optimum spacing.
+
+      Form fields are wrapped in a `.form-wrapper`, for visual distance from other blocks.
+
+      Form buttons are wrapped in a `.form-actions` so we can align them horizontally.
+
+  = partial :"components/partials/basic-form"
+
+  = partial :"components/partials/horizontal-form"
+
+  = partial :"components/partials/inputs"
+
+  = partial :"components/partials/textarea"

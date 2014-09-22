@@ -1,0 +1,14 @@
+%section.block
+  %i.block-icon.icon-info.icon-bg-default
+  %h2.block-title Inputs
+  :markdown
+    All inputs must be placed inside a `.form-item` and have the class `.form-text`. Placeholders are optional, and these may __never__ replace labels.
+  .demo
+    .form-item
+      %input.form-text{:type => "text", :value => "", :placeholder => "Text input"}
+  .code
+    :code
+      # lang: html
+        <div class='form-item'>
+          <input type='text' class="form-text" placeholder="text input" value="" />
+        </div>

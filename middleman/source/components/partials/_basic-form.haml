@@ -1,0 +1,106 @@
+%section.block
+  %i.block-icon.icon-info.icon-bg-default
+  %h2.block-title Basic forms
+  :markdown
+    In this example you can see the most used form elements and their default styling. Scroll further down to see each form element explained.
+
+  .demo
+    .form-wrapper
+      .form-item
+        %label.form-label{:for=>"edit-name"}
+          Text input
+          %span.form-required{:title=>"This field is required."} *
+        .form-description This is a description.
+        %input{:type => "text", :class => "form-text"}
+
+      .form-item
+        %label.form-label{:for=>"edit-password"}
+          Password
+          %span.form-required{:title=>"This field is required."} *
+        %input{:type => "password", :class => "form-text"}
+
+      .form-item
+        %label.form-label Radios
+        .form-radios
+          .form-type-radio
+            %input#one.form-radio{:checked => "checked", :name => "radio", :type => "radio", :value => "one"}/
+            %label.option{:for => "one"} Option 1
+          .form-type-radio
+            %input#two.form-radio{:name => "radio", :type => "radio", :value => "two"}/
+            %label.option{:for => "two"} Option 2
+      .form-item.form-type-checkbox
+        %input#check1.form-checkbox{:checked => "checked", :type => "checkbox"}/
+        %label.option{:for => "check1"} checkbox field that is checked by default
+
+      .form-item
+        %label.form-label Select field
+        %select.form-select
+          %option{:value => ""} Please select
+          %option 2
+          %option 3
+          %option 4
+          %option 5
+
+      .form-item
+        %label Textarea
+        %textarea Default textarea
+
+    .form-actions.form-wrapper
+      %input{:type => "submit", :class => "button btn-primary", :value => "Submit"}
+      %input{:type => "submit", :class => "button ", :value => "Cancel"}
+
+  .code
+    :code
+      # lang: html
+        <div class='form-wrapper'>
+          <div class='form-item'>
+            <label class='form-label' for='edit-name'>
+              Text input
+              <span class='form-required' title='This field is required.'>*</span>
+            </label>
+            <div class='form-description'>This is a description.</div>
+            <input class='form-text' type='text'>
+          </div>
+          <div class='form-item'>
+            <label class='form-label' for='edit-password'>
+              Password
+              <span class='form-required' title='This field is required.'>*</span>
+            </label>
+            <input class='form-text' type='password'>
+          </div>
+          <div class='form-item'>
+            <label class='form-label'>Radios</label>
+            <div class='form-radios'>
+              <div class='form-type-radio'>
+                <input checked='checked' class='form-radio' id='one' name='radio' type='radio' value='one'>
+                <label class='option' for='one'>Option 1</label>
+              </div>
+              <div class='form-type-radio'>
+                <input class='form-radio' id='two' name='radio' type='radio' value='two'>
+                <label class='option' for='two'>Option 2</label>
+              </div>
+            </div>
+          </div>
+          <div class='form-item form-type-checkbox'>
+            <input checked='checked' class='form-checkbox' id='check1' type='checkbox'>
+            <label class='option' for='check1'>checkbox field that is checked by default</label>
+          </div>
+          <div class='form-item'>
+            <label class='form-label'>Select field</label>
+            <select class='form-select'>
+              <option value=''>Please select</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class='form-item'>
+            <label>Textarea</label>
+            <textarea>Default textarea</textarea>
+          </div>
+        </div>
+        <div class='form-actions form-wrapper'>
+          <input class='button btn-primary' type='submit' value='Submit'>
+          <input class='button ' type='submit' value='Cancel'>
+        </div>

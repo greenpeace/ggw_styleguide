@@ -1,0 +1,47 @@
+%section.block
+  %i.block-icon.icon-info.icon-bg-default
+  %h2.block-title Horizontal form (inline)
+  :markdown
+    Adding the class `.row` alongside `.form-wrapper` display those forms inline-block with vertical align in the middle, and the classes `.form-item` inside display inline-table.
+
+  .demo
+    .form-wrapper.row
+      .form-item
+        %label{:for => "edit-text2"}
+          Input type text 1
+          %span.form-required{:title => "This field is required."} *
+        .form-description input description, comes before the input.
+        %input#edit-text2.form-text{:type => "text", :value => ""}
+      .form-item
+        %label{:for => "edit-text3"}
+          Input type text 2
+          %span.form-required{:title => "This field is required."} *
+        .form-description input description, comes before the input.
+        %input#edit-text3.form-text{:type => "text", :value => ""}
+    .form-actions.form-wrapper.row
+      %input.button.btn-primary{:type => "submit", :value => "Submit"}
+      %input.button{:type => "reset", :value => "Cancel"}
+
+  .code
+    :code
+      # lang: html
+        <div class='form-wrapper row'>
+          <div class='form-item'>
+            <label for='edit-text2'> input type text 1
+              <span class='form-required' title='This field is required.'>*</span>
+            </label>
+            <div class='form-description'> input description, comes before the input.</div>
+            <input class='form-text' id='edit-text2' type='text' value=''>
+          </div>
+          <div class='form-item'>
+            <label for='edit-text3'> input type text 2
+              <span class='form-required' title='This field is required.'>*</span>
+            </label>
+            <div class='form-description'> input description, comes before the input.</div>
+            <input class='form-text' id='edit-text3' type='text' value=''>
+          </div>
+        </div>
+        <div class='form-actions form-wrapper row'>
+          <input class='button btn-primary' type='submit' value='Submit'>
+          <input class='button' type='reset' value='Cancel'>
+        </div>

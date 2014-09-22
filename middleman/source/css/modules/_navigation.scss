@@ -270,10 +270,11 @@
     position: absolute;
     height: auto;
     left: 0;
+    top: 100%;
+    margin-top: -1px;
     z-index: 100;
     border: 1px solid $green2;
     background-color: $white;
-
 
     // submenu items
     .menu-item {
@@ -308,6 +309,7 @@
   // show the submenu container when hovering the parent menu-item
   .menu-item:hover > .menu {
     display: block;
+    @include cf;
   }
 
 }

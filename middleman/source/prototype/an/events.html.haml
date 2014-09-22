@@ -1,0 +1,24 @@
+---
+title: Events
+body_class: not-front not-logged-in page-events l-has-sidebar
+user_role: an
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-event.icon-event
+    %h1#page-title.block-title
+      = current_page.data.title
+    .content
+      = partial :"teasers/event-no-image"
+      = partial :"teasers/event-with-location"
+      = partial :"teasers/event-with-image"
+      = partial :"teasers/event-no-image"
+      = partial :"teasers/event-with-location"
+      = partial :"teasers/event-with-image"
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/find_events"
+  = partial :"blocks/an/create_account"

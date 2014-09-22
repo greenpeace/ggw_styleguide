@@ -60,7 +60,7 @@ primary_an:
         name: "Groups"
         url: "/prototype/an/groups.html"
   -
-    name: "News & Media"
+    name: "News and Media"
     url: "#"
     sub:
       -
@@ -94,15 +94,13 @@ primary_an:
       -
         name: "Contact"
         url: "/prototype/an/contact.html"
-
-# Primary navigation in prototype for AN
 primary_lu:
   -
     name: "Home"
     url: "/prototype/lu/index.html"
   -
     name: "Community"
-    url: "/prototype/lu/groups.html"
+    url: "#"
     sub:
       -
         name: "Events"
@@ -114,8 +112,8 @@ primary_lu:
         name: "Members"
         url: "/prototype/lu/members.html"
   -
-    name: "News & Media"
-    url: "/prototype/lu/news.html"
+    name: "News and Media"
+    url: "#"
     sub:
       -
         name: "News"

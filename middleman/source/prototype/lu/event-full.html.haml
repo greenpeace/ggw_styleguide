@@ -1,0 +1,119 @@
+---
+title: Ga mee naar Festival Mundial
+body_class: not-front logged-in page-type-event l-has-sidebar
+user_role: lu
+script: leaflet
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-event.icon-event
+    %h1#page-title.block-title
+      = current_page.data.title
+    .content
+      %article.view-mode-full
+        .submitted
+          %a{:href => "./events.html"} Event
+          by
+          = lorem.name
+          %span.submitted-date June 5th 2014 - 11:29
+
+          %a.comments-shortcut{:href => "#block-comments"}
+            %i.icon-comment
+            10
+            %span.element-invisible comments
+
+        .field-name-body
+
+          .field-group-wrapper
+
+            = partial :"images/event-image"
+
+            .event-actions
+              %a.modal.button.btn-block.btn-primary.btn-l{:href => "partials/blocks/rsvp.html"} RSVP
+
+            .field-group-format
+
+              .field.field-name-field-event-date
+                .field-label Date:
+                %div
+                  %span.date-display-start 13 July, 2014 - 09:00 CEST
+                  to
+                  %span.date-display-end 14 July, 2014 - 12:00 CEST
+
+              .field.field-name-field-event-location
+                .field-label Location:
+                %div
+                  %a.js-show-mobile-map{:href => "#"}
+                    %span Somewhere down town
+                    %span Mainstreet 234
+                    %span London
+
+              .field.field-name-field-event-type
+                .field-label Event type:
+                %div
+                  %span Festival/Market
+
+              .field.field-name-field-event-organiser
+                .field-label Event organiser:
+                %div
+                  Organised by
+                  %span.username
+                    = lorem.name
+
+              .field.field-name-field-event-num-attendees
+                .field-label Attendees:
+                %div
+                  %span 36 persons are going
+
+          #desktopmap
+
+          %p
+            %strong Festival Mundial
+
+          %p
+            = lorem.paragraph
+          %p
+            = lorem.paragraph
+          %p
+            = lorem.paragraph
+          %ol
+            %li
+              = lorem.sentence
+            %li
+              = lorem.sentence
+            %li
+              = lorem.sentence
+          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://lorempixel.  com/100/100/nature/5/image"}/
+          %p
+            = lorem.sentence
+            %strong without
+            = lorem.sentence
+
+      .tags
+        Tags:
+        %a.tag{:href => "#"} festival
+      .submitted.submitted-extended
+        .submitted-image
+          %img{:alt => "Name of the author.", :src => "http://lorempixel.com/75/75/people/8/avatar"}/
+        .submitted-info
+          %div
+            %a{:href => "./events.html"} Event
+            by
+            = lorem.name
+          .submitted-bio
+            %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
+          .submitted-all-reference
+            %a{:href => "#"}>
+              All events by
+              = lorem.name
+              \.
+
+  = partial :"blocks/lu/comments"
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/go_to_group"
+  = partial :"blocks/lu/enroll"
+  = partial :"blocks/lu/subscribe"

@@ -1,5 +1,5 @@
 ---
-title: Home page anonymous
+title: Home
 body_class: front logged-in page-home l-two-column
 script: leaflet
 user_role: lu
@@ -15,6 +15,10 @@ user_role: lu
       %a.tab{:href => "#content"}
         %i.icon.icon-news
         Updates
+    %li
+      %a.tab{:href => "#shoutbox"}
+        %i.icon.icon-shout
+        Shoutbox
     %li
       %a.tab{:href => "#upcoming-events"}
         %i.icon.icon-event
@@ -67,6 +71,7 @@ user_role: lu
       = partial :"teasers/blog-with-image"
       = partial :"teasers/blog-no-image"
       = partial :"teasers/event-with-image"
+      = partial :"teasers/event-with-location"
       = partial :"teasers/event-no-image"
       = partial :"teasers/group-no-image"
       = partial :"teasers/group-with-image"

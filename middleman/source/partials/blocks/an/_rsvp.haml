@@ -5,7 +5,7 @@
     %form
       %p
         Already a Greenwire member?
-        %a{:href => "#"} Log in now!
+        =nav_link 'Log in', data.nav.secondary_an.first['url']
       %p Not a member? RSVP below
       .form-item.form-type-textfield
         %label{:for => "edit-firstname"}

@@ -3,9 +3,11 @@
     .field-type-image
       = partial :"teasers/teaser-image"
     .field-type-wrapper
-      %h2.node-title This event does have an image
+      %h2.node-title
+        %a{:href => "./event-full.html"}
+          = lorem.sentence
       .submitted
-        %a.type.event{:href => "#"} Event
+        %a.type.event{:href => "./events.html"} Event
         2 Jan, 20:00 - 23:00 CET
       .field-group-format
         .field-type-date

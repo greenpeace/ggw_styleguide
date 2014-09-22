@@ -1,0 +1,21 @@
+---
+title: News
+body_class: not-front logged-in page-news l-has-sidebar
+user_role: lu
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-news-media.icon-news
+    %h1#page-title.block-title
+      = current_page.data.title
+    .content
+      = partial :"teasers/news-no-image"
+      = partial :"teasers/news-with-image"
+      = partial :"teasers/news-no-image"
+      = partial :"teasers/news-with-image"
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/find_news"

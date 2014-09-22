@@ -12,6 +12,13 @@
       order: 2;
     }
 
+    &.l-has-sidebar {
+      .l-main-column {
+        flex: 0 1 (100%/1.5);
+        order: 1;
+      }
+    }
+
   }
 
 }

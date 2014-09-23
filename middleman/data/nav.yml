@@ -14,14 +14,24 @@ design:
 # Ui Components menu
 comp:
   -
+    name: "Blocks"
+    url: "/components/blocks.html"
+  -
     name: "Buttons"
     url: "/components/buttons.html"
   -
     name: "Forms"
     url: "/components/forms.html"
   -
-    name: "Blocks"
-    url: "/components/blocks.html"
+    name: "Images"
+    url: "/components/images.html"
+  -
+    name: "Breadcrumbs"
+    url: "/components/breadcrumbs.html"
+  -
+    name: "Progress bar"
+    url: "/components/progress-bar.html"
+
 
 # Documentation menu
 docs:

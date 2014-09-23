@@ -1,53 +1,53 @@
 %section.block
   %i.block-icon.icon-info.icon-bg-default
   %h2.block-title Radio's and checkboxes
-  %p
-  .demo
-    .form-item
-      %label.form-label Radios
-      .form-radios
-        .form-type-radio
-          %input#one.form-radio{:checked => "checked", :name => "radio", :type => "radio", :value => "one"}/
-          %label.option{:for => "one"} Option 1
-        .form-type-radio
-          %input#two.form-radio{:name => "radio", :type => "radio", :value => "two"}
-          %label.option{:for => "two"} Option 2
-        .form-type-radio
-          %input#three.form-radio{:name => "radio", :type => "radio", :value => "three"}
-          %label.option{:for => "three"} Option 3
-    .form-item.form-type-checkbox
-      %input#check1.form-checkbox{:checked => "checked", :type => "checkbox"}
-      %label.option{:for => "check1"} checkbox field that is checked by default
-    .form-item.form-type-checkbox
-      %input#check2.form-checkbox{:type => "checkbox"}
-      %label.option{:for => "check2"} checkbox field that is not checked by default
-  .code
-    :code
-      # lang: html
-        <div class='form-item'>
-          <label class='form-label'>Radios</label>
-          <div class='form-radios'>
-            <div class='form-type-radio'>
-              <input checked='checked' class='form-radio' id='one' name='radio' type='radio' value='one'>
-              <label class='option' for='one'>Option 1</label>
-            </div>
-            <div class='form-type-radio'>
-              <input class='form-radio' id='two' name='radio' type='radio' value='two'>
-              <label class='option' for='two'>Option 2</label>
-            </div>
-            <div class='form-type-radio'>
-              <input class='form-radio' id='three' name='radio' type='radio' value='three'>
-              <label class='option' for='three'>Option 3</label>
+  .content
+    .demo
+      .form-item
+        %label.form-label Radios
+        .form-radios
+          .form-type-radio
+            %input#one.form-radio{:checked => "checked", :name => "radio", :type => "radio", :value => "one"}/
+            %label.option{:for => "one"} Option 1
+          .form-type-radio
+            %input#two.form-radio{:name => "radio", :type => "radio", :value => "two"}
+            %label.option{:for => "two"} Option 2
+          .form-type-radio
+            %input#three.form-radio{:name => "radio", :type => "radio", :value => "three"}
+            %label.option{:for => "three"} Option 3
+      .form-item.form-type-checkbox
+        %input#check1.form-checkbox{:checked => "checked", :type => "checkbox"}
+        %label.option{:for => "check1"} checkbox field that is checked by default
+      .form-item.form-type-checkbox
+        %input#check2.form-checkbox{:type => "checkbox"}
+        %label.option{:for => "check2"} checkbox field that is not checked by default
+    .code
+      :code
+        # lang: html
+          <div class='form-item'>
+            <label class='form-label'>Radios</label>
+            <div class='form-radios'>
+              <div class='form-type-radio'>
+                <input checked='checked' class='form-radio' id='one' name='radio' type='radio' value='one'>
+                <label class='option' for='one'>Option 1</label>
+              </div>
+              <div class='form-type-radio'>
+                <input class='form-radio' id='two' name='radio' type='radio' value='two'>
+                <label class='option' for='two'>Option 2</label>
+              </div>
+              <div class='form-type-radio'>
+                <input class='form-radio' id='three' name='radio' type='radio' value='three'>
+                <label class='option' for='three'>Option 3</label>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class='form-item form-type-checkbox'>
-          <input checked='checked' class='form-checkbox' id='check1' type='checkbox'>
-          <label class='option' for='check1'>checkbox field that is checked by default</label>
-        </div>
+          <div class='form-item form-type-checkbox'>
+            <input checked='checked' class='form-checkbox' id='check1' type='checkbox'>
+            <label class='option' for='check1'>checkbox field that is checked by default</label>
+          </div>
 
-        <div class='form-item form-type-checkbox'>
-          <input class='form-checkbox' id='check2' type='checkbox'>
-          <label class='option' for='check2'>checkbox field that is not checked by default</label>
-        </div>
+          <div class='form-item form-type-checkbox'>
+            <input class='form-checkbox' id='check2' type='checkbox'>
+            <label class='option' for='check2'>checkbox field that is not checked by default</label>
+          </div>

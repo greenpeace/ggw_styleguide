@@ -15,3 +15,9 @@
   text-align: center;
   width: 0;
 }
+
+.progress-bar-zero .progress-bar {
+  background: none;
+  color: $base;
+  width: 100%;
+}

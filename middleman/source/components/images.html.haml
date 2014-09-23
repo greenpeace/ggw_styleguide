@@ -1,0 +1,108 @@
+---
+title: Images
+body_class: page-images
+layout: styleguide
+design_status: Work in progress
+---
+
+%aside.sidebar-left
+  = partial :"nav/uicomponents"
+#content.l-main-column
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Image fields
+    .content
+    :markdown
+      Wherever a user uploads an image in a seperate field, we process it as a responsive image with the `picture` element. This means each screensize might be served with a different image size. This will dramatically improve performance, since about 80% of the load are images.
+
+      For content images we are not able to use this technique at the moment. When an image is inserted via an editor we cannot separate the image from the rest of the content.
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Picture element
+    .content
+      :markdown
+        The `<picture>` element offers a declarative approach towards image resource loading. Users benefit from natively-optimized image resource loading—especially important for users on slower mobile internet connections.
+
+        #### Use with <source> elements
+        The `<picture>` element has no unique attributes of its own. The magic happens when `<picture>` is used as a container for `<source>`.
+
+        The `<source>` element, which is used for loading media such as video and audio, has been updated for image loading and these new attributes have been added:
+
+      %dl
+        %dt
+          srcset
+          %em (required)
+        %dd
+          %p Accepts a single image file path (e.g. srcset="image.jpg").
+          %p Or a comma-delimited list of image file paths with pixel density descriptors (e.g. srcset="kitten.png, kitten@2X.png 2x") where a 1x descriptor is assumed when it is left off.
+      %dl
+        %dt
+          media
+          %em (optional)
+        %dd
+          %p Accepts any valid media query that you would normally find in a CSS @media selector (e.g. media="(max-width: 24em)").
+
+      %h4 Order of sources
+      :markdown
+        The browser will use the hints passed in as attribute values to load the most appropriate image resource. The listing order of tags matter! The browser will use the first `<source>` element with a matching hint and ignore any following `<source>` tags.
+
+      :markdown
+        #### `<img>` tag comes last
+        The `<img>` element must be used within `<picture>` as the fallback in case a browser does not support the picture element or if no source element tags are matched. Using `<img>` within `<picture>` is a requirement — if you forget it, no images will show up.
+
+        Use `<img>` to declare the default image to be used within a `<picture>` block. Place `<img>` as the last child of `<picture>` since the browser will ignore any `<source>` declarations that occur after an `<img>` tag is found. The image tag is also where you should attach alternative text using the image element's alt attribute.
+
+      %h4 Use of Pixel density descriptors
+      :markdown
+        In the example you can see there are two arguments for each `srcset` attribute. We use `2x` to target high resolution screens. To put it simple these screens have twice the amount of (device) pixels on the same resolution and therefore require images twice the original size for them to be displayed sharp.
+
+      .demo
+        %picture.field-type-image
+          %source{:media => "(min-width: 64em)", :srcset => "http://lorempixel.com/603/250/nature/1/image, http://lorempixel.com/1440/500/nature/2/image 2x"}
+          %source{:media => "(min-width: 48em)", :srcset => "http://lorempixel.com/768/384/nature/3/image, http://lorempixel.com/1536/768/nature/4/image 2x"}
+          %source{:media => "(min-width: 24em)", :srcset => "http://lorempixel.com/640/320/nature/5/image, http://lorempixel.com/1280/640/nature/6/image 2x"}
+          %img{:alt => "Description of this image", :src => "http://lorempixel.com/320/160/nature/7/image", :srcset => "http://lorempixel.com/640/320/nature/8/image 2x"}
+      .code
+        :code
+          # lang: html
+            <picture class="field-type-image">
+              <source media='(min-width: 64em)' srcset='http://lorempixel.com/603/250/nature/1/image, http://lorempixel.com/1440/500/nature/2/image 2x'>
+              <source media='(min-width: 48em)' srcset='http://lorempixel.com/768/384/nature/3/image, http://lorempixel.com/1536/768/nature/4/image 2x'>
+              <source media='(min-width: 24em)' srcset='http://lorempixel.com/640/320/nature/5/image, http://lorempixel.com/1280/640/nature/6/image 2x'>
+              <img alt='Description of this image' src='http://lorempixel.com/320/160/nature/7/image' srcset='http://lorempixel.com/640/320/nature/8/image 2x'>
+            </picture>
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Picturefill fallback
+    .content
+      :markdown
+        For browser that do not support the picture element we use the [Picturefill](http://scottjehl.github.io/picturefill/) script.
+
+        While most versions of IE (even older ones!) are supported well, IE9 has a little conflict to work around. To support IE9, you will need to wrap a video element wrapper around the source elements in your picture tag. You can do this using conditional comments, like so:
+
+      .code
+        :code
+          # lang: html
+            <picture>
+              <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="examples/images/extralarge.jpg" media="(min-width: 1000px)">
+                <source srcset="examples/images/large.jpg" media="(min-width: 800px)">
+              <!--[if IE 9]></video><![endif]-->
+              <img srcset="examples/images/medium.jpg" alt="Description of this image">
+            </picture>
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Content images
+    .content
+      :markdown
+        Images are responsive-friendly by default. An image has a `max-width: 100%` and `height: auto` so that it scales nicely to the parent element.
+      .demo
+        %img{:alt => "Description of this image.", :src => "http://lorempixel.com/800/600/nature/8/image"}
+
+      .code
+        :code
+          # lang: html
+            <img src="http://lorempixel.com/800/600/nature/8/image" alt="Description of this image." />

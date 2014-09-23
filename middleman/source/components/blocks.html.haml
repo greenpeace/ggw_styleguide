@@ -1,0 +1,39 @@
+---
+title: Blocks
+body_class: page-blocks
+layout: styleguide
+design_status: Needs review
+---
+
+%aside.sidebar-left
+  = partial :"nav/uicomponents"
+#content.l-main-column
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Blocks
+    .content
+      :markdown
+        The content throughout the style guide is placed in blocks. Blocks consist of an icon and the block title at the top and the content below.
+    .code
+      :code
+        # lang: html
+          <div class="block">
+            <i class="block-icon icon-info icon-bg-default"></i>
+            <h2 class="block-title"> Blocks </h2>
+            <div class="content"> The content throughout the style guide is placed in blocks. Blocks consist of an icon and the block title at the top and the content below. </div>
+          </div>
+
+  %section.block.block-no-icon
+    %h2.block-title Block without an icon
+    .content
+      :markdown
+        Blocks that do not have an icon require an extra class so the title is pulled to the left.
+    .code
+      :code
+        # lang: html
+          <div class="block block-no-icon">
+            <h2 class="block-title"> Block without an icon </h2>
+            <div class="content"> Blocks that do not have an icon require an extra class so the title is pulled to the left. </div>
+          </div>
+
+

@@ -1,0 +1,41 @@
+---
+title: Progress bar
+body_class: page-progress-bar
+layout: styleguide
+design_status: Needs review
+---
+
+%aside.sidebar-left
+  = partial :"nav/uicomponents"
+#content.l-main-column
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Progress bar
+    .content
+      :markdown
+        In the registration process there are 4 steps with a progress bar showing graphically the completed steps. This component is reusable.
+
+      .demo
+        .progress-bar-wrapper.progress-bar-zero
+          .progress-bar 0%
+        .progress-bar-wrapper
+          .progress-bar{:style => "width: 25%;"} 25%
+        .progress-bar-wrapper
+          .progress-bar{:style => "width: 50%;"} 50%
+        .progress-bar-wrapper
+          .progress-bar{:style => "width: 75%;"} 75%
+      .code
+        :code
+          # lang: html
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar">0%</div>
+            </div>
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar" style="width: 25%;">25%</div>
+            </div>
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar" style="width: 50%;">50%</div>
+            </div>
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar" style="width: 75%;">75%</div>
+            </div>

@@ -1,29 +1,30 @@
 %section.block
   %i.block-icon.icon-info.icon-bg-default
   %h2.block-title Select with autocomplete
-  :markdown
-    For selects with autocomplete's we use the jQuery [Chosen](https://github.com/harvesthq/chosen) plugin. This function is often activated when the list of options is so long that it is more convenient for a user to start typing and give a suggestion of options that match their search.
-  .demo
-    .form-item.form-type-select
-      %label.form-label Select field
-      %select.chosen-select
-        %option{:value => ""} Please select
-        %option{:value => "1"} 1
-        %option{:value => "2"} 2
-        %option{:value => "3"} 3
-        %option{:value => "4"} 4
-        %option{:value => "5"} 5
-  .code
-    :code
-      # lang: html
-        <div class="form-item form-type-select">
-          <label class="form-label">Select field</label>
-          <select class="chosen-select">
-            <option value="">Please select</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
+  .content
+    :markdown
+      For selects with autocomplete's we use the jQuery [Chosen](https://github.com/harvesthq/chosen) plugin. This function is often activated when the list of options is so long that it is more convenient for a user to start typing and give a suggestion of options that match their search.
+    .demo
+      .form-item.form-type-select
+        %label.form-label Select field
+        %select.chosen-select
+          %option{:value => ""} Please select
+          %option{:value => "1"} 1
+          %option{:value => "2"} 2
+          %option{:value => "3"} 3
+          %option{:value => "4"} 4
+          %option{:value => "5"} 5
+    .code
+      :code
+        # lang: html
+          <div class="form-item form-type-select">
+            <label class="form-label">Select field</label>
+            <select class="chosen-select">
+              <option value="">Please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>

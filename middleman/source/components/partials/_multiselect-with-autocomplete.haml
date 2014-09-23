@@ -1,39 +1,41 @@
 %section.block
   %i.block-icon.icon-info.icon-bg-default
   %h2.block-title Multiselect with autocomplete
-  :markdown
-    For multiselects we use the jQuery [Chosen](https://github.com/harvesthq/chosen) plugin by default. You need to give the select element the class `.chosen-select` to activate. The styling of the options should match the small buttons
-  .demo
-    .form-item.form-type-select
-      %label.form-label Select field
-      %select.chosen-select{"data-placeholder" => "Choose a Country...", :multiple => "multiple"}
-        %option{:value => ""}
-        %option{:value => "Belgium"} Belgium
-        %option{:value => "France"} France
-        %option{:value => "India"} India
-        %option{:value => "International"} International
-        %option{:value => "Nederland"} Nederland
-        %option{:value => "Nordic"} Nordic
-        %option{:value => "Russia"} Russia
-        %option{:value => "Thailand"} Thailand
-        %option{:value => "USA"} USA
-        %option{:value => "United Kingdom"} United Kingdom
-  .code
-    :code
-      # lang: html
-        <div class='form-item form-type-select'>
-          <label class='form-label'>Select field</label>
-          <select class='chosen-select' data-placeholder='Choose a Country...' multiple='multiple'>
-            <option value=''></option>
-            <option value='Belgium'>Belgium</option>
-            <option value='France'>France</option>
-            <option value='India'>India</option>
-            <option value='International'>International</option>
-            <option value='Nederland'>Nederland</option>
-            <option value='Nordic'>Nordic</option>
-            <option value='Russia'>Russia</option>
-            <option value='Thailand'>Thailand</option>
-            <option value='USA'>USA</option>
-            <option value='United Kingdom'>United Kingdom</option>
-          </select>
-        </div>
+  .content
+    :markdown
+      For multiselects we use the jQuery [Chosen](https://github.com/harvesthq/chosen) plugin by default. You need to give the select element the class `.chosen-select` to activate. The styling of the options should match the small buttons
+    .demo
+      .form-item.form-type-select
+        %label.form-label Select field
+        %select.chosen-select{"data-placeholder" => "Choose a Country...", :multiple => "multiple"}
+          %option{:value => ""}
+          %option{:value => "Belgium"} Belgium
+          %option{:value => "France"} France
+          %option{:value => "India"} India
+          %option{:value => "International"} International
+          %option{:value => "Nederland"} Nederland
+          %option{:value => "Nordic"} Nordic
+          %option{:value => "Russia"} Russia
+          %option{:value => "Thailand"} Thailand
+          %option{:value => "USA"} USA
+          %option{:value => "United Kingdom"} United Kingdom
+    .code
+      :code
+        # lang: html
+          <div class='form-item form-type-select'>
+            <label class='form-label'>Select field</label>
+            <select class='chosen-select' data-placeholder='Choose a Country...' multiple='multiple'>
+              <option value=''></option>
+              <option value='Belgium'>Belgium</option>
+              <option value='France'>France</option>
+              <option value='India'>India</option>
+              <option value='International'>International</option>
+              <option value='Nederland'>Nederland</option>
+              <option value='Nordic'>Nordic</option>
+              <option value='Russia'>Russia</option>
+              <option value='Thailand'>Thailand</option>
+              <option value='USA'>USA</option>
+              <option value='United Kingdom'>United Kingdom</option>
+            </select>
+          </div>
+

@@ -1,0 +1,43 @@
+---
+title: Breadcrumbs
+body_class: page-breadcrumbs
+layout: styleguide
+design_status: Needs review
+---
+
+%aside.sidebar-left
+  = partial :"nav/uicomponents"
+#content.l-main-column
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Breadcrumbs
+    .content
+      :markdown
+        Breadcrumbs are shown on all pages, except the homepage.
+
+      .demo
+        %nav.breadcrumb{:role => "navigation"}
+          %h2.element-invisible You are here
+          %ol.breadcrumbs
+            %li.breadcrumb-item You are here:
+            %li.breadcrumb-item
+              %a.breadcrumb-link{:href => "/prototype/an/index.html"} Home
+            %li.breadcrumb-item
+              %a.breadcrumb-link{:href => "/prototype/an/news.html"} News
+            %li.breadcrumb-item Random news article
+      .code
+        :code
+          # lang: html
+            <nav class="breadcrumb" role="navigation">
+              <h2 class="element-invisible">You are here</h2>
+              <ol class="breadcrumbs">
+                <li class="breadcrumb-item">You are here:</li>
+                <li class="breadcrumb-item">
+                  <a class="breadcrumb-link" href="#">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a class="breadcrumb-link" href="/news/">News</a>
+                </li>
+                <li class="breadcrumb-item">Random news article</li>
+              </ol>
+            </nav>

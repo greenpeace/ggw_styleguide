@@ -1,11 +1,3 @@
-###
-# Compass
-###
-
-# Susy grids in Compass
-# First: gem install susy --pre
-# require 'susy'
-
 # Combine media queries at bottom of document
 require 'sass-media_query_combiner'
 require 'breakpoint'
@@ -20,8 +12,6 @@ end
 activate :livereload
 
 activate :syntax
-
-activate :asset_hash
 
 
 #with_layout :example do
@@ -133,6 +123,8 @@ configure :build do
 
   # Minify Javascript on build
   activate :minify_javascript
+
+  activate :asset_hash
 
   # Enable cache buster
   # activate :cache_buster

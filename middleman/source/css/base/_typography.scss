@@ -1,5 +1,6 @@
 @include breakpoint($desk) {
   p,
+  dl,
   li,
   code,
   .form-text,
@@ -28,6 +29,20 @@ ul, ol {
 
 li li {
   font-size: 1em;
+}
+
+dt {
+  font-weight: 700;
+  color: $heading;
+
+  em {
+    font-weight: 300;
+  }
+
+}
+
+dd {
+  margin-bottom: .5em;
 }
 
 a {
@@ -87,7 +102,7 @@ article {
   // headings
   #{headings()} {
     margin: 10px 0;
-    color: $green4; //darkgreen
+    color: $heading;
   }
 
   $headings: h1, h2, h3, h4, h5, h6;

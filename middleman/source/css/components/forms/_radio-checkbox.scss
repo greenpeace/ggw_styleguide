@@ -1,0 +1,74 @@
+// CHECK BOXES & RADIO BUTTONS
+
+input[type="radio"],
+input[type="checkbox"] {
+  @extend %element-hidden;
+
+  @if $oldie {
+    display: inline;
+    position: relative;
+    top: 2px;
+  }
+}
+
+.form-type-radio {
+  display: inline-block;
+}
+
+.form-type-radio,
+.form-type-checkbox {
+  position: relative;
+  margin-right: 1em;
+
+  .option {
+    display: inline-block;
+    padding-left: 2em;
+    font-weight: 300;
+    cursor: pointer;
+
+    @if $oldie {
+      display: inline;
+      padding-left: .1em;
+    }
+
+    &:before {
+      position: absolute;
+      left: .3em;
+      content:'';
+      display: inline-block;
+      background-color: $white;
+      background-image: url('../images/form_elements.svg');
+      background-repeat: no-repeat;
+      height: 1.5rem;
+      width: 1.3em;
+
+      @if $oldie {
+        @extend %element-hidden;
+      }
+    }
+
+  }
+
+}
+
+input[type="radio"] + label:before {
+  background-position: -7px -7px;
+}
+
+input[type="radio"]:checked + label:before {
+  background-position: -31px -7px;
+}
+
+
+input[type="checkbox"] + label:before {
+  background-position: -7px -27px;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background-position: -31px -27px;
+}
+
+// create extra space for sidebar filters
+.sidebar .form-type-checkbox {
+  margin-bottom: 2px;
+}

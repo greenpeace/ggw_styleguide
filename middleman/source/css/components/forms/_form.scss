@@ -1,0 +1,168 @@
+.form-wrapper {
+  @extend %cf;
+  margin: $def-mar 0;
+
+  .button {
+    margin-top: 5px;
+  }
+
+}
+
+.form-title {
+  @include font-size(16px);
+  margin: .5em 0 1em;
+}
+
+.form-wrapper.row {
+  display: inline-block;
+  vertical-align: bottom;
+  .form-item {
+    display: inline-table;
+    margin-bottom: 0;
+    margin-right: 1em;
+  }
+}
+
+.form-item {
+  margin-bottom: (1.5 * $def-mar);
+
+  .sidebar & {
+    margin-bottom: $def-mar-half;
+  }
+}
+
+.sidebar .node-form,
+.sidebar .views-exposed-widget {
+  margin-top: $def-mar;
+}
+
+.views-submit-button,
+.views-reset-button {
+  display: inline-block;
+}
+
+label {
+  font-weight: 700;
+  display: block;
+}
+
+// labels for checkboxes
+.option {
+  font-weight: 300;
+  display: inline;
+  vertical-align: middle;
+}
+
+.form-required {
+  color: $error;
+}
+
+.form-description {
+  margin-bottom: $def-mar-half;
+  font-size: $small;
+  color: $grey-d;
+  line-height: 1.2em;
+}
+
+.form-text,
+.form-password,
+textarea {
+  padding:.4em .5em .4em .5em;
+  border: 1px solid $grey-l;
+  border-radius: 3px;
+  width: 100%;
+  max-width: 400px;
+  -webkit-appearance: none;
+
+  &:hover {
+    border-color: $grey-m;
+  }
+
+  &:focus {
+    border-color: $green1;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,.2);
+  }
+
+  &:disabled {
+    border: 1px solid $grey-l;
+    background: #F3F3F3;
+  }
+
+}
+
+// fix for ios7 heights on date inputs
+input[type="date"] {
+  height: 30px;
+}
+
+.dropdown-filter {
+  width: 100%;
+  right: 0;
+  top: 30px;
+
+  @include breakpoint($smalltab) {
+    width: 50%;
+  }
+
+  @include breakpoint($desk) {
+    right: 15px;
+    top: 30px;
+  }
+}
+
+.dropdown-filter.dropdown-tip:before {
+  left: auto;
+  right: 12px;
+}
+
+.dropdown-filter.dropdown-tip:after {
+  left: auto;
+  right: 13px;
+}
+
+.dropdown-panel .form-item {
+  margin: 0 0 .5em;;
+  flex: 1 50%;
+
+  @include breakpoint($desk) {
+    flex: 1 100%;
+    @include font-size(12px);
+  }
+
+}
+
+.dropdown-panel p {
+  margin: 0;
+  flex: 1 100%;
+
+  @include breakpoint($desk) {
+    @include font-size(12px);
+  }
+}
+
+.dropdown-panel .form-wrapper {
+  margin: 0 0 10px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: stretch;
+}
+
+.dropdown-panel .form-actions .button {
+  margin-right: .5em;
+}
+
+/*browser specific*/
+
+.lt-ie9 {
+  .page-register .date-padding .form-item {
+    width: 100px;
+  }
+}
+
+@include breakpoint($tab) {
+  form.flexrow {
+    @include cf;
+    display: flex;
+    flex-flow: row no-wrap;
+  }
+}

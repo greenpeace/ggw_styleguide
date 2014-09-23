@@ -1,0 +1,41 @@
+// auto complete on text inputs
+.js .form-autocomplete {
+  background: url("../images/throbber-inactive.gif") 99% 7px no-repeat;
+}
+.js .throbbing {
+  background-image: url("../images/throbber-active.gif");
+}
+.lt-ie9 .form-autocomplete {
+  background-position: 99% 7px;
+}
+
+#autocomplete {
+  border: 1px solid $grey-l;
+  background: #fff;
+  width: 100%;
+  max-width: 400px;
+  cursor: default;
+  overflow: auto;
+  position: absolute;
+  z-index: 100;
+  display: none;
+
+  li {
+    padding: 0.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 1.2em;
+
+    &:hover {
+      background: $background;
+      cursor: pointer;
+    }
+
+  }
+
+  strong {
+    font-weight: normal;
+    color: #3399ff;
+  }
+
+}

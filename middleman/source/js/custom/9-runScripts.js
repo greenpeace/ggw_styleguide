@@ -16,11 +16,16 @@ function runAgain() {
 
   // Selector styling wrapper
   $('.form-item select').wrap('<div class="selector"></div>');
+  $(".chosen-select").chosen();
 
   // attach datepicker plugin to date iput fields
   if (!Modernizr.inputtypes.date) {
     $('input[type="date"]').pickadate();
   }
+
+  $(".form-autocomplete").keypress(function(){
+    $('#autocomplete').toggle();
+  });
 
 }
 
@@ -82,14 +87,25 @@ $( window ).load(function() {
   });
 
   // Selector styling wrapper
-  $('.form-item select').wrap('<div class="selector"></div>');
+  $('.form-item .form-select').wrap('<div class="selector"></div>');
+  $(".chosen-select").chosen({width: "95%"});
 
   // attach datepicker plugin to date iput fields
   if (!Modernizr.inputtypes.date) {
     $('input[type="date"]').pickadate();
   }
 
-    // activate sliders
+  $(".form-autocomplete").blur(function() {
+    $('#autocomplete').fadeOut();
+    $(this).removeClass("throbbing");
+  });
+
+  $(".form-autocomplete").keypress(function() {
+    $('#autocomplete').fadeIn();
+    $(this).addClass("throbbing");
+  });
+
+  // activate sliders
   $('.flexslider').flexslider({
     animation: "slide",
     animationSpeed: Modernizr.touch ? 400 : 1000,

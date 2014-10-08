@@ -34,9 +34,10 @@
 .icon-edit {      @extend %icon-pencil;}
 .icon-subscription {      @extend %icon-bookmark;}
 .icon-mail {      @extend %icon-mail;}
-.icon-check {      @extend %icon-check;}
-.icon-cancel {      @extend %icon-cancel;}
-.icon-attention {      @extend %icon-attention;}
+.icon-check {     @extend %icon-check;}
+.icon-cancel {    @extend %icon-cancel;}
+.icon-attention { @extend %icon-attention;}
+.icon-calendar {  @extend %icon-calendar;}
 
 .icon-event {     @extend %icon-calendar; }
 .icon-news {      @extend %icon-book-open; }
@@ -46,7 +47,7 @@
 .icon-document {  @extend %icon-attach; }
 .icon-idea {      @extend %icon-thumbs-up; }
 .icon-material {  @extend %icon-bucket; }
-.icon-info {  @extend %icon-info; }
+.icon-info {      @extend %icon-info; }
 
 .icon-facebook { @extend %icon-facebook;}
 .icon-gplus { @extend %icon-gplus;}

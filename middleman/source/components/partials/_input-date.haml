@@ -4,6 +4,8 @@
   .content
     :markdown
       The date type is used for input fields that should contain a date. Currently only Chrome, Safari and Opera support this input type. For browsers that do not support the date input field, it will behave just like a text input. With Modernizr we detect the support for this feature and load the [Date picker](https://github.com/amsul/pickadate.js) script.
+
+      An icon is placed inside the field to notify users they can select something.
   .demo
     .form-item
       %input.form-text{:type => "date", :value => "", :placeholder => "Pick a date"}

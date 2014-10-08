@@ -1,4 +1,9 @@
 // CHECK BOXES & RADIO BUTTONS
+.form-radios,
+.form-type-checkbox {
+  display: inline-block;
+}
+
 
 input[type="radio"],
 input[type="checkbox"] {

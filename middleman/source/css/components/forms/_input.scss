@@ -1,0 +1,41 @@
+.form-text,
+.form-password,
+textarea {
+  padding:.4em .5em .4em .5em;
+  border: 1px solid $grey-l;
+  border-radius: 3px;
+  width: 100%;
+  max-width: 400px;
+  -webkit-appearance: none;
+
+  &:hover {
+    border-color: $grey-m;
+  }
+
+  &:focus {
+    border-color: $green1;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,.2);
+  }
+
+  &:disabled {
+    border: 1px solid $grey-l;
+    background: #F3F3F3;
+  }
+
+  &.error {
+    border: 1px solid darken($primary, 10%);
+    position: relative;
+    padding-right: 2em;
+  }
+
+}
+
+
+// 1) fix for ios7 heights on date inputs
+input[type="date"] {
+  height: 30px; // 1
+}
+
+input[type="date"] + i {
+  margin-left: -1.5em;
+}

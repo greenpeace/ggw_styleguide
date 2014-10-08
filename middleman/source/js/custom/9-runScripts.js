@@ -115,6 +115,13 @@ $( window ).load(function() {
     $(this).addClass("throbbing");
   });
 
+  //enhance with icons
+  $('input[type="date"]').after('<i class="icon-calendar"></i>');
+  $('.form-text.error, textarea.error, .form-checkbox.error + label').after('<i class="icon-attention"></i>');
+  $('.form-radio.error').parents('.form-radios').after('<i class="icon-attention"></i>');
+  $('.form-select.error').parent('.selector').after('<i class="icon-attention"></i>');
+  $('.form-select.error').parent('.selector').addClass('error');
+
   // activate sliders
   $('.flexslider').flexslider({
     animation: "slide",

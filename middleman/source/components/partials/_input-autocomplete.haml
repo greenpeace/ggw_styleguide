@@ -7,6 +7,9 @@
   .demo
     .form-item
       %label Type anything to see the demo
+      .form-description
+        %i.icon-attention.icon-red
+        This demo does not respond to your input, it is a static suggestion list
       %input.form-text.form-autocomplete{:type => "text", :value => "", :placeholder => "Text input"}
       #autocomplete
         %ul

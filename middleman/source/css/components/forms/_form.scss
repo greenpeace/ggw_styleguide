@@ -93,6 +93,14 @@ textarea {
 // fix for ios7 heights on date inputs
 input[type="date"] {
   height: 30px;
+  position: relative;
+}
+
+.picker__input:before {
+  @extend %load-icon;
+  @extend %icon-calendar;
+  position: absolute;
+  right: .5em;
 }
 
 .dropdown-filter {
@@ -151,7 +159,7 @@ input[type="date"] {
   margin-right: .5em;
 }
 
-/*browser specific*/
+// browser specific
 
 .lt-ie9 {
   .page-register .date-padding .form-item {

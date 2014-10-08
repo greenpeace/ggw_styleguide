@@ -12,13 +12,13 @@
             Text input
             %span.form-required{:title=>"This field is required."} *
           .form-description This is a description.
-          %input{:type => "text", :class => "form-text"}
+          %input{:type => "text", :class => "form-text", :placeholder => "type your input here"}
 
         .form-item
           %label.form-label{:for=>"edit-password"}
             Password
             %span.form-required{:title=>"This field is required."} *
-          %input{:type => "password", :class => "form-text"}
+          %input{:type => "password", :class => "form-text", :placeholder => "type your input here"}
 
         .form-item
           %label.form-label Radios
@@ -31,8 +31,8 @@
               %label.option{:for => "two"} Option 2
 
         .form-item.form-type-checkbox
-          %input#check1.form-checkbox{:checked => "checked", :type => "checkbox"}
-          %label.option{:for => "check1"} checkbox field that is checked by default
+          %input#checkexample.form-checkbox{:checked => "checked", :type => "checkbox"}
+          %label.option{:for => "checkexample"} checkbox field that is checked by default
 
         .form-item
           %label.form-label Select field
@@ -45,7 +45,7 @@
 
         .form-item
           %label Textarea
-          %textarea Default textarea
+          %textarea{:placeholder => "Write your comment here..."}
 
       .form-actions.form-wrapper
         %input{:type => "submit", :class => "button btn-primary", :value => "Submit"}
@@ -61,14 +61,14 @@
                 <span class='form-required' title='This field is required.'>*</span>
               </label>
               <div class='form-description'>This is a description.</div>
-              <input class='form-text' type='text'>
+              <input class='form-text' type='text' placeholder='type your input here' />
             </div>
             <div class='form-item'>
               <label class='form-label' for='edit-password'>
                 Password
                 <span class='form-required' title='This field is required.'>*</span>
               </label>
-              <input class='form-text' type='password'>
+              <input class='form-text' type='password' placeholder='type your input here' />
             </div>
             <div class='form-item'>
               <label class='form-label'>Radios</label>
@@ -84,8 +84,8 @@
               </div>
             </div>
             <div class='form-item form-type-checkbox'>
-              <input checked='checked' class='form-checkbox' id='check1' type='checkbox'>
-              <label class='option' for='check1'>checkbox field that is checked by default</label>
+              <input checked='checked' class='form-checkbox' id='checkexample' type='checkbox'>
+              <label class='option' for='checkexample'>checkbox field that is checked by default</label>
             </div>
             <div class='form-item'>
               <label class='form-label'>Select field</label>
@@ -99,7 +99,7 @@
             </div>
             <div class='form-item'>
               <label>Textarea</label>
-              <textarea>Default textarea</textarea>
+              <textarea rows="3" placeholder="Write your comment here..."> </textarea>
             </div>
           </div>
           <div class='form-actions form-wrapper'>

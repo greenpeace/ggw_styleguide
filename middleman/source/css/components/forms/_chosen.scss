@@ -53,6 +53,7 @@ $chosen-sprite-retina: image-url('chosen-sprite@2x.png') !default;
 
     &:hover {
       border: 1px solid $grey-d;
+      text-decoration: none;
     }
 
   }
@@ -229,6 +230,8 @@ $chosen-sprite-retina: image-url('chosen-sprite@2x.png') !default;
         color: $base;
       }
     }
+
+
     &.search-choice {
       position: relative;
       margin: 3px 5px;

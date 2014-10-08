@@ -15,8 +15,8 @@ function runAgain() {
   });
 
   // Selector styling wrapper
-  $('.form-item select').wrap('<div class="selector"></div>');
-  $(".chosen-select").chosen();
+  $('.form-item .form-select').wrap('<div class="selector"></div>');
+  $(".no-touch .chosen-select").chosen();
 
   // attach datepicker plugin to date iput fields
   if (!Modernizr.inputtypes.date) {
@@ -88,7 +88,17 @@ $( window ).load(function() {
 
   // Selector styling wrapper
   $('.form-item .form-select').wrap('<div class="selector"></div>');
-  $(".chosen-select").chosen({width: "95%"});
+
+  // Apply chosen to select element.
+  $(".no-touch .chosen-select").chosen({width: "100%"});
+
+  // Pass focused state to visible parent element.
+  $('.form-item .form-select').focus(function(){
+    $(this).parent('.selector').addClass('focused');
+  });
+  $('.form-item .form-select').blur(function(){
+    $(this).parent('.selector').removeClass('focused');
+  });
 
   // attach datepicker plugin to date iput fields
   if (!Modernizr.inputtypes.date) {

@@ -1,0 +1,26 @@
+.block.hidden-mobile
+  %i.block-icon.icon-bg-default.icon-adjust
+  %h2.block-title Filter
+  .content
+    %form
+      - if current_page.data.search == "all"
+
+        .views-exposed-widget
+          %label.form-label Date created
+          .views-widget
+            .form-item.form-type-select
+              %select.form-select#datecreated
+                %option{:value => "before"} Before
+                %option{:value => "after"} After
+                %option{:value => "between"} Between
+
+          .views-widget
+            .form-item.form-type-textfield
+              %input.form-text#before{:type => "text"}
+            .form-item.form-type-textfield
+              %input.form-text#after{:type => "text"}
+
+
+      .views-exposed-widget.views-submit-button
+        %input.button.btn-primary{:type => "submit", :value => "Filter"}
+        %input.button{:type => "reset", :value => "Clear"}

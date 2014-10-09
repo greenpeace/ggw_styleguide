@@ -38,6 +38,7 @@
 .icon-cancel {    @extend %icon-cancel;}
 .icon-attention { @extend %icon-attention;}
 .icon-calendar {  @extend %icon-calendar;}
+.icon-adjust {  @extend %icon-layout;}
 
 .icon-event {     @extend %icon-calendar; }
 .icon-news {      @extend %icon-book-open; }

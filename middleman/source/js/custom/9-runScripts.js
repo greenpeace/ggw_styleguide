@@ -63,7 +63,8 @@ $( window ).load(function() {
     NiceCommentForm(),
     offCanvasNav(),
     showMap(),
-    mobileNav()
+    mobileNav(),
+    conditionalForm()
   };
 
   var resizeTimer;

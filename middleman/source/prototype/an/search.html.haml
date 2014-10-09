@@ -1,0 +1,38 @@
+---
+title: Search
+body_class: not-front not-logged-in page-search l-has-sidebar
+user_role: an
+search: all
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column#content
+
+  .main-content
+
+    %i.block-icon.icon-bg-default.icon-search
+    %h1.block-title#page-title
+      = current_page.data.title
+
+    .content
+
+      // search box above results
+      %form
+        .form-wrapper.row
+          .form-item.form-type-textfield.form-item-search
+            %label{:for => "edit-search"} Search
+            .form-description Enter your search query below.
+            %input.form-text{:type => "text", :placeholder => "enter your keywords here", :size => "40"}
+        .form-actions.form-wrapper.row
+          %input.button.btn-primary{:type => "submit", :value => "Search" }
+
+      .view-search-results
+        .view-content
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
+
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/an/search_filter"
+

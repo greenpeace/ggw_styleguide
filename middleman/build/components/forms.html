@@ -16,7 +16,7 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0' name='viewport'>
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <title>Forms — GGW Style Guide</title>
-    <link href="../css/all-042cb56a.css" rel="stylesheet" type="text/css" />
+    <link href="../css/all-b182a52a.css" rel="stylesheet" type="text/css" />
     <script src="../js/before-d9f129f6.js" type="text/javascript"></script>
   </head>
   <body class='page-forms style-guide'>
@@ -260,6 +260,8 @@
             <h2 class='block-title'>Date input</h2>
             <div class='content'>
               <p>The date type is used for input fields that should contain a date. Currently only Chrome, Safari and Opera support this input type. For browsers that do not support the date input field, it will behave just like a text input. With Modernizr we detect the support for this feature and load the <a href="https://github.com/amsul/pickadate.js">Date picker</a> script.</p>
+              
+              <p>An icon is placed inside the field to notify users they can select something.</p>
             </div>
             <div class='demo'>
               <div class='form-item'>
@@ -424,6 +426,67 @@
               </div>
             </div>
           </section>
+          <section class='block'>
+            <i class='block-icon icon-info icon-bg-default'></i>
+            <h2 class='block-title'>Errors</h2>
+            <div class='content'>
+              <p>An example of each form element when a user has not filled in the form with valid data.
+              The form element will get a <code>.error</code> by default to indicate in which field the user has made a mistake.</p>
+              <div class='demo'>
+                <div class='form-wrapper'>
+                  <div class='form-item'>
+                    <label class='form-label' for='edit-name'>
+                      Text input
+                      <span class='form-required' title='This field is required.'>*</span>
+                    </label>
+                    <div class='form-description'>This is a description.</div>
+                    <input class='form-text error' placeholder='type your input here' type='text'>
+                  </div>
+                  <div class='form-item'>
+                    <label class='form-label' for='edit-password'>
+                      Password
+                      <span class='form-required' title='This field is required.'>*</span>
+                    </label>
+                    <input class='form-text error' placeholder='type your input here' type='password'>
+                  </div>
+                  <div class='form-item'>
+                    <label class='form-label'>Radios</label>
+                    <div class='form-radios'>
+                      <div class='form-type-radio'>
+                        <input checked='checked' class='form-radio error' id='ten' name='radio' type='radio' value='one'>
+                        <label class='option' for='ten'>Option 1</label>
+                      </div>
+                      <div class='form-type-radio'>
+                        <input class='form-radio error' id='eleven' name='radio' type='radio' value='two'>
+                        <label class='option' for='eleven'>Option 2</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='form-item form-type-checkbox'>
+                    <input checked='checked' class='form-checkbox error' id='checkerror' type='checkbox'>
+                    <label class='option' for='checkerror'>checkbox field that is checked by default</label>
+                  </div>
+                  <div class='form-item'>
+                    <label class='form-label'>Select field</label>
+                    <select class='form-select error'>
+                      <option value=''>Please select</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class='form-item'>
+                    <label>Textarea</label>
+                    <textarea class='error' placeholder='Write your comment here...'></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class='code'>
+                <pre><code class="highlight html">  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'form-wrapper'</span><span class="nt">&gt;</span>&#x000A;    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'form-item'</span><span class="nt">&gt;</span>&#x000A;      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">'form-label'</span> <span class="na">for=</span><span class="s">'edit-name'</span><span class="nt">&gt;</span>&#x000A;        Text input&#x000A;        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">'form-required'</span> <span class="na">title=</span><span class="s">'This field is required.'</span><span class="nt">&gt;</span>*<span class="nt">&lt;/span&gt;</span>&#x000A;      <span class="nt">&lt;/label&gt;</span>&#x000A;      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'form-description'</span><span class="nt">&gt;</span>This is a description.<span class="nt">&lt;/div&gt;</span>&#x000A;      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">'form-text error'</span> <span class="na">type=</span><span class="s">'text'</span> <span class="na">placeholder=</span><span class="s">'type your input here'</span> <span class="nt">/&gt;</span>&#x000A;    <span class="nt">&lt;/div&gt;</span>&#x000A;    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'form-item'</span><span class="nt">&gt;</span>&#x000A;      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">'form-label'</span> <span class="na">for=</span><span class="s">'edit-password'</span><span class="nt">&gt;</span>&#x000A;        Password&#x000A;        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">'form-required'</span> <span class="na">title=</span><span class="s">'This field is required.'</span><span class="nt">&gt;</span>*<span class="nt">&lt;/span&gt;</span>&#x000A;      <span class="nt">&lt;/label&gt;</span>&#x000A;      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">'form-text error'</span> <span class="na">type=</span><span class="s">'password'</span> <span class="na">placeholder=</span><span class="s">'type your input here'</span> <span class="nt">/&gt;</span>&#x000A;    <span class="nt">&lt;/div&gt;</span>&#x000A;    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'form-item'</span><span class="nt">&gt;</span>&#x000A;      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">'form-label'</span><span class="nt">&gt;</span>Radios<span class="nt">&lt;/label&gt;</span>&#x000A;      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'form-radios'</span><span class="nt">&gt;</span>&#x000A;        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'form-type-radio'</span><span class="nt">&gt;</span>&#x000A;          <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">'checked'</span> <span class="na">class=</span><span class="s">'form-radio error'</span> <span class="na">id=</span><span class="s">'one'</span> <span class="na">name=</span><span class="s">'radio'</span> <span class="na">type=</span><span class="s">'radio'</span> <span class="na">value=</span><span class="s">'one'</span><span class="nt">&gt;</span>&#x000A;          <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">'option'</span> <span class="na">for=</span><span class="s">'one'</span><span class="nt">&gt;</span>Option 1<span class="nt">&lt;/label&gt;</span>&#x000A;        <span class="nt">&lt;/div&gt;</span>&#x000A;        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'form-type-radio'</span><span class="nt">&gt;</span>&#x000A;          <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">'form-radio error'</span> <span class="na">id=</span><span class="s">'two'</span> <span class="na">name=</span><span class="s">'radio'</span> <span class="na">type=</span><span class="s">'radio'</span> <span class="na">value=</span><span class="s">'two'</span><span class="nt">&gt;</span>&#x000A;          <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">'option'</span> <span class="na">for=</span><span class="s">'two'</span><span class="nt">&gt;</span>Option 2<span class="nt">&lt;/label&gt;</span>&#x000A;        <span class="nt">&lt;/div&gt;</span>&#x000A;      <span class="nt">&lt;/div&gt;</span>&#x000A;    <span class="nt">&lt;/div&gt;</span>&#x000A;    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'form-item form-type-checkbox'</span><span class="nt">&gt;</span>&#x000A;      <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">'checked'</span> <span class="na">class=</span><span class="s">'form-checkbox error'</span> <span class="na">id=</span><span class="s">'checkexample'</span> <span class="na">type=</span><span class="s">'checkbox'</span><span class="nt">&gt;</span>&#x000A;      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">'option'</span> <span class="na">for=</span><span class="s">'checkexample'</span><span class="nt">&gt;</span>checkbox field that is checked by default<span class="nt">&lt;/label&gt;</span>&#x000A;    <span class="nt">&lt;/div&gt;</span>&#x000A;    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'form-item'</span><span class="nt">&gt;</span>&#x000A;      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">'form-label'</span><span class="nt">&gt;</span>Select field<span class="nt">&lt;/label&gt;</span>&#x000A;      <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">'form-select error'</span><span class="nt">&gt;</span>&#x000A;        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">''</span><span class="nt">&gt;</span>Please select<span class="nt">&lt;/option&gt;</span>&#x000A;        <span class="nt">&lt;option&gt;</span>2<span class="nt">&lt;/option&gt;</span>&#x000A;        <span class="nt">&lt;option&gt;</span>3<span class="nt">&lt;/option&gt;</span>&#x000A;        <span class="nt">&lt;option&gt;</span>4<span class="nt">&lt;/option&gt;</span>&#x000A;        <span class="nt">&lt;option&gt;</span>5<span class="nt">&lt;/option&gt;</span>&#x000A;      <span class="nt">&lt;/select&gt;</span>&#x000A;    <span class="nt">&lt;/div&gt;</span>&#x000A;    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'form-item'</span><span class="nt">&gt;</span>&#x000A;      <span class="nt">&lt;label&gt;</span>Textarea<span class="nt">&lt;/label&gt;</span>&#x000A;      <span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">"error"</span> <span class="na">rows=</span><span class="s">"3"</span> <span class="na">placeholder=</span><span class="s">"Write your comment here..."</span><span class="nt">&gt;</span> <span class="nt">&lt;/textarea&gt;</span>&#x000A;    <span class="nt">&lt;/div&gt;</span>&#x000A;  <span class="nt">&lt;/div&gt;</span>&#x000A;</code></pre>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
       <footer class='l-footer footer'>
@@ -459,6 +522,6 @@
         </div>
       </footer>
     </div>
-    <script src="../js/theme-29f18ecb.js" type="text/javascript"></script>
+    <script src="../js/theme-d7a85e1a.js" type="text/javascript"></script>
   </body>
 </html>

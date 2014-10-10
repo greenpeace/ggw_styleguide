@@ -29,6 +29,11 @@
   }
 }
 
+.form-item-search label,
+.form-item-search .form-description {
+  @extend %element-hidden;
+}
+
 @include breakpoint($desk) {
   .search-form {
     position: relative;

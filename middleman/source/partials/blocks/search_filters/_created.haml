@@ -1,0 +1,15 @@
+.views-exposed-widget
+  %label.form-label Date created
+  .views-widget
+    .form-item.form-type-select
+      %select.form-select#datecreated
+        %option{:value => "before"} Before
+        %option{:value => "after"} After
+        %option{:value => "between"} Between
+
+.views-widget.inline-fields
+  .form-item.form-type-textfield#createdbefore
+    %input.form-text{:type => "date", :placeholder => "select date"}
+  %span.separator#createdbetween and
+  .form-item.form-type-textfield#createdafter
+    %input.form-text{:type => "date", :placeholder => "select date"}

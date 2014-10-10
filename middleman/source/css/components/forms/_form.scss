@@ -1,6 +1,6 @@
 .form-wrapper {
   @extend %cf;
-  margin: $def-mar 0;
+  margin-bottom: $def-mar;
 
   .button {
     margin-top: 5px;
@@ -28,6 +28,7 @@
 
   .sidebar & {
     margin-bottom: $def-mar-half;
+    width: 100%;
   }
 }
 
@@ -74,6 +75,41 @@ label {
 .form-item .icon-attention {
   color: darken($primary, 10%)
 }
+
+
+//
+// Inline fields (multiple fields on the same line)
+//
+
+.inline-fields {
+  display: flex;
+  margin-bottom: $def-mar-half;
+
+  .form-item {
+    margin: 0;
+
+    + .form-item {
+      margin-left: .5em;
+    }
+
+  }
+
+  .form-type-textfield + .form-type-select {
+    width: auto;
+  }
+
+  .separator {
+    margin: 0 .5em;
+    display: inline-block;
+    flex: 1 0 auto; // must not not shrink
+    line-height: 1.9em; // default line-height plus padding inside .form-text
+  }
+
+}
+
+//
+// dropdown filters
+//
 
 .dropdown-filter {
   width: 100%;

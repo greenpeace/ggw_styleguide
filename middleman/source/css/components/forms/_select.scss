@@ -17,9 +17,11 @@ select:-moz-focusring {
   cursor: pointer;
   position: relative;
   border-radius: 3px;
+  line-height: normal;
   background-clip: padding-box;
   background-color: $white;
   display:inline-block;
+  height: 29px;
   border: 1px solid $grey-l;
 
   &:hover {

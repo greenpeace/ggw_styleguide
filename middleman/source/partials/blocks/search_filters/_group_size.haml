@@ -1,0 +1,15 @@
+.views-exposed-widget
+  %label.form-label Size of group
+  .views-widget
+    .form-item.form-type-select
+      %select.form-select#groupsize
+        %option{:value => "larger"} Larger than
+        %option{:value => "smaller"} Smaller than
+        %option{:value => "between"} Between
+
+  .views-widget.inline-fields
+    .form-item.form-type-textfield#grouplarger
+      %input.form-text{:type => "text"}
+    %span.separator#groupbetween and
+    .form-item.form-type-textfield#groupsmaller
+      %input.form-text{:type => "text"}

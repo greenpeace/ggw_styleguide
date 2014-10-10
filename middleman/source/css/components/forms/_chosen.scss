@@ -210,10 +210,11 @@ $chosen-sprite-retina: image-url('chosen-sprite@2x.png') !default;
     overflow: hidden;
     border-radius: 3px;
     background-clip: padding-box;
-    background-color: $white;
+    background: url("../images/throbber-inactive.png") 99% 7px no-repeat $white;
     border: 1px solid $grey-l;
     cursor: text;
   }
+
   .chosen-choices li {
     float: left;
     list-style: none;
@@ -230,7 +231,6 @@ $chosen-sprite-retina: image-url('chosen-sprite@2x.png') !default;
         color: $base;
       }
     }
-
 
     &.search-choice {
       position: relative;

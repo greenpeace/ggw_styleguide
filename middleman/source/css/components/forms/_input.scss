@@ -30,12 +30,14 @@ textarea {
 
 }
 
-
 // 1) fix for ios7 heights on date inputs
 input[type="date"] {
   height: 30px; // 1
+  padding-right: 2em;
 }
 
 input[type="date"] + i {
   margin-left: -1.5em;
+  top: .4em;
+  line-height: normal;
 }

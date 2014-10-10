@@ -64,7 +64,7 @@ $( window ).load(function() {
     offCanvasNav(),
     showMap(),
     mobileNav(),
-    conditionalForm()
+    dependsOn()
   };
 
   var resizeTimer;

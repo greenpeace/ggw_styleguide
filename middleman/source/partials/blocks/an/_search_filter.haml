@@ -3,7 +3,70 @@
   %h2.block-title Filter
   .content
     %form
-      - if current_page.data.search == "all"
+
+      - if role_has_section(current_page.data.searchpage, current_page.data.events)
+        .views-exposed-widget
+          %label.form-label Type
+          .views-widget
+            .form-item.form-type-select
+              %select.chosen-select{"data-placeholder" => "Add type", :multiple => "multiple"}
+                %option{:value => ""}
+                %option{:value => "news"} News
+                %option{:value => "blogs"} Blogs
+                %option{:value => "documents"} Documents
+                %option{:value => "ideas"} Ideas
+                %option{:value => "photos"} Photos
+                %option{:value => "videos"} Videos
+
+      - if role_has_section(current_page.data.searchpage, current_page.data.eventdate)
+
+        .views-exposed-widget
+          %label.form-label Date of event
+          .views-widget
+            .form-item.form-type-select
+              %select.form-select#dateevent
+                %option{:value => "before"} Before
+                %option{:value => "after"} After
+                %option{:value => "between"} Between
+
+          .views-widget.inline-fields
+            .form-item.form-type-textfield#eventbefore
+              %input.form-text{:type => "date", :placeholder => "select date"}
+            %span.separator#eventbetween and
+            .form-item.form-type-textfield#eventafter
+              %input.form-text{:type => "date", :placeholder => "select date"}
+
+      - if current_page.data.search_location == "y"
+
+        .views-exposed-widget
+          %label.form-label Location range
+          .views-widget.inline-fields
+            .form-item.form-type-textfield
+              %input.form-text{:type => "text", :placeholder => "city..."}
+            .form-item.form-type-select
+              %select.form-select
+                %option{:value => "5km"} 5km
+                %option{:value => "10km"} 10km
+                %option{:value => "25km"} 25km
+                %option{:value => "50km"} 50km
+                %option{:value => "100km"} 100km
+
+      - if current_page.data.search_tags == "y"
+
+        .views-exposed-widget
+          %label.form-label Tags
+          .views-widget
+            .form-item
+              %input.form-text.form-autocomplete{:type => "text", :value => ""}
+              #autocomplete
+                %ul
+                  %li Arctic Ocean
+                  %li Atlantic Ocean
+                  %li Indian Ocean
+                  %li Pacific Ocean
+                  %li Southern Ocean
+
+      - if current_page.data.search_created == "y"
 
         .views-exposed-widget
           %label.form-label Date created
@@ -14,11 +77,12 @@
                 %option{:value => "after"} After
                 %option{:value => "between"} Between
 
-          .views-widget
-            .form-item.form-type-textfield
-              %input.form-text#before{:type => "text"}
-            .form-item.form-type-textfield
-              %input.form-text#after{:type => "text"}
+          .views-widget.inline-fields
+            .form-item.form-type-textfield#createdbefore
+              %input.form-text{:type => "date", :placeholder => "select date"}
+            %span.separator#createdbetween and
+            .form-item.form-type-textfield#createdafter
+              %input.form-text{:type => "date", :placeholder => "select date"}
 
 
       .views-exposed-widget.views-submit-button

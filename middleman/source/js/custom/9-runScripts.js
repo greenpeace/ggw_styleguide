@@ -17,23 +17,6 @@ function runAgain() {
   // Selector styling wrapper
   $('.form-item .form-select').wrap('<div class="selector"></div>');
   $(".no-touch .chosen-select").chosen();
-
-  // attach datepicker plugin to date iput fields
-  if (!Modernizr.inputtypes.date) {
-    $('input[type="date"]').pickadate({
-      format: 'd mmm, yy',
-      formatSubmit: 'yyyy-mm-dd'
-    });
-  }
-
-  $("#tagsinput").keypress(function(){
-    $('#tagsautocomplete').toggle();
-  });
-
-  $("#authorinput").keypress(function(){
-    $('#authorautocomplete').toggle();
-  });
-
 }
 
 // will only run once the page DOM is ready for JavaScript code to execute.
@@ -114,6 +97,8 @@ $( window ).load(function() {
       format: 'd mmm, yy',
       formatSubmit: 'yyyy-mm-dd'
     });
+    $('input[type="date"]').addClass('icon-date');
+    $('input[type="date"]').after('<i class="icon-calendar"></i>');
   }
 
   $("#tagsinput").blur(function() {
@@ -138,7 +123,6 @@ $( window ).load(function() {
   });
 
   //enhance with icons
-  $('input[type="date"]').after('<i class="icon-calendar"></i>');
   $('.form-text.error, textarea.error, .form-checkbox.error + label').after('<i class="icon-attention"></i>');
   $('.form-radio.error').parents('.form-radios').after('<i class="icon-attention"></i>');
   $('.form-select.error').parent('.selector').after('<i class="icon-attention"></i>');

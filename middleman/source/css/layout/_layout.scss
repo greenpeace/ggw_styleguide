@@ -1,3 +1,29 @@
+// needed to set the order of MQ in the css.
+@include breakpoint($smalltab) {
+  .layout-base {
+    color: $base;
+  }
+}
+
+@include breakpoint($tab) {
+  .layout-base {
+    color: $base;
+  }
+}
+
+@include breakpoint($desk) {
+  .layout-base {
+    color: $base-desk;
+  }
+}
+
+@include breakpoint($deskplus) {
+  .layout-base {
+    color: $base-desk;
+  }
+}
+
+
 .layout-base {
   overflow: hidden;
   background: $white;

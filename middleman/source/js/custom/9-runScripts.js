@@ -20,11 +20,18 @@ function runAgain() {
 
   // attach datepicker plugin to date iput fields
   if (!Modernizr.inputtypes.date) {
-    $('input[type="date"]').pickadate();
+    $('input[type="date"]').pickadate({
+      format: 'd mmm, yy',
+      formatSubmit: 'yyyy-mm-dd'
+    });
   }
 
-  $(".form-autocomplete").keypress(function(){
-    $('#autocomplete').toggle();
+  $("#tagsinput").keypress(function(){
+    $('#tagsautocomplete').toggle();
+  });
+
+  $("#authorinput").keypress(function(){
+    $('#authorautocomplete').toggle();
   });
 
 }
@@ -103,16 +110,30 @@ $( window ).load(function() {
 
   // attach datepicker plugin to date iput fields
   if (!Modernizr.inputtypes.date) {
-    $('input[type="date"]').pickadate();
+    $('input[type="date"]').pickadate({
+      format: 'd mmm, yy',
+      formatSubmit: 'yyyy-mm-dd'
+    });
   }
 
-  $(".form-autocomplete").blur(function() {
-    $('#autocomplete').fadeOut();
+  $("#tagsinput").blur(function() {
+    $('#tagsautocomplete').fadeOut();
     $(this).removeClass("throbbing");
   });
 
-  $(".form-autocomplete").keypress(function() {
-    $('#autocomplete').fadeIn();
+  $("#authorinput").blur(function() {
+    $('#authorautocomplete').fadeOut();
+    $(this).removeClass("throbbing");
+  });
+
+
+  $("#tagsinput").keypress(function(){
+    $('#tagsautocomplete').fadeIn();
+    $(this).addClass("throbbing");
+  });
+
+  $("#authorinput").keypress(function(){
+    $('#authorautocomplete').fadeIn();
     $(this).addClass("throbbing");
   });
 

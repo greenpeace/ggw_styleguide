@@ -2,8 +2,8 @@
   %label.form-label Author
   .views-widget
     .form-item
-      %input.form-text.form-autocomplete{:type => "text", :value => ""}
-      #autocomplete
+      %input.form-text.form-autocomplete#authorinput{:type => "text", :value => ""}
+      .autocomplete#authorautocomplete
         %ul
           %li
             = lorem.name

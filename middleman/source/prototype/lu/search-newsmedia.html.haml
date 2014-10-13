@@ -1,5 +1,5 @@
 ---
-title: Search
+title: Search news & media
 body_class: not-front logged-in page-search l-has-sidebar
 user_role: lu
 ---
@@ -33,8 +33,10 @@ user_role: lu
     %h2.block-title Filter
     .content
       %form
+        = partial :"blocks/search_filters/type"
         = partial :"blocks/search_filters/groups"
         = partial :"blocks/search_filters/created"
+        = partial :"blocks/search_filters/tags"
         = partial :"blocks/search_filters/author"
         = partial :"blocks/search_filters/form-action"
 

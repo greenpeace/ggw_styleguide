@@ -1,7 +1,7 @@
 ---
-title: Search News & Media
-body_class: not-front not-logged-in page-search l-has-sidebar
-user_role: an
+title: Search news & media
+body_class: not-front logged-in page-search l-has-sidebar
+user_role: lu
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -25,16 +25,6 @@ user_role: an
         .view-content
           = partial :"teasers/news-no-image"
           = partial :"teasers/news-with-image"
-          = partial :"teasers/idea-no-image"
-          = partial :"teasers/idea-with-image"
-          = partial :"teasers/photo"
-          = partial :"teasers/video"
-          = partial :"teasers/document"
-          = partial :"teasers/blog-with-image"
-          = partial :"teasers/blog-no-image"
-
-        .view-pager
-          %a.button.btn-block{:href => "#"} Show some more
 
 
 %aside.l-sidebar.sidebar
@@ -43,8 +33,9 @@ user_role: an
     %h2.block-title Filter
     .content
       %form
-        = partial :"blocks/search_filters/type"
-        = partial :"blocks/search_filters/tags"
         = partial :"blocks/search_filters/created"
+        = partial :"blocks/search_filters/type"
+        = partial :"blocks/search_filters/groups"
+        = partial :"blocks/search_filters/author"
         = partial :"blocks/search_filters/form-action"
 

@@ -97,7 +97,7 @@ $( window ).load(function() {
       format: 'd mmm, yy',
       formatSubmit: 'yyyy-mm-dd'
     });
-    $('input[type="date"]').addClass('icon-date');
+    $('input[type="date"]').addClass('date-field');
     $('input[type="date"]').after('<i class="icon-calendar"></i>');
   }
 

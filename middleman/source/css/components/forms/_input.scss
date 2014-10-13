@@ -31,12 +31,12 @@ textarea {
 }
 
 // 1) fix for ios7 heights on date inputs
-.icon-date {
+.date-field {
   height: 30px; // 1
   padding-right: 2em;
 }
 
-.icon-date + i {
+.date-field + i {
   margin-left: -1.5em;
   top: .4em;
   line-height: normal;

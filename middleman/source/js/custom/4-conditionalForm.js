@@ -87,7 +87,6 @@ function dependsOn() {
     $('#group-skills').dependsOn({
       '#group-type': {
         contains: ['skills-based'],
-        values: '_none',
       }
     }, {
       hide: false,

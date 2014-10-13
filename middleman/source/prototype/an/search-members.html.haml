@@ -1,5 +1,5 @@
 ---
-title: Search
+title: Search Members
 body_class: not-front not-logged-in page-search l-has-sidebar
 user_role: an
 ---
@@ -19,20 +19,15 @@ user_role: an
       // search box above results
       = partial :"blocks/search-header-search-box"
 
+      // search types nav
       = partial :"nav/search-tabs"
 
       .view-search-results
-        .view-content
-          = partial :"teasers/news-no-image"
-          = partial :"teasers/news-with-image"
-
-
-%aside.l-sidebar.sidebar
-  .block.hidden-mobile
-    %i.block-icon.icon-bg-default.icon-adjust
-    %h2.block-title Filter
-    .content
-      %form
-        = partial :"blocks/search_filters/created"
-        = partial :"blocks/search_filters/form-action"
+        .view-empty
+          %p
+            Please log in to search for members.
+            %a Click here to log in.
+          %p
+            Not a member yet?
+            %a Click here to sign up
 

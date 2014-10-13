@@ -1,0 +1,52 @@
+---
+title: My friends
+body_class: not-front logged-in page-profile l-has-sidebar
+user_role: lu
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-user.icon-users
+    %h1#page-title.block-title
+      = current_page.data.title
+
+    .content
+
+      .view-friend-my-friends
+
+        .view-content
+
+          %ul.member-grid
+
+            %li
+              .field-type-image
+                %a{:href => "#", :title => "View profile of Jesper Klomp"}
+                  %img{:src => "http://lorempixel.com/200/200/people/1", :alt => "Avatar of Jesper Klomp"}
+
+              .field-type-wrapper
+                .field.field-name
+                  %strong Jesper Klomp
+
+                .field.field-name-field-location
+                  Amersfoort, Netherlands
+
+                .field.field-friend-status
+                  .btn-group
+                    %a.button.btn-s{"data-dropdown" => "#dropdown-friends-1"}
+                      Wants to be friends
+                      %span.caret
+                    .dropdown.dropdown-scroll#dropdown-friends-1
+                      %ul.dropdown-menu{:role => "menu"}
+                        %li
+                          %a{:href => "#"}
+                            %i.icon-check
+                            Approve
+                        %li
+                          %a{:href => "#"}
+                            %i.icon-cancel
+                            Decline
+
+
+

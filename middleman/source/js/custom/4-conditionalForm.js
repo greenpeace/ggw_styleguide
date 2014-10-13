@@ -99,4 +99,22 @@ function dependsOn() {
     });
   }
 
+  // Groups is depending on my groups checkbox is false
+  if ($('#groups').length) {
+
+    $('#groups').dependsOn({
+      '#mygroups': {
+        checked: false,
+      }
+    }, {
+      hide: false,
+      onDisable: function() {
+        $('#groups').trigger('chosen:updated');
+      },
+      onEnable: function() {
+        $('#groups').trigger('chosen:updated');
+      },
+    });
+  }
+
 };

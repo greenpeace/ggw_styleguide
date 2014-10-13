@@ -1,0 +1,40 @@
+---
+title: Search
+body_class: not-front logged-in page-search l-has-sidebar
+user_role: lu
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column#content
+
+  .main-content
+
+    %i.block-icon.icon-bg-default.icon-search
+    %h1.block-title#page-title
+      = current_page.data.title
+
+    .content
+
+      // search box above results
+      = partial :"blocks/search-header-search-box"
+
+      = partial :"nav/search-tabs"
+
+      .view-search-results
+        .view-content
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
+
+
+%aside.l-sidebar.sidebar
+  .block.hidden-mobile
+    %i.block-icon.icon-bg-default.icon-adjust
+    %h2.block-title Filter
+    .content
+      %form
+        = partial :"blocks/search_filters/created"
+        = partial :"blocks/search_filters/groups"
+        = partial :"blocks/search_filters/author"
+        = partial :"blocks/search_filters/form-action"
+

@@ -52,6 +52,7 @@ code {
 }
 
 code.html,
+code.haml,
 code.css {
   &:after {
     position: absolute;
@@ -76,6 +77,10 @@ code.css:after {
 code.html:after {
   content: "HTML";
   color: $group;
+}
+code.haml:after {
+  content: "HAML";
+  color: $green3;
 }
 
 .code pre {

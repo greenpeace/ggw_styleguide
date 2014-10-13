@@ -1,0 +1,61 @@
+---
+title: Device & browser support
+body_class: styleguide-support
+layout: styleguide
+design_status: Work in progress
+---
+
+%aside.sidebar-left
+  = partial :"nav/documentation"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Device and browser support
+    %article.view-mode-full.content
+      :markdown
+        Greenwire is built to work best in the latest desktop and mobile browsers, meaning older browsers might display differently styled, though fully functional, renderings of certain components.
+
+        ## Supported browsers
+        Specifically, we support the latest versions of the following browsers and platforms. On Windows, we support Internet Explorer 9-11. More specific support information is provided below.
+
+      %ul
+        %li
+          %strong Chrome (latest)
+          %i.icon-check.icon-green
+        %li
+          %strong Firefox (latest)
+          %i.icon-check.icon-green
+        %li
+          %strong Safari (latest)
+          %i.icon-check.icon-green
+        %li
+          %strong Opera (latest)
+          %i.icon-check.icon-green
+        %li
+          %strong Internet Explorer 11
+          %i.icon-check.icon-green
+        %li
+          %strong Internet Explorer 10
+          %i.icon-check.icon-green
+        %li
+          %strong Internet Explorer 9
+          %i.icon-check.icon-green
+        %li
+          %strong Internet Explorer 8
+          %i.icon-check.icon-green
+        %li
+          %strong Internet Explorer 7 and older
+          %i.icon-cancel.icon-red
+
+      :markdown
+        ## Internet explorer 8
+        IE8 does not support media queries. Therefore we use a different SCSS to compile a CSS file with no media queries. Also we use a variable in our SCSS files called `$oldie` which only passes for the stylesheet the is served to IE8 and older browsers. This prevents us from serving old selectors to modern browsers, which may slow them down. With this technique there is no need for a JS-based solution like Respond.js.
+
+        ## Prefixing
+        You will notice there is are nearly no prefixes in the SCSS files. This is because we use a ruby gem called [autoprefixer](https://github.com/postcss/autoprefixer). This script will use the [Can I Use](http://caniuse.com/) database to look for the most recent browser market shares to determine what needs prefixing and what prefixes can be dropped. This is very future-friendly, because we do not have to remove old prefixes or add in new ones with the releases of browser versions.
+
+
+
+
+

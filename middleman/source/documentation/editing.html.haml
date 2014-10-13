@@ -1,0 +1,87 @@
+---
+title: Editing the style guide
+body_class: styleguide-editing
+layout: styleguide
+design_status: Work in progress
+---
+
+%aside.sidebar-left
+  = partial :"nav/documentation"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title
+      = current_page.data.title
+    %article.view-mode-full.content
+      :markdown
+        Please make sure you have read the [getting started instructions](getting-started.html) and installed Middleman to be able to edit teh style guide.
+
+        __Start the middleman server__
+        In your terminal navigate to the project folder and run
+      :code
+        # lang: bash
+          $ middleman
+      :markdown
+        You can now edit the files in the source folder and see the changes on your local environment.
+
+      %h2 An introduction to HAML
+      %p Our main template language is HAML. You can see haml as a HTML preprocessor, just like SCSS.
+
+      %h3 What is HAML?
+      %ul
+        %li
+          A more concise syntax for coding HTML in your Rails app
+        %li
+          Uses indentation for nesting markup
+          %ul
+            %li
+              Reduces code (no closing tags)
+            %li
+              Fixes the messy markup problem that often clutters views
+        %li
+          Uses a CSS-like syntax that is easier to read and compare to your style rules
+        %li
+          Makes coding your View layer faster
+          %ul
+            %li
+              Note: doesn’t affect render time or client-side performance, simply reduces codingefforts and makes the developer more efficient
+        %li
+          Easy to learn!
+
+      %h3 A comparison
+      %h4 HTML
+      .code
+        :code
+          # lang: html
+            <body>
+              <div id='wrapper'>
+                <div class='stuff'>
+                  <a href='#'>Top</a>
+                </div>
+              </div>
+            </body>
+      %p 7 lines, 78 characters
+
+      %h4 HAML
+      .code
+        :code
+          # lang: haml
+            %body
+              #wrapper
+                .stuff
+                  %a{:href => "#"} Top
+      %p 4 lines, 36 characters
+      %p
+        :markdown
+          __Read more:__ [An introduction to SASS and HAML](http://jonathandean.com/2011/10/an-introduction-to-sass-and-haml/)
+
+
+
+  .block
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Resources
+    %article.view-mode-full.content
+      :markdown
+        - [HTML to HAML converter](http://html2haml.heroku.com)
+        - [HAML official site](http://haml.info/) (including tutorial)

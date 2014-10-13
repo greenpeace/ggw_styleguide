@@ -11,58 +11,49 @@ design_status: Work in progress
 #content.l-main-column
   .main-content
     %i.block-icon.icon-bg-default.icon-info
-    %h1#page-title.block-title Style guide structure
-    %article.view-mode-full.content
-
-  .block
-    %i.block-icon.icon-bg-default.icon-info
     %h1#page-title.block-title Root folders
     %article.view-mode-full.content
       :markdown
         The project structure is based on Middleman. You can see the following folder in the root and this is what their function is:
 
         #### Build
-        This folder contains the static website/style guide that is deployed on <http://greenpeace.github.io/ggw_styleguide/>. You should not work in this folder.
+        This folder contains the static website/style guide that is deployed on <http://greenpeace.github.io/ggw_styleguide/>. You should __not__ work in this folder.
 
         #### Data
-        This folder contains all data stored in .yml files. This is convenient when we want to reuse template files and run them with different sets of data. Yaml files are similar to JSON files and allow us to separate content form markup.
+        This folder contains all data, stored in .yml files. This is convenient when we want to reuse template files and run them with different sets of data. Yaml files are similar to JSON files and allow us to separate content from markup.
 
         #### Helpers
-        In this folder we store special helper functions for Middleman
+        In this folder we store special helper functions for Middleman.
 
         #### Source
-        This folder contains all our template files, CSS, Javascript, images, fonts and navigation. We are working from within this folder. When running middleman this folder is actively being watched and it triggers livereload upon changes in this folder.
-
-  .block
-    %i.block-icon.icon-bg-default.icon-info
-    %h1#page-title.block-title Partials
-    %article.view-mode-full.content
-      :markdown
-        Partials are reusable snippets of code. They are a part of Middleman. With partials we can abstract snippets like menu's to be reused across layouts. Partials should be used when you keep repeating to create the same markup code in templates (mostly prototype).
+        This folder contains all our template files, CSS, Javascript, images, fonts and navigation. We are working from within this folder. When running middleman this folder is actively being watched and it triggers LiveReload upon changes.
 
   .block
     %i.block-icon.icon-bg-default.icon-info
     %h1#page-title.block-title CSS/SASS folders
     %article.view-mode-full.content
       :markdown
-        Within Middleman there is no active complilation from SCSS to CSS files. Middleman actively watches changes in this folder which is reflected in the browser by livereload. When making a build, the scss files are converted to css files. In the css folder we see there are several folder. This is the order they are included:
+        Within Middleman there is no active compilation from SCSS to CSS files. Middleman watches changes in this folder which is reflected in the browser by LiveReload. When making a build, the scss files are converted to css files. In the css folder we see there are several folders with files. This is the order they are included:
 
         #### 1 Vars (variables)
-        Variables are reusable values which take care of style consistency and easy changing repeated patterns. Variables only live in SCSS files and they do not contain CSS selectors
+        Variables are reusable values which take care of style consistency and easy changing patterns. Variables only live in SCSS files (not in CSS) and they do not contain CSS selectors
 
         #### 2 Abstractions
-        Abstractions are reusable pieces of CSS, often called mixins as well. With abstractions we can avoid repeating selectors throughout the CSS which have the some declarations. Just like variables this folder never contains any CSS selectors.
+        Abstractions are reusable pieces of CSS, often called Mixins as well. With abstractions we can avoid repeating selectors throughout the CSS which have the some declarations. Just like variables this folder never contains any CSS selectors.
 
-        #### 3 Components
-        Components are elements that are used across te site and are not limited to a specific block, section or page. So components must not be specified with parent wrappers.
-
-        #### 4 Modules
-        Modules are specific blocks, pages and section on the site. These styles are usually not shareable with other modules.
-
-        #### 5 Layout
+        #### 3 Layout
         Here we specify the responsive grid in which we positioning all components and modules.
 
-        #### 6 Styleguide
+        #### 4 Base
+        Base styles define the default look for HTML. These rules will generally be made up of element selectors for HTML elements such as headings, paragraphs and lists.
+
+        #### 5 Components
+        Components are elements that are used across the site and are not limited to a specific block, section or page. So components must not be specified with parent wrappers.
+
+        #### 6 Modules
+        Modules are specific blocks, pages and section on the site. These styles are usually not shareable with other modules and/or pages.
+
+        #### 7 Styleguide
         There are some styles needed for the styleguide only, which will not be used on Greenwire itself. We list these styles here, so we can easily extract them from the production build.
 
   .block
@@ -79,10 +70,10 @@ design_status: Work in progress
         Here we store scripts that are necessary at the beginning of the page. Therefore these scripts are loaded in the head of the page.
 
         #### Contrib
-        These are scripts from third parties that we do not change. It is possible to update these scripts.
+        These are scripts from third parties that we do not change ourselves. It is possible to update these scripts.
 
         #### Custom
-        These scripts we have created ourselves and it contains the execution of contrib scripts.
+        These scripts we have created ourselves and also contain the execution of contrib scripts.
 
         #### Oldie
         These scripts are only parsed in old versions of internet explorer, usually to polyfill HTML5 or CSS3.
@@ -92,34 +83,44 @@ design_status: Work in progress
     %h1#page-title.block-title Vendor
     %article.view-mode-full.content
       :markdown
-        This folder conatins libraries we use that consist of more then one file type. So foe example a combination of Javascript, CSS and images.
-
-  .block
-    %i.block-icon.icon-bg-default.icon-info
-    %h1#page-title.block-title Demo
-    %article.view-mode-full.content
-      :markdown
-        Here we store (mainly) images that are used for the prototype and are not needed for the site.
+        This folder contains libraries that we use which consist of more then one file type. So for example a combination of Javascript, CSS and images.
 
   .block
     %i.block-icon.icon-bg-default.icon-info
     %h1#page-title.block-title Images
     %article.view-mode-full.content
-      :markdown
-        Images that are used for the site, such as CSS background images, form elements and the logo.
+      %p Images that are used for the site, such as CSS background images, form elements and the logo.
 
   .block
     %i.block-icon.icon-bg-default.icon-info
     %h1#page-title.block-title Font
     %article.view-mode-full.content
     :markdown
-      In this folder we store the fonts and font-icons used for Greenwire
+      In this folder we store the fonts and font-icons.
 
   .block
     %i.block-icon.icon-bg-default.icon-info
     %h1#page-title.block-title Documentation - Design elements - UI components - Prototype
     %article.view-mode-full.content
       :markdown
-        In this folder we store all template files. These files are written in a combination of HAML and Markdown.
+        In this folder we store all template files. Middleman provides access to many templating languages to simplify your HTML development. The languages range from simply allowing you to use Ruby variables and loops in your pages, to providing a completely different format to write your pages in which compiles to HTML. We are mainly using a combination of HAML and Markdown. You can read more this in the [editing the style guide](editing.html) section.
+
+  .block
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Layouts
+    %article.view-mode-full.content
+      :markdown
+        Layouts allow the common HTML surrounding individual pages to be shared across all your templates. Developers coming from PHP will be used to the concept of "header" and "footer" includes which they reference at the top and bottom of every page. The Ruby world, and Middleman, take an inverse approach. The "layout" includes both the header and footer and then wraps the individual page content.
+
+        We have multiple layout files, for example to create seperate navigation for the style guide and the prototype.
+
+
+  .block
+    %i.block-icon.icon-bg-default.icon-info
+    %h1#page-title.block-title Partials
+    %article.view-mode-full.content
+      :markdown
+        Partials are a way of sharing content across pages to avoid duplication. They are a part of Middleman. Partials can be used in page templates and layouts. With partials we can abstract snippets like menu's to be reused across pages and even layouts. Partials should be used when you keep repeating the same markup code in templates (mostly prototype).
+
 
 

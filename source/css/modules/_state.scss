@@ -1,0 +1,10 @@
+
+// Specific width on dropdown filter updates box homepage
+
+@include breakpoint($smalltab) {
+
+  .page-home .dropdown-filter {
+    width: 50%;
+  }
+
+}

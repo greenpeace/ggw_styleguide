@@ -110,65 +110,7 @@ label {
 
 }
 
-//
-// dropdown filters
-//
 
-.dropdown-filter {
-  width: 100%;
-  right: 0;
-  top: 30px;
-
-  @include breakpoint($smalltab) {
-    width: 50%;
-  }
-
-  @include breakpoint($desk) {
-    right: 15px;
-    top: 30px;
-  }
-}
-
-.dropdown-filter.dropdown-tip:before {
-  left: auto;
-  right: 12px;
-}
-
-.dropdown-filter.dropdown-tip:after {
-  left: auto;
-  right: 13px;
-}
-
-.dropdown-panel .form-item {
-  margin: 0 0 .5em;;
-  flex: 1 50%;
-
-  @include breakpoint($desk) {
-    flex: 1 100%;
-    @include font-size(12px);
-  }
-
-}
-
-.dropdown-panel p {
-  margin: 0;
-  flex: 1 100%;
-
-  @include breakpoint($desk) {
-    @include font-size(12px);
-  }
-}
-
-.dropdown-panel .form-wrapper {
-  margin: 0 0 10px;
-  display: flex;
-  flex-flow: row wrap;
-  align-content: stretch;
-}
-
-.dropdown-panel .form-actions .button {
-  margin-right: .5em;
-}
 
 // browser specific
 

@@ -1,0 +1,18 @@
+filters_lu:
+  - Distance
+  - Skills
+  - Profession
+  - School
+  - Groups
+  - User roles
+filters_cm:
+  - Date of Birth
+  - Age
+  - Status
+  - Date created
+  - Last login
+  - Last activity
+  - Completed trainings
+  - Campaign skills
+  - Language
+  - Statistics category

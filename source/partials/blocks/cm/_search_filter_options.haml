@@ -1,0 +1,18 @@
+%a.button.btn-dropdown{"data-dropdown" => "#filter-options", :href => "#", :title => "Filter content"}
+  %i.icon-down-open
+#filter-options.dropdown-filter.dropdown.dropdown-tip.dropdown-scroll
+  .dropdown-panel
+    %form
+      .form-wrapper
+        - for item in data.search.filters_lu
+          .form-item.form-type-checkbox
+            %input.form-checkbox{:id => "#{item}", :checked => "checked", :type => "checkbox", :value => "#{item}"}/
+            %label.option{:for => "#{item}"} #{item}
+      %hr
+        - for item in data.search.filters_cm
+          .form-item.form-type-checkbox
+            %input.form-checkbox{:id => "#{item}", :type => "checkbox", :value => "#{item}"}/
+            %label.option{:for => "#{item}"} #{item}
+
+      .form-actions.form-wrapper
+        %input.button{:type => "submit", :value => "Clear"}

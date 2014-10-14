@@ -4,6 +4,12 @@
   display: inline-block;
 }
 
+// .form-item has a normal line-height, we need to overwrite this
+.sidebar .form-type-radio,
+.sidebar .form-type-checkbox {
+  line-height: 1.5em;
+}
+
 
 input[type="radio"],
 input[type="checkbox"] {

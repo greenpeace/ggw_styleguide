@@ -144,6 +144,14 @@ article {
 
 }
 
+.list {
+  @extend %list;
+}
+
+.align-center {
+  text-align: center;
+}
+
 // section are used when we have multiple sections inside a page/article that need clear seperation
 .section-heading {
   color: $heading;

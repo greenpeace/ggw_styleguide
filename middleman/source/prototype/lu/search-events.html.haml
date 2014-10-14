@@ -1,7 +1,8 @@
 ---
-title: Search Events
-body_class: not-front not-logged-in page-search l-has-sidebar
-user_role: an
+title: Search events
+body_class: not-front logged-in page-search l-has-sidebar
+user_role: lu
+search_page: events
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -19,17 +20,12 @@ user_role: an
       // search box above results
       = partial :"blocks/search-header-search-box"
 
-      // search types nav
       = partial :"nav/search-tabs"
 
       .view-search-results
         .view-content
-          = partial :"teasers/event-no-image"
-          = partial :"teasers/event-with-location"
-          = partial :"teasers/event-with-image"
-          = partial :"teasers/event-no-image"
-          = partial :"teasers/event-with-location"
-          = partial :"teasers/event-with-image"
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
 
 
 %aside.l-sidebar.sidebar
@@ -39,9 +35,10 @@ user_role: an
     .content
       %form
         = partial :"blocks/search_filters/event_date"
+        = partial :"blocks/search_filters/groups"
         = partial :"blocks/search_filters/distance_to_event"
         = partial :"blocks/search_filters/created"
         = partial :"blocks/search_filters/tags"
+        = partial :"blocks/search_filters/author"
         = partial :"blocks/search_filters/form-action"
-
 

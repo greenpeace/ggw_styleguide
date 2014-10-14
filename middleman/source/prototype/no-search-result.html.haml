@@ -1,0 +1,33 @@
+---
+title: No search result
+body_class: not-front page-search l-has-sidebar
+user_role: an lu cm
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column#content
+
+  .main-content
+
+    %i.block-icon.icon-bg-default.icon-search
+    %h1.block-title#page-title
+      = current_page.data.title
+
+    .content
+
+      // search box above results
+      = partial :"blocks/search-header-search-box"
+
+      // search types nav
+      = partial :"nav/search-tabs"
+
+      .view-search-results
+        .view-empty
+          %p
+            %i.icon-attention.icon-default.icon-large
+          %p We could not find any results which match your search:
+          %h3 Greenwire
+
+          %p Use the links above to find what you're looking for, or try a new search query. The filters are also super helpful for quickly finding content most relevant to you.
+

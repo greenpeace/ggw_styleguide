@@ -29,6 +29,7 @@
   .sidebar & {
     margin-bottom: $def-mar-half;
     width: 100%;
+    line-height: normal;
   }
 }
 
@@ -94,8 +95,10 @@ label {
 
   }
 
+  // In case we to to have the input and select on one line
   .form-type-textfield + .form-type-select {
     width: auto;
+    min-width: 5em;
   }
 
   .separator {

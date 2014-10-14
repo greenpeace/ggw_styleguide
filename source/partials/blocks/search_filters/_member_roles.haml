@@ -1,0 +1,10 @@
+.views-exposed-widget
+  %label.form-label Member roles
+  .views-widget
+    .form-item.form-type-select
+      %select.chosen-select#groups{"data-placeholder" => "Select roles", :multiple => "multiple"}
+        %option{:value => ""}
+        %option{:value => "group1"} Members
+        %option{:value => "group2"} Friends
+        %option{:value => "group3"} Coaches
+        %option{:value => "group4"} Greenpeace staff

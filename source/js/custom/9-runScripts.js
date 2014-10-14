@@ -54,7 +54,8 @@ $( window ).load(function() {
     offCanvasNav(),
     showMap(),
     mobileNav(),
-    dependsOn()
+    dependsOn(),
+    autocomplete()
   };
 
   var resizeTimer;
@@ -100,27 +101,6 @@ $( window ).load(function() {
     $('input[type="date"]').addClass('date-field');
     $('input[type="date"]').after('<i class="icon-calendar"></i>');
   }
-
-  $("#tagsinput").blur(function() {
-    $('#tagsautocomplete').fadeOut();
-    $(this).removeClass("throbbing");
-  });
-
-  $("#authorinput").blur(function() {
-    $('#authorautocomplete').fadeOut();
-    $(this).removeClass("throbbing");
-  });
-
-
-  $("#tagsinput").keypress(function(){
-    $('#tagsautocomplete').fadeIn();
-    $(this).addClass("throbbing");
-  });
-
-  $("#authorinput").keypress(function(){
-    $('#authorautocomplete').fadeIn();
-    $(this).addClass("throbbing");
-  });
 
   //enhance with icons
   $('.form-text.error, textarea.error, .form-checkbox.error + label').after('<i class="icon-attention"></i>');

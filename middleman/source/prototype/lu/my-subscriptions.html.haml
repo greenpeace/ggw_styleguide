@@ -1,0 +1,55 @@
+---
+title: My subscriptions
+body_class: not-front logged-in page-profile l-has-sidebar
+user_role: lu
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-user.icon-subscription
+    %h1#page-title.block-title
+      = current_page.data.title
+
+    .content
+      .view-ggw-subscribe-node
+        .view-header
+          %h2.section-heading Groups you follow
+        .view-content
+          %ul.data-grid
+            %li
+              .field.views-field-title
+                %a{:href => "#"} Vegan bbq at CeeCee
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+            %li
+              .field.views-field-title
+                %a{:href => "#"} Climbing training
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+            %li
+              .field.views-field-title
+                %a{:href => "#"} Local group Amsterdam
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+            %li
+              .field.views-field-title
+                %a{:href => "#"} Climate changing bootcampers
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+      .view-ggw-subscribe-node
+        .view-header
+          %h2.section-heading Content you follow
+        .view-content
+          %ul.data-grid
+            %li
+              .field.views-field-title
+                %a{:href => "#"} Some photos album
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+            %li
+              .field.views-field-title
+                %a{:href => "#"} The weirdest and longest blog with animations you will ever read!
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow

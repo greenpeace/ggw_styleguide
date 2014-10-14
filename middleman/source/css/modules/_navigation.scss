@@ -209,10 +209,6 @@
     border: none;
   }
 
-  %element-hidden1 {
-    @include element-hidden;
-  }
-
   .csstransforms3d .nav-inner-wrap {
     opacity: 1;
     transform: none;
@@ -237,7 +233,7 @@
 
   .mobile-nav,
   .off-canvas .navcaret {
-    @extend %element-hidden1;
+    @include element-hidden;
   }
 
   .menu-link {

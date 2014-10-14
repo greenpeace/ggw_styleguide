@@ -1,10 +1,33 @@
 @include breakpoint($tab) {
+  .style-guide {
+
+    .sidebar-left {
+      float: left;
+      width: 25%;
+
+      .block {
+        margin: 1em 1.5em 1.5em 0;
+      }
+    }
+
+    .l-main-column {
+      float: right;
+      width: 75%;
+    }
+
+    &.l-has-sidebar {
+      .l-main-column {
+        width: 66%
+      }
+    }
+
+  }
+
   .flexbox .style-guide {
 
     .sidebar-left {
       flex: 0 1 25%;
       order: 1;
-      padding: 0 1.5em 1.5em 0;
     }
 
     .l-main-column {
@@ -35,6 +58,7 @@
   }
 }
 
+// create a 2 columns grid
 .two-col {
   display: flex;
   flex-wrap: wrap;
@@ -44,15 +68,10 @@
 
   .col {
     flex: 1 100%;
-    padding: 0 1.5em 0 0;
     display: flex;
     align-items: stretch;
     align-content: stretch;
     justify-content: stretch;
-
-    &:nth-child(2n) {
-      padding-right: 0;
-    }
 
     @include breakpoint($tab) {
       flex: 0 1 50%;
@@ -63,6 +82,12 @@
       flex: 1 100%;
       flex-direction: column;
       justify-content: space-between;
+      margin: 1em 1.5em 1.5em 0;
+    }
+
+    // blocks on the right should not have white space on the right
+    &:nth-child(2n) .block {
+      margin-right: 0;
     }
 
   }

@@ -1,0 +1,24 @@
+.search-tabs {
+  @extend %hlist;
+  margin: $def-mar-half 0 0;
+  width: 75%;
+  float:left;
+
+  li {
+    margin-right: 1em;
+    padding-right: 1em;
+    border-right: 1px solid $grey-l;
+    line-height: 1em;
+
+    &:last-child {
+      margin: 0;
+      border: none;
+    }
+  }
+
+  a.active {
+    color: $heading;
+    font-weight: bold;
+  }
+
+}

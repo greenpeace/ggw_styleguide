@@ -1,0 +1,63 @@
+.action-bar {
+  float: right;
+  @include font-size($small);
+  position: relative;
+  margin-top: -40px;
+}
+
+.sorting {
+  margin-left: 5px;
+
+  + .dropdown {
+    right: 0;
+    top: 100%;
+  }
+
+}
+
+.sorting span:after{
+  height: 0;
+  width: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid $grey-d;
+  display: inline-block;
+  content: '';
+  vertical-align: bottom;
+  margin-left: 3px;
+}
+
+.viewmode-switcher {
+  float: right;
+  margin: 0 0 10px 0;
+
+  a {
+    font-size: $h1;
+    line-height: normal;
+    text-align: center;
+    display: inline-block;
+    color: $grey-d;
+    margin-right: 5px;
+
+    &.active {
+      color: $green5;
+
+      &:hover {
+        color: $green5;
+      }
+    }
+
+    &[disabled] {
+      color: $grey-l;
+      pointer-events: none;
+    }
+
+    &:hover {
+      color: $base;
+    }
+
+
+  }
+
+}

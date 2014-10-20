@@ -30,6 +30,7 @@
 .icon-shout {     @extend %icon-megaphone;}
 .icon-map {       @extend %icon-location;}
 .icon-down-open { @extend %icon-down-open;}
+.icon-down-dir { @extend %icon-down-dir;}
 .icon-bell {      @extend %icon-bell;}
 .icon-edit {      @extend %icon-pencil;}
 .icon-subscription {      @extend %icon-bookmark;}
@@ -38,7 +39,10 @@
 .icon-cancel {    @extend %icon-cancel;}
 .icon-attention { @extend %icon-attention;}
 .icon-calendar {  @extend %icon-calendar;}
-.icon-adjust {  @extend %icon-layout;}
+.icon-adjust {    @extend %icon-layout;}
+
+.icon-teasers {   @extend %icon-stop;}
+.icon-list {      @extend %icon-menu;}
 
 .icon-event {     @extend %icon-calendar; }
 .icon-news {      @extend %icon-book-open; }

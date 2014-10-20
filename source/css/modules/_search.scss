@@ -61,16 +61,15 @@
 
     .form-actions {
       position: absolute;
-      top: 3px;
-      right: 3px;
+      top: 4px;
+      right: 5px;
       width: 16px;
       line-height: 16px;
       height: 16px;
       border-radius: 3px;
-      background: $green2;
       padding: 0 0 0 2px;
-      color: $white;
-      font-size: $h5;
+      color: $green2;
+      font-size: $h3;
     }
 
   }
@@ -79,4 +78,10 @@
 
 .view-empty {
   text-align: center;
+}
+
+.view-header {
+  @extend %cf;
+  border-bottom: 1px solid $grey-l;
+  margin-bottom: $def-mar;
 }

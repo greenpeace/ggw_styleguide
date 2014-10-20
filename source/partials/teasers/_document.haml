@@ -2,10 +2,12 @@
   %article.node-teaser-document.node-teaser
     .field-type-image
     .field-type-wrapper
-      %h2.node-title This is an example of a long document title
+      %h2.node-title
+        = lorem.sentence
       .submitted
         %a.type.document{:href => "#"} Document
         24 Sep 2013, by
-        %a{:href => "#"} Johnny extermeverykindoflonglastname
+        %a{:href => "#"}
+          = lorem.name
       .field-name-body
-        On touch devices, a click event has a 300ms delay before firing. The reason for this the  delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+        =lorem.paragraph

@@ -16,7 +16,7 @@
 }
 
 .dropdown-panel {
-  padding: 10px;
+  padding: 10px 0;
 }
 
 .dropdown-tip {
@@ -96,6 +96,18 @@
   .icon-cancel {
     color: $error;
   }
+
+  a {
+    display: block;
+    color: $base;
+    padding: 0 10px;
+
+    &:hover {
+      background: $background;
+      text-decoration: none;
+    }
+  }
+
 }
 
 

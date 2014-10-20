@@ -1,12 +1,23 @@
-.tabs
-  %ul.search-tabs
+%ul.search-tabs#ggw-search-menu-links
+  - if current_page.data.user_role == "an"
     %li
-      %a{:href=>"search.html"} All
+      =nav_link 'All', '/prototype/an/search.html', :class => 'tab'
     %li
-      %a{:href=>"search-newsmedia.html"} News &amp; Media
+      =nav_link 'News & Media', '/prototype/an/search-newsmedia.html', :class => 'tab'
     %li
-      %a{:href=>"search-events.html"} Events
+      =nav_link 'Events', '/prototype/an/search-events.html', :class => 'tab'
     %li
-      %a{:href=>"search-groups.html"} Groups
+      =nav_link 'Groups', '/prototype/an/search-groups.html', :class => 'tab'
     %li
-      %a{:href=>"search-members.html"} Members
+      =nav_link 'Members', '/prototype/an/search-members.html', :class => 'tab'
+  - if current_page.data.user_role == "lu"
+    %li
+      =nav_link 'All', '/prototype/lu/search.html', :class => 'tab'
+    %li
+      =nav_link 'News & Media', '/prototype/lu/search-newsmedia.html', :class => 'tab'
+    %li
+      =nav_link 'Events', '/prototype/lu/search-events.html', :class => 'tab'
+    %li
+      =nav_link 'Groups', '/prototype/lu/search-groups.html', :class => 'tab'
+    %li
+      =nav_link 'Members', '/prototype/lu/search-members.html', :class => 'tab'

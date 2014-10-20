@@ -1,0 +1,45 @@
+.action-bar#ggw-search-action-bar
+  Sort by
+  %a.button.btn-s.sorting{"data-dropdown" => "#sort-results", :href => "#", :title => "Click to show options"}
+    %span Relevance
+  #sort-results.dropdown
+    .dropdown-panel
+      - if current_page.data.search_page == "all"
+        %a{:href => ""} Relevance
+        %a{:href => ""} Title
+        %a{:href => ""} Date created
+
+      - if current_page.data.search_page == "newsmedia"
+        %a{:href => ""} Relevance
+        %a{:href => ""} Title
+        %a{:href => ""} Type
+        %a{:href => ""} Date created
+
+      - if current_page.data.search_page == "events"
+        %a{:href => ""} Relevance
+        %a{:href => ""} Title
+        %a{:href => ""} # of Participants
+        %a{:href => ""} Date and time
+        %a{:href => ""} Location name
+        %a{:href => ""} Date created
+
+      - if current_page.data.search_page == "groups"
+        %a{:href => ""} Relevance
+        %a{:href => ""} Title
+        %a{:href => ""} # of Participants
+        %a{:href => ""} Date and time
+        %a{:href => ""} Location name
+        %a{:href => ""} Date created
+
+.viewmode-switcher
+  %a.show-teasers.active{:href => "#"}
+    %i.icon-teasers
+    %span.element-invisible show teasers
+  - if current_page.data.search_page == "all"
+    %a.show-list{:href => "#", :disabled => "disabled"}
+      %i.icon-list
+      %span.element-invisible show list
+  -else
+    %a.show-list{:href => "#"}
+      %i.icon-list
+      %span.element-invisible show list

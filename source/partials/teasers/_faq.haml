@@ -1,11 +1,10 @@
 .views-row
   %article.node-teaser-faq.node-teaser
     .field-type-image
-      = partial :"teasers/teaser-image"
     .field-type-wrapper
       %h2.node-title
         = lorem.words 6
       .submitted
         %a.type.faq{:href => "#"} Faq
       .field-name-body
-        On touch devices, a click event has a 300ms delay before firing. The reason for this the delay  is that browsers need that buffer to make sure you aren’t going to double-tap on anything.
+        =lorem.paragraph

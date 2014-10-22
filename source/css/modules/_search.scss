@@ -74,6 +74,14 @@
 
   }
 
+  #ggw-search-return-search-form .form-item-search {
+    width: 516px;
+
+    .form-text {
+      max-width: none;
+    }
+  }
+
 }
 
 .view-empty {
@@ -82,6 +90,4 @@
 
 .view-header {
   @extend %cf;
-  border-bottom: 1px solid $grey-l;
-  margin-bottom: $def-mar;
 }

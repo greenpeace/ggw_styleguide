@@ -8,7 +8,10 @@
       .submitted
         %a.type.idea{:href => "#"} Idea
         9 Dec, by
-        %a{:href => "#"}
-          = lorem.name
+        - if current_page.data.user_role != "an"
+          %a{:href => "#"}
+            = lorem.name
+        - else
+          = lorem.first_name
       .field-name-body
         =lorem.paragraph

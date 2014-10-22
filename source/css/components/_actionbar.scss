@@ -1,21 +1,38 @@
 .action-bar {
-  float: right;
+  clear: both;
   @include font-size($small);
   position: relative;
-  margin-top: -40px;
+  margin: $def-mar 0;
+  background: $background;
+  padding: .5em;
 }
 
-.sorting {
-  margin-left: 5px;
+.action-bar-item {
+  margin-right: 1em;
+  display: inline-block;
 
-  + .dropdown {
-    right: 0;
-    top: 100%;
+  .button {
+    background: $white;
   }
 
+  &.disabled {
+    opacity: 0.65;
+    pointer-events: none;
+
+    .button {
+      background: $background;
+    }
+  }
 }
 
-.sorting span:after{
+.action-bar label {
+  display: inline;
+  font-weight: normal;
+  @include font-size($small);
+  margin-right: .3em;
+}
+
+.action-bar-item span:after{
   height: 0;
   width: 0;
   border-left: 5px solid transparent;
@@ -29,16 +46,17 @@
 }
 
 .viewmode-switcher {
-  float: right;
-  margin: 0 0 10px 0;
+  position: absolute;
+  right: 10px;
+  margin: 0;
 
   a {
     font-size: $h1;
-    line-height: normal;
+    line-height: 0.85em;
     text-align: center;
     display: inline-block;
     color: $grey-d;
-    margin-right: 5px;
+    margin-left: .2em;
 
     &.active {
       color: $green5;

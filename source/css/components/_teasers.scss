@@ -135,45 +135,6 @@
 
 }
 
-.node-teaser-page,
-.node-teaser-faq {
-
-  .submitted,
-  .field-name-body {
-    display: inline;
-    white-space: normal;
-  }
-
-  @include breakpoint($smalltab) {
-
-    .submitted,
-    .field-name-body {
-      display: inline;
-      white-space: normal;
-    }
-
-  }
-
-}
-
-@include breakpoint($tab) {
-
-  .node-teaser-page,
-  .node-teaser-faq {
-
-    .submitted .type {
-      margin: 0 .1em 0 0;
-    }
-
-    .submitted:after {
-      display: inline;
-      content: " - ";
-      margin: 0 .1em;
-    }
-
-  }
-
-}
 
 .node-teaser-notification {
   border-bottom: 1px solid $background;

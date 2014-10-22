@@ -20,30 +20,44 @@ search_page: all
       // search box above results
       = partial :"blocks/search-header-search-box"
 
-      .view-header
-        = partial :"nav/search-tabs"
-        = partial :"nav/search-actions"
+      = partial :"nav/search-tabs"
+      = partial :"nav/search-actions"
 
       .view-search-results
         .view-content
+
+          %h2.section-heading
+            %a{:href => "search-newsmedia.html"} News and media
           = partial :"teasers/news-no-image"
           = partial :"teasers/news-with-image"
           = partial :"teasers/blog-with-image"
           = partial :"teasers/blog-no-image"
-          = partial :"teasers/event-with-location"
-          = partial :"teasers/event-with-image"
-          = partial :"teasers/event-no-image"
-          = partial :"teasers/group-no-image"
-          = partial :"teasers/group-with-image"
           = partial :"teasers/idea-no-image"
           = partial :"teasers/idea-with-image"
           = partial :"teasers/photo"
           = partial :"teasers/video"
           = partial :"teasers/document"
-          = partial :"teasers/member"
-          = partial :"teasers/member_2"
           = partial :"teasers/page"
           = partial :"teasers/faq"
+
+          %h2.section-heading Events
+          = partial :"teasers/event-with-location"
+          = partial :"teasers/event-with-image"
+          = partial :"teasers/event-no-image"
+
+          %h2.section-heading Groups
+          = partial :"teasers/group-no-image"
+          = partial :"teasers/group-with-image"
+
+          %h2.section-heading Members
+          .view-empty
+            %p
+              Please log in to search for members.
+              %a Click here to log in.
+            %p
+              Not a member yet?
+              %a Click here to sign up
+
 
 
 %aside.l-sidebar.sidebar
@@ -54,4 +68,3 @@ search_page: all
       %form
         = partial :"blocks/search_filters/created"
         = partial :"blocks/search_filters/form-action"
-

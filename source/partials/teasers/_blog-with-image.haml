@@ -7,7 +7,10 @@
       .submitted
         %a.type.blog{:href => "#"} Blog
         11 Aug 2014, by
-        %a{:href => "#"}
-          = lorem.name
+        - if current_page.data.user_role != "an"
+          %a{:href => "#"}
+            = lorem.name
+        - else
+          = lorem.first_name
       .field-name-body
         =lorem.paragraph

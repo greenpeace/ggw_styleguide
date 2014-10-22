@@ -4,7 +4,14 @@
     .field-type-wrapper
       %h2.node-title
         = lorem.words 6
+        ?
       .submitted
         %a.type.faq{:href => "#"} Faq
+        05 Dec 2014, by
+        - if current_page.data.user_role != "an"
+          %a{:href => "#"}
+            = lorem.name
+        - else
+          = lorem.first_name
       .field-name-body
         =lorem.paragraph

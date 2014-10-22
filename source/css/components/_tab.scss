@@ -1,6 +1,6 @@
 .search-tabs {
   @extend %hlist;
-  margin: $def-mar-half 0 0;
+  margin: $def-mar-half 0 $def-mar;
   width: 75%;
   float:left;
 

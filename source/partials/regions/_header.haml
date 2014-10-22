@@ -52,7 +52,7 @@
             %a.trigger{"data-dropdown" => "#dropdown-content-country", :href => "#"}
               International
               %span.country-img
-          #dropdown-content-country.dropdown.dropdown-scroll
+          #dropdown-content-country.dropdown.dropdown-scroll.relative
             %ul.dropdown-list
               - data.nav.nro.each do |item|
                 %li
@@ -61,7 +61,7 @@
         .l-language-selector.language-selector
           .dropdown-controller
             %a.trigger{"data-dropdown" => "#dropdown-content-language", :href => "#"} Language
-          #dropdown-content-language.dropdown.dropdown-scroll
+          #dropdown-content-language.dropdown.dropdown-scroll.relative
             %ul.dropdown-list
               %li
                 %a{:href => "#"} Francais

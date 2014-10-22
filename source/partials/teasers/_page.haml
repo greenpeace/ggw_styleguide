@@ -6,5 +6,11 @@
         = lorem.words 16
       .submitted
         %span.type.page{:href => "#"} Page
+        16 Nov 2014, by
+        - if current_page.data.user_role != "an"
+          %a{:href => "#"}
+            = lorem.name
+        - else
+          = lorem.first_name
       .field-name-body
         =lorem.paragraph

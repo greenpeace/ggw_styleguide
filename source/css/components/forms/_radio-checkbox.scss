@@ -58,20 +58,20 @@ input[type="checkbox"] {
 }
 
 input[type="radio"] + label:before {
-  background-position: -7px -7px;
+  background-position: -7px -9px;
 }
 
 input[type="radio"]:checked + label:before {
-  background-position: -31px -7px;
+  background-position: -31px -9px;
 }
 
 
 input[type="checkbox"] + label:before {
-  background-position: -7px -27px;
+  background-position: -7px -30px;
 }
 
 input[type="checkbox"]:checked + label:before {
-  background-position: -31px -27px;
+  background-position: -31px -30px;
 }
 
 // create extra space for sidebar filters

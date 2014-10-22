@@ -3,7 +3,7 @@
     .field-type-image
       %picture
         /[if IE 9] <video style="display: none;">
-        %source{:media => "(min-width: 48em)", :srcset => "http://lorempixel.com/130/90/people/7/, http://lorempixel.com/260/180/people/deskx1.5 1.5x"}
+        %source{:media => "(min-width: 48em)", :srcset => "http://lorempixel.com/130/90/people/1/, http://lorempixel.com/260/180/people/deskx1.5 1.5x"}
         %source{:srcset => "http://lorempixel.com/180/120/people/mobx2 2x, http://lorempixel.com/90/60/people/mob 1x"}
         /[if IE 9] </video>
         %img{:alt => "Example of image.", :src => "http://lorempixel.com/90/60/people/img"}
@@ -17,6 +17,6 @@
             )
       .submitted
         %a.type.user{:href => "#"}
-        %span from Moscow
+        %span from Boston
       .field-name-body
         = lorem.paragraph

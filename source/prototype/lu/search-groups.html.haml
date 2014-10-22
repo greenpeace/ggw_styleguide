@@ -20,12 +20,18 @@ search_page: groups
       // search box above results
       = partial :"blocks/search-header-search-box"
 
-      = partial :"nav/search-tabs"
+      .view-header
+        = partial :"nav/search-tabs"
+        = partial :"nav/search-actions"
 
       .view-search-results
         .view-content
-          = partial :"teasers/news-no-image"
-          = partial :"teasers/news-with-image"
+          = partial :"teasers/group-no-image"
+          = partial :"teasers/group-with-image"
+          = partial :"teasers/group-no-image"
+          = partial :"teasers/group-with-image"
+          = partial :"teasers/group-no-image"
+          = partial :"teasers/group-with-image"
 
 
 %aside.l-sidebar.sidebar

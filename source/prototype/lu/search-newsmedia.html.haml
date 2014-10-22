@@ -20,12 +20,23 @@ search_page: newsmedia
       // search box above results
       = partial :"blocks/search-header-search-box"
 
-      = partial :"nav/search-tabs"
+      .view-header
+        = partial :"nav/search-tabs"
+        = partial :"nav/search-actions"
 
       .view-search-results
         .view-content
           = partial :"teasers/news-no-image"
           = partial :"teasers/news-with-image"
+          = partial :"teasers/blog-with-image"
+          = partial :"teasers/blog-no-image"
+          = partial :"teasers/idea-no-image"
+          = partial :"teasers/idea-with-image"
+          = partial :"teasers/photo"
+          = partial :"teasers/video"
+          = partial :"teasers/document"
+          = partial :"teasers/page"
+          = partial :"teasers/faq"
 
 
 %aside.l-sidebar.sidebar

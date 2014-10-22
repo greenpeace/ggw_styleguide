@@ -3,7 +3,9 @@
     .field-type-image
       = partial :"teasers/teaser-image"
     .field-type-wrapper
-      %h2.node-title Blog item with image
+      %h2.node-title
+        %a{:href => "#"}
+          = lorem.sentence
       .submitted
         %a.type.blog{:href => "#"} Blog
         11 Aug 2014, by

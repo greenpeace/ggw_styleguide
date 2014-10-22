@@ -40,16 +40,19 @@ search_page: all
           = partial :"teasers/page"
           = partial :"teasers/faq"
 
-          %h2.section-heading Events
+          %h2.section-heading
+            %a{:href => "search-events.html"} Events
           = partial :"teasers/event-with-location"
           = partial :"teasers/event-with-image"
           = partial :"teasers/event-no-image"
 
-          %h2.section-heading Groups
+          %h2.section-heading
+            %a{:href => "search-groups.html"} Groups
           = partial :"teasers/group-no-image"
           = partial :"teasers/group-with-image"
 
-          %h2.section-heading Members
+          %h2.section-heading
+            %a{:href => "search-members.html"} Members
           .view-empty
             %p
               Please log in to search for members.

@@ -4,7 +4,7 @@
       %i.icon-teasers
       %span.element-invisible show teasers
 
-    - if current_page.data.search_page == "all"
+    - if current_page.data.search_page == "all" or (current_page.data.search_page == "members" and current_page.data.user_role == "an")
       %a.show-list{:href => "#", :disabled => "disabled"}
         %i.icon-list
         %span.element-invisible show list
@@ -13,7 +13,7 @@
         %i.icon-list
         %span.element-invisible show list
 
-  - if current_page.data.search_page == "members"
+  - if current_page.data.search_page == "members" and current_page.data.user_role == "an"
 
     .action-bar-item.sorting.disabled
       %label Sort by
@@ -46,11 +46,13 @@
             %li
               %a{:href => "#"} Date created
 
-          - if current_page.data.search_page == "events"
+          - if current_page.data.search_page == "events" and current_page.data.user_role == "an"
             %li
               %a{:href => "#"} Relevance
             %li
               %a{:href => "#"} Title
+            %li
+              %a{:href => "#"} Type
             %li
               %a{:href => "#"} # of Participants
             %li
@@ -59,6 +61,26 @@
               %a{:href => "#"} Location name
             %li
               %a{:href => "#"} Date created
+
+          - if current_page.data.search_page == "events" and current_page.data.user_role == "lu"
+            %li
+              %a{:href => "#"} Relevance
+            %li
+              %a{:href => "#"} Proximity to me
+            %li
+              %a{:href => "#"} Title
+            %li
+              %a{:href => "#"} Type
+            %li
+              %a{:href => "#"} # of Participants
+            %li
+              %a{:href => "#"} Date and time
+            %li
+              %a{:href => "#"} Location name
+            %li
+              %a{:href => "#"} Date created
+            %li
+              %a{:href => "#"} # of Comments
 
           - if current_page.data.search_page == "groups"
             %li
@@ -72,8 +94,20 @@
             %li
               %a{:href => "#"} # of Members
 
+          - if current_page.data.search_page == "members"
+            %li
+              %a{:href => "#"} Relevance
+            %li
+              %a{:href => "#"} Name
+            %li
+              %a{:href => "#"} Username
+            %li
+              %a{:href => "#"} Location
+            %li
+              %a{:href => "#"} Date joined
 
-  - if current_page.data.search_page == "all"
+
+  - if current_page.data.search_page == "all" or (current_page.data.search_page == "members" and current_page.data.user_role == "an")
     .action-bar-item.results-page.disabled
       %label Results per page
       %a.button.btn-s.sorting{"data-dropdown" => "#page-results", :href => "#", :title => "Click to show options"}

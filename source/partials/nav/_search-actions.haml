@@ -1,6 +1,6 @@
 .action-bar#ggw-search-action-bar
   .action-bar-item.viewmode-switcher
-    %a.show-teasers.active{:href => current_page.data.thumbnailview}
+    %a.show-teasers.active{:href => current_page.data.teaserview}
       %i.icon-teasers
       %span.element-invisible show teasers
 
@@ -126,3 +126,43 @@
             %a{:href => "#"} 50
           %li
             %a{:href => "#"} 100
+
+  - if current_page.data.view == "list"
+
+    .action-bar-item.columns
+      %label Columns
+      %a.button.btn-s.results-page{"data-dropdown" => "#columns", :href => "#", :title => "Click to show options"}
+        %span Columns
+      #columns.dropdown.dropdown-tip.dropdown-relative
+        %ul.dropdown-menu
+
+          - if current_page.data.search_page == "newsmedia" and current_page.data.user_role == "an"
+
+            %li
+              %a{:href => "#"} Relevance
+            %li
+              %a{:href => "#"} Title
+            %li
+              %a{:href => "#"} Type
+            %li
+              %a{:href => "#"} Date created
+
+  - if current_page.data.view == "list" and current_page.data.user_role == "cm"
+
+    .action-bar-item.actions
+      %label Actions
+      %a.button.btn-s.results-page{"data-dropdown" => "#actions", :href => "#", :title => "Click to show options"}
+        %span Actions
+      #actions.dropdown.dropdown-tip.dropdown-relative
+        %ul.dropdown-menu
+
+          - if current_page.data.search_page == "newsmedia"
+
+            %li
+              %a{:href => "#"} Relevance
+            %li
+              %a{:href => "#"} Title
+            %li
+              %a{:href => "#"} Type
+            %li
+              %a{:href => "#"} Date created

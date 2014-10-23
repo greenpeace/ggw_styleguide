@@ -1,24 +1,46 @@
 .search-tabs {
-  @extend %hlist;
-  margin: $def-mar-half 0 $def-mar;
-  width: 75%;
-  float:left;
+  margin: $def-mar-half 0;
+  list-style: none outside none;
+  border-bottom: 1px solid $background;
 
   li {
     margin-right: 1em;
+    display: inline-block;
+    position: relative;
     padding-right: 1em;
-    border-right: 1px solid $grey-l;
     line-height: 1em;
 
-    &:last-child {
-      margin: 0;
-      border: none;
+    &:after {
+      display: block;
+      content: '';
+      background: $background;
+      position: absolute;
+      top: 5px;
+      right: 0;
+      height: 16px;
+      width: 1px;
+    }
+
+    &:last-child:after {
+      @extend %element-hidden;
     }
   }
 
-  a.active {
-    color: $heading;
-    font-weight: bold;
+  a {
+    position: relative;
+    display: block;
+    line-height: 1.8em;
+
+    &:last-child:after {
+      border: none;
+    }
+
+    &.active {
+      color: $heading;
+      font-weight: bold;
+      border-bottom: 3px solid $heading;
+    }
+
   }
 
 }

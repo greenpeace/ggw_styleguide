@@ -4,7 +4,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   margin-bottom: 20px;
-  @include font-size($p);
+  @include font-size($h5);
 
   caption {
     padding:  8px 0;
@@ -20,9 +20,10 @@ table {
 
 th,
 td {
-  padding: .5em .7em;
+  padding: .5em 5px .5em 2px;
   line-height: 1.2em;
   text-align: left;
+  word-wrap: break-word;
 }
 
 th {

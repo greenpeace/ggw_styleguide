@@ -10,7 +10,7 @@
       =nav_link 'Groups', '/prototype/an/search-groups.html', :class => 'tab'
     %li
       =nav_link 'Members', '/prototype/an/search-members.html', :class => 'tab'
-  - if current_page.data.user_role == "lu"
+  - if current_page.data.user_role == "lu" or current_page.data.user_role == "cm"
     %li
       =nav_link 'All', '/prototype/lu/search.html', :class => 'tab'
     %li

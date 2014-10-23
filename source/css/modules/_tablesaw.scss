@@ -18,9 +18,13 @@
 }
 
 .tablesaw-nav-btn.left {
-  left: 175px;
+  left: 150px;
   position: absolute;
-  margin-top: 5px;
+  line-height: 28px;
+
+  .iscontent-manager & {
+    left: 175px;
+  }
 }
 
 .tablesaw-nav-btn.right {
@@ -31,8 +35,8 @@
   border-bottom: 1px solid $grey-l;
   background: $background;
   width: 25px;
-  height: 31px;
-  line-height: 31px;
+  height: 28px;
+  line-height: 28px;
 }
 
 .tablesaw-nav-btn:before {
@@ -67,6 +71,8 @@
   color: $grey-d;
   font-weight: 700;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   min-width: 7em;
   border: none;
 }
@@ -85,7 +91,7 @@
 }
 
 // Specific width for Drupal columns
-@each $column, $width in (body: 200, title: 158, views-bulk-operations: 32) {
+@each $column, $width in (body: 200, title: 165, name: 165, views-bulk-operations: 22, email: 200) {
 
   .tablesaw .views-field-#{$column} {
     width: #{$width}px;
@@ -93,3 +99,6 @@
 
 }
 
+.tablesaw .views-field-name {
+  text-indent: 80px;
+}

@@ -1,7 +1,7 @@
 ---
 title: Search members
-body_class: not-front logged-in page-search l-has-sidebar
-user_role: lu
+body_class: not-front logged-in page-search l-has-sidebar .is-content-manager
+user_role: cm
 search_page: members
 listview: search-members-listview.html
 teaserview: search-members.html
@@ -31,6 +31,8 @@ teaserview: search-members.html
           %table.tablesaw{"data-mode" => "swipe"}
             %thead
               %tr
+                %th.views-field-views-bulk-operations{"data-priority" => "persist"}
+                  %input.form-checkbox{:type => "checkbox"}
                 %th.views-field-name{"data-priority" => "persist", :colspan => "2"} Name
                 %th.views-field-username Username
                 %th Location
@@ -39,13 +41,15 @@ teaserview: search-members.html
                 %th Member roles
                 %th Proximity to me
                 %th Profession
-                %th Language preferences
-                %th School
-                %th Skills
+                %th.views-field-email Email
+                %th Gender
+                %th Last login
 
             %tbody
             - 50.times do |num|
               %tr
+                %td
+                  %input.form-checkbox{:type => "checkbox"}
                 %td
                   %img{:alt => "Example of image.", :src => "http://lorempixel.com/70/47/people/9/"}
                 %td
@@ -65,17 +69,20 @@ teaserview: search-members.html
                 %td
                   = lorem.word
                 %td
-                  = lorem.word
+                  = lorem.email
                 %td
                   = lorem.word
                 %td
                   = lorem.date
 
 
+
 %aside.l-sidebar.sidebar
   .block.hidden-mobile
+    = partial :"blocks/cm/search_filter_options"
     %i.block-icon.icon-bg-default.icon-adjust
-    %h2.block-title Filter
+    %h2.block-title
+      Filter
     .content
       %form
         = partial :"blocks/search_filters/distance"

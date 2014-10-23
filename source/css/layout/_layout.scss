@@ -54,7 +54,7 @@
 }
 
 .l-header {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
@@ -68,6 +68,10 @@
     z-index: 3;
     bottom: auto;
   }
+}
+
+.fixed-supported .l-header {
+  position: fixed;
 }
 
 .l-main {
@@ -131,7 +135,7 @@
   background-color: $green1;
   height: 50px;
   width: 100%;
-  position: fixed;
+  position: absolute;
   z-index: 2;
   top: 0;
   transform: translate3d(0, 0, 0);
@@ -152,6 +156,10 @@
       width: 100%;
     }
   }
+}
+
+.fixed-supported .l-branding-header {
+  position: fixed;
 }
 
 .logo {

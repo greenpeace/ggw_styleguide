@@ -1,8 +1,10 @@
 ---
 title: Search members
 body_class: not-front logged-in page-search l-has-sidebar
-user_role: lu
+user_role: cm
 search_page: members
+listview: search-members-listview.html
+teaserview: search-members.html
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -20,12 +22,28 @@ search_page: members
       // search box above results
       = partial :"blocks/search-header-search-box"
 
-      = partial :"nav/search-tabs"
+      .view-header
+        = partial :"nav/search-tabs"
+        = partial :"nav/search-actions"
 
       .view-search-results
         .view-content
-          = partial :"teasers/news-no-image"
-          = partial :"teasers/news-with-image"
+          = partial :"teasers/member"
+          = partial :"teasers/member_2"
+          = partial :"teasers/member_3"
+          = partial :"teasers/member_4"
+          = partial :"teasers/member"
+          = partial :"teasers/member_2"
+          = partial :"teasers/member_3"
+          = partial :"teasers/member_4"
+          = partial :"teasers/member"
+          = partial :"teasers/member_2"
+          = partial :"teasers/member_3"
+          = partial :"teasers/member_4"
+          = partial :"teasers/member"
+          = partial :"teasers/member_2"
+          = partial :"teasers/member_3"
+          = partial :"teasers/member_4"
 
 
 %aside.l-sidebar.sidebar

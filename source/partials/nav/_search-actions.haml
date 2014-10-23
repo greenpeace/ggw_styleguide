@@ -1,6 +1,6 @@
 .action-bar#ggw-search-action-bar
   .action-bar-item.viewmode-switcher
-    %a.show-teasers.active{:href => "#"}
+    %a.show-teasers.active{:href => current_page.data.thumbnailview}
       %i.icon-teasers
       %span.element-invisible show teasers
 
@@ -9,7 +9,7 @@
         %i.icon-list
         %span.element-invisible show list
     - else
-      %a.show-list{:href => "#"}
+      %a.show-list{:href => current_page.data.listview}
         %i.icon-list
         %span.element-invisible show list
 

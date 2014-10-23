@@ -13,6 +13,6 @@
           %a{:href => "#"}
             = lorem.name
         - else
-          = lorem.first_name
+          = lorem.name.downcase.tr(' ', '_')
         .field-name-body
           =lorem.paragraph

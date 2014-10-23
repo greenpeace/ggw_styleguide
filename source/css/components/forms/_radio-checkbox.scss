@@ -4,8 +4,8 @@
   display: inline-block;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+.form-type-radio input[type="radio"],
+.form-type-checkbox input[type="checkbox"] {
   @extend %element-hidden;
 
   @if $oldie {

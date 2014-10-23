@@ -1,0 +1,95 @@
+/*! Tablesaw - v0.1.7 - 2014-10-22
+* https://github.com/filamentgroup/tablesaw
+* Copyright (c) 2014 Filament Group; Licensed MIT */
+
+.tablesaw {
+  empty-cells: show;
+  table-layout: fixed;
+  width: 96%;
+  margin-right: 25px;
+}
+
+.tablesaw-bar {
+  clear: both;
+}
+
+.tablesaw-bar.mode-swipe {
+  position: relative;
+}
+
+.tablesaw-nav-btn.left {
+  left: 175px;
+  position: absolute;
+  margin-top: 5px;
+}
+
+.tablesaw-nav-btn.right {
+  position: absolute;
+  right: 0;
+  padding-right: .5em;
+  text-align: right;
+  border-bottom: 1px solid $grey-l;
+  background: $background;
+  width: 25px;
+  height: 31px;
+  line-height: 31px;
+}
+
+.tablesaw-nav-btn:before {
+  @extend %load-icon;
+  color: $heading;
+  @include font-size($h3);
+}
+
+.tablesaw-nav-btn.left:before {
+  @extend %icon-left-open;
+}
+
+.tablesaw-nav-btn.right:before {
+  @extend %icon-right-open;
+}
+
+.tablesaw-nav-btn.disabled {
+  cursor: default;
+  pointer-events: none;
+
+  &:before {
+    color: $grey-l;
+  }
+}
+
+.tablesaw thead {
+  border-bottom: 1px solid $grey-l;
+  background: $background;
+}
+
+.tablesaw thead th {
+  color: $grey-d;
+  font-weight: 700;
+  white-space: nowrap;
+  min-width: 7em;
+  border: none;
+}
+
+.tablesaw td {
+  border: none;
+}
+
+.tablesaw tbody tr {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.tablesaw-swipe th.tablesaw-cell-hidden,
+.tablesaw-swipe td.tablesaw-cell-hidden {
+  @extend %element-hidden;
+}
+
+// Specific width for Drupal columns
+@each $column, $width in (body: 200, title: 158, views-bulk-operations: 32) {
+
+  .tablesaw .views-field-#{$column} {
+    width: #{$width}px;
+  }
+
+}
+

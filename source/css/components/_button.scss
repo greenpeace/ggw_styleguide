@@ -46,19 +46,7 @@
   }
 }
 
-.btn-dropdown {
-  padding: .44em 1em;
-  margin: 0;
-  right: 0;
-  position: absolute;
 
-  //assuming it is always at the top of a block
-  @include breakpoint($desk) {
-    border-top-color: $background;
-    border-radius: 0 0 3px 3px;
-    right: 15px;
-  }
-}
 
 .btn-block i {
   margin-right: .5em;

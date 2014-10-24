@@ -45,8 +45,8 @@
       background-color: $white;
       background-image: url('../images/form_elements.svg');
       background-repeat: no-repeat;
-      height: 1.5rem;
-      width: 1.3em;
+      height: 17px;
+      width: 17px;
 
       @if $oldie {
         @extend %element-hidden;

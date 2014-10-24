@@ -45,6 +45,12 @@ dd {
   margin-bottom: .5em;
 }
 
+hr {
+  border: none;
+  border-top: 1px solid $background;
+  margin: .4em 0;
+}
+
 a {
   color: $green5;
   text-decoration: none;

@@ -141,10 +141,12 @@
     width: 1.2em;
   }
 
+  // my friends page accepting friends
   .icon-check {
     color: $green5;
   }
 
+  // my friends page declining friends
   .icon-cancel {
     color: $error;
   }
@@ -158,6 +160,16 @@
       background: $background;
       text-decoration: none;
     }
+  }
+
+  .form-item {
+    margin: 0;
+  }
+
+  .form-type-checkbox .option {
+    @include font-size($small);
+    line-height: 20px;
+    white-space: nowrap;
   }
 
 }

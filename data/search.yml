@@ -4,7 +4,7 @@ filters_lu:
   - Profession
   - School
   - Groups
-  - User roles
+  - Member roles
 filters_cm:
   - Date of Birth
   - Age
@@ -16,3 +16,38 @@ filters_cm:
   - Campaign skills
   - Language
   - Statistics category
+columns_newsmedia_an:
+  - Title
+  - Type
+  - Description
+  - Date created
+  - Relevance
+  - Date modified
+  - Tags
+columns_members_lu_first:
+- Avatar
+- Name
+- Username
+- Location
+- Date joined
+- Relevance
+columns_members_lu_second:
+- Members roles
+- Proximity to me
+- Profession
+- Language preference
+- School
+- Skills
+- Skype
+columns_members_lu_third:
+- Campaign Skills
+- Email
+- Phone
+- Place of birth
+- Date of birth
+- Gender
+- Status
+- Last login
+- Last activity
+- Completed trainings
+- Statistics category

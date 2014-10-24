@@ -32,37 +32,30 @@ user_role: lu
       %a.button.btn-primary{:href => "#"} Get wired!
       .clear
   .main-content
-    %a.button.btn-dropdown{"data-dropdown" => "#updates-filter", :href => "#", :title => "Filter content"}
-      %i.icon-down-open
-    #updates-filter.dropdown-filter.dropdown.dropdown-tip.dropdown-scroll
-      .dropdown-panel
-        %form
-          .form-wrapper
-            %p Select the content you wish to see
-            .form-item.form-type-checkbox
-              %input#check1.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-              %label.option{:for => "check1"} News
-            .form-item.form-type-checkbox
-              %input#check2.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-              %label.option{:for => "check2"} Blog
-            .form-item.form-type-checkbox
-              %input#check3.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-              %label.option{:for => "check3"} Event
-            .form-item.form-type-checkbox
-              %input#check4.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-              %label.option{:for => "check4"} Idea
-            .form-item.form-type-checkbox
-              %input#check5.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-              %label.option{:for => "check5"} Photo
-            .form-item.form-type-checkbox
-              %input#check6.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-              %label.option{:for => "check6"} Video
-            .form-item.form-type-checkbox
-              %input#check7.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-              %label.option{:for => "check7"} Document
-          .form-actions.form-wrapper
-            %input.button.btn-primary{:type => "submit", :value => "Submit"}/
-            %input.button{:type => "submit", :value => "Reset"}/
+    .action-bar
+      .action-bar-item.filter
+        %label Filter
+        %a.button.btn-s.btn-dropdown{"data-dropdown" => "#updates-filter", :href => "#", :title => "Filter content"}
+          %span All
+        #updates-filter.dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right
+          %ul.dropdown-menu
+            %li
+              %a{:href => "#"} All
+            %li
+              %a{:href => "#"} News
+            %li
+              %a{:href => "#"} Blog
+            %li
+              %a{:href => "#"} Event
+            %li
+              %a{:href => "#"} Idea
+            %li
+              %a{:href => "#"} Photo
+            %li
+              %a{:href => "#"} Video
+            %li
+              %a{:href => "#"} Document
+
     %i.block-icon.icon-bg-news-media.icon-news
     %h1#page-title.block-title Updates
     .content

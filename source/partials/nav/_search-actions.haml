@@ -134,18 +134,38 @@
       %a.button.btn-s.results-page{"data-dropdown" => "#columns", :href => "#", :title => "Click to show options"}
         %span Columns
       #columns.dropdown.dropdown-tip.dropdown-relative
-        %ul.dropdown-menu
+        %ul.dropdown-panel
+          %form
+            .form-wrapper
+              - if current_page.data.search_page == "newsmedia"
 
-          - if current_page.data.search_page == "newsmedia" and current_page.data.user_role == "an"
+                - for item in data.search.columns_newsmedia_an
+                  %li
+                    .form-item.form-type-checkbox
+                      %input.form-checkbox{:id => "#{item}", :type => "checkbox", :value => "#{item}"}
+                      %label.option{:for => "#{item}"} #{item}
 
-            %li
-              %a{:href => "#"} Relevance
-            %li
-              %a{:href => "#"} Title
-            %li
-              %a{:href => "#"} Type
-            %li
-              %a{:href => "#"} Date created
+              - if current_page.data.search_page == "members"
+
+                - for item in data.search.columns_members_lu_first
+                  %li
+                    .form-item.form-type-checkbox
+                      %input.form-checkbox{:id => "#{item}", :checked => "checked", :type => "checkbox", :value => "#{item}"}
+                      %label.option{:for => "#{item}"} #{item}
+                %hr
+                - for item in data.search.columns_members_lu_second
+                  %li
+                    .form-item.form-type-checkbox
+                      %input.form-checkbox{:id => "#{item}", :type => "checkbox", :value => "#{item}"}
+                      %label.option{:for => "#{item}"} #{item}
+
+                - if current_page.data.user_role == "cm"
+                  %hr
+                  - for item in data.search.columns_members_lu_third
+                    %li
+                      .form-item.form-type-checkbox
+                        %input.form-checkbox{:id => "#{item}", :type => "checkbox", :value => "#{item}"}
+                        %label.option{:for => "#{item}"} #{item}
 
   - if current_page.data.view == "list" and current_page.data.user_role == "cm"
 
@@ -155,14 +175,29 @@
         %span Actions
       #actions.dropdown.dropdown-tip.dropdown-relative
         %ul.dropdown-menu
-
-          - if current_page.data.search_page == "newsmedia"
-
-            %li
-              %a{:href => "#"} Relevance
-            %li
-              %a{:href => "#"} Title
-            %li
-              %a{:href => "#"} Type
-            %li
-              %a{:href => "#"} Date created
+          %li
+            %a{:href => "#"} Export CSV
+          %li
+            %a{:href => "#"} Export XLS
+          %hr
+          %li
+            %a{:href => "#"} Send message
+          %li
+            %a{:href => "#"} Send email
+          %hr
+          %li
+            %a{:href => "#"} Block
+          %li
+            %a{:href => "#"} Unblock
+          %li
+            %a{:href => "#"} Make inactive
+          %li
+            %a{:href => "#"} Make active
+          %li
+            %a{:href => "#"} Change role to LU
+          %li
+            %a{:href => "#"} Change role to CC
+          %li
+            %a{:href => "#"} Change role to CM
+          %li
+            %a{:href => "#"} Change role to DA

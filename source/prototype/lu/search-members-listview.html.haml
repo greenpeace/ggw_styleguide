@@ -32,7 +32,8 @@ view: list
           %table.tablesaw{"data-mode" => "swipe"}
             %thead
               %tr
-                %th.views-field-name{"data-priority" => "persist", :colspan => "2"} Name
+                %th.views-field-avatar{"data-priority" => "persist"}
+                %th.views-field-name{"data-priority" => "persist"} Name
                 %th.views-field-username Username
                 %th Location
                 %th Date joined
@@ -45,32 +46,32 @@ view: list
                 %th Skills
 
             %tbody
-            - 50.times do |num|
-              %tr
-                %td
-                  %img{:alt => "Example of image.", :src => "http://lorempixel.com/70/47/people/9/"}
-                %td
-                  = lorem.name
-                %td
-                  = lorem.name.downcase.tr(' ', '_')
-                %td
-                  = lorem.words 3
-                %td
-                  = lorem.date
-                %td
-                  = lorem.word
-                %td
-                  = lorem.word
-                %td
-                  = lorem.word
-                %td
-                  = lorem.word
-                %td
-                  = lorem.word
-                %td
-                  = lorem.word
-                %td
-                  = lorem.date
+              - 50.times do |num|
+                %tr
+                  %td
+                    %img{:alt => "Example of image.", :src => "http://lorempixel.com/70/47/people/9/"}
+                  %td
+                    = lorem.name
+                  %td
+                    = lorem.name.downcase.tr(' ', '_')
+                  %td
+                    = lorem.words 3
+                  %td
+                    = lorem.date
+                  %td
+                    = lorem.word
+                  %td
+                    = lorem.word
+                  %td
+                    = lorem.word
+                  %td
+                    = lorem.word
+                  %td
+                    = lorem.word
+                  %td
+                    = lorem.word
+                  %td
+                    = lorem.date
 
 
 %aside.l-sidebar.sidebar

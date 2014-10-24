@@ -39,6 +39,15 @@
       color: $heading;
       font-weight: bold;
       border-bottom: 3px solid $heading;
+
+      &:hover {
+        border-bottom: 3px solid $heading;
+      }
+    }
+
+    &:hover {
+      border-bottom: 3px solid $green2;
+      text-decoration: none;
     }
 
   }

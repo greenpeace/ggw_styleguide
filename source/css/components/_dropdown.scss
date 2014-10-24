@@ -162,7 +162,8 @@
     }
   }
 
-  .form-item {
+  .form-item,
+  .form-wrapper {
     margin: 0;
   }
 
@@ -171,6 +172,7 @@
     line-height: 20px;
     white-space: nowrap;
   }
+
 
 }
 

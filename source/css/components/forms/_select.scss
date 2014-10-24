@@ -54,8 +54,10 @@ select:-moz-focusring {
     }
 
   }
+
+// removes the default arrow in ie10 +11
   select::-ms-expand {
-    display: none; /*removes the default arrow in ie*/
+    display: none;
   }
 
   select {

@@ -33,13 +33,20 @@ view: list
           %table.tablesaw{"data-mode" => "swipe"}
             %thead
               %tr
-                %th.views-field-title{"data-priority" => "persist"} Title
-                %th.views-field-type Type
-                %th.views-field-body Description
-                %th.views-field-created Date created
-                %th Relevance
-                %th.views-field-changed Date Modified
-                %th.views-field-field-tags Tags
+                %th.views-field-title{"data-priority" => "persist"}
+                  %a{:href => "#", :title => "Sort on Title"} Title
+                %th.views-field-type
+                  %a{:href => "#", :title => "Sort on Type"} Type
+                %th.views-field-body
+                  Description
+                %th.views-field-created
+                  %a{:href => "#", :title => "Sort on Date created"} Date created
+                %th.views-field-relevance
+                  %a{:href => "#", :title => "Sort on Relevance"} Relevance
+                %th.views-field-changed
+                  %a{:href => "#", :title => "Sort on Date modified"} Date modified
+                %th.views-field-field-tags
+                  %a{:href => "#", :title => "Sort on Tags"} Tags
 
             %tbody
               - 20.times do |num|

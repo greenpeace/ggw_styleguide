@@ -25,7 +25,7 @@
 .action-bar .actions > label,
 .action-bar .columns > label,
 .action-bar .filter > label {
-  @extend %element-hidden;
+  display:none;
 }
 
 .action-bar-item span:after{

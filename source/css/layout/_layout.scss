@@ -54,7 +54,7 @@
 }
 
 .l-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -68,10 +68,6 @@
     z-index: 3;
     bottom: auto;
   }
-}
-
-.fixed-supported .l-header {
-  position: fixed;
 }
 
 .l-main {
@@ -135,7 +131,7 @@
   background-color: $green1;
   height: 50px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   top: 0;
   transform: translate3d(0, 0, 0);
@@ -156,10 +152,6 @@
       width: 100%;
     }
   }
-}
-
-.fixed-supported .l-branding-header {
-  position: fixed;
 }
 
 .logo {
@@ -225,7 +217,7 @@
 .block-search {
 
   @include breakpoint($desk) {
-    @include grid-span(3, 10, $output-style: 'isolation');
+    @include grid-span(4, 9, $output-style: 'isolation');
     bottom: 10px;
     position: absolute;
     right: 10px;

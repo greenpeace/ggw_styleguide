@@ -1,3 +1,7 @@
+.block-search {
+  position: relative;
+}
+
 .block-search .icon-search {
   position: absolute;
   top: 11px;
@@ -17,6 +21,60 @@
   &:focus {
     box-shadow: none;
   }
+}
+
+.block-search .form-item-searchtype {
+  @extend %element-hidden;
+
+  @include breakpoint($tab) {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    line-height: 21px;
+    height: 21px;
+    border-right: 1px solid $green2;
+
+    .form-select {
+      width: 90px;
+      font-size: $small;
+      color: $grey-m;
+      line-height: normal;
+      padding: 4px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      line-height: normal;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      -moz-appearance: window;
+      -moz-padding-end: 19px;
+      -webkit-appearance: none;
+      appearance: none;
+      padding-left: 20px;
+      border-radius: 0;
+    }
+
+    // removes the default arrow in ie10 +11
+    select::-ms-expand {
+      display: none;
+    }
+
+    &:after {
+      height: 0;
+      width: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-top: 5px solid $grey-m;
+      display: block;
+      position: absolute;
+      top: 9px;
+      left: 7px;
+      content: '';
+    }
+
+  }
+
 }
 
 .block-search .form-actions {
@@ -47,6 +105,8 @@
       border: 1px solid $green2;
       border-radius: 3px;
       padding: 3px 6px;
+      padding-left: 100px;
+      font-style: normal;
     }
 
     .form-submit {

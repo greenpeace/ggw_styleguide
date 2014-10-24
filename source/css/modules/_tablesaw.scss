@@ -1,12 +1,20 @@
-/*! Tablesaw - v0.1.7 - 2014-10-22
-* https://github.com/filamentgroup/tablesaw
-* Copyright (c) 2014 Filament Group; Licensed MIT */
+// Tablesaw - v0.1.7 - 2014-10-22
+// https://github.com/filamentgroup/tablesaw
+// Copyright (c) 2014 Filament Group; Licensed MIT
+
+.view-search-results .view-content {
+  overflow-x: auto;
+  overflow-y: visible;
+}
 
 .tablesaw {
   empty-cells: show;
-  table-layout: fixed;
   width: 96%;
   margin-right: 25px;
+}
+
+.tablesaw-fix-persist {
+  table-layout: fixed;
 }
 
 .tablesaw-bar {
@@ -17,10 +25,41 @@
   position: relative;
 }
 
+.tablesaw-nav-btn {
+  position: absolute;
+  line-height: 26px;
+  width: 25px;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @if $oldie {
+    display: none;
+  }
+}
+
+// Firefox hack
+@-moz-document url-prefix() {
+  .tablesaw-nav-btn {
+    line-height: 27px;
+  }
+}
+
+//IE has different line-height
+.ie .tablesaw-nav-btn {
+  line-height: 28px;
+}
+
+//IE10+ hack, ie1- + do not listen to condional stylesheets
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .tablesaw-nav-btn {
+    line-height: 28px;
+  }
+}
+
 .tablesaw-nav-btn.left {
   left: 150px;
-  position: absolute;
-  line-height: 28px;
 
   .iscontent-manager & {
     left: 175px;
@@ -28,15 +67,11 @@
 }
 
 .tablesaw-nav-btn.right {
-  position: absolute;
   right: 0;
   padding-right: .5em;
   text-align: right;
   border-bottom: 1px solid $grey-l;
   background: $background;
-  width: 25px;
-  height: 28px;
-  line-height: 28px;
 }
 
 .tablesaw-nav-btn:before {
@@ -65,6 +100,10 @@
 .tablesaw thead {
   border-bottom: 1px solid $grey-l;
   background: $background;
+
+  a {
+    color: $base;
+  }
 }
 
 .tablesaw thead th {
@@ -73,7 +112,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  min-width: 7em;
+  min-width: 120px;
   border: none;
 }
 
@@ -91,14 +130,13 @@
 }
 
 // Specific width for Drupal columns
-@each $column, $width in (body: 200, title: 165, name: 165, views-bulk-operations: 22, email: 200) {
+// Title must be name + avatar
+@each $column, $width in (body: 200, title: 177, avatar: 77, name: 100, views-bulk-operations: 22, email: 200) {
 
-  .tablesaw .views-field-#{$column} {
+  .tablesaw th.views-field-#{$column} {
     width: #{$width}px;
+    min-width: #{$width}px;
   }
 
 }
 
-.tablesaw .views-field-name {
-  text-indent: 80px;
-}

@@ -30,6 +30,7 @@
     position: relative;
     display: block;
     line-height: 1.8em;
+    border-bottom: 3px solid $white;
 
     &:last-child:after {
       border: none;
@@ -38,15 +39,15 @@
     &.active {
       color: $heading;
       font-weight: bold;
-      border-bottom: 3px solid $heading;
+      border-color: $heading;
 
       &:hover {
-        border-bottom: 3px solid $heading;
+        border-color: $heading;
       }
     }
 
     &:hover {
-      border-bottom: 3px solid $green2;
+      border-color: $green2;
       text-decoration: none;
     }
 

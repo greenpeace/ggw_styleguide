@@ -9,7 +9,7 @@ compass_config do |config|
   config.output_style = :expanded
 end
 
-activate :livereload
+#activate :livereload
 
 activate :syntax
 

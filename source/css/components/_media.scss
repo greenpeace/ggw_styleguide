@@ -5,7 +5,8 @@ img, picture, media {
 @include breakpoint($smalltab) {
 
 article picture,
-article img {
+article img,
+td img {
   display: block; // by default make sure the image gets it own line
   margin: 0 auto;
 

@@ -1,5 +1,4 @@
 .node-teaser {
-
   overflow: hidden;
   margin-bottom: $def-mar;
   height: 60px;
@@ -62,7 +61,7 @@
     max-height: 2.5em; //equals two line-heights
 
     @include breakpoint($tab) {
-      margin-bottom: .5em;
+      margin-bottom: 5px;
     }
 
     a {
@@ -92,7 +91,7 @@
     }
 
     @include breakpoint($tab) {
-      margin-bottom: .2em;
+      margin-bottom: 5px;
 
       .type {
         width: auto;

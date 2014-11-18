@@ -137,7 +137,6 @@ $( window ).load(function() {
     .fitVids()
     .flexslider({
       animation: "slide",
-      slideshow: false,
       animationSpeed: Modernizr.touch ? 400 : 1000,
       pauseOnHover: true,
       smoothHeight: true,

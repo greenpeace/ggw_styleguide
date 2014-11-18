@@ -36,7 +36,7 @@
             %li
               %a{:href => "#"} Date created
 
-          - if current_page.data.search_page == "newsmedia"
+          - if current_page.data.search_page == "newsmedia" and current_page.data.user_role == "an"
             %li
               %a{:href => "#"} Relevance
             %li
@@ -45,6 +45,20 @@
               %a{:href => "#"} Type
             %li
               %a{:href => "#"} Date created
+
+          - if current_page.data.search_page == "newsmedia" and current_page.data.user_role == "lu"
+            %li
+              %a{:href => "#"} Relevance
+            %li
+              %a{:href => "#"} Title
+            %li
+              %a{:href => "#"} Type
+            %li
+              %a{:href => "#"} Author
+            %li
+              %a{:href => "#"} Date created
+            %li
+              %a{:href => "#"} # of comments
 
           - if current_page.data.search_page == "events" and current_page.data.user_role == "an"
             %li

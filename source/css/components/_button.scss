@@ -77,3 +77,21 @@
 .btn-social-gp .icon-gplus {
   color: #dd4b39;
 }
+
+
+.backtotop-button {
+  @extend %button;
+  bottom: 0;
+  position: fixed;
+  z-index: 100;
+  display: none;
+  right: 30px;
+  height: 40px;
+  margin-bottom: -10px;
+  transition: margin-bottom 150ms linear;
+}
+
+.backtotop-button:hover {
+  margin-bottom: -2px;
+  color: $base;
+}

@@ -4,13 +4,18 @@
       %li
         %a{:href => "#"}
           =image_tag("slide1.jpg")
-          %p This is a line of text with a link
+          %p
+            %span This is a line of text with a link
       %li
         %a{:href => "#"}
           =image_tag("slide2.jpg")
-          %p We are now looking at the 2nd slide, this text is actually too long for the slide
+          %p
+            %span We are now looking at the 2nd slide, this text is actually too long for the slide
           %button.button.btn-primary take action
       %li
         %a{:href => "#"}
           =image_tag("slide3.jpg")
-          %p This is a campaign slide to a separate page
+          %p
+            %span This is a campaign slide to a separate page
+      %li
+        %iframe#player_1{:allowfullscreen => "", :frameborder => "0", :height => "281", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/112010467?api=1&player_id=player_1", :webkitallowfullscreen => "", :width => "500"}

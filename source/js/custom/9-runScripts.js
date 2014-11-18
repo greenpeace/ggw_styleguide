@@ -55,6 +55,7 @@ $( window ).load(function() {
     showMap(),
     mobileNav(),
     dependsOn(),
+    backToTop(),
     autocomplete()
   };
 
@@ -108,11 +109,41 @@ $( window ).load(function() {
   $('.form-select.error').parent('.selector').after('<i class="icon-attention"></i>');
   $('.form-select.error').parent('.selector').addClass('error');
 
+
+  // Vimeo API nonsense
+  var player = document.getElementById('player_1');
+  $f(player).addEvent('ready', ready);
+
+  function addEvent(element, eventName, callback) {
+    if (element.addEventListener) {
+      element.addEventListener(eventName, callback, false)
+    } else {
+      element.attachEvent(eventName, callback, false);
+    }
+  }
+
+  function ready(player_id) {
+    var froogaloop = $f(player_id);
+    froogaloop.addEvent('play', function(data) {
+      $('.flexslider').flexslider("pause");
+    });
+    froogaloop.addEvent('pause', function(data) {
+      $('.flexslider').flexslider("play");
+    });
+  }
+
   // activate sliders
-  $('.flexslider').flexslider({
-    animation: "slide",
-    animationSpeed: Modernizr.touch ? 400 : 1000,
-    pauseOnHover: true
+  $('.flexslider')
+    .fitVids()
+    .flexslider({
+      animation: "slide",
+      slideshow: false,
+      animationSpeed: Modernizr.touch ? 400 : 1000,
+      pauseOnHover: true,
+      smoothHeight: true,
+      before: function(slider){
+        $f(player).api('pause');
+      }
   });
 
   // Universal selector for modal windows with external source

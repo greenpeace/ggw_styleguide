@@ -13,7 +13,22 @@
 
 
 // FlexSlider Necessary Styles
-.flexslider {margin: 0; padding: 0;}
+.flexslider {
+  margin: 0;
+  padding: 0;
+  background-image: url(../images/squares.gif);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  .svg & {
+    background-image: url(../images/squares.svg);
+  }
+
+  @include breakpoint($desk) {
+    min-height: 445px;
+  }
+
+}
 .slides > li {-webkit-backface-visibility: hidden; display: none; position: relative;} // Hide the slides before the JS is loaded. Avoids image jumping
 .slides img {width: 100%; display: block;}
 
@@ -27,7 +42,7 @@
   bottom: 0px;
   margin: 0;
   background: #000;
-  background: rgba(0,0,0,.8);
+  background: rgba(0,0,0,.9);
   color: $white;
   padding: 0 .5em;
   text-align: center;
@@ -40,14 +55,25 @@
   }
 
   @include breakpoint($desk) {
+    background: none;
     @include font-size(22px);
-    display: inline-block;
     bottom: 15%;
     right: 7%;
     width: auto;
     max-width: 45%;
     white-space: normal;
     text-align: left;
+    text-overflow: initial;
+
+    span {
+      background: #000;
+      background: rgba(0,0,0,.8);
+      box-shadow: rgba(0,0,0,.8) 6px 0 0 0,rgba(0,0,0,.8) -6px 0 0 0;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      padding: 4px 6px;
+      line-height: 33px;
+    }
   }
 }
 

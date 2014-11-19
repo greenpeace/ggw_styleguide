@@ -83,7 +83,7 @@ $( window ).load(function() {
   $('.form-item .form-select').wrap('<div class="selector"></div>');
 
   // Apply chosen to select element.
-  $(".no-touch .chosen-select").chosen({width: "100%"});
+  $(".chosen-select").chosen({width: "100%"});
 
   // Pass focused state to visible parent element.
   $('.form-item .form-select').focus(function(){
@@ -110,39 +110,12 @@ $( window ).load(function() {
   $('.form-select.error').parent('.selector').addClass('error');
 
 
-  // Vimeo API nonsense
-  var player = document.getElementById('player_1');
-  $f(player).addEvent('ready', ready);
-
-  function addEvent(element, eventName, callback) {
-    if (element.addEventListener) {
-      element.addEventListener(eventName, callback, false)
-    } else {
-      element.attachEvent(eventName, callback, false);
-    }
-  }
-
-  function ready(player_id) {
-    var froogaloop = $f(player_id);
-    froogaloop.addEvent('play', function(data) {
-      $('.flexslider').flexslider("pause");
-    });
-    froogaloop.addEvent('pause', function(data) {
-      $('.flexslider').flexslider("play");
-    });
-  }
-
   // activate sliders
-  $('.flexslider')
-    .fitVids()
-    .flexslider({
+  $('.flexslider').flexslider({
       animation: "slide",
       animationSpeed: Modernizr.touch ? 400 : 1000,
       pauseOnHover: true,
       smoothHeight: true,
-      before: function(slider){
-        $f(player).api('pause');
-      }
   });
 
   // Universal selector for modal windows with external source

@@ -92,6 +92,39 @@
   @extend %element-hidden;
 }
 
+.flexbox .page-search-form {
+  display: flex;
+  align-content: stretch;
+
+  .form-wrapper {
+    flex: 3 0 0;
+
+    .form-item {
+      display: block;
+    }
+
+    @include breakpoint($smalltab) {
+      flex: 3 0 auto;
+    }
+
+  }
+
+  .form-actions {
+    flex: 1 0 0;
+    align-self: flex-end;
+
+    @include breakpoint($smalltab) {
+      flex: 1 0 0;
+    }
+
+  }
+
+}
+
+.page-search-form .form-item-search .form-text {
+  max-width: none;
+}
+
 @include breakpoint($desk) {
   .search-form {
     position: relative;
@@ -134,14 +167,6 @@
 
   }
 
-  #ggw-search-return-search-form .form-item-search {
-    width: 516px;
-
-    .form-text {
-      max-width: none;
-    }
-  }
-
 }
 
 .view-empty {
@@ -151,3 +176,4 @@
 .view-header {
   @extend %cf;
 }
+

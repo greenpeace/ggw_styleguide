@@ -168,11 +168,18 @@ secondary_an:
     url: "/prototype/an/register-step1.html"
 
 nro:
+  - Africa
   - Belgium
+  - Brazil
+  - Canada
   - France
   - India
+  - Indonesia
   - International
+  - Italy
+  - Mexico
   - Netherlands
+  - New Zealand
   - Nordic
   - Russia
   - Thailand

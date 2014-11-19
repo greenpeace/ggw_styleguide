@@ -4,10 +4,10 @@
   border-bottom: 1px solid $background;
 
   li {
-    margin-right: 1em;
+    margin-right: .5em;
     display: inline-block;
     position: relative;
-    padding-right: 1em;
+    padding-right: .5em;
     line-height: 1em;
 
     &:after {
@@ -23,6 +23,11 @@
 
     &:last-child:after {
       @extend %element-hidden;
+    }
+
+    @include breakpoint($tab) {
+      margin-right: 1em;
+      padding-right: 1em;
     }
   }
 

@@ -10,12 +10,17 @@
 }
 
 .action-bar-item {
-  margin-right: 1em;
-  display: inline-block;
+  margin-top: .5em;
 
-  &.disabled {
+  &.disabled,
+  .disabled {
     opacity: 0.65;
     pointer-events: none;
+  }
+
+  @include breakpoint($tab) {
+    margin-right: 1em;
+    display: inline-block;
   }
 }
 

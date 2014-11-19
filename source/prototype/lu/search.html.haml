@@ -29,28 +29,28 @@ search_page: all
 
           %h2.section-heading
             %a{:href => "search-newsmedia.html"} News and media
-          = partial :"teasers/news-no-image"
-          = partial :"teasers/news-with-image"
-          = partial :"teasers/blog-with-image"
-          = partial :"teasers/blog-no-image"
-          = partial :"teasers/idea-no-image"
-          = partial :"teasers/idea-with-image"
           = partial :"teasers/photo"
           = partial :"teasers/video"
           = partial :"teasers/document"
           = partial :"teasers/page"
           = partial :"teasers/faq"
+          .align-center
+            %a.button{:href => "search-newsmedia.html"} Find more news &amp; media
 
           %h2.section-heading
             %a{:href => "search-events.html"} Events
           = partial :"teasers/event-with-location"
           = partial :"teasers/event-with-image"
           = partial :"teasers/event-no-image"
+          .align-center
+            %a.button{:href => "search-events.html"} Find more events
 
           %h2.section-heading
             %a{:href => "search-groups.html"} Groups
           = partial :"teasers/group-no-image"
           = partial :"teasers/group-with-image"
+          .align-center
+            %a.button{:href => "search-groups.html"} Find more groups
 
           %h2.section-heading
             %a{:href => "search-members.html"} Members
@@ -58,6 +58,8 @@ search_page: all
           = partial :"teasers/member_2"
           = partial :"teasers/member_3"
           = partial :"teasers/member_4"
+          .align-center
+            %a.button{:href => "search-members.html"} Find more members
 
 
 %aside.l-sidebar.sidebar

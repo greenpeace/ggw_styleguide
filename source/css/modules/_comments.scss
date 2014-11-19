@@ -1,7 +1,6 @@
 .block-comments {
   margin-top: 3 * $def-mar;
   @include font-size(14px);
-  line-height: 1.1em;
 
   &:before {
     display: block;
@@ -61,6 +60,7 @@
 .comment {
   border-bottom: 1px solid rgba(0,0,0,.1);
   padding: $def-mar 0;
+  line-height: 1.1em;
 
   &:last-child {
     border-bottom: none;

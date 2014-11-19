@@ -89,9 +89,12 @@
   height: 40px;
   margin-bottom: -10px;
   transition: margin-bottom 150ms linear;
-}
 
-.backtotop-button:hover {
-  margin-bottom: -2px;
-  color: $base;
+  &:active,
+  &:hover {
+    margin-bottom: -2px;
+    color: $base;
+    top: auto;
+  }
+
 }

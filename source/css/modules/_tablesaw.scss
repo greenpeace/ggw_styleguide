@@ -9,8 +9,11 @@
 
 .tablesaw {
   empty-cells: show;
-  width: 96%;
-  margin-right: 25px;
+
+  @include breakpoint($desk) {
+    width: 96%;
+    margin-right: 25px;
+  }
 }
 
 .tablesaw-fix-persist {

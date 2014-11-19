@@ -14,13 +14,13 @@ user_role: lu
     .content
       %article.view-mode-full
         .submitted
-          %a{:href => "#"} News
+          %a.type.news{:href => "#"} News
           by
           %a{:href => "#"} Willie Mackenzie
           -
           %span.submitted-date June 5th 2014 - 11:29
 
-          %a.comments-shortcut{:href => "#block-comments"}
+          %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
             %i.icon-comment
             10
             %span.element-invisible comments
@@ -79,8 +79,6 @@ user_role: lu
               %a{:href => "#"} News
               by
               %a{:href => "#"} Willie Mackenzie
-            .submitted-bio
-              %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
             .submitted-all-reference
               %a{:href => "#"}> All News by Willy Mackenzie
               \.

@@ -14,8 +14,11 @@
           %button.button.btn-primary take action
       %li
         %a{:href => "#"}
+          %iframe{:frameborder => "0", :width => "560", :height => "315", :src => "//www.youtube-nocookie.com/embed/zVu9eawb1QY?rel=0&amp;showinfo=0?version=3&enablejsapi=1&theme=light", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}
+      %li
+        %a{:href => "#"}
           =image_tag("slide3.jpg")
           %p
             %span This is a campaign slide to a separate page
       %li
-        %iframe#player_1{:frameborder => "0", :width => "500", :height => "281", :src => "http://player.vimeo.com/video/112010467?api=1&player_id=player_1", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}
+        %iframe#vimeoexample{:frameborder => "0", :width => "500", :height => "281", :src => "http://player.vimeo.com/video/112010467?api=1&player_id=vimeoexample", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}

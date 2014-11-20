@@ -120,7 +120,7 @@ primary_lu:
         url: "/prototype/lu/groups.html"
       -
         name: "Members"
-        url: "/prototype/lu/members.html"
+        url: "/prototype/lu/search-members.html"
   -
     name: "News and Media"
     url: "#"

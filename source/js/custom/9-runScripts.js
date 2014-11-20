@@ -110,13 +110,61 @@ $( window ).load(function() {
   $('.form-select.error').parent('.selector').addClass('error');
 
 
+  var player = document.getElementById('vimeoexample');
+
+  //for (var i = 0, length = vimeoPlayers.length; i < length; i++) {
+    //player = vimeoPlayers[i];
+    $f(player).addEvent('ready', ready);
+  //}
+
+  function addEvent(element, eventName, callback) {
+    if (element.addEventListener) {
+      element.addEventListener(eventName, callback, false)
+    } else {
+      element.attachEvent(eventName, callback, false);
+    }
+  }
+
+  function ready(player_id) {
+    var froogaloop = $f(player_id);
+    froogaloop.addEvent('play', function(data) {
+      jQuery('.flexslider').flexslider("pause");
+    });
+
+    froogaloop.addEvent('pause', function(data) {
+      jQuery('.flexslider').flexslider("play");
+    });
+  }
+
   // activate sliders
-  $('.flexslider').flexslider({
-      animation: "slide",
+  $('.flexslider')
+    .fitVids()
+    .flexslider({
+      animation: 'slide',
+      pauseOnAction: true,
       animationSpeed: Modernizr.touch ? 400 : 1000,
       pauseOnHover: true,
       smoothHeight: true,
-  });
+      before: function(slider){
+        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0)
+           $f( slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');
+           /* ------------------  YOUTUBE FOR AUTOSLIDER ------------------ */
+           playVideoAndPauseOthers($('.flexslider iframe')[0]);
+      }
+    });
+
+    function playVideoAndPauseOthers(frame) {
+      $('iframe').each(function(i) {
+        var func = this === frame ? 'playVideo' : 'stopVideo';
+        this.contentWindow.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+      });
+    }
+
+    /* ------------------ PREV & NEXT BUTTON FOR FLEXSLIDER (YOUTUBE) ------------------ */
+    $('.flex-next, .flex-prev').click(function() {
+      playVideoAndPauseOthers($('.flexslider iframe')[0]);
+    });
+
 
   // Universal selector for modal windows with external source
   $('.modal').magnificPopup({

@@ -169,8 +169,23 @@
 
 }
 
+// style for total no. of results
+.resultstats {
+  @extend %element-hidden;
+
+  @include breakpoint($smalltab) {
+    line-height: 3em;
+    color: $heading;
+  }
+
+  @include breakpoint($desk) {
+    @include font-size($p);
+  }
+
+}
+
 .view-empty p {
-  @include font-size(14px);
+  @include font-size($p);
 }
 
 .view-header {

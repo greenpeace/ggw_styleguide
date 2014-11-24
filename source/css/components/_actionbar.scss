@@ -2,7 +2,9 @@
   clear: both;
   @include font-size($small);
   position: relative;
-  margin: $def-mar 0;
+  margin: $def-mar-half 0 $def-mar;
+  padding-bottom: $def-mar-half;
+  border-bottom: 1px solid $background;
 }
 
 .sidebar .action-bar {

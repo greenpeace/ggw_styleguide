@@ -15,7 +15,7 @@ design_status: Work in progress
       = current_page.data.title
     %article.view-mode-full.content
       :markdown
-        Please make sure you have read the [getting started instructions](getting-started.html) and installed Middleman to be able to edit teh style guide.
+        Please make sure you have read the [getting started instructions](getting-started.html) and installed Middleman to be able to edit the style guide.
 
         __Start the middleman server__
         In your terminal navigate to the project folder and run
@@ -27,82 +27,101 @@ design_status: Work in progress
 
   %article.block
     %i.block-icon.icon-bg-default.icon-info
-    %h1#page-title.block-title An introduction to HAML
-    %p Our main template language is HAML. You can see haml as a HTML preprocessor, just like SCSS.
-
-    %h3 What is HAML?
-    %ul
-      %li
-        A more concise syntax for coding HTML in your Rails app
-      %li
-        Uses indentation for nesting markup
-        %ul
-          %li
-            Reduces code (no closing tags)
-          %li
-            Fixes the messy markup problem that often clutters views
-      %li
-        Uses a CSS-like syntax that is easier to read and compare to your style rules
-      %li
-        Makes coding your View layer faster
-        %ul
-          %li
-            Note: doesn’t affect render time or client-side performance, simply reduces codingefforts and makes the developer more efficient
-      %li
-        Easy to learn!
-
-    %h3 A comparison
-    %h4 HTML
-    .code
-      :code
-        # lang: html
-          <body>
-            <div id='wrapper'>
-              <div class='stuff'>
-                <a href='#'>Top</a>
-              </div>
-            </div>
-          </body>
-    %p 7 lines, 78 characters
-
-    %h4 HAML
-    .code
-      :code
-        # lang: haml
-          %body
-            #wrapper
-              .stuff
-                %a{:href => "#"} Top
-    %p 4 lines, 36 characters
-    %p
-      :markdown
-        **Read more:**
-
-        - [An introduction to SASS and HAML](http://jonathandean.com/2011/10/an-introduction-to-sass-and-haml/)
-        - [HTML to HAML converter](http://html2haml.heroku.com)
-        - [HAML official site](http://haml.info/) (including tutorial)
+    %h1.block-title Accessing the middleman development server within your network
+    %article.view-mode-full.content
+      %p
+        Depending on the server settings, you should be able to see the source at
+        %code http://localhost:4567/
+        or
+        %code http://0.0.0.0:4567/
+      %p To access this domain from another device like a tablet or smartphone, you need to be connected on the same network as the middleman development server. Now find out what your IP address is. The easiest to work with is a fixed IP address.
+      %p
+        If your IP address is for example
+        %code 192.168.0.1
+        then you can find your site at
+        %code http://192.168.0.1.xip.io:4567
+      %p xip.io is a magic domain name that provides wildcard DNS. xip.io runs a custom DNS server on the public Internet. When your computer looks up a xip.io domain, the xip.io DNS server extracts the IP address from the domain and sends it back in the response.
 
   %article.block
     %i.block-icon.icon-bg-default.icon-info
-    %h1#page-title.block-title Markdown
-    :markdown
-      For most texts in the styleguide we use the Markdown language. This text is also written in markdown. Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid HTML. HAML is great to create templates, but is not suitable to write long pieces of texts with links and extra markup. In markdown we can easily insert links and format the text.
+    %h1.block-title An introduction to HAML
+    %article.view-mode-full.content
+      %p Our main template language is HAML. You can see haml as a HTML preprocessor, just like SCSS.
 
-      Markdown is placed inside our HAML files, so we need to give notice where we want to use Markdown. Here is an example:
-    .code
-      :code
-        # lang: haml
-          %h1#page-title.block-title Markdown
-            :markdown
-              With hashes we create headings
-              # Heading 1
-              ### Heading 3
+      %h3 What is HAML?
+      %ul
+        %li
+          A more concise syntax for coding HTML in your Rails app
+        %li
+          Uses indentation for nesting markup
+          %ul
+            %li
+              Reduces code (no closing tags)
+            %li
+              Fixes the messy markup problem that often clutters views
+        %li
+          Uses a CSS-like syntax that is easier to read and compare to your style rules
+        %li
+          Makes coding your View layer faster
+          %ul
+            %li
+              Note: doesn’t affect render time or client-side performance, simply reduces codingefforts and makes the developer more efficient
+        %li
+          Easy to learn!
 
-              new paragraphs just need a new line
+      %h3 A comparison
+      %h4 HTML
+      .code
+        :code
+          # lang: html
+            <body>
+              <div id='wrapper'>
+                <div class='stuff'>
+                  <a href='#'>Top</a>
+                </div>
+              </div>
+            </body>
+      %p 7 lines, 78 characters
 
-              we can easily make texts **bold**, _italic_
-              and create [links] (http://goto.com).
+      %h4 HAML
+      .code
+        :code
+          # lang: haml
+            %body
+              #wrapper
+                .stuff
+                  %a{:href => "#"} Top
+      %p 4 lines, 36 characters
+      %p
+        :markdown
+          **Read more:**
 
-    %p
+          - [An introduction to SASS and HAML](http://jonathandean.com/2011/10/an-introduction-to-sass-and-haml/)
+          - [HTML to HAML converter](http://html2haml.heroku.com)
+          - [HAML official site](http://haml.info/) (including tutorial)
+
+  %article.block
+    %i.block-icon.icon-bg-default.icon-info
+    %h1.block-title Markdown
+    %article.view-mode-full.content
       :markdown
-        If you want to learn Markdown quickly you can do this [Markdown tutorial](http://markdowntutorial.com/).
+        For most texts in the styleguide we use the Markdown language. This text is also written in markdown. Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid HTML. HAML is great to create templates, but is not suitable to write long pieces of texts with links and extra markup. In markdown we can easily insert links and format the text.
+
+        Markdown is placed inside our HAML files, so we need to give notice where we want to use Markdown. Here is an example:
+      .code
+        :code
+          # lang: haml
+            %h1#page-title.block-title Markdown
+              :markdown
+                With hashes we create headings
+                # Heading 1
+                ### Heading 3
+
+                new paragraphs just need a new line
+
+                we can easily make texts **bold**, _italic_
+                and create [links] (http://goto.com).
+
+      %p
+        :markdown
+          If you want to learn Markdown quickly you can do this [Markdown tutorial](http://markdowntutorial.com/).

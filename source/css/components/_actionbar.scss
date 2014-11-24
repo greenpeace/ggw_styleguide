@@ -10,7 +10,7 @@
 }
 
 .action-bar-item {
-  margin-top: .5em;
+  margin-bottom: .5em;
 
   &.disabled,
   .disabled {
@@ -18,7 +18,7 @@
     pointer-events: none;
   }
 
-  @include breakpoint($tab) {
+  @include breakpoint($smalltab) {
     margin-right: 1em;
     display: inline-block;
   }
@@ -52,12 +52,17 @@
 
 .viewmode-switcher {
   position: absolute;
-  right: 10px;
+  right: 0;
   margin: 0;
 
+  @include breakpoint($tab) {
+    margin: 0;
+  }
+
   a {
-    font-size: $h1;
+    @include font-size(36px);
     line-height: 0.85em;
+    margin-top: -4px; // some white-space in the font itself
     text-align: center;
     display: inline-block;
     color: $grey-d;

@@ -18,12 +18,12 @@
   @include mnul;
 }
 
-@mixin no-text-decoration {
+@mixin no-deco {
   text-decoration: none;
 }
 
 %no-deco {
-  @include no-text-decoration;
+  @include no-deco;
 }
 
 %fontsizesmall {

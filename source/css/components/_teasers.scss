@@ -56,10 +56,10 @@
   .node-title {
     @include font-size(16px);
     color: $green5;
-    margin: 0 0 5px;
+    margin: 0 0 3px;
     overflow: hidden;
-    line-height: 1.3em;
-    max-height: 2.5em; //equals two line-heights
+    line-height: 1.2em;
+    max-height: 2.3em; //equals two line-heights
 
     @include breakpoint($tab) {
       margin-bottom: 5px;
@@ -112,12 +112,14 @@
     display: inline-block;
     line-height: 1em;
     overflow:hidden;
+    height: 14px;
   }
 
   .type:before {
     @extend %load-icon;
     left: 0;
     position: absolute;
+    line-height: 1.2em;
   }
 
   @include breakpoint($tab) {

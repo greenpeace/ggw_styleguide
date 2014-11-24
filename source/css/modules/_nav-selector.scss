@@ -1,14 +1,19 @@
 .off-canvas {
 
   .trigger {
-    border-top: 1px solid #CCCCCC;
-    color: $base;
-    display: block;
-    padding: 1em;
-    font-weight: 700;
+    @extend %element-hidden;
 
-    &:focus {
-      @extend %no-deco;
+    @include breakpoint($desk) {
+      border-top: 1px solid #CCCCCC;
+      color: $base;
+      display: block;
+      padding: 1em;
+      font-weight: 700;
+
+      &:focus {
+        @include no-deco;
+      }
+
     }
 
   }

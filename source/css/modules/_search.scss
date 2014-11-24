@@ -26,7 +26,7 @@
 .block-search .form-item-searchtype {
   @extend %element-hidden;
 
-  @include breakpoint($tab) {
+  @include breakpoint($desk) {
     display: inline-block;
     position: absolute;
     left: 0;
@@ -103,7 +103,7 @@
       display: block;
     }
 
-    @include breakpoint($smalltab) {
+    @include breakpoint($tab) {
       flex: 3 0 auto;
     }
 
@@ -113,7 +113,7 @@
     flex: 1 0 0;
     align-self: flex-end;
 
-    @include breakpoint($smalltab) {
+    @include breakpoint($tab) {
       flex: 1 0 0;
     }
 
@@ -169,8 +169,8 @@
 
 }
 
-.view-empty {
-  text-align: center;
+.view-empty p {
+  @include font-size(14px);
 }
 
 .view-header {

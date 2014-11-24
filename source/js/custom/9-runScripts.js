@@ -110,29 +110,34 @@ $( window ).load(function() {
   $('.form-select.error').parent('.selector').addClass('error');
 
 
-  var player = document.getElementById('vimeoexample');
+  //var vimeoPlayers = $('.flexslider .video'), player;
 
   //for (var i = 0, length = vimeoPlayers.length; i < length; i++) {
-    //player = vimeoPlayers[i];
-    $f(player).addEvent('ready', ready);
+  //  player = vimeoPlayers[i];
+  //  $f(player).addEvent('ready', ready);
   //}
+  var player = document.getElementById('vimeoexample');
+  $f(player).addEvent('ready', ready);
+  //$('.flexslider .video').each(function() {
+  //  $f(this).addEvent('ready', ready);
+  //});
 
   function addEvent(element, eventName, callback) {
     if (element.addEventListener) {
-      element.addEventListener(eventName, callback, false)
+      element.addEventListener(eventName, callback, false);
     } else {
       element.attachEvent(eventName, callback, false);
     }
   }
 
-  function ready(player_id) {
-    var froogaloop = $f(player_id);
+  function ready(playerId) {
+    var froogaloop = $f(playerId);
     froogaloop.addEvent('play', function(data) {
-      jQuery('.flexslider').flexslider("pause");
+      $('.flexslider').flexslider('pause');
     });
 
     froogaloop.addEvent('pause', function(data) {
-      jQuery('.flexslider').flexslider("play");
+      $('.flexslider').flexslider('play');
     });
   }
 
@@ -141,15 +146,17 @@ $( window ).load(function() {
     .fitVids()
     .flexslider({
       animation: 'slide',
-      pauseOnAction: true,
+      animationLoop: false,
       animationSpeed: Modernizr.touch ? 400 : 1000,
-      pauseOnHover: true,
       smoothHeight: true,
+      pauseOnAction: true,
+      pauseOnHover: true,
       before: function(slider){
-        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0)
-           $f( slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');
+        //if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0)
+           $f(player).api('pause');
+           //$f( slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');
            /* ------------------  YOUTUBE FOR AUTOSLIDER ------------------ */
-           playVideoAndPauseOthers($('.flexslider iframe')[0]);
+           //playVideoAndPauseOthers($('.play3 iframe')[0]);
       }
     });
 
@@ -162,7 +169,7 @@ $( window ).load(function() {
 
     /* ------------------ PREV & NEXT BUTTON FOR FLEXSLIDER (YOUTUBE) ------------------ */
     $('.flex-next, .flex-prev').click(function() {
-      playVideoAndPauseOthers($('.flexslider iframe')[0]);
+      playVideoAndPauseOthers($('.play3 iframe')[0]);
     });
 
 

@@ -1,4 +1,5 @@
-.search-tabs {
+.search-tabs ul,
+.new-search-tabs ul {
   margin: $def-mar-half 0;
   list-style: none outside none;
   border-bottom: 1px solid $background;
@@ -6,7 +7,7 @@
   li {
     display: inline-block;
     position: relative;
-    padding-right: 5px;
+    padding-right: 1em;
     line-height: 1em;
 
     &:last-child:after {
@@ -58,6 +59,22 @@
       text-decoration: none;
     }
 
+  }
+
+}
+
+
+.new-search-tabs {
+
+  .dropdown-menu {
+    margin: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .dropdown a {
+    line-height: 1.5em;
+    border: none;
+    padding: .4em 1em;
   }
 
 }

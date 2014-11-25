@@ -98,6 +98,7 @@
 
   .form-wrapper {
     flex: 3 0 0;
+    margin-bottom: 5px;
 
     .form-item {
       display: block;
@@ -105,6 +106,7 @@
 
     @include breakpoint($tab) {
       flex: 3 0 auto;
+      margin-bottom: $def-mar;
     }
 
   }

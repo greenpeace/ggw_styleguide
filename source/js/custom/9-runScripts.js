@@ -56,7 +56,8 @@ $( window ).load(function() {
     mobileNav(),
     dependsOn(),
     backToTop(),
-    autocomplete()
+    autocomplete(),
+    tabsDropdown()
   };
 
   var resizeTimer;

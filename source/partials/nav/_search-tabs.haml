@@ -1,23 +1,24 @@
-%ul.search-tabs#ggw-search-menu-links
-  - if current_page.data.user_role == "an"
-    %li
-      =nav_link 'All', '/prototype/an/search.html', :class => 'tab'
-    %li
-      =nav_link 'News & Media', '/prototype/an/search-newsmedia.html', :class => 'tab'
-    %li
-      =nav_link 'Events', '/prototype/an/search-events.html', :class => 'tab'
-    %li
-      =nav_link 'Groups', '/prototype/an/search-groups.html', :class => 'tab'
-    %li
-      =nav_link 'Members', '/prototype/an/search-members.html', :class => 'tab'
-  - if current_page.data.user_role == "lu" or current_page.data.user_role == "cm"
-    %li
-      =nav_link 'All', '/prototype/lu/search.html', :class => 'tab'
-    %li
-      =nav_link 'News & Media', '/prototype/lu/search-newsmedia.html', :class => 'tab'
-    %li
-      =nav_link 'Events', '/prototype/lu/search-events.html', :class => 'tab'
-    %li
-      =nav_link 'Groups', '/prototype/lu/search-groups.html', :class => 'tab'
-    %li
-      =nav_link 'Members', '/prototype/lu/search-members.html', :class => 'tab'
+.search-tabs
+  %ul#ggw-search-menu-links
+    - if current_page.data.user_role == "an"
+      %li
+        =nav_link 'All', '/prototype/an/search.html', :class => 'tab'
+      %li
+        =nav_link 'News & Media', '/prototype/an/search-newsmedia.html', :class => 'tab'
+      %li
+        =nav_link 'Events', '/prototype/an/search-events.html', :class => 'tab'
+      %li
+        =nav_link 'Groups', '/prototype/an/search-groups.html', :class => 'tab'
+      %li
+        =nav_link 'Members', '/prototype/an/search-members.html', :class => 'tab'
+    - if current_page.data.user_role == "lu" or current_page.data.user_role == "cm"
+      %li
+        =nav_link 'All', '/prototype/lu/search.html', :class => 'tab'
+      %li
+        =nav_link 'News & Media', '/prototype/lu/search-newsmedia.html', :class => 'tab'
+      %li
+        =nav_link 'Events', '/prototype/lu/search-events.html', :class => 'tab'
+      %li
+        =nav_link 'Groups', '/prototype/lu/search-groups.html', :class => 'tab'
+      %li
+        =nav_link 'Members', '/prototype/lu/search-members.html', :class => 'tab'

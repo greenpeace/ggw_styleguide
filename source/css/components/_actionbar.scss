@@ -3,8 +3,6 @@
   @include font-size($small);
   position: relative;
   margin: $def-mar-half 0 $def-mar;
-  padding-bottom: $def-mar-half;
-  border-bottom: 1px solid $background;
 }
 
 .sidebar .action-bar {
@@ -13,6 +11,8 @@
 
 .action-bar-item {
   margin-bottom: .5em;
+  margin-right: .5em;
+  display: inline-block;
 
   &.disabled,
   .disabled {
@@ -53,9 +53,14 @@
 }
 
 .viewmode-switcher {
-  position: absolute;
-  right: 0;
-  margin: 0;
+  display: none;
+
+  @include breakpoint($smalltab) {
+    display: block;
+    position: absolute;
+    right: 0;
+    margin: 0;
+  }
 
   @include breakpoint($tab) {
     margin: 0;

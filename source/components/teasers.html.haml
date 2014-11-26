@@ -1,0 +1,82 @@
+---
+title: Teasers
+body_class: page-teasers
+layout: styleguide
+design_status: Needs review
+---
+
+%aside.sidebar-left
+  = partial :"nav/uicomponents"
+#content.l-main-column
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Teasers
+    .content
+      :markdown
+        To show an overview of content we us teasers. On average the content of the teasers is pretty consistent, but each content type can have different fields.
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Page
+    .content
+      = partial :"teasers/page"
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title FAQ
+    .content
+      = partial :"teasers/faq"
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title News
+    .content
+      = partial :"teasers/news-with-image"
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Blog
+    .content
+      = partial :"teasers/blog-with-image"
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Document
+    .content
+      = partial :"teasers/document"
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Idea
+    .content
+      = partial :"teasers/idea"
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Photo
+    .content
+      = partial :"teasers/photo"
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Video
+    .content
+      = partial :"teasers/video"
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Event
+    .content
+      = partial :"teasers/event-with-location"
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Group
+    .content
+      = partial :"teasers/group-with-image"
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Member
+    .content
+      = partial :"teasers/member_4"

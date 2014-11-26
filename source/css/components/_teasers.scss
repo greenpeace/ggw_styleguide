@@ -107,8 +107,7 @@
   text-overflow: ellipsis;
 
   .type {
-    margin-right: 1em;
-    width: 0;
+    width: 1em;
     display: inline-block;
     line-height: 1em;
     overflow:hidden;
@@ -117,8 +116,7 @@
 
   .type:before {
     @extend %load-icon;
-    left: 0;
-    position: absolute;
+    display: inline-block;
     line-height: 1.2em;
   }
 
@@ -128,12 +126,10 @@
     .type {
       width: auto;
       display: inline;
-      margin: 0 .3em 0 .1em;
-      line-height: normal;
 
       &:before {
         position: relative;
-        margin-right: .3em;
+        margin-right: .2em;
       }
 
     }

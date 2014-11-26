@@ -49,7 +49,7 @@ function tabsDropdown() {
 
   list.insertAfter('.search-tabs');
   list.wrapAll('<div class="new-search-tabs">');
-  $('.dropdown-menu a').unwrap().removeClass("tab");
+  $('.new-search-tabs .dropdown-menu a').unwrap().removeClass("tab");
 
 
 };

@@ -1,5 +1,5 @@
 .views-row
-  %article.node-teaser-album.node-teaser
+  %article.node-teaser-photo.node-teaser
     .field-type-image
       = partial :"teasers/teaser-image"
     .field-type-wrapper
@@ -7,7 +7,7 @@
         %a{:href => "#"}
           = lorem.words 6
       .submitted
-        %a.type.album{:href => "#"} Photos
+        %a.type.photo{:href => "#"} Photos
         4 Mar, by
         - if current_page.data.user_role != "an"
           %a{:href => "#"}

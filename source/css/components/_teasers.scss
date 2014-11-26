@@ -68,6 +68,7 @@
     a {
       @extend %block;
     }
+
   }
 
   label {
@@ -105,12 +106,11 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  line-height: 1em;
 
   .type {
     width: 1em;
     display: inline-block;
-    overflow:hidden;
+    overflow: hidden;
     vertical-align: bottom;
   }
 
@@ -119,6 +119,7 @@
     display: inline-block;
     top: -1px;
     position: relative;
+    width: 1em;
   }
 
   span {
@@ -132,7 +133,7 @@
       width: auto;
 
       &:before {
-        margin-right: .1em;
+        margin-right: .2em;
       }
 
     }
@@ -183,7 +184,7 @@
 // List all background-images for types which will show if there is no image present
 // and list all submitted type icons
 
-@each $type, $icon in (news: book-open, blog: feather, event: calendar, group: users, album: camera, document: attach, video: video, idea: thumbs-up, page: info, material: bucket, faq: help, notification: user, user: user) {
+@each $type, $icon in (news: book-open, blog: feather, event: calendar, group: users, photo: camera, document: attach, video: video, idea: thumbs-up, page: info, material: bucket, faq: help, notification: user, user: user) {
 
   .node-teaser-#{$type} .field-type-image {
     @extend %icon-#{$icon};

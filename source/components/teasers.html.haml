@@ -15,17 +15,56 @@ design_status: Needs review
       :markdown
         To show an overview of content we us teasers. On average the content of the teasers is pretty consistent, but each content type can have different fields.
 
+        Teasers always have an image on the left. This can be a photo is the content contains an image field. The fallback is always an image showing the content type icon.
+
   %section.block
     %i.block-icon.icon-info.icon-bg-default
     %h2.block-title Page
     .content
       = partial :"teasers/page"
+    .code
+      :code
+        #lang: html
+        <div class='views-row'>
+          <article class='node-teaser-page node-teaser'>
+            <div class='field-type-image'></div>
+            <div class='field-type-wrapper'>
+              <h2 class='node-title'><a href='#'>ea dolorem omnis dolores ut voluptate voluptas ipsa voluptas voluptas soluta</a></h2>
+              <div class='submitted'>
+                <span class='type page' href='#'>Page</span> 16 Nov 2014, by <a href='#'> Jason Adkins </a>
+              </div>
+              <div class='field-name-body'>
+                Voluptatum velit quod hic temporibus officia inventore dolorum ab quia  cupiditate maiores et. ut et beatae dolores. hic reprehenderit minima  similique at necessitatibus pariatur minima dolores laborum omnis dolorum est  ad quia
+              </div>
+            </div>
+          </article>
+        </div>
+
+
 
   %section.block
-    %i.block-icon.icon-faq.icon-bg-default
+    %i.block-icon.icon-help.icon-bg-default
     %h2.block-title FAQ
     .content
       = partial :"teasers/faq"
+
+    .code
+      :code
+        #lang: html
+          <div class='views-row'>
+            <article class='node-teaser-faq node-teaser'>
+              <div class='field-type-image'></div>
+              <div class='field-type-wrapper'>
+                <h2 class='node-title'><a href='#'>voluptatibus id eum et aut libero?</a></h2>
+                <div class='submitted'>
+                  <a class='type faq' href='#'>Faq</a> 05 Dec 2014, by <a href='#'>Collin Holmes</a>
+                </div>
+                <div class='field-name-body'>
+                  Ut inventore tempora reiciendis. corrupti ducimus eaque consequatur sequi sint  . in voluptatibus sit quod. ipsa ut rerum et voluptas voluptatem id hic eos   explicabo aut. et modi consequatur delectus corporis sit. et facere   consectetur doloremque quidem id modi. facilis voluptas molestias culpa velit
+                </div>
+              </div>
+            </article>
+          </div>
 
   %section.block
     %i.block-icon.icon-news.icon-bg-default
@@ -33,11 +72,63 @@ design_status: Needs review
     .content
       = partial :"teasers/news-with-image"
 
+    .code
+      :code
+        #lang: html
+        <div class='views-row'>
+          <article class='node-teaser-news node-teaser'>
+            <div class='field-type-image'>
+              <picture>
+                <!--[if IE 9]> <video style="display: none;"> <![endif]-->
+                <source media='(min-width: 48em)' srcset='http://lorempixel.com/130/90/animals/1/desk, http://lorempixel.com/260/180/animals/2/deskx1.5 1.5x'>
+                <source srcset='http://lorempixel.com/180/120/animals/3/mobx2 2x, http://lorempixel.com/90/60/animals/4/mob 1x'>
+                <!--[if IE 9]> </video> <![endif]-->
+                <img alt='Example of image.' src='http://lorempixel.com/90/60/animals/5/img'>
+              </picture>
+            </div>
+            <div class='field-type-wrapper'>
+              <h2 class='node-title'><a href='./news-article.html'>voluptatem nostrum quibusdam unde repudiandae vero mollitia provident nobis magni</a></h2>
+              <div class='submitted'>
+                <a class='type news' href='#'>News</a> 23 Jul 2014, by <a href='#'>Doris Schultz</a>
+              </div>
+              <div class='field-name-body'>
+                Laboriosam vel expedita maiores quaerat sed et architecto earum in vel. at qui laborum harum. provident delectus omnis voluptate occaecati qui ad eaque et atque fuga dolorum. neque explicabo excepturi minima soluta dolores nobis sequi temporibus et. maxime eligendi est facere. at veniam qui perferendis adipisci nemo consequatur alias explicabo repellendus. ab aut voluptates odio est expedita
+              </div>
+            </div>
+          </article>
+        </div>
+
   %section.block
     %i.block-icon.icon-blog.icon-bg-default
     %h2.block-title Blog
     .content
       = partial :"teasers/blog-with-image"
+
+    .code
+      :code
+        #lang: html
+        <div class='views-row'>
+          <article class='node-teaser-blog node-teaser'>
+            <div class='field-type-image'>
+              <picture>
+                <!--[if IE 9]> <video style="display: none;"> <![endif]-->
+                <source media='(min-width: 48em)' srcset='http://lorempixel.com/130/90/animals/1/desk, http://lorempixel.com/260/180/animals/2/deskx1.5 1.5x'>
+                <source srcset='http://lorempixel.com/180/120/animals/3/mobx2 2x, http://lorempixel.com/90/60/animals/4/mob 1x'>
+                <!--[if IE 9]> </video> <![endif]-->
+                <img alt='Example of image.' src='http://lorempixel.com/90/60/animals/5/img'>
+              </picture>
+            </div>
+            <div class='field-type-wrapper'>
+              <h2 class='node-title'><a href='./news-article.html'>voluptatem nostrum quibusdam unde repudiandae vero mollitia provident nobis magni</a></h2>
+              <div class='submitted'>
+                <a class='type blog' href='#'>Blog</a> 11 Aug 2014, by <a href='#'>Allyson Hatcher</a>
+              </div>
+              <div class='field-name-body'>
+                Et aut ut a magni et quam praesentium ut a sint sequi architecto veniam et. quia eum omnis rerum velit mollitia veritatis recusandae voluptatem corrupti commodi consequatur quia. error odit ea vel aut et eaque placeat mollitia voluptatibus quae rerum aliquam repellendus. reiciendis odit tempore neque. suscipit asperiores perspiciatis maiores praesentium dolorem voluptas dolores praesentium accusantium at quae asperiores laborum quod. odio et impedit qui vel. incidunt aut voluptas enim earum sapiente earum
+              </div>
+            </div>
+          </article>
+        </div>
 
   %section.block
     %i.block-icon.icon-document.icon-bg-default
@@ -45,11 +136,47 @@ design_status: Needs review
     .content
       = partial :"teasers/document"
 
+    .code
+      :code
+        #lang: html
+        <div class='views-row'>
+          <article class='node-teaser-document node-teaser'>
+            <div class='field-type-image'></div>
+            <div class='field-type-wrapper'>
+              <h2 class='node-title'><a href='#'>Quia minus sunt corporis</a></h2>
+              <div class='submitted'>
+                <a class='type document' href='#'>Document</a>24 Sep 2013, by<a href='#'>Sydney Rowe</a>
+              </div>
+              <div class='field-name-body'>
+                Dicta quia sed voluptates architecto perferendis quis aliquid sequi nemo nisi   quae. dicta esse molestiae voluptatum dicta vitae qui. aut optio quis   inventore voluptates itaque
+              </div>
+            </div>
+          </article>
+        </div>
+
   %section.block
     %i.block-icon.icon-idea.icon-bg-default
     %h2.block-title Idea
     .content
       = partial :"teasers/idea"
+
+    .code
+      :code
+        #lang: html
+        <div class='views-row'>
+          <article class='node-teaser-idea node-teaser'>
+            <div class='field-type-image'></div>
+            <div class='field-type-wrapper'>
+              <h2 class='node-title'><a href='#'>deleniti sunt corporis ullam</a></h2>
+              <div class='submitted'>
+                <a class='type idea' href='#'>Idea</a> 9 Dec, by<a href='#'>Phil Graves</a>
+              </div>
+              <div class='field-name-body'>
+                Eveniet exercitationem placeat dolorum cumque quis aspernatur. possimus   doloribus ea est dolorum vero. deserunt minima qui non. enim voluptatibus   aspernatur repellat accusamus inventore praesentium aut eaque hic eveniet et  debitis. occaecati possimus facere nemo eveniet ut minus ullam occaecati eos   facere possimus. eum similique perspiciatis omnis dolores et repudiandae at   ullam veniam illum at. qui qui nemo porro sint numquam animi ut nam id
+              </div>
+            </div>
+          </article>
+        </div>
 
   %section.block
     %i.block-icon.icon-photo.icon-bg-default
@@ -57,11 +184,62 @@ design_status: Needs review
     .content
       = partial :"teasers/photo"
 
+    .code
+      :code
+        #lang: html
+        <div class='views-row'>
+          <article class='node-teaser-photo node-teaser'>
+            <div class='field-type-image'>
+              <picture>
+                <!--[if IE 9]> <video style="display: none;"> <![endif]-->
+                <source media='(min-width: 48em)' srcset='http://lorempixel.com/130/90/animals/1/desk, http://lorempixel.com/260/180/animals/2/deskx1.5 1.5x'>
+                <source srcset='http://lorempixel.com/180/120/animals/3/mobx2 2x, http://lorempixel.com/90/60/animals/4/mob 1x'>
+                <!--[if IE 9]> </video> <![endif]-->
+                <img alt='Example of image.' src='http://lorempixel.com/90/60/animals/5/img'>
+              </picture>
+            </div>
+            <div class='field-type-wrapper'>
+              <h2 class='node-title'><a href='#'> sit excepturi nobis nulla ut ea </a></h2>
+              <div class='submitted'>
+                <a class='type photo' href='#'>Photos</a>4 Mar, by<a href='#'>Janet Bowden</a>
+              </div>
+              <div class='field-name-body'>
+                Rerum adipisci commodi maxime at et sed reiciendis velit est quam. nam est iste animi sed reiciendis impedit. eos quia aut voluptatem sunt debitis vitae. autem est enim et quis itaque enim id maxime qui eum nesciunt quasi blanditiis. dignissimos ab placeat quo vel dignissimos voluptatem rerum. impedit eligendi voluptatem aut ducimus explicabo non maxime voluptas
+              </div>
+            </div>
+          </article>
+        </div>
+
   %section.block
     %i.block-icon.icon-video.icon-bg-default
     %h2.block-title Video
     .content
       = partial :"teasers/video"
+
+    .code
+      :code
+        #lang: html
+        <div class='views-row'>
+          <article class='node-teaser-video node-teaser'>
+            <div class='field-type-image'>
+              <picture>
+                <!--[if IE 9]> <video style="display: none;"> <![endif]-->
+                <source media='(min-width: 48em)' srcset='http://lorempixel.com/130/90/animals/1/desk, http://lorempixel.com/260/180/animals/2/deskx1.5 1.5x'>
+                <source srcset='http://lorempixel.com/180/120/animals/3/mobx2 2x, http://lorempixel.com/90/60/animals/4/mob 1x'>
+                <!--[if IE 9]> </video> <![endif]-->
+                <img alt='Example of image.' src='http://lorempixel.com/90/60/animals/5/img'>
+              </picture>
+            </div>
+            <div class='field-type-wrapper'>
+              <h2 class='node-title'><a href='#'> quisquam quos molestiae dolorem vero necessitatibus dignissimos rerum itaque iste</a></h2>
+              <div class='submitted'><a class='type video' href='#'>Video</a>14 Apr, by<a href='#'>Eoin Hill</a>
+              </div>
+              <div class='field-name-body'>
+                Cum ipsam qui quod est dolores dolore. non libero similique voluptatibus enim veritatis. temporibus totam officia non et impedit qui nihil dicta vel aut at vero. dolor aut quas ut deleniti dolor vitae ea maiores voluptatem neque non. deleniti quisquam adipisci qui doloribus et est officia deserunt ipsum quasi earum. doloribus est et cum velit aut porro fugit aliquid quo nostrum minus voluptatem. porro ab voluptatem excepturi suscipit et autem dolore dolor et atque dicta temporibus architecto
+              </div>
+            </div>
+          </article>
+        </div>
 
   %section.block
     %i.block-icon.icon-event.icon-bg-default
@@ -69,14 +247,91 @@ design_status: Needs review
     .content
       = partial :"teasers/event-with-location"
 
+    .code
+      :code
+        #lang: html
+        <div class='views-row'>
+          <article class='node-teaser-event node-teaser'>
+            <div class='field-type-image'>
+              <picture>
+                <!--[if IE 9]> <video style="display: none;"> <![endif]-->
+                <source media='(min-width: 48em)' srcset='./../../images/event-map-example_130.jpg, ./../../images/event-map-example_260.jpg 1.5x'>
+                <source srcset='./../../images/event-map-example_90.jpg, ./../../images/event-map-example_180.jpg 1.5x'>
+                <!--[if IE 9]> </video> <![endif]-->
+                <img alt='Example of image.' src='./../../images/event-map-example_90.jpg'>
+              </picture>
+            </div>
+            <div class='field-type-wrapper'>
+              <h2 class='node-title'><a href='#'>Nostrum eum deleniti qui ut nemo provident vero</a></h2>
+              <div class='submitted'>
+                <a class='type event' href='./events.html'>Event</a>2 Jan, 20:00 - 23:00 CET
+              </div>
+              <div class='field-group-format'>
+                <div class='field-type-date'><label>Time:</label>August 10th, 8:00PM until  11:30 PM
+                </div>
+                <div class='field-type-location'><label>Address:</label>Oude Markt 9B,  Enschede (Market Square)
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
   %section.block
     %i.block-icon.icon-users.icon-bg-default
     %h2.block-title Group
     .content
       = partial :"teasers/group-with-image"
 
+    .code
+      :code
+        #lang: html
+        <div class='views-row'>
+          <article class='node-teaser-group node-teaser'>
+            <div class='field-type-image'>
+              <picture>
+                <!--[if IE 9]> <video style="display: none;"> <![endif]-->
+                <source media='(min-width: 48em)' srcset='http://lorempixel.com/130/90/animals/1/desk, http://lorempixel.com/260/180/animals/2/deskx1.5 1.5x'>
+                <source srcset='http://lorempixel.com/180/120/animals/3/mobx2 2x, http://lorempixel.com/90/60/animals/4/mob 1x'>
+                <!--[if IE 9]> </video> <![endif]-->
+                <img alt='Example of image.' src='http://lorempixel.com/90/60/animals/5/img'>
+              </picture>
+            </div>
+            <div class='field-type-wrapper'>
+              <h2 class='node-title'><a href='#'>veritatis necessitatibus vero accusantium commodi quis sed</a></h2>
+              <div class='submitted'><a class='type group' href='#'>Group</a>Country group (open)</div>
+              <div class='field-name-body'>
+                Vero dolor labore ullam nemo voluptas corrupti rerum rerum officia temporibus. vel maiores possimus est voluptas eius quo molestiae esse voluptatum sint eaque quae iure. in aut ducimus ut. consequuntur tempora perferendis accusantium odio enim autem eveniet. et et soluta consequuntur dolorem eaque iusto amet. aut distinctio in autem vel tenetur optio quis est quia id dicta
+              </div>
+            </div>
+          </article>
+        </div>
+
   %section.block
     %i.block-icon.icon-user.icon-bg-default
     %h2.block-title Member
     .content
       = partial :"teasers/member_4"
+
+    .code
+      :code
+        #lang: html
+        <div class='views-row'>
+          <article class='node-teaser-user node-teaser'>
+            <div class='field-type-image'>
+              <picture>
+                <!--[if IE 9]> <video style="display: none;"> <![endif]-->
+                <source media='(min-width: 48em)' srcset='http://lorempixel.com/130/90/people/9/, http://lorempixel.com/260/180/people/deskx1.5 1.5x'>
+                <source srcset='http://lorempixel.com/180/120/people/mobx2 2x, http://lorempixel.com/90/60/people/mob 1x'>
+                <!--[if IE 9]> </video> <![endif]-->
+                <img alt='Example of image.' src='http://lorempixel.com/90/60/people/img'>
+              </picture>
+            </div>
+            <div class='field-type-wrapper'>
+              <h2 class='node-title'><a href='#'>Adrianna Connolly<span class='username'>(alexandra_scarborough)</span></a></h2>
+              <div class='submitted'><a class='type user' href='#'>Greenpeace staff</a><span>Portland</span></div>
+              <div class='field-name-body'>
+                Quae et et nobis enim nihil sequi nemo est assumenda cum quisquam eveniet et. porro repellendus ad aut voluptate voluptatem illum. est et ad quaerat minus vel unde placeat saepe quam fugit debitis inventore sapiente aliquid. doloribus pariatur amet mollitia et rerum autem ad veritatis aut velit quis. quis debitis quo facere ut qui repellat qui deleniti quia voluptatibus ex dolorum. ut est assumenda vel vel sapiente maiores vel. voluptates ut fugit enim incidunt atque nemo delectus
+              </div>
+            </div>
+          </article>
+        </div>

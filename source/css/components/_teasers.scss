@@ -105,19 +105,24 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  line-height: 1em;
 
   .type {
     width: 1em;
     display: inline-block;
-    line-height: 1em;
     overflow:hidden;
-    height: 14px;
+    vertical-align: bottom;
   }
 
   .type:before {
     @extend %load-icon;
     display: inline-block;
-    line-height: 1.2em;
+    top: -1px;
+    position: relative;
+  }
+
+  span {
+    vertical-align: top;
   }
 
   @include breakpoint($tab) {
@@ -125,11 +130,9 @@
 
     .type {
       width: auto;
-      display: inline;
 
       &:before {
-        position: relative;
-        margin-right: .2em;
+        margin-right: .1em;
       }
 
     }

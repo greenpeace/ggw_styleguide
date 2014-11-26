@@ -52,7 +52,7 @@
       %a#close-map.map-close-button{:href => "#"}
         %span.element-invisible close
 
-      = javascript_include_tag "/vendor/leaflet/leaflet.js"
+      = javascript_include_tag "http://greenpeace.github.io/ggw_styleguide/vendor/leaflet/leaflet.js"
 
       :javascript
           // create a map in the "map" div, set the view to a given place and zoom
@@ -62,10 +62,10 @@
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(deskMap);
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mobileMap);
         var greenIcon = L.icon({
-          iconUrl: '../images/marker-green.png',
-          iconRetinaUrl: '../images/marker-green@2x.png',
-          shadowUrl: '../images/marker-shadow.png',
-          shadowRetinaUrl: '../images/marker-shadow.png',
+          iconUrl: 'http://greenpeace.github.io/ggw_styleguide/images/marker-green.png',
+          iconRetinaUrl: 'http://greenpeace.github.io/ggw_styleguide/images/marker-green@2x.png',
+          shadowUrl: 'http://greenpeace.github.io/ggw_styleguide/images/marker-shadow.png',
+          shadowRetinaUrl: 'http://greenpeace.github.io/ggw_styleguide/images/marker-shadow.png',
           iconSize:     [25, 41], // size of the icon
           shadowSize:   [41, 41], // size of the shadow
           iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location

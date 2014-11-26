@@ -127,7 +127,9 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
 
-  activate :asset_hash
+  # Uniquely-named assets, preventing users from using outdated files
+  # Exclude files that are called from template files directly
+  activate :asset_hash, :ignore => ['vendor', 'images']
 
   # Enable cache buster
   # activate :cache_buster

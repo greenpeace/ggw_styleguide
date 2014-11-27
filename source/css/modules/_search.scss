@@ -178,6 +178,7 @@
   @include breakpoint($smalltab) {
     line-height: 3em;
     color: $heading;
+    display: block;
   }
 
   @include breakpoint($desk) {

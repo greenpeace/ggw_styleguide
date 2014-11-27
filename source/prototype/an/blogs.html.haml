@@ -1,0 +1,23 @@
+---
+title: Blogs
+body_class: not-front not-logged-in page-blogs l-has-sidebar
+user_role: an
+design_status: Needs review
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-news-media.icon-news
+    %h1#page-title.block-title
+      = current_page.data.title
+    .content
+      = partial :"teasers/blog-no-image"
+      = partial :"teasers/blog-with-image"
+      = partial :"teasers/blog-no-image"
+      = partial :"teasers/blog-with-image"
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/find_blog"
+  = partial :"blocks/an/create_account"

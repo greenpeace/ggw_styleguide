@@ -1,0 +1,83 @@
+---
+title: Blog article example
+body_class: not-front not-logged-in page-type-blog l-has-sidebar
+user_role: an
+design_status: Needs review
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-news-media.icon-blog
+    %h1#page-title.block-title
+      = lorem.words 10
+    .content
+      %article.view-mode-full
+        .submitted
+          %a.type.news{:href => "./blogs.html"} Blog
+          by willie_mackenzie -
+          %span.submitted-date November 25th 2014 - 8:29
+        .field-name-body
+          %img.field-type-image.pull-right{:alt => "Description of the image.", :src => "http://lorempixel.com/320/320/nature/9/image"}/
+          %p
+            = lorem.paragraph
+          %p
+            = lorem.paragraph
+          %blockquote
+            %p
+              = lorem.sentence
+          %p
+            = lorem.paragraph
+          %p
+            = lorem.paragraph
+          %picture
+            %source{:media => "(min-width: 64em)", :srcset => "http://lorempixel.com/603/250/nature/1/image, http://lorempixel.com/1440/500/nature/2/image 2x"}
+            %source{:media => "(min-width: 48em)", :srcset => "http://lorempixel.com/768/384/nature/3/image, http://lorempixel.com/1536/768/nature/4/image 2x"}
+            %source{:media => "(min-width: 24em)", :srcset => "http://lorempixel.com/640/320/nature/5/image, http://lorempixel.com/1280/640/nature/6/image 2x"}
+            %img{:alt => "The president giving an award.", :src => "http://lorempixel.com/320/160/nature/7/image", :srcset => "http://lorempixel.com/640/320/nature/8/image 2x"}
+          %p
+            = lorem.paragraph
+          %ul
+            %li
+              = lorem.sentence
+            %li
+              = lorem.sentence
+            %li
+              = lorem.sentence
+          %p
+            = lorem.paragraph
+          %ol
+            %li
+              = lorem.sentence
+            %li
+              = lorem.sentence
+            %li
+              = lorem.sentence
+          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://lorempixel.com/100/100/nature/5/image"}/
+          %p
+            = lorem.sentence
+            %strong without
+            = lorem.sentence
+        .tags
+          Tags:
+          %a.tag{:href => "#"} oceans,
+          %a.tag{:href => "#"} Sustainable fishery,
+          %a.tag{:href => "#"} conservation
+        .submitted.submitted-extended
+          .submitted-image
+            %img{:alt => "Name of the author.", :src => "http://lorempixel.com/75/75/people/8/avatar"}/
+          .submitted-info
+            %div
+              %a{:href => "./blogs.html"} Blog
+              by willie_mackenzie
+            .submitted-all-reference
+              %a{:href => "#"}> All Blogs by willy_mackenzie
+              \.
+
+  = partial :"blocks/an/comments"
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/go_to_group"
+  = partial :"blocks/an/create_account"
+

@@ -14,7 +14,7 @@ function offCanvasSidebar() {
       e.preventDefault();
       if(checkOpenSidebar()==1)
       {
-        $('html').toggleClass('sidebar-active');
+        $('html').removeClass('sidebar-active');
       }
     }
   });

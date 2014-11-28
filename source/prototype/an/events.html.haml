@@ -21,5 +21,8 @@ design_status: Needs review
       = partial :"teasers/event-with-image"
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/find_events"
-  = partial :"blocks/an/create_account"
+  %a.trigger-sidebar#show-sidebar{:href => "#"}
+    %i.button.icon-button.icon-dot-3
+  .content
+    = partial :"blocks/find_events"
+    = partial :"blocks/an/create_account"

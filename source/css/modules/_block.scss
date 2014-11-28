@@ -1,11 +1,11 @@
 .sidebar .block {
   position: relative;
+  margin-bottom: $def-mar;
+  padding: 0 15px 15px;
 
   @include breakpoint($desk) {
-    margin-bottom: $def-mar;
     margin-left: 1em;
   }
-
 }
 
 .l-main-column .block {

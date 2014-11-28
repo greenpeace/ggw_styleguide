@@ -9,6 +9,10 @@ function offCanvasNav() {
     if(root.hasClass('secondary-nav')) {
       root.removeClass('secondary-nav')
     }
+    if(root.hasClass('sidebar-active')) {
+      root.removeClass('sidebar-active')
+    }
+
     e.preventDefault();
 
   });
@@ -31,11 +35,14 @@ function offCanvasNav() {
     if(root.hasClass('primary-nav')) {
       root.removeClass('primary-nav')
     }
+    if(root.hasClass('sidebar-active')) {
+      root.removeClass('sidebar-active')
+    }
     e.preventDefault();
   });
 
   // When the secondary-nav is open, you can close it with a right swipe
-  $(document.documentElement).touchwipe({
+  root.touchwipe({
     wipeRight: function(e) {
       e.preventDefault();
       if(checkOpenMenu()==2)

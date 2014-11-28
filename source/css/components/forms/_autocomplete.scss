@@ -1,6 +1,6 @@
 // auto complete on text inputs
 .js .form-autocomplete {
-  background: url("../images/throbber-inactive.png") 99% 50% no-repeat;
+  background: url("../images/throbber-inactive.png") 99% 50% no-repeat $white;
 }
 .js .throbbing {
   background-image: url("../images/throbber-active.gif");
@@ -11,7 +11,7 @@
 
 .autocomplete {
   border: 1px solid $grey-l;
-  background: #fff;
+  background: $white;
   width: 100%;
   max-width: 400px;
   cursor: default;

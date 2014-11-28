@@ -71,13 +71,11 @@
     display: none;
   }
 
-  &.primary-nav .l-main,
-  &.primary-nav .members-quicknav {
+  &.primary-nav .l-main {
     left: 265px;
   }
 
-  &.secondary-nav .l-main,
-  &.secondary-nav .members-quicknav {
+  &.secondary-nav .l-main {
     right: 265px;
   }
 
@@ -95,8 +93,6 @@
 // Best performance animation, depends on Modernizr
 .csstransforms3d {
 
-  &.primary-nav .members-quicknav,
-  &.secondary-nav .members-quicknav,
   &.primary-nav .l-branding-header,
   &.secondary-nav .l-branding-header,
   &.primary-nav .l-main,
@@ -106,7 +102,6 @@
   }
 
   // class is set html element with JS, push content to the left
-  &.primary-nav .members-quicknav,
   &.primary-nav .l-main {
     transform: translate3d(265px, 0px, 0px);
   }
@@ -116,7 +111,6 @@
     transform: translate3d(266px, 0px, 0px);
   }
 
-  &.secondary-nav .members-quicknav,
   &.secondary-nav .l-main {
     transform: translate3d(-265px, 0px, 0px);
   }

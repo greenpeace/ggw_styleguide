@@ -8,6 +8,7 @@ textarea {
   max-width: 400px;
   -webkit-appearance: none;
   @include font-size($p);
+  background-color: $white;
 
   &:hover {
     border-color: $grey-m;

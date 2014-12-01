@@ -17,6 +17,17 @@
                         %li.menu-item
                           =nav_link hist.name, hist.url, :class => 'menu-link'
 
+            - if current_page.data.user_role == "idea"
+              - data.nav.idea_menu.each do |item|
+                %li.menu-item
+                  =nav_link item.name, item.url, :class => 'menu-link'
+
+                  - if item.sub
+                    %ul.menu
+                      - item.sub.each do|hist|
+                        %li.menu-item
+                          =nav_link hist.name, hist.url, :class => 'menu-link'
+
             - else
               - data.nav.primary_an.each do |item|
                 %li.menu-item

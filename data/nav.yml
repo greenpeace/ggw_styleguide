@@ -159,6 +159,101 @@ primary_lu:
         name: "FAQ"
         url: "/prototype/lu/faq.html"
 
+idea_menu:
+  -
+    name: "Home"
+    url: "/prototype/lu/index.html"
+  -
+    name: "Learn"
+    url: "#"
+    sub:
+      -
+        name: "Catch up with the news"
+        url: "/prototype/lu/news.html"
+      -
+        name: "Read the blogs"
+        url: "/prototype/lu/blogs.html"
+      -
+        name: "View the photos"
+        url: "/prototype/lu/photos.html"
+      -
+        name: "Play videos"
+        url: "/prototype/lu/videos.html"
+      -
+        name: "Browse documents"
+        url: "/prototype/lu/documents.html"
+      -
+        name: "Vote on ideas"
+        url: "/prototype/lu/ideas.html"
+  -
+    name: "Connect"
+    url: "#"
+    sub:
+      -
+        name: "Find an event"
+        url: "/prototype/lu/events.html"
+      -
+        name: "Join a group"
+        url: "/prototype/lu/groups.html"
+      -
+        name: "Connect with members"
+        url: "/prototype/lu/search-members.html"
+      -
+        name: "Contact a coach"
+        url: "#"
+  -
+    name: "Contribute"
+    url: "#"
+    sub:
+      -
+        name: "Post a news article"
+        url: "#"
+      -
+        name: "Write a blog"
+        url: "#"
+      -
+        name: "Upload photos"
+        url: "#"
+      -
+        name: "Submit a video"
+        url: "#"
+      -
+        name: "Upload documents"
+        url: "#"
+      -
+        name: "Propose an idea"
+        url: "#"
+  -
+    name: "Organize"
+    url: "#"
+    sub:
+      -
+        name: "Create an event"
+        url: "#"
+      -
+        name: "Start a group"
+        url: "#"
+      -
+        name: "Browse material list"
+        url: "#"
+      -
+        name: "Propose an idea"
+        url: "#"
+  -
+    name: "Help"
+    url: "#"
+    sub:
+      -
+        name: "New to greenwire?"
+        url: "#"
+      -
+        name: "FAQ"
+        url: "#"
+      -
+        name: "Contact a coach"
+        url: "#"
+
+
 # secondary menu, user menu for AN
 
 secondary_an:

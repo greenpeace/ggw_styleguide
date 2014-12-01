@@ -82,22 +82,24 @@ function dependsOn() {
   };
 
   // Group Skills
-  if ($('#group-skills').length) {
 
-    $('#group-skills').dependsOn({
-      '#group-type': {
-        contains: ['skills-based'],
-      }
-    }, {
-      hide: false,
-      onDisable: function() {
-        $('#group-skills').trigger('chosen:updated');
-      },
-      onEnable: function() {
-        $('#group-skills').trigger('chosen:updated');
-      },
-    });
-  }
+    if ($('#group-skills').length) {
+
+      $('#group-skills').dependsOn({
+        '#group-type': {
+          contains: ['nothing', 'skills-based'],
+        }
+      }, {
+        hide: false,
+        onDisable: function() {
+          $('#group-skills').trigger('chosen:updated');
+        },
+        onEnable: function() {
+          $('#group-skills').trigger('chosen:updated');
+        },
+      });
+    }
+
 
   // Groups is depending on my groups checkbox is false
   if ($('#groups').length) {

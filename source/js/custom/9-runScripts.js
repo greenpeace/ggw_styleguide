@@ -55,7 +55,6 @@ $( window ).load(function() {
     offCanvasSidebar(),
     showMap(),
     mobileNav(),
-    dependsOn(),
     backToTop(),
     autocomplete(),
     tabsDropdown()

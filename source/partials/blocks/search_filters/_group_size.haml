@@ -1,15 +1,16 @@
 .views-exposed-widget
   %label.form-label Size of group
-  .views-widget
+  .views-operator
     .form-item.form-type-select
-      %select.form-select#groupsize
-        %option{:value => "larger"} Larger than
-        %option{:value => "smaller"} Smaller than
+      %select.form-select.between
+        %option{:value => "<"} Smaller than
+        %option{:value => ">"} Larger than
         %option{:value => "between"} Between
 
   .views-widget.inline-fields
-    .form-item.form-type-textfield#grouplarger
-      %input.form-text{:type => "text"}
-    %span.separator#groupbetween and
-    .form-item.form-type-textfield#groupsmaller
-      %input.form-text{:type => "text"}
+    .form-item.form-type-textfield
+      %input.form-text.selector-value{:type => "date", :placeholder => "select date"}
+    .form-item.form-type-textfield
+      %input.form-text.min{:type => "date", :placeholder => "select date"}
+    .form-item.form-type-textfield
+      %input.form-text.max{:type => "date", :placeholder => "select date"}

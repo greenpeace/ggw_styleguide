@@ -1,15 +1,16 @@
 .views-exposed-widget
   %label.form-label Date of event
-  .views-widget
+  .views-operator
     .form-item.form-type-select
-      %select.form-select#dateevent
-        %option{:value => "before"} Before
-        %option{:value => "after"} After
+      %select.form-select.between
+        %option{:value => "<"} Before
+        %option{:value => ">"} After
         %option{:value => "between"} Between
 
   .views-widget.inline-fields
-    .form-item.form-type-textfield#eventbefore
-      %input.form-text{:type => "date", :placeholder => "select date"}
-    %span.separator#eventbetween and
-    .form-item.form-type-textfield#eventafter
-      %input.form-text{:type => "date", :placeholder => "select date"}
+    .form-item.form-type-textfield
+      %input.form-text.selector-value{:type => "date", :placeholder => "select date"}
+    .form-item.form-type-textfield
+      %input.form-text.min{:type => "date", :placeholder => "select date"}
+    .form-item.form-type-textfield
+      %input.form-text.max{:type => "date", :placeholder => "select date"}

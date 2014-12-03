@@ -91,11 +91,6 @@ label {
 
   .form-item {
     margin: 0;
-
-    + .form-item {
-      margin-left: .5em;
-    }
-
   }
 
   // In case we to to have the input and select on one line

@@ -13,12 +13,13 @@
             %span We are now looking at the 2nd slide, this text is actually too long for the slide
           %button.button.btn-primary take action
       %li
-        %a{:href => "#"}
-          %iframe.video{:frameborder => "0", :width => "560", :height => "315", :src => "//www.youtube-nocookie.com/embed/zVu9eawb1QY?rel=0&amp;showinfo=0?version=3&enablejsapi=1&theme=light", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}
+        %iframe.youtube#player_1{:frameborder => "0", :width => "560", :height => "315", :src => "http://www.youtube.com/embed/zVu9eawb1QY?enablejsapi=1&version=3&playerapiid=player_1", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}
+      %li
+        %iframe.vimeo#player_2{:frameborder => "0", :width => "500", :height => "281", :src => "http://player.vimeo.com/video/27243869?api=1&player_id=player_2", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}
       %li
         %a{:href => "#"}
           =image_tag("slide3.jpg")
           %p
             %span This is a campaign slide to a separate page
       %li
-        %iframe.video#vimeoexample{:frameborder => "0", :width => "500", :height => "281", :src => "http://player.vimeo.com/video/112010467?api=1&player_id=vimeoexample", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}
+        %iframe.vimeo#player_4{:frameborder => "0", :width => "500", :height => "281", :src => "http://player.vimeo.com/video/112010467?api=1&player_id=player_4", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}

@@ -110,49 +110,6 @@ $( window ).load(function() {
   $('.form-select.error').parent('.selector').after('<i class="icon-attention"></i>');
   $('.form-select.error').parent('.selector').addClass('error');
 
-
-  // Vimeo API nonsense
-  //var vimeoPlayers = $('.flexslider').find('iframe'), player;
-  var vimeoPlayers = $('#vimeoexample');
-
-  for (var i = 0, length = vimeoPlayers.length; i < length; i++) {
-          player = vimeoPlayers[i];
-          $f(player).addEvent('ready', ready);
-  }
-
-  function addEvent(element, eventName, callback) {
-      if (element.addEventListener) {
-          element.addEventListener(eventName, callback, false)
-      } else {
-          element.attachEvent(eventName, callback, false);
-      }
-  }
-
-  function ready(player_id) {
-      var froogaloop = $f(player_id);
-      froogaloop.addEvent('play', function(data) {
-          jQuery('.flexslider').flexslider("pause");
-      });
-      froogaloop.addEvent('pause', function(data) {
-          jQuery('.flexslider').flexslider("play");
-      });
-  }
-
-  $(".flexslider")
-  .fitVids()
-  .flexslider({
-      animation: "slide",
-      animationLoop: false,
-      smoothHeight: true,
-      useCSS: false,
-      before: function(slider){
-          if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0)
-                $f( slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');
-      }
-  });
-
-
-
   // Universal selector for modal windows with external source
   $('.modal').magnificPopup({
     type: 'ajax',

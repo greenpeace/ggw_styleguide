@@ -27,7 +27,7 @@ script: leaflet
             = partial :"images/event-image"
 
             .event-actions
-              %a.modal.button.btn-block.btn-primary.btn-l{:href => "partials/blocks/an/rsvp.html"} RSVP
+              %button.js-show-sidebar.button.btn-block.btn-primary.btn-l RSVP
 
             .field-group-format
 
@@ -103,6 +103,8 @@ script: leaflet
             \.
 
 %aside.l-sidebar.sidebar
+  %a.trigger-sidebar.js-show-sidebar{:href => "#"}
+    %i.button.icon-button.icon-dot-3
+  = partial :"blocks/an/rsvp"
   = partial :"blocks/an/create_account"
   = partial :"blocks/go_to_group"
-  = partial :"blocks/an/rsvp"

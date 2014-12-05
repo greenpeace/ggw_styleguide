@@ -35,7 +35,7 @@ design_status: Work progress
             = partial :"images/event-image"
 
             .event-actions
-              %a.js-show-sidebar.button.btn-block.btn-primary.btn-l{:href => "#event-signup"} Enroll for this event
+              %button.js-show-sidebar.button.btn-block.btn-primary.btn-l Enroll for this event
 
             .field-group-format
 
@@ -119,7 +119,7 @@ design_status: Work progress
 %aside.l-sidebar.sidebar
   %a.trigger-sidebar.js-show-sidebar{:href => "#"}
     %i.button.icon-button.icon-dot-3
-  = partial :"blocks/go_to_group"
   = partial :"blocks/lu/enroll"
   = partial :"blocks/lu/enrollments"
   = partial :"blocks/lu/subscribe"
+  = partial :"blocks/go_to_group"

@@ -3,7 +3,7 @@ function offCanvasSidebar() {
   var root = $(document.documentElement)
 
   // Open and close the sidebar clicking on the trigger
-  $('#show-sidebar').click(function(e) {
+  $('.js-show-sidebar').click(function(e) {
     root.toggleClass('sidebar-active');
     e.preventDefault();
   });

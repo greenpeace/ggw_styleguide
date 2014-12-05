@@ -2,7 +2,15 @@
   %i.block-icon.icon-login.icon-bg-action
   %h2.block-title Enroll for this event
   .content
-    %form.node-form.node-event_signup-form{:action => "event-full-enrolled.html", :method => "get"}
+    %p You are currently enrolled
+    %a.modal-inline.button{:href => "#event-signup"} Click here to change
+
+
+#event-signup.block.white-popup.mfp-hide
+  %i.block-icon.icon-login.icon-bg-action
+  %h2.block-title Enrollment
+  .content
+    %form.node-form.node-event_signup-form{:action => "event-full.html", :method => "get"}
       .form-item.form-type-radios
         %label{:for => "edit-field-signup-status-und"}
           Are you joining this event?

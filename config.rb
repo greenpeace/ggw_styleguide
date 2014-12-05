@@ -18,9 +18,9 @@ activate :syntax
 #  page "/examples/*"
 #end
 
-activate :blog do |blog|
+#activate :blog do |blog|
   # set options on blog
-end
+#end
 
 
 #set :markdown_engine, :redcarpet

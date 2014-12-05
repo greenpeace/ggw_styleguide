@@ -1,9 +1,9 @@
 ---
-title: Ga mee naar Festival Mundial
-body_class: not-front not-logged-in page-type-event l-has-sidebar
-user_role: an
-design_status: Work in progress
+title: Join us to festival Mundial
+body_class: not-front logged-in page-type-event l-has-sidebar
+user_role: lu
 script: leaflet
+design_status: Work progress
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -16,10 +16,18 @@ script: leaflet
     .content
       %article.view-mode-full
         .submitted
+          %a.comments-shortcut{:href => "#block-comments"}
+            %i.icon-comment
+            10
+            %span.element-invisible comments
+
           %a{:href => "./events.html"} Event
           by
           = lorem.name
           %span.submitted-date June 5th 2014 - 11:29
+
+
+
         .field-name-body
 
           .field-group-wrapper
@@ -27,7 +35,7 @@ script: leaflet
             = partial :"images/event-image"
 
             .event-actions
-              %a.modal.button.btn-block.btn-primary.btn-l{:href => "partials/blocks/an/rsvp.html"} RSVP
+              %a.button.btn-block.btn-primary.btn-l.modal-inline{:href => "#event-signup"} You are currently enrolled
 
             .field-group-format
 
@@ -55,7 +63,8 @@ script: leaflet
                 .field-label Event organiser:
                 %div
                   Organised by
-                  %span.username elly_mckenzie
+                  %a{:href => "#"}
+                    = lorem.name
 
               .field.field-name-field-event-num-attendees
                 .field-label Attendees:
@@ -80,7 +89,7 @@ script: leaflet
               = lorem.sentence
             %li
               = lorem.sentence
-          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://lorempixel.com/100/100/nature/5/image"}/
+          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://lorempixel.  com/100/100/nature/5/image"}/
           %p
             = lorem.sentence
             %strong without
@@ -95,14 +104,22 @@ script: leaflet
         .submitted-info
           %div
             %a{:href => "./events.html"} Event
-            by willie_mackenzie
+            by
+            = lorem.name
           .submitted-bio
             %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
           .submitted-all-reference
-            %a{:href => "#"}> All events by willy_mackenzie
-            \.
+            %a{:href => "#"}>
+              All events by
+              = lorem.name
+              \.
+
+  = partial :"blocks/lu/comments"
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/an/create_account"
+  %a.trigger-sidebar.js-show-sidebar{:href => "#"}
+    %i.button.icon-button.icon-dot-3
   = partial :"blocks/go_to_group"
-  = partial :"blocks/an/rsvp"
+  = partial :"blocks/lu/enrolled"
+  = partial :"blocks/lu/enrollments"
+  = partial :"blocks/lu/subscribe"

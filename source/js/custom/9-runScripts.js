@@ -1,23 +1,5 @@
 // this method is required because ajaxInclude will not pass on functions to loaded content. This funtion is called whenever an ajax request is completed.
 
-function runAgain() {
-  'use strict';
-
-  // show/hide event enrollment form
-  $('#togglEnrollForm').click(function() {
-    if ($('#event-signup-node-form').css('display') == 'none') {
-      $(this).text('Hide form');
-      $('#event-signup-node-form').slideDown("400");
-    } else {
-      $(this).text('Click here to change');
-      $('#event-signup-node-form').slideUp("400");
-    }
-  });
-
-  // Selector styling wrapper
-  $('.form-item .form-select').wrap('<div class="selector"></div>');
-  $(".no-touch .chosen-select").chosen();
-}
 
 // will only run once the page DOM is ready for JavaScript code to execute.
 $( document ).ready(function() {
@@ -69,17 +51,6 @@ $( window ).load(function() {
     animate: false
   });
 
-  // show/hide event enrollment form
-  $('#togglEnrollForm').click(function() {
-    if ($('#event-signup-node-form').css('display') == 'none') {
-      $(this).text('Hide form');
-      $('#event-signup-node-form').slideDown("400");
-    } else {
-      $(this).text('Click here to change');
-      $('#event-signup-node-form').slideUp("400");
-    }
-  });
-
   // Selector styling wrapper
   $('.form-item .form-select').wrap('<div class="selector"></div>');
 
@@ -111,14 +82,8 @@ $( window ).load(function() {
   $('.form-select.error').parent('.selector').addClass('error');
 
   // Universal selector for modal windows with external source
-  $('.modal').magnificPopup({
-    type: 'ajax',
-    callbacks: {
-      ajaxContentAdded: function() {
-        // Make functions available for content in modal windows
-        runAgain()
-      }
-    }
+  $('.modal-inline').magnificPopup({
+    type: 'inline'
   });
 
    // add class to external links so they can be styled

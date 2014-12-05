@@ -49,6 +49,11 @@
 label {
   font-weight: 700;
   display: block;
+
+  .sidebar & {
+    line-height: 1.5em;
+  }
+
 }
 
 // labels for checkboxes
@@ -108,6 +113,12 @@ label {
 
 }
 
+// class can be used to eliminate the maximum width of 400px;
+.fullwidth {
+  input, textarea {
+    max-width: none;
+  }
+}
 
 
 // browser specific

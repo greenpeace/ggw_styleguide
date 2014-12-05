@@ -1,5 +1,5 @@
 ---
-title: Ga mee naar Festival Mundial
+title: Join us to festival Mundial
 body_class: not-front logged-in page-type-event l-has-sidebar
 user_role: lu
 script: leaflet
@@ -16,15 +16,17 @@ design_status: Work progress
     .content
       %article.view-mode-full
         .submitted
+          %a.comments-shortcut{:href => "#block-comments"}
+            %i.icon-comment
+            10
+            %span.element-invisible comments
+
           %a{:href => "./events.html"} Event
           by
           = lorem.name
           %span.submitted-date June 5th 2014 - 11:29
 
-          %a.comments-shortcut{:href => "#block-comments"}
-            %i.icon-comment
-            10
-            %span.element-invisible comments
+
 
         .field-name-body
 
@@ -33,7 +35,7 @@ design_status: Work progress
             = partial :"images/event-image"
 
             .event-actions
-              %a.modal.button.btn-block.btn-primary.btn-l{:href => "partials/blocks/rsvp.html"} RSVP
+              %a.js-show-sidebar.button.btn-block.btn-primary.btn-l{:href => "#event-signup"} Enroll for this event
 
             .field-group-format
 
@@ -61,7 +63,7 @@ design_status: Work progress
                 .field-label Event organiser:
                 %div
                   Organised by
-                  %span.username
+                  %a{:href => "#"}
                     = lorem.name
 
               .field.field-name-field-event-num-attendees
@@ -87,7 +89,7 @@ design_status: Work progress
               = lorem.sentence
             %li
               = lorem.sentence
-          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://lorempixel.  com/100/100/nature/5/image"}/
+          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://lorempixel.com/100/100/nature/5/image"}
           %p
             = lorem.sentence
             %strong without
@@ -115,6 +117,9 @@ design_status: Work progress
   = partial :"blocks/lu/comments"
 
 %aside.l-sidebar.sidebar
+  %a.trigger-sidebar.js-show-sidebar{:href => "#"}
+    %i.button.icon-button.icon-dot-3
   = partial :"blocks/go_to_group"
   = partial :"blocks/lu/enroll"
+  = partial :"blocks/lu/enrollments"
   = partial :"blocks/lu/subscribe"

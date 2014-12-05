@@ -22,6 +22,11 @@
   color: $white;
   @include font-size($h2);
 
+  .mfp-content & {
+    border-radius: 4px 0;
+    left: 0;
+  }
+
   @include breakpoint($desk) {
     border-radius: 4px 0;
     left: 0;
@@ -35,6 +40,10 @@
   margin-left: 45px;
   line-height: 1rem; // must be able to span multiple lines
   padding-top: 10px;
+
+  .mfp-content & {
+    margin-left: 30px;
+  }
 
   @include breakpoint($desk) {
     margin-left: 30px;

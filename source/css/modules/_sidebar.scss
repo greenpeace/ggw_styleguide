@@ -45,13 +45,18 @@
 
 .trigger-sidebar {
   position: fixed;
-  top: 70px;
+  top: 60px;
   right: 0;
   z-index: 5;
   transition: right 500ms ease;
 
   .sidebar-active & {
     right: 290px;
+  }
+
+  .primary-nav &,
+  .secondary-nav & {
+    display: none
   }
 
   .button {

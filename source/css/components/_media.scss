@@ -2,22 +2,18 @@ img, picture, media {
   max-width: 100%;
 }
 
-@include breakpoint($smalltab) {
-
 article picture,
 article img,
 td img {
   display: block; // by default make sure the image gets it own line
   margin: 0 auto;
 
-    &.pull-left {
-      margin: 0 1em 1em 0;
-    }
+  &.pull-left {
+    margin: 0 1em 1em 0;
+  }
 
-    &.pull-right {
-      margin: 0 0 1em 1em;
-    }
-
+  &.pull-right {
+    margin: 0 0 1em 1em;
   }
 
 }
@@ -25,4 +21,31 @@ td img {
 .sidebar .block img {
   margin: auto;
   display: flex;
+}
+
+article img.nofloat {
+  float: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+figure {
+  margin: 1em 0;
+  position: relative;
+
+  picture,
+  img {
+    width: 100%;
+  }
+}
+
+figcaption {
+  position: absolute;
+  bottom: 0;
+  background: #000;
+  background: rgba(0,0,0,.7);
+  padding: .5em;
+  width: 100%;
+  color: $grey-l;
+  @include font-size($small);
 }

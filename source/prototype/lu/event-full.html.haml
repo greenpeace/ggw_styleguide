@@ -1,6 +1,6 @@
 ---
 title: Join us to festival Mundial
-body_class: not-front logged-in page-type-event l-has-sidebar
+body_class: not-front logged-in page-type-event l-has-sidebar node-full
 user_role: lu
 script: leaflet
 design_status: Work progress
@@ -18,8 +18,7 @@ design_status: Work progress
         .submitted
           %a.comments-shortcut{:href => "#block-comments"}
             %i.icon-comment
-            10
-            %span.element-invisible comments
+            10 comments
 
           %a{:href => "./events.html"} Event
           by
@@ -89,7 +88,7 @@ design_status: Work progress
               = lorem.sentence
             %li
               = lorem.sentence
-          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://lorempixel.com/100/100/nature/5/image"}
+          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://placeimg.com/300/200/nature/5/image"}
           %p
             = lorem.sentence
             %strong without
@@ -100,7 +99,7 @@ design_status: Work progress
         %a.tag{:href => "#"} festival
       .submitted.submitted-extended
         .submitted-image
-          %img{:alt => "Name of the author.", :src => "http://lorempixel.com/75/75/people/8/avatar"}/
+          %img{:alt => "Name of the author.", :src => "http://placeimg.com/75/75/people/8/avatar"}/
         .submitted-info
           %div
             %a{:href => "./events.html"} Event

@@ -12,11 +12,21 @@
       padding:  $def-mar 0 $def-mar $def-mar;
       overflow: hidden;
       margin-bottom: $def-mar;
+
+      figure {
+        margin: 0;
+      }
     }
 
+    figure,
     .field-type-image {
       float:left;
       max-width: (60%);
+    }
+
+    figure .field-type-image {
+      float: none;
+      max-width: none;
     }
 
     .field-group-format,

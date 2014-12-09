@@ -1,42 +1,104 @@
+.node-full {
+
+  .main-content .block-icon {
+    display: none;
+
+    @include breakpoint($desk) {
+      display: block;
+    }
+  }
+
+  .main-content .block-title {
+    margin: 0 30px 0 0; // create distance for sidebar-trigger
+    @include font-size($h3);
+
+      @include breakpoint($desk) {
+        @include font-size($h4);
+        margin-left: 30px;
+      }
+  }
+
+  .main-content .content {
+    margin-top: $def-mar-half;
+
+      @include breakpoint($desk) {
+        margin-top: 2 * $def-mar;
+      }
+  }
+
+}
+
 .view-mode-full {
 
-    .field-group-format {
-      margin: $def-mar 0;
-      background: $background;
+  .submitted {
+    margin: 0;
+
+    .type:before {
+      @extend %load-icon;
+      display: inline-block;
+      top: -1px;
+      position: relative;
+      min-width: 1em;
+      margin-right: .2em;
     }
 
-    .field-name-body {
-      margin-top: 1em;
-      @extend %cf;
+    span {
+      vertical-align: top;
     }
 
-    .field {
-      padding: $def-mar-half $def-mar;
-      @include font-size($small);
+    @include breakpoint($tab) {
+      margin-bottom: 5px;
 
-      a {
-        @include font-size($small);
+      .type {
+        width: auto;
+
+        &:before {
+          margin-right: .2em;
+        }
+
       }
 
     }
 
-    .field-label {
-      @extend %element-invisible;
+  }
+
+  .field-group-format {
+    margin: $def-mar 0;
+    background: $background;
+  }
+
+  .field-name-body {
+    margin-top: 1em;
+    @extend %cf;
+  }
+
+  .field {
+    padding: $def-mar-half $def-mar;
+    @include font-size($small);
+
+    a {
+      @include font-size($small);
     }
 
-    .field-label + div:before {
-      @extend %load-icon;
-      @include font-size($h3);
-      margin-left: -1.25em;;
-      position: absolute;
-      width: 1em;
-      line-height: 1em;
+  }
 
-    }
+  .field-label {
+    @extend %element-invisible;
+  }
 
-    .field-label + div {
-      margin-left: 2em;
-    }
+  .field-label + div:before {
+    @extend %load-icon;
+    @include font-size($h3);
+    margin-left: -1.25em;;
+    position: absolute;
+    width: 1em;
+    line-height: 1em;
+
+  }
+
+  .field-label + div {
+    margin-left: 2em;
+  }
 
 }
 

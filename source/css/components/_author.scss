@@ -9,7 +9,12 @@
 }
 
 .comments-shortcut {
-  float: right;
+  white-space: nowrap;
+
+  @include breakpoint($smalltab) {
+    float: right;
+  }
+
 }
 
 .tags,

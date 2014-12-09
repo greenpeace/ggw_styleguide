@@ -35,6 +35,7 @@ $( window ).load(function() {
     NiceCommentForm(),
     offCanvasNav(),
     offCanvasSidebar(),
+    mediaAlignment(),
     showMap(),
     mobileNav(),
     backToTop(),

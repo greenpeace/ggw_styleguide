@@ -6,7 +6,8 @@
     overflowDropdown(),
     mobileNav(),
     TabableSections(),
-    tabsDropdown()
+    tabsDropdown(),
+    mediaAlignment()
   };
 
   // On resize, run the function and reset the timeout

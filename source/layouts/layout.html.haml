@@ -44,7 +44,7 @@
 
       = partial :"nav/footer"
 
-    = javascript_include_tag  "theme"
+    = javascript_include_tag  "theme", :async => ""
 
     - if current_page.data.script == "leaflet"
 
@@ -52,7 +52,7 @@
       %a#close-map.map-close-button{:href => "#"}
         %span.element-invisible close
 
-      = javascript_include_tag "http://greenpeace.github.io/ggw_styleguide/vendor/leaflet/leaflet.js"
+      = javascript_include_tag "http://greenpeace.github.io/ggw_styleguide/vendor/leaflet/leaflet.js", :async => ""
 
       :javascript
           // create a map in the "map" div, set the view to a given place and zoom

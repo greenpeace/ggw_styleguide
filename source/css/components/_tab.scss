@@ -1,5 +1,5 @@
-.search-tabs ul,
-.new-search-tabs ul {
+.tabs ul,
+.new-tabs ul {
   margin: $def-mar-half 0;
   list-style: none outside none;
   border-bottom: 1px solid $background;
@@ -64,7 +64,7 @@
 }
 
 
-.new-search-tabs {
+.new-tabs {
 
   .dropdown-menu {
     margin: 0;

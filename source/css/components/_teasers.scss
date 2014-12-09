@@ -98,42 +98,42 @@
 
   }
 
-}
-
-.submitted {
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-
-  .type {
-    width: 1em;
-    display: inline-block;
+  .submitted {
+    padding: 0;
+    margin: 0;
     overflow: hidden;
-    vertical-align: bottom;
-  }
-
-  .type:before {
-    @extend %load-icon;
-    display: inline-block;
-    top: -1px;
-    position: relative;
-    width: 1em;
-  }
-
-  span {
-    vertical-align: top;
-  }
-
-  @include breakpoint($tab) {
-    margin-bottom: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
     .type {
-      width: auto;
+      width: 1em;
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
 
-      &:before {
-        margin-right: .2em;
+    .type:before {
+      @extend %load-icon;
+      display: inline-block;
+      top: -1px;
+      position: relative;
+      width: 1em;
+    }
+
+    span {
+      vertical-align: top;
+    }
+
+    @include breakpoint($tab) {
+      margin-bottom: 5px;
+
+      .type {
+        width: auto;
+
+        &:before {
+          margin-right: .2em;
+        }
+
       }
 
     }
@@ -141,7 +141,6 @@
   }
 
 }
-
 
 .node-teaser-notification {
   border-bottom: 1px solid $background;

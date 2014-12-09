@@ -1,6 +1,13 @@
 function offCanvasSidebar() {
 
-  var root = $(document.documentElement)
+  var root = $(document.documentElement);
+
+  var sidebarButton = $('<div class="trigger-sidebar js-show-sidebar"><i class="button icon-button"></i></div>');
+
+  if($(window).width() <= 901) {
+    $(sidebarButton).insertBefore('.l-main');
+  }
+
 
   // Open and close the sidebar clicking on the trigger
   $('.js-show-sidebar').click(function(e) {

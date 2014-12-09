@@ -12,12 +12,12 @@ function tabsDropdown() {
   }
 
   // Define the context we will be operating in.
-  var originallist = $('.search-tabs ul');
-  var list = $('.search-tabs ul').clone();
-  $('.search-tabs').hide();
+  var originallist = $('.tabs ul');
+  var list = $('.tabs ul').clone();
+  $('.tabs').hide();
 
-  if ( $('.new-search-tabs').length ) {
-    $('.new-search-tabs').remove();
+  if ( $('.new-tabs').length ) {
+    $('.new-tabs').remove();
   }
 
   // We will store any items here that we want to move.
@@ -47,9 +47,9 @@ function tabsDropdown() {
     $('#dropdown-tabs').hide();
   }
 
-  list.insertAfter('.search-tabs');
-  list.wrapAll('<div class="new-search-tabs">');
-  $('.new-search-tabs .dropdown-menu a').unwrap().removeClass("tab");
+  list.insertAfter('.tabs');
+  list.wrapAll('<div class="new-tabs">');
+  $('.new-tabs .dropdown-menu a').unwrap().removeClass("tab");
 
 
 };

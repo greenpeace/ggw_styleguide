@@ -1,0 +1,35 @@
+.block
+  %i.block-icon.icon-search.icon-bg-event
+  %h2.block-title Find groups
+  .content
+    %form
+      - if current_page.data.user_role == "lu"
+        .views-exposed-widget
+          %label Author
+          .views-widget
+            .form-item.form-type-textfield
+              %input.form-autocomplete.form-text{:type => "text"}
+      .views-exposed-widget
+        %label City
+        .views-widget
+          .form-item.form-type-textfield
+            %input.form-autocomplete.form-text{:type => "text"}
+      .views-exposed-widget
+        %label Skills
+        .views-widget
+          .form-item.form-type-textfield
+            %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => ""}
+            .autocomplete#tagsautocomplete
+              %ul
+                %li Painting
+                %li Campaigning
+                %li Organizing events
+                %li Copywriting
+                %li Marketing
+      .views-exposed-widget
+        %label Tag
+        .views-widget
+          .form-item.form-type-textfield
+            %input.form-text{:type => "text"}
+      .views-exposed-widget.views-submit-button
+        %input.button{:type => "submit", :value => "Search"}

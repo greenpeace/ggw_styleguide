@@ -1,0 +1,48 @@
+---
+title: Groups
+body_class: not-front not-logged-in page-groups l-has-sidebar
+user_role: an
+design_status: Needs review
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-group.icon-users
+    %h1#page-title.block-title
+      = current_page.data.title
+    .content
+
+      .tabs
+        %ul
+          %li
+            =nav_link 'All', '#', :class => 'tab active'
+          %li
+            =nav_link 'Campaign project group', '#', :class => 'tab'
+          %li
+            =nav_link 'Discussion group', '#', :class => 'tab'
+          %li
+            =nav_link 'Interest group', '#', :class => 'tab'
+          %li
+            =nav_link 'Local groups', '#', :class => 'tab'
+          %li
+            =nav_link 'Skills-based group', '#', :class => 'tab'
+          %li
+            =nav_link 'Other type of group', '#', :class => 'tab'
+
+      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-with-image"
+      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-with-image"
+      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-with-image"
+      .align-center
+        %a.button{:href => "#"} show some more
+
+%aside.l-sidebar.sidebar
+  %a.trigger-sidebar#show-sidebar{:href => "#"}
+    %i.button.icon-button.icon-dot-3
+  .content
+    = partial :"blocks/find_groups"
+    = partial :"blocks/an/create_account"

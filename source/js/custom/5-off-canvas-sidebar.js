@@ -4,7 +4,7 @@ function offCanvasSidebar() {
 
   var sidebarButton = $('<div class="trigger-sidebar js-show-sidebar"><i class="button icon-button"></i></div>');
 
-  if($(window).width() <= 901) {
+  if($(window).width() <= 901 && $('.sidebar').length != 0) {
     $(sidebarButton).insertBefore('.l-main');
   }
 

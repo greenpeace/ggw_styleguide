@@ -3,7 +3,7 @@ $(function() {
 
   function toggleCode() {
     $('.code').each(function(){
-      $('<a href="#" class="button js-show-code" style="margin-bottom: 1em;"">Show source code</a>').insertBefore(this);
+      $('<div class="js-show-code" style="margin-bottom: 1em; font-size: 12px; cursor: pointer;">Show source code</div>').insertBefore(this);
       $(this).hide();
     });
   }

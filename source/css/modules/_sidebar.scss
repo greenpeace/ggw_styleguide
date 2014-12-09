@@ -10,6 +10,7 @@
   width: 290px;
   height: auto;
   padding-top: 15px;
+  overflow: auto;
   transition: right 500ms ease;
 
   .sidebar-active & {

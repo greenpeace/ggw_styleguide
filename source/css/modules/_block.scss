@@ -2,7 +2,7 @@
   position: relative;
   margin-bottom: $def-mar;
   padding: 0 15px 15px;
-  border-bottom: 1px solid $grey-l;
+  border-bottom: 1px solid $background;
 
   @include breakpoint($desk) {
     margin-left: 1em;

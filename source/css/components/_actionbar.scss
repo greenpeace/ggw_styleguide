@@ -2,11 +2,10 @@
   clear: both;
   @include font-size($small);
   position: relative;
-  margin: $def-mar-half 0 $def-mar;
 }
 
-.sidebar .action-bar {
-  margin: 0;
+.page-search .view-header .action-bar {
+  margin: $def-mar-half 0 $def-mar;
 }
 
 .action-bar-item {

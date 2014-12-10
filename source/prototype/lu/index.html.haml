@@ -8,7 +8,7 @@ design_status: Work in progress
 
 = partial :"blocks/breadcrumbs"
 
-= partial :"blocks/slider"
+= partial :"blocks/slider_single"
 
 .original-action-menu
   %ul
@@ -26,18 +26,12 @@ design_status: Work in progress
         Events
 
 .l-main-column#content
-  .block.block-no-icon
-    %h2.block-title A platform for change-makers
-    .content
-      %p Welcome to Greenpeace Greenwire where people like you connect with other volunteers, activists and groups working on environmental campaigns all across the country.  This is your meeting place to start groups, host events, run campaigns, share photos,videos, blogs and join with other interested activists eager to help.
-      %a.button.btn-primary{:href => "#"} Get wired!
-      .clear
   .main-content
     .action-bar
       .action-bar-item.filter
         %label Filter
         %a.button.btn-s.btn-dropdown{"data-dropdown" => "#updates-filter", :href => "#", :title => "Filter content"}
-          %span All
+          %span Filter
         #updates-filter.dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right
           %ul.dropdown-menu
             %li

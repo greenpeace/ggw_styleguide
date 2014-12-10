@@ -76,8 +76,9 @@
       animation: 'slide',
       smoothHeight: true,
       animationLoop: true,
+      pauseOnHover: true,
+      allowOneSlide: true,
       video: true,
-      useCSS: false,
       before: function(slider){
         // Vimeo stop
         if (slider.slides.eq(slider.currentSlide).find('.vimeo').length !== 0) {
@@ -95,6 +96,13 @@
     $('.flexslider .youtube').each(function(){
       $(this).data('player').pauseVideo();
     });
+  });
+
+  // check if the slider is still visible for the user, otherwise pause the slider.
+  slider.on('inview', function(event, isVisible) {
+    if (!isVisible) {
+      $('.flexslider').flexslider('pause');
+    }
   });
 
 })(jQuery);

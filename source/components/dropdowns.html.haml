@@ -1,0 +1,50 @@
+---
+title: Dropdowns
+body_class: page-dropdowns
+layout: styleguide
+design_status: Needs review
+---
+
+%aside.sidebar-left
+  = partial :"nav/uicomponents"
+#content.l-main-column
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Dropdowns
+    .content
+      :markdown
+        Dropdowns are mainly used for filters, but they can be used if you want to show more options behind a button.
+
+        We use a universal jQuery function to trigger the dropdown. The items within a dropdown can be shown as a list (usually of links) or a panel.
+
+        The `data-dropdown` attribute contains a value that must match the unique ID of the dropdown element. Furthermore we apply some extra classes like `dropdown` to make the function work universally.
+
+      .demo
+        %a.button{"data-dropdown" => "#dropdown1", :href => "#", :title => "Click to show options"}
+          %span Dropdown menu
+        #dropdown1.dropdown.dropdown-tip.dropdown-relative
+          %ul.dropdown-menu
+            %li
+              %a{:href => "#"} option 1
+            %li
+              %a{:href => "#"} option 2
+            %li
+              %a{:href => "#"} option 3
+
+        %a.button{"data-dropdown" => "#dropdown2", :href => "#", :title => "Click to show options"}
+          %span Dropdown panel with anchor on the right
+        #dropdown2.dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right
+          .dropdown-panel
+            = lorem.paragraph
+
+    .code
+      :code
+        # lang: html
+          <a class='button' data-dropdown='#dropdown1' href='#' title='Click to show options'> <span>label</span> </a>
+          <div class='dropdown dropdown-tip dropdown-relative' id='dropdown1'>
+            <ul class='dropdown-menu'>
+              <li><a href='#'>option 1</a></li>
+              <li><a href='#'>option 2</a></li>
+              <li><a href='#'>option 3</a></li>
+            </ul>
+          </div>

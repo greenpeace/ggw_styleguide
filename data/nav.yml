@@ -23,6 +23,9 @@ comp:
     name: "Buttons"
     url: "/components/buttons.html"
   -
+    name: "Dropdowns"
+    url: "/components/dropdowns.html"
+  -
     name: "Forms"
     url: "/components/forms.html"
   -

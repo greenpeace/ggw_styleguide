@@ -39,8 +39,7 @@ $( window ).load(function() {
     showMap(),
     mobileNav(),
     backToTop(),
-    autocomplete(),
-    tabsDropdown()
+    autocomplete()
   };
 
   var resizeTimer;

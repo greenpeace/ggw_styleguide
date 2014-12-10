@@ -6,7 +6,6 @@
     overflowDropdown(),
     mobileNav(),
     TabableSections(),
-    tabsDropdown(),
     mediaAlignment()
   };
 

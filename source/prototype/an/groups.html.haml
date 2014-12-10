@@ -14,8 +14,8 @@ design_status: Needs review
       = current_page.data.title
     .content
 
-      .tabs
-        %ul
+      .tabwrapper
+        %ul.tabs
           %li
             =nav_link 'All', '#', :class => 'tab active'
           %li
@@ -30,6 +30,11 @@ design_status: Needs review
             =nav_link 'Skills-based group', '#', :class => 'tab'
           %li
             =nav_link 'Other type of group', '#', :class => 'tab'
+        %ul.tabs-overflow
+          %li
+            %a.tab.tab-overflow-trigger{:href => "#", "data-dropdown" => "#dropdown-tabs"} more
+            .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#dropdown-tabs
+              %ul.dropdown-menu
 
       = partial :"teasers/group-no-image"
       = partial :"teasers/group-with-image"

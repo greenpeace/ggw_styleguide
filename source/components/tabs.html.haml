@@ -1,0 +1,64 @@
+---
+title: Tabs
+body_class: page-tabs
+layout: styleguide
+design_status: Needs review
+---
+
+%aside.sidebar-left
+  = partial :"nav/uicomponents"
+#content.l-main-column
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Tabs
+    .content
+      :markdown
+        Tabs are used for navigation and filtering purposes. Tabs are responsive, which means that items that do not fit on the row, are put in a hidden dropdown menu. The dropdown can be opened with the last 'more' button, which is only present when there are more tabs than can fit on a row.
+
+        To make the the items move to the dropdown, make sure to create the markup like shown below in the source code. Javascript will move the list items into the empty unordered list.
+
+      .demo
+        .tabwrapper
+          %ul.tabs
+            %li
+              =nav_link 'All', '#', :class => 'tab active'
+            %li
+              =nav_link 'Campaign project group', '#', :class => 'tab'
+            %li
+              =nav_link 'Discussion group', '#', :class => 'tab'
+            %li
+              =nav_link 'Interest group', '#', :class => 'tab'
+            %li
+              =nav_link 'Local groups', '#', :class => 'tab'
+            %li
+              =nav_link 'Skills-based group', '#', :class => 'tab'
+            %li
+              =nav_link 'Other type of group', '#', :class => 'tab'
+          %ul.tabs-overflow
+            %li
+              %a.tab.tab-overflow-trigger{:href => "#", "data-dropdown" => "#dropdown-tabs"}
+                more
+                %i.icon-down-mini
+              .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#dropdown-tabs
+                %ul.dropdown-menu
+
+    .code
+      :code
+        # lang: html
+          <div class='tabwrapper'>
+            <ul class='tabs'>
+              <li><a class="tab active" href="#">All</a></li>
+              <li><a class="tab" href="#">Campaign project group</a></li>
+              <li><a class="tab" href="#">Discussion group</a></li>
+              <li><a class="tab" href="#">Interest group</a></li>
+              <li><a class="tab" href="#">Local groups</a></li>
+              <li><a class="tab" href="#">Skills-based group</a></li>
+              <li><a class="tab" href="#">Other type of group</a></li>
+            </ul>
+            <ul class='tabs-overflow'>
+              <li><a class='tab tab-overflow-trigger' data-dropdown='#dropdown-tabs' href='#'>more</a>  <div class='dropdown dropdown-tip dropdown-relative dropdown-anchor-right' id='dropdown-tabs'>
+                  <ul class='dropdown-menu'></ul>
+                </div>
+              </li>
+            </ul>
+          </div>

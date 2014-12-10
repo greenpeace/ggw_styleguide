@@ -17,6 +17,9 @@ comp:
     name: "Blocks"
     url: "/components/blocks.html"
   -
+    name: "Tabs"
+    url: "/components/tabs.html"
+  -
     name: "Buttons"
     url: "/components/buttons.html"
   -

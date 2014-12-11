@@ -8,7 +8,6 @@ function offCanvasSidebar() {
     $(sidebarButton).insertBefore('.l-main');
   }
 
-
   // Open and close the sidebar clicking on the trigger
   $('.js-show-sidebar').click(function(e) {
     root.toggleClass('sidebar-active');

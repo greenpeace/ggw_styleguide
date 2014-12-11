@@ -1,3 +1,7 @@
-function NiceCommentForm() {
-  $('input[type=file]').nicefileinput();
-};
+$(function() {
+
+  function NiceCommentForm() {
+    $('input[type=file]').nicefileinput();
+  };
+
+});

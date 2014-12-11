@@ -32,14 +32,8 @@ $( document ).ready(function() {
 $( window ).load(function() {
 
   function resizeFunction() {
-    NiceCommentForm(),
     offCanvasNav(),
-    offCanvasSidebar(),
-    mediaAlignment(),
-    showMap(),
-    mobileNav(),
-    backToTop(),
-    autocomplete()
+    offCanvasSidebar()
   };
 
   var resizeTimer;

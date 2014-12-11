@@ -1,3 +1,7 @@
+$(function() {
+
+  var resizeTimer; // Set resizeTimer to empty so it resets on page load
+
   function mobileNav() {
 
         // only for small devices
@@ -28,3 +32,14 @@
           $('.main-menu .menu .menu').removeAttr('style');
         }
     };
+
+  // On resize, run the function and reset the timeout
+  // 250 is the delay in milliseconds.
+  $(window).resize(function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(mobileNav, 250);
+  });
+
+  mobileNav();
+
+});

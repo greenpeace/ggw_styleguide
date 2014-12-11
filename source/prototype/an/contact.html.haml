@@ -1,0 +1,61 @@
+---
+title: Contact Greenpeace Greenwire
+body_class: not-front not-logged-in page-contact l-has-sidebar
+user_role: an
+design_status: Needs review
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column#content
+
+  .main-content
+
+    %i.block-icon.icon-bg-default.icon-mail
+    %h1.block-title#page-title
+      = current_page.data.title
+
+    .content
+      %p
+        Questions? Consider reading the
+        %a{:href => "faq.html"} FAQ
+        first.
+        %br
+        Is your answer not there? We'll be glad to help! Leave a message.
+
+      .form-wrapper
+        .form-item
+          %label.form-label{:for=>"name"}
+            Your name
+            %span.form-required{:title=>"This field is required."} *
+          %input{:type => "text",:id => "name", :class => "form-text", :placeholder => "type your name here"}
+
+        .form-item
+          %label.form-label What is your question?
+          %select.form-select
+            %option{:value => ""} Please select
+            %option I have a question or remark about the site
+            %option I would like to speak to someone in person
+
+        .form-item
+          %label.form-label{:for=>"email"}
+            Your e-mailaddress
+            %span.form-required{:title=>"This field is required."} *
+          %input{:type => "email", :class => "form-text", :placeholder => "type your email here"}
+
+        .form-item
+          %label.form-label{:for=>"subject"}
+            Subject
+            %span.form-required{:title=>"This field is required."} *
+          %input{:type => "text", :class => "form-text", :placeholder => "type the subject for your email here"}
+
+
+        .form-item
+          %label Message
+          %textarea{:placeholder => "Write your message here...", :rows => 8}
+
+      .form-actions.form-wrapper
+        %input{:type => "submit", :class => "button btn-primary", :value => "Send message"}
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks//an/create_account"

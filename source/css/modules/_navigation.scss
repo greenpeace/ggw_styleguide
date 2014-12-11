@@ -182,6 +182,10 @@
   border-top: 1px solid $grey-l;
 }
 
+.notifications-trigger {
+  @extend %element-hidden;
+}
+
 .menu-link {
   display: block;
   color: $base;
@@ -252,6 +256,10 @@
     float: left;
     border: none;
     padding: 0 10px 0 0;
+
+    &:last-child {
+      padding: 0;
+    }
   }
 
   // submenu container
@@ -300,6 +308,32 @@
   .menu-item:hover > .menu {
     display: block;
     @include cf;
+  }
+
+  .logged-in .user-menu {
+    .menu-item:nth-of-type(3),
+    .menu-item:nth-of-type(4) {
+      display: none;
+    }
+
+    .notifications-trigger {
+      color: darken($green2, 10%);
+      cursor: pointer;
+      display: list-item;
+      padding: 0;
+
+      &:hover {
+        color: $white;
+      }
+
+      i {
+        font-size: 1.3em;
+        vertical-align: bottom;
+        padding-right: 5px;
+        top: 1px;
+        position: relative;
+      }
+    }
   }
 
 }

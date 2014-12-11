@@ -28,6 +28,7 @@
     width: (100%/3);
     background: none;
     border: none;
+    overflow: visible;
 
     .flexbox & {
       flex: 0 1 (100%/3);

@@ -1,20 +1,35 @@
-function mediaAlignment() {
+$(function() {
 
-  // Get the wisth of the container of the image
-  var containerWidth = $('.node-full .field-name-body').width();
+  var resizeTimer; // Set resizeTimer to empty so it resets on page load
 
-  // Find all images
-  $('.node-full .field-name-body img').each(function(){
+  function mediaAlignment() {
 
-    // Calculate how much is left
-    var spaceLeft = containerWidth - $(this).width();
+    // Get the wisth of the container of the image
+    var containerWidth = $('.node-full .field-name-body').width();
 
-    // If there is less than 100 pixels left, add a class
-    if (spaceLeft <= 100) {
-      $(this).addClass('nofloat');
-    } else {
-      $(this).removeClass('nofloat');
-    }
+    // Find all images
+    $('.node-full .field-name-body img').each(function(){
 
+      // Calculate how much is left
+      var spaceLeft = containerWidth - $(this).width();
+
+      // If there is less than 100 pixels left, add a class
+      if (spaceLeft <= 100) {
+        $(this).addClass('nofloat');
+      } else {
+        $(this).removeClass('nofloat');
+      }
+
+    });
+  }
+
+  // On resize, run the function and reset the timeout
+  // 250 is the delay in milliseconds.
+  $(window).resize(function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(mediaAlignment, 250);
   });
-}
+
+  mediaAlignment();
+
+});

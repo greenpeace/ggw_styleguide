@@ -1,5 +1,5 @@
-.tabs
-  %ul#ggw-search-menu-links
+.tabwrapper
+  %ul.tabs
     - if current_page.data.user_role == "an"
       %li
         =nav_link 'All', '/prototype/an/search.html', :class => 'tab'
@@ -22,3 +22,10 @@
         =nav_link 'Groups', '/prototype/lu/search-groups.html', :class => 'tab'
       %li
         =nav_link 'Members', '/prototype/lu/search-members.html', :class => 'tab'
+  %ul.tabs-overflow
+    %li
+      %a.tab.tab-overflow-trigger{:href => "#", "data-dropdown" => "#dropdown-tabs"}
+        more
+        %i.icon-down-mini
+      .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#dropdown-tabs
+        %ul.dropdown-menu

@@ -5,7 +5,8 @@
     list-style: none outside none;
     border-bottom: 1px solid $background;
     overflow: hidden;
-    height: 28px;
+    height: 29px;
+    position: relative;
 
     li {
       position: relative;

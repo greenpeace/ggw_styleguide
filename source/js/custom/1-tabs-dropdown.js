@@ -12,11 +12,11 @@ $(function() {
 
     var overFlowMenu = menuWrapper.find('.dropdown ul');
 
-    var fullHeight = fullMenu.innerHeight()
-
-    var handle = menuWrapper.find('.tab-overflow-trigger').addClass('element-invisible');
+    var fullHeight = menuWrapper.outerHeight()
 
     var triggerWidth = $('.tab-overflow-trigger').outerWidth();
+
+    var handle = menuWrapper.find('.tab-overflow-trigger').addClass('element-invisible');
 
     // The 'more' button is translatable and must always fit
     newfullMenu = fullMenu.css('padding-right', triggerWidth);
@@ -29,8 +29,8 @@ $(function() {
 
     // find all of the .items that arent visible and add/clone them to the overflow menu
     fullMenu.children('li').filter(function() {
-
-      return this.offsetTop-$(this).height()>fullHeight;
+      var elementOffset = $(this).position().top;
+      return elementOffset+$(this).height() > fullHeight;
 
     }).addClass('moved').clone(true).prependTo(overFlowMenu[0]).children('a').removeClass('tab');
 
@@ -52,8 +52,8 @@ $(function() {
     if (overFlowMenu.children('li').length!==0) {
       handle.removeClass('element-invisible');
     } else {
-    //If it is empty hide the dropdown menu,
-    overFlowMenu.hide();
+      //If it is empty hide the dropdown menu,
+      $('.tabs-overflow').hide();
     }
 
   };

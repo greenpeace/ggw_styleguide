@@ -32,8 +32,7 @@ $( document ).ready(function() {
 $( window ).load(function() {
 
   function resizeFunction() {
-    offCanvasNav(),
-    offCanvasSidebar()
+    offCanvasNav()
   };
 
   var resizeTimer;

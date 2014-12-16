@@ -198,3 +198,11 @@ article {
   @include font-size(11px);
   color: $white;
 }
+
+@include breakpoint($desk) {
+  .node-teaser .body-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

@@ -44,7 +44,7 @@
 
       = partial :"nav/footer"
 
-    = javascript_include_tag  "theme", :async => ""
+    = javascript_include_tag  "theme"
 
     - if current_page.data.script == "leaflet"
 
@@ -77,3 +77,30 @@
           .bindPopup('<h2 class="node-title"><a href="#">Ga mee naar Festival Mundial</a></h2> <div class="field field-name-field-event-date"><span class="date-display-single">25 September, 2014 - 14:57</span></div>');
           L.marker([51.5, -0.09], {icon: greenIcon}).addTo(mobileMap)
               .bindPopup('<h2 class="node-title"><a href="#">Ga mee naar Festival Mundial</a></h2> <div class="field field-name-field-event-date"><span class="date-display-single">25 September, 2014 - 14:57</span></div>');
+
+    - if current_page.data.script == "truncatetestb"
+
+      :javascript
+        $('.node-teaser .node-title').truncate({
+          lines: 2,
+          lineHeight: 19
+        });
+
+    - if current_page.data.script == "truncatetestc"
+
+      :javascript
+        $('.node-teaser .node-title').truncate({
+          lines: 2,
+          lineHeight: 19
+        });
+
+        $('.node-teaser .field-name-body').truncate({
+          lines: 2,
+          lineHeight: 21
+        });
+
+        $('.node-teaser .node-title').each(function() {
+          if ($(this).height() > 19) {
+            $(this).nextAll('.field-name-body').addClass('body-ellipsis');
+          }
+        });

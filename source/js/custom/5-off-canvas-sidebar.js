@@ -20,7 +20,6 @@ $(function() {
 
   }
 
-
   function offCanvasSidebar() {
 
     // Open and close the sidebar clicking on the trigger
@@ -85,7 +84,7 @@ $(function() {
     resizeTimer = setTimeout(showSidebarTrigger, 250);
   });
 
-  showSidebarTrigger();
-  offCanvasSidebar();
+  showSidebarTrigger(),
+  offCanvasSidebar()
 
 });

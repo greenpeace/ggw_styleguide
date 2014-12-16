@@ -21,6 +21,8 @@ gem "sass-media_query_combiner"
 # Import Sass files based on globbing pattern.
 gem "sass-globbing"
 
+gem 'scss-lint'
+
 # Singularity grid system
 gem 'singularitygs', '~> 1.4.0'
 

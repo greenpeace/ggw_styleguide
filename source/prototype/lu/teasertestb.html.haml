@@ -1,0 +1,60 @@
+---
+title: Teaser test B
+body_class: logged-in page-home l-two-column
+user_role: lu
+script: truncatetestb
+design_status: Work in progress
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column#content
+  .main-content
+    .action-bar
+      .action-bar-item.filter
+        %label Filter
+        %a.button.btn-s.btn-dropdown{"data-dropdown" => "#updates-filter", :href => "#", :title => "Filter content"}
+          %span Filter
+        #updates-filter.dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right
+          %ul.dropdown-menu
+            %li
+              %a{:href => "#"} All
+            %li
+              %a{:href => "#"} News
+            %li
+              %a{:href => "#"} Blog
+            %li
+              %a{:href => "#"} Event
+            %li
+              %a{:href => "#"} Idea
+            %li
+              %a{:href => "#"} Photo
+            %li
+              %a{:href => "#"} Video
+            %li
+              %a{:href => "#"} Document
+
+    %i.block-icon.icon-bg-news-media.icon-news
+    %h1#page-title.block-title Updates
+    .content
+      = partial :"teasers/news-no-image"
+      = partial :"teasers/news-with-image"
+      = partial :"teasers/blog-with-image"
+      = partial :"teasers/blog-no-image"
+      = partial :"teasers/event-with-image"
+      = partial :"teasers/event-with-location"
+      = partial :"teasers/event-no-image"
+      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-with-image"
+      = partial :"teasers/idea"
+      = partial :"teasers/photo"
+      = partial :"teasers/video"
+      = partial :"teasers/document"
+      = partial :"teasers/news-no-image"
+      = partial :"teasers/news-with-image"
+      = partial :"teasers/blog-with-image"
+      = partial :"teasers/blog-no-image"
+      = partial :"teasers/event-with-image"
+      = partial :"teasers/event-with-location"
+      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-with-image"

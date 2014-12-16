@@ -93,7 +93,7 @@ GEM
       rouge (~> 1.0)
     middleman-title (0.0.2)
       middleman-core (~> 3.2)
-    minitest (5.4.3)
+    minitest (5.5.0)
     multi_json (1.10.1)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
@@ -104,12 +104,13 @@ GEM
       tilt (~> 1.4.1)
     padrino-support (0.12.2)
       activesupport (>= 3.1)
-    ptools (1.3.0)
+    ptools (1.3.2)
     rack (1.5.2)
     rack-livereload (0.3.15)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rainbow (2.0.0)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -124,6 +125,9 @@ GEM
     sassy-maps (0.3.2)
       compass (~> 1.0.0.alpha.13)
       sass (~> 3.3.0.rc.2)
+    scss-lint (0.27.0)
+      rainbow (~> 2.0)
+      sass (~> 3.3.0, >= 3.3.7)
     singularitygs (1.4.0)
       breakpoint (~> 2.4)
       sass (~> 3.3)
@@ -161,4 +165,5 @@ DEPENDENCIES
   padrino-support (= 0.12.2)
   sass-globbing
   sass-media_query_combiner
+  scss-lint
   singularitygs (~> 1.4.0)

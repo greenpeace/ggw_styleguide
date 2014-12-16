@@ -5,7 +5,7 @@
     .field-type-wrapper
       %h2.node-title
         %a{:href => "#"}
-          = lorem.words 6
+          = truncate(lorem.sentence, :length => 75)
       .submitted
         %a.type.photo{:href => "#"} Photos
         4 Mar, by

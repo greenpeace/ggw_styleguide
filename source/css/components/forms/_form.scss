@@ -16,6 +16,7 @@
 .form-wrapper.row {
   display: inline-block;
   vertical-align: bottom;
+
   .form-item {
     display: inline-table;
     margin-bottom: 0;
@@ -34,6 +35,11 @@
     width: 100%;
     line-height: normal;
   }
+
+  .mfp-content & {
+    margin-bottom: $def-mar;
+  }
+
 }
 
 .sidebar .node-form,
@@ -117,6 +123,7 @@ label {
 .fullwidth {
   input, textarea {
     max-width: none;
+    resize: vertical;
   }
 }
 

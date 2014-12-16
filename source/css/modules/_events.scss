@@ -29,17 +29,15 @@
       max-width: none;
     }
 
-    .field-group-format,
-    .event-actions {
+    .field-group-format {
       overflow: hidden;
       margin: 0;
     }
 
-     .event-actions {
-       padding: 0 $def-mar;
-       margin-top: 0;
-       overflow: hidden;
-     }
+    .event-actions {
+      padding: 0 $def-mar;
+      overflow: hidden;
+    }
 
   }
 }

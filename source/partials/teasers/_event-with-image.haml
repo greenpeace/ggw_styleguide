@@ -5,7 +5,7 @@
     .field-type-wrapper
       %h2.node-title
         %a{:href => "./event-full.html"}
-          = lorem.sentence
+          = truncate(lorem.sentence, :length => 75)
       .submitted
         %a.type.event{:href => "./events.html"} Event
         2 Jan, 20:00 - 23:00 CET

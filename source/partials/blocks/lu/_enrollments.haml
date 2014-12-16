@@ -5,13 +5,13 @@
     %p Why not ask your friends to join as well?
     %a.modal-inline.button.btn-block.btn-primary{:href => "#invite-friends"} Invite friends
 
+  .content
     .enrollments
-      .view-header
-        %p 15 people are going
-      .view-content
-        - 15.times do |num|
-          %a{:href => "#"}
-            %img{:alt => "Name of user", :src => "http://placeimg.com/70/70/people/9/"}
+      - 15.times do |num|
+        %a{:href => "#"}
+          %img{:alt => "Name of user", :src => "http://placeimg.com/70/70/people/9/"}
+    %p
+      %a{:href => "#"} 15 people are going
 
 
 #invite-friends.block.white-popup.mfp-hide
@@ -19,54 +19,60 @@
   %h2.block-title Invite your friends
   .content
     %form.node-form.node-event_signup-form
-      .form-item.form-type-select
-        %label.form-label
-          To
-          %span.form-required{:title => "This field is required."} *
-        .form-description This event is part of a closed group, so only members of the group can join
-        %select.chosen-select{"data-placeholder" => "Select your friends...", :multiple => "multiple"}
-          %option{:value => ""}
-            = lorem.name
-          %option{:value => ""}
-            = lorem.name
-          %option{:value => ""}
-            = lorem.name
-          %option{:value => "", :disabled => "disabled"}
-            = lorem.name
-            (is not attending)
-          %option{:value => "", :disabled => "disabled"}
-            = lorem.name
-            (is attending)
-          %option{:value => ""}
-            = lorem.name
-          %option{:value => ""}
-            = lorem.name
-          %option{:value => "", :disabled => "disabled"}
-            = lorem.name
-            (Not a group member)
-          %option{:value => "", :disabled => "disabled"}
-            = lorem.name
-            (Not a group member)
-          %option{:value => "", :disabled => "disabled"}
-            = lorem.name
-            (Not a group member)
-          %option{:value => ""}
-            = lorem.name
-          %option{:value => ""}
-            = lorem.name
-          %option{:value => ""}
-            = lorem.name
-          %option{:value => ""}
-            = lorem.name
-          %option{:value => ""}
-            = lorem.name
-      .form-item
-        %input.form-text{:type => "text", :value => "Event invitation: Join us to festival Mundial", :placeholder => "Event invitation: Join us to festival Mundial"}
-      .form-item.form-type-textarea
-        %label{:for => "edit-body-und-0-value"} Message
-        .form-textarea-wrapper.fullwidth
-          %textarea#edit-body-und-0-value.text-full.form-textarea{:rows => "8"}
-            = lorem.paragraph
-            &#10;&#10;To join this event click here: &#10;http://www.greenwire.greenpeace.org/united-kingdom/en/events/join-us-to-festival-mundial
-      .form-actions
-        %input.button.btn-primary{:type => "submit", :value => "Send message"}
+      .form-wrapper
+        .form-item.form-type-select
+          %label.form-label
+            Select who you want to invite:
+            %span.form-required{:title => "This field is required."} *
+          .form-description This event is part of a closed group, so only members of the group can join
+          %select.chosen-select{"data-placeholder" => "Select some friends...", :multiple => "multiple" }
+            %option{:value => ""}
+              = lorem.name
+            %option{:value => ""}
+              = lorem.name
+            %option{:value => ""}
+              = lorem.name
+            %option{:value => "", :disabled => "disabled"}
+              = lorem.name
+              (is not attending)
+            %option{:value => "", :disabled => "disabled"}
+              = lorem.name
+              (is attending)
+            %option{:value => ""}
+              = lorem.name
+            %option{:value => ""}
+              = lorem.name
+            %option{:value => "", :disabled => "disabled"}
+              = lorem.name
+              (Not a group member)
+            %option{:value => "", :disabled => "disabled"}
+              = lorem.name
+              (Not a group member)
+            %option{:value => "", :disabled => "disabled"}
+              = lorem.name
+              (Not a group member)
+            %option{:value => ""}
+              = lorem.name
+            %option{:value => ""}
+              = lorem.name
+            %option{:value => ""}
+              = lorem.name
+            %option{:value => ""}
+              = lorem.name
+            %option{:value => ""}
+              = lorem.name
+        .form-item
+          %label
+            Subject:
+            %span.form-required{:title => "This field is required."} *
+          %input.form-text{:type => "text", :value => "Event invitation: Join us to festival Mundial",  :placeholder => "Event invitation: Join us to festival Mundial"}
+        .form-item.form-type-textarea
+          %label{:for => "edit-body-und-0-value"}
+            Message:
+            %span.form-required{:title => "This field is required."} *
+          .form-textarea-wrapper.fullwidth
+            %textarea#edit-body-und-0-value.text-full.form-textarea{:rows => "8"}
+              = lorem.paragraph
+              &#10;&#10;To join this event click here: &#10;http://www.greenwire.greenpeace.org/united- kingdom/en/events/join-us-to-festival-mundial
+        .form-actions
+          %input.button.btn-primary{:type => "submit", :value => "Send message"}

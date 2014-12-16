@@ -22,7 +22,7 @@
     margin-top: $def-mar-half;
 
       @include breakpoint($desk) {
-        margin-top: 2 * $def-mar;
+        margin-top: $def-mar;
       }
   }
 
@@ -47,7 +47,7 @@
     }
 
     @include breakpoint($tab) {
-      margin-bottom: 5px;
+      margin-bottom: $def-mar-half;
 
       .type {
         width: auto;
@@ -68,7 +68,6 @@
   }
 
   .field-name-body {
-    margin-top: 1em;
     @extend %cf;
   }
 

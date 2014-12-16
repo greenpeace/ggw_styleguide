@@ -1,8 +1,8 @@
 @import "compass/css3/images";
 @import "compass/css3/user-interface";
 
-$chosen-sprite: image-url('chosen-sprite.png') !default;
-$chosen-sprite-retina: image-url('chosen-sprite@2x.png') !default;
+$chosen-sprite: url('../images/chosen-sprite.png') !default;
+$chosen-sprite-retina: url('../images/chosen-sprite@2x.png') !default;
 
 // @group Base */
 .chosen-container {
@@ -229,6 +229,7 @@ $chosen-sprite-retina: image-url('chosen-sprite@2x.png') !default;
         border: none;
         outline: 0;
         color: $base;
+        min-width: 150px;
       }
     }
 

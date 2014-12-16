@@ -5,7 +5,7 @@
     .field-type-wrapper
       %h2.node-title
         %a{:href => "./blog-article.html"}
-          = lorem.sentence
+          = truncate(lorem.sentence, :length => 80)
       .submitted
         %a.type.blog{:href => "./blogs.html"} Blog
         11 Aug 2014, by

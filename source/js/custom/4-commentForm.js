@@ -4,4 +4,6 @@ $(function() {
     $('input[type=file]').nicefileinput();
   };
 
+  NiceCommentForm();
+
 });

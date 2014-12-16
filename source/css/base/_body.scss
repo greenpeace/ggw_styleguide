@@ -28,7 +28,7 @@ body {
 
 .block,
 .main-content {
-
+  margin-bottom: $def-mar;
   position: relative;
 
   @include breakpoint($desk) {

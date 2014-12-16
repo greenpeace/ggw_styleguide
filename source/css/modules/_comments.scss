@@ -1,6 +1,6 @@
 .block-comments {
-  margin-top: 3 * $def-mar;
   @include font-size(14px);
+  margin-top: 2 * $def-mar;
 
   &:before {
     display: block;
@@ -13,6 +13,8 @@
   }
 
   @include breakpoint($desk) {
+    margin-top: 0;
+
     &:before {
       display: none;
     }
@@ -58,9 +60,9 @@
 }
 
 .comment {
-  border-bottom: 1px solid rgba(0,0,0,.1);
-  padding: $def-mar 0;
+  padding: $def-mar-half 0;
   line-height: 1.1em;
+  overflow: hidden;
 
   &:last-child {
     border-bottom: none;

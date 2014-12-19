@@ -26,6 +26,7 @@ $( document ).ready(function() {
   // Ajax include
   $('[data-replace]').ajaxInclude();
 
+  //$('img, .youtube, .vimeo').sleepyHead();
 });
 
 // This will run once the entire page (including ajax requests), not just the DOM, is ready

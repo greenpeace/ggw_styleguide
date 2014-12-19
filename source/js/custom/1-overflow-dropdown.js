@@ -58,7 +58,7 @@ $(function() {
 
   // On resize, run the function and reset the timeout
   // 250 is the delay in milliseconds.
-  $(window).resize(function() {
+  jQuery(window).resize(function() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(overflowDropdown, 250);
   });

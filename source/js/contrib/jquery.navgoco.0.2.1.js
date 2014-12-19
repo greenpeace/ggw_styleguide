@@ -5,7 +5,7 @@
  * Copyright (c) 2014 Chris T (@tefra)
  * BSD - https://github.com/tefra/navgoco/blob/master/LICENSE-BSD
  */
-(function($) {
+;(function($) {
 
   'use strict';
 
@@ -311,4 +311,4 @@
     onToggleBefore: $.noop,
     onToggleAfter: $.noop
   };
-})(jQuery);
+});

@@ -8,17 +8,19 @@
             %span This is a line of text with a link
       %li
         %a{:href => "#"}
-          =image_tag("slide2.jpg")
+          =image_tag("blank.png", "data-src" => "http://greenpeace.github.io/ggw_styleguide/images/slide2.jpg")
           %p
             %span We are now looking at the 2nd slide, this text is actually too long for the slide
           %button.button.btn-primary take action
       %li
-        %iframe.youtube#player_1{:frameborder => "0", :width => "560", :height => "315", :src => "http://www.youtube.com/embed/zVu9eawb1QY?enablejsapi=1&version=3&playerapiid=player_1", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}
+        .container-lazyload.preview-lazyload.container-youtube#youtube_1
+          %a.lazy-load-youtube.preview-lazyload.preview-youtube{:href => "http://www.youtube.com/watch?v=IJNR2EpS0jw", "video-title" => "Dumb Ways to Die", :title => "Play Video &quot;Dumb Ways to Die&quot;"}
+            http://www.youtube.com/watch?v=IJNR2EpS0jw
       %li
         %iframe.vimeo#player_2{:frameborder => "0", :width => "500", :height => "281", :src => "http://player.vimeo.com/video/27243869?api=1&player_id=player_2", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}
       %li
         %a{:href => "#"}
-          =image_tag("slide3.jpg")
+          =image_tag("blank.png", "data-src" => "http://greenpeace.github.io/ggw_styleguide/images/slide3.jpg")
           %p
             %span This is a campaign slide to a separate page
       %li

@@ -92,8 +92,8 @@
     position: absolute;
     width: 1em;
     line-height: 1em;
-
   }
+
 
   .field-label + div {
     margin-left: 2em;
@@ -107,6 +107,7 @@
 
 .field-name-field-event-location .field-label + div:before {
   @extend %icon-location;
+  @include font-size($h2);
 }
 
 .field-name-field-event-organiser .field-label + div:before {

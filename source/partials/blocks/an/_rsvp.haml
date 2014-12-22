@@ -9,22 +9,22 @@
       %p Not a member? RSVP below
       .form-item.form-type-textfield
         %label{:for => "edit-firstname"}
-          First name
+          First name:
           %span.form-required{:title => "This field is required."} *
         %input#edit-firstname.form-text.required{:tabindex => "1", :type => "text", :value => ""}/
       .form-item.form-type-textfield
         %label{:for => "edit-lastname"}
-          Last name
+          Last name:
           %span.form-required{:title => "This field is required."} *
         %input#edit-lastname.form-text.required{:tabindex => "1", :type => "text", :value => ""}/
       .form-item.form-type-textfield
         %label{:for => "edit-emailaddress"}
-          Email address
+          Email:
           %span.form-required{:title => "This field is required."} *
         %input#edit-emailaddress.form-text.required{:tabindex => "1", :type => "text", :value => ""}/
       .form-item.form-type-select
         %label{:for => "edit-phonenumber-country"}
-          Phone (mobile)
+          Phone:
           %span.form-required{:title => "This field is required."} *
         %select#edit-phonenumber-country.form-select.required{:tabindex => "1"}
           %option{:value => "be"} Belgium (+32)
@@ -39,7 +39,7 @@
       .form-item.form-type-textfield
         %input#edit-phonenumber.form-text{:tabindex => "1", :type => "text", :value => ""}/
       .form-item.form-type-textarea
-        %label{:for => "edit-message"} Message
+        %label{:for => "edit-message"} Message:
         .form-textarea-wrapper.resizable
           %textarea#edit-message.form-textarea{:tabindex => "1"}
       .form-actions

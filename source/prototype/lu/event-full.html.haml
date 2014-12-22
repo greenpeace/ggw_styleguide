@@ -16,15 +16,15 @@ design_status: Work in progress
     .content
       %article.view-mode-full
         .submitted
-          %a.comments-shortcut{:href => "#block-comments"}
-            %i.icon-comment
-            10 comments
-
           %a.type.event{:href => "./events.html"} Event
           by
-          = lorem.name
+          %a{:href => "./profile.html"}
+            = lorem.name
+          \-
           %span.submitted-date June 5th 2014 - 11:29
-
+          %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
+            %i.icon-comment
+            10 comments
 
 
         .field-name-body

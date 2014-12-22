@@ -16,18 +16,16 @@ script: leaflet
     .content
       %article.view-mode-full
         .submitted
-          %a.type.events{:href => "./events.html"} Event
+          %a.type.event{:href => "./events.html"} Event
           by
           = lorem.name
+          \-
           %span.submitted-date June 5th 2014 - 11:29
         .field-name-body
 
           .field-group-wrapper
 
             = partial :"images/event-image"
-
-            .event-actions
-              %button.js-show-sidebar.button.btn-block.btn-primary.btn-l RSVP
 
             .field-group-format
 
@@ -61,6 +59,9 @@ script: leaflet
                 .field-label Attendees:
                 %div
                   %span 36 persons are going
+
+            .event-actions
+              %button.js-show-sidebar.button.btn-block.btn-primary.btn-l RSVP
 
           #desktopmap
 
@@ -101,6 +102,8 @@ script: leaflet
           .submitted-all-reference
             %a{:href => "#"}> All events by willy_mackenzie
             \.
+
+  = partial :"blocks/an/comments"
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/an/rsvp"

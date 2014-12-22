@@ -2,6 +2,10 @@
   clear: both;
   @include font-size($small);
   position: relative;
+
+  .page-search .main-content & {
+    padding-right: 60px;
+  }
 }
 
 .page-search .view-header .action-bar {

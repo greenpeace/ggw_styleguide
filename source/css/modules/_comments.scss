@@ -1,32 +1,13 @@
 .block-comments {
   @include font-size(14px);
   margin-top: 2 * $def-mar;
-
-  &:before {
-    display: block;
-    content:'';
-    height: 66px;
-    width: 100%;
-    position: absolute;
-    top: -15px;
-    border-top: 1px solid rgba(0,0,0,.2);
-  }
-
-  @include breakpoint($desk) {
-    margin-top: 0;
-
-    &:before {
-      display: none;
-    }
-  }
-
 }
 
 .sort-comments {
   @extend %hlist;
   position: absolute;
   right: 15px;
-  top: 12px;
+  top: 8px;
 
   li {
     border-left: 1px solid #dbdbdb;
@@ -79,7 +60,7 @@
 
 .avatar-holder {
   float: left;
-  margin-right: $def-mar-half;
+  margin-right: $def-mar;
   width: 45px;
 
   @include breakpoint($desk) {
@@ -91,9 +72,8 @@
   overflow: hidden;
 }
 
-.comment-head,
 .comment-body {
-  margin-bottom: 0.3em;
+  line-height: 1.5em;
 }
 
 .comment-footer {

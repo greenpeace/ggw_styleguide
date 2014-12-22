@@ -44,7 +44,7 @@
         %nav.user-menu{:role => "navigation"}
           %ul.menu
 
-            - if current_page.data.user_role == "lu"
+            - if current_page.data.user_role == "lu" || current_page.data.user_role == "cm"
               %li.menu-item
                 %a.menu-link{:href => "my-profile.html"}
                   John Doe Claus

@@ -1,0 +1,82 @@
+---
+title: Profile
+body_class: not-front logged-in page-profile l-has-sidebar
+user_role: lu
+design_status: Work in progress
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-user.icon-user
+    %h1#page-title.block-title
+      John Doe Claus
+      %span.secondary-title (johnny_has_a_nickname)
+
+    .content
+
+      .profile
+
+        .field-type-image
+          %img{:src => "http://lorempixel.com/130/130/people", :alt => "John Doe Claus"}
+
+        .field-type-wrapper
+
+          .field.field-name-field-social-media
+            %a.social-icon.twitter{:target => "blank"}
+              %span.element-hidden twitter
+            %a.social-icon.facebook{:target => "blank"}
+              %span.element-hidden facebook
+            %a.social-icon.googleplus{:target => "blank"}
+              %span.element-hidden googleplus
+            %a.social-icon.linkedin{:target => "blank"}
+              %span.element-hidden linkedin
+            %a.social-icon.pinterest{:target => "blank"}
+              %span.element-hidden pinterest
+            %a.social-icon.vk{:target => "blank"}
+              %span.element-hidden vkontakte
+
+          .field.field-name-field-skype
+            .field-label
+              %span.element-hidden
+                Skype:
+            .field-item
+              %i.icon-skype
+              %span john_doe_north_pole
+
+        .clear
+
+        .field-type-wrapper
+
+          .field.field-name-field-birthday
+            .field-label Date of birth:
+            .field-item October 25th, 1980
+
+          .field.field-name-field-mail
+            .field-label Email:
+            .field-item john_doe_claus@greenpeace.org
+
+          .field.field-name-field-about
+            .field-label About me:
+            .field-item
+              In et sagittis turpis, quis malesuada urna! Duis tempus pellentesque eros, eget bibendum quam rhoncus posuere. Duis commodo lobortis elit; eu condimentum ante feugiat ut. In dictum risus sed tempor rhoncus. Pellentesque tellus risus, sodales ut eleifend vel, porta sit amet nisi. Praesent vestibulum vitae nibh nec ultricies. Vivamus semper, ipsum ut eleifend eleifend, dui dui tempor neque, sit amet gravida ligula sapien et est.
+
+          .field.field-name-field-location
+            .field-label Hometown:
+            .field-item North Pole, Greenland
+
+          .field.field-name-field-profession
+            .field-label Profession:
+            .field-item Accountmanager at Greenpeace International
+
+          .field.field-name-field-education
+            .field-label Education:
+            .field-item
+              Cras porttitor convallis porta. Praesent nibh sapien, tempus vitae lacus ut, convallis molestie odio. Sed porttitor turpis sed velit feugiat, at consequat dolor mattis. Aenean bibendum dolor id orci facilisis, non vestibulum odio posuere. Vivamus lobortis nulla in neque ullamcorper mattis.
+
+          .field.field-name-field-skills
+            .field-label Skills:
+            .field-item
+              Research, Oceans, Storytelling, Blogging, Painting, French, Custome design, Fundraising
+

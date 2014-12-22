@@ -27,33 +27,35 @@ design_status: Work in progress
 
 .l-main-column#content
   .main-content
-    .action-bar
-      .action-bar-item.filter
-        %label Filter
-        %a.button.btn-s.btn-dropdown{"data-dropdown" => "#updates-filter", :href => "#", :title => "Filter content"}
-          %span Filter
-        #updates-filter.dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#"} All
-            %li
-              %a{:href => "#"} News
-            %li
-              %a{:href => "#"} Blog
-            %li
-              %a{:href => "#"} Event
-            %li
-              %a{:href => "#"} Idea
-            %li
-              %a{:href => "#"} Photo
-            %li
-              %a{:href => "#"} Video
-            %li
-              %a{:href => "#"} Document
-
     %i.block-icon.icon-bg-news-media.icon-news
     %h1#page-title.block-title Updates
     .content
+      .tabwrapper
+        %ul.tabs
+          %li
+            =nav_link 'All', '#', :class => 'tab active'
+          %li
+            =nav_link 'News', '#', :class => 'tab'
+          %li
+            =nav_link 'Blog', '#', :class => 'tab'
+          %li
+            =nav_link 'Event', '#', :class => 'tab'
+          %li
+            =nav_link 'Idea', '#', :class => 'tab'
+          %li
+            =nav_link 'Photo', '#', :class => 'tab'
+          %li
+            =nav_link 'Video', '#', :class => 'tab'
+          %li
+            =nav_link 'Document', '#', :class => 'tab'
+        %ul.tabs-overflow
+          %li
+            %a.tab.tab-overflow-trigger{:href => "#", "data-dropdown" => "#dropdown-tabs"}
+              more
+              %i.icon-down-mini
+            .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#dropdown-tabs
+              %ul.dropdown-menu
+
       = partial :"teasers/news-no-image"
       = partial :"teasers/news-with-image"
       = partial :"teasers/blog-with-image"

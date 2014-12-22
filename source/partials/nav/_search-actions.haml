@@ -13,6 +13,8 @@
         %i.icon-list
         %span.element-invisible show list
 
+  .action-bar-item.resultstats 56 Results
+
   - if current_page.data.search_page == "members" and current_page.data.user_role == "an"
 
     .action-bar-item.sorting.disabled
@@ -181,7 +183,7 @@
                         %input.form-checkbox{:id => "#{item}", :type => "checkbox", :value => "#{item}"}
                         %label.option{:for => "#{item}"} #{item}
 
-  - if current_page.data.view == "list" and current_page.data.user_role == "cm"
+  - if current_page.data.user_role == "cm"
 
     .action-bar-item.actions
       %label Actions

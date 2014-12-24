@@ -7,15 +7,19 @@ $(function() {
   var sidebarButton = $('<div class="trigger-sidebar js-show-sidebar"><i class="button icon-button"></i></div>');
 
   if ($('.l-has-sidebar').length != 0 && $('.sidebar').length != 0) {
-    $(sidebarButton).insertBefore('.l-main');
+    $(sidebarButton).insertBefore('.l-main').hide();
+    var sidebarClone = $('.sidebar').clone();
+    $(sidebarClone).insertBefore('.l-main').addClass('sidebar-mob').removeClass('l-sidebar');
   }
 
   function showSidebarTrigger() {
 
     if ($(window).width() <= 901) {
       sidebarButton.show();
+      $('.l-sidebar').hide();
     } else {
       sidebarButton.hide();
+      $('.l-sidebar').show();
     }
 
   }

@@ -266,20 +266,10 @@
 
 .l-has-sidebar .l-main-column {
 
-  .flexbox & {
-    flex: 1;
-  }
-
   @include breakpoint($desk) {
-
     float: left;
     position: relative;
     width: (100%/1.5);
-
-    .flexbox & {
-      flex: 0 1 (100%/1.5);
-      order: 1;
-    }
   }
 
 }
@@ -291,11 +281,6 @@
     float: left;
     position: relative;
     width: (100%/2);
-  }
-
-  .flexbox & {
-    flex: 0 1 (100%/2);
-    order: 1;
   }
 
 }

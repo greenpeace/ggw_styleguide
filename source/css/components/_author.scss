@@ -1,11 +1,8 @@
-.submitted {
-  margin:(2 * $def-mar) 0 0;
-}
-
-.submitted-extended {
+.view-mode-full .submitted-extended {
   padding: $def-mar;
   background: $background;
   border-radius: 3px;
+  margin: $def-mar 0 0;
 }
 
 .comments-shortcut {

@@ -31,7 +31,6 @@
 .view-mode-full {
 
   .submitted {
-    margin: 0;
 
     .type:before {
       @extend %load-icon;
@@ -47,7 +46,6 @@
     }
 
     @include breakpoint($tab) {
-      margin-bottom: $def-mar-half;
 
       .type {
         width: auto;

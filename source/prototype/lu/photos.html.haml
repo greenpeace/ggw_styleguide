@@ -1,0 +1,22 @@
+---
+title: Photos
+body_class: not-front logged-in page-photos l-has-sidebar
+user_role: lu
+design_status: Needs review
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-news-media.icon-video
+    %h1#page-title.block-title
+      = current_page.data.title
+    .content
+      - 10.times do |num|
+        = partial :"teasers/photo"
+
+%aside.l-sidebar.sidebar
+  .content
+    = partial :"blocks/find_photos"
+    = partial :"blocks/an/create_account"

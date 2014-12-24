@@ -1,0 +1,18 @@
+.block
+  %i.block-icon.icon-search.icon-bg-news-media
+  %h2.block-title Find videos
+  .content
+    %form
+      - if current_page.data.user_role == "lu"
+        .views-exposed-widget
+          %label Author
+          .views-widget
+            .form-item.form-type-textfield
+              %input.form-autocomplete.form-text{:type => "text"}/
+      .views-exposed-widget
+        %label Tags
+        .views-widget
+          .form-item.form-type-textfield
+            %input.form-autocomplete.form-text{:type => "text"}/
+      .views-exposed-widget.views-submit-button
+        %input.button{:type => "submit", :value => "Search"}/

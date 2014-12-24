@@ -1,0 +1,22 @@
+---
+title: Videos
+body_class: not-front not-logged-in page-videos l-has-sidebar
+user_role: an
+design_status: Needs review
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-news-media.icon-video
+    %h1#page-title.block-title
+      = current_page.data.title
+    .content
+      - 10.times do |num|
+        = partial :"teasers/video"
+
+%aside.l-sidebar.sidebar
+  .content
+    = partial :"blocks/find_videos"
+    = partial :"blocks/an/create_account"

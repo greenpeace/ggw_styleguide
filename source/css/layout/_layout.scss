@@ -254,16 +254,6 @@
   }
 }
 
-.flexbox .l-has-sidebar .l-main {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-
-  @include breakpoint($desk) {
-    flex-direction: row;
-  }
-}
-
 .l-has-sidebar .l-main-column {
 
   @include breakpoint($desk) {

@@ -1,0 +1,67 @@
+---
+title: Video page example
+body_class: not-front not-logged-in page-type-video l-has-sidebar node-full
+user_role: an
+design_status: Work in progress
+loadvideo: youtube
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-news-media.icon-video
+    %h1#page-title.block-title
+      = lorem.words 10
+    .content
+      %article.view-mode-full
+        .submitted
+          %a.type.video{:href => "./videos.html"} Video
+          by willie_mackenzie -
+          %span.submitted-date June 5th 2014 - 11:29
+
+        .container-lazyload.preview-lazyload.container-youtube#youtube_1
+          %a.lazy-load-youtube.preview-lazyload.preview-youtube{:href => "http://www.youtube.com/watch?v=esj393oRKPc", "video-title" => "Greenpeace in Action", :title => "Play Greenpeace in Action"}
+            http://www.youtube.com/watch?v=esj393oRKPc
+
+        .field-name-body
+          %p
+            = lorem.paragraph
+          %p
+            = lorem.paragraph
+          %ul
+            %li
+              = lorem.sentence
+            %li
+              = lorem.sentence
+            %li
+              = lorem.sentence
+          %p
+            = lorem.paragraph
+          %p
+            = lorem.sentence
+            %strong without
+            = lorem.sentence
+        .tags
+          Tags:
+          %a.tag{:href => "#"} oceans,
+          %a.tag{:href => "#"} Sustainable fishery,
+          %a.tag{:href => "#"} conservation
+        .submitted.submitted-extended
+          .submitted-image
+            %img{:alt => "Name of teh author.", :src => "http://placeimg.com/75/75/people/8/avatar"}/
+          .submitted-info
+            %div
+              %a{:href => "./news.html"} News
+              by willie_mackenzie
+            .submitted-all-reference
+              %a{:href => "#"}> All News by willy_mackenzie
+              \.
+
+  = partial :"blocks/an/comments"
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/related_videos"
+  = partial :"blocks/go_to_group"
+  = partial :"blocks/an/create_account"
+

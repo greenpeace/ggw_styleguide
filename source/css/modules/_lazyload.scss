@@ -44,13 +44,9 @@ a.lazy-load-youtube, .lazy-load-vimeo {
   width: 100%;
   max-width: 100%;
   background-size: cover!important; /* alternative: "contain" */
-  text-decoration: none;
   display: inline-block;
-  color: #fff;
-  font-family: Arial, serif;
-  font-size: 14px;
   margin-top: 0;
-  line-height: 18px;
+  line-height: 1.5em;
 }
 
 .preview-vimeo {
@@ -61,7 +57,6 @@ a.lazy-load-youtube, .lazy-load-vimeo {
   &:after, &::after {
     content: "\25B6";
     font-size: 50px;
-    font-family: Arial, sans-serif;
     color: $white;
 
     opacity: 0.7;
@@ -126,3 +121,22 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
   60% { -webkit-transform: scale(1.05); }
   100% { -webkit-transform: scale(1); }
 };
+
+.node-full {
+
+  .container-lazyload {
+    width: 100%;
+    height: auto;
+    margin-bottom: $def-mar;
+  }
+
+  .preview-youtube p {
+    background: rgba(0,0,0,.8);
+    margin: 0;
+    padding: .5em 1em;
+    @include font-size($small);
+    color: $white;
+    line-height: 1.5em;
+  }
+
+}

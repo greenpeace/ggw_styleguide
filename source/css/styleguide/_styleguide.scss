@@ -24,32 +24,6 @@
 
   }
 
-  .flexbox .style-guide {
-
-    .l-main {
-      display: flex;
-      flex-flow: row wrap;
-    }
-
-    .sidebar-left {
-      flex: 0 1 25%;
-      order: 1;
-    }
-
-    .l-main-column {
-      flex: 0 1 75%;
-      order: 2;
-    }
-
-    &.l-has-sidebar {
-      .l-main-column {
-        flex: 0 1 (100%/1.5);
-        order: 1;
-      }
-    }
-
-  }
-
 }
 
 @include breakpoint($desk) {

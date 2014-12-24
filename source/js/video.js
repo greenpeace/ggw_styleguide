@@ -351,7 +351,7 @@ $(function(lazyload_youtube) {
  * Lazy Load Vimeo
  * by Kevin Weber (kevinw.de)
  */
-
+/*
 (function( lazyload_vimeo ) {
 
   // Classes
@@ -366,9 +366,9 @@ $(function(lazyload_youtube) {
   lazyload_vimeo.init = function( options ) {
     setOptionsYoutube( options );
 
-    /*
-     * Use ajaxStop function to prevent plugin from breaking when another plugin uses Ajax
-     */
+
+     // Use ajaxStop function to prevent plugin from breaking when another plugin uses Ajax
+
     $(document).ready(doload_llv()).ajaxStop(function() {
       doload_llv();
     });
@@ -399,16 +399,16 @@ $(function(lazyload_youtube) {
     vimeoCreatePlayer();
   }
 
-  /*
-   * Load plugin info
-   */
+
+   // Load plugin info
+
   var loadPluginInfo = function() {
     return '<a class="' + classBranding + '" href="http://kevinw.de/lazy-load-videos/" title="Lazy Load for Videos by Kevin Weber" target="_blank">i</a>';
   };
 
-  /*
-   * Create info element
-   */
+
+   // Create info element
+
   var createPluginInfo = function() {
       if (
           ( $_o.displayBranding !== false ) &&
@@ -521,6 +521,7 @@ $(function(lazyload_youtube) {
    * As seen on http://stackoverflow.com/questions/2360655/jquery-event-handlers-always-execute-in-order-they-were-bound-any-way-around-t
    * and on https://gist.github.com/infostreams/6540654
    */
+   /*
   $.fn.bindFirst = function(which, handler) {
     // ensures a handler is run before any other registered handlers,
     // independent of the order in which they were bound
@@ -537,7 +538,7 @@ $(function(lazyload_youtube) {
 
   /*
    * The following code bases on "Responsive Video Embeds" by Kevin Leary, www.kevinleary.net, WordPress development in Boston, MA
-   */
+
   var responsiveVideos = {
 
     config: {
@@ -574,3 +575,4 @@ $(function(lazyload_youtube) {
   };
 
 }( window.lazyload_vimeo = window.lazyload_vimeo || {}, jQuery ));
+*/

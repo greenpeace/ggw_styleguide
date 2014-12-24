@@ -6,7 +6,7 @@ $(function() {
 
   var sidebarButton = $('<div class="trigger-sidebar js-show-sidebar"><i class="button icon-button"></i></div>');
 
-  if ($('.sidebar').length != 0) {
+  if ($('.l-has-sidebar').length != 0 && $('.sidebar').length != 0) {
     $(sidebarButton).insertBefore('.l-main');
   }
 

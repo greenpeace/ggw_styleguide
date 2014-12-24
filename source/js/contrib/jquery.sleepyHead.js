@@ -6,7 +6,7 @@
  *
  * @author Jason Pescione <jay@moonfuse.co>
  */
-/*
+
 ;(function($, win, doc, undefined) {
   var $doc    = $(doc),
       $win    = $(win),
@@ -154,13 +154,12 @@
 
 
 })(jQuery, window, document);
- */
+
 
 
 /**
  * ES5 polyfils.
  */
- /*
 if (!Array.prototype.forEach) {
     Array.prototype.forEach = function (fn, scope) {
         'use strict';
@@ -172,4 +171,3 @@ if (!Array.prototype.forEach) {
         }
     };
 }
- */

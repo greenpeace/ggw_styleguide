@@ -98,4 +98,4 @@ function offCanvasNav() {
     $('<li class="menu-item notifications-trigger" data-dropdown="notifications-panel"><i class="icon icon-globe"></i><span class="num-notifications">' + totalNotifications +'</span></li>').insertBefore($('.user-menu .menu-item:nth-of-type(2)'));
   }
 
-}
+};

@@ -44,7 +44,7 @@ $mfp-controls-border-color:           #3F3F3F !default;
 $mfp-inner-close-icon-color:          #333 !default;
 $mfp-controls-text-color:             #CCC !default; // Color of preloader and "1 of X" indicator
 $mfp-controls-text-color-hover:       #FFF !default;
-$mfp-IE7support:                      true !default; // Very basic IE7 support
+$mfp-IE7support:                      false !default; // Very basic IE7 support
 
 // Iframe-type options
 $mfp-include-iframe-type:             true !default;
@@ -568,8 +568,6 @@ button {
           top: auto;
           padding: 3px 5px;
           position: fixed;
-          -webkit-box-sizing: border-box;
-          -moz-box-sizing: border-box;
           box-sizing: border-box;
           &:empty {
             padding: 0;
@@ -614,35 +612,5 @@ button {
   .mfp-container {
     padding-left: $mfp-popup-padding-left-mobile;
     padding-right: $mfp-popup-padding-left-mobile;
-  }
-}
-
-
-
-// IE7 support
-// Styles that make popup look nicier in old IE
-@if $oldie {
-  .mfp-ie7 {
-    .mfp-img {
-      padding: 0;
-    }
-    .mfp-bottom-bar {
-      width: 600px;
-      left: 50%;
-      margin-left: -300px;
-      margin-top: 5px;
-      padding-bottom: 5px;
-    }
-    .mfp-container {
-      padding: 0;
-    }
-    .mfp-content {
-      padding-top: 44px;
-    }
-    .mfp-close {
-      top: 0;
-      right: 0;
-      padding-top: 0;
-    }
   }
 }

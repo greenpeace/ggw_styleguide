@@ -332,7 +332,7 @@ $chosen-sprite-retina: url('../images/chosen-sprite@2x.png') !default;
 }
 
 // @group Retina compatibility */
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi)  {
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx)  {
   .chosen-container-single .chosen-single abbr,
   .chosen-container-single .chosen-single div b,
   .chosen-container-single .chosen-search input[type="text"],

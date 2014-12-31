@@ -135,3 +135,16 @@
   }
 
 }
+
+.field-name-gallery {
+  overflow: hidden;
+  margin: $def-mar 0;
+
+  .album-thumbnail {
+    float: left;
+    margin: 0 3px 3px 0;
+    width: 96px;
+    height: 96px;
+    background: $grey-l;
+  }
+}

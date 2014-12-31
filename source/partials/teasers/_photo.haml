@@ -4,10 +4,10 @@
       = partial :"teasers/teaser-image"
     .field-type-wrapper
       %h2.node-title
-        %a{:href => "#"}
+        %a{:href => "./photo-album.html"}
           = lorem.sentence
       .submitted
-        %a.type.photo{:href => "#"} Photos
+        %a.type.photo{:href => "./photos.html"} Photos
         4 Mar, by
         - if current_page.data.user_role != "an"
           %a{:href => "#"}

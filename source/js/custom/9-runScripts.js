@@ -1,6 +1,3 @@
-// this method is required because ajaxInclude will not pass on functions to loaded content. This funtion is called whenever an ajax request is completed.
-
-
 // will only run once the page DOM is ready for JavaScript code to execute.
 $( document ).ready(function() {
   'use strict';
@@ -23,10 +20,7 @@ $( document ).ready(function() {
   // Activate fastclick function
   FastClick.attach(document.body);
 
-  // Ajax include
-  $('[data-replace]').ajaxInclude();
-
-  $('img').sleepyHead(200, 400);
+  $('img').sleepyHead(100, 300);
 });
 
 // This will run once the entire page (including ajax requests), not just the DOM, is ready
@@ -78,6 +72,13 @@ $( window ).load(function() {
   // Universal selector for modal windows with external source
   $('.modal-inline').magnificPopup({
     type: 'inline'
+  });
+
+  $('.album-thumbnail').magnificPopup({
+    type: 'image',
+    gallery:{
+      enabled:true
+    }
   });
 
    // add class to external links so they can be styled

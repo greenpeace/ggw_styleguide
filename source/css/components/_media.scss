@@ -29,7 +29,7 @@ article img.nofloat {
   margin-right: 0;
 }
 
-figure {
+.l-main-column figure {
   margin: 1em 0;
   position: relative;
 
@@ -39,7 +39,7 @@ figure {
   }
 }
 
-figcaption {
+.l-main-column figcaption {
   position: absolute;
   bottom: 0;
   background: #000;

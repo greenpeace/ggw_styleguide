@@ -5,7 +5,9 @@
   line-height: 1.2em;
 
   @include breakpoint($tab) {
-    height: 90px;
+    .l-main-column & {
+      height: 90px;
+    }
   }
 
   .field-type-image {
@@ -18,8 +20,10 @@
     position: relative;
 
     @include breakpoint($tab) {
-      width: 130px;
-      height: 90px;
+      .l-main-column & {
+        width: 130px;
+        height: 90px;
+      }
     }
 
     &:before {
@@ -32,8 +36,10 @@
       @extend %load-icon;
 
       @include breakpoint($tab) {
-        line-height: 90px;
-        font-size: 3.5rem;
+        .l-main-column & {
+          line-height: 90px;
+          font-size: 3.5rem;
+        }
       }
     }
 
@@ -125,13 +131,16 @@
     }
 
     @include breakpoint($tab) {
-      margin-bottom: 5px;
+      .l-main-column & {
+        margin-bottom: 5px;
 
-      .type {
-        width: auto;
+        .type {
+          width: auto;
 
-        &:before {
-          margin-right: .2em;
+          &:before {
+            margin-right: .2em;
+          }
+
         }
 
       }

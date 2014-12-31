@@ -1,28 +1,28 @@
 ---
-title: Video page example
-body_class: not-front not-logged-in page-type-video l-has-sidebar node-full
+title: Photo album example
+body_class: not-front not-logged-in page-type-photos l-has-sidebar node-full
 user_role: an
 design_status: Work in progress
-loadvideo: youtube
 ---
 
 = partial :"blocks/breadcrumbs"
 
 #content.l-main-column
   .main-content
-    %i.block-icon.icon-bg-news-media.icon-video
+    %i.block-icon.icon-bg-news-media.icon-photo
     %h1#page-title.block-title
       = lorem.words 10
     .content
       %article.view-mode-full
         .submitted
-          %a.type.video{:href => "./videos.html"} Video
+          %a.type.photo{:href => "./photos.html"} Photos
           by willie_mackenzie -
           %span.submitted-date June 5th 2014 - 11:29
 
-        .container-lazyload.preview-lazyload.container-youtube#youtube_1
-          %a.lazy-load-youtube.preview-lazyload.preview-youtube{:href => "http://www.youtube.com/watch?v=esj393oRKPc", "video-title" => "Greenpeace in Action", :title => "Play Greenpeace in Action"}
-            http://www.youtube.com/watch?v=esj393oRKPc
+        .field-name-gallery
+          - 50.times do |num|
+            %a.album-thumbnail{:href => "http://placeimg.com/960/960/nature"}
+              %img{:alt => "", :src => "../../images/blank.png", "data-src" => "http://placeimg.com/96/96/nature"}/
 
         .field-name-body
           %p
@@ -52,16 +52,16 @@ loadvideo: youtube
             %img{:alt => "Name of the author.", :src => "http://placeimg.com/75/75/people/8/avatar"}/
           .submitted-info
             %div
-              %a{:href => "./videos.html"} Video
+              %a{:href => "./photo.html"} Photos
               by willie_mackenzie
             .submitted-all-reference
-              %a{:href => "#"}> All videos by willy_mackenzie
+              %a{:href => "#"}> All Photos by willy_mackenzie
               \.
 
   = partial :"blocks/an/comments"
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/related_videos"
+  = partial :"blocks/related_photos"
   = partial :"blocks/go_to_group"
   = partial :"blocks/an/create_account"
 

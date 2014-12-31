@@ -8,7 +8,7 @@
   // Cut the mustard
   if( !( 'querySelector' in document ) ||
       ( window.blackberry && !window.WebKitPoint ) ||
-      window.operamini ) {
+      window.operamini || !($('table').length)) {
     return;
   } else {
     $doc.addClass( 'tablesaw-enhanced' );

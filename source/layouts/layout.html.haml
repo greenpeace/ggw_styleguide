@@ -44,21 +44,7 @@
 
       = partial :"nav/footer"
 
-    = javascript_include_tag  "theme"
-    = javascript_include_tag  "video"
-
-    - if current_page.data.loadvideo == "youtube"
-      :javascript
-
-        $(document).ready(function() {
-          lazyload_youtube.init({
-            theme: 'dark',
-            colour: 'white',
-            controls: true,
-            responsive: true,
-            thumbnailquality: '0',
-          });
-        });
+    = javascript_include_tag  "theme", :async => ""
 
     - if current_page.data.script == "leaflet"
 

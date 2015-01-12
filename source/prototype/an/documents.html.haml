@@ -1,0 +1,21 @@
+---
+title: Documents
+body_class: not-front not-logged-in page-documents l-has-sidebar
+user_role: an
+design_status: Needs review
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-news-media.icon-document
+    %h1#page-title.block-title
+      = current_page.data.title
+    .content
+      - 10.times do |num|
+        = partial :"teasers/document"
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/find_document"
+  = partial :"blocks/an/create_account"

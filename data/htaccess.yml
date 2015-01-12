@@ -1,0 +1,43 @@
+web:
+    domain: greenpeace.github.io/ggw_styleguide/
+    url: http://greenpeace.github.io/ggw_styleguide
+
+redirect:
+    /old-url.html: /new-url.html
+    /another/url.html: /new/
+
+media:
+    audio/mp4: "f4a f4b m4a"
+    audio/ogg: "oga ogg opus"
+    application/json: "json map"
+    application/ld+json: "jsonld"
+    application/javascript: "js"
+    application/x-web-app-manifest+json: "webapp"
+    text/cache-manifest: "appcache manifest"
+    video/mp4: "f4v f4p m4v mp4"
+    video/ogg: "ogv"
+    video/webm: "webm"
+    video/x-flv: "flv"
+    application/font-woff: "woff"
+    application/font-woff2: "woff2"
+    application/vnd.ms-fontobject: "eot"
+    application/x-font-ttf: "ttc ttf"
+    font/opentype: "otf"
+    application/xml: "atom rdf rss xml"
+    image/svg+xml: "svg svgz"
+    image/x-icon: "cur ico"
+
+cache:
+    deflate: \\.(js|css|html|ico|png)$
+    expire:
+        image/png: access plus 1 month
+        image/ico: access plus 1 month
+        image/x-icon: access plus 1 month
+        text/html: access plus 1 minute
+        text/css: access plus 7 days
+        application/javascript: access plus 7 days
+        text/javascript: access plus 7 days
+
+errors:
+    401: "Unauthorized access"
+    404: /prototype/404.html

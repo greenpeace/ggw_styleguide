@@ -1,0 +1,79 @@
+---
+title: Photo album example
+body_class: not-front logged-in page-type-photos l-has-sidebar node-full
+user_role: lu
+design_status: Work in progress
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-news-media.icon-photo
+    %h1#page-title.block-title
+      = lorem.words 10
+    .content
+      %article.view-mode-full
+        .submitted
+          %a.type.photo{:href => "./photos.html"} Photos
+          by
+          %a{:href => "./profile.html"}
+            = lorem.name
+
+          %span.submitted-date June 5th 2014 - 11:29
+
+          %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
+            %i.icon-comment
+            10 comments
+
+        .field-name-gallery
+          - 50.times do |num|
+            %a.album-thumbnail{:href => "http://placeimg.com/960/960/nature"}
+              %img{:alt => "", :src => "../../images/blank.png", "data-src" => "http://placeimg.com/96/96/nature"}/
+
+        .field-name-body
+          %p
+            = lorem.paragraph
+          %p
+            = lorem.paragraph
+          %ul
+            %li
+              = lorem.sentence
+            %li
+              = lorem.sentence
+            %li
+              = lorem.sentence
+          %p
+            = lorem.paragraph
+          %p
+            = lorem.sentence
+            %strong without
+            = lorem.sentence
+        .tags
+          Tags:
+          %a.tag{:href => "#"} oceans,
+          %a.tag{:href => "#"} Sustainable fishery,
+          %a.tag{:href => "#"} conservation
+        .submitted.submitted-extended
+          .submitted-image
+            %img{:alt => "Name of the author.", :src => "../../images/blank.png", "data-src" => "http://placeimg.com/75/75/people/8/avatar"}/
+          .submitted-info
+            %div
+              %a{:href => "./photo.html"} Photos
+              by
+              %a{:href => "./profile.html"}
+                = lorem.name
+            .submitted-all-reference
+              %a{:href => "#"}
+                All Photos by
+                = lorem.name
+                \.
+
+  = partial :"blocks/lu/comments"
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/related_photos"
+  = partial :"blocks/go_to_group"
+  = partial :"blocks/lu/get_involved"
+  = partial :"blocks/lu/subscribe"
+

@@ -1,0 +1,36 @@
+# MOVE PERMANENTLY
+<% data.htaccess.redirect.each do |old, new| %>
+Redirect 301 <%= old %> <%= data.htaccess.web.url %><%= new %>
+<% end %>
+
+# REWRITE - redirect to www. page
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^<%= data.htaccess.web.domain %>$
+RewriteRule (.*) <%= data.htaccess.web.url %>/$1 [R=301,L]
+
+# ERROR DOCUMENTS
+<% data.htaccess.errors.each do |code, document| %>
+ErrorDocument <%= code %> <%= document %>
+<% end %>
+
+# MEDIA TYPES AND CHARACTER ENCODINGS
+<IfModule mod_mime.c>
+<% data.htaccess.media.each do |type, ext| %>
+AddType <%= type %> <%= ext %>
+<% end %>
+</IfModule>
+
+ExpiresActive on
+<% data.htaccess.cache.expire.each do |type, expire| %>
+ExpiresByType <%= type %> "<%= expire %>"
+<% end %>
+
+<FilesMatch "<%= data.htaccess.cache.deflate %>">
+    SetOutputFilter DEFLATE
+</FilesMatch>
+
+# Remove `ETags` as resources are sent with far-future expires headers.
+# `FileETag None` doesn't work in all cases.
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>

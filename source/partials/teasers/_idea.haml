@@ -3,13 +3,13 @@
     .field-type-image
     .field-type-wrapper
       %h2.node-title
-        %a{:href => "#"}
+        %a{:href => "./idea.html"}
           = lorem.sentence
       .submitted
-        %a.type.idea{:href => "#"} Idea
+        %a.type.idea{:href => "./ideas.html"} Idea
         9 Dec, by
         - if current_page.data.user_role != "an"
-          %a{:href => "#"}
+          %a{:href => "./profile.html"}
             = lorem.name
         - else
           = lorem.name.downcase.tr(' ', '_')

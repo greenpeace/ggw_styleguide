@@ -100,22 +100,6 @@ helpers do
 end
 
 
-
-
-#activate :automatic_clowncar,
-#  :sizes => {
-#    :small => 200,
-#    :medium => 400,
-#    :large => 600
-#  },
-#  :namespace_directory => %w(photos),
-#  :filetypes => [:jpg, :jpeg, :png]
-#
-#activate :asset_host
-#set :asset_host, 'http://localhost:4567'
-
-
-
 activate :title, site: 'GGW Style Guide', separator: ' — '
 
 
@@ -140,6 +124,9 @@ configure :build do
 
   set :url_root, 'http://greenpeace.github.io/ggw_styleguide/'
 
+  # disable layout
+  page ".htaccess.apache", :layout => false
+
   # Compress PNGs after build
   # First: gem install middleman-smusher
   # require "middleman-smusher"
@@ -147,6 +134,11 @@ configure :build do
 
   # Or use a different image path
   # set :http_path, "/Content/images/"
+end
+
+# rename file after build
+after_build do
+  File.rename 'build/.htaccess.apache', 'build/.htaccess'
 end
 
 activate :deploy do |deploy|

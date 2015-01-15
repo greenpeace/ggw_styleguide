@@ -12,6 +12,8 @@ gem "padrino-support", '= 0.12.2'
 
 gem "middleman-syntax"
 
+gem 'middleman-minify-html'
+
 # Automatically add vendor prefixes to CSS rules
 gem 'middleman-autoprefixer'
 

@@ -1,0 +1,20 @@
+.logo {
+  width: 134px;
+  margin: 0 auto;
+  position: relative;
+  top: $def-mar-half;
+  display:block;
+  height: 34px;
+  background-position: 0 0;
+
+  @include breakpoint($desk) {
+    position: absolute;
+    left: 10px;
+    top: $def-mar;
+  }
+
+  @include breakpoint($deskplus) {
+    left: 0;
+  }
+
+}

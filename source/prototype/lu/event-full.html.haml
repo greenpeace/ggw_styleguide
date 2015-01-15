@@ -94,24 +94,24 @@ design_status: Work in progress
             %strong without
             = lorem.sentence
 
-      .tags
-        Tags:
-        %a.tag{:href => "#"} festival
-      .submitted.submitted-extended
-        .submitted-image
-          %img{:alt => "Name of the author.", :src => "http://placeimg.com/75/75/people/8/avatar"}/
-        .submitted-info
-          %div
-            %a{:href => "./events.html"} Event
-            by
-            = lorem.name
-          .submitted-bio
-            %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
-          .submitted-all-reference
-            %a{:href => "#"}>
-              All events by
+        .tags
+          Tags:
+          %a.tag{:href => "#"} festival
+        .submitted.submitted-extended
+          .submitted-image
+            %img{:alt => "Name of the author.", :src => "http://placeimg.com/75/75/people/8/avatar"}
+          .submitted-info
+            %div
+              %a{:href => "./events.html"} Event
+              by
               = lorem.name
-              \.
+            .submitted-bio
+              %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
+            .submitted-all-reference
+              %a{:href => "#"}
+                All events by
+                = lorem.name
+                \.
 
   = partial :"blocks/lu/comments"
 

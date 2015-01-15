@@ -1,0 +1,20 @@
+{
+  "name": "GreenWireStyleGuide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gruntfile.js",
+  "dependencies": {
+    "grunt": "~0.4.5"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/greenpeace/ggw_styleguide.git"
+  },
+  "author": "Maikel Koopman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/greenpeace/ggw_styleguide/issues"
+  },
+  "homepage": "https://github.com/greenpeace/ggw_styleguide"
+}

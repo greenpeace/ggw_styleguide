@@ -1,12 +1,10 @@
 // auto complete on text inputs
 .js .form-autocomplete {
-  background: url("../images/throbber-inactive.png") 99% 50% no-repeat $white;
+  background-position: 100% -178px;
 }
 .js .throbbing {
   background-image: url("../images/throbber-active.gif");
-}
-.lt-ie9 .form-autocomplete {
-  background-position: 99% 7px;
+  background-position: 99% 50%;
 }
 
 .autocomplete {

@@ -1,23 +1,5 @@
 .off-canvas {
 
-  .trigger {
-    @extend %element-hidden;
-
-    @include breakpoint($desk) {
-      border-top: 1px solid #CCCCCC;
-      color: $base;
-      display: block;
-      padding: 1em;
-      font-weight: 700;
-
-      &:focus {
-        @include no-deco;
-      }
-
-    }
-
-  }
-
   .dropdown a {
     border-top: 1px solid #CCCCCC;
     color: $base;
@@ -97,11 +79,12 @@
     }
 
     .country-img {
-      background: $green1 url(../images/langmap-white.png);
+      background-color: $green1;
+      background-position: -108px -299px;
       position: absolute;
       right: 0;
       width: 76px;
-      height: 20px;
+      height: 22px;
       text-indent: -50000px;
       line-height: 0;
       color: transparent;
@@ -110,7 +93,8 @@
     }
 
     .dropdown-open .country-img {
-      background: $white url(../images/langmap-green.png);
+      background-color: $white;
+      background-position: -4px -299px;
     }
 
     .dropdown-open {

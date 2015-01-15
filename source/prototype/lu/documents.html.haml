@@ -1,6 +1,6 @@
 ---
-title: Photos
-body_class: not-front logged-in page-photos l-has-sidebar
+title: Documents
+body_class: not-front logged-in page-documents l-has-sidebar
 user_role: lu
 design_status: Needs review
 ---
@@ -9,13 +9,12 @@ design_status: Needs review
 
 #content.l-main-column
   .main-content
-    %i.block-icon.icon-bg-news-media.icon-photo
+    %i.block-icon.icon-bg-news-media.icon-document
     %h1#page-title.block-title
       = current_page.data.title
     .content
       - 10.times do |num|
-        = partial :"teasers/photo"
+        = partial :"teasers/document"
 
 %aside.l-sidebar.sidebar
-  .content
-    = partial :"blocks/find_photos"
+  = partial :"blocks/find_document"

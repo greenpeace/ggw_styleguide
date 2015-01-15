@@ -59,4 +59,6 @@ $(function() {
 
   };
 
+  autocomplete();
+
 });

@@ -20,7 +20,7 @@ body {
   overflow-x: hidden;
 
   @include breakpoint($desk) {
-    background-color: $background;
+    background-color: #f2f2f2;
     color: $base-desk;
   }
 
@@ -50,4 +50,21 @@ body {
   float: left;
 }
 
-
+// abstraction to import the sprites once. For each selector we only specify the background-position:
+.logo,
+.logo-footer,
+.country-img,
+.js .form-autocomplete,
+.form-type-radio .option:before,
+.form-type-checkbox .option:before,
+.selector:before,
+.content .external,
+.chosen-container-single .chosen-single div,
+.chosen-search input[type="text"],
+.chosen-container-multi .chosen-choices,
+.search-choice-close,
+.chosen-single abbr {
+  background-image: url(../images/ggw_sprites1xv1.0.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+}

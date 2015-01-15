@@ -40,34 +40,34 @@
 
   }
 
-    .tab {
-      position: relative;
-      display: block;
-      line-height: 1.8em;
-      border-bottom: 3px solid $white;
-      @include font-size($p);
-      letter-spacing: -0.03em;
+  .tab {
+    position: relative;
+    display: block;
+    line-height: 1.8em;
+    border-bottom: 3px solid $white;
+    @include font-size($p);
+    letter-spacing: -0.03em;
 
-      &:last-child:after {
-        border: none;
-      }
+    &:last-child:after {
+      border: none;
+    }
 
-      &.active {
-        color: $heading;
-        font-weight: bold;
-        border-color: $heading;
-
-        &:hover {
-          border-color: $heading;
-        }
-      }
+    &.active {
+      color: $heading;
+      font-weight: bold;
+      border-color: $heading;
 
       &:hover {
-        border-color: $green2;
-        text-decoration: none;
+        border-color: $heading;
       }
-
     }
+
+    &:hover {
+      border-color: $green2;
+      text-decoration: none;
+    }
+
+  }
 
 
   .dropdown-menu {

@@ -43,14 +43,15 @@ select:-moz-focusring {
     position: absolute;
     content:'';
     display: inline-block;
-    background: $white url('../images/form_elements.svg') no-repeat -33px -47px;
+    background-color: $white;
+    background-position: -24px -260px;
     height: 1.3rem;
     width: 1em;
     top: 5px;
     right: 3px;
 
     @include breakpoint($desk) {
-        top: 3px;
+      top: 3px;
     }
 
   }

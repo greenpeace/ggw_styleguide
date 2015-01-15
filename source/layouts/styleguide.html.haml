@@ -13,12 +13,11 @@
 
     /[if lte IE 8]
       = stylesheet_link_tag "old-ie"
+      = javascript_include_tag "html5shiv.min"
 
     <!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
     = stylesheet_link_tag "all"
     <!--<![endif]-->
-
-    = javascript_include_tag "before"
 
   %body{:class => "#{current_page.data.body_class || page_classes} style-guide"}
     /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
@@ -47,6 +46,7 @@
 
     = javascript_include_tag  "theme"
     = javascript_include_tag  "styleguide"
-
-
+    = partial :"loadfont"
+    /[if lte IE 8]
+      = javascript_include_tag "oldie"
 

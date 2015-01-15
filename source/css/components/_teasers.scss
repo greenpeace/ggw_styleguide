@@ -67,6 +67,10 @@
     line-height: 1.2em;
     max-height: 2.4em; //equals two line-heights
 
+    .sidebar & {
+      @include font-size(14px);
+    }
+
     @include breakpoint($tab) {
       margin-bottom: 5px;
     }

@@ -16,10 +16,10 @@ $(function() {
 
     if ($(window).width() <= 901) {
       sidebarButton.show();
-      $('.l-sidebar').hide();
+      $('.l-has-sidebar .l-sidebar').hide();
     } else {
       sidebarButton.hide();
-      $('.l-sidebar').show();
+      $('.l-has-sidebar .l-sidebar').show();
     }
 
   }

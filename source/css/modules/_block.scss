@@ -1,11 +1,14 @@
 .sidebar .block {
-  padding: 0 15px 15px;
   border-bottom: 1px solid $background;
 
   @include breakpoint($desk) {
-    margin-left: 1em;
     border-bottom: none;
+    padding: 0 15px 15px;
   }
+}
+
+.l-has-sidebar .sidebar .block {
+  margin-left: 1em;
 }
 
 .block-icon {

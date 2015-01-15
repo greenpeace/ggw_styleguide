@@ -1,6 +1,10 @@
 .block-comments {
   @include font-size(14px);
-  margin-top: 2 * $def-mar;
+
+  .l-main-column & {
+    margin-top: $def-mar;
+  }
+
 }
 
 .sort-comments {
@@ -95,37 +99,11 @@
 }
 
 .comment-form {
+  margin: 15px -15px;
+  min-height: 100px;
+  @extend %cf;
+  padding: 0 15px 15px;
   position: relative;
-  bottom: -10px;
-  margin: 0 -15px;
-  z-index: 999;
-  padding: 5px;
-  min-height: 44px;
-  background: $white;
-  @if $oldie {
-    border-top: 1px solid $background;
-  } @else {
-    border-top: 1px solid rgba(0,0,0,.2);
-  }
-  background: $background;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-
-  .no-flexbox & {
-    @extend %cf;
-  }
-
-  @include breakpoint($tab) {
-    padding: 15px 5px;
-    height: auto;
-  }
-
-  @include breakpoint($desk) {
-    position: relative;
-    background: transparent;
-  }
 }
 
 // fix the bug when firing the apple keyboard
@@ -133,16 +111,13 @@
   position: absolute;
 }
 
-.comment-form-title {
-  @extend %element-hidden;
+input.form-comment-file {
+  width: 34px;
+}
 
-  @include breakpoint($desk) {
-    display: block;
-    color: $heading;
-    @include font-size($h4);
-    margin-left: $def-mar;
-  }
-
+.comment-form .nfi-wrapper {
+  float:  right;
+  margin: 0 5px 0 0;
 }
 
 .nfi-wrapper {
@@ -165,15 +140,11 @@
   color: $grey-m;
   @extend %load-icon;
   @extend %icon-camera;
-
-  @include breakpoint($tab) {
-    background: $secondary;
-    background-image: linear-gradient($secondary, darken($secondary, 3%));
-    cursor: pointer;
-    border-radius: 3px;
-    border: 1px solid $grey-l;
-  }
-
+  background: $secondary;
+  background-image: linear-gradient($secondary, darken($secondary, 3%));
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid $grey-l;
 }
 
 .nfi-filename {
@@ -182,38 +153,35 @@
 
 // autogrow js gets applied on this element
 .form-comment-message {
-  flex: 4;
+  position: relative;
+  margin-bottom: .5em;
 
   textarea{
     resize: none;
     overflow: hidden;
     line-height: 1.1em;
-    padding: .5em;
-    height: 34px;
+    height: 36px;
+    padding: 0.5em;
+    display: block;
     @include font-size(16px);
-    max-width: 100%;
-  }
-
-  .no-flexbox & {
-    width: 75%;
-    float: left;
+    max-width: 100%; //override default of 400px;
   }
 }
 
 .form-comment-submit {
-  @include debuttonize;
-  padding: .3em;
-  flex: 1;
+  @include button;
+  padding: .3em 1em;
   height: 34px;
+  width: auto;
+  float: right;
+}
 
-  .no-flexbox & {
-    float: right;
-    width: 60px;
-  }
 
-  @include breakpoint($tab) {
-    @include button;
-    padding: 0 1.2em;
-    margin-left: $def-mar-half;
-  }
+// textarea with max character indication
+#remain {
+  margin: 0 .5em 0 0;
+  @include font-size(14px);
+  line-height: 34px;
+  display: inline-block;
+  color: $grey-m;
 }

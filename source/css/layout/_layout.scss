@@ -154,34 +154,6 @@
   }
 }
 
-.logo {
-  width: 134px;
-  margin: 0 auto;
-  position: relative;
-  top: $def-mar-half;
-  background-image: url(../images/logo.svg);
-  background-repeat: no-repeat;
-  background-size: auto 34px;
-  display:block;
-  height: 34px;
-
-  @include breakpoint($desk) {
-    position: absolute;
-    left: 10px;
-    top: $def-mar;
-  }
-
-  @include breakpoint($deskplus) {
-    left: 0;
-  }
-
-}
-
-.lt-ie9 {
-  .logo {
-      background-image: url(../images/rsz_logo.png);
-  }
-}
 
 .l-country-selector {
   @include breakpoint($desk) {
@@ -264,13 +236,21 @@
 
 }
 
-.l-two-column .l-main-column,
-.l-two-column .l-sidebar {
+@include breakpoint($desk) {
 
-  @include breakpoint($desk) {
+  .l-two-column .l-main-column,
+  .l-two-column .l-sidebar {
     float: left;
     position: relative;
     width: (100%/2);
+  }
+
+  .l-two-column .l-main-column {
+    padding-right: $def-mar-half;
+  }
+
+  .l-two-column .l-sidebar {
+    padding-left: $def-mar-half;
   }
 
 }
@@ -290,7 +270,7 @@
 .page-home {
 
   #content,
-  #shoutbox,
+  #block-comments,
   #upcoming-events {
     clear: both;
     display: none;
@@ -304,17 +284,9 @@
     @include breakpoint($desk) {
       display: block;
       clear: none;
-      margin: 0;
+      margin: 0 0 $def-mar 0;
     }
 
-  }
-
-  @include breakpoint($desk) {
-
-    #shoutbox,
-    #upcoming-events {
-      margin: 0 0 15px 1em;
-    }
   }
 
 }

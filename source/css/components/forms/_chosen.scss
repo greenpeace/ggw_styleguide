@@ -22,7 +22,7 @@ $chosen-sprite-retina: url('../images/chosen-sprite@2x.png') !default;
     z-index: 1010;
     @include box-sizing(border-box);
     width: 100%;
-    border: 1px solid #aaa;
+    border: 1px solid $grey-m;
     border-top: 0;
     background: #fff;
     box-shadow: 0 4px 5px rgba(#000,.15);
@@ -83,24 +83,25 @@ $chosen-sprite-retina: url('../images/chosen-sprite@2x.png') !default;
     display: block;
     width: 12px;
     height: 12px;
-    background: $chosen-sprite -42px 1px no-repeat;
+    background-position: -44px -79px;
     font-size: 1px;
 
     &:hover {
-      background-position: -42px -10px;
+      background-position: -44px -90px;
     }
 
   }
 
   &.chosen-disabled .chosen-single abbr:hover {
-    background-position: -42px -10px;
+    background-position: -44px -90px;
   }
 
   // arrow style
   .chosen-single div {
     position: absolute;
     display: inline-block;
-    background: $white url('../images/form_elements.svg') no-repeat -33px -47px;
+    background-color: $white;
+    background-position: -24px -260px;
     height: 1.3rem;
     width: 1em;
     top: 5px;
@@ -126,7 +127,7 @@ $chosen-sprite-retina: url('../images/chosen-sprite@2x.png') !default;
       font-size: $p;
       line-height: normal;
       width: 100%;
-      background: #fff $chosen-sprite no-repeat 100% -20px;
+      background-position: 100% -144px;
     }
   }
 
@@ -210,7 +211,7 @@ $chosen-sprite-retina: url('../images/chosen-sprite@2x.png') !default;
     overflow: hidden;
     border-radius: 3px;
     background-clip: padding-box;
-    background: url("../images/throbber-inactive.png") 99% 7px no-repeat $white;
+    background-position: 100% -178px;
     border: 1px solid $grey-l;
     cursor: text;
   }
@@ -256,10 +257,10 @@ $chosen-sprite-retina: url('../images/chosen-sprite@2x.png') !default;
         display: block;
         width: 12px;
         height: 12px;
-        background: $chosen-sprite -42px 1px no-repeat;
+        background-position: -44px -79px;
         font-size: 1px;
         &:hover {
-          background-position: -42px -10px;
+          background-position: -44px -90px;
         }
       }
     }

@@ -73,6 +73,7 @@
 
   h2 {
     @include font-size (14px);
+    margin: 0;
 
      &:before {
       @extend %load-icon;

@@ -3,6 +3,7 @@ title: Home
 body_class: front logged-in page-home l-two-column
 script: leaflet
 user_role: lu
+front: frontpage
 design_status: Work in progress
 ---
 
@@ -17,7 +18,7 @@ design_status: Work in progress
         %i.icon.icon-news
         Updates
     %li
-      %a.tab{:href => "#shoutbox"}
+      %a.tab{:href => "#block-comments"}
         %i.icon.icon-shout
         Shoutbox
     %li
@@ -71,5 +72,5 @@ design_status: Work in progress
       = partial :"teasers/document"
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/lu/shoutbox"
+  = partial :"blocks/lu/comments"
   = partial :"blocks/upcoming_events"

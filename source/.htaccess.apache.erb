@@ -21,9 +21,20 @@ AddType <%= type %> <%= ext %>
 </IfModule>
 
 ExpiresActive on
+ExpiresDefault A1209600
 <% data.htaccess.cache.expire.each do |type, expire| %>
 ExpiresByType <%= type %> "<%= expire %>"
 <% end %>
+
+AddEncoding gzip .gz
+
+RewriteEngine on
+RewriteCond %{HTTP:Accept-encoding} gzip
+RewriteCond %{HTTP_USER_AGENT} !Konqueror
+RewriteCond %{REQUEST_FILENAME}.gz -f
+RewriteRule ^(.*)\.css$ $1.css.gz [QSA,L]
+RewriteRule ^(.*)\.js$ $1.js.gz [QSA,L]
+RewriteRule ^(.*)\.html$ $1.html.gz [QSA,L]
 
 <FilesMatch "<%= data.htaccess.cache.deflate %>">
     SetOutputFilter DEFLATE

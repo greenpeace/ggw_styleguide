@@ -68,7 +68,6 @@
       smoothHeight: true,
       animationLoop: true,
       pauseOnHover: true,
-      allowOneSlide: true,
       slideshow: true,
       video: true,
       before: function(slider){
@@ -99,6 +98,10 @@
         slider.flexslider('stop');
       }
     });
+
+    if ($('.flex-control-nav').length != 0) {
+      slider.addClass('slider-active');
+    }
 
   }
 

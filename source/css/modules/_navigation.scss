@@ -178,6 +178,7 @@
   @extend %icon-down-open;
 }
 
+.trigger,
 .menu-item {
   border-top: 1px solid $grey-l;
 }
@@ -186,6 +187,7 @@
   @extend %element-hidden;
 }
 
+.trigger,
 .menu-link {
   display: block;
   color: $base;

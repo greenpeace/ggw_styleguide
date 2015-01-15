@@ -26,15 +26,7 @@ $( document ).ready(function() {
 // This will run once the entire page (including ajax requests), not just the DOM, is ready
 $( window ).load(function() {
 
-  function resizeFunction() {
-    offCanvasNav()
-  };
-
-  var resizeTimer;
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(resizeFunction, 200);
-
-    // these element must autogrow as the user types on multiple lines
+  // these element must autogrow as the user types on multiple lines
   $('.form-comment-message textarea, #shoutbox-comment').autogrow({
     animate: false
   });

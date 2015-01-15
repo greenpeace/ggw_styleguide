@@ -3,6 +3,7 @@ require 'sass-media_query_combiner'
 require 'breakpoint'
 require 'singularitygs'
 require 'sass-globbing'
+require 'uglifier'
 
 # Change Compass configuration
 compass_config do |config|
@@ -107,13 +108,16 @@ activate :title, site: 'GGW Style Guide', separator: ' — '
 configure :build do
   # For example, change the Compass output style for deployment
   activate :minify_css
+  activate :minify_html
 
   # Minify Javascript on build
-  activate :minify_javascript
+  activate :minify_javascript, :inline => true, compressor: Uglifier.new(:comments => :none, mangle: false)
+
+  activate :gzip
 
   # Uniquely-named assets, preventing users from using outdated files
   # Exclude files that are called from template files directly
-  activate :asset_hash, :ignore => ['vendor', 'images']
+  activate :asset_hash, :ignore => ['vendor', 'images', 'css/fonticons.woff.css', 'css/fonticons.woff2.css']
 
   # Enable cache buster
   # activate :cache_buster

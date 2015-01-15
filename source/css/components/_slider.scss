@@ -16,16 +16,8 @@
 .flexslider {
   margin: 0;
   padding: 0;
-  background-image: url(../images/squares.gif);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-
-  .svg & {
-    background-image: url(../images/squares.svg);
-  }
-
-
 }
+
 .slides > li {-webkit-backface-visibility: hidden; display: none; position: relative;} // Hide the slides before the JS is loaded. Avoids image jumping
 .slides img {width: 100%; display: block;}
 
@@ -44,6 +36,10 @@
   padding: 0 .5em;
   text-align: center;
   @include font-size(12px);
+
+  .youtube {
+    line-height: 1.5em;
+  }
 
   @include breakpoint($smalltab) {
     @include font-size(16px);
@@ -108,10 +104,9 @@ html[xmlns] .slides {display: block;}
  * include js that eliminates this class on page load */
 .no-js .slides > li:first-child {display: block;}
 
-/* FlexSlider Default Theme
-*********************************/
+// FlexSlider Default Theme
+
 .flexslider {
-  margin: 0 0 2em;
   position: relative;
   zoom: 1;
 
@@ -122,7 +117,16 @@ html[xmlns] .slides {display: block;}
 
   @include breakpoint($desk) {
     border: 4px $white solid;
-    margin: 1em 0 3em;
+    margin: $def-mar 0;
+  }
+}
+
+// When there is more then one slide (js based), create space for the dots
+.slider-active {
+  margin: 0 0 (2 * $def-mar);
+
+  @include breakpoint($desk) {
+    margin: $def-mar 0 (3 * $def-mar);
   }
 }
 
@@ -136,11 +140,18 @@ html[xmlns] .slides {display: block;}
 
 }
 
+.slider .loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -2.5em auto auto -2.5em;
+}
+
 .loading .flex-viewport { max-height: 300px; }
 .flexslider .slides { zoom: 1; }
 .carousel li { margin-right: 5px; }
 
-/* Direction Nav */
+// Direction Nav
 
 
 .flex-direction-nav {
@@ -222,8 +233,12 @@ html[xmlns] .slides {display: block;}
 .flex-control-nav {
   width: 100%;
   position: absolute;
-  bottom: -40px;
+  bottom: -35px;
   text-align: center;
+
+  @include breakpoint($desk) {
+    bottom: -40px;
+  }
 
   li {
     margin: 0 6px;

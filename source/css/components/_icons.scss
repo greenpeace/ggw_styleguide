@@ -1,11 +1,3 @@
-@font-face {
-  font-family: "greenwire-10";
-  src: url('../font/greenwire-10.woff2') format('woff2'),
-       url('../font/greenwire-10.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 [class*="icon-"] { @extend %load-icon;}
 
 .icon-users {     @extend %icon-users; }
@@ -58,3 +50,46 @@
 .icon-facebook { @extend %icon-facebook;}
 .icon-gplus { @extend %icon-gplus;}
 .icon-skype { @extend %icon-skype;}
+
+.view-mode-full .submitted {
+
+  .type:before {
+    @extend %load-icon;
+    display: inline-block;
+    top: -1px;
+    position: relative;
+    min-width: 1em;
+    margin-right: .2em;
+  }
+
+  .field-label + div:before {
+    @extend %load-icon;
+    @include font-size($h3);
+    margin-left: -1.25em;;
+    position: absolute;
+    width: 1em;
+    line-height: 1em;
+  }
+
+}
+
+.field-name-field-event-date .field-label + div:before {
+  @extend %icon-calendar;
+}
+
+.field-name-field-event-organiser .field-label + div:before {
+  @extend %icon-user;
+}
+
+.field-name-field-event-location .field-label + div:before {
+  @extend %icon-location;
+  @include font-size($h2);
+}
+
+.field-name-field-event-type .field-label + div:before {
+  @extend %icon-info-circled;
+}
+
+.field-name-field-event-num-attendees .field-label + div:before {
+  @extend %icon-users;
+}

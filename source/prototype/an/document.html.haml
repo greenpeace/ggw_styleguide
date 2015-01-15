@@ -17,14 +17,9 @@ design_status: Needs review
         .submitted
           %a.type.document{:href => "./documents.html"} Document
           by
-          %a{:href => "./profile.html"}
-            = lorem.name
+          = lorem.name
           -
           %span.submitted-date June 5th 2014 - 11:29
-
-          %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
-            %i.icon-comment
-            10 comments
 
         %figure
           %picture
@@ -84,10 +79,9 @@ design_status: Needs review
           .submitted-info
             %div
               %a{:href => "#"} Document
-              by
-              %a{:href => "#"} Willie Mackenzie
+              by Willie Mackenzie
             .submitted-all-reference
-              %a{:href => "#"}> All documents by Willy Mackenzie
+              %a{:href => "#"} All documents by Willy Mackenzie
               \.
 
   = partial :"blocks/an/comments"

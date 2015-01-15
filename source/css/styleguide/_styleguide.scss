@@ -180,3 +180,12 @@
   color: $heading;
   border-bottom: 1px solid $grey-l;
 }
+
+.sg-title {
+  @extend %element-hidden;
+
+  @include breakpoint($desk) {
+    display: block;
+  }
+
+}

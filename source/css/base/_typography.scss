@@ -179,6 +179,28 @@ article {
   }
 }
 
+.node-title {
+  @include font-size(16px);
+  color: $green5;
+  margin: 0 0 3px;
+  overflow: hidden;
+  line-height: 1.2em;
+  max-height: 2.4em; //equals two line-heights
+
+  .sidebar & {
+    @include font-size(14px);
+  }
+
+  @include breakpoint($tab) {
+    margin-bottom: 5px;
+  }
+
+  a {
+    @extend %block;
+  }
+
+}
+
 .node-title .username {
   color: $grey-m;
   font-weight: 300;

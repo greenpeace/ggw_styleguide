@@ -7,6 +7,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     autoprefixer-rails (4.0.2.1)
       execjs
     breakpoint (2.5.0)
@@ -35,6 +36,8 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.2.2)
+    fastimage (1.5.5)
+      addressable (~> 2.3, >= 2.3.5)
     ffi (1.9.6)
     haml (4.0.6)
       tilt
@@ -61,6 +64,10 @@ GEM
       middleman-sprockets (>= 3.1.2)
       sass (>= 3.2.17, < 4.0)
       uglifier (~> 2.5)
+    middleman-automatic-clowncar (0.0.1)
+      fastimage (~> 1.5.5)
+      middleman-core (~> 3.2)
+      rmagick (~> 2.13.0)
     middleman-autoprefixer (2.3.0)
       autoprefixer-rails (~> 4.0.0)
       middleman-core (>= 3.3.3)
@@ -120,6 +127,7 @@ GEM
       ffi (>= 0.5.0)
     rb-kqueue (0.2.3)
       ffi (>= 0.5.0)
+    rmagick (2.13.4)
     rouge (1.7.4)
     sass (3.3.14)
     sass-globbing (1.1.1)
@@ -160,6 +168,7 @@ PLATFORMS
 
 DEPENDENCIES
   middleman (= 3.3.3)
+  middleman-automatic-clowncar
   middleman-autoprefixer
   middleman-deploy
   middleman-livereload (~> 3.3.4)

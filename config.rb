@@ -57,9 +57,17 @@ activate :syntax
 ###
 
 
+activate :automatic_clowncar,
+  :sizes => {
+    :small => 90,
+    :smallx2 => 180,
+    :medium => 130,
+    :mediumx2 => 260,
+    :large => 610
+  },
+  :namespace_directory => %w(photos),
+  :filetypes => [:jpg, :jpeg, :png]
 
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
 # helpers do

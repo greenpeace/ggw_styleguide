@@ -99,7 +99,7 @@
       }
     });
 
-    if ($('.flex-control-nav').length != 0) {
+    if ($('.flex-control-nav li').length != 0) {
       slider.addClass('slider-active');
     }
 

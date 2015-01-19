@@ -87,7 +87,7 @@
 
   @include breakpoint($desk) {
     background: transparent;
-    padding:88px 15px 0;
+    padding:88px $def-mar 0;
     border: none;
     min-height: none;
     overflow: visible;
@@ -216,7 +216,7 @@
 }
 
 .l-main-column {
-  margin: 10px;
+  margin: $def-mar-half;
   z-index: 1;
   //padding-bottom: 50px;
 
@@ -245,11 +245,11 @@
     width: (100%/2);
   }
 
-  .l-two-column .l-main-column {
+  .l-main-column {
     padding-right: $def-mar-half;
   }
 
-  .l-two-column .l-sidebar {
+  .l-sidebar {
     padding-left: $def-mar-half;
   }
 
@@ -267,18 +267,16 @@
 
 }
 
-.page-home {
+.l-two-column {
 
-  #content,
-  #block-comments,
-  #upcoming-events {
+  .l-main-column,
+  .block {
     clear: both;
     display: none;
-    margin: 10px;
+    margin: $def-mar-half;
 
     &.current {
       display: block;
-
     }
 
     @include breakpoint($desk) {

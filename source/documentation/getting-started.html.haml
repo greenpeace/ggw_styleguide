@@ -23,7 +23,7 @@ design_status: Work in progress
       #example
         :code
           #lang: bash
-            $ git clone git@github.com:greenpeace/ggw_styleguide.git
+          $ git clone git@github.com:greenpeace/ggw_styleguide.git
       %h2.section-heading Middleman
       :markdown
         We are using [Middleman](http://middlemanapp.com/) to generate this styleguide. Middleman is a command-line tool for creating static websites using all the shortcuts and tools of the modern web development environment.
@@ -38,7 +38,7 @@ design_status: Work in progress
       #example
         :code
           # lang: bash
-            $ gem install middleman
+          $ gem install middleman
       :markdown
         You may need to run it with 'sudo', depending upon your system permissions.
         If all has gone well, you should be able to run
@@ -46,7 +46,7 @@ design_status: Work in progress
       #example
         :code
           # lang: bash
-            $ middleman version
+          $ middleman version
       %h4 Ruby gems
       :markdown
         Ruby Gems are a kind of library or plug-in. It’s some functionality that you’ll install to fill a specific need. Examples of ruby gems we use are Sass, Compass, Middleman and Autoprefix.
@@ -55,13 +55,7 @@ design_status: Work in progress
       #example
         :code
           # lang: bash
-            $ bundle install
-      :markdown
-          or
-      #example
-        :code
-          # lang: bash
-            $ bundle update
+          $ bundle
       :markdown
         This will read the gems listed in the Gemfile and install them (and their dependencies) on your machine. We have also set a ruby version for this project. This way you can use multiple ruby versions on your machine next to each other. (see .ruby-version file)
 
@@ -77,14 +71,14 @@ design_status: Work in progress
       #example
         :code
           # lang: bash
-            $ cd /path-to-project/middleman
-            $ bundle exec middleman server
+          $ cd /path-to-project/middleman
+          $ bundle exec middleman server
       :markdown
         or use the short command:
       #example
         :code
           # lang: bash
-            $ middleman
+          $ middleman
       :markdown
         This will start a local web server running at: http://localhost:4567/
 
@@ -99,7 +93,7 @@ design_status: Work in progress
       #example
         :code
           # lang: bash
-            $ bundle exec middleman build
+          $ middleman build
       :markdown
         This will create a static file for each file located in your source folder. Template files will be compiled, static files will be copied and any enabled build-time features (such as compression) will be executed. Middleman will automatically clean out files from the build directory for you that are left over from earlier builds but would no longer be produced.
 

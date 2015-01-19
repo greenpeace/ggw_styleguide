@@ -1,6 +1,6 @@
 web:
     domain: greenpeace.github.io/ggw_styleguide/
-    url: http://greenpeace.github.io/ggw_styleguide
+    url: http://greenpeace.github.io/ggw_styleguide/
 
 redirect:
     /old-url.html: /new-url.html

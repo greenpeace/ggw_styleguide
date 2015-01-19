@@ -10,7 +10,7 @@
 .sort-comments {
   @extend %hlist;
   position: absolute;
-  right: 15px;
+  right: $def-mar;
   top: 8px;
 
   li {
@@ -99,10 +99,7 @@
 }
 
 .comment-form {
-  margin: 15px -15px;
-  min-height: 100px;
   @extend %cf;
-  padding: 0 15px 15px;
   position: relative;
 }
 

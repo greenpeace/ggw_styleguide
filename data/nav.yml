@@ -8,6 +8,9 @@ design:
     name: "Typography"
     url: "/design-elements/typography.html"
   -
+    name: "Grid"
+    url: "/design-elements/grid.html"
+  -
     name: "Icons"
     url: "/design-elements/icons.html"
 

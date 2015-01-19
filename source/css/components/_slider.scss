@@ -82,7 +82,7 @@
     position: absolute;
     display: inline-block;
     bottom: 3.5em;
-    right: 15px;
+    right: $def-mar;
   }
 
   @include breakpoint($desk) {
@@ -107,6 +107,7 @@ html[xmlns] .slides {display: block;}
 // FlexSlider Default Theme
 
 .flexslider {
+  margin: 0 0 2em;
   position: relative;
   zoom: 1;
 
@@ -117,15 +118,6 @@ html[xmlns] .slides {display: block;}
 
   @include breakpoint($desk) {
     border: 4px $white solid;
-    margin: $def-mar 0;
-  }
-}
-
-// When there is more then one slide (js based), create space for the dots
-.slider-active {
-  margin: 0 0 (2 * $def-mar);
-
-  @include breakpoint($desk) {
     margin: $def-mar 0 (3 * $def-mar);
   }
 }
@@ -138,13 +130,6 @@ html[xmlns] .slides {display: block;}
     min-height: 340px;
   }
 
-}
-
-.slider .loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: -2.5em auto auto -2.5em;
 }
 
 .loading .flex-viewport { max-height: 300px; }

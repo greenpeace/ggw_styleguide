@@ -58,8 +58,8 @@
   }
 
   .block-events #map{
-    right: -15px;
-    left: -15px;
+    right: -$def-mar;
+    left: -$def-mar;
     height: 300px;
     min-width: 100%;
     position: absolute;

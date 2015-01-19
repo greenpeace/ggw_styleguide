@@ -3,12 +3,8 @@
 
   @include breakpoint($desk) {
     border-bottom: none;
-    padding: 0 15px 15px;
+    padding: 0 $def-mar $def-mar;
   }
-}
-
-.l-has-sidebar .sidebar .block {
-  margin-left: 1em;
 }
 
 .block-icon {

@@ -4,7 +4,7 @@ $(function() {
 
   function tabSections() {
 
-    $('.page-home #content, .page-home .action-menu li:first').addClass('current');
+    $('.l-two-column .l-main-column, .l-two-column .action-menu li:first').addClass('current');
 
     $('.page-home .tab').click(function(e){
 

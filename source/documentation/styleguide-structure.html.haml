@@ -17,29 +17,26 @@ design_status: Work in progress
         The project structure is based on Middleman. You can see the following folder in the root and this is what their function is:
 
         #### Build
-        This folder contains the static website/style guide that is deployed on <http://greenpeace.github.io/ggw_styleguide/>. You should __not__ work in this folder.
+        This folder contains the static pages that are deployed on <http://ggw-prototype.goalgorilla.com>. You should __not__ work in this folder.
 
         #### Data
-        This folder contains all data, stored in .yml files. This is convenient when we want to reuse template files and run them with different sets of data. Yaml files are similar to JSON files and allow us to separate content from markup.
-
-        #### Helpers
-        In this folder we store special helper functions for Middleman.
+        This folder contains all data, stored in .yml files. This is convenient when we want to reuse template files and run them with different sets of data.
 
         #### Source
-        This folder contains all our template files, CSS, Javascript, images, fonts and navigation. We are working from within this folder. When running middleman this folder is actively being watched and it triggers LiveReload upon changes.
+        This is our working folder. It contains all our template files, CSS, Javascript, images, fonts and navigation. When executing middleman, this folder is being watched and it triggers LiveReload upon changes.
 
   .block
     %i.block-icon.icon-bg-default.icon-info
-    %h1#page-title.block-title CSS/SASS folders
+    %h1#page-title.block-title CSS folders
     %article.view-mode-full.content
       :markdown
         Within Middleman there is no active compilation from SCSS to CSS files. Middleman watches changes in this folder which is reflected in the browser by LiveReload. When making a build, the scss files are converted to css files. In the css folder we see there are several folders with files. This is the order they are included:
 
         #### 1 Vars (variables)
-        Variables are reusable values which take care of style consistency and easy changing patterns. Variables only live in SCSS files (not in CSS) and they do not contain CSS selectors
+        Variables are reusable values which take care of style consistency and allow for easy changing of patterns. Variables only live in SCSS files (not in CSS) and the files do not contain CSS selectors
 
         #### 2 Abstractions
-        Abstractions are reusable pieces of CSS, often called Mixins as well. With abstractions we can avoid repeating selectors throughout the CSS which have the some declarations. Just like variables this folder never contains any CSS selectors.
+        Abstractions are reusable pieces of CSS, often called Mixins as well. With abstractions we can avoid repeating selectors throughout the CSS. Just like variables this folder never contains any CSS selectors.
 
         #### 3 Layout
         Here we specify the responsive grid in which we positioning all components and modules.
@@ -51,7 +48,7 @@ design_status: Work in progress
         Components are elements that are used across the site and are not limited to a specific block, section or page. So components must not be specified with parent wrappers.
 
         #### 6 Modules
-        Modules are specific blocks, pages and section on the site. These styles are usually not shareable with other modules and/or pages.
+        Modules are specific blocks, pages and sections on the site. These styles are usually not exchangable with other modules and/or pages.
 
         #### 7 Styleguide
         There are some styles needed for the styleguide only, which will not be used on Greenwire itself. We list these styles here, so we can easily extract them from the production build.
@@ -62,12 +59,6 @@ design_status: Work in progress
     %article.view-mode-full.content
       :markdown
         Here we store all the javascript files which will be compiled and minified. There are several folders for the reason of controlling the order of loading and to separate their origin.
-
-        #### Base
-        Contains all scripts that are needed by other scripts to run, for example the jquery library.
-
-        #### Before
-        Here we store scripts that are necessary at the beginning of the page. Therefore these scripts are loaded in the head of the page.
 
         #### Contrib
         These are scripts from third parties that we do not change ourselves. It is possible to update these scripts.
@@ -83,7 +74,7 @@ design_status: Work in progress
     %h1#page-title.block-title Vendor
     %article.view-mode-full.content
       :markdown
-        This folder contains libraries that we use which consist of more then one file type. So for example a combination of Javascript, CSS and images.
+        This folder contains libraries that we use which consist of more than one file type. So for example a combination of Javascript, CSS and images.
 
   .block
     %i.block-icon.icon-bg-default.icon-info
@@ -96,7 +87,7 @@ design_status: Work in progress
     %h1#page-title.block-title Font
     %article.view-mode-full.content
     :markdown
-      In this folder we store the fonts and font-icons.
+      In this folder we store the font-icons.
 
   .block
     %i.block-icon.icon-bg-default.icon-info
@@ -110,7 +101,7 @@ design_status: Work in progress
     %h1#page-title.block-title Layouts
     %article.view-mode-full.content
       :markdown
-        Layouts allow the common HTML surrounding individual pages to be shared across all your templates. Developers coming from PHP will be used to the concept of "header" and "footer" includes which they reference at the top and bottom of every page. The Ruby world, and Middleman, take an inverse approach. The "layout" includes both the header and footer and then wraps the individual page content.
+        Layouts allow the common HTML surrounding individual pages to be shared across all your templates. PHP developers will be used to the concept of "header" and "footer" includes which they reference at the top and bottom of every page. The Ruby world, and Middleman, take an inverse approach. The "layout" includes both the header and footer and then wraps the individual page content.
 
         We have multiple layout files, for example to create seperate navigation for the style guide and the prototype.
 

@@ -11,9 +11,10 @@
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %title=page_title
 
+    = javascript_include_tag "modernizr.2.8.2.custom"
     /[if lte IE 8]
       = stylesheet_link_tag "old-ie"
-      = javascript_include_tag "html5shiv.min"
+
 
     <!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
     = stylesheet_link_tag "all"

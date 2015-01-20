@@ -9,11 +9,11 @@ td img {
   margin: 0 auto;
 
   &.pull-left {
-    margin: 0 1em 1em 0;
+    margin: 0 $def-mar $def-mar 0;
   }
 
   &.pull-right {
-    margin: 0 0 1em 1em;
+    margin: 0 0 $def-mar $def-mar;
   }
 
 }
@@ -30,7 +30,7 @@ article img.nofloat {
 }
 
 .l-main-column figure {
-  margin: 1em 0;
+  margin: $def-mar 0 0;
   position: relative;
 
   picture,

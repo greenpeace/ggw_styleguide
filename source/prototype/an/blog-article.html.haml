@@ -19,16 +19,7 @@ design_status: Needs review
           by willie_mackenzie -
           %span.submitted-date November 25th 2014 - 8:29
 
-        %figure
-          %picture
-            %source{:media => "(min-width: 64em)", :srcset => "http://placeimg.com/603/250/nature/1, http://placeimg.com/1440/500/nature/2 2x"}
-            %source{:media => "(min-width: 48em)", :srcset => "http://placeimg.com/768/384/nature/3, http://placeimg.com/1536/768/nature/4 2x"}
-            %source{:media => "(min-width: 24em)", :srcset => "http://placeimg.com/640/320/nature/5, http://placeimg.com/1280/640/nature/6 2x"}
-            %img{:alt => "The president giving an award.", :src => "http://placeimg.com/320/160/nature/7", :srcset => "http://placeimg.com/640/320/nature/8 2x"}
-          %figcaption
-            A cheeky macaque, Lower Kintaganban River, Borneo. Original by
-            %a{:href => "#"}
-              = lorem.name
+        = partial :"images/article-image"
 
         .field-name-body
           %p
@@ -67,14 +58,12 @@ design_status: Needs review
             = lorem.sentence
             %strong without
             = lorem.sentence
-        .tags
-          Tags:
-          %a.tag{:href => "#"} oceans,
-          %a.tag{:href => "#"} Sustainable fishery,
-          %a.tag{:href => "#"} conservation
+
+        = partial :"blocks/tags"
+
         .submitted.submitted-extended
           .submitted-image
-            %img{:alt => "Name of the author.", :src => "http://placeimg.com/75/75/people/8/avatar"}/
+            %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
           .submitted-info
             %div
               %a{:href => "./blogs.html"} Blog

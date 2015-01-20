@@ -57,18 +57,6 @@ activate :syntax
 ###
 
 
-activate :automatic_clowncar,
-  :sizes => {
-    :small => 90,
-    :smallx2 => 180,
-    :medium => 130,
-    :mediumx2 => 260,
-    :large => 610
-  },
-  :namespace_directory => %w(photos),
-  :filetypes => [:jpg, :jpeg, :png]
-
-
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper
@@ -134,7 +122,7 @@ configure :build do
   activate :relative_assets
   set :relative_links, true
 
-  set :url_root, 'http://greenpeace.github.io/ggw_styleguide/'
+  set :url_root, 'http://ggw-prototype.goalgorilla.com'
 
   # disable layout
   page ".htaccess.apache", :layout => false
@@ -149,9 +137,6 @@ configure :build do
 end
 
 # rename file after build
-after_build do
-  File.rename 'build/.htaccess.apache', 'build/.htaccess'
-end
 
 activate :deploy do |deploy|
   deploy.method = :git

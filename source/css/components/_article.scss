@@ -66,6 +66,7 @@
   }
 
   .field-name-body {
+    margin: $def-mar 0 0;
     @extend %cf;
   }
 
@@ -132,6 +133,28 @@
       color: $base-desk;
     }
 
+  }
+
+}
+
+.view-mode-full .field-name-document {
+  padding: 0;
+
+  .type {
+    @include font-size($p);
+    width: auto;
+    display: block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+
+  .type:before {
+    @extend %load-icon;
+    display: inline-block;
+    top: -1px;
+    position: relative;
+    width: 1em;
+    margin-right: .2em;
   }
 
 }

@@ -1,1 +1,10 @@
-@import 'icons/_fonticons.woff2.scss';
+@font-face {
+  font-family: "greenwire";
+  src: url('/font/greenwire.eot');
+  src: url('/font/greenwire.eot#iefix') format('embedded-opentype'),
+       url('/font/greenwire.woff2') format('woff2'),
+       url('/font/greenwire.ttf') format('truetype'),
+       url('/font/greenwire.svg#greenwire') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

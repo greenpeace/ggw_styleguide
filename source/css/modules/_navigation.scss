@@ -87,6 +87,10 @@
     right: 266px;
   }
 
+  .nav-up {
+    top: -50px;
+  }
+
 }
 
 
@@ -133,6 +137,11 @@
       opacity: 1;
       transform: translate3d(0, 0, 0);
     }
+  }
+
+  .nav-up {
+    transform: translate3d(0px, -50px, 0px);
+    top: 0;
   }
 
 }
@@ -207,6 +216,14 @@
 
   .nav-inner-wrap {
     border: none;
+  }
+
+  .nav-up {
+    top: 0;
+  }
+
+  .csstransforms3d .nav-up {
+    transform: none;
   }
 
   .csstransforms3d .nav-inner-wrap {

@@ -14,8 +14,6 @@ gem "middleman-syntax"
 
 gem 'middleman-minify-html'
 
-gem 'middleman-automatic-clowncar'
-
 # Automatically add vendor prefixes to CSS rules
 gem 'middleman-autoprefixer'
 

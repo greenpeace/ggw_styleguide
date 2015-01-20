@@ -74,6 +74,10 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+
+      .sidebar & {
+        display: none;
+      }
     }
 
     @include breakpoint($tab) {
@@ -81,7 +85,11 @@
       text-overflow: unset;
       height: 4em;
       white-space: normal;
-      line-height: 1.5em
+      line-height: 1.5em;
+
+      .sidebar & {
+        display: block;
+      }
     }
 
   }
@@ -174,13 +182,13 @@
 // List all background-images for types which will show if there is no image present
 // and list all submitted type icons
 
-@each $type, $icon in (news: book-open, blog: feather, event: calendar, group: users, photo: camera, document: attach, video: video, idea: thumbs-up, page: info, material: bucket, faq: help, notification: user, user: user) {
+@each $type, $icon in (news: book-open, blog: feather, event: calendar, group: users, photo: camera, document: attach, video: video, idea: thumbs-up, page: info, material: bucket, faq: help, notification: user, user: user, download: download) {
 
   .node-teaser-#{$type} .field-type-image {
     @extend %icon-#{$icon};
   }
 
-  .submitted .#{$type} {
+  .#{$type} {
     @extend %icon-#{$icon};
   }
 

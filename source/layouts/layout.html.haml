@@ -14,7 +14,7 @@
     = javascript_include_tag "modernizr.2.8.2.custom"
     /[if lte IE 8]
       = stylesheet_link_tag "old-ie"
-    = javascript_include_tag "html5shiv.min"
+      = javascript_include_tag "html5shiv.min"
 
     <!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
     = stylesheet_link_tag "all"
@@ -28,7 +28,7 @@
       - if current_page.data.design_status
         = partial :status
 
-      .l-branding-header
+      .l-branding-header.nav-down
         .container
           %a.logo{:href => "./index.html", :rel => "home", :title => "Home"}
             %span.element-invisible Greenpeace Greenwire  Nederland

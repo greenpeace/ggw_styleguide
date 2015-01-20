@@ -1,6 +1,6 @@
 %picture
   /[if IE 9] <video style="display: none;">
-  %source{:media => "(min-width: 48em)", :srcset => "http://placeimg.com/130/90/animals, http://placeimg.com/260/180/animals 1.5x"}
-  %source{:srcset => "http://placeimg.com/180/120/animals 2x, http://placeimg.com/90/60/animals 1x"}
+  %source{:media => "(min-width: 48em)", :srcset => "/photos/130/animals1.jpg, /photos/260/animals2.jpg 1.5x"}
+  %source{:srcset => "/photos/180/animals3.jpg 2x, /photos/90/animals4.jpg 1x"}
   /[if IE 9] </video>
-  %img{:alt => "Example of image.", :src => "http://greenpeace.github.io/ggw_styleguide/images/blank.png", "data-src" => "http://placeimg.com/90/60/animals"}
+  %img{:alt => "Example of image.", :src => "/photos/blank.png", "data-src" => "/photos/90/animals5.jpg"}

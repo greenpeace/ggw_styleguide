@@ -1,0 +1,46 @@
+.gwvote-widget {
+  text-align: center;
+
+  .bar {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .score {
+    display: inline-block;
+    width: 49%;
+    text-align: right;
+
+    + .score {
+      text-align: left;
+    }
+  }
+
+  .positive,
+  .negative {
+    display: inline-block;
+    padding: 4px 6px;
+    color: $white;
+    border-radius: 3px;
+  }
+
+  .positive {
+    background-color: $green5;
+  }
+
+  .negative {
+    background-color: darken($primary, 10%);
+  }
+
+  .button {
+    width: 150px;
+  }
+
+  .button .icon {
+    @include font-size($h1);
+  }
+
+  .button span {
+    display: block;
+  }
+}

@@ -30,6 +30,7 @@ $(function() {
     $('.js-show-sidebar').click(function(e) {
       root.toggleClass('sidebar-active');
       e.preventDefault();
+      $(document).trigger('sleepyHead');
     });
 
     // When the sidebar is open, you can close it with a right swipe

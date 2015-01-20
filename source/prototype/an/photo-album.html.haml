@@ -20,10 +20,37 @@ design_status: Work in progress
           %span.submitted-date June 5th 2014 - 11:29
 
         .field-name-gallery
-          - 50.times do |num|
-            %a.album-thumbnail{:href => "http://placeimg.com/960/960/nature"}
-              %img{:alt => "", :src => "../../images/blank.png", "data-src" => "http://placeimg.com/96/96/nature"}/
-
+          - 7.times do |num|
+            %a.album-thumbnail{:href => "/photos/nature1.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature1.jpg" }
+            %a.album-thumbnail{:href => "/photos/nature2.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature2.jpg"}
+            %a.album-thumbnail{:href => "/photos/people1.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/people1.jpg"}
+            %a.album-thumbnail{:href => "/photos/nature3.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature3.jpg"}
+            %a.album-thumbnail{:href => "/photos/animals1.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/animals1.jpg"}
+            %a.album-thumbnail{:href => "/photos/nature4.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature4.jpg"}
+            %a.album-thumbnail{:href => "/photos/nature5.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature5.jpg"}
+            %a.album-thumbnail{:href => "/photos/animals2.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/animals2.jpg"}
+            %a.album-thumbnail{:href => "/photos/animals3.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/animals3.jpg"}
+            %a.album-thumbnail{:href => "/photos/people2.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/people2.jpg"}
+            %a.album-thumbnail{:href => "/photos/nightlife1.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nightlife1.jpg"}
+            %a.album-thumbnail{:href => "/photos/animals4.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/animals4.jpg"}
+            %a.album-thumbnail{:href => "/photos/people3.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/people3.jpg"}
+            %a.album-thumbnail{:href => "/photos/food1.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/food1.jpg"}
+            %a.album-thumbnail{:href => "/photos/people4.jpg", :title => "Title of the image"}
+              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/people4.jpg"}
         .field-name-body
           %p
             = lorem.paragraph
@@ -42,14 +69,12 @@ design_status: Work in progress
             = lorem.sentence
             %strong without
             = lorem.sentence
-        .tags
-          Tags:
-          %a.tag{:href => "#"} oceans,
-          %a.tag{:href => "#"} Sustainable fishery,
-          %a.tag{:href => "#"} conservation
+
+        = partial :"blocks/tags"
+
         .submitted.submitted-extended
           .submitted-image
-            %img{:alt => "Name of the author.", :src => "../../images/blank.png", "data-src" => "http://placeimg.com/75/75/people/8/avatar"}/
+            %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
           .submitted-info
             %div
               %a{:href => "./photo.html"} Photos

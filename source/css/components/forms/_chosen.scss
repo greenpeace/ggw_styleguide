@@ -101,7 +101,7 @@ $chosen-sprite-retina: url('../images/chosen-sprite@2x.png') !default;
     position: absolute;
     display: inline-block;
     background-color: $white;
-    background-position: -24px -260px;
+    background-position: -24px -193px;
     height: 1.3rem;
     width: 1em;
     top: 5px;
@@ -127,7 +127,7 @@ $chosen-sprite-retina: url('../images/chosen-sprite@2x.png') !default;
       font-size: $p;
       line-height: normal;
       width: 100%;
-      background-position: 100% -144px;
+      background-position: 100% -98px;
     }
   }
 
@@ -211,7 +211,7 @@ $chosen-sprite-retina: url('../images/chosen-sprite@2x.png') !default;
     overflow: hidden;
     border-radius: 3px;
     background-clip: padding-box;
-    background-position: 100% -178px;
+    background-position: 99% -270px;
     border: 1px solid $grey-l;
     cursor: text;
   }
@@ -257,10 +257,10 @@ $chosen-sprite-retina: url('../images/chosen-sprite@2x.png') !default;
         display: block;
         width: 12px;
         height: 12px;
-        background-position: -44px -79px;
+        background-position: -40px -67px;
         font-size: 1px;
         &:hover {
-          background-position: -44px -90px;
+          background-position: -40px -78px;
         }
       }
     }

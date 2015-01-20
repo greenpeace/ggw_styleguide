@@ -30,6 +30,11 @@
   z-index: 1;
   position: relative;
 
+  // remove space for scrollbar when lightbox is active
+  .mfp-zoom-out-cur & {
+    overflow: visible;
+  }
+
   @include breakpoint($desk) {
     display: flex;
     min-height: 100%;
@@ -69,6 +74,7 @@
     bottom: auto;
   }
 }
+
 
 .l-main {
   margin: 0 auto;
@@ -134,8 +140,12 @@
   position: fixed;
   z-index: 2;
   top: 0;
-  transform: translate3d(0, 0, 0);
-  transition: transform 500ms ease;
+  transition: top 0.2s ease-in-out;
+
+  .csstransforms3d & {
+    transform: translate3d(0, 0, 0);
+    transition: transform 500ms ease;
+  }
 
   @include breakpoint($desk) {
     height: 88px;
@@ -153,7 +163,6 @@
     }
   }
 }
-
 
 .l-country-selector {
   @include breakpoint($desk) {

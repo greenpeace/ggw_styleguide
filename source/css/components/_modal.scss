@@ -31,7 +31,8 @@
 ////////////////////////
 
 $mfp-overlay-color:                   #0b0b0b !default;
-$mfp-overlay-opacity:                 0.8 !default;
+$mfp-overlay-opacity-mobile:          1.0 !default;
+$mfp-overlay-opacity-desk:            0.9 !default;
 $mfp-shadow:                          0 0 8px rgba(0, 0, 0, 0.6) !default; // shadow on image or iframe
 $mfp-popup-padding-left:              8px !default; // Padding from left and from right side
 $mfp-popup-padding-left-mobile:       6px !default; // Same as above, but is applied when width of window is less than 800px
@@ -61,7 +62,7 @@ $mfp-image-padding-bottom:            40px !default;
 $mfp-include-mobile-layout-for-image: true !default; // Removes paddings from top and bottom
 
 // Image caption options
-$mfp-caption-title-color:             #F3F3F3 !default;
+$mfp-caption-title-color:             #FFFFFF !default;
 $mfp-caption-subtitle-color:          #BDBDBD !default;
 
 // A11y
@@ -88,9 +89,13 @@ $mfp-use-visuallyhidden:              false !default; // Hide content from brows
   position: fixed;
 
   background: $mfp-overlay-color;
-  opacity: $mfp-overlay-opacity;
+  opacity: $mfp-overlay-opacity-mobile;
   @if $mfp-IE7support {
     filter: unquote("alpha(opacity=#{$mfp-overlay-opacity*100})");
+  }
+
+  @include breakpoint($desk) {
+    opacity: $mfp-overlay-opacity-desk;
   }
 }
 
@@ -115,9 +120,6 @@ $mfp-use-visuallyhidden:              false !default; // Hide content from brows
   left: 0;
   top: 0;
   padding: 0 $mfp-popup-padding-left;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 // Vertical centerer helper
@@ -333,6 +335,7 @@ button {
   color: $mfp-controls-text-color;
   font-size: 12px;
   line-height: 18px;
+  white-space: nowrap;
 }
 
 // Navigation arrows
@@ -517,6 +520,7 @@ button {
     line-height: 18px;
     color: $mfp-caption-title-color;
     word-wrap: break-word;
+    @include font-size($p);
     padding-right: 36px; // leave some space for counter at right side
   }
 
@@ -568,7 +572,6 @@ button {
           top: auto;
           padding: 3px 5px;
           position: fixed;
-          box-sizing: border-box;
           &:empty {
             padding: 0;
           }

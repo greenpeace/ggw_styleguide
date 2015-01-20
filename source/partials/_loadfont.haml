@@ -2,10 +2,10 @@
   function loadFont(fontName, woffUrl, woff2Url) {
     // 0. Many unsupported browsers should stop here
     var nua = navigator.userAgent;
-    var noSupport = !window.addEventListener // IE8 and below
-            || (nua.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/) && !nua.match(/    Chrome/)) // Android Stock Browser below 4.4 and Opera Mini
+    //var noSupport = !window.addEventListener // IE8 and below
+        //|| (nua.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/) && !nua.match(/Chrome/)) // Android Stock Browser below 4.4 and Opera Mini
 
-    if (noSupport) { return; }
+    //if (noSupport) { return; }
 
     // 1. Setting up localStorage
     var loSto = {};

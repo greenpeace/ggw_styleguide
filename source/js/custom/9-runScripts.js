@@ -67,9 +67,23 @@ $( window ).load(function() {
   });
 
   $('.album-thumbnail').magnificPopup({
+    preloader: true,
     type: 'image',
+    verticalFit: true,
+    mainClass: 'mfp-img-mobile',
     gallery:{
-      enabled:true
+      enabled:true,
+      navigateByImgClick: true,
+      preload: [1,2] //pre load one image before and two images after
+    },
+    image: {
+      tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+      titleSrc: 'title'
+    },
+    callbacks: {
+      close: function () {
+        $(document).trigger('sleepyHead');
+      }
     }
   });
 

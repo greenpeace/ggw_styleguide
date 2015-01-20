@@ -25,7 +25,7 @@ script: leaflet
 
           .field-group-wrapper
 
-            = partial :"images/event-image"
+            = partial :"images/article-image"
 
             .field-group-format
 
@@ -87,21 +87,20 @@ script: leaflet
             %strong without
             = lorem.sentence
 
-      .tags
-        Tags:
-        %a.tag{:href => "#"} festival
-      .submitted.submitted-extended
-        .submitted-image
-          %img{:alt => "Name of the author.", :src => "http://placeimg.com/75/75/people/8"}/
-        .submitted-info
-          %div
-            %a{:href => "./events.html"} Event
-            by willie_mackenzie
-          .submitted-bio
-            %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
-          .submitted-all-reference
-            %a{:href => "#"}> All events by willy_mackenzie
-            \.
+        = partial :"blocks/tags"
+
+        .submitted.submitted-extended
+          .submitted-image
+            %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+          .submitted-info
+            %div
+              %a{:href => "./events.html"} Event
+              by willie_mackenzie
+            .submitted-bio
+              %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
+            .submitted-all-reference
+              %a{:href => "#"}> All events by willy_mackenzie
+              \.
 
   = partial :"blocks/an/comments"
 

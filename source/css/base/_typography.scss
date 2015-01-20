@@ -1,5 +1,6 @@
 @include breakpoint($desk) {
   p,
+  q,
   dl,
   li,
   code,
@@ -66,7 +67,7 @@ a {
 }
 
 .content .external {
-  background-position: 100% -100px;
+  background-position: 100% -128px;
   padding-right: 14px;
 }
 
@@ -127,16 +128,20 @@ article {
     }
   }
 
+  q {
+    quotes:"\201C" "\201D" "\2018" "\2019";
+    font-style: italic;
+  }
+
+
   blockquote {
     border-left: 3px solid $green2;
     font-style: italic;
     margin-left: 5%;
     padding-left: 1.25em;
+    quotes:"\201C" "\201D" "\2018" "\2019";
   }
 
-  q, blockquote {
-    quotes: none;
-  }
 
   @include breakpoint($desk) {
     p a {

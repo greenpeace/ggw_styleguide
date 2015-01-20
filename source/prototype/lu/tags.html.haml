@@ -1,0 +1,32 @@
+---
+title: Sustainable fishery
+body_class: not-front logged-in page-tags l-has-sidebar
+user_role: lu
+design_status: Needs review
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-news-media.icon-tag
+    %h1#page-title.block-title
+      Content labeled with
+      = current_page.data.title
+    .content
+      = partial :"teasers/news-no-image"
+      = partial :"teasers/news-with-image"
+      = partial :"teasers/blog-with-image"
+      = partial :"teasers/blog-no-image"
+      = partial :"teasers/event-with-location"
+      = partial :"teasers/event-with-image"
+      = partial :"teasers/event-no-image"
+      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-with-image"
+      = partial :"teasers/idea"
+      = partial :"teasers/photo"
+      = partial :"teasers/video"
+      = partial :"teasers/document"
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/lu/get_involved"

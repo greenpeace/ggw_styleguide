@@ -31,7 +31,7 @@ design_status: Work in progress
 
           .field-group-wrapper
 
-            = partial :"images/event-image"
+            = partial :"images/article-image"
 
             .field-group-format
 
@@ -94,9 +94,8 @@ design_status: Work in progress
             %strong without
             = lorem.sentence
 
-        .tags
-          Tags:
-          %a.tag{:href => "#"} festival
+        = partial :"blocks/tags"
+
         .submitted.submitted-extended
           .submitted-image
             %img{:alt => "Name of the author.", :src => "http://placeimg.com/75/75/people/8/avatar"}

@@ -30,7 +30,7 @@ design_status: Work progress
 
           .field-group-wrapper
 
-            = partial :"images/event-image"
+            = partial :"images/article-image"
 
             .event-actions
               %a.button.btn-block.btn-primary.btn-l.modal-inline{:href => "#event-signup"} You are currently enrolled
@@ -93,9 +93,8 @@ design_status: Work progress
             %strong without
             = lorem.sentence
 
-      .tags
-        Tags:
-        %a.tag{:href => "#"} festival
+      = partial :"blocks/tags"
+
       .submitted.submitted-extended
         .submitted-image
           %img{:alt => "Name of the author.", :src => "http://lorempixel.com/75/75/people/8/avatar"}/

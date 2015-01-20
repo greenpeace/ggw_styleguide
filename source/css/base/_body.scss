@@ -17,7 +17,6 @@ body {
   background-color: $white;
   height: 100%;
   min-height: 100%;
-  overflow-x: hidden;
 
   @include breakpoint($desk) {
     background-color: #f2f2f2;
@@ -64,7 +63,7 @@ body {
 .chosen-container-multi .chosen-choices,
 .search-choice-close,
 .chosen-single abbr {
-  background-image: url(../images/ggw_sprites1xv1.0.png);
+  background-image: url(../images/ggw_sprites1xv1.1.png);
   background-repeat: no-repeat;
   background-size: auto;
 }

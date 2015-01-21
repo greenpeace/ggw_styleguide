@@ -20,7 +20,7 @@ design_status: Work in progress
   %section.block
     %i.block-icon.icon-info.icon-bg-default
     %h2.block-title Picture element
-    .content
+    %article.content
       :markdown
         The `<picture>` element offers a declarative approach towards image resource loading. Users benefit from natively-optimized image resource loading—especially important for users on slower mobile internet connections.
 
@@ -58,20 +58,31 @@ design_status: Work in progress
         In the example you can see there are two arguments for each `srcset` attribute. We use `2x` to target high resolution screens. To put it simple these screens have twice the amount of (device) pixels on the same resolution and therefore require images twice the original size for them to be displayed sharp.
 
       .demo
-        %picture.field-type-image
-          %source{:media => "(min-width: 64em)", :srcset => "http://placeimg.com/603/250/nature/1/image, http://placeimg.com/1440/500/nature/2/image 2x"}
-          %source{:media => "(min-width: 48em)", :srcset => "http://placeimg.com/768/384/nature/3/image, http://placeimg.com/1536/768/nature/4/image 2x"}
-          %source{:media => "(min-width: 24em)", :srcset => "http://placeimg.com/640/320/nature/5/image, http://placeimg.com/1280/640/nature/6/image 2x"}
-          %img{:alt => "Description of this image", :src => "http://placeimg.com/320/160/nature/7/image", :srcset => "http://placeimg.com/640/320/nature/8/image 2x"}
+        %figure
+          %picture
+            %source{:media => "(min-width: 64em)", :srcset => "/photos/nature9.jpg, /photos/nature6.jpg 2x"}
+            %source{:media => "(min-width: 48em)", :srcset => "/photos/nature7.jpg, /photos/nature8.jpg 2x"}
+            %source{:media => "(min-width: 24em)", :srcset => "/photos/nature11.jpg, /photos/nature12.jpg 2x"}
+            %img{:alt => "The president giving an award.", :src => "/photos/nature10.jpg", :srcset => "/photos/nature13.jpg 2x"}
+          %figcaption
+            A cheeky macaque, Lower Kintaganban River, Borneo. Original by
+            %a{:href => "#"}
+              = lorem.name
       .code
         :code
           # lang: html
-            <picture class="field-type-image">
-              <source media='(min-width: 64em)' srcset='http://placeimg.com/603/250/nature/1/image, http://placeimg.com/1440/500/nature/2/image 2x'>
-              <source media='(min-width: 48em)' srcset='http://placeimg.com/768/384/nature/3/image, http://placeimg.com/1536/768/nature/4/image 2x'>
-              <source media='(min-width: 24em)' srcset='http://placeimg.com/640/320/nature/5/image, http://placeimg.com/1280/640/nature/6/image 2x'>
-              <img alt='Description of this image' src='http://placeimg.com/320/160/nature/7/image' srcset='http://placeimg.com/640/320/nature/8/image 2x'>
-            </picture>
+            <figure>
+              <picture>
+                <source media='(min-width: 64em)' srcset='/photos/nature9.jpg, /photos/nature6.jpg 2x'>
+                <source media='(min-width: 48em)' srcset='/photos/nature7.jpg, /photos/nature8.jpg 2x'>
+                <source media='(min-width: 24em)' srcset='/photos/nature11.jpg, /photos/nature12.jpg 2x'>
+                <img alt='The president giving an award.' src='/photos/nature10.jpg' srcset='/photos/nature13.jpg 2x'>
+              </picture>
+              <figcaption>
+                A cheeky macaque, Lower Kintaganban River, Borneo. Original by
+                <a href='#'>Cathleen Chang</a>
+              </figcaption>
+            </figure>
 
   %section.block
     %i.block-icon.icon-info.icon-bg-default
@@ -100,9 +111,9 @@ design_status: Work in progress
       :markdown
         Images are responsive-friendly by default. An image has a `max-width: 100%` and `height: auto` so that it scales nicely to the parent element.
       .demo
-        %img{:alt => "Description of this image.", :src => "http://placeimg.com/800/600/nature/8/image"}
+        %img{:alt => "Description of this image.", :src => "/photos/animals4.jpg"}
 
       .code
         :code
           # lang: html
-            <img src="http://placeimg.com/800/600/nature/8/image" alt="Description of this image." />
+            <img src="/photos/animals4.jpg" alt="Description of this image." />

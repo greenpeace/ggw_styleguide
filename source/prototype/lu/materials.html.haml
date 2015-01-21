@@ -1,0 +1,30 @@
+---
+title: Materials
+body_class: not-front logged-in page-materials l-has-sidebar
+user_role: lu
+design_status: Work in progress
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-group.icon-users
+    %h1#page-title.block-title
+      = current_page.data.title
+    .content
+      %p table with items
+
+      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-with-image"
+      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-with-image"
+      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-with-image"
+      .align-center
+        %a.button{:href => "#"} show some more
+
+%aside.l-sidebar.sidebar
+  .content
+    = partial :"blocks/find_groups"
+    = partial :"blocks/lu/get_involved"

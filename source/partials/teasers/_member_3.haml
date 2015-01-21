@@ -3,10 +3,10 @@
     .field-type-image
       %picture
         /[if IE 9] <video style="display: none;">
-        %source{:media => "(min-width: 48em)", :srcset => "http://placeimg.com/130/90/people/1/, http://placeimg.com/260/180/people/deskx1.5 1.5x"}
-        %source{:srcset => "http://placeimg.com/180/120/people/mobx2 2x, http://placeimg.com/90/60/people/mob 1x"}
+        %source{:media => "(min-width: 48em)", :srcset => "/photos/130/people3.jpg, /photos/260/people4.jpg 1.5x"}
+        %source{:srcset => "/photos/180/people5.jpg 2x, /photos/90/people1.jpg 1x"}
         /[if IE 9] </video>
-        %img{:alt => "Example of image.", :src => "http://placeimg.com/90/60/people/img"}
+        %img{:alt => "Example of image.", :src => "/photos/blank.png", :srcset => "/photos/90/people2.jpg"}
     .field-type-wrapper
       %h2.node-title
         %a{:href => "#"}

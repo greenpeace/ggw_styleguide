@@ -1,0 +1,14 @@
+.views-row
+  %article.node-teaser-group.node-teaser.subscribed
+    .field-type-image
+      = partial :"teasers/teaser-image"
+    .field-type-wrapper
+      %h2.node-title
+        %a{:href => "#"}
+          = lorem.sentence
+      .submitted
+        %a.type.group{:href => "#"} Group
+        %span Country group
+        .subscribed member
+      .field-name-body
+        =lorem.paragraph

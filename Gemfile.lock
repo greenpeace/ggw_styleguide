@@ -35,7 +35,9 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.2.2)
+    exifr (1.2.0)
     ffi (1.9.6)
+    fspath (2.1.1)
     haml (4.0.6)
       tilt
     hike (1.2.3)
@@ -44,6 +46,17 @@ GEM
     htmlcompressor (0.1.2)
     http_parser.rb (0.6.0)
     i18n (0.6.11)
+    image_optim (0.20.2)
+      exifr (~> 1.1, >= 1.1.3)
+      fspath (~> 2.1)
+      image_size (~> 1.3)
+      in_threads (~> 1.3)
+      progress (~> 3.0, >= 3.0.1)
+    image_optim_pack (0.2.1.20150107)
+      fspath (~> 2.1)
+      image_optim (~> 0.19)
+    image_size (1.4.1)
+    in_threads (1.3.1)
     json (1.8.1)
     kramdown (1.5.0)
     listen (1.3.1)
@@ -80,6 +93,10 @@ GEM
       middleman-core (>= 3.2)
       net-sftp
       ptools
+    middleman-imageoptim (0.2.0)
+      image_optim (~> 0.20.2)
+      image_optim_pack (~> 0.2.1)
+      middleman-core (>= 3.0)
     middleman-livereload (3.3.4)
       em-websocket (~> 0.5.1)
       middleman-core (~> 3.2)
@@ -108,6 +125,7 @@ GEM
       tilt (~> 1.4.1)
     padrino-support (0.12.2)
       activesupport (>= 3.1)
+    progress (3.1.0)
     ptools (1.3.2)
     rack (1.5.2)
     rack-livereload (0.3.15)
@@ -162,6 +180,7 @@ DEPENDENCIES
   middleman (= 3.3.3)
   middleman-autoprefixer
   middleman-deploy
+  middleman-imageoptim
   middleman-livereload (~> 3.3.4)
   middleman-minify-html
   middleman-syntax

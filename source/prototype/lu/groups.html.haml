@@ -1,0 +1,54 @@
+---
+title: Groups
+body_class: not-front logged-in page-groups l-has-sidebar
+user_role: lu
+design_status: Needs review
+---
+
+= partial :"blocks/breadcrumbs"
+
+#content.l-main-column
+  .main-content
+    %i.block-icon.icon-bg-group.icon-users
+    %h1#page-title.block-title
+      = current_page.data.title
+    .content
+      .tabwrapper
+        %ul.tabs
+          %li
+            =nav_link 'All', '#', :class => 'tab active'
+          %li
+            =nav_link 'Local groups', '#', :class => 'tab'
+          %li
+            =nav_link 'Campaign group', '#', :class => 'tab'
+          %li
+            =nav_link 'Skills-based group', '#', :class => 'tab'
+          %li
+            =nav_link 'Discussion group', '#', :class => 'tab'
+          %li
+            =nav_link 'Interest group', '#', :class => 'tab'
+          %li
+            =nav_link 'Other type of group', '#', :class => 'tab'
+        %ul.tabs-overflow
+          %li
+            %a.tab.tab-overflow-trigger{:href => "#", "data-dropdown" => "#dropdown-tabs"}
+              more
+              %i.icon-down-mini
+            .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#dropdown-tabs
+              %ul.dropdown-menu
+
+      = partial :"teasers/group-with-image-subscribed"
+      = partial :"teasers/group-with-image-subscribed"
+      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-with-image"
+      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-with-image"
+      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-with-image"
+      .align-center
+        %a.button{:href => "#"} show some more
+
+%aside.l-sidebar.sidebar
+  .content
+    = partial :"blocks/find_groups"
+    = partial :"blocks/lu/get_involved"

@@ -1,0 +1,23 @@
+.block
+  %i.block-icon.icon-info.icon-bg-news-media
+  %h2.block-title About
+  .content
+    %p
+      This belongs to
+      = succeed "." do
+        %a{:href => "#"} local groups amsterdam
+
+    %p
+      Written by
+      %a{:href => "./profile.html"}
+        = lorem.name
+      %br
+      %a{:href => "#"}
+        All News by
+        = lorem.name
+        \.
+    = partial :"blocks/tags"
+    %p
+      .form-item.form-type-checkbox
+        %input#check1.form-checkbox{:type => "checkbox"}
+        %label.option{:for => "check1"} Receive notifications

@@ -49,14 +49,12 @@ loadvideo: youtube
             = lorem.sentence
             %strong without
             = lorem.sentence
-        .tags
-          Tags:
-          %a.tag{:href => "#"} oceans,
-          %a.tag{:href => "#"} Sustainable fishery,
-          %a.tag{:href => "#"} conservation
+
+        = partial :"blocks/tags"
+
         .submitted.submitted-extended
           .submitted-image
-            %img{:alt => "Name of the author.", :src => "http://placeimg.com/75/75/people/8/avatar"}/
+            %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
           .submitted-info
             %div
               %a{:href => "./videos.html"} Video

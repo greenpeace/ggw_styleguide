@@ -1,0 +1,23 @@
+.block
+  %i.block-icon.icon-bookmark.icon-bg-news-media
+  %h2.block-title About this idea
+  .content
+    %p
+      This belongs to
+      = succeed "." do
+        %a{:href => "#"} local groups amsterdam
+    = partial :"blocks/tags"
+
+    .gwvote-widget.next
+      .vote-buttons
+        %button.button.positive.tooltip{"data-tip" => "Click to vote"}
+          %i.icon.icon-vote-up
+          %span 9
+          %span.element-invisible Vote up
+        %button.button.negative.tooltip{"data-tip" => "Click to vote"}
+          %i.icon.icon-vote-down
+          %span 3
+          %span.element-invisible Vote down
+    .form-item.form-type-checkbox
+      %input#check2.form-checkbox{:type => "checkbox"}
+      %label.option{:for => "check2"} Receive notifications

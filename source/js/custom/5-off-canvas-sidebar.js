@@ -6,9 +6,26 @@ $(function() {
 
   var sidebarButton = $('<div class="trigger-sidebar js-show-sidebar"><i class="button icon-button"></i></div>');
 
+  $.fn.cloneInput = function() {
+    return this.each(function(){
+      var new_id = 5;
+      $(this).attr('id', this.id + '_' + new_id);
+      $(this).attr('name', this.name + '_' + new_id);
+    });
+  };
+
+  $.fn.cloneLabel = function() {
+    return this.each(function(){
+      var new_id = 5;
+      $(this).attr('for', $(this).attr('for') + '_' + new_id);
+    });
+  };
+
   if ($('.l-has-sidebar').length != 0 && $('.sidebar').length != 0) {
     $(sidebarButton).insertBefore('.l-main').hide();
     var sidebarClone = $('.sidebar').clone();
+    $(sidebarClone).find('input').cloneInput();
+    $(sidebarClone).find('label').cloneLabel();
     $(sidebarClone).insertBefore('.l-main').addClass('sidebar-mob').removeClass('l-sidebar');
   }
 

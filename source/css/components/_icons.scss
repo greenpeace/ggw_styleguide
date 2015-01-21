@@ -36,6 +36,7 @@
 .icon-vote-up {   @extend %icon-thumbs-up;}
 .icon-vote-down { @extend %icon-thumbs-down;}
 .icon-subscribed {@extend %icon-star;}
+.icon-bookmark {@extend %icon-bookmark;}
 
 .icon-teasers {   @extend %icon-stop;}
 .icon-list {      @extend %icon-menu;}
@@ -47,6 +48,7 @@
 .icon-video {     @extend %icon-video; }
 .icon-document {  @extend %icon-attach; }
 .icon-idea {      @extend %icon-thumbs-up; }
+.icon-idea2 {     @extend %icon-chat; }
 .icon-material {  @extend %icon-bucket; }
 .icon-info {      @extend %icon-info; }
 .icon-help {      @extend %icon-help; }

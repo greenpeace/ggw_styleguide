@@ -115,7 +115,7 @@ configure :build do
 
   # Uniquely-named assets, preventing users from using outdated files
   # Exclude files that are called from template files directly
-  activate :asset_hash, :ignore => ['vendor', 'images', 'photos', 'css/fonticons.woff.css', 'css/fonticons.woff2.css']
+  activate :asset_hash, :ignore => ['vendor', 'images', 'photos', 'font', 'css/fonticons.woff.css', 'css/fonticons.woff2.css']
 
   # Enable cache buster
   # activate :cache_buster

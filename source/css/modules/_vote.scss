@@ -44,3 +44,32 @@
     display: block;
   }
 }
+
+.gwvote-widget.next {
+
+  text-align: left;
+  margin: .35em 0 .65em;
+
+  .button {
+    width: auto;
+    color: $base;
+  }
+
+  .button span {
+    display: inline-block;
+  }
+
+  .positive .icon {
+    color: $green5;
+  }
+
+  .negative .icon {
+    color: $error;
+  }
+
+  .button .icon {
+    @include font-size($h3);
+    display: inline-block;
+  }
+
+}

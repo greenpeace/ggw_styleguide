@@ -56,6 +56,7 @@ Based on previous work of:
             'padding': 0,
             'top': 0,
             'right': 0,
+            'visibility': 'hidden',
             'cursor': 'pointer'
           })
           .addClass('nfi-current');

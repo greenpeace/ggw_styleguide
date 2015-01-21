@@ -68,7 +68,7 @@
       smoothHeight: true,
       animationLoop: true,
       pauseOnHover: true,
-      allowOneSlide: true,
+      allowOneSlide: false,
       slideshow: true,
       video: true,
       before: function(slider){

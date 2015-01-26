@@ -88,8 +88,6 @@
   min-height: 100vh;
   -webkit-overflow-scrolling: touch;
   transform: translate3d(0, 0, 0);
-  border-right: 1px solid $grey-l;
-  border-left: 1px solid $grey-l;
 
   @include breakpoint($desk) {
     background: transparent;

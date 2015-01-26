@@ -73,10 +73,12 @@
 
   &.primary-nav .l-main {
     left: 265px;
+    border-left: 1px solid $grey-l;
   }
 
   &.secondary-nav .l-main {
     right: 265px;
+    border-right: 1px solid $grey-l;
   }
 
   &.primary-nav .l-branding-header {

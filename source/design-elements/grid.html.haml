@@ -18,7 +18,9 @@ design_status: Needs review
         Starting mobile first we have no columns. Screens wider than `900px` get one of the following layouts:
 
         ###1. 50/50 Layout
-        This layout has two equal columns which will both be `480px` maximum.
+        This layout has two equal columns which will both be `480px` maximum. The gutter is `14px` in total. `7px` on the right side of the left column and `7px` on the left side of the right column. The content of both have columns have a padding of `14px` left, right and bottom. This leaves `445px` for the content to span on large screens.
+
+        Screens below `900px` will have just one column with tabbed navigation above. The column width here stretchs from `320px` to `883px`. The padding is `7px` on both sides, so the width for the content is between `306px` to `869px`.
 
     .l-two-column.clearfix
       .l-main-column

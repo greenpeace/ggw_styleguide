@@ -1,0 +1,21 @@
+#delete-comment.block.white-popup.mfp-hide
+  - if current_page.data.front == "frontpage"
+    %i.block-icon.icon-trash.icon-bg-action
+    %h2.block-title Delete shout
+  - else
+    %i.block-icon.icon-trash.icon-bg-action
+    %h2.block-title Delete comment
+
+  .content
+    %form.comment-form
+      %p
+        Are you sure want to delete this
+        - if current_page.data.front == "frontpage"
+          shout?
+        - else
+          comment?
+
+      .form-actions.form-wrapper
+        %input{:type => "submit", :class => "button btn-primary", :value => "Delete"}
+        %input{:type => "submit", :class => "button ", :value => "Cancel"}
+

@@ -12,9 +12,9 @@ $(function() {
 
     var overFlowMenu = menuWrapper.find('.dropdown ul');
 
-    var fullHeight = menuWrapper.outerHeight()
+    var fullHeight = menuWrapper.outerHeight();
 
-    var triggerWidth = $('.tab-overflow-trigger').outerWidth();
+    var triggerWidth = $('.tabwrapper .tab-overflow-trigger').outerWidth();
 
     var handle = menuWrapper.find('.tab-overflow-trigger').addClass('element-invisible');
 
@@ -31,7 +31,6 @@ $(function() {
     fullMenu.children('li').filter(function() {
       var elementOffset = $(this).position().top;
       return elementOffset+$(this).height() > fullHeight;
-
     }).addClass('moved').clone(true).prependTo(overFlowMenu[0]).children('a').removeClass('tab');
 
     // Calculte the width of the items the user sees, so we determine the position of the more button
@@ -42,18 +41,19 @@ $(function() {
     });
 
     // Position the 'more' button
-    $('.tabs-overflow').css("left", totalWidth);
+    $('.tabwrapper .tabs-overflow').css("left", totalWidth);
 
     // For desktop we need extra space
     if ($(window).width() > 900) {
-      $('.tabs-overflow').css("left", totalWidth + 15);
+      $('.tabwrapper .tabs-overflow').css("left", totalWidth + 15);
     }
 
     if (overFlowMenu.children('li').length!==0) {
       handle.removeClass('element-invisible');
     } else {
       //If it is empty hide the dropdown menu,
-      $('.tabs-overflow').hide();
+      $('.tabwrapper .tabs-overflow').hide();
+      fullMenu.css('padding-right', '0');
     }
 
   };

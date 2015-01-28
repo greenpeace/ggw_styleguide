@@ -5,56 +5,80 @@ $(function() {
   // This script creates a dropdown of the action menu, when there are more then 2 buttons.
   function overflowDropdown() {
 
-    // Define the context we will be operating in.
-    var list = $('.original-action-menu ul').clone();
-    $('.original-action-menu').hide();
+    var menuWrapper = $('.action-menu');
 
-    if ( $('.action-menu').length ) {
-      $('.action-menu').remove();
+    var fullMenu = menuWrapper.children('.tabs');
+
+    var overFlowMenu = menuWrapper.find('.dropdown ul');
+
+    var fullHeight = menuWrapper.outerHeight();
+
+    var triggerWidth = $('.action-menu .tab-overflow-trigger').outerWidth();
+
+    var handle = menuWrapper.find('.tab-overflow-trigger').addClass('element-invisible');
+
+    // The 'more' button is translatable and must always fit
+    newfullMenu = fullMenu.css('padding-right', triggerWidth);
+
+    // Remove the moved class on each resize
+    fullMenu.find('li.moved').removeClass('moved');
+
+    // remove all of the actions out of the overflow menu
+    overFlowMenu.children('li').remove();
+
+    // find all of the .items that arent visible and add/clone them to the overflow menu
+    fullMenu.children('li:visible').filter(function() {
+      var elementOffset = $(this).position().top;
+      return elementOffset+$(this).height() > fullHeight;
+
+    }).addClass('moved').clone(true).prependTo(overFlowMenu[0]).children('a').removeClass('tab');
+
+    // Calculte the width of the items the user sees, so we determine the position of the more button
+    var totalWidth = 0;
+
+    fullMenu.children('li:not(.moved)').each(function() {
+      totalWidth += $(this).outerWidth(true) + 4;
+    });
+
+    // Position the 'more' button
+    $('.action-menu .tabs-overflow').css("left", totalWidth);
+
+    // For desktop we need extra space
+    if ($(window).width() > 900) {
+      $('.action-menu .tabs-overflow').css("left", totalWidth + 15);
     }
 
-    // We will store any items here that we want to move.
-    var itemsToMove = new Array();
-
-      // get window width
-      var windowWidth = $(window).width();
-
-      // define how much items fit one the screen
-      var itemsFit = 1;
-
-      if (windowWidth > 450) {
-        itemsFit = 2;
-      }
-      if (windowWidth > 600) {
-        itemsFit = 3;
-      }
-
-      // Loop through all items and retrieve the index
-      $.each($('li', list), function(index, value) {
-
-        // Add everything except the first item to the items_to_move array.
-        if (index > (itemsFit - 1)) {
-         itemsToMove.push(value);
-        }
-
-      });
-
-      // If there is more than one item to move we proceed here.
-      if (itemsToMove.length > 1) {
-      // Add our new container div.
-        $(list).append('<li class="action-overflowing"><a data-dropdown="#dropdown-action-menu"   class="action-overflowing-trigger" href="#"><i class="icon icon-menu"></i> More </a><div  id="dropdown-action-menu" class="dropdown dropdown-scroll"><ul class="dropdown-menu"></ul><  /li>');
-
-        // Foreach items that need to moved place them in the newly created awesomebox dropdown.
-        $.each(itemsToMove, function(index, value) {
-          $('#dropdown-action-menu ul', list).append(value);
-          $('#dropdown-action-menu').hide();
-        });
-      }
-
-      list.insertAfter('.original-action-menu');
-      list.wrapAll('<div class="action-menu">');
+    if (overFlowMenu.children('li').length!==0) {
+      handle.removeClass('element-invisible');
+    } else {
+      //If it is empty hide the dropdown menu,
+      $('.action-menu .tabs-overflow').hide();
+      fullMenu.css('padding-right', '0');
+    }
 
   };
+
+  $('.l-two-column #upcoming-events, .l-two-column .action-menu li:first').addClass('current');
+
+
+  $('.action-menu .tab').click(function(e){
+
+    $('.action-menu li, .l-main-column .current, .sidebar .current').removeClass('current');
+    $(this).parent().addClass('current');
+    var currentTab = $(this).attr('href');
+    $(currentTab).addClass('current');
+
+    e.preventDefault();
+
+    $('input[type=file]').nicefileinput();
+
+    setTimeout(initiateResponsiveTabs, 250);
+
+  });
+
+  function initiateResponsiveTabs() {
+    $(window).trigger("resize");
+  }
 
   // On resize, run the function and reset the timeout
   // 250 is the delay in milliseconds.

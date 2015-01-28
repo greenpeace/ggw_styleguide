@@ -1,38 +1,24 @@
-.action-menu > ul {
+.action-menu .tabs {
   border-bottom: 1px solid $grey-l;
   border-top: 1px solid $grey-l;
   height: 44px;
   background: $background;
   text-align: center;
+  overflow: hidden;
+  position: relative;
 
   .flexbox & {
     display: flex;
-    flex-flow: row wrap;
   }
-
 }
 
-.action-menu > ul > li {
-  white-space: nowrap;
+.action-menu .tabs li {
   border-right: 1px solid $grey-l;
-
-  .no-flexbox & {
-    display: inline-block;
-    position: relative;
-    width: auto;
-    padding: 0 1em;
-    line-height: 1em;
-    width: 49.3%;
-
-    @include breakpoint(440px) {
-      width: 32.5%;
-    }
-
-    @include breakpoint(615px) {
-      width: 24.3%;
-    }
-
-  }
+  display: inline-block;
+  position: relative;
+  width: auto;
+  padding: 0 $def-mar;
+  line-height: 1em;
 
   .flexbox & {
     flex: 1;
@@ -42,8 +28,8 @@
     border: none;
   }
 
-  &.current a {
-    background: $white;
+  &.current {
+    display: none;
   }
 
 }
@@ -51,15 +37,8 @@
 .action-menu a {
   color: $base;
   line-height: 44px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-
-   .no-flexbox & {
-    display: block;
-    line-height: 2.5em;
-    text-align: center;
-  }
+  display: block;
+  text-align: center;
 
   &.active {
     color: $grey-m;
@@ -72,34 +51,32 @@
   .icon {
     @include font-size($h2);
     margin-right: .5em;
-
-    .no-flexbox & {
-      top: .1em;
-      margin-right: .2em;
-      position: relative;
-    }
-  }
-
-  .dropdown {
-    width: 100%;
-    margin: -1px 0 0 -1px;
-    left: 0;
-  }
-
-
-  .dropdown li {
-    display: block;
-    border: none;
-    padding: 0 1em;
-  }
-
-  .dropdown a {
-    justify-content: flex-start;
+    top: .1em;
+    margin-right: .2em;
+    position: relative;
+    line-height: 1em;
   }
 
   .dropdown-menu {
-    background: $background;
-    border: 1px solid $grey-l;
+    margin: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .dropdown a {
+    line-height: 1.5em;
+    border: none;
+    padding: .4em $def-mar;
+  }
+
+  .tabs-overflow {
+    display: inline-block;
+    position: absolute;
+    margin-top: -44px;
+  }
+
+  .tab-overflow-trigger {
+    padding: 0 $def-mar;
+    border-left: 1px solid $grey-l;
   }
 
   @include breakpoint($desk) {

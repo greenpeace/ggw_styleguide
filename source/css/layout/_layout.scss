@@ -75,7 +75,6 @@
   }
 }
 
-
 .l-main {
   margin: 0 auto;
   padding: 50px 0 0;
@@ -276,8 +275,8 @@
 
 .l-two-column {
 
-  .l-main-column,
-  .block {
+  #content,
+  .l-main .block {
     clear: both;
     display: none;
     margin: $def-mar-half;

@@ -1,0 +1,12 @@
+#reply-comment.block.white-popup.mfp-hide
+  %i.block-icon.icon-comment.icon-bg-action
+  %h2.block-title Reply
+
+  .content
+    .comment-form-holder
+      %form.comment-form
+        .form-comment-message
+          %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a reply...", :rows => "3"}
+        - if current_page.data.front == "frontpage"
+          %span#remain
+        %input.form-comment-submit{:type => "submit", :value => "submit"}

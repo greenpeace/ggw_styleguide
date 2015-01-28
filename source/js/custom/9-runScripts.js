@@ -19,17 +19,10 @@ $( document ).ready(function() {
 
   // Activate fastclick function
   FastClick.attach(document.body);
-
-  $('img').sleepyHead(100, 300);
 });
 
 // This will run once the entire page (including ajax requests), not just the DOM, is ready
 $( window ).load(function() {
-
-  // these element must autogrow as the user types on multiple lines
-  $('.form-comment-message textarea, #shoutbox-comment').autogrow({
-    animate: false
-  });
 
   // Selector styling wrapper
   $('.form-item .form-select').wrap('<div class="selector"></div>');
@@ -63,7 +56,14 @@ $( window ).load(function() {
 
   // Universal selector for modal windows with external source
   $('.modal-inline').magnificPopup({
-    type: 'inline'
+    type: 'inline',
+    midClick: true,
+    callbacks: {
+      open: function() {
+        $(window).trigger("load");
+        $('.form-comment-message textarea').trigger('keyup');
+      }
+    }
   });
 
   $('.album-thumbnail').magnificPopup({

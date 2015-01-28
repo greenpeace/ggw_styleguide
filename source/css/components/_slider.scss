@@ -107,7 +107,7 @@ html[xmlns] .slides {display: block;}
 // FlexSlider Default Theme
 
 .flexslider {
-  margin: 0 0 2em;
+  margin: 0;
   position: relative;
   zoom: 1;
 
@@ -118,7 +118,16 @@ html[xmlns] .slides {display: block;}
 
   @include breakpoint($desk) {
     border: 4px $white solid;
-    margin: $def-mar 0 (3 * $def-mar);
+    margin: $def-mar 0;
+  }
+
+  &.active {
+    margin-bottom: (2 * $def-mar);
+
+    @include breakpoint($desk) {
+      margin-bottom: (3 * $def-mar);
+    }
+
   }
 }
 

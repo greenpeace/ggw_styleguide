@@ -11,67 +11,36 @@ loadvideo: youtube
 
 = partial :"blocks/slider"
 
-.original-action-menu
-  %ul
-    %li
-      %a.tab{:href => "#content"}
-        %i.icon.icon-news
-        Updates
+.action-menu
+  %ul.tabs
     %li
       %a.tab{:href => "#upcoming-events"}
         %i.icon.icon-event
         Events
+    %li
+      %a.tab{:href => "#welcome"}
+        %i.icon.icon-info
+        Welcome
+    %li
+      %a.tab{:href => "#content"}
+        %i.icon.icon-news
+        Updates
+  %ul.tabs-overflow
+    %li
+      %a.tab.tab-overflow-trigger{:href => "#", "data-dropdown" => "#action-menu-tabs"}
+        more
+        %i.icon-down-mini
+      .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#action-menu-tabs
+        %ul.dropdown-menu
 
-.l-main-column#content
-  .block.block-no-icon
+.l-main-column
+  #welcome.block.block-no-icon
     %h2.block-title A platform for change-makers
     .content
       %p Welcome to Greenpeace Greenwire where people like you connect with other volunteers, activists and groups working on environmental campaigns all across the country.  This is your meeting place to start groups, host events, run campaigns, share photos,videos, blogs and join with other interested activists eager to help.
       %a.button.btn-primary{:href => "#"} Get wired!
-      .clear
-  .main-content
-    %i.block-icon.icon-bg-news-media.icon-news
-    %h1#page-title.block-title Updates
-    .content
-      .tabwrapper
-        %ul.tabs
-          %li
-            =nav_link 'All', '#', :class => 'tab active'
-          %li
-            =nav_link 'News', '#', :class => 'tab'
-          %li
-            =nav_link 'Blog', '#', :class => 'tab'
-          %li
-            =nav_link 'Event', '#', :class => 'tab'
-          %li
-            =nav_link 'Idea', '#', :class => 'tab'
-          %li
-            =nav_link 'Photo', '#', :class => 'tab'
-          %li
-            =nav_link 'Video', '#', :class => 'tab'
-          %li
-            =nav_link 'Document', '#', :class => 'tab'
-        %ul.tabs-overflow
-          %li
-            %a.tab.tab-overflow-trigger{:href => "#", "data-dropdown" => "#dropdown-tabs"}
-              more
-              %i.icon-down-mini
-            .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#dropdown-tabs
-              %ul.dropdown-menu
 
-      = partial :"teasers/news-no-image"
-      = partial :"teasers/news-with-image"
-      = partial :"teasers/blog-with-image"
-      = partial :"teasers/blog-no-image"
-      = partial :"teasers/event-with-location"
-      = partial :"teasers/event-with-image"
-      = partial :"teasers/event-no-image"
-      = partial :"teasers/group-no-image"
-      = partial :"teasers/group-with-image"
-      = partial :"teasers/idea"
-      = partial :"teasers/photo"
-      = partial :"teasers/video"
-      = partial :"teasers/document"
+  = partial :"blocks/upcoming_events"
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/upcoming_events"
+  = partial :"blocks/updates"

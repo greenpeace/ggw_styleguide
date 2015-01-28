@@ -8,18 +8,17 @@
 }
 
 .sort-comments {
-  @extend %hlist;
   position: absolute;
   right: $def-mar;
   top: 8px;
 
   li {
-    border-left: 1px solid #dbdbdb;
     margin-left: 10px;
     padding-left: 10px;
+    display: inline-block;
 
-    &:first-child {
-      border:none;
+    &:last-child {
+      border-left: 1px solid #dbdbdb;
     }
   }
 
@@ -55,10 +54,10 @@
 }
 
 .comment-reply {
-  margin-left: 45px + $def-mar-half;
+  margin-left: 45px + $def-mar;
 
   @include breakpoint($desk) {
-    margin-left: 60px + $def-mar-half;
+    margin-left: 60px + $def-mar;
   }
 }
 
@@ -76,12 +75,19 @@
   overflow: hidden;
 }
 
+.comment-head,
 .comment-body {
-  line-height: 1.5em;
+  line-height: 1.35em;
 }
+
+.comment-body img {
+  margin: $def-mar-half 0;
+}
+
 
 .comment-footer {
   color: $grey-m;
+  line-height: 1.5em;
   @include font-size(13px);
 }
 
@@ -103,18 +109,26 @@
   position: relative;
 }
 
+.comment-form .hint {
+  float: right;
+  margin: 0 $def-mar-half 0 0;
+  @include font-size($small);
+  color: $grey-m;
+  line-height: 34px;
+}
+
 // fix the bug when firing the apple keyboard
 .touch .fixfixed .comment-form {
   position: absolute;
 }
 
-input.form-comment-file {
+.js input.form-comment-file {
   width: 34px;
 }
 
 .comment-form .nfi-wrapper {
   float:  right;
-  margin: 0 5px 0 0;
+  margin: 0 $def-mar-half 0 0;
 }
 
 .nfi-wrapper {
@@ -154,12 +168,8 @@ input.form-comment-file {
   margin-bottom: .5em;
 
   textarea{
-    resize: none;
-    overflow: hidden;
     line-height: 1.1em;
-    height: 36px;
     padding: 0.5em;
-    display: block;
     @include font-size(16px);
     max-width: 100%; //override default of 400px;
   }

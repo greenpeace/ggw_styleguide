@@ -1,6 +1,4 @@
 $(function() {
-  'use strict';
-
   lazyload_youtube.init({
     theme: 'dark',
     colour: 'white',
@@ -8,5 +6,4 @@ $(function() {
     responsive: true,
     thumbnailquality: '0'
   });
-
 });

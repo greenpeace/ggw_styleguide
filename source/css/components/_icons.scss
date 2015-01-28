@@ -36,8 +36,8 @@
 .icon-vote-up {   @extend %icon-thumbs-up;}
 .icon-vote-down { @extend %icon-thumbs-down;}
 .icon-subscribed {@extend %icon-star;}
-.icon-bookmark {@extend %icon-bookmark;}
-
+.icon-bookmark {  @extend %icon-bookmark;}
+.icon-chat {      @extend %icon-chat;}
 .icon-teasers {   @extend %icon-stop;}
 .icon-list {      @extend %icon-menu;}
 

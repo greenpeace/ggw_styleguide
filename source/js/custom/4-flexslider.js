@@ -1,4 +1,4 @@
-(function($) {
+$(function() {
 
   if ($('.flexslider').length != 0) {
 
@@ -60,16 +60,16 @@
       });
     }
 
-
     slider = $('.flexslider')
     .fitVids()
     .flexslider({
       animation: 'slide',
-      smoothHeight: true,
+      useCSS: true,
       animationLoop: true,
+      smoothHeight: true,
       pauseOnHover: true,
-      allowOneSlide: false,
       slideshow: true,
+      allowOneSlide: true,
       video: true,
       before: function(slider){
         // Vimeo stop
@@ -81,11 +81,7 @@
           slider.flexslider('stop');
         }
       },
-      after: function() {
-        $(document).trigger('sleepyHead');
-      }
     });
-
 
     // check if the slider is still visible for the user, otherwise pause the slider.
     slider.on('inview', function(event, isVisible) {
@@ -100,6 +96,10 @@
       }
     });
 
+    if ( slider.find('.flex-viewport').length != 0) {
+      slider.addClass('active');
+    }
+
   }
 
-})(jQuery);
+});

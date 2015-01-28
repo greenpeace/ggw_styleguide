@@ -1,6 +1,6 @@
 #block-comments.block.block-comments
   - if current_page.data.front == "frontpage"
-    %i.block-icon.icon-shout.icon-bg-action
+    %i.block-icon.icon-chat.icon-bg-action
     %h2.block-title Shoutbox
   - else
     %i.block-icon.icon-comment.icon-bg-action
@@ -8,7 +8,9 @@
 
   .content
     - if current_page.data.front != "frontpage"
+
       %ul.sort-comments
+        %li Sort by:
         %li
           %a.active{:href => "#"} Oldest
         %li
@@ -29,24 +31,24 @@
     %section.comments
       %article.comment
         .avatar-holder
-          %a{:href => "#", :title => "View user profile"}
+          %a{:href => "profile.html", :title => "View user profile"}
             %picture
               %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/120/people1.jpg 2x"}/
         .comment-holder
           .comment-head
             %a.comment-author{:href => "#", :title => "View profile"}
-              Dora Tilman
+              = lorem.name
           .comment-body
             I agree.
           .comment-footer
             %span.comment-timestamp 5 minutes ago
             %span.comment-actions
-              %a.comment-actionlink{:href => "#"} reply
-              %a.comment-actionlink{:href => "#"} edit
-              %a.comment-actionlink{:href => "#"} delete
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+              %a.comment-actionlink.modal-inline{:href => "#edit-comment"} edit
+              %a.comment-actionlink.modal-inline{:href => "#delete-comment"} delete
       %article.comment
         .avatar-holder
-          %a{:href => "#", :title => "View user profile"}
+          %a{:href => "profile.html", :title => "View user profile"}
             %picture
               %img{:alt => "Chico Konink", :src => "/photos/60/people2.jpg", :srcset => "/photos/120/people2.jpg 2x"}/
         .comment-holder
@@ -58,16 +60,17 @@
               Greenpeace staff
             )
           .comment-body
-            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+            = lorem.paragraph
+            %img{:alt => "Chico Konink", :src => "/photos/nature7.jpg", :srcset => "/photos/nature8.jpg 2x"}/
           .comment-footer
-            %span.comment-timestamp 1 hour ago
+            %span.comment-timestamp 30 minutes ago
             %span.comment-actions
-              %a.comment-actionlink{:href => "#"} reply
-              %a.comment-actionlink{:href => "#"} edit
-              %a.comment-actionlink{:href => "#"} delete
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+              %a.comment-actionlink.modal-inline{:href => "#edit-comment"} edit
+              %a.comment-actionlink.modal-inline{:href => "#delete-comment"} delete
       %article.comment.comment-reply
         .avatar-holder
-          %a{:href => "#", :title => "View user profile"}
+          %a{:href => "profile.html", :title => "View user profile"}
             %picture
               %img{:alt => "Chico Konink", :src => "/photos/60/people3.jpg", :srcset => "/photos/120/people3.jpg 2x"}/
         .comment-holder
@@ -81,10 +84,12 @@
           .comment-body
             I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
           .comment-footer
-            %span.comment-timestamp 30 minutes ago
+            %span.comment-timestamp 1 hour ago
+            %span.comment-actions
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
       %article.comment.comment-reply
         .avatar-holder
-          %a{:href => "#", :title => "View user profile"}
+          %a{:href => "profile.html", :title => "View user profile"}
             %picture
               %img{:alt => "Chico Konink", :src => "/photos/60/people7.jpg", :srcset => "/photos/120/people7.jpg 2x"}/
         .comment-holder
@@ -94,13 +99,14 @@
           .comment-body
             I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
           .comment-footer
-            %span.comment-timestamp 15 minutes ago
+            %span.comment-timestamp 2 hours ago
             %span.comment-actions
-              %a.comment-actionlink{:href => "#"} edit
-              %a.comment-actionlink{:href => "#"} delete
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+              %a.comment-actionlink.modal-inline{:href => "#edit-comment"} edit
+              %a.comment-actionlink.modal-inline{:href => "#delete-comment"} delete
       %article.comment
         .avatar-holder
-          %a{:href => "#", :title => "View user profile"}
+          %a{:href => "profile.html", :title => "View user profile"}
             %picture
               %img{:alt => "Erben de Bok", :src => "/photos/60/people5.jpg", :srcset => "/photos/120/people5.jpg 2x"}/
         .comment-holder
@@ -112,11 +118,9 @@
             = succeed "?" do
               %a{:href => "#", :title => "View Erben de Bok's profile"} Erben de Bok
           .comment-footer
-            %span.comment-timestamp 12 May, 2014 - 13:56
+            %span.comment-timestamp 12 May 2014 at 13:56
             %span.comment-actions
-              %a.comment-actionlink{:href => "#"} reply
-              %a.comment-actionlink{:href => "#"} edit
-              %a.comment-actionlink{:href => "#"} delete
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
       %article.comment
         .avatar-holder
           %a{:href => "#", :title => "View user profile"}
@@ -124,14 +128,92 @@
               %img{:alt => "Erben de Bok", :src => "/photos/60/people6.jpg", :srcset => "/photos/120/people6.jpg 2x"}/
         .comment-holder
           .comment-head
-            %a.comment-author{:href => "#", :title => "View profile"}
+            %a.comment-author{:href => "profile.html", :title => "View profile"}
               Johnny with his extremelonglastname
           .comment-body
             “I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her rehabilitation exercises after each surgery. “People I have known who had [replacement surgery] and who didn’t do the therapy, it doesn’t work out for them.”
           .comment-footer
-            %span.comment-timestamp 2 November, 2013 - 08:56
+            %span.comment-timestamp 2 Nov 2013 at 08:56
             %span.comment-actions
-              %a.comment-actionlink{:href => "#"} reply
-              %a.comment-actionlink{:href => "#"} edit
-              %a.comment-actionlink{:href => "#"} delete
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+      %article.comment
+        .avatar-holder
+          %a{:href => "profile.html", :title => "View user profile"}
+            %picture
+              %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/120/people1.jpg 2x"}/
+        .comment-holder
+          .comment-head
+            %a.comment-author{:href => "#", :title => "View profile"}
+              = lorem.name
+          .comment-body
+            I agree.
+          .comment-footer
+            %span.comment-timestamp 15 Oct 2013 at 05:26
+            %span.comment-actions
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+              %a.comment-actionlink.modal-inline{:href => "#edit-comment"} edit
+              %a.comment-actionlink.modal-inline{:href => "#delete-comment"} delete
+      %article.comment
+        .avatar-holder
+          %a{:href => "profile.html", :title => "View user profile"}
+            %picture
+              %img{:alt => "Chico Konink", :src => "/photos/60/people2.jpg", :srcset => "/photos/120/people2.jpg 2x"}/
+        .comment-holder
+          .comment-head
+            %a.comment-author{:href => "#", :title => "View profile"}
+              = lorem.name
+            (
+            %a{:href => "./who-is-who.html"}><
+              Greenpeace staff
+            )
+          .comment-body
+            = lorem.paragraph
+            %img{:alt => "Chico Konink", :src => "/photos/nature7.jpg", :srcset => "/photos/nature8.jpg 2x"}/
+          .comment-footer
+            %span.comment-timestamp 14 Oct 2013 at 05:20
+            %span.comment-actions
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+      %article.comment.comment-reply
+        .avatar-holder
+          %a{:href => "profile.html", :title => "View user profile"}
+            %picture
+              %img{:alt => "Chico Konink", :src => "/photos/60/people3.jpg", :srcset => "/photos/120/people3.jpg 2x"}/
+        .comment-holder
+          .comment-head
+            %a.comment-author{:href => "#", :title => "View profile"}
+              = lorem.name
+            (
+            %a{:href => "./who-is-who.html"}><
+              Community coach
+            )
+          .comment-body
+            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+          .comment-footer
+            %span.comment-timestamp 22 Aug 2013 at 15:40
+            %span.comment-actions
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+      %article.comment.comment-reply
+        .avatar-holder
+          %a{:href => "profile.html", :title => "View user profile"}
+            %picture
+              %img{:alt => "Chico Konink", :src => "/photos/60/people7.jpg", :srcset => "/photos/120/people7.jpg 2x"}/
+        .comment-holder
+          .comment-head
+            %a.comment-author{:href => "#", :title => "View profile"}
+              = lorem.name
+          .comment-body
+            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+          .comment-footer
+            %span.comment-timestamp 01 Jun 2013 at 13:55
+            %span.comment-actions
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+
+    - if current_page.data.front == "frontpage"
+      %hr
+      .align-center
+        %a.button.load-more-btn{:href => "#"} Show some more
+
+  = partial :"blocks/lu/reply-comment"
+  = partial :"blocks/lu/edit-comment"
+  = partial :"blocks/lu/delete-comment"
 

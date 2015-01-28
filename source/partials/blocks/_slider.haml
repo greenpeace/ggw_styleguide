@@ -2,26 +2,26 @@
   .flexslider
     %ul.slides
       %li
+        #slider-map
+      %li
         %a{:href => "#"}
           =image_tag("slide1.jpg")
           %p
             %span This is a line of text with a link
       %li
         %a{:href => "#"}
-          =image_tag("blank.png", "data-src" => "/images/slide2.jpg")
+          =image_tag("/images/slide2.jpg")
           %p
             %span We are now looking at the 2nd slide, this text is actually too long for the slide
           %button.button.btn-primary take action
       %li
         .container-lazyload.preview-lazyload.container-youtube#youtube_1
-          %a.lazy-load-youtube.preview-lazyload.preview-youtube{:href => "http://www.youtube.com/watch?v=IJNR2EpS0jw", "video-title" => "Dumb Ways to Die", :title => "Play Video &quot;Dumb Ways to Die&quot;"}
-            http://www.youtube.com/watch?v=IJNR2EpS0jw
+          %a.lazy-load-youtube.preview-lazyload.preview-youtube{:href => "https://www.youtube.com/watch?v=Vk94Qm0FZ5U", "video-title" => "Greenwire", :title => "Play Video Greenwire"}
+            https://www.youtube.com/watch?v=Vk94Qm0FZ5U
       %li
         %iframe.vimeo#player_2{:frameborder => "0", :width => "500", :height => "281", :src => "http://player.vimeo.com/video/27243869?api=1&player_id=player_2", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}
       %li
         %a{:href => "#"}
-          =image_tag("blank.png", "data-src" => "/images/slide3.jpg")
+          =image_tag("/images/slide3.jpg")
           %p
             %span This is a campaign slide to a separate page
-      %li
-        %iframe.vimeo#player_4{:frameborder => "0", :width => "500", :height => "281", :src => "http://player.vimeo.com/video/112010467?api=1&player_id=player_4", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}

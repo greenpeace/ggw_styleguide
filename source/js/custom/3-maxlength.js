@@ -1,4 +1,4 @@
-$(function() {
+$(window).load(function() {
 
   function maxLength() {
     $('#shoutbox-comment').maxlength({
@@ -9,6 +9,19 @@ $(function() {
 
   };
 
+  // these element must autogrow as the user types on multiple lines
+  function autoGrow() {
+    $('.form-comment-message textarea').autogrow({
+      animate: false
+    });
+  };
+
+  function niceInput() {
+    $('input[type=file]').nicefileinput();
+  };
+
   maxLength();
+  autoGrow();
+  niceInput();
 
 });

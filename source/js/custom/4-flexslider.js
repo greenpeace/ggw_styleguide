@@ -68,9 +68,14 @@ $(function() {
       animationLoop: true,
       smoothHeight: true,
       pauseOnHover: true,
-      slideshow: true,
+      slideshow: false,
       allowOneSlide: true,
       video: true,
+      start: function(slider){
+        if ($('.flexslider .map').length != 0) {
+          map.invalidateSize(); //solve map is not loading correctly
+        }
+      },
       before: function(slider){
         // Vimeo stop
         if (slider.slides.eq(slider.currentSlide).find('.vimeo').length !== 0) {

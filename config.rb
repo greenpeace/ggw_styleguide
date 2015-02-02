@@ -31,7 +31,6 @@ activate :syntax
 # Page options, layouts, aliases and proxies
 ###
 
-#page "prototype/*", :layout => "sidebarsecond"
 #page "/design-elements/*", :layout => "styleguide"
 
 # Per-page layout changes:

@@ -52,3 +52,23 @@
 .block-no-icon .block-title {
   margin-left: 0;
 }
+
+.enrollments a {
+  display: inline-block;
+  width: 23.5%;
+}
+
+.sidebar .enrollments img {
+  margin: auto;
+  display: flex;
+}
+
+.members a {
+  display: inline-block;
+  width: 13.4%;
+}
+
+.members .enrollments img {
+  margin: auto;
+  display: flex;
+}

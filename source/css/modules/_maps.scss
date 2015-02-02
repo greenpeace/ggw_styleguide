@@ -1,0 +1,16 @@
+.region-highlight {
+
+  .block {
+    padding: 4px;
+  }
+
+  .map {
+    width: 100%;
+    height: 250px;
+
+    @include breakpoint($tab) {
+      height: 440px;
+    }
+  }
+
+}

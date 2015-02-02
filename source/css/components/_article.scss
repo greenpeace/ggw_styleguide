@@ -1,3 +1,7 @@
+article {
+  @include media;
+}
+
 .node-full {
 
   .main-content .block-icon {

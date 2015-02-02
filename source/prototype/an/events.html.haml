@@ -7,6 +7,10 @@ design_status: Needs review
 
 = partial :"blocks/breadcrumbs"
 
+.region-highlight
+  .block
+    #eventmap.map
+
 #content.l-main-column
   .block
     %i.block-icon.icon-bg-event.icon-event
@@ -24,3 +28,27 @@ design_status: Needs review
   .content
     = partial :"blocks/find_events"
     = partial :"blocks/an/create_account"
+
+= javascript_include_tag "/vendor/leaflet/leaflet.js"
+
+:javascript
+  // create a map in the "map" div, set the view to a given place and zoom
+  var eventmap = L.map('eventmap',{scrollWheelZoom: false}).fitBounds([[51.5, -0.09],[52.595, -0.083],[51.19, -0.1]]);
+  // add an OpenStreetMap tile layer
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(eventmap);
+  var greenIcon = L.icon({
+    iconUrl: '/images/marker-green.png',
+    iconRetinaUrl: '/images/marker-green@2x.png',
+    shadowUrl: '/images/marker-shadow.png',
+    shadowRetinaUrl: '/images/marker-shadow.png',
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [41, 41], // size of the shadow
+    iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
+    shadowAnchor: [13, 41], // the same for the shadow
+    popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
+  });
+  // add a marker in the given location, attach some popup content to it and open the popup
+  L.marker([51.5, -0.09], {icon: greenIcon}).bindPopup('<h2 class="node-title"><a href="#">Ga mee naar Festival Mundial</a></h2> <div class="field field-name-field-event-date"><span class="date-display-single">25 September, 2014 - 14:57</span></div>').addTo(eventmap);
+  L.marker([52.495, -0.083], {icon: greenIcon}).bindPopup('<h2 class="node-title"><a href="#">Ga mee naar Festival Mundial</a></h2> <div class="field field-name-field-event-date"><span class="date-display-single">25 September, 2014 - 14:57</span></div>').addTo(eventmap);
+  L.marker([51.19, -0.1], {icon: greenIcon}).bindPopup('<h2 class="node-title"><a href="#">Ga mee naar Festival Mundial</a></h2> <div class="field field-name-field-event-date"><span class="date-display-single">25 September, 2014 - 14:57</span></div>').addTo(eventmap);
+

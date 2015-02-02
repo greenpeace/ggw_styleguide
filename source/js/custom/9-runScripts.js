@@ -24,36 +24,6 @@ $( document ).ready(function() {
 // This will run once the entire page (including ajax requests), not just the DOM, is ready
 $( window ).load(function() {
 
-  // Selector styling wrapper
-  $('.form-item .form-select').wrap('<div class="selector"></div>');
-
-  // Apply chosen to select element.
-  $(".chosen-select").chosen({width: "100%"});
-
-  // Pass focused state to visible parent element.
-  $('.form-item .form-select').focus(function(){
-    $(this).parent('.selector').addClass('focused');
-  });
-  $('.form-item .form-select').blur(function(){
-    $(this).parent('.selector').removeClass('focused');
-  });
-
-  // attach datepicker plugin to date iput fields
-  if (!Modernizr.inputtypes.date) {
-    $('input[type="date"]').pickadate({
-      format: 'd mmm, yy',
-      formatSubmit: 'yyyy-mm-dd'
-    });
-    $('input[type="date"]').addClass('date-field');
-    $('input[type="date"]').after('<i class="icon-calendar"></i>');
-  }
-
-  //enhance with icons
-  $('.form-text.error, textarea.error, .form-checkbox.error + label').after('<i class="icon-attention"></i>');
-  $('.form-radio.error').parents('.form-radios').after('<i class="icon-attention"></i>');
-  $('.form-select.error').parent('.selector').after('<i class="icon-attention"></i>');
-  $('.form-select.error').parent('.selector').addClass('error');
-
   // Universal selector for modal windows with external source
   $('.modal-inline').magnificPopup({
     type: 'inline',
@@ -87,10 +57,27 @@ $( window ).load(function() {
     }
   });
 
+
    // add class to external links so they can be styled
   $('.field-name-body a').filter(function() {
     return this.hostname && this.hostname !== location.hostname;
   }).attr('target', '_blank').addClass('external');
+
+  var ua = navigator.userAgent.toLowerCase();
+
+  if (ua.indexOf('safari') != -1) {
+    if (ua.indexOf('chrome') > -1) {
+      // Chrome
+    } else {
+      $("<link/>", {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "/css/fonticons.woff.css"
+      }).appendTo("head");
+    }
+
+  };
+
 
 });
 

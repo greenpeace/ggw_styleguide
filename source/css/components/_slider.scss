@@ -70,7 +70,7 @@
   }
 }
 
-.slides button {
+.slides .button {
   @extend %element-hidden;
 
   &:active,
@@ -139,6 +139,16 @@ html[xmlns] .slides {display: block;}
     min-height: 340px;
   }
 
+}
+
+.slidermap {
+  display:block;
+  height: 250px;
+  width: 100%;
+
+  @include breakpoint($desk) {
+    height: 440px;
+  }
 }
 
 .loading .flex-viewport { max-height: 300px; }

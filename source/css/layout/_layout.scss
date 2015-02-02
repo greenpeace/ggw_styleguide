@@ -221,6 +221,14 @@
 
 }
 
+@include breakpoint($desk) {
+  .region-highlight {
+    display: block;
+    flex: 1 1 100%;
+    order: 0;
+  }
+}
+
 .l-main-column {
   margin: $def-mar-half;
   z-index: 1;

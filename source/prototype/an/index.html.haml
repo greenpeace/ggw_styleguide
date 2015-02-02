@@ -3,7 +3,6 @@ title: Home
 body_class: front not-logged-in page-home l-two-column
 user_role: an
 design_status: Work in progress
-script: leaflet
 loadvideo: youtube
 ---
 
@@ -41,6 +40,10 @@ loadvideo: youtube
       %a.button.btn-primary{:href => "#"} Get wired!
 
   = partial :"blocks/upcoming_events"
+
+  = partial :"blocks/volunteer_spotlight"
+
+  = partial :"blocks/an/members_platform"
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/updates"

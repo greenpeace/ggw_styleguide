@@ -97,11 +97,12 @@
 /* Clearfix for the .slides element */
 .slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
 html[xmlns] .slides {display: block;}
-* html .slides {height: 1%;}
-
-/* No JavaScript Fallback */
-/* If you are not using another script, such as Modernizr, make sure you
- * include js that eliminates this class on page load */
+@if $oldie {
+  * html .slides {height: 1%;}
+}
+// No JavaScript Fallback */
+// If you are not using another script, such as Modernizr, make sure you
+// include js that eliminates this class on page load
 .no-js .slides > li:first-child {display: block;}
 
 // FlexSlider Default Theme
@@ -159,7 +160,9 @@ html[xmlns] .slides {display: block;}
 
 
 .flex-direction-nav {
-  *height: 0;
+  @if $oldie {
+    *height: 0;
+  }
 
   a  {
     display: block;
@@ -247,8 +250,10 @@ html[xmlns] .slides {display: block;}
   li {
     margin: 0 6px;
     display: inline-block;
-    zoom: 1;
-    *display: inline;
+    @if $oldie {
+      zoom: 1;
+      *display: inline;
+    }
   }
 
 }

@@ -81,6 +81,10 @@ select:-moz-focusring {
   }
 }
 
+.white-popup select {
+  max-width: 100%;
+}
+
 .lt-ie10 {
   .selector:before {
       display:none;

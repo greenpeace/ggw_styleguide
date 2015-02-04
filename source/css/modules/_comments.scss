@@ -20,6 +20,14 @@
     &:last-child {
       border-left: 1px solid #dbdbdb;
     }
+
+    &:first-child {
+      display: none;
+
+      @include breakpoint($tab) {
+        display: inline-block;
+      }
+    }
   }
 
   a {
@@ -124,6 +132,7 @@
 
 .js input.form-comment-file {
   width: 34px;
+  height: 34px;
 }
 
 .comment-form .nfi-wrapper {

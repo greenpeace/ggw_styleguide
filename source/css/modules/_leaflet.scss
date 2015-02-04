@@ -350,6 +350,8 @@
   border-top: 1px solid #ddd;
   }
 
+@if $oldie {
+
 .leaflet-oldie .leaflet-popup-content-wrapper {
   zoom: 1;
   }
@@ -371,6 +373,7 @@
   border: 1px solid #999;
   }
 
+}
 
 .leaflet-div-icon {
   background: #fff;

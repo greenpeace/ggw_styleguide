@@ -63,21 +63,5 @@ $( window ).load(function() {
     return this.hostname && this.hostname !== location.hostname;
   }).attr('target', '_blank').addClass('external');
 
-  var ua = navigator.userAgent.toLowerCase();
-
-  if (ua.indexOf('safari') != -1) {
-    if (ua.indexOf('chrome') > -1) {
-      // Chrome
-    } else {
-      $("<link/>", {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "/css/fonticons.woff.css"
-      }).appendTo("head");
-    }
-
-  };
-
-
 });
 

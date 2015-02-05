@@ -1,0 +1,11 @@
+.form-text,
+.form-password,
+textarea {
+
+  &.error {
+    border: 1px solid darken($primary, 10%);
+    position: relative;
+    padding-right: 2em;
+  }
+
+}

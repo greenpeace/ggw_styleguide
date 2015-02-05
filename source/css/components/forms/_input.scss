@@ -24,12 +24,6 @@ textarea {
     background: #F3F3F3;
   }
 
-  &.error {
-    border: 1px solid darken($primary, 10%);
-    position: relative;
-    padding-right: 2em;
-  }
-
 }
 
 // 1) fix for ios7 heights on date inputs

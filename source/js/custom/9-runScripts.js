@@ -24,11 +24,25 @@ $( document ).ready(function() {
 // This will run once the entire page (including ajax requests), not just the DOM, is ready
 $( window ).load(function() {
 
+
   // Universal selector for modal windows with external source
   $('.modal-inline').magnificPopup({
     type: 'inline',
     midClick: true,
+    focus: '#name',
+    // When elemened is focused, some mobile browsers in some cases zoom in
+    // It looks not nice, so we disable it:
     callbacks: {
+      beforeOpen: function() {
+        if($(window).width() < 700) {
+          this.st.focus = false;
+        } else {
+          // find the first form element in this popup and focus here
+          var selectors = $(this.st.el.attr('href') + ' form').find('input:text, input:radio, input:checkbox, textarea');
+          var focus = selectors.first();
+          this.st.focus = '#' + focus.attr('id');
+        }
+      },
       open: function() {
         $(window).trigger("load");
         $('.form-comment-message textarea').trigger('keyup');

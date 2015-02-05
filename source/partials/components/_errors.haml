@@ -4,49 +4,49 @@
   .content
     :markdown
       An example of each form element when a user has not filled in the form with valid data.
-      The form element will get a `.error` by default to indicate in which field the user has made a mistake.
+      The form element wrapper will get a `.has-error` by default to indicate in which field the user has made a mistake.
 
     .demo
       .form-wrapper
-        .form-item
+        .form-item.has-error
           %label.form-label{:for=>"edit-name"}
             Text input
             %span.form-required{:title=>"This field is required."} *
           .form-description This is a description.
-          %input{:type => "text", :class => "form-text error", :placeholder => "type your input here"}
+          %input{:type => "text", :class => "form-text", :placeholder => "type your input here"}
 
-        .form-item
+        .form-item.has-error
           %label.form-label{:for=>"edit-password"}
             Password
             %span.form-required{:title=>"This field is required."} *
-          %input{:type => "password", :class => "form-text error", :placeholder => "type your input here"}
+          %input{:type => "password", :class => "form-text", :placeholder => "type your input here"}
 
-        .form-item
+        .form-item.has-error
           %label.form-label Radios
           .form-radios
             .form-type-radio
-              %input#ten.form-radio.error{:checked => "checked", :name => "radio", :type => "radio", :value => "one"}/
+              %input#ten.form-radio{:checked => "checked", :name => "radio", :type => "radio", :value => "one"}/
               %label.option{:for => "ten"} Option 1
             .form-type-radio
-              %input#eleven.form-radio.error{:name => "radio", :type => "radio", :value => "two"}
+              %input#eleven.form-radio{:name => "radio", :type => "radio", :value => "two"}
               %label.option{:for => "eleven"} Option 2
 
-        .form-item.form-type-checkbox
-          %input#checkerror.form-checkbox.error{:checked => "checked", :type => "checkbox"}
+        .form-item.form-type-checkbox.has-error
+          %input#checkerror.form-checkbox{:checked => "checked", :type => "checkbox"}
           %label.option{:for => "checkerror"} checkbox field that is checked by default
 
-        .form-item
+        .form-item.has-error
           %label.form-label Select field
-          %select.form-select.error
+          %select.form-select
             %option{:value => ""} Please select
             %option 2
             %option 3
             %option 4
             %option 5
 
-        .form-item
+        .form-item.has-error
           %label Textarea
-          %textarea.error{:placeholder => "Write your comment here..."}
+          %textarea{:placeholder => "Write your comment here..."}
 
     .code
       :code

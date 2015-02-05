@@ -27,9 +27,5 @@ $( document ).ready(function() {
   }
 
   //enhance with icons
-  $('.form-text.error, textarea.error, .form-checkbox.error + label').after('<i class="icon-attention"></i>');
-  $('.form-radio.error').parents('.form-radios').after('<i class="icon-attention"></i>');
-  $('.form-select.error').parent('.selector').after('<i class="icon-attention"></i>');
-  $('.form-select.error').parent('.selector').addClass('error');
-
+  $('.has-error .form-text, .has-error textarea').after('<i class="form-feedback icon-cancel" aria-hidden="true"></i>');
 });

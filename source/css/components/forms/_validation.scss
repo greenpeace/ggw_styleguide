@@ -1,11 +1,35 @@
-.form-text,
-.form-password,
-textarea {
+.has-error {
 
-  &.error {
-    border: 1px solid darken($primary, 10%);
+  .form-text,
+  .form-password,
+  textarea {
+    border: 1px solid $error;
     position: relative;
     padding-right: 2em;
   }
 
+  .form-radio + label,
+  .form-checkbox + label {
+    color: $error;
+  }
+
+  .selector select {
+    border: 1px solid $error;
+  }
+
+  .form-feedback {
+    color: $error;
+  }
+
+}
+
+.form-feedback {
+  position: relative;
+  z-index: 9;
+  vertical-align: top;
+  pointer-events: none;
+  font-weight: 700;
+  font-size: 1.4em;
+  line-height: 28px;
+  margin-left: -.7em;
 }

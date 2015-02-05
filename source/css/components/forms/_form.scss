@@ -80,17 +80,6 @@ label {
   line-height: 1.2em;
 }
 
-.form-item i {
-  position: relative;
-  z-index: 9;
-  vertical-align: top;
-  margin-left: .5em;
-}
-
-.form-item .icon-attention {
-  color: darken($primary, 10%)
-}
-
 
 //
 // Inline fields (multiple fields on the same line)

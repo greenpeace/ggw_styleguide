@@ -1,0 +1,106 @@
+.l-two-column .l-main .region-highlight .block {
+  position: relative;
+  display: block;
+  margin: 0;
+
+  @include breakpoint($desk) {
+    margin: 0 0 14px 0;
+    padding: 4px;
+    min-height: 340px;
+  }
+
+}
+
+.l-has-sidebar .l-main .region-highlight .block {
+  @include breakpoint($tab) {
+    padding: 4px;
+    min-height: 340px;
+  }
+}
+
+.region-highlight .block {
+
+  .map {
+    width: 100%;
+    height: 250px;
+
+    @include breakpoint($tab) {
+      height: 440px;
+    }
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  p {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    margin: 0;
+    background: #000;
+    color: $white;
+    padding: 0 .5em;
+    text-align: center;
+    @include font-size(12px);
+
+    @include breakpoint($smalltab) {
+      @include font-size(16px);
+      padding: .5em;
+      font-weight: 700;
+    }
+
+    @include breakpoint($desk) {
+      background: none;
+      @include font-size(22px);
+      bottom: 140px;
+      padding: 0;
+      right: 7%;
+      width: auto;
+      max-width: 45%;
+      white-space: normal;
+      text-align: right;
+      text-overflow: initial;
+
+      span {
+        background: #000;
+        background: rgba(0,0,0,.8);
+        box-shadow: rgba(0,0,0,.8) 6px 0 0 0,rgba(0,0,0,.8) -6px 0 0 0;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        padding: 4px 6px;
+        line-height: 33px;
+      }
+    }
+
+  }
+
+  .button {
+    @extend %element-hidden;
+
+    &:active,
+    &.active {
+      top: auto;
+    }
+
+    @include breakpoint($smalltab) {
+      position: absolute;
+      display: inline-block;
+      bottom: 3.5em;
+      right: $def-mar;
+    }
+
+    @include breakpoint($desk) {
+      bottom: 80px;
+      right: 7%;
+    }
+
+  }
+
+
+}

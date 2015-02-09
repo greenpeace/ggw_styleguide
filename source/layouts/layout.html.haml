@@ -47,6 +47,10 @@
 
     = javascript_include_tag  "theme"
 
+    - if current_page.data.script == "editable"
+      = javascript_include_tag  "x-editable"
+      = stylesheet_link_tag "x-editable"
+
     = partial :"loadfont"
 
     /[if lte IE 8]

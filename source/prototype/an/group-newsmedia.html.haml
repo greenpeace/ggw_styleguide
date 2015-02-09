@@ -1,0 +1,25 @@
+---
+title: Group news & media
+body_class: not-front not-logged-in page-group-newsmedia l-has-sidebar
+user_role: an
+design_status: Work in progress
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column
+  = partial :"blocks/updates"
+
+%aside.l-sidebar.sidebar
+
+  .block
+    %i.block-icon.icon-bg-default.icon-adjust
+    %h2.block-title Filter
+    .content
+      %form
+        = partial :"blocks/search_filters/type"
+        = partial :"blocks/search_filters/created"
+        = partial :"blocks/search_filters/tags"
+        = partial :"blocks/search_filters/form-action"
+
+  = partial :"blocks/an/create_account"

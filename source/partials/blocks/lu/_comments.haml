@@ -1,5 +1,5 @@
 #block-comments.block.block-comments
-  - if current_page.data.front == "frontpage"
+  - if current_page.data.front == "frontpage" || current_page.data.joined == "joined"
     %i.block-icon.icon-chat.icon-bg-action
     %h2.block-title Shoutbox
   - else
@@ -7,7 +7,7 @@
     %h2.block-title Comments
 
   .content
-    - if current_page.data.front != "frontpage"
+    - if current_page.data.front != "frontpage" && current_page.data.joined != "joined"
 
       %ul.sort-comments
         %li Sort by:
@@ -19,11 +19,11 @@
     .comment-form-holder
       %form.comment-form
         .form-comment-message
-          - if current_page.data.front == "frontpage"
+          - if current_page.data.front == "frontpage" || current_page.data.joined == "joined"
             %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a shout...", :rows => "1"}
           - else
             %textarea#comment-comment{:cols => "50", :placeholder => "Write a comment...", :rows => "1"}
-        - if current_page.data.front == "frontpage"
+        - if current_page.data.front == "frontpage" || current_page.data.joined == "joined"
           %span#remain
         %input.form-comment-submit{:type => "submit", :value => "share"}
         %input.tooltip.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
@@ -208,7 +208,7 @@
             %span.comment-actions
               %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
 
-    - if current_page.data.front == "frontpage"
+    - if current_page.data.front == "frontpage" || current_page.data.joined == "joined"
       %hr
       .align-center
         %a.button.load-more-btn{:href => "#"} Show some more

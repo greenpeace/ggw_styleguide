@@ -7,6 +7,10 @@ design_status: Needs review
 
 = partial :"blocks/breadcrumbs"
 
+.region-highlight
+  .block
+    #eventmap.map
+
 #content.l-main-column
   .block
     %i.block-icon.icon-bg-event.icon-event
@@ -24,3 +28,39 @@ design_status: Needs review
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/find_events"
+
+= javascript_include_tag "leaflet"
+= javascript_include_tag "upcoming-events"
+
+:javascript
+
+  var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  }),
+  latlng = L.latLng(52.5, -2);
+
+  var map = L.map('eventmap', {center: latlng, zoom: 5, scrollWheelZoom: false, layers: [tiles]});
+
+  var markers = L.markerClusterGroup();
+
+  var eventIcon = L.icon({
+    iconUrl: '/images/marker-events.png',
+    iconRetinaUrl: '/images/marker-events@2x.png',
+    shadowUrl: '/images/marker-shadow.png',
+    shadowRetinaUrl: '/images/marker-shadow@2x.png',
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [41, 41], // size of the shadow
+    iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
+    shadowAnchor: [13, 41],  // the same for the shadow
+    popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
+  });
+
+  for (var i = 0; i < upcomingEvents.length; i++) {
+    var a = upcomingEvents[i];
+    var marker = L.marker(new L.LatLng(a[0], a[1]), {icon: eventIcon});
+    marker.bindPopup('<h2 class="node-title"><a href="#">Join us to Festival Mundial</a></h2><div class="field field-name-field-event-date"><span class="date-display-single">25 September, 2014 - 14:57</span></div>');
+    markers.addLayer(marker);
+  }
+
+  map.addLayer(markers);

@@ -63,6 +63,8 @@ activate :syntax
 #   end
 # end
 
+sprockets.append_path File.join "#{root}", "/source/libraries"
+
 set :css_dir, 'css'
 set :js_dir, 'js'
 set :images_dir, 'images'

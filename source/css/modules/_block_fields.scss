@@ -1,0 +1,21 @@
+.block {
+  .field {
+    @include font-size($p);
+    margin-bottom: $def-mar;
+  }
+
+  .field-label {
+    font-weight: 700;
+  }
+
+  .field-group-primary-contact {
+    display: inline-block;
+    width: 45%;
+    margin-right: 3%;
+  }
+
+  .field-group-secondary-contact {
+    display: inline-block;
+    width: 50%;
+  }
+}

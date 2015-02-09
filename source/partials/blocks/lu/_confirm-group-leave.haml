@@ -1,0 +1,11 @@
+#confirm-group-leave.block.white-popup.mfp-hide
+  %i.block-icon.icon-leave.icon-bg-action
+  %h2.block-title Are you sure you want to unsubscribe from this group?
+
+  .content
+    %form.comment-form{:action => "./group-home.html", :method => "get"}
+      %p Unsubscribing means you will no longer be able to participate in this group on Greenwire. You can subscribe to this group again.
+      .form-actions.form-wrapper
+        %input{:type => "submit", :class => "button btn-primary", :value => "Remove"}
+        %input{:type => "submit", :class => "button ", :value => "Cancel"}
+

@@ -1,9 +1,6 @@
-.sidebar .block {
+.l-has-sidebar .sidebar .block {
   border-bottom: 1px solid $background;
-
-  .l-has-sidebar & {
-    padding: 0 $def-mar $def-mar;
-  }
+  padding: 0 $def-mar $def-mar;
 
   @include breakpoint($desk) {
     border-bottom: none;
@@ -65,7 +62,12 @@
 
 .members a {
   display: inline-block;
-  width: 13.4%;
+  margin-right: 4px;
+
+  @include breakpoint($desk) {
+    width: 13.4%;
+    margin-right: 0;
+  }
 }
 
 .members .enrollments img {

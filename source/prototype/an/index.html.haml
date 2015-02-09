@@ -33,6 +33,9 @@ loadvideo: youtube
         %ul.dropdown-menu
 
 .l-main-column
+  = partial :"blocks/updates"
+
+%aside.l-sidebar.sidebar
   #welcome.block.block-no-icon
     %h2.block-title A platform for change-makers
     .content
@@ -44,6 +47,3 @@ loadvideo: youtube
   = partial :"blocks/volunteer_spotlight"
 
   = partial :"blocks/an/members_platform"
-
-%aside.l-sidebar.sidebar
-  = partial :"blocks/updates"

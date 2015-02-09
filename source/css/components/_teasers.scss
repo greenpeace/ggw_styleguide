@@ -6,8 +6,10 @@
   position: relative;
 
   @include breakpoint($tab) {
-    .l-main-column & {
-      height: 90px;
+    height: 90px;
+
+    .l-has-sidebar .sidebar & {
+      height: 60px;
     }
   }
 
@@ -22,10 +24,14 @@
     z-index: 1;
 
     @include breakpoint($tab) {
-      .l-main-column & {
-        width: 130px;
-        height: 90px;
+      width: 130px;
+      height: 90px;
+
+      .l-has-sidebar .sidebar & {
+        width: 90px;
+        height: 60px;
       }
+
     }
 
     &:before {
@@ -38,11 +44,16 @@
       @extend %load-icon;
 
       @include breakpoint($tab) {
-        .l-main-column & {
-          line-height: 90px;
-          font-size: 3.5rem;
+        line-height: 90px;
+        font-size: 3.5rem;
+
+        .l-has-sidebar .sidebar & {
+          line-height: 60px;
+          font-size: 2.5rem;
         }
+
       }
+
     }
 
   }
@@ -123,16 +134,17 @@
     }
 
     @include breakpoint($tab) {
-      .l-main-column & {
-        margin-bottom: 5px;
+      margin-bottom: 5px;
 
-        .type {
-          width: auto;
+      .l-has-sidebar .sidebar & {
+        margin-bottom: 0px;
+      }
 
-          &:before {
-            margin-right: .2em;
-          }
+      .type {
+        width: auto;
 
+        &:before {
+          margin-right: .2em;
         }
 
       }

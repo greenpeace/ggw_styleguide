@@ -1,0 +1,60 @@
+#block-group-info.block
+  %i.block-icon.icon-users.icon-bg-group
+  %h2.block-title About
+  .content
+
+    .field.field-group-join
+      - if current_page.data.joined != "joined"
+        .field-item
+          %p To find more about this group, join the conversation or contribute, you need to join...
+          - if current_page.data.user_role == "lu"
+            %a.button.btn-primary.modal-inline{:href => "#confirm-group-subscription"} Join group
+          - else
+            %a.button.btn-primary{:href => "/prototype/an/login.html"} Join group
+      - else
+        %a.button.modal-inline{:href => "#confirm-group-leave"} Leave this group
+
+
+    .field-name-body
+      %p
+        = lorem.paragraph
+    .field.field-group-mission
+      .field-label Mission
+      .field-item
+        = lorem.sentence
+
+    .field.field-group-type
+      .field-label Group type
+      .field-item Skills-based group
+
+    .field.field-group-skills
+      .field-label Skills
+      .field-item
+        Initiator, Practical, a 'Doer', Cooking, Driving (with license & own vehicle), Driving (with license)
+
+    .field.field-group-tags
+      .field-label Tags
+      .field-item
+        %a.tag{:href => "./tags.html"}> cooking
+        ,
+        = succeed "," do
+          %a.tag{:href => "./tags.html"} organic
+        = succeed "," do
+          %a.tag{:href => "./tags.html"} training
+        = succeed "," do
+          %a.tag{:href => "./tags.html"} soup
+        = succeed "," do
+          %a.tag{:href => "./tags.html"} food
+        %a.tag{:href => "./tags.html"} transport
+
+    .field.field-group-primary-contact
+      .field-label Primary contact
+      .field-item
+        = lorem.name
+
+    .field.field-group-secondary-contact
+      .field-label Secondary contact
+      .field-item
+        = lorem.name
+
+= partial :"blocks/lu/confirm-group-leave"

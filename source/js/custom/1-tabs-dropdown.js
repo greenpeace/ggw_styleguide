@@ -48,7 +48,7 @@ $(function() {
       $('.tabwrapper .tabs-overflow').css("left", totalWidth + 15);
     }
 
-    if (overFlowMenu.children('li').length!==0) {
+    if (overFlowMenu.children('li').length!=0) {
       handle.removeClass('element-invisible');
     } else {
       //If it is empty hide the dropdown menu,

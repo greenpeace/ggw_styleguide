@@ -31,6 +31,14 @@
   width: 100%;
 }
 
+.btn-disabled {
+  background-color: $white;
+  border-color: $grey-l;
+  pointer-events: none;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 .button + .button {
   margin-top: 5px;
 }

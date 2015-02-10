@@ -58,8 +58,7 @@ $(function() {
 
   };
 
-  $('.page-home #upcoming-events, .not-logged-in.page-group-home #block-group-info, .logged-in.page-group-home #content, .l-two-column .action-menu li:first').addClass('current');
-
+  $('.not-logged-in.page-group-home #block-group-info, .logged-in.page-group-home #content, .l-two-column .action-menu li:first').addClass('current');
 
   $('.action-menu .tab').click(function(e){
 

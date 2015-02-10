@@ -28,8 +28,6 @@ $( window ).load(function() {
   // Universal selector for modal windows with external source
   $('.modal-inline').magnificPopup({
     type: 'inline',
-    midClick: true,
-    focus: '#name',
     // When elemened is focused, some mobile browsers in some cases zoom in
     // It looks not nice, so we disable it:
     callbacks: {
@@ -46,6 +44,9 @@ $( window ).load(function() {
       open: function() {
         $(window).trigger("load");
         $('.form-comment-message textarea').trigger('keyup');
+        if($(window).width() < 700) {
+          alignTop: true;
+        }
       }
     }
   });

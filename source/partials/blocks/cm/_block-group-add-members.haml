@@ -1,0 +1,16 @@
+#block-group-add-members.block.white-popup.mfp-hide
+  %i.block-icon.icon-bg-default.icon-user-add
+  %h2.block-title Add group members
+  .content
+    .form-item
+      %label Username
+      .form-description
+        Start typing the user's first or last name.
+      %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "", :placeholder => "Select some users"}
+      .autocomplete#tagsautocomplete
+        %ul
+          - 20.times do |num|
+            %li
+              = lorem.name
+    .form-actions.form-wrapper
+      %input{:type => "submit", :class => "button btn-primary", :value => "Add users"}

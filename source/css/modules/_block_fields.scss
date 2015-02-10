@@ -19,3 +19,13 @@
     width: 50%;
   }
 }
+
+.block .view-header .field {
+  display: inline-block;
+  margin-right: $def-mar;
+}
+
+.flexbox .page-manage-group-members .block .view-header {
+  display: flex;
+  justify-content: space-between;
+}

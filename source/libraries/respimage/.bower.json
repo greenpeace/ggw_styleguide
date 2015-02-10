@@ -1,0 +1,15 @@
+{
+  "name": "respimage",
+  "homepage": "https://github.com/aFarkas/respimage",
+  "version": "1.3.0",
+  "_release": "1.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.3.0",
+    "commit": "a0ed26df6eb18e0845230d1a6391eb8e7a5e78e6"
+  },
+  "_source": "git://github.com/aFarkas/respimage.git",
+  "_target": "~1.3.0",
+  "_originalSource": "respimage",
+  "_direct": true
+}

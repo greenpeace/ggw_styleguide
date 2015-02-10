@@ -36,6 +36,11 @@
   margin-right: .3em;
 }
 
+.action-bar-item > .form-text {
+  display: inline-block;
+  width: auto;
+}
+
 .action-bar .actions > label,
 .action-bar .columns > label,
 .action-bar .filter > label {

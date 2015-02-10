@@ -250,6 +250,14 @@
 
 }
 
+.no-sidebar .l-main-column {
+
+  @include breakpoint($desk) {
+    width: 100%;
+  }
+
+}
+
 @include breakpoint($desk) {
 
   .l-two-column .l-main-column,

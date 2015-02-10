@@ -11,12 +11,17 @@
   border: 1px solid $grey-l;
   background: $white;
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
+  max-height: 250px;
   cursor: default;
   overflow: auto;
   position: absolute;
   z-index: 100;
   display: none;
+
+  @include breakpoint($tab) {
+    max-width: 400px;
+  }
 
   li {
     padding: 0.5em;

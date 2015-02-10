@@ -122,12 +122,14 @@ $mfp-use-visuallyhidden:              false !default; // Hide content from brows
 }
 
 // Vertical centerer helper
-.mfp-container {
-  &:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+@include breakpoint($tab) {
+  .mfp-container {
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
   }
 }
 

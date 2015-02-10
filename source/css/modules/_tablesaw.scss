@@ -16,6 +16,12 @@
   }
 }
 
+@include breakpoint($desk) {
+  .no-sidebar .tablesaw {
+    width: 98%;
+  }
+}
+
 .tablesaw-fix-persist {
   table-layout: fixed;
 }

@@ -13,18 +13,32 @@ design_status: Work in progress
     %h1#page-title.block-title
       = current_page.data.title
     .content
-      %p table with items
+      %table.tablesaw{"data-mode" => "swipe"}
+        %thead
+          %tr
+            %th.views-field-image{"data-priority" => "persist"}
+            %th.views-field-title{"data-priority" => "persist"} Title
+            %th Amount
+            %th Condition
+            %th Description
 
-      = partial :"teasers/group-no-image"
-      = partial :"teasers/group-with-image"
-      = partial :"teasers/group-no-image"
-      = partial :"teasers/group-with-image"
-      = partial :"teasers/group-no-image"
-      = partial :"teasers/group-with-image"
+        %tbody
+          - 20.times do |num|
+            %tr
+              %td
+                %img{:alt => "Example of image.", :src => "/photos/blank.png", "data-src" => "/photos/75/nature1.jpg" }
+              %td
+                = lorem.words 2
+              %td
+                5
+              %td
+                As good as new
+              %td
+                = lorem.sentence
+
       .align-center
         %a.button{:href => "#"} show some more
 
 %aside.l-sidebar.sidebar
   .content
-    = partial :"blocks/find_groups"
     = partial :"blocks/lu/get_involved"

@@ -134,7 +134,7 @@
 
 // Specific width for Drupal columns
 // Title must be name + avatar
-@each $column, $width in (body: 200, title: 177, avatar: 77, name: 100, views-bulk-operations: 22, email: 200) {
+@each $column, $width in (body: 200, title: 177, avatar: 77, image: 77, name: 100, views-bulk-operations: 22, email: 200) {
 
   .tablesaw th.views-field-#{$column} {
     width: #{$width}px;

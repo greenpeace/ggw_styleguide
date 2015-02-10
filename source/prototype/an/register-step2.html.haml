@@ -19,23 +19,23 @@ design_status: Needs review
         .form-wrapper
           .form-item.field-name-field-user-first-name
             %label.form-label{:for => "edit-field-user-first-name-und-0-value"} First name
-            %input.form-text{:name => "field_user_first_name[und][0][value]", :type => "text", :value => ""}/
+            %input.form-text{:name => "field_user_first_name[und][0][value]", :type => "text", :value => "", :tabindex => "1"}/
           .form-item.field-name-field-user-last-name
             %label.form-label{:for => "edit-field-user-last-name-und-0-value"} Last name
-            %input.form-text{:name => "field_user_last_name[und][0][value]", :type => "text", :value => ""}/
+            %input.form-text{:name => "field_user_last_name[und][0][value]", :type => "text", :value => "", :tabindex => "2"}/
           .form-item.field-name-field-user-birthdate
             %label.form-label{:for => "edit-field-user-gender-und"}
               Gender
               %span.form-required{:title => "This field is required."} *
             .form-radios
               .form-type-radio
-                %input#male.form-radio{:name => "field_user_gender[und]", :type => "radio", :value => "male"}/
+                %input#male.form-radio{:name => "field_user_gender[und]", :type => "radio", :value => "male", :tabindex => "3"}/
                 %label.option{:for => "male"} Male
               .form-type-radio
-                %input#female.form-radio{:name => "field_user_gender[und]", :type => "radio", :value => "female"}/
+                %input#female.form-radio{:name => "field_user_gender[und]", :type => "radio", :value => "female", :tabindex => "4"}/
                 %label.option{:for => "female"} Female
               .form-type-radio
-                %input#irrelevant.form-radio{:name => "field_user_gender[und]", :type => "radio", :value => "irrelevant"}/
+                %input#irrelevant.form-radio{:name => "field_user_gender[und]", :type => "radio", :value => "irrelevant", :tabindex => "5"}/
                 %label.option{:for => "irrelevant"} Not relevant
           .form-item
             %label.form-label{:for => "edit-field-user-gender-und"}
@@ -43,7 +43,7 @@ design_status: Needs review
               %span.form-required{:title => "This fieldset is required."} *
             .date-padding.clearfix
               .form-item.form-item-field-user-birthdate-und-0-value-month
-                %select.form-select{:name => "field_user_birthdate[und][0][value][month]"}
+                %select.form-select{:name => "field_user_birthdate[und][0][value][month]", :tabindex => "6"}
                   %option{:value => ""}
                   %option{:value => "1"} Jan
                   %option{:value => "2"} Feb
@@ -58,7 +58,7 @@ design_status: Needs review
                   %option{:value => "11"} Nov
                   %option{:value => "12"} Dec
               .form-item.form-item-field-user-birthdate-und-0-value-day
-                %select.form-select{:name => "field_user_birthdate[und][0][value][day]"}
+                %select.form-select{:name => "field_user_birthdate[und][0][value][day]", :tabindex => "7"}
                   %option{:value => ""}
                   %option{:value => "1"} 1
                   %option{:value => "2"} 2
@@ -92,7 +92,7 @@ design_status: Needs review
                   %option{:value => "30"} 30
                   %option{:value => "31"} 31
               .form-item.form-item-field-user-birthdate-und-0-value-year
-                %select.form-select{:name => "field_user_birthdate[und][0][value][year]"}
+                %select.form-select{:name => "field_user_birthdate[und][0][value][year]", :tabindex => "8"}
                   %option{:value => ""}
                   %option{:value => "1924"} 1924
                   %option{:value => "1925"} 1925
@@ -190,9 +190,9 @@ design_status: Needs review
             %label.form-label
               Place of birth
               %span.form-required{:title => "This field is required."} *
-            %input.form-text{:name => "field_location[und][0][street]", :type => "text", :value => ""}/
+            %input.form-text{:name => "field_location[und][0][street]", :type => "text", :value => "", :tabindex => "9"}/
         .form-actions.form-wrapper
-          %input.button.pull-left{:type => "submit", :value => "Back to previous step"}/
-          %input.button.btn-primary.pull-right{:type => "submit", :value => "Next"}/
+          %input.button.pull-left{:type => "submit", :value => "Back to previous step", :tabindex => "11"}/
+          %input.button.btn-primary.pull-right{:type => "submit", :value => "Next", :tabindex => "10"}/
 %aside.l-sidebar.sidebar
   = partial :"blocks/an/save_planet2"

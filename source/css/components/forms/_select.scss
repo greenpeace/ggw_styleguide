@@ -21,6 +21,17 @@ select:-moz-focusring {
   background-color: $white;
   display:inline-block;
   height: 29px;
+  border: 1px solid $grey-l;
+  border-radius: 3px;
+
+  &:hover {
+    border-color: $grey-d;
+  }
+
+  &.focused,
+  &:active {
+    border: 1px solid $green1;
+  }
 
   // arrow style
   &:before {
@@ -63,17 +74,7 @@ select:-moz-focusring {
     -webkit-appearance: none;
     appearance: none;
     outline: none;
-    border: 1px solid $grey-l;
-
-    &:hover {
-      border-color: $grey-d;
-    }
-
-    &:focus,
-    &:active {
-      border: 1px solid $green1;
-    }
-
+    border: none;
   }
 }
 

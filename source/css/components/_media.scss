@@ -2,6 +2,10 @@ img, picture, media {
   max-width: 100%;
 }
 
+.no-js img.lazyload {
+  display: none;
+}
+
 article picture,
 article img,
 td img {
@@ -44,4 +48,25 @@ article img.nofloat {
   color: $grey-l;
   @include font-size($small);
   line-height: 1.35em;
+}
+
+.js .lazyload,
+.js .lazyloading {
+  opacity: 0;
+}
+
+.js .lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.js [data-expand].lazyload {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.js [data-expand].lazyloaded {
+  opacity: 1;
+  transition: all 700ms;
+  transform: scale(1);
 }

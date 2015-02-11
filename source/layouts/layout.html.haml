@@ -41,14 +41,19 @@
       = partial :"regions/header"
 
       .l-main.container#main
+
+        %noscript
+          .alert.alert-warning{:role => "alert"}
+            %strong Warning!
+            Your JavaScript seems to be disabled, this might affect your experience on Greenpeace Greenwire.
+
         = yield
 
       = partial :"nav/footer"
 
-    = javascript_include_tag  "lazysizes", :async => ""
-
     = javascript_include_tag  "theme"
 
+    = javascript_include_tag  "lazysizes"
 
     - if current_page.data.script == "editable"
       = javascript_include_tag  "x-editable"

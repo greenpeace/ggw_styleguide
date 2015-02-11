@@ -291,7 +291,6 @@
 
 .l-two-column {
 
-  #content,
   .l-main .block {
     clear: both;
     display: none;
@@ -311,6 +310,9 @@
 
 }
 
+.no-js .l-two-column .l-main .block {
+  display: block;
+}
 
 .hidden-mobile {
   display: none;

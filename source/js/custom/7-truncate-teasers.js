@@ -9,17 +9,27 @@ $(function() {
       lineHeight: 19
     });
 
-    $('.node-teaser .field-name-body').truncate({
-      lines: 2,
-      lineHeight: 21
-    });
+    // OLD
 
-    $('.node-teaser .node-title').each(function() {
-      if ($(this).height() > 19) {
-        $(this).nextAll('.field-name-body').addClass('body-ellipsis');
-        $(this).siblings('.field-group-format').children('.field-type-location').hide();
-      }
-    });
+   //$('.node-teaser .field-name-body').truncate({
+   //  lines: 2,
+   //  lineHeight: 21
+   //});
+
+    // NEW
+    if (!$('body').hasClass('page-who-is-who')) {
+      $('.node-teaser .field-name-body').truncate({
+        lines: 2,
+        lineHeight: 21
+      });
+
+      $('.node-teaser .node-title').each(function() {
+        if ($(this).height() > 19) {
+          $(this).nextAll('.field-name-body').addClass('body-ellipsis');
+          $(this).siblings('.field-group-format').children('.field-type-location').hide();
+        }
+      });
+    }
 
   }
 

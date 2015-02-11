@@ -1,0 +1,13 @@
+.alert {
+  padding: $def-mar;
+  margin: $def-mar $def-mar-half;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.alert-warning {
+  color: #843534;
+  background-color: lighten($error, 30%);
+  border-color: $error;
+}

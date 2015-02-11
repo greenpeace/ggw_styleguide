@@ -58,13 +58,18 @@
 
   }
 
-  picture {
+  img {
     position: relative;
     z-index: 3;
     position: absolute;
     top: 0;
     left: 0;
     height: 60px;
+
+    @include breakpoint($tab) {
+      height: 90px;
+    }
+
   }
 
   .field-type-wrapper {
@@ -184,6 +189,14 @@
     }
   }
 
+}
+
+.page-who-is-who .node-teaser {
+  height: auto;
+
+  .field-name-body {
+    height: auto;
+  }
 }
 
 .node-teaser-notification {

@@ -1,12 +1,9 @@
 .views-row
-  %article.node-teaser-user.node-teaser
+  %article.node-teaser-user.node-teaser.lazyload{"data-expand" => "0"}
     .field-type-image
-      %picture
-        /[if IE 9] <video style="display: none;">
-        %source{:media => "(min-width: 48em)", :srcset => "/photos/130/people4.jpg, /photos/260/people5.jpg 1.5x"}
-        %source{:srcset => "/photos/180/people1.jpg 2x, /photos/90/people2.jpg 1x"}
-        /[if IE 9] </video>
-        %img{:alt => "Example of image.", :src => "/photos/blank.png", :srcset => "/photos/90/people3.jpg"}
+      %img.lazyload{:alt => "Example of image.", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-sizes" => "auto", "data-srcset" => "/photos/90/people3.jpg 90w, /photos/130/people4.jpg 130w, /photos/180/people1.jpg 180w, /photos/260/people5.jpg 260w"}/
+      %noscript
+        %img{:src => "/photos/90/people3.jpg", "srcset" => "/photos/90/people3.jpg 90w, /photos/130/people4.jpg 130w, /photos/180/people1.jpg 180w, /photos/260/people5.jpg 260w"}/
     .field-type-wrapper
       %h2.node-title
         %a{:href => "#"}

@@ -163,7 +163,7 @@ primary_lu:
     sub:
       -
         name: "Getting started"
-        url: "/prototype/lu/about.html"
+        url: "/prototype/lu/getting-started.html"
       -
         name: "FAQ"
         url: "/prototype/lu/faq.html"

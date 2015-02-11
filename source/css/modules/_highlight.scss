@@ -11,6 +11,7 @@
 
 }
 
+.no-sidebar .l-main .region-highlight .block,
 .l-has-sidebar .l-main .region-highlight .block {
   @include breakpoint($tab) {
     padding: 4px;

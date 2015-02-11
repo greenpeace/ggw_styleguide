@@ -83,3 +83,7 @@
     @include element-hidden;
   }
 }
+
+.no-js .action-menu {
+  display: none;
+}

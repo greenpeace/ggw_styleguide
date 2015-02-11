@@ -4,9 +4,6 @@
   .tabs {
     margin: $def-mar-half 0;
     list-style: none outside none;
-    border-bottom: 1px solid $background;
-    overflow: hidden;
-    height: 29px;
     position: relative;
 
     li {
@@ -81,12 +78,22 @@
     padding: .4em 1em;
   }
 
-
   .tabs-overflow {
-    display: inline-block;
-    position: absolute;
-    margin-top: -36px;
-
+    display: none;
   }
 
 }
+
+.js .tabwrapper .tabs {
+  border-bottom: 1px solid $background;
+  overflow: hidden;
+  height: 29px;
+}
+
+.js .tabwrapper .tabs-overflow {
+  display: inline-block;
+  position: absolute;
+  margin-top: -36px;
+}
+
+

@@ -47,7 +47,9 @@ loadvideo: youtube
 
         .submitted.submitted-extended
           .submitted-image
-            %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+            %img.lazyload{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people1.jpg"}/
+            %noscript
+              %img{:alt => "Name of the author.", :src => "/photos/75/people1.jpg"}/
 
           .submitted-info
             %div

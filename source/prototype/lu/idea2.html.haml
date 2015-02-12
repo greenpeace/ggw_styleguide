@@ -65,7 +65,9 @@ design_status: Needs review
 
         .submitted.submitted-extended
           .submitted-image
-            %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+            %img.lazyload{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+            %noscript
+              %img{:alt => "Name of the author.", :src => "/photos/75/people5.jpg"}/
           .submitted-info
             %div
               %a{:href => "#"} Idea

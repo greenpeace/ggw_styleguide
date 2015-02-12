@@ -54,7 +54,9 @@ design_status: Needs review
                   %td
                     %input.form-checkbox{:type => "checkbox"}
                   %td
-                    %img{:alt => "Example of an image", :src => "/photos/blank.png", "data-src" => "/photos/75/people3.jpg"}
+                    %img.lazyload{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people3.jpg"}/
+                    %noscript
+                      %img{:alt => "Name of the author.", :src => "/photos/75/people3.jpg"}/
                   %td
                     = lorem.name
                   %td

@@ -26,11 +26,11 @@ design_status: Work in progress
           - 20.times do |num|
             %tr
               %td
-                %img{:alt => "Example of image.", :src => "/photos/blank.png", "data-src" => "/photos/75/nature1.jpg" }
+                %img.lazyload{:alt => "Example of image.", :src => "/photos/blank.png", "data-src" => "/photos/75/nature1.jpg" }
               %td
                 = lorem.words 2
               %td
-                5
+                = rand(100)
               %td
                 As good as new
               %td

@@ -2,7 +2,7 @@
 title: Join us to festival Mundial
 body_class: not-front logged-in page-type-event l-has-sidebar node-full
 user_role: lu
-script: leaflet
+mapsds: event
 design_status: Work in progress
 ---
 
@@ -70,7 +70,7 @@ design_status: Work in progress
             .event-actions
               %button.js-show-sidebar.button.btn-block.btn-primary.btn-l Enroll for this event
 
-          #desktopmap
+          #eventmap-desk.map
 
           %p
             %strong Festival Mundial
@@ -88,7 +88,7 @@ design_status: Work in progress
               = lorem.sentence
             %li
               = lorem.sentence
-          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://placeimg.com/300/200/nature/5/image"}
+          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "/photos/nature10.jpg"}/
           %p
             = lorem.sentence
             %strong without
@@ -98,7 +98,9 @@ design_status: Work in progress
 
         .submitted.submitted-extended
           .submitted-image
-            %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+            %img.lazyload{:alt => "Name of the author.", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/people5.jpg"}/
+            %noscript
+              %img{:src => "/photos/75/people5.jpg", :alt => "Name of the author."}/
           .submitted-info
             %div
               %a{:href => "./events.html"} Event
@@ -119,3 +121,30 @@ design_status: Work in progress
   = partial :"blocks/lu/enrollments"
   = partial :"blocks/lu/subscribe"
   = partial :"blocks/go_to_group"
+
+
+= javascript_include_tag "leaflet"
+
+:javascript
+
+  var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+  }),
+  latlng = L.latLng(-19.6404366, 23.5888797);
+
+  var map = L.map('eventmap-desk', {center: latlng, zoom: 7, scrollWheelZoom: false, layers: [tiles]});
+
+  var eventIcon = L.icon({
+    iconUrl: '/images/marker-events.png',
+    iconRetinaUrl: '/images/marker-events@2x.png',
+    shadowUrl: '/images/marker-shadow.png',
+    shadowRetinaUrl: '/images/marker-shadow@2x.png',
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [41, 41], // size of the shadow
+    iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
+    shadowAnchor: [13, 41],  // the same for the shadow
+    popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
+  });
+
+  L.marker([-19.6404366, 23.5888797], {icon: eventIcon}).bindPopup('<h2 class="node-title"><a href="#">Join us to the Okanvango Delta</a></h2><div class="field field-name-field-event-date"><span class="date-display-single">21 September, 2015 - 5:57</span></div>').addTo(map);

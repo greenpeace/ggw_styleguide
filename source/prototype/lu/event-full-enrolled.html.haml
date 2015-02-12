@@ -2,7 +2,7 @@
 title: Join us to festival Mundial
 body_class: not-front logged-in page-type-event l-has-sidebar node-full
 user_role: lu
-script: leaflet
+mapsds: event
 design_status: Work progress
 ---
 
@@ -47,7 +47,7 @@ design_status: Work progress
               .field.field-name-field-event-location
                 .field-label Location:
                 %div
-                  %a.js-show-mobile-map{:href => "#"}
+                  %a.popup-maps{:href => "./event_map_single.html"}
                     %span Somewhere down town
                     %span Mainstreet 234
                     %span London
@@ -69,13 +69,14 @@ design_status: Work progress
                 %div
                   %span 36 persons are going
 
-          #desktopmap
+          #eventmap-desk.map
 
           %p
             %strong Festival Mundial
 
           %p
             = lorem.paragraph
+          %img.field-type-image.pull-right{:alt => "Example of image.", :src => "/photos/nature10.jpg"}/
           %p
             = lorem.paragraph
           %p
@@ -87,29 +88,28 @@ design_status: Work progress
               = lorem.sentence
             %li
               = lorem.sentence
-          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://lorempixel.  com/100/100/nature/5/image"}/
           %p
             = lorem.sentence
             %strong without
             = lorem.sentence
 
-      = partial :"blocks/tags"
+        = partial :"blocks/tags"
 
-      .submitted.submitted-extended
-        .submitted-image
-          %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
-        .submitted-info
-          %div
-            %a{:href => "./events.html"} Event
-            by
-            = lorem.name
-          .submitted-bio
-            %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
-          .submitted-all-reference
-            %a{:href => "#"}>
-              All events by
+        .submitted.submitted-extended
+          .submitted-image
+            %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+          .submitted-info
+            %div
+              %a{:href => "./events.html"} Event
+              by
               = lorem.name
-              \.
+            .submitted-bio
+              %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
+            .submitted-all-reference
+              %a{:href => "#"}>
+                All events by
+                = lorem.name
+                \.
 
   = partial :"blocks/lu/comments"
 
@@ -118,3 +118,31 @@ design_status: Work progress
   = partial :"blocks/lu/enrolled"
   = partial :"blocks/lu/enrollments"
   = partial :"blocks/lu/subscribe"
+
+
+= javascript_include_tag "leaflet"
+
+:javascript
+
+  var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+  }),
+  latlng = L.latLng(-19.6404366, 23.5888797);
+
+  var map = L.map('eventmap-desk', {center: latlng, zoom: 7, scrollWheelZoom: false, layers: [tiles]});
+
+  var eventIcon = L.icon({
+    iconUrl: '/images/marker-events.png',
+    iconRetinaUrl: '/images/marker-events@2x.png',
+    shadowUrl: '/images/marker-shadow.png',
+    shadowRetinaUrl: '/images/marker-shadow@2x.png',
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [41, 41], // size of the shadow
+    iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
+    shadowAnchor: [13, 41],  // the same for the shadow
+    popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
+  });
+
+  L.marker([-19.6404366, 23.5888797], {icon: eventIcon}).bindPopup('<h2 class="node-title"><a href="#">Join us to the Okanvango Delta</a></h2><div class="field field-name-field-event-date"><span class="date-display-single">21 September, 2015 - 5:57</span></div>').addTo(map);
+

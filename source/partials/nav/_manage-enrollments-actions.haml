@@ -1,0 +1,28 @@
+%form
+
+  .action-bar
+
+    .form-wrapper.row
+
+      .form-item.action-bar-item.name
+        %label Name
+        %input.form-text{:type => "text", :value => ""}
+
+    .form-actions.form-wrapper.row
+      %input{:type => "submit", :class => "button", :value => "Apply"}
+
+    .form-wrapper.row.action-bar-item.actions
+      %label Actions
+      %a.button.results-page{"data-dropdown" => "#actions", :href => "#", :title => "Click to     show options"}
+        %span Actions
+      #actions.dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right
+        %ul.dropdown-menu
+          %li
+            %a{:href => "#"} Export CSV
+          %li
+            %a{:href => "#"} Export XLS
+          %hr
+          %li
+            %a{:href => "#"} Send message
+          %li
+            %a{:href => "#"} Send email

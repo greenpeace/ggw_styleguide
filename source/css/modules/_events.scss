@@ -3,39 +3,22 @@
   margin: $def-mar 0;
 }
 
+.page-type-event .block .field {
+  margin: 0;
+}
+
 @include breakpoint($tab) {
 
-  .view-mode-full {
+  .block .view-mode-full {
 
     .field-group-wrapper {
       background: $background;
-      padding:  $def-mar 0 $def-mar $def-mar;
       overflow: hidden;
       margin-bottom: $def-mar;
 
       figure {
         margin: 0;
       }
-    }
-
-    .page-type-event & {
-
-      figure,
-      .field-type-image {
-        float:left;
-        max-width: (60%);
-      }
-
-      figure .field-type-image {
-        float: none;
-        max-width: none;
-      }
-
-    }
-
-    .field-group-format {
-      overflow: hidden;
-      margin: 0;
     }
 
     .event-actions {
@@ -102,7 +85,7 @@
   }
 }
 
-#desktopmap {
+#eventmap-desk {
   display: none;
 
   @include breakpoint ($desk) {
@@ -110,43 +93,4 @@
     height: 300px;
     width: 100%;
   }
-}
-
-#mobilemap {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 50px;
-  bottom: 0;
-  z-index: 0;
-
-  @include breakpoint ($desk) {
-    display:none;
-  }
-}
-
-.map-close-button {
-  @extend %load-icon;
-  @extend %icon-cancel;
-  color: $base;
-  @include font-size(32px);
-  position: fixed;
-  top: 60px;
-  right: 10px;
-  z-index: -1;
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px 0 #999999;
-  padding: 5px 10px;
-
-  @include breakpoint ($desk) {
-    display:none;
-  }
-
-}
-
-.ontop {
-  z-index: 99 !important;
 }

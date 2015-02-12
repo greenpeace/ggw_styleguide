@@ -50,11 +50,19 @@
     .field.field-group-primary-contact
       .field-label Primary contact
       .field-item
-        = lorem.name
+        - if current_page.data.user_role == "lu"
+          %a{:href => "./profile.html"}
+            = lorem.name
+        - else
+          = lorem.name
 
     .field.field-group-secondary-contact
       .field-label Secondary contact
       .field-item
-        = lorem.name
+        - if current_page.data.user_role == "lu"
+          %a{:href => "./profile.html"}
+            = lorem.name
+        - else
+          = lorem.name
 
 = partial :"blocks/lu/confirm-group-leave"

@@ -77,11 +77,6 @@ article {
   .field {
     padding: $def-mar-half $def-mar;
     @include font-size($small);
-
-    a {
-      @include font-size($small);
-    }
-
   }
 
   .field-label {
@@ -94,7 +89,6 @@ article {
     margin-left: -1.25em;;
     position: absolute;
     width: 1em;
-    line-height: 1em;
   }
 
 

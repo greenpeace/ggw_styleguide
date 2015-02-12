@@ -32,8 +32,9 @@
       %article.comment
         .avatar-holder
           %a{:href => "profile.html", :title => "View user profile"}
-            %picture
-              %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/120/people1.jpg 2x"}/
+            %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
+            %noscript
+              %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
         .comment-holder
           .comment-head
             %a.comment-author{:href => "#", :title => "View profile"}
@@ -48,9 +49,10 @@
               %a.comment-actionlink.modal-inline{:href => "#delete-comment"} delete
       %article.comment
         .avatar-holder
-          %a{:href => "profile.html", :title => "View user profile"}
-            %picture
-              %img{:alt => "Chico Konink", :src => "/photos/60/people2.jpg", :srcset => "/photos/120/people2.jpg 2x"}/
+          %a{:href => "./profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people2.jpg", :srcset => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
         .comment-holder
           .comment-head
             %a.comment-author{:href => "#", :title => "View profile"}
@@ -61,7 +63,9 @@
             )
           .comment-body
             = lorem.paragraph
-            %img{:alt => "Chico Konink", :src => "/photos/nature7.jpg", :srcset => "/photos/nature8.jpg 2x"}/
+            %img.lazyload{:alt => "Chico Konink", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/nature7.jpg 1x, /photos/nature8.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/nature7.jpg", :srcset => "/photos/nature7.jpg 1x, /photos/nature8.jpg 2x"}/
           .comment-footer
             %span.comment-timestamp 30 minutes ago
             %span.comment-actions
@@ -71,11 +75,12 @@
       %article.comment.comment-reply
         .avatar-holder
           %a{:href => "profile.html", :title => "View user profile"}
-            %picture
-              %img{:alt => "Chico Konink", :src => "/photos/60/people3.jpg", :srcset => "/photos/120/people3.jpg 2x"}/
+            %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people3.jpg 1x, /photos/120/people3.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people3.jpg", :srcset => "/photos/60/people3.jpg 1x, /photos/120/people3.jpg 2x"}/
         .comment-holder
           .comment-head
-            %a.comment-author{:href => "#", :title => "View profile"}
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
               = lorem.name
             (
             %a{:href => "./who-is-who.html"}><
@@ -90,11 +95,12 @@
       %article.comment.comment-reply
         .avatar-holder
           %a{:href => "profile.html", :title => "View user profile"}
-            %picture
-              %img{:alt => "Chico Konink", :src => "/photos/60/people7.jpg", :srcset => "/photos/120/people7.jpg 2x"}/
+            %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people7.jpg 1x, /photos/120/people7.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people7.jpg", :srcset => "/photos/60/people7.jpg 1x, /photos/120/people7.jpg 2x"}/
         .comment-holder
           .comment-head
-            %a.comment-author{:href => "#", :title => "View profile"}
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
               = lorem.name
           .comment-body
             I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
@@ -106,29 +112,31 @@
               %a.comment-actionlink.modal-inline{:href => "#delete-comment"} delete
       %article.comment
         .avatar-holder
-          %a{:href => "profile.html", :title => "View user profile"}
-            %picture
-              %img{:alt => "Erben de Bok", :src => "/photos/60/people5.jpg", :srcset => "/photos/120/people5.jpg 2x"}/
+          %a{:href => "./profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people5.jpg 1x, /photos/120/people5.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people5.jpg", :srcset => "/photos/60/people5.jpg 1x, /photos/120/people5.jpg 2x"}/
         .comment-holder
           .comment-head
-            %a.comment-author{:href => "#", :title => "View profile"}
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
               Erben de Bok
           .comment-body
             “What do you think
             = succeed "?" do
-              %a{:href => "#", :title => "View Erben de Bok's profile"} Erben de Bok
+              %a{:href => "./profile.html", :title => "View Erben de Bok's profile"} Erben de Bok
           .comment-footer
             %span.comment-timestamp 12 May 2014 at 13:56
             %span.comment-actions
               %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
       %article.comment
         .avatar-holder
-          %a{:href => "#", :title => "View user profile"}
-            %picture
-              %img{:alt => "Erben de Bok", :src => "/photos/60/people6.jpg", :srcset => "/photos/120/people6.jpg 2x"}/
+          %a{:href => "./profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people6.jpg 1x, /photos/120/people6.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people6.jpg", :srcset => "/photos/60/people6.jpg 1x, /photos/120/people6.jpg 2x"}/
         .comment-holder
           .comment-head
-            %a.comment-author{:href => "profile.html", :title => "View profile"}
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
               Johnny with his extremelonglastname
           .comment-body
             “I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her rehabilitation exercises after each surgery. “People I have known who had [replacement surgery] and who didn’t do the therapy, it doesn’t work out for them.”
@@ -139,8 +147,9 @@
       %article.comment
         .avatar-holder
           %a{:href => "profile.html", :title => "View user profile"}
-            %picture
-              %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/120/people1.jpg 2x"}/
+            %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
+            %noscript
+              %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
         .comment-holder
           .comment-head
             %a.comment-author{:href => "#", :title => "View profile"}
@@ -148,16 +157,17 @@
           .comment-body
             I agree.
           .comment-footer
-            %span.comment-timestamp 15 Oct 2013 at 05:26
+            %span.comment-timestamp 5 minutes ago
             %span.comment-actions
               %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
               %a.comment-actionlink.modal-inline{:href => "#edit-comment"} edit
               %a.comment-actionlink.modal-inline{:href => "#delete-comment"} delete
       %article.comment
         .avatar-holder
-          %a{:href => "profile.html", :title => "View user profile"}
-            %picture
-              %img{:alt => "Chico Konink", :src => "/photos/60/people2.jpg", :srcset => "/photos/120/people2.jpg 2x"}/
+          %a{:href => "./profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people2.jpg", :srcset => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
         .comment-holder
           .comment-head
             %a.comment-author{:href => "#", :title => "View profile"}
@@ -168,19 +178,24 @@
             )
           .comment-body
             = lorem.paragraph
-            %img{:alt => "Chico Konink", :src => "/photos/nature7.jpg", :srcset => "/photos/nature8.jpg 2x"}/
+            %img.lazyload{:alt => "Chico Konink", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/nature7.jpg 1x, /photos/nature8.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/nature7.jpg", :srcset => "/photos/nature7.jpg 1x, /photos/nature8.jpg 2x"}/
           .comment-footer
-            %span.comment-timestamp 14 Oct 2013 at 05:20
+            %span.comment-timestamp 30 minutes ago
             %span.comment-actions
               %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+              %a.comment-actionlink.modal-inline{:href => "#edit-comment"} edit
+              %a.comment-actionlink.modal-inline{:href => "#delete-comment"} delete
       %article.comment.comment-reply
         .avatar-holder
           %a{:href => "profile.html", :title => "View user profile"}
-            %picture
-              %img{:alt => "Chico Konink", :src => "/photos/60/people3.jpg", :srcset => "/photos/120/people3.jpg 2x"}/
+            %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people3.jpg 1x, /photos/120/people3.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people3.jpg", :srcset => "/photos/60/people3.jpg 1x, /photos/120/people3.jpg 2x"}/
         .comment-holder
           .comment-head
-            %a.comment-author{:href => "#", :title => "View profile"}
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
               = lorem.name
             (
             %a{:href => "./who-is-who.html"}><
@@ -189,24 +204,26 @@
           .comment-body
             I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
           .comment-footer
-            %span.comment-timestamp 22 Aug 2013 at 15:40
+            %span.comment-timestamp 1 hour ago
             %span.comment-actions
               %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
       %article.comment.comment-reply
         .avatar-holder
           %a{:href => "profile.html", :title => "View user profile"}
-            %picture
-              %img{:alt => "Chico Konink", :src => "/photos/60/people7.jpg", :srcset => "/photos/120/people7.jpg 2x"}/
+            %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people7.jpg 1x, /photos/120/people7.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people7.jpg", :srcset => "/photos/60/people7.jpg 1x, /photos/120/people7.jpg 2x"}/
         .comment-holder
           .comment-head
-            %a.comment-author{:href => "#", :title => "View profile"}
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
               = lorem.name
           .comment-body
             I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
           .comment-footer
-            %span.comment-timestamp 01 Jun 2013 at 13:55
+            %span.comment-timestamp 2 hours ago
             %span.comment-actions
               %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+
 
     - if current_page.data.front == "frontpage" || current_page.data.joined == "joined"
       %hr

@@ -31,7 +31,7 @@ activate :syntax
 # Page options, layouts, aliases and proxies
 ###
 
-#page "/design-elements/*", :layout => "styleguide"
+page "*/event_map_single.html", :layout => false
 
 # Per-page layout changes:
 #
@@ -111,6 +111,9 @@ configure :build do
 
   # Minify Javascript on build
   activate :minify_javascript, :inline => true, compressor: Uglifier.new(:comments => :none, mangle: false)
+
+
+  ignore 'libraries/*'
 
   activate :gzip
 

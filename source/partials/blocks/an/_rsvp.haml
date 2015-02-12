@@ -7,7 +7,7 @@
         Already a Greenwire member?
         =nav_link 'Log in', data.nav.secondary_an.first['url']
       %p Not a member? RSVP below
-      .form-item.form-type-textfield
+      .form-item.form-type-textfield{:action => "./event-full.html", :method => "get"}
         %label{:for => "edit-firstname"}
           First name:
           %span.form-required{:title => "This field is required."} *
@@ -43,4 +43,12 @@
         .form-textarea-wrapper.resizable
           %textarea#edit-message.form-textarea{:tabindex => "1"}
       .form-actions
-        %input.button.btn-primary{:type => "submit", :value => "Save"}/
+        %input#open-confirm-rsvp.button.btn-primary{:type => "submit", :value => "Save"}/
+
+#confirm-rsvp.block.white-popup.mfp-hide
+  %i.block-icon.icon-login.icon-bg-action
+  %h2.block-title Please confirm your enrollment
+
+  .content
+    %p
+      Thank you for your subscription. We have sent you an e-mail with a confirmation link. Please click on the link in the e-mail, so we can keep you updated must anything change.

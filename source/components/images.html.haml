@@ -13,7 +13,7 @@ design_status: Work in progress
     %h2.block-title Image fields
     .content
     :markdown
-      Wherever a user uploads an image in a seperate field, we process it as a responsive image with the `picture` element. This means each screensize might be served with a different image size. This will dramatically improve performance, since about 80% of the load are images.
+      Wherever a user uploads an image in a seperate field, we process it as a responsive image with the `srcset` attribute. This means each screen size might be served with a different image size. This will dramatically improve performance, since about 80% of the page load are images.
 
       For content images we are not able to use this technique at the moment. When an image is inserted via an editor we cannot separate the image from the rest of the content.
 

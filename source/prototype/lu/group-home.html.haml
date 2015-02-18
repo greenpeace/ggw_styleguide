@@ -1,5 +1,5 @@
 ---
-title: Group Home
+title: Beat(s Against) Coal
 body_class: not-front logged-in page-group-home l-two-column
 user_role: lu
 design_status: Work in progress
@@ -37,10 +37,11 @@ design_status: Work in progress
         %ul.dropdown-menu
 
 .l-main-column
+  = partial :"blocks/upcoming_events"
   = partial :"blocks/updates"
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/group-info"
-  = partial :"blocks/upcoming_events"
+  = partial :"blocks/group-members"
 
 = partial :"blocks/lu/confirm-group-subscription"

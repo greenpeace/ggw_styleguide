@@ -3,18 +3,6 @@
   %h2.block-title About
   .content
 
-    .field.field-group-join
-      - if current_page.data.joined != "joined"
-        .field-item
-          %p To find more about this group, join the conversation or contribute, you need to join...
-          - if current_page.data.user_role == "lu"
-            %a.button.btn-primary.modal-inline{:href => "#confirm-group-subscription"} Join group
-          - else
-            %a.button.btn-primary{:href => "/prototype/an/login.html"} Join group
-      - else
-        %a.button.modal-inline{:href => "#confirm-group-leave"} Leave this group
-
-
     .field-name-body
       %p
         = lorem.paragraph
@@ -64,5 +52,16 @@
             = lorem.name
         - else
           = lorem.name
+
+    .field.field-group-join
+      - if current_page.data.joined != "joined"
+        .field-item
+          %p To find more about this group, join the conversation or contribute, you need to join...
+          - if current_page.data.user_role == "lu"
+            %a.button.btn-primary.modal-inline{:href => "#confirm-group-subscription"} Join group
+          - else
+            %a.button.btn-primary{:href => "/prototype/an/login.html"} Join group
+      - else
+        %a.button.modal-inline{:href => "#confirm-group-leave"} Leave this group
 
 = partial :"blocks/lu/confirm-group-leave"

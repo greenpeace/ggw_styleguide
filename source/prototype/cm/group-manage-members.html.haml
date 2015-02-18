@@ -1,13 +1,13 @@
 ---
-title: Manage group members
-body_class: not-front logged-in page-manage-group-members no-sidebar is-content-manager
+title: Manage members of Beat(s against) Coal
+body_class: not-front logged-in page-manage-group-members l-has-sidebar
 user_role: cm
 design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
 
   .block
 
@@ -70,3 +70,13 @@ design_status: Needs review
                     = lorem.sentence
           .align-center
             %a.button{:href => "#"} show some more
+
+%aside.l-sidebar.sidebar
+  .block.hidden-mobile
+    %i.block-icon.icon-bg-default.icon-adjust
+    %h2.block-title
+      Filter
+    .content
+      %form
+        = partial :"blocks/cm/manage-group-filters"
+        = partial :"blocks/search_filters/form-action"

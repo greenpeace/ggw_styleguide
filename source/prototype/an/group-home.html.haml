@@ -1,5 +1,5 @@
 ---
-title: Group Home
+title: Greenwire London
 body_class: not-front not-logged-in page-group-home l-two-column
 user_role: an
 design_status: Work in progress
@@ -37,8 +37,10 @@ design_status: Work in progress
         %ul.dropdown-menu
 
 .l-main-column
+  = partial :"blocks/upcoming_events"
   = partial :"blocks/updates"
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/group-info"
-  = partial :"blocks/upcoming_events"
+  = partial :"blocks/group-members"
+

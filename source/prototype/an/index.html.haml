@@ -33,6 +33,7 @@ loadvideo: youtube
         %ul.dropdown-menu
 
 .l-main-column
+  = partial :"blocks/upcoming_events"
   = partial :"blocks/updates"
 
 %aside.l-sidebar.sidebar
@@ -42,8 +43,6 @@ loadvideo: youtube
       %p Welcome to Greenpeace Greenwire where people like you connect with other volunteers, activists and groups working on environmental campaigns all across the country.  This is your meeting place to start groups, host events, run campaigns, share photos,videos, blogs and join with other interested activists eager to help.
       %a.button.btn-primary{:href => "#"} Get wired!
 
-  = partial :"blocks/upcoming_events"
-
   = partial :"blocks/volunteer_spotlight"
-
   = partial :"blocks/an/members_platform"
+  = partial :"blocks/random-image"

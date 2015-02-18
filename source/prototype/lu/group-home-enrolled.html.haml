@@ -13,7 +13,7 @@ joined: joined
     =image_tag("/photos/group_public_large.jpg")
     %p
       %span Beat(s Against) Coal
-    %button.button.btn-disabled.btn-l You are a member of this group
+    %a.button.btn-l.modal-inline{:href => "#confirm-group-leave"} You are a member of this group
 
 .action-menu
   %ul.tabs
@@ -46,8 +46,8 @@ joined: joined
         %ul.dropdown-menu
 
 .l-main-column
-  = partial :"blocks/updates"
   = partial :"blocks/upcoming_events"
+  = partial :"blocks/updates"
   = partial :"blocks/lu/get_involved"
   = partial :"blocks/lu/group-members"
 

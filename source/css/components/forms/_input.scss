@@ -26,6 +26,10 @@ textarea {
 
 }
 
+.date-padding {
+  line-height: 100%;
+}
+
 // 1) fix for ios7 heights on date inputs
 // 2) make sure the text doesn't continue over the icon, if there is an icon
 input[type=date] {

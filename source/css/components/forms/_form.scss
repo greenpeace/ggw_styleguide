@@ -74,10 +74,15 @@ label {
 }
 
 .form-description {
-  margin-bottom: $def-mar-half;
   font-size: $small;
   color: $grey-d;
   line-height: 1.2em;
+}
+
+.date-padding + .form-description,
+.form-text + .form-description,
+.form-description + .form-text {
+  margin-top: $def-mar-half;
 }
 
 

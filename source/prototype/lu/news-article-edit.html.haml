@@ -3,6 +3,7 @@ title: My news article example
 body_class: not-front logged-in page-type-news l-has-sidebar node-full
 user_role: lu
 script: editable
+editable: news
 design_status: Needs review
 ---
 
@@ -15,6 +16,13 @@ design_status: Needs review
       = lorem.words 10
     .content
       %article.view-mode-full
+        .contextual-links-wrapper
+          %ul.contextual-links
+            %li.node-edit.first
+              %a{:href => "#"} Edit
+            %li.node-delete.last
+              %a{:href => "#"} Delete
+
         .submitted
           %a.type.news{:href => "./news.html"} News
           by
@@ -29,7 +37,7 @@ design_status: Needs review
 
         = partial :"images/article-image"
 
-        .field-name-body
+        #editor1.field-name-body{:contenteditable => "true"}
           %p
             = lorem.paragraph
           %p
@@ -70,7 +78,7 @@ design_status: Needs review
 
         .submitted.submitted-extended
           .submitted-image
-            %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+            %img.lazyload{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
           .submitted-info
             %div
               %a{:href => "./news.html"} News

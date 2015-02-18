@@ -1,0 +1,45 @@
+:javascript
+  CKEDITOR.disableAutoInline = true;
+    CKEDITOR.inline( 'editor1', {
+      extraPlugins: 'sourcedialog'
+    } );
+  /*$(document).ready(function() {
+    $.fn.editableform.template =
+    '<form class="form-wrapper row editableform"><div class="control-group"><div><div class="editable-input"></div><div class="form-actions row editable-buttons"></div></div><div class="editable-error-block"></div></div></form>';
+    $.fn.editableform.buttons ='<button type="submit" class="button btn-primary editable-submit"><i class="icon-check"></i></button><button type="button" class="button editable-cancel"><i class="icon-cancel"></i></button>';
+    $.fn.editable.defaults.mode = 'popup';
+    $('#page-title').editable({
+        type: 'text',
+        url: '/post',
+        pk: 1,
+        inputclass: 'form-text',
+        title: 'Enter a title',
+        ajaxOptions: {
+            dataType: 'json'
+        },
+        placement: 'bottom',
+        success: function(response, newValue) {
+            if(!response) {
+                return "Unknown error!";
+            }
+
+            if(response.success === false) {
+                 return response.msg;
+            }
+        }
+    });
+
+    //ajax emulation
+    $.mockjax({
+        url: '/post',
+        responseTime: 200,
+        response: function(settings) {
+            if(settings.data.value) {
+                this.responseText = '{"success": true}';
+            } else {
+                this.responseText = '{"success": false, "msg": "required"}';
+            }
+        }
+    });
+  });
+*/

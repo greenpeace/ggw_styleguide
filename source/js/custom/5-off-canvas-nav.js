@@ -129,10 +129,14 @@ $(function() {
       if (st > lastScrollTop && st > navbarHeight){
         // Scroll Down
         $('.l-branding-header').removeClass('nav-down').addClass('nav-up');
+        $('.action-menu').addClass('stick-to-top');
+        $('.l-main').addClass('with-action-bar');
       } else {
         // Scroll Up
         if(st + $(window).height() < $(document).height()) {
           $('.l-branding-header').removeClass('nav-up').addClass('nav-down');
+          $('.action-menu').removeClass('stick-to-top');
+          $('.l-main').removeClass('with-action-bar');
         }
       }
 

@@ -112,6 +112,11 @@
     transform: translate3d(265px, 0px, 0px);
   }
 
+  &.primary-nav .action-menu {
+    transform: translate3d(266px, 50px, 0px);
+    top:0;
+  }
+
   // push the header 1px more so the vertical border continues along it
   &.primary-nav .l-branding-header{
     transform: translate3d(266px, 0px, 0px);
@@ -119,6 +124,11 @@
 
   &.secondary-nav .l-main {
     transform: translate3d(-265px, 0px, 0px);
+  }
+
+  &.secondary-nav .action-menu {
+    transform: translate3d(-266px, 50px, 0px);
+    top:0;
   }
 
   &.secondary-nav .l-branding-header{

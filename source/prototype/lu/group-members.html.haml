@@ -4,13 +4,23 @@ body_class: not-front logged-in page-group-members l-has-sidebar
 user_role: lu
 search_page: members
 design_status: Work in progress
+action_menu:
+  -
+    id: "#content"
+    label: "Group members"
+    icon: "users"
+  -
+    id: "#block-filter-members"
+    label: "Filters members"
+    icon: "adjust"
 ---
+
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
+  #content.block.current
 
-  .block
 
     %i.block-icon.icon-bg-group.icon-users
     %h1.block-title#page-title
@@ -38,7 +48,7 @@ design_status: Work in progress
 
 
 %aside.l-sidebar.sidebar
-  .block
+  .block#block-filter-members
     %i.block-icon.icon-bg-default.icon-adjust
     %h2.block-title Filter
     .content

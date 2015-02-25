@@ -38,6 +38,9 @@
             %a#secondary-menu-show.nav-btn.icon-user{"data-nav" => "js-nav2", :href => "#secondary-nav"}
               %span.element-invisible Show secondary navigation
 
+      - if current_page.data.action_menu
+        = partial :"nav/action-menu"
+
       = partial :"regions/header"
 
       .l-main.container#main

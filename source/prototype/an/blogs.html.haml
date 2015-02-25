@@ -3,12 +3,25 @@ title: Blogs
 body_class: not-front not-logged-in page-blogs l-has-sidebar
 user_role: an
 design_status: Needs review
+action_menu:
+  -
+    id: "#content"
+    label: "Blogs"
+    icon: "blog"
+  -
+    id: "#block-find-blogs"
+    label: "Find blogs"
+    icon: "search"
+  -
+    id: "#create-account"
+    label: "Create account"
+    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .block.main-content
+.l-main-column
+  #content.block.current
     %i.block-icon.icon-bg-news-media.icon-blog
     %h1#page-title.block-title
       = current_page.data.title

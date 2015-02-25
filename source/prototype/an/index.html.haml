@@ -4,33 +4,24 @@ body_class: front not-logged-in page-home l-two-column
 user_role: an
 design_status: Work in progress
 loadvideo: youtube
+action_menu:
+  -
+    id: "#upcoming-events"
+    label: "Events"
+    icon: "event"
+  -
+    id: "#welcome"
+    label: "Welcome"
+    icon: "info"
+  -
+    id: "#content"
+    label: "Updates"
+    icon: "news"
 ---
 
 = partial :"blocks/breadcrumbs"
 
 = partial :"blocks/slider"
-
-.action-menu
-  %ul.tabs
-    %li
-      %a.tab{:href => "#upcoming-events"}
-        %i.icon.icon-event
-        Events
-    %li
-      %a.tab{:href => "#welcome"}
-        %i.icon.icon-info
-        Welcome
-    %li
-      %a.tab{:href => "#content"}
-        %i.icon.icon-news
-        Updates
-  %ul.tabs-overflow
-    %li
-      %a.tab.tab-overflow-trigger{:href => "#", "data-dropdown" => "#action-menu-tabs"}
-        more
-        %i.icon-down-mini
-      .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#action-menu-tabs
-        %ul.dropdown-menu
 
 .l-main-column
   = partial :"blocks/upcoming_events"

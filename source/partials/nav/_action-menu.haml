@@ -1,0 +1,15 @@
+.action-menu
+  %ul.tabs
+    - for item in current_page.data.action_menu
+      %li
+        %a.tab{:href => "#{item.id}"}
+          %i.icon{:class => "icon-#{item.icon}"}
+          #{item.label}
+  %ul.tabs-overflow
+    %li
+      %a.tab-overflow-trigger{:href => "#", "data-dropdown" => "#action-menu-tabs"}
+        more
+        %i.icon-down-mini
+      .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#action-menu-tabs
+        %ul.dropdown-menu
+

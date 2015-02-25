@@ -3,13 +3,22 @@ title: Login
 body_class: not-front not-logged-in page-login l-has-sidebar
 user_role: an
 design_status: Needs review
+action_menu:
+  -
+    id: "#content"
+    label: "Login form"
+    icon: "login"
+  -
+    id: "#create-account"
+    label: "Create account"
+    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
 
-  .block
+  #content.block.current
 
     %i.block-icon.icon-bg-user.icon-login
     %h1.block-title#page-title

@@ -5,60 +5,65 @@ $(function() {
   // This script creates a dropdown of the action menu, when there are more then 2 buttons.
   function overflowDropdown() {
 
-    var menuWrapper = $('.action-menu');
+    if ( ($('.action-menu').length!=0) && ($(window).width() < 900) ) {
 
-    var fullMenu = menuWrapper.children('.tabs');
+       // Add class so we know to push down the content some more
+      $('body').once().addClass('with-action-menu');
 
-    var overFlowMenu = menuWrapper.find('.dropdown ul');
+      $('.action-menu .tabs, .action-menu .tabs li').removeAttr('style');
 
-    var fullHeight = menuWrapper.outerHeight();
+      var menuWrapper = $('.action-menu');
 
-    var triggerWidth = $('.action-menu .tab-overflow-trigger').outerWidth();
+      var fullMenu = menuWrapper.children('.tabs');
 
-    var handle = menuWrapper.find('.tab-overflow-trigger').addClass('element-invisible');
+      var overFlowMenu = menuWrapper.find('.dropdown ul');
 
-    // The 'more' button is translatable and must always fit
-    newfullMenu = fullMenu.css('padding-right', triggerWidth);
+      var fullHeight = menuWrapper.outerHeight();
 
-    // Remove the moved class on each resize
-    fullMenu.find('li.moved').removeClass('moved');
+      var triggerWidth = $('.action-menu .tab-overflow-trigger').outerWidth();
 
-    // remove all of the actions out of the overflow menu
-    overFlowMenu.children('li').remove();
+      var handle = menuWrapper.find('.tab-overflow-trigger').addClass('element-invisible');
 
-    // find all of the .items that arent visible and add/clone them to the overflow menu
-    fullMenu.children('li:visible').filter(function() {
-      var elementOffset = $(this).position().top;
-      return elementOffset+$(this).height() > fullHeight;
+      // The 'more' button is translatable and must always fit
+      newfullMenu = fullMenu.css('padding-right', triggerWidth);
 
-    }).addClass('moved').clone(true).prependTo(overFlowMenu[0]).children('a').removeClass('tab');
+      // Remove the moved class on each resize
+      fullMenu.find('li.moved').removeClass('moved');
 
-    // Calculte the width of the items the user sees, so we determine the position of the more button
-    var totalWidth = 0;
+      // remove all of the actions out of the overflow menu
+      overFlowMenu.children('li').remove();
 
-    fullMenu.children('li:not(.moved)').each(function() {
-      totalWidth += $(this).outerWidth(true) + 4;
-    });
+      // find all of the .items that arent visible and add/clone them to the overflow menu
+      fullMenu.children('li:visible').filter(function() {
+        var elementOffset = $(this).position().top;
+        return elementOffset+$(this).height() > fullHeight;
 
-    // Position the 'more' button
-    $('.action-menu .tabs-overflow').css("left", totalWidth);
+      }).addClass('moved').clone(true).prependTo(overFlowMenu[0]).children('a');
 
-    // For desktop we need extra space
-    if ($(window).width() > 900) {
-      $('.action-menu .tabs-overflow').css("left", totalWidth + 15);
-    }
+      // Calculte the width of the items the user sees, so we determine the position of the more  button
+      var totalWidth = 0;
 
-    if (overFlowMenu.children('li').length!==0) {
-      handle.removeClass('element-invisible');
-    } else {
-      //If it is empty hide the dropdown menu,
-      $('.action-menu .tabs-overflow').hide();
-      fullMenu.css('padding-right', '0');
+      fullMenu.children('li:visible:not(.moved)').each(function() {
+        totalWidth += $(this).outerWidth(true) + 4;
+      });
+
+      // Position the 'more' button
+      $('.action-menu .tabs-overflow').css("left", totalWidth);
+
+      if (overFlowMenu.children('li').length!==0) {
+        handle.removeClass('element-invisible');
+      } else {
+        //If it is empty hide the dropdown menu,
+        $('.action-menu .tabs-overflow').hide();
+        fullMenu.css({'padding-right': '0', 'display': 'flex'});
+        fullMenu.children('li').css('flex', '1');
+      }
+
     }
 
   };
 
-  $('.not-logged-in.page-group-home #block-group-info, .logged-in.page-group-home #content, .l-two-column .action-menu li:first').addClass('current');
+  $('.action-menu li:first').addClass('current');
 
   $('.action-menu .tab').click(function(e){
 
@@ -69,11 +74,17 @@ $(function() {
 
     e.preventDefault();
 
+    var scrollTo = $('body').offset().top - 50;
+    $(window).scrollTop(scrollTo);
+
     $('input[type=file]').nicefileinput();
 
-    setTimeout(initiateResponsiveTabs, 250);
+    $(this).closest('.dropdown').hide();
+
+    $(window).trigger("resize");
 
   });
+
 
   function initiateResponsiveTabs() {
     $(window).trigger("resize");

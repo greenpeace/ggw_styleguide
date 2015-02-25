@@ -6,13 +6,22 @@ search_page: members
 listview: search-members-listview.html
 teaserview: search-members.html
 design_status: Needs review
+action_menu:
+  -
+    id: "#content"
+    label: "Search members"
+    icon: "users"
+  -
+    id: "#block-filter"
+    label: "Filter"
+    icon: "adjust"
 ---
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
 
-  .block
+  #content.block.current
 
     %i.block-icon.icon-bg-default.icon-search
     %h1.block-title#page-title
@@ -50,7 +59,7 @@ design_status: Needs review
 
 
 %aside.l-sidebar.sidebar
-  .block
+  #block-filter.block
     %i.block-icon.icon-bg-default.icon-adjust
     %h2.block-title Filter
     .content

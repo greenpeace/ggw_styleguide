@@ -118,6 +118,15 @@
 
 }
 
+.js .with-action-menu .l-main {
+  padding-top: 84px;
+
+  &.with-action-bar {
+    padding-top: 34px;
+  }
+
+}
+
 .l-footer {
   display: none;
 
@@ -232,12 +241,31 @@
 .l-main-column {
   margin: $def-mar-half;
   z-index: 1;
-  //padding-bottom: 50px;
 
   @include breakpoint($desk) {
     margin: 0;
     padding-bottom: 0;
   }
+}
+
+.l-sidebar {
+  margin: $def-mar-half;
+
+  @include breakpoint($desk) {
+    position: relative;
+    display: block;
+    margin: 0;
+    right: auto;
+    top: 0;
+    padding-top: 0;
+    float: right;
+    width: (100%/3);
+    background: none;
+    border: none;
+    overflow: visible;
+
+  }
+
 }
 
 .l-has-sidebar .l-main-column {
@@ -289,12 +317,11 @@
 
 }
 
-.l-two-column {
+.l-two-column,
+.l-has-sidebar {
 
   .l-main .block {
-    clear: both;
     display: none;
-    margin: $def-mar-half;
 
     &.current {
       display: block;
@@ -310,7 +337,8 @@
 
 }
 
-.no-js .l-two-column .l-main .block {
+
+.no-js .l-main .block {
   display: block;
 }
 

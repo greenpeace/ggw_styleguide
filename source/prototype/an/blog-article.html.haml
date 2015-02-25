@@ -3,12 +3,25 @@ title: Blog article example
 body_class: not-front not-logged-in page-type-blog l-has-sidebar node-full
 user_role: an
 design_status: Needs review
+action_menu:
+  -
+    id: "#content"
+    label: "Blog"
+    icon: "blog"
+  -
+    id: "#block-go-to-group"
+    label: "Go to group"
+    icon: "users"
+  -
+    id: "#create-account"
+    label: "Create account"
+    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .block.main-content
+.l-main-column
+  #content.block.main-content.current
     %i.block-icon.icon-bg-news-media.icon-blog
     %h1#page-title.block-title
       = lorem.words 10

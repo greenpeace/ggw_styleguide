@@ -3,12 +3,25 @@ title: Groups
 body_class: not-front not-logged-in page-groups l-has-sidebar
 user_role: an
 design_status: Needs review
+action_menu:
+  -
+    id: "#content"
+    label: "Groups"
+    icon: "users"
+  -
+    id: "#block-find-groups"
+    label: "Find groups"
+    icon: "search"
+  -
+    id: "#create-account"
+    label: "Create account"
+    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .block
+.l-main-column
+  #content.block.current
     %i.block-icon.icon-bg-group.icon-users
     %h1#page-title.block-title
       = current_page.data.title

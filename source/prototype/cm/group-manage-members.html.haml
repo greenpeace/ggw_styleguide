@@ -3,13 +3,22 @@ title: Manage members of Beat(s against) Coal
 body_class: not-front logged-in page-manage-group-members l-has-sidebar
 user_role: cm
 design_status: Needs review
+action_menu:
+  -
+    id: "#content"
+    label: "Group members"
+    icon: "users"
+  -
+    id: "#block-filter-members"
+    label: "Filters members"
+    icon: "adjust"
 ---
 
 = partial :"blocks/breadcrumbs"
 
 .l-main-column
 
-  .block
+  #content.block.current
 
     %i.block-icon.icon-bg-default.icon-users
     %h1.block-title#page-title
@@ -72,7 +81,7 @@ design_status: Needs review
             %a.button{:href => "#"} show some more
 
 %aside.l-sidebar.sidebar
-  .block.hidden-mobile
+  .block#block-filter-members
     %i.block-icon.icon-bg-default.icon-adjust
     %h2.block-title
       Filter

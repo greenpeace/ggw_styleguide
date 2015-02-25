@@ -3,31 +3,23 @@ title: Who is who
 body_class: not-front logged-in page-who-is-who l-two-column
 user_role: lu
 design_status: Work in progress
+action_menu:
+  -
+    id: "#block-community-coaches"
+    label: "Community coaches"
+    icon: "users"
+  -
+    id: "#block-greenpeace-staff"
+    label: "Greenpeace staff"
+    icon: "users"
 ---
+
 
 = partial :"blocks/breadcrumbs"
 
 .region-highlight
   .block
     =image_tag("/photos/group_public_large.jpg")
-
-.action-menu
-  %ul.tabs
-    %li
-      %a.tab{:href => "#block-community-coaches"}
-        %i.icon.icon-event
-        Community coaches
-    %li
-      %a.tab{:href => "#block-greenpeace-staff"}
-        %i.icon.icon-news
-        Greenpeace staff
-  %ul.tabs-overflow
-    %li
-      %a.tab.tab-overflow-trigger{:href => "#", "data-dropdown" => "#action-menu-tabs"}
-        more
-        %i.icon-down-mini
-      .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#action-menu-tabs
-        %ul.dropdown-menu
 
 .l-main-column
   = partial :"blocks/block-community-coaches"

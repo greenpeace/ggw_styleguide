@@ -1,11 +1,14 @@
-.l-has-sidebar .sidebar .block {
-  border-bottom: 1px solid $background;
-  padding: 0 $def-mar $def-mar;
+.block {
+  position: relative;
 
   @include breakpoint($desk) {
-    border-bottom: none;
-    padding: 0 $def-mar $def-mar;
+    @include block-rich;
   }
+
+  .content {
+    margin-top: $def-mar + 10px;
+  }
+
 }
 
 .block-icon {
@@ -52,7 +55,10 @@
 
 .enrollments a {
   display: inline-block;
-  width: 23.5%;
+
+  @include breakpoint($desk) {
+    width: 23.5%;
+  }
 }
 
 .sidebar .enrollments img {

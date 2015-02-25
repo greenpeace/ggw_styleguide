@@ -1,28 +1,19 @@
 .action-menu .tabs {
-  border-bottom: 1px solid $grey-l;
-  border-top: 1px solid $grey-l;
-  height: 44px;
-  background: $background;
-  text-align: center;
+  border-bottom: 1px solid darken($green2, 5%);
+  border-top: 1px solid darken($green2, 5%);
+  height: 34px;
+  background: $green2;
   overflow: hidden;
   position: relative;
-
-  .flexbox & {
-    display: flex;
-  }
 }
 
 .action-menu .tabs li {
-  border-right: 1px solid $grey-l;
+  border-right: 1px solid darken($green2, 5%);
   display: inline-block;
   position: relative;
   width: auto;
   padding: 0 $def-mar;
   line-height: 1em;
-
-  .flexbox & {
-    flex: 1;
-  }
 
   &:last-child {
     border: none;
@@ -35,21 +26,38 @@
 }
 
 .action-menu a {
-  color: $base;
-  line-height: 44px;
+  color: $white;
+  line-height: 34px;
   display: block;
   text-align: center;
+  white-space: nowrap;
+  @include font-size($small);
 
   &.active {
-    color: $grey-m;
+    color: darken($green2, 5%);
   }
 
 }
 
-.action-menu {
+.js .action-menu {
+
+  height: 34px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 50px;
+  transition: top 0.2s ease-in-out;
+
+  .above-content {
+    top: 50px;
+  }
+
+  .stick-to-top {
+    top: 0px;
+  }
 
   .icon {
-    @include font-size($h2);
+    @include font-size($h3);
     margin-right: .5em;
     top: .1em;
     margin-right: .2em;
@@ -71,17 +79,34 @@
   .tabs-overflow {
     display: inline-block;
     position: absolute;
-    margin-top: -44px;
+    margin-top: -34px;
   }
 
   .tab-overflow-trigger {
     padding: 0 $def-mar;
-    border-left: 1px solid $grey-l;
   }
 
   @include breakpoint($desk) {
     @include element-hidden;
   }
+}
+
+.csstransforms3d {
+
+  .action-menu {
+    transform: translate3d(0, 50px, 0);
+    transition: transform 500ms ease;
+    top: 0;
+  }
+
+  .above-content {
+    transform: translate3d(0px, 50px, 0px);
+  }
+
+  .stick-to-top {
+    transform: translate3d(0px, 0px, 0px);
+  }
+
 }
 
 .no-js .action-menu {

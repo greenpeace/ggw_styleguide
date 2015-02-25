@@ -4,12 +4,34 @@ body_class: not-front logged-in page-type-event l-has-sidebar node-full
 user_role: lu
 mapsds: event
 design_status: Work in progress
+action_menu:
+  -
+    id: "#content"
+    label: "Event"
+    icon: "event"
+  -
+    id: "#block-enroll"
+    label: "Enroll"
+    icon: "login"
+  -
+    id: "#block-enrollments"
+    label: "Enrollments"
+    icon: "users"
+  -
+    id: "#block-subscribe"
+    label: "Subscribe"
+    icon: "eye"
+  -
+    id: "#block-go-to-group"
+    label: "Go to group"
+    icon: "users"
 ---
+
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .block.main-content
+.l-main-column
+  #content.block.main-content.current
     %i.block-icon.icon-bg-event.icon-event
     %h1#page-title.block-title
       = current_page.data.title
@@ -68,7 +90,7 @@ design_status: Work in progress
                   %span 36 persons are going
 
             .event-actions
-              %button.js-show-sidebar.button.btn-block.btn-primary.btn-l Enroll for this event
+              %a.button.btn-block.btn-primary.btn-l.show-block{:href => "#block-enroll"} Enroll for this event
 
           #eventmap-desk.map
 

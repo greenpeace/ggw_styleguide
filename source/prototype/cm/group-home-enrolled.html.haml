@@ -5,6 +5,27 @@ user_role: lu
 design_status: Work in progress
 joined: joined
 organiser: organiser
+action_menu:
+  -
+    id: "#content"
+    label: "Updates"
+    icon: "news"
+  -
+    id: "#upcoming-events"
+    label: "Events"
+    icon: "event"
+  -
+    id: "#block-group-info"
+    label: "Group info"
+    icon: "info"
+  -
+    id: "#block-comments"
+    label: "Shoutbox"
+    icon: "comment"
+  -
+    id: "#block-group-members"
+    label: "Members"
+    icon: "users"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -15,36 +36,6 @@ organiser: organiser
     %p
       %span Beat(s Against) Coal
     %button.button.btn-disabled.btn-l You are a member of this group
-
-.action-menu
-  %ul.tabs
-    %li
-      %a.tab{:href => "#content"}
-        %i.icon.icon-news
-        Updates
-    %li
-      %a.tab{:href => "#upcoming-events"}
-        %i.icon.icon-event
-        Events
-    %li
-      %a.tab{:href => "#block-comments"}
-        %i.icon.icon-comment
-        Shoutbox
-    %li
-      %a.tab{:href => "#block-group-info"}
-        %i.icon.icon-info
-        Group info
-    %li
-      %a.tab{:href => "#block-group-members"}
-        %i.icon.icon-users
-        Members
-  %ul.tabs-overflow
-    %li
-      %a.tab.tab-overflow-trigger{:href => "#", "data-dropdown" => "#action-menu-tabs"}
-        more
-        %i.icon-down-mini
-      .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#action-menu-tabs
-        %ul.dropdown-menu
 
 .l-main-column
   = partial :"blocks/updates"

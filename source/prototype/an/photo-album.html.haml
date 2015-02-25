@@ -3,12 +3,25 @@ title: Photo album example
 body_class: not-front not-logged-in page-type-photos l-has-sidebar node-full
 user_role: an
 design_status: Work in progress
+action_menu:
+  -
+    id: "#content"
+    label: "Photo album"
+    icon: "photo"
+  -
+    id: "#block-go-to-group"
+    label: "Go to group"
+    icon: "users"
+  -
+    id: "#create-account"
+    label: "Create account"
+    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .block.main-content
+.l-main-column
+  #content.block.current.main-content
     %i.block-icon.icon-bg-news-media.icon-photo
     %h1#page-title.block-title
       = lorem.words 10

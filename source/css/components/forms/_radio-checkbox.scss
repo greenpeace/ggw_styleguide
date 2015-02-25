@@ -60,6 +60,8 @@
 
 }
 
+// Normal states
+
 input[type="radio"] + label:before {
   background-position: 0px -155px;
 }
@@ -74,6 +76,25 @@ input[type="checkbox"] + label:before {
 
 input[type="checkbox"]:checked + label:before {
   background-position: -23px -176px;
+}
+
+
+// Active states
+
+input[type="radio"]:focus + label:before {
+  background-position: -51px -155px;
+}
+
+input[type="radio"]:focus:checked + label:before {
+  background-position: -74px -155px;
+}
+
+input[type="checkbox"]:focus + label:before {
+  background-position: -50px -176px;
+}
+
+input[type="checkbox"]:focus:checked + label:before {
+  background-position: -74px -176px;
 }
 
 // create extra space for sidebar filters

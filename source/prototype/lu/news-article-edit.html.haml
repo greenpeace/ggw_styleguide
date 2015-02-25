@@ -10,19 +10,20 @@ design_status: Needs review
 = partial :"blocks/breadcrumbs"
 
 #content.l-main-column
-  .block.main-content
+  .block.main-content.contextual-links-region
+    .contextual-links-wrapper
+      %ul.contextual-links
+        %li.quick-edit
+          %a{:href => "./news-article-edit-quickedit.html", :role => "button"} Quick edit
+        %li.node-edit
+          %a{:href => "#"} Edit
+        %li.node-delete
+          %a{:href => "#"} Delete
     %i.block-icon.icon-bg-news-media.icon-news
     %h1#page-title.block-title
       = lorem.words 10
     .content
       %article.view-mode-full
-        .contextual-links-wrapper
-          %ul.contextual-links
-            %li.node-edit.first
-              %a{:href => "#"} Edit
-            %li.node-delete.last
-              %a{:href => "#"} Delete
-
         .submitted
           %a.type.news{:href => "./news.html"} News
           by

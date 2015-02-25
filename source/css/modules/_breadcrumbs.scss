@@ -1,10 +1,14 @@
 .breadcrumbs {
-  @extend %hlist;
+  padding: 0;
   margin: .8em 0;
 }
 
 .breadcrumb-item {
-  margin-right: 3px;
+  list-style-image: none;
+  list-style-type: none;
+  margin: 0 3px 0 0;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .breadcrumb-link {

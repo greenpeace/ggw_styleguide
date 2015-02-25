@@ -3,12 +3,25 @@ title: Idea article example
 body_class: not-front not-logged-in page-type-idea l-has-sidebar node-full
 user_role: an
 design_status: Needs review
+action_menu:
+  -
+    id: "#content"
+    label: "Idea"
+    icon: "idea"
+  -
+    id: "#block-go-to-group"
+    label: "Go to group"
+    icon: "users"
+  -
+    id: "#create-account"
+    label: "Create account"
+    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .block.main-content
+.l-main-column
+  #content.block.current.main-content
     %i.block-icon.icon-bg-news-media.icon-idea
     %h1#page-title.block-title
       = lorem.words 10

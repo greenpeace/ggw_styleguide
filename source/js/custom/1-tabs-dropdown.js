@@ -6,54 +6,57 @@ $(function() {
 
   function responsiveTabs() {
 
-    var menuWrapper = $('.tabwrapper');
+    if ($('.tabwrapper').length!=0) {
 
-    var fullMenu = menuWrapper.children('.tabs');
+      var menuWrapper = $('.tabwrapper');
 
-    var overFlowMenu = menuWrapper.find('.dropdown ul');
+      var fullMenu = menuWrapper.children('.tabs');
 
-    var fullHeight = menuWrapper.outerHeight();
+      var overFlowMenu = menuWrapper.find('.dropdown ul');
 
-    var triggerWidth = $('.tabwrapper .tab-overflow-trigger').outerWidth();
+      var fullHeight = menuWrapper.outerHeight();
 
-    var handle = menuWrapper.find('.tab-overflow-trigger').addClass('element-invisible');
+      var triggerWidth = $('.tabwrapper .tab-overflow-trigger').outerWidth();
 
-    // The 'more' button is translatable and must always fit
-    newfullMenu = fullMenu.css('padding-right', triggerWidth);
+      var handle = menuWrapper.find('.tab-overflow-trigger').addClass('element-invisible');
 
-    // Remove the moved class on each resize
-    fullMenu.find('li.moved').removeClass('moved');
+      // The 'more' button is translatable and must always fit
+      newfullMenu = fullMenu.css('padding-right', triggerWidth);
 
-    // remove all of the actions out of the overflow menu
-    overFlowMenu.children('li').remove();
+      // Remove the moved class on each resize
+      fullMenu.find('li.moved').removeClass('moved');
 
-    // find all of the .items that arent visible and add/clone them to the overflow menu
-    fullMenu.children('li').filter(function() {
-      var elementOffset = $(this).position().top;
-      return elementOffset+$(this).height() > fullHeight;
-    }).addClass('moved').clone(true).prependTo(overFlowMenu[0]).children('a').removeClass('tab');
+      // remove all of the actions out of the overflow menu
+      overFlowMenu.children('li').remove();
 
-    // Calculte the width of the items the user sees, so we determine the position of the more button
-    var totalWidth = 0;
+      // find all of the .items that arent visible and add/clone them to the overflow menu
+      fullMenu.children('li').filter(function() {
+        var elementOffset = $(this).position().top;
+        return elementOffset+$(this).height() > fullHeight;
+      }).addClass('moved').clone(true).prependTo(overFlowMenu[0]).children('a').removeClass('tab');
 
-    fullMenu.children('li:not(.moved)').each(function() {
-      totalWidth += $(this).outerWidth(true) + 4;
-    });
+      // Calculte the width of the items the user sees, so we determine the position of the more  button
+      var totalWidth = 0;
 
-    // Position the 'more' button
-    $('.tabwrapper .tabs-overflow').css("left", totalWidth);
+      fullMenu.children('li:not(.moved)').each(function() {
+        totalWidth += $(this).outerWidth(true) + 4;
+      });
 
-    // For desktop we need extra space
-    if ($(window).width() > 900) {
-      $('.tabwrapper .tabs-overflow').css("left", totalWidth + 15);
-    }
+      // Position the 'more' button
+      $('.tabwrapper .tabs-overflow').css("left", totalWidth);
 
-    if (overFlowMenu.children('li').length!=0) {
-      handle.removeClass('element-invisible');
-    } else {
-      //If it is empty hide the dropdown menu,
-      $('.tabwrapper .tabs-overflow').hide();
-      fullMenu.css('padding-right', '0');
+      // For desktop we need extra space
+      if ($(window).width() > 900) {
+        $('.tabwrapper .tabs-overflow').css("left", totalWidth + 15);
+      }
+
+      if (overFlowMenu.children('li').length!=0) {
+        handle.removeClass('element-invisible');
+      } else {
+        //If it is empty hide the dropdown menu,
+        fullMenu.css('padding-right', '0');
+      }
+
     }
 
   };

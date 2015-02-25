@@ -1,8 +1,30 @@
 $(function() {
 
+  // NEW function with action menu
+
+  $('.show-block').click(function(e){
+    $('.action-menu li, .l-main-column .current, .sidebar .current').removeClass('current');
+    var currentTab = $(this).attr('href');
+
+    $('.action-menu li a').each(function() {
+      var link = $(this).attr('href');
+      if (link == currentTab) {
+        $(this).parent().addClass('current');
+      }
+    });
+
+    $(currentTab).addClass('current');
+
+  });
+
+  // OLD function with sidebar
+
+  if ($('body').hasClass('trigger-sidebar')) {
+
   var resizeTimer;
 
   var root = $(document.documentElement);
+
 
   var sidebarButton = $('<div class="trigger-sidebar js-show-sidebar"><i class="button icon-button"></i></div>');
 
@@ -108,5 +130,7 @@ $(function() {
 
   showSidebarTrigger(),
   offCanvasSidebar()
+
+  }
 
 });

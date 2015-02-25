@@ -51,6 +51,14 @@ select:-moz-focusring {
 
   }
 
+  &.focused,
+  &:active {
+
+    &:before {
+      background-position: -75px -193px;
+    }
+  }
+
 // removes the default arrow in ie10 +11
   select::-ms-expand {
     display: none;

@@ -7,9 +7,9 @@ design_status: Needs review
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
 
-  .block
+  #content.block.current
 
     %i.block-icon.icon-bg-default.icon-mail
     %h1.block-title#page-title
@@ -58,4 +58,4 @@ design_status: Needs review
         %input{:type => "submit", :class => "button btn-primary", :value => "Send message"}
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks//an/create_account"
+  = partial :"blocks/an/create_account"

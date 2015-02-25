@@ -3,12 +3,21 @@ title: Materials
 body_class: not-front logged-in page-materials l-has-sidebar
 user_role: lu
 design_status: Work in progress
+action_menu:
+  -
+    id: "#content"
+    label: "Materials"
+    icon: "material"
+  -
+    id: "#block-get-involved"
+    label: "Get involved"
+    icon: "plus"
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .block
+.l-main-column
+  #content.block.current
     %i.block-icon.icon-bg-news-media.icon-material
     %h1#page-title.block-title
       = current_page.data.title

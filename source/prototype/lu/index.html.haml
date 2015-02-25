@@ -5,31 +5,24 @@ script: leaflet
 user_role: lu
 front: frontpage
 design_status: Work in progress
+action_menu:
+  -
+    id: "#upcoming-events"
+    label: "Events"
+    icon: "event"
+  -
+    id: "#content"
+    label: "Updates"
+    icon: "news"
+  -
+    id: "#block-comments"
+    label: "Shoutbox"
+    icon: "comment"
 ---
 
-= partial :"blocks/slider_single"
+= partial :"blocks/breadcrumbs"
 
-.action-menu
-  %ul.tabs
-    %li
-      %a.tab{:href => "#upcoming-events"}
-        %i.icon.icon-event
-        Events
-    %li
-      %a.tab{:href => "#content"}
-        %i.icon.icon-news
-        Updates
-    %li
-      %a.tab{:href => "#block-comments"}
-        %i.icon.icon-comment
-        Shoutbox
-  %ul.tabs-overflow
-    %li
-      %a.tab.tab-overflow-trigger{:href => "#", "data-dropdown" => "#action-menu-tabs"}
-        more
-        %i.icon-down-mini
-      .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#action-menu-tabs
-        %ul.dropdown-menu
+= partial :"blocks/slider_single"
 
 .l-main-column
   = partial :"blocks/upcoming_events"

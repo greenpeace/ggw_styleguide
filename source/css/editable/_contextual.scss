@@ -9,7 +9,7 @@
 
 // Contextual links.
 
-div.contextual-links-wrapper {
+.contextual-links-wrapper {
   display: none;
   font-size: 90%;
   position: absolute;
@@ -17,7 +17,7 @@ div.contextual-links-wrapper {
   top: 2px;
   z-index: 999;
 }
-html.js div.contextual-links-wrapper {
+.js .contextual-links-wrapper {
   display: block;
 }
 a.contextual-links-trigger {
@@ -32,23 +32,21 @@ a.contextual-links-trigger {
   width: 28px;
   overflow: hidden;
   border-radius: 4px;
+  box-sizing: content-box;
 }
 a.contextual-links-trigger:hover,
-div.contextual-links-active a.contextual-links-trigger {
+.contextual-links-active a.contextual-links-trigger {
   background-position: 2px -18px;
 }
-div.contextual-links-active a.contextual-links-trigger {
+.contextual-links-active a.contextual-links-trigger {
   background-color: #fff;
   border-color: #ccc;
   border-bottom: none;
   position: relative;
   z-index: 1;
-  -moz-border-radius: 4px 4px 0 0;
-  -webkit-border-bottom-left-radius: 0;
-  -webkit-border-bottom-right-radius: 0;
   border-radius: 4px 4px 0 0;
 }
-div.contextual-links-wrapper ul.contextual-links {
+.contextual-links-wrapper .contextual-links {
   background-color: #fff;
   border: 1px solid #ccc;
   display: none;
@@ -59,29 +57,30 @@ div.contextual-links-wrapper ul.contextual-links {
   text-align: left;
   top: 18px;
   white-space: nowrap;
-  border-radius: 4px 0 4px 4px; /* LTR */
+  border-radius: 4px 0 4px 4px;
 }
 .contextual-links-region:hover a.contextual-links-trigger,
-div.contextual-links-active a.contextual-links-trigger,
-div.contextual-links-active ul.contextual-links {
+.contextual-links-active a.contextual-links-trigger,
+.contextual-links-active .contextual-links {
   display: block;
 }
-ul.contextual-links li {
+.contextual-links li {
   line-height: 100%;
   list-style: none;
   list-style-image: none;
   margin: 0;
   padding: 0;
+  font-size: 90%;
 }
-div.contextual-links-wrapper a {
+.contextual-links-wrapper a {
   text-decoration: none;
 }
-ul.contextual-links li a {
+.contextual-links li a {
   color: #333 !important;
   display: block;
   margin: 0.25em 0;
   padding: 0.25em 1em 0.25em 0.5em;
 }
-ul.contextual-links li a:hover {
-  background-color: #bfdcee;
+.contextual-links li a:hover {
+  background-color: $grey-l;
 }

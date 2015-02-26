@@ -4,16 +4,17 @@ body_class: not-front logged-in page-group-home l-two-column
 user_role: lu
 design_status: Work in progress
 joined: joined
+group: home
 organiser: organiser
 action_menu:
-  -
-    id: "#content"
-    label: "Updates"
-    icon: "news"
   -
     id: "#upcoming-events"
     label: "Events"
     icon: "event"
+  -
+    id: "#content"
+    label: "Updates"
+    icon: "news"
   -
     id: "#block-group-info"
     label: "Group info"
@@ -31,8 +32,8 @@ action_menu:
 = partial :"blocks/breadcrumbs"
 
 .l-main-column
-  = partial :"blocks/updates"
   = partial :"blocks/upcoming_events"
+  = partial :"blocks/updates"
   = partial :"blocks/lu/group-members"
 
 %aside.l-sidebar.sidebar

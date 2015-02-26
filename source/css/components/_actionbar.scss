@@ -3,7 +3,7 @@
   @include font-size($small);
   position: relative;
 
-  .page-search .l-main-column & {
+  .page-search .view-header & {
     padding-right: 60px;
   }
 }
@@ -110,4 +110,15 @@
   padding-top: 10px;
   line-height: 1rem;
   margin: 0;
+}
+
+.action-bar-item.add-content {
+  float: right;
+  line-height: 1rem;
+  margin: 0;
+
+  @include breakpoint($desk) {
+    padding-top: 10px;
+  }
+
 }

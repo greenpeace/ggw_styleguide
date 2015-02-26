@@ -1,5 +1,5 @@
 ---
-title: Search news & media
+title: News & media
 body_class: not-front logged-in page-search l-has-sidebar
 user_role: lu
 search_page: newsmedia
@@ -20,8 +20,8 @@ action_menu:
 .l-main-column
 
   #content.block.current
-
-    %i.block-icon.icon-bg-default.icon-search
+    = partial :"blocks/lu/add-content"
+    %i.block-icon.icon-bg-default.icon-news
     %h1.block-title#page-title
       = current_page.data.title
 

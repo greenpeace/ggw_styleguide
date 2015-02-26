@@ -20,7 +20,7 @@ action_menu:
 .l-main-column
 
   #content.block.curent
-
+    = partial :"blocks/lu/add-content"
     %i.block-icon.icon-bg-default.icon-search
     %h1.block-title#page-title
       = current_page.data.title
@@ -38,6 +38,7 @@ action_menu:
         .view-content
           = partial :"teasers/event-no-image"
           = partial :"teasers/event-with-location"
+          = partial :"teasers/event-with-image-subscribed"
           = partial :"teasers/event-with-image"
           = partial :"teasers/event-no-image"
           = partial :"teasers/event-with-location"

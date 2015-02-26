@@ -18,6 +18,7 @@ action_menu:
 
 .l-main-column
   #content.block.current
+    = partial :"blocks/lu/add-content"
     %i.block-icon.icon-bg-news-media.icon-video
     %h1#page-title.block-title
       = current_page.data.title
@@ -28,4 +29,3 @@ action_menu:
 %aside.l-sidebar.sidebar
   .content
     = partial :"blocks/find_videos"
-    = partial :"blocks/an/create_account"

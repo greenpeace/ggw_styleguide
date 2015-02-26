@@ -1,0 +1,22 @@
+.action-bar
+  .action-bar-item.add-content
+    %a.button{"data-dropdown" => "#content-type-list", :href => "#", :title => "Click to show options"}
+      %span Add
+  #content-type-list.dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right
+    %ul.dropdown-menu
+      %li
+        %a{:href => "#"} Blog
+      %li
+        %a{:href => "#"} Document
+      %li
+        %a{:href => "#"} Event
+      %li
+        %a{:href => "#"} Group
+      %li
+        %a{:href => "#"} Idea
+      %li
+        %a{:href => "#"} News
+      %li
+        %a{:href => "#"} Photo album
+      %li
+        %a{:href => "#"} Video

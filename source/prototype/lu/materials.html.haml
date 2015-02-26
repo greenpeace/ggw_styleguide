@@ -1,17 +1,8 @@
 ---
 title: Materials
-body_class: not-front logged-in page-materials l-has-sidebar
+body_class: not-front logged-in page-materials no-sidebar
 user_role: lu
 design_status: Work in progress
-action_menu:
-  -
-    id: "#content"
-    label: "Materials"
-    icon: "material"
-  -
-    id: "#block-get-involved"
-    label: "Get involved"
-    icon: "plus"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -47,7 +38,3 @@ action_menu:
 
       .align-center
         %a.button{:href => "#"} show some more
-
-%aside.l-sidebar.sidebar
-  .content
-    = partial :"blocks/lu/get_involved"

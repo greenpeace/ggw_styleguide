@@ -13,6 +13,7 @@ article {
   }
 
   .main-content .block-title {
+    margin: 0;
     @include font-size($h3);
 
       @include breakpoint($desk) {

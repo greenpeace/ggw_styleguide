@@ -40,6 +40,8 @@ $(function() {
 
   };
 
+  backToTop();
+
 });
 
 

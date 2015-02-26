@@ -156,6 +156,10 @@
     color: $base;
     padding: 0 10px;
 
+    &.active {
+      font-weight: bold;
+    }
+
     &:hover {
       background: $background;
       text-decoration: none;

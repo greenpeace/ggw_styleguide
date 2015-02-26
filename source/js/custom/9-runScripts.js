@@ -24,7 +24,6 @@ $( document ).ready(function() {
 // This will run once the entire page (including ajax requests), not just the DOM, is ready
 $( window ).load(function() {
 
-
   // Universal selector for modal windows with external source
   $('.modal-inline').magnificPopup({
     type: 'inline',

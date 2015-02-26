@@ -1,4 +1,6 @@
 #content.block
+  - if current_page.data.user_role == "lu"
+    = partial :"blocks/lu/add-content"
   %i.block-icon.icon-bg-news-media.icon-news
   %h1#page-title.block-title Updates
   .content

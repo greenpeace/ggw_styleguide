@@ -2,29 +2,23 @@
 title: Greenwire London
 body_class: not-front not-logged-in page-group-home l-two-column
 user_role: an
+group: home
 design_status: Work in progress
 action_menu:
-  -
-    id: "#content"
-    label: "Updates"
-    icon: "news"
   -
     id: "#upcoming-events"
     label: "Events"
     icon: "event"
+  -
+    id: "#content"
+    label: "Updates"
+    icon: "news"
   -
     id: "#block-group-info"
     label: "Group info"
     icon: "info"
 ---
 = partial :"blocks/breadcrumbs"
-
-.region-highlight
-  .block
-    =image_tag("/photos/group_public_large.jpg")
-    %p
-      %span Beat(s Against) Coal
-    %a.button.btn-primary.btn-l{:href => "./login.html"} Log in to join this group
 
 .l-main-column
   = partial :"blocks/upcoming_events"

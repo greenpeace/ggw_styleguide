@@ -8,6 +8,14 @@
     font-weight: 700;
   }
 
+  .field-name-group-image {
+    @include breakpoint($smalltab) {
+      float: right;
+      max-width: 50%;
+      margin: 0 0 $def-mar $def-mar;
+    }
+  }
+
   .field-group-primary-contact {
     display: inline-block;
     width: 45%;

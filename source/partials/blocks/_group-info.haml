@@ -3,6 +3,11 @@
   %h2.block-title About
   .content
 
+    .field-name-group-image
+      %img.lazyload{:alt => "Profile picture of group.", :src => "/photos/blank.png", "data-src" => "/photos/260/nature2.jpg"}/
+      %noscript
+        %img{:alt => "Profile picture of group.", :src => "/photos/260/nature2.jpg"}/
+
     .field-name-body
       %p
         = lorem.paragraph

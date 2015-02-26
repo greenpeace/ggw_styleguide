@@ -13,7 +13,6 @@ article {
   }
 
   .main-content .block-title {
-    margin: 0 30px 0 0; // create distance for sidebar-trigger
     @include font-size($h3);
 
       @include breakpoint($desk) {

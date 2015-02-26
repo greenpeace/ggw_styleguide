@@ -30,30 +30,19 @@
 
 }
 
-.block-events .mapwrapper {
-  margin-bottom: 1em;
-}
-
 @include breakpoint($desk) {
-  .block-events .mapwrapper {
-    height: 300px;
-    position: relative;
-  }
-
-  .event-actions,
-  .block-events .map-trigger {
+  .event-actions {
     @include element-hidden;
   }
 
-  .block-events #map{
-    right: -$def-mar;
-    left: -$def-mar;
-    height: 300px;
-    min-width: 100%;
-    position: absolute;
-  }
-
 }
+
+.block-events #map{
+  height: 300px;
+  margin-bottom: $def-mar;
+  width: 100%;
+}
+
 
 .node-event-small {
   margin: 0 0 .5em;

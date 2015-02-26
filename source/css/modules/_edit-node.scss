@@ -1,0 +1,22 @@
+.node-full .main-content.editable .block-title {
+  margin-right: 40px;
+}
+
+.edit-node-link {
+  position: absolute;
+  top: $def-mar;
+  right: $def-mar;
+  color: $grey-m;
+  line-height: $small;
+  @include font-size($small);
+
+  i {
+    @include font-size(13px);
+  }
+
+  &:hover {
+    //text-decoration: underline;
+    border-bottom: 1px solid $grey-m;
+  }
+
+}

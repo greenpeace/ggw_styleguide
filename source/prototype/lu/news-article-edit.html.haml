@@ -2,23 +2,16 @@
 title: My news article example
 body_class: not-front logged-in page-type-news l-has-sidebar node-full
 user_role: lu
-script: editable
-editable: news
 design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .block.main-content.contextual-links-region
-    .contextual-links-wrapper
-      %ul.contextual-links
-        %li.quick-edit
-          %a{:href => "./news-article-edit-quickedit.html", :role => "button"} Quick edit
-        %li.node-edit
-          %a{:href => "#"} Edit
-        %li.node-delete
-          %a{:href => "#"} Delete
+.l-main-column
+  #content.block.main-content.current.editable
+    %a.edit-node-link{:href => "#"}
+      %i.icon-edit
+      Edit
     %i.block-icon.icon-bg-news-media.icon-news
     %h1#page-title.block-title
       = lorem.words 10

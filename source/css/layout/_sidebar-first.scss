@@ -1,0 +1,75 @@
+@include breakpoint($tab) {
+
+  .sidebar-first {
+    float: left;
+    width: 25%;
+
+    .block {
+      margin-right: 1.5em;
+    }
+  }
+
+  .l-main-column {
+    float: right;
+    width: 75%;
+    margin: 0;
+  }
+
+}
+
+@include breakpoint($desk) {
+
+  .sidebar-first .block {
+    padding: 0;
+  }
+
+}
+
+
+// Sidebar first buttons for navigation
+.sf-navbtn {
+  display: block;
+  line-height: 1.2em;
+  padding: .8em 1em;
+  font-size: $p;
+  color: $base;
+  border-bottom: 1px solid $grey-l;
+  position: relative;
+
+  &:last-child {
+    border: none;
+  }
+
+  &:before {
+    float: right;
+    @extend %load-icon;
+    @extend %icon-right-open;
+  }
+
+  &:hover {
+    background: $background;
+  }
+
+  &.active {
+    background: $green2;
+    color: $white;
+  }
+}
+
+// label above the left navigation
+.sidebar-first .block-title {
+  margin: 0;
+  padding: 1em;
+  font-size: $p;
+  color: $heading;
+  border-bottom: 1px solid $grey-l;
+}
+
+.sf-title {
+  @extend %element-hidden;
+
+  @include breakpoint($desk) {
+    display: block;
+  }
+
+}

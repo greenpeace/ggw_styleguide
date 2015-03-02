@@ -20,6 +20,9 @@
     = stylesheet_link_tag "all"
     <!--<![endif]-->
 
+    - if current_page.data.script == "edit"
+      = javascript_include_tag  "libraries/ckeditor/ckeditor.js"
+      = stylesheet_link_tag "x-editable"
 
   %body{:class => "#{current_page.data.body_class || page_classes}"}
     /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
@@ -77,13 +80,6 @@
             });
           });
         });
-
-    - if current_page.data.script == "editable"
-      = javascript_include_tag  "x-editable"
-      = stylesheet_link_tag "x-editable"
-
-    - if current_page.data.script == "editable" && current_page.data.editable == "news"
-      = partial :"editable/news"
 
     = partial :"loadfont"
 

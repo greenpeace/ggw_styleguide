@@ -9,14 +9,6 @@ $(function() {
       lineHeight: 19
     });
 
-    // OLD
-
-   //$('.node-teaser .field-name-body').truncate({
-   //  lines: 2,
-   //  lineHeight: 21
-   //});
-
-    // NEW
     if (!$('body').hasClass('page-who-is-who')) {
       $('.node-teaser .field-name-body').truncate({
         lines: 2,
@@ -33,7 +25,7 @@ $(function() {
 
   }
 
-  if ($('#block-group-info').length!=0) {
+  if (( $('#block-group-info').length!=0) && ($(window).width() > 900)) {
     $('#block-group-info .group-info-intro').truncate({
       lines: 7,
       lineHeight: 19,

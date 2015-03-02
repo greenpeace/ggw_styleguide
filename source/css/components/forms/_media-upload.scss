@@ -1,0 +1,79 @@
+.media-widget {
+  overflow: hidden;
+  margin-bottom: $def-mar + 5px;
+  position: relative;
+
+  .preview {
+    float: left;
+    margin-right: .5em;
+    width: 90px;
+    height: 60px; //temp
+    background-color: $grey-l;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint($tab) {
+      width: 130px;
+      height: 90px;
+    }
+
+    &:before {
+      color: $white;
+      position: relative;
+      font-size: 2.5rem;
+      z-index: 2;
+      line-height: 60px;
+      width: 100%;
+      @extend %load-icon;
+      @extend %icon-camera;
+
+      @include breakpoint($tab) {
+        line-height: 90px;
+        font-size: 3.5rem;
+      }
+
+    }
+
+  }
+
+  img {
+    position: relative;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+
+    @include breakpoint($tab) {
+        height: 90px;
+    }
+
+  }
+
+  .description {
+    overflow: hidden;
+    position: relative;
+  }
+
+}
+
+.filename {
+  background: $grey-m;
+  color: $white;
+  @include font-size($small);
+  border-radius: 3px;
+
+  &:before {
+    color: $green5;
+    float: left;
+    line-height: 24px;
+    @include font-size($h3);
+    background: $grey-l;
+    padding: 0 $def-mar-half;
+    @extend %load-icon;
+    @extend %icon-check;
+    margin-right: 1em;
+    border-radius: 3px 0 0 3px;
+  }
+}

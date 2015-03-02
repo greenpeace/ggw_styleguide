@@ -17,8 +17,18 @@ $(window).load(function() {
   };
 
   function niceInput() {
-    $('input[type=file]').nicefileinput();
+    $('.comment-form input[type=file]').nicefileinput();
   };
+
+  var intervalFunc = function () {
+    $('#file-name').removeClass('element-hidden').addClass('filename').html($('#uploadimage').val());
+  };
+
+  $('.launcher').on('click', function () {
+    $('#uploadimage').click();
+    setInterval(intervalFunc, 1);
+    return false;
+  });
 
   maxLength();
   autoGrow();

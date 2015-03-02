@@ -1,0 +1,68 @@
+---
+title: Create new event
+body_class: not-front logged-in page-type-event l-has-sidebar-first page-edit
+user_role: lu
+script: edit
+design_status: Needs review
+menu:
+  -
+    name: Title, description & image
+    url: #section-title
+  -
+    name: Date and location
+    url: #section-date
+  -
+    name: Organisers and role
+    url: #section-organisers
+  -
+    name: Event type and tags
+    url: #section-event-type
+  -
+    name: Language and visibility
+    url: #section-language
+---
+
+
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
+  .block
+    %h2.block-title Create event
+    - current_page.data.menu.each do |item|
+      =nav_link item.name , item.url, :class => 'sf-navbtn'
+.l-main-column
+  %section#section-title.block.current.main-content
+    %i.block-icon.icon-pencil.icon-bg-action
+    %h2.block-title Title, description & image
+    .content
+      %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
+        .form-wrapper
+          .form-item.field-name-title
+            %label.form-label{:for => "edit-field-title"}
+              Title
+              %span.form-required{:title => "This field is required."} *
+            %input#edit-field-title.form-text{:name => "edit-field-title", :type => "text", :value => "", :tabindex => "1"}/
+          .form-item
+            %label.form-label{:for => "field-edit-description"}
+              Description
+              %span.form-required{:title => "This field is required."} *
+            %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80"}
+          .form-item
+            %label.form-label{:for => "field-edit-image"}
+              Image
+              %span.form-required{:title => "This field is required."} *
+            .media-widget
+              .preview
+                .media-item
+              .form-description
+                No image selected <br />
+                Files must be smaller than3 MB <br/>
+                Allowed file types: png gif jpg jpeg <br/>
+                Images must be larger than 400x300 pixels.
+              %input#uploadimage.element-invisible{:type => "file", :value => "upload"}
+              %button.button.launcher select image
+              %a.button.remove.element-hidden{:href => "#"} remove image
+              %p#file-name.element-hidden
+
+:javascript
+  CKEDITOR.appendTo( 'field-edit-description' );

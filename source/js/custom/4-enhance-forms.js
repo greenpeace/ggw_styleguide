@@ -19,11 +19,20 @@ $( document ).ready(function() {
   // attach datepicker plugin to date iput fields
   if (!Modernizr.inputtypes.date) {
     $('input[type="date"]').pickadate({
-      format: 'd mmm, yy',
+      format: 'dd/mm/yy',
       formatSubmit: 'yyyy-mm-dd'
     });
     $('input[type="date"]').addClass('date-field');
     $('input[type="date"]').after('<i class="icon-calendar"></i>');
+  }
+
+  // attach datepicker plugin to time iput fields
+  if (!Modernizr.inputtypes.time) {
+    $('input[type="time"]').pickatime({
+      interval: 15
+    });
+    $('input[type="time"]').addClass('time-field');
+    $('input[type="time"]').after('<i class="icon-clock"></i>');
   }
 
   //enhance with icons

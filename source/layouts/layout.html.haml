@@ -59,6 +59,9 @@
 
     = javascript_include_tag  "theme"
 
+    - if current_page.data.script == "edit"
+      = javascript_include_tag  "edit"
+
     - if current_page.data.mapsds == "event"
       :javascript
          $(document).ready(function() {

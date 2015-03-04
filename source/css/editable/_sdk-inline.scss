@@ -1,11 +1,5 @@
-
-.page-edit {
-  .form-text,
-  .form-password,
-  textarea {
-    max-width: none;
-  }
-
+.page-edit textarea {
+  max-width: none;
 }
 
 // Style the CKEditor element to look like a textfield
@@ -18,4 +12,49 @@
   font-size: 0.875rem;
   outline: none;
   min-height: 200px;
+}
+
+#section-submit .form-wrapper {
+  text-align: center;
+}
+
+.js {
+
+  .section-submit {
+    background: $white;
+    box-shadow: 0 1px 3px rgba(0,0,0,.5);
+    padding: $def-mar;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    top: -70px;
+    transition: top 0.2s ease-in-out;
+    text-align: center;
+
+    .stick-to-top {
+      top: 0;
+    }
+
+    .form-wrapper,
+    .form-wrapper .button {
+      margin: 0;
+    }
+
+  }
+
+}
+
+.csstransforms3d {
+
+  .section-submit {
+    transform: translate3d(0, -70px, 0);
+    transition: transform 500ms ease;
+    top: 0;
+
+    &.stick-to-top {
+      transform: translate3d(0px, 0px, 0px);
+    }
+
+  }
+
 }

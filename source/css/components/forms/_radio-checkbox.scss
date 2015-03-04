@@ -22,6 +22,10 @@
 
 .form-type-radio {
   display: inline-block;
+
+  .radio-blocks & {
+    display: block;
+  }
 }
 
 .form-type-radio,

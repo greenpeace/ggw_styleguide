@@ -1,4 +1,6 @@
 #upcoming-events.block.block-events.current
+  - if current_page.data.user_role == "lu"
+    = partial :"blocks/lu/add-event"
   %i.block-icon.icon-bg-event.icon-event
   %h2.block-title Upcoming events
   .content

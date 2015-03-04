@@ -319,7 +319,6 @@
 
 .l-two-column,
 .l-has-sidebar {
-
   .l-main .block {
     display: none;
 
@@ -347,5 +346,11 @@
 
   @include breakpoint($desk) {
     display: block;
+  }
+}
+
+@include breakpoint($desk) {
+  .deskwidth50 {
+    width: 49.5%
   }
 }

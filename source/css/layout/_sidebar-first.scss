@@ -1,18 +1,47 @@
-@include breakpoint($tab) {
+.l-has-sidebar-first {
 
-  .sidebar-first {
+  .l-main-column .block {
+    display: none;
+
+    &.current {
+      display: block;
+    }
+
+    @include breakpoint($desk) {
+      display: block;
+      clear: none;
+      margin: 0 0 $def-mar 0;
+    }
+
+  }
+
+}
+
+.sidebar-first {
+  margin: 7px;
+
+  @include breakpoint($tab) {
     float: left;
     width: 25%;
+    padding: 7px;
+    margin: 0;
+  }
 
-    .block {
-      margin-right: 1.5em;
+  @include breakpoint($desk) {
+    .block-title {
+      margin-left: 45px;
     }
   }
 
-  .l-main-column {
+}
+
+@include breakpoint($tab) {
+
+  .l-has-sidebar-first .l-main-column {
     float: right;
     width: 75%;
-    margin: 0;
+    margin: 7px 0 0;
+    padding: 0 7px;
   }
 
 }
@@ -36,8 +65,10 @@
   border-bottom: 1px solid $grey-l;
   position: relative;
 
-  &:last-child {
-    border: none;
+  @include breakpoint($desk) {
+    &:last-child {
+      border: none;
+    }
   }
 
   &:before {
@@ -48,21 +79,13 @@
 
   &:hover {
     background: $background;
+    text-decoration: none !important;
   }
 
-  &.active {
+  &.current {
     background: $green2;
     color: $white;
   }
-}
-
-// label above the left navigation
-.sidebar-first .block-title {
-  margin: 0;
-  padding: 1em;
-  font-size: $p;
-  color: $heading;
-  border-bottom: 1px solid $grey-l;
 }
 
 .sf-title {

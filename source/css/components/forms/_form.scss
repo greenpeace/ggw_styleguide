@@ -17,6 +17,14 @@
   display: inline-block;
   vertical-align: bottom;
 
+  // a label for multiple inline fields
+  .inline-label {
+    display: inline-table;
+    margin-bottom: 0;
+    margin-right: .5em;
+    min-width: 60px;
+  }
+
   .form-item {
     display: inline-table;
     margin-bottom: 0;
@@ -24,6 +32,25 @@
   }
   .button {
     margin: 0;
+  }
+
+  // keep event edit form compact
+  .date-field {
+    width: 120px;
+  }
+  .time-field,
+  .number-field {
+    width: 100px;
+  }
+}
+
+.row {
+  vertical-align: bottom;
+
+  .form-item {
+    display: inline-table;
+    margin-bottom: 0;
+    margin-right: .5em;
   }
 }
 

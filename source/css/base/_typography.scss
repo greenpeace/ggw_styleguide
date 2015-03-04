@@ -155,6 +155,12 @@ article {
 
 }
 
+.small-link {
+  @include font-size($small);
+  margin-top: $def-mar-half;
+  display: block;
+}
+
 .list {
   @extend %list;
 }

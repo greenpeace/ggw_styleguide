@@ -1,4 +1,9 @@
 #block-group-info.block
+  - if current_page.data.user_role == "cm"
+    .action-bar
+      .action-bar-item.edit-content
+        %a.button{:href => "#", :title => "Click to edit info"} Edit
+
   %i.block-icon.icon-users.icon-bg-group
   %h2.block-title About
   .content

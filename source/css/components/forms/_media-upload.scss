@@ -13,7 +13,7 @@
     position: relative;
     z-index: 1;
 
-    @include breakpoint($tab) {
+    @include breakpoint($smalltab) {
       width: 130px;
       height: 90px;
     }
@@ -28,7 +28,7 @@
       @extend %load-icon;
       @extend %icon-camera;
 
-      @include breakpoint($tab) {
+      @include breakpoint($smalltab) {
         line-height: 90px;
         font-size: 3.5rem;
       }
@@ -45,7 +45,7 @@
     left: 0;
     height: 60px;
 
-    @include breakpoint($tab) {
+    @include breakpoint($smalltab) {
         height: 90px;
     }
 

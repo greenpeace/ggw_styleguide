@@ -1,4 +1,8 @@
 #block-group-members.block
+  - if current_page.data.organiser == "organiser"
+    .action-bar
+      .action-bar-item.edit-content
+        %a.button{:href => "./group-manage-members.html", :title => "Click to edit info"} Edit
   %i.block-icon.icon-bg-default.icon-users
   %h2.block-title
     Members of Beat(s Against) Coal
@@ -18,6 +22,3 @@
       %a{:href => "#"}
         %img{:alt => "Name of user", :src => "/photos/75/people1.jpg"}
     %a.button.load-more-btn.modal-inline{:href => "#block-group-members-all"} View all group members
-    - if current_page.data.organiser == "organiser"
-      %a.button.load-more-btn{:href => "./group-manage-members.html"} Manage group members
-      %a.button.load-more-btn.modal-inline{:href => "#block-group-add-members"} Add group members

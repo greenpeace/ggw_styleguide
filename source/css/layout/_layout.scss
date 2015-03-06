@@ -23,7 +23,6 @@
   }
 }
 
-
 .layout-base {
   overflow: hidden;
   background: $white;
@@ -336,7 +335,6 @@
 
 }
 
-
 .no-js .l-main .block {
   display: block;
 }
@@ -350,7 +348,17 @@
 }
 
 @include breakpoint($desk) {
+  .only-mobile {
+    display: none;
+  }
+}
+
+@include breakpoint($desk) {
   .deskwidth50 {
     width: 49.5%
   }
+}
+
+.block.affix {
+  position: fixed;
 }

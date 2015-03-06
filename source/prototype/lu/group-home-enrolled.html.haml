@@ -1,27 +1,31 @@
 ---
-title: Group Home
-body_class: not-front logged-in page-group-home l-two-column
+title: Greenwire London
+body_class: not-front logged-in page-group-home l-two-column group-subscribed
+direct_parent:
+  -
+    name: "Groups"
+    url: "groups.html"
 user_role: lu
 group: home
 design_status: Work in progress
 joined: joined
 action_menu:
   -
-    id: "#content"
-    label: "Updates"
-    icon: "news"
-  -
-    id: "#upcoming-events"
-    label: "Events"
-    icon: "event"
+    id: "#block-comments"
+    label: "Shoutbox"
+    icon: "comment"
   -
     id: "#block-group-info"
     label: "Group info"
     icon: "info"
   -
-    id: "#block-comments"
-    label: "Shoutbox"
-    icon: "comment"
+    id: "#upcoming-events"
+    label: "Events"
+    icon: "event"
+  -
+    id: "#content"
+    label: "Updates"
+    icon: "news"
   -
     id: "#block-group-members"
     label: "Members"
@@ -31,12 +35,18 @@ action_menu:
 = partial :"blocks/breadcrumbs"
 
 .l-main-column
+  %h1.group-heading.only-mobile
+    %i.icon-users
+    = current_page.data.title
+    %i.icon-subscribed
+  = partial :"blocks/group-info"
   = partial :"blocks/upcoming_events"
   = partial :"blocks/updates"
-  = partial :"blocks/lu/group-members"
+
 
 %aside.l-sidebar.sidebar
+  = partial :"blocks/lu/group-members"
   = partial :"blocks/lu/comments"
-  = partial :"blocks/group-info"
+
 
 = partial :"blocks/lu/group-members-full"

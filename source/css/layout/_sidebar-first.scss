@@ -1,18 +1,8 @@
-.l-has-sidebar-first {
-
-  .l-main-column .block {
-    display: none;
-
-    &.current {
-      display: block;
-    }
-
-    @include breakpoint($desk) {
-      display: block;
-      clear: none;
-      margin: 0 0 $def-mar 0;
-    }
-
+@include breakpoint($desk) {
+  .l-has-sidebar-first .l-main-column .block {
+    display: block;
+    clear: none;
+    margin: 0 0 $def-mar 0;
   }
 
 }
@@ -85,6 +75,10 @@
   &.current {
     background: $green2;
     color: $white;
+  }
+
+  &:last-child {
+    border-radius: 0 0 4px 4px;
   }
 }
 

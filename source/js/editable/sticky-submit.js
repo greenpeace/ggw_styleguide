@@ -1,6 +1,6 @@
 $(function() {
 
-  if ( ($('.section-submit').length!=0) && ($(window).width() < 900) ) {
+  if ( ($('#section-submit').length!=0) && ($(window).width() < 900) ) {
 
     $('#section-submit').clone(true).addClass('section-submit').attr('id', '').insertAfter('.l-branding-header');
 

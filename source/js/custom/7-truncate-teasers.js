@@ -26,15 +26,15 @@ $(function() {
   }
 
   if (( $('#block-group-info').length!=0) && ($(window).width() > 900)) {
-    $('#block-group-info .group-info-intro').truncate({
-      lines: 7,
+    $('#block-group-info .field-name-body').truncate({
+      lines: 5,
       lineHeight: 19,
-      showMore: '<a href="#" id="toggleblock" style="display: block;margin-top: 7px;"><span class="button">read more</span></a>'
+      showMore: '<a href="#" id="toggleblock" style="display: block;margin-top: 7px;"><span class="button btn-s">read more</span></a>'
     });
 
     $('#toggleblock').on("click", function(event) {
       event.preventDefault();
-      $('#block-group-info .group-info-intro').truncate('expand');
+      $('#block-group-info .field-name-body').truncate('expand');
     });
   }
 

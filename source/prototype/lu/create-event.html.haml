@@ -25,7 +25,7 @@ menu:
 
 = partial :"blocks/breadcrumbs"
 
-%aside.sidebar-first
+%aside.sidebar-first.sfmenu
   .block
     %i.block-icon.icon-calendar.icon-bg-event
     %h2.block-title Create event
@@ -102,15 +102,6 @@ menu:
             %input#edit-field-event-date-und-1-value-time.form-text{:type => "time", :value => "", :placeholder => "time", :tabindex => "8"}
 
         .form-wrapper
-          .form-item.field-event-location
-            %label.form-label{:for => "edit-event-location"}
-              Location
-            .form-description We will attempt to calculate the coordinates from the supplied address.
-            %input#edit-event-location.form-text{:name => "edit-event-location", :type => "text", :value => "", :placeholder => "e.g. venue name, address, city", :tabindex => "9"}/
-            %a.small-link{:href => "#"}
-              %i.icon-plus
-              add geocoordinates manually
-
           .form-item.form-type-select.field-event-location-und-country
             %label.form-label{:for => "edit-event-location"}
               Country
@@ -197,6 +188,15 @@ menu:
               %option{:value => "gf"} French Guiana
               %option{:value => "pf"} French Polynesia
               %option{:value => "tf"} French Southern Territories
+
+          .form-item.field-event-location
+            %label.form-label{:for => "edit-event-location"}
+              Location
+            .form-description We will attempt to calculate the coordinates from the supplied address.
+            %input#edit-event-location.form-text{:name => "edit-event-location", :type => "text", :value => "", :placeholder => "e.g. venue name, address, city", :tabindex => "9"}/
+            %a.small-link{:href => "#"}
+              %i.icon-plus
+              add geocoordinates manually
 
     %section#section-organisers.block
       %i.block-icon.icon-users.icon-bg-action

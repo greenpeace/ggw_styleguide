@@ -1,5 +1,9 @@
 ---
 title: Greenwire London
+direct_parent:
+  -
+    name: "Groups"
+    url: "groups.html"
 body_class: not-front not-logged-in page-group-home l-two-column
 user_role: an
 group: home
@@ -21,10 +25,16 @@ action_menu:
 = partial :"blocks/breadcrumbs"
 
 .l-main-column
+
+  %h1.group-heading.only-mobile
+    %i.icon-users
+    = current_page.data.title
+
+  = partial :"blocks/group-info"
   = partial :"blocks/upcoming_events"
-  = partial :"blocks/updates"
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/group-info"
   = partial :"blocks/group-members"
+  = partial :"blocks/updates"
+
 

@@ -65,6 +65,18 @@ $(function() {
 
   $('.action-menu li:first').addClass('current');
 
+  // for prototype only
+  if ($('body').hasClass('front')) {
+    $('#content').removeClass('current');
+    $('#upcoming-events').addClass('current');
+  }
+
+  // for prototype only
+  if ($('body').hasClass('group-subscribed')) {
+    $('#block-group-info').removeClass('current');
+    $('#block-comments').addClass('current');
+  }
+
   $('.action-menu .tab').click(function(e){
 
     $('.action-menu li, .l-main-column .current, .sidebar .current').removeClass('current');

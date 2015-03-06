@@ -3,12 +3,29 @@ title: Profile
 body_class: not-front logged-in page-profile l-has-sidebar
 user_role: lu
 design_status: Work in progress
+action_menu:
+  -
+    id: "#content"
+    label: "Profile"
+    icon: "user"
+  -
+    id: "#block-friends"
+    label: "Friends"
+    icon: "users"
+  -
+    id: "#block-skills"
+    label: "Friends"
+    icon: "users"
+  -
+    id: "#block-shoutbox"
+    label: "Shoutbox"
+    icon: "comments"
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .block.main-content
+.l-main-column
+  #content.block.main-content.current
     %i.block-icon.icon-bg-user.icon-user
     %h1#page-title.block-title
       John Doe Claus

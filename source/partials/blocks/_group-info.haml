@@ -1,4 +1,4 @@
-#block-group-info.block
+#block-group-info.block.current
   - if current_page.data.user_role == "cm"
     .action-bar
       .action-bar-item.edit-content
@@ -7,61 +7,78 @@
   %i.block-icon.icon-users.icon-bg-group
   %h2.block-title About
   .content
-    .group-info-intro
-      .field-name-group-image
-        %img.lazyload{:alt => "Profile picture of group.", :src => "/photos/blank.png", "data-src" =>   "/photos/260/nature2.jpg"}/
-        %noscript
-          %img{:alt => "Profile picture of group.", :src => "/photos/260/nature2.jpg"}/
 
-      .field-name-body
-        %p
-          = lorem.paragraph
-      .field.field-group-mission
-        .field-label Mission
-        .field-item
-          = lorem.sentence
+    .field-name-group-image
+      %img.lazyload{:alt => "Profile picture of group.", :src => "/photos/blank.png", "data-src" => "/photos/260/nature2.jpg"}/
+      %noscript
+        %img{:alt => "Profile picture of group.", :src => "/photos/260/nature2.jpg"}/
 
-      .field.field-group-type
-        .field-label Group type
-        .field-item Skills-based group
+    .field.field-name-body
+      %p
+        = lorem.paragraph
 
-      .field.field-group-skills
-        .field-label Skills
-        .field-item
-          Initiator, Practical, a 'Doer', Cooking, Driving (with license & own vehicle), Driving (  with license)
-
-      .field.field-group-tags
-        .field-label Tags
-        .field-item
-          %a.tag{:href => "./tags.html"}> cooking
-          ,
-          = succeed "," do
-            %a.tag{:href => "./tags.html"} organic
-          = succeed "," do
-            %a.tag{:href => "./tags.html"} training
-          = succeed "," do
-            %a.tag{:href => "./tags.html"} soup
-          = succeed "," do
-            %a.tag{:href => "./tags.html"} food
-          %a.tag{:href => "./tags.html"} transport
-
-      .field.field-group-primary-contact
-        .field-label Primary contact
-        .field-item
-          - if current_page.data.user_role == "lu"
-            %a{:href => "./profile.html"}
-              = lorem.name
-          - else
+    .field.field-group-primary-contact
+      .field-label Primary contact
+      .field-item
+        - if current_page.data.user_role == "lu"
+          %a{:href => "./profile.html"}
             = lorem.name
+        - else
+          = lorem.name
 
-      .field.field-group-secondary-contact
-        .field-label Secondary contact
-        .field-item
-          - if current_page.data.user_role == "lu"
-            %a{:href => "./profile.html"}
-              = lorem.name
-          - else
+    .field.field-group-secondary-contact
+      .field-label Secondary contact
+      .field-item
+        - if current_page.data.user_role == "lu"
+          %a{:href => "./profile.html"}
             = lorem.name
+        - else
+          = lorem.name
+
+    .field.field-group-mission
+      .field-label Mission
+      .field-item
+        = lorem.sentence
+
+    .field.field-name-field-social-media
+      .field-label Social channels
+      .field-item
+        %a.social-icon.twitter{:href => "#", :target => "blank"}
+          %span.element-hidden twitter
+        %a.social-icon.facebook{:href => "#", :target => "blank"}
+          %span.element-hidden facebook
+        %a.social-icon.googleplus{:href => "#", :target => "blank"}
+          %span.element-hidden googleplus
+        %a.social-icon.linkedin{:href => "#", :target => "blank"}
+          %span.element-hidden linkedin
+        %a.social-icon.pinterest{:href => "#", :target => "blank"}
+          %span.element-hidden pinterest
+        %a.social-icon.vk{:href => "#", :target => "blank"}
+          %span.element-hidden vkontakte
+
+    .field.field-group-type
+      .field-label Group type
+      .field-item Skills-based group
+
+    .field.field-group-skills
+      .field-label Skills
+      .field-item
+        Initiator, Practical, a 'Doer', Cooking, Driving (with license & own vehicle), Driving (with license)
+
+    .field.field-group-tags
+      .field-label Tags
+      .field-item
+        %a.tag{:href => "./tags.html"}> cooking
+        ,
+        = succeed "," do
+          %a.tag{:href => "./tags.html"} organic
+        = succeed "," do
+          %a.tag{:href => "./tags.html"} training
+        = succeed "," do
+          %a.tag{:href => "./tags.html"} soup
+        = succeed "," do
+          %a.tag{:href => "./tags.html"} food
+        %a.tag{:href => "./tags.html"} transport
 
     .field.field-group-join
       - if current_page.data.joined != "joined"
@@ -74,4 +91,4 @@
       - else
         %a.button.modal-inline{:href => "#confirm-group-leave"} Leave this group
 
-= partial :"blocks/lu/confirm-group-leave"
+    = partial :"blocks/lu/confirm-group-leave"

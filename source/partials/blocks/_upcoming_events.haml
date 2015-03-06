@@ -1,4 +1,4 @@
-#upcoming-events.block.block-events.current
+#upcoming-events.block.block-events
   - if current_page.data.user_role == "lu"
     = partial :"blocks/lu/add-event"
   %i.block-icon.icon-bg-event.icon-event
@@ -29,7 +29,7 @@
         %a{:href => "./event-full.html"} Opschonen Enschede
       .date-display-single 20 July, 2014 - 12:09
 
-    %a.button{:href => "./events.html"} See more events
+    %a.button{:href => "./events.html"} load more
 
 - if current_page.data.group == "home"
   = javascript_include_tag "leaflet"

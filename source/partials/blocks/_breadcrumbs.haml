@@ -5,5 +5,10 @@
     - if current_page.parent
       %li.breadcrumb-item
         = nav_link current_page.parent.metadata[:page]['title'], current_page.parent, :class => 'breadcrumb-link'
+    - if current_page.data.direct_parent
+      - for item in current_page.data.direct_parent
+        %li.breadcrumb-item
+          %a.breadcrumb-link{:href => "#{item.url}"}
+            #{item.name}
     %li.breadcrumb-item
       = current_page.data.title

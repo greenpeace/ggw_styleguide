@@ -1,0 +1,10 @@
+.block#block-go-to-group
+  %i.block-icon.icon-users.icon-bg-group
+  %h2.block-title Group
+  .content
+    %p
+      You are managing
+      = succeed "." do
+        %a{:href => "./group-home.html"} local groups amsterdam
+    %p
+      %a.button{:href => "./group-home.html"} Go to group homepage

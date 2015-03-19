@@ -1,13 +1,28 @@
 ---
 title: Manage members of Beat(s against) Coal
 body_class: not-front logged-in page-manage-group-members l-has-sidebar
+direct_parent:
+  -
+    name: "Groups"
+    url: "./../lu/groups.html"
+  -
+    name: "Greenwire London"
+    url: "./group-home-enrolled.html"
 user_role: cm
 design_status: Needs review
 action_menu:
   -
     id: "#content"
-    label: "Group members"
+    label: "Manage group"
     icon: "users"
+  -
+    id: "#block-go-to-group"
+    label: "Groups"
+    icon: "users"
+  -
+    id: "#block-group-add-members"
+    label: "Add members"
+    icon: "user-add"
   -
     id: "#block-filter-members"
     label: "Filters members"
@@ -24,16 +39,66 @@ action_menu:
     %h1.block-title#page-title
       = current_page.data.title
 
-    %a.button.btn-back{:href => "./group-home-enrolled.html"}
-      %i.icon-back
-      Back to group dashboard
-
     .content
 
       .view-header
-        = partial :"blocks/cm/manage-group-info"
-      .view-filters
-        = partial :"nav/manage-group-actions"
+        %form
+          .action-bar
+            .action-bar-item.resultstats 45 Members
+
+            .action-bar-item.sorting
+              %label Sort by
+              %a.button.btn-s.sorting{"data-dropdown" => "#sort-results", :href => "#", :title => "Click to show options"}
+                %span Name
+              #sort-results.dropdown.dropdown-tip.dropdown-relative
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"} Name
+                  %li
+                    %a{:href => "#"} Username
+                  %li
+                    %a{:href => "#"} E-mail
+                  %li
+                    %a{:href => "#"} Phone
+                  %li
+                    %a{:href => "#"} Status
+                  %li
+                    %a{:href => "#"} Member since
+                  %li
+                    %a{:href => "#"} Request message
+
+            .action-bar-item.results-page
+              %label Results per page
+              %a.button.btn-s.results-page{"data-dropdown" => "#page-results", :href => "#", :title => "Click to show options"}
+                %span 20
+              #page-results.dropdown.dropdown-tip.dropdown-relative
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"} 20
+                  %li
+                    %a{:href => "#"} 50
+                  %li
+                    %a{:href => "#"} 100
+
+            .row.action-bar-item.actions
+              %label Actions
+              %a.button.btn-s.results-page{"data-dropdown" => "#actions", :href => "#", :title => "Click to show options"}
+                %span Actions
+              #actions.dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"} Export CSV
+                  %li
+                    %a{:href => "#"} Export XLS
+                  %hr
+                  %li
+                    %a{:href => "#"} Send message
+                  %li
+                    %a{:href => "#"} Send email
+                  %li
+                    %a{:href => "#"} Change membership status
+                  %li
+                    %a{:href => "#"} Change role in group
 
       .view-search-results
         .view-content

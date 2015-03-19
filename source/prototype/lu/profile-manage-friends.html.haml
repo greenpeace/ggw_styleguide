@@ -1,0 +1,109 @@
+---
+title: Manage friends
+body_class: not-front logged-in page-manage-friends l-has-sidebar
+profile: friends
+access: mine
+direct_parent:
+  -
+    name: "Santa Doe Claus"
+    url: "./../lu/my-profile.html"
+user_role: lu
+design_status: Needs review
+action_menu:
+  -
+    id: "#content"
+    label: "Manage friends"
+    icon: "users"
+  -
+    id: "#block-go-to-group"
+    label: "Groups"
+    icon: "users"
+  -
+    id: "#block-find-friends"
+    label: "Add new friends"
+    icon: "user-add"
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column
+  %h1.group-heading.only-mobile
+    %i.icon-user
+      Santa Doe Claus
+  #content.block.current
+    %i.block-icon.icon-bg-user.icon-users
+    %h2#page-title.block-title
+      Manage friends
+
+    .content
+
+      .view-header
+        %form
+          .action-bar
+            .action-bar-item.resultstats 95 Friends
+
+            .action-bar-item.sorting
+              %label Sort by
+              %a.button.btn-s.sorting{"data-dropdown" => "#sort-results", :href => "#", :title => "Click to show options"}
+                %span Name
+              #sort-results.dropdown.dropdown-tip.dropdown-relative
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"} Name
+                  %li
+                    %a{:href => "#"} Username
+                  %li
+                    %a{:href => "#"} Location
+                  %li
+                    %a{:href => "#"} Status
+
+            .action-bar-item.results-page
+              %label Results per page
+              %a.button.btn-s.results-page{"data-dropdown" => "#page-results", :href => "#", :title => "Click to show options"}
+                %span 20
+              #page-results.dropdown.dropdown-tip.dropdown-relative
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"} 20
+                  %li
+                    %a{:href => "#"} 50
+                  %li
+                    %a{:href => "#"} 100
+
+      .view-search-results
+        .view-content
+          = partial :"teasers/member"
+          = partial :"teasers/member_2"
+          = partial :"teasers/member_3"
+          = partial :"teasers/member_4"
+          = partial :"teasers/member_2"
+          = partial :"teasers/member_3"
+          = partial :"teasers/member_4"
+          = partial :"teasers/member_2"
+          = partial :"teasers/member_3"
+          = partial :"teasers/member_4"
+          = partial :"teasers/member_2"
+          = partial :"teasers/member_3"
+          = partial :"teasers/member_4"
+          .align-center
+            %a.button{:href => "#"} show some more
+
+%aside.l-sidebar.sidebar
+
+  #block-find-friends.block
+    %i.block-icon.icon-bg-user.icon-user-add
+    %h2.block-title
+      Add new friends
+    .content
+      .form-item
+        .form-description
+          Start typing the user's first or last name.
+        %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "", :placeholder => "Select some members"}
+        .autocomplete#tagsautocomplete
+          %ul
+            - 20.times do |num|
+              %li
+                = lorem.name
+
+      .form-actions
+        %input.button.btn-primary{:type => "submit", :value => "Send friend request"}

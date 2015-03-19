@@ -9,15 +9,22 @@
   .content
 
     .field-name-group-image
-      %img.lazyload{:alt => "Profile picture of group.", :src => "/photos/blank.png", "data-src" => "/photos/260/nature2.jpg"}/
+      %img.lazyload{:alt => "Profile picture of group.", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-src" => "/photos/group-avatar210.jpg"}/
       %noscript
-        %img{:alt => "Profile picture of group.", :src => "/photos/260/nature2.jpg"}/
+        %img{:alt => "Profile picture of group.", :src => "/photos/group-avatar210.jpg"}/
+
+    .field.field-name-group-name
+      Greenwire London
 
     .field.field-name-body
-      %p
-        = lorem.paragraph
+      .field-label.element-hidden About:
+      .field-item
+        %p
+          = lorem.paragraph
 
-    .field.field-group-primary-contact
+    .clear
+
+    .field.field-group-primary-contact.field-inline-block
       .field-label Primary contact
       .field-item
         - if current_page.data.user_role == "lu"
@@ -26,7 +33,7 @@
         - else
           = lorem.name
 
-    .field.field-group-secondary-contact
+    .field.field-group-secondary-contact.field-inline-block
       .field-label Secondary contact
       .field-item
         - if current_page.data.user_role == "lu"

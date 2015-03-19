@@ -81,11 +81,6 @@ article {
     text-decoration: underline;
   }
 
-  &:focus {
-    text-decoration: underline;
-    outline: thin dotted;
-  }
-
   ul,
   ol {
     margin: 0 0 10px 0;
@@ -155,9 +150,13 @@ article {
 
 }
 
+.no-touch a:focus {
+  text-decoration: underline;
+  outline: thin dotted;
+}
+
 .small-link {
-  @include font-size($small);
-  margin-top: $def-mar-half;
+  @include font-size($p);
   display: block;
 }
 
@@ -178,26 +177,24 @@ article {
   margin: .5em 0 1em;
 }
 
-.secondary-title {
-  color: $grey-m;
-  @include font-size($p);
-  font-weight: 300;
-}
-
 .group-heading {
-  display: inline-block;
-  color: $white;
-  background: $green2;
-  border-radius: 4px;
-  @include font-size($p);
+  color: $green2;
+  @include font-size($h4);
   line-height: 1rem; // must be able to span multiple lines
-  font-weight: normal;
-  padding: $def-mar-half $def-mar;
-  margin: 0 0 $def-mar-half;
+  margin: $def-mar 0;
+
+  i {
+    @include font-size($p);
+    vertical-align: text-top;
+  }
+
+  span {
+    display: inline-block;
+  }
 }
 
 @include breakpoint($desk) {
-  .sidebar p {
+  .l-has-sidebar .sidebar p {
     margin: .35em 0 .65em;
   }
 }

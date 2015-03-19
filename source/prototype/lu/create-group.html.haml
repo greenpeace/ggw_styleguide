@@ -1,0 +1,286 @@
+---
+title: Create new group
+body_class: not-front logged-in page-type-group l-has-sidebar-first page-edit
+user_role: lu
+script: edit
+design_status: Work in progress
+menu:
+  -
+    name: 'Title, description & image'
+    url: '#section-title'
+  -
+    name: 'Date and location'
+    url: '#section-date'
+  -
+    name: 'Organisers and role'
+    url: '#section-organisers'
+  -
+    name: 'Event type and tags'
+    url: '#section-event-type'
+  -
+    name: 'Visibility'
+    url: '#section-visibility'
+---
+
+
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first.sfmenu
+  .block
+    %i.block-icon.icon-calendar.icon-bg-event
+    %h2.block-title Create group
+    .content
+      - for item in current_page.data.menu
+        %a.sf-navbtn{:href => "#{item.url}"}
+          #{item.name}
+.l-main-column
+  %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
+    %section#section-title.block.current.main-content
+      %i.block-icon.icon-pencil.icon-bg-action
+      %h2.block-title Title, description & image
+      .content
+        .form-wrapper
+          .form-item.field-name-title
+            %label.form-label{:for => "edit-field-title"}
+              Title
+              %span.form-required{:title => "This field is required."} *
+            %input#edit-field-title.form-text{:name => "edit-field-title", :type => "text", :value => "", :tabindex => "1"}/
+          .form-item
+            %label.form-label{:for => "field-edit-description"}
+              Description
+              %span.form-required{:title => "This field is required."} *
+            %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "2"}
+          .form-item
+            %label.form-label{:for => "field-edit-image"}
+              Image
+              %span.form-required{:title => "This field is required."} *
+            .media-widget
+              .preview
+                .media-item
+              .form-description
+                No image selected <br />
+                Files must be smaller than3 MB <br/>
+                Allowed file types: png gif jpg jpeg <br/>
+                Images must be larger than 400x300 pixels.
+              %input#uploadimage.element-invisible{:type => "file", :value => "upload"}
+              %button.button.launcher select image
+              %a.button.remove.element-hidden{:href => "#", :tabindex => "3"} remove image
+              %p#file-name.element-hidden
+
+    %section#section-date.block
+      %i.block-icon.icon-calendar.icon-bg-action
+      %h2.block-title Date and location
+      .content
+        .form-wrapper.row
+          .form-item.field-name-event-date-type
+            %label.form-label{:for => "edit-field-event-date-type"}
+              Date and duration
+            .form-radios
+              .form-type-radio
+                %input#edit-field-event-date-type-und-0.form-radio{:name => "field_event_date_type", :type => "radio", :value => "0", :checked => "checked", :tabindex => "4"}
+                %label.option{:for => "edit-field-event-date-type-und-0"} One time event
+              .form-type-radio
+                %input#edit-field-event-date-type-und-1.form-radio{:name => "field_event_date_type", :type => "radio", :value => "1"}
+                %label.option{:for => "edit-field-event-date-type-und-1"} Ongoing event
+        .clear
+        .form-wrapper.row.deskwidth50
+          .inline-label
+            %label
+              Start:
+              %span.form-required{:title => "This field is required."} *
+          .form-item.field-name-event-date-und-0-value-date
+            %input#edit-field-event-date-und-0-value-date.form-text{:type => "date", :value => "", :placeholder => "date", :tabindex => "5"}
+          .form-item.field-name-event-date-und-0-value-time
+            %input#edit-field-event-date-und-0-value-time.form-text{:type => "time", :value => "", :placeholder => "time", :tabindex => "6"}
+        .form-wrapper.row.deskwidth50
+          .inline-label
+            %label
+              End:
+          .form-item.field-name-event-date-und-1-value-date
+            %input#edit-field-event-date-und-1-value-date.form-text{:type => "date", :value => "", :placeholder => "date", :tabindex => "7"}
+          .form-item.field-name-event-date-und-1-value-time
+            %input#edit-field-event-date-und-1-value-time.form-text{:type => "time", :value => "", :placeholder => "time", :tabindex => "8"}
+
+        .form-wrapper
+          .form-item.form-type-select.field-event-location-und-country
+            %label.form-label{:for => "edit-event-location"}
+              Country
+              %span.form-required{:title => "This field is required."} *
+            %select.chosen-select{:name => "edit-event-location-und-country", :tabindex => "10"}
+              %option{:value => ""} Please select
+              %option{:value => "xx"} NOT LISTED
+              %option{:value => "af"} Afghanistan
+              %option{:value => "ax"} Aland Islands
+              %option{:value => "al"} Albania
+              %option{:value => "dz"} Algeria
+              %option{:value => "as"} American Samoa
+              %option{:value => "ad"} Andorra
+              %option{:value => "ao"} Angola
+              %option{:value => "ai"} Anguilla
+              %option{:value => "aq"} Antarctica
+              %option{:value => "ag"} Antigua and Barbuda
+              %option{:value => "ar"} Argentina
+              %option{:value => "am"} Armenia
+              %option{:value => "aw"} Aruba
+              %option{:value => "au"} Australia
+              %option{:value => "at"} Austria
+              %option{:value => "az"} Azerbaijan
+              %option{:value => "bs"} Bahamas
+              %option{:value => "bh"} Bahrain
+              %option{:value => "bd"} Bangladesh
+              %option{:value => "bb"} Barbados
+              %option{:value => "by"} Belarus
+              %option{:value => "be"} Belgium
+              %option{:value => "bz"} Belize
+              %option{:value => "bj"} Benin
+              %option{:value => "bm"} Bermuda
+              %option{:value => "bt"} Bhutan
+              %option{:value => "bo"} Bolivia, Plurinational State of
+              %option{:value => "bq"} Bonaire, Sint Eustatius and Saba
+              %option{:value => "ba"} Bosnia and Herzegovina
+              %option{:value => "bw"} Botswana
+              %option{:value => "bv"} Bouvet Island
+              %option{:value => "br"} Brazil
+              %option{:value => "io"} British Indian Ocean Territory
+              %option{:value => "bn"} Brunei Darussalam
+              %option{:value => "bg"} Bulgaria
+              %option{:value => "bf"} Burkina Faso
+              %option{:value => "bi"} Burundi
+              %option{:value => "kh"} Cambodia
+              %option{:value => "cm"} Cameroon
+              %option{:value => "ca"} Canada
+              %option{:value => "cv"} Cape Verde
+              %option{:value => "ky"} Cayman Islands
+              %option{:value => "cf"} Central African Republic
+              %option{:value => "td"} Chad
+              %option{:value => "cl"} Chile
+              %option{:value => "cn"} China
+              %option{:value => "cx"} Christmas Island
+              %option{:value => "cc"} Cocos (Keeling) Islands
+              %option{:value => "co"} Colombia
+              %option{:value => "km"} Comoros
+              %option{:value => "cg"} Congo
+              %option{:value => "cd"} Congo, The Democratic Republic of the
+              %option{:value => "ck"} Cook Islands
+              %option{:value => "cr"} Costa Rica
+              %option{:value => "hr"} Croatia
+              %option{:value => "cu"} Cuba
+              %option{:value => "cw"} Curaçao
+              %option{:value => "cy"} Cyprus
+              %option{:value => "cz"} Czech Republic
+              %option{:value => "ci"} Côte d'Ivoire
+              %option{:value => "dk"} Denmark
+              %option{:value => "dj"} Djibouti
+              %option{:value => "dm"} Dominica
+              %option{:value => "do"} Dominican Republic
+              %option{:value => "ec"} Ecuador
+              %option{:value => "eg"} Egypt
+              %option{:value => "sv"} El Salvador
+              %option{:value => "gq"} Equatorial Guinea
+              %option{:value => "er"} Eritrea
+              %option{:value => "ee"} Estonia
+              %option{:value => "et"} Ethiopia
+              %option{:value => "fk"} Falkland Islands (Malvinas)
+              %option{:value => "fo"} Faroe Islands
+              %option{:value => "fj"} Fiji
+              %option{:value => "fi"} Finland
+              %option{:value => "fr"} France
+              %option{:value => "gf"} French Guiana
+              %option{:value => "pf"} French Polynesia
+              %option{:value => "tf"} French Southern Territories
+
+          .form-item.field-event-location
+            %label.form-label{:for => "edit-event-location"}
+              Location
+            .form-description We will attempt to calculate the coordinates from the supplied address.
+            %input#edit-event-location.form-text{:name => "edit-event-location", :type => "text", :value => "", :placeholder => "e.g. venue name, address, city", :tabindex => "9"}/
+            %a.small-link{:href => "#"}
+              %i.icon-plus
+              add geocoordinates manually
+
+    %section#section-organisers.block
+      %i.block-icon.icon-users.icon-bg-action
+      %h2.block-title Organisers and roles
+      .content
+        .form-wrapper
+          .form-item.form-type-select
+            %label.form-label{:for => "organisersinput"} Organisers
+            %select#organisersinput.chosen-select{"data-placeholder" => "Select organisers...", :multiple => "multiple", :tabindex => "11"}
+              - 50.times do |num|
+                :preserve
+                  <option>
+                = lorem.name
+                :preserve
+                  </option>
+
+          .form-item
+            %label.form-label
+              Roles & maximum of people needed
+            .form-description Enter the roles to which the users can subscribe to. Example: Driver (9:00 - 13:00).
+
+            .row.clone-item
+              .form-item.edit-field-event-roles-und-0-human{:style => "margin-top:7px;"}
+                %input#edit-field-event-roles-und-0-human.form-text{:size => "29", :type => "text", :value => "", :placeholder => "describe the role", :tabindex => "12"}
+              .form-item.field-event-roles-und-0-role-limit
+                %input#edit-field-event-roles-und-0-role-limit.form-text.number-field{:type => "number", :value => "", :placeholder => "max. no.", :tabindex => "13"}
+            %a.small-link.clone-trigger{:href => "#"}
+              %i.icon-plus
+              add another role
+
+    %section#section-event-type.block
+      %i.block-icon.icon-tag.icon-bg-action
+      %h2.block-title Event type and tags
+      .content
+        .form-wrapper
+          .form-item.form-type-select
+            %label.form-label{:for => "eventtype"} Event type
+            %select#eventtype.chosen-select{"data-placeholder" => "Select one or more types", :multiple => "multiple", :tabindex => "14"}
+              - 50.times do |num|
+                :preserve
+                  <option>
+                = lorem.word
+                :preserve
+                  </option>
+
+          .form-item
+            %label Tags
+            %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "", :placeholder => "Text input", :tabindex => "15"}
+            .autocomplete#tagsautocomplete
+              %ul
+                - 50.times do |num|
+                  %li
+                    = lorem.word
+
+    %section#section-visibility.block
+      %i.block-icon.icon-eye.icon-bg-action
+      %h2.block-title Visibility
+      .content
+        .form-wrapper
+          .form-item.form-type-select
+            %label.form-label{:for => "groups"} Group(s)
+            %select#groups.chosen-select{"data-placeholder" => "Select one or more groups", :multiple => "multiple", :tabindex => "16"}
+              - 50.times do |num|
+                :preserve
+                  <option>
+                = lorem.words 3
+                :preserve
+                  </option>
+          .form-item.form-type-radios.radio-blocks
+            %label.form-label{:for => "edit-group-content-access"}
+              Private or public?
+              %span.form-required{:title => "This field is required."} *
+            .form-radios
+              .form-type-radio
+                %input#edit-group-content-access-und-0.form-radio{:name => "group_content_access", :type => "radio", :value => "0", :checked => "checked", :tabindex => "17"}
+                %label.option{:for => "edit-group-content-access-und-0"} Private - only for group members
+              .form-type-radio
+                %input#edit-group-content-access-und-1.form-radio{:name => "group_content_access", :type => "radio", :value => "1", :tabindex => "18"}
+                %label.option{:for => "edit-group-content-access-und-1"} All members of Greenwire
+              .form-type-radio
+                %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2", :tabindex => "19"}
+                %label.option{:for => "edit-group-content-access-und-2"} Public - visible for all visitors of Greenwire
+
+    %section#section-submit
+      .form-actions.form-wrapper
+        %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit"}
+        %input{:type => "submit", :class => "button btn-l", :value => "Cancel"}

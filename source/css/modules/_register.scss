@@ -4,85 +4,50 @@
   margin:0;
 }
 
+.field-name-field-user-phone-house label,
+.field-name-field-user-phone-mobile label {
+  @extend %element-hidden;
+
+  @include breakpoint($tab) {
+    display: block;
+  }
+
+}
+
 // let the image in the sidebar align in the center
 .page-register .sidebar .content {
   text-align: center;
-}
-
-.field-name-field-user-phone-house,
-.field-name-field-user-phone-mobile {
-  label {
-    display: none;
-  }
-}
-
-@include breakpoint($tab) {
-
-  .field-name-field-user-first-name {
-    @include grid-span(6, 1);
-  }
-
-  .field-name-field-user-last-name {
-    @include grid-span(6, 7);
-  }
-
-  .field-name-field-user-birthdate {
-    @include inline-cf;
-  }
-
-  .field-name-field-user-phone-house-country,
-  .field-name-field-user-phone-mobile-country {
-    width: 190px;
-    float: left;
-  }
-
-  .field-name-field-user-phone-house,
-  .field-name-field-user-phone-mobile {
-    width: 210px;
-    float: left;
-    padding-left: 1em;
-
-    label {
-      display: block;
-    }
-  }
-
-}
-
-.phone-wrapper {
-  @extend %cf;
 }
 
 .wrapper {
   @extend %wrapper;
 }
 
-
 // Showing and hiding of phone options
-
 .phone-switch {
   @extend %block;
+  @include font-size($p);
 }
 
-#landline,
-#mobileline {
+.no-js #landline,
+.no-js #mobileline {
   background: $white;
   z-index: 3;
 }
 
-#landline {
+.no-js #landline {
   position: absolute;
   top:0;
   width: 100%;
   z-index: 4;
 }
 
-#landline:not( :target ) {
+.no-js #landline:not( :target ) {
   @extend %element-hidden;
 }
 
-#mobileline:target,
-#landline:target {
+.no-js #mobileline:target,
+.no-js #landline:target {
   display:block;
 }
 
@@ -105,8 +70,6 @@
     }
 
   }
-
-
 
 }
 

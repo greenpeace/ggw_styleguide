@@ -1,5 +1,5 @@
 .views-row
-  %article.node-teaser-user.node-teaser.lazyload{"data-expand" => "0"}
+  %article.node-teaser-user.node-teaser.lazyload
     .field-type-image
       %img.lazyload{:alt => "Example of image.", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-sizes" => "(min-width: 768px) 130px, 90px", "data-srcset" => "/photos/90/people2.jpg 90w, /photos/130/people3.jpg 130w, /photos/180/people5.jpg 180w, /photos/260/people4.jpg 260w"}/
       %noscript
@@ -12,5 +12,12 @@
       .submitted
         %a.type.user{:href => "#"}
         %span Perigeux
-      .field-name-body
-        = lorem.paragraph
+      - if current_page.data.profile == "friends" && current_page.data.access == "mine"
+        .field.field-friend-status
+          .btn-group
+            %a.button.btn-s{:href => "#"}
+              %i.icon-trash
+              Unfriend
+      - else
+        .field-name-body
+          = lorem.paragraph

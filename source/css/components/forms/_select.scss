@@ -72,7 +72,7 @@ select:-moz-focusring {
     position: relative;
     display: block;
     border-radius: 3px;
-    padding: .4em 1.3em .4em .4em;
+    padding: .4em ($def-mar * 1.5) .4em .4em;
     background: transparent;
     line-height: normal;
     text-overflow: ellipsis;
@@ -83,6 +83,10 @@ select:-moz-focusring {
     appearance: none;
     outline: none;
     border: none;
+
+    @include breakpoint($tab) {
+      @include font-size($p);
+    }
   }
 }
 

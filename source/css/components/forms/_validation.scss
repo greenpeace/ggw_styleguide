@@ -6,6 +6,11 @@
     border: 1px solid $error;
     position: relative;
     padding-right: 2em;
+
+    &:focus {
+      border-color: $green1;
+    }
+
   }
 
   .form-radio + label,
@@ -13,8 +18,12 @@
     color: $error;
   }
 
-  .selector select {
+  .selector {
     border: 1px solid $error;
+
+    &.focused {
+      border-color: $green1;
+    }
   }
 
   .form-feedback {

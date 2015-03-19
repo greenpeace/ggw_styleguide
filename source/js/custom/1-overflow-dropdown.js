@@ -91,6 +91,10 @@ $(function() {
 
     $('input[type=file]').nicefileinput();
 
+    if ($('.block .map').length != 0) {
+      map.invalidateSize(); //solve map is not loading correctly
+    }
+
     $(this).closest('.dropdown').hide();
 
     $(window).trigger("resize");

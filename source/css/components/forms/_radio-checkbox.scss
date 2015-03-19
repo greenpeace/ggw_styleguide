@@ -1,7 +1,9 @@
 // CHECK BOXES & RADIO BUTTONS
-.form-radios,
-.form-type-checkbox {
-  display: inline-block;
+@include breakpoint($smalltab) {
+  .form-radios,
+  .form-type-checkbox {
+    display: inline-block;
+  }
 }
 
 .form-type-radio input[type="radio"],
@@ -20,11 +22,13 @@
   }
 }
 
-.form-type-radio {
-  display: inline-block;
+@include breakpoint($smalltab) {
+  .form-type-radio {
+    display: inline-block;
 
-  .radio-blocks & {
-    display: block;
+    .radio-blocks & {
+      display: block;
+    }
   }
 }
 

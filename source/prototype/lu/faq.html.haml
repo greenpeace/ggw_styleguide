@@ -1,0 +1,87 @@
+---
+title: FAQ Greenpeace Greenwire
+body_class: not-front logged-in page-faq l-has-sidebar-first
+user_role: lu
+design_status: Needs review
+menu:
+  -
+    name: 'Category 1'
+    url: '#section-category1'
+  -
+    name: 'Category 2'
+    url: '#section-category2'
+  -
+    name: 'Category 3'
+    url: '#section-category3'
+  -
+    name: 'Category 4'
+    url: '#section-category4'
+---
+
+
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first.sfmenu
+
+  .block
+    %i.block-icon.icon-help.icon-bg-default
+    %h2.block-title Categories
+    .content
+      - for item in current_page.data.menu
+        %a.sf-navbtn{:href => "#{item.url}"}
+          #{item.name}
+
+.l-main-column#content
+
+  %section#section-category1.block.block-no-icon
+    %h2.block-title Category 1
+
+    .content
+      - 10.times do |num|
+        .views-row
+          %article.node-teaser-faq.node-accordion
+            %h2.node-title
+              %a{:href => "#0"}
+                = lorem.sentence
+            .field-name-body
+              %p
+                =lorem.paragraph
+
+  %section#section-category2.block.block-no-icon
+    %h2.block-title Category 2
+
+    .content
+      - 10.times do |num|
+        .views-row
+          %article.node-teaser-faq.node-accordion
+            %h2.node-title
+              %a{:href => "#0"}
+                = lorem.sentence
+            .field-name-body
+              =lorem.paragraph
+
+  %section#section-category3.block.block-no-icon
+    %h2.block-title Category 3
+
+    .content
+      - 10.times do |num|
+        .views-row
+          %article.node-teaser-faq.node-accordion
+            %h2.node-title
+              %a{:href => "#0"}
+                = lorem.sentence
+            .field-name-body
+              =lorem.paragraph
+
+  %section#section-category4.block.block-no-icon
+    %h2.block-title Category 4
+
+    .content
+      - 10.times do |num|
+        .views-row
+          %article.node-teaser-faq.node-accordion
+            %h2.node-title
+              %a{:href => "#0"}
+                = lorem.sentence
+            .field-name-body
+              =lorem.paragraph

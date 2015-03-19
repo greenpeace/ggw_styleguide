@@ -14,8 +14,12 @@
   min-height: 200px;
 }
 
-#section-submit .form-wrapper {
-  text-align: center;
+#section-submit .button {
+  background: $white;
+
+  &.btn-primary {
+    background: $primary;
+  }
 }
 
 .js {
@@ -23,7 +27,7 @@
   .section-submit {
     background: $white;
     box-shadow: 0 1px 3px rgba(0,0,0,.5);
-    padding: $def-mar;
+    padding: $def-mar-half;
     width: 100%;
     position: fixed;
     z-index: 2;
@@ -57,4 +61,71 @@
 
   }
 
+}
+
+.wrapper {
+  @extend %wrapper;
+}
+
+.launcher {
+  position: relative;
+  z-index: 99;
+}
+
+#results {
+  position: relative;
+}
+
+.location-lookup-resultlist {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 400px;
+
+  li {
+    display: block;
+  }
+
+  a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $base;
+    padding: 0.5em;
+    display: block;
+    line-height: 1.2em;
+
+    &:hover {
+      background-color: $green2;
+      color: $white;
+      text-decoration: none;
+    }
+
+  }
+
+}
+
+.preview-location {
+  display: block;
+  width: 80%;
+  height: 220px;
+
+  @include breakpoint($desk) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 258px;
+    height: 258px;
+  }
+}
+
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+  transition: margin 0.2s;
 }

@@ -241,6 +241,11 @@
   margin: $def-mar-half;
   z-index: 1;
 
+  .page-profile &,
+  .page-group-home & {
+    margin-bottom: 0;
+  }
+
   @include breakpoint($desk) {
     margin: 0;
     padding-bottom: 0;
@@ -249,6 +254,15 @@
 
 .l-sidebar {
   margin: $def-mar-half;
+
+  .page-profile &,
+  .page-group-home & {
+    margin: 0 $def-mar-half;
+
+    @include breakpoint($desk) {
+      margin: 0;
+    }
+  }
 
   @include breakpoint($desk) {
     position: relative;

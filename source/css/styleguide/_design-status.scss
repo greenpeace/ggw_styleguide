@@ -1,4 +1,5 @@
 .design-status {
+  display: none;
   position: fixed;
   z-index: 99;
   left: 0;
@@ -16,6 +17,10 @@
       @extend %icon-clock;
     }
 
+  }
+
+  @include breakpoint($tab) {
+    display: block;
   }
 
 }

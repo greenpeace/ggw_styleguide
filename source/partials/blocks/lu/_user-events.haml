@@ -1,0 +1,75 @@
+#block-user-events.block.lazyload{"data-expand" => "-40"}
+  %i.block-icon.icon-bg-user.icon-event
+  - if current_page.data.access == "mine"
+    %h2.block-title My events
+  - else
+    %h2.block-title Events
+
+  .content
+
+    .tabwrapper
+      %ul.tabs
+        %li
+          =nav_link 'Upcoming events', '#upcoming-events', :class => 'tab'
+        %li
+          =nav_link 'Past events', '#past-events', :class => 'tab'
+
+    .tabable
+      #upcoming-events.tabable-block.active
+
+        %article.node-type-small
+          %h2
+            %a{:href => "./event-full.html"} Heb jij interesse in een Act for Arctic training of webinar?
+          .field.field-field-event-date
+            .date-display-single 20 juli, 2014 - 09:00
+        %article.node-type-small
+          %h2
+            %a{:href => "./event-full.html"} Act for Arctic Kick-Off training
+          .field.field-field-event-date
+            .date-display-single 24 juli, 2014 - 18:00
+        %article.node-type-small
+          %h2.node-title
+            %a{:href => "./event-full.html"} De héle Noordzeekust schoon van 1 t/m 31 augustus! Help je mee?
+          .field.field-field-event-date
+            .date-display-single 1 augustus, 2014 - 00:00
+        %article.node-type-small
+          %h2
+            %a{:href => "./event-full.html"} Netwerkborrel 28 augustus
+          .field.field-field-event-date
+            .date-display-single 28 augustus, 2014 - 17:00
+        %article.node-type-small
+          %h2
+            %a{:href => "./event-full.html"} Opschonen Enschede
+          .field.field-field-event-date
+            .date-display-single 20 July, 2014 - 12:09
+
+        %a.button{:href => "./events.html"} load more
+
+      #past-events.tabable-block
+
+        %article.node-type-small
+          %h2
+            %a{:href => "./event-full.html"}
+              = lorem.paragraph
+          .field.field-field-event-date
+            .date-display-single 20 juli, 2014 - 09:00
+        %article.node-type-small
+          %h2
+            %a{:href => "./event-full.html"}
+              = lorem.paragraph
+          .field.field-field-event-date
+            .date-display-single 24 juli, 2014 - 18:00
+        %article.node-type-small
+          %h2
+            %a{:href => "./event-full.html"}
+              = lorem.paragraph
+          .field.field-field-event-date
+            .date-display-single 1 augustus, 2014 - 00:00
+        %article.node-type-small
+          %h2
+            %a{:href => "./event-full.html"}
+              = lorem.paragraph
+          .field.field-field-event-date
+            .date-display-single 28 augustus, 2014 - 17:00
+
+        %a.button{:href => "./events.html"} load more

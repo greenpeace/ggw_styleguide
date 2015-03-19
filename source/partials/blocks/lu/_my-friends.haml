@@ -1,0 +1,36 @@
+#block-friends.block
+  - if current_page.data.access == "mine"
+    .action-bar-itemr
+      .action-bar-item.add-content
+        %a.button{:href => "./profile-manage-friends.html", :title => "Manage friends"} Manage friends
+
+  %i.block-icon.icon-bg-user.icon-users
+  %h2.block-title
+    My friends
+  .content
+    .members
+      - 4.times do |num|
+        %a{:href => "#"}
+          %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/people1.jpg"}/
+          %noscript
+            %img{:alt => "Name of user", :src => "/photos/75/people1.jpg"}/
+        %a{:href => "#"}
+          %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/people2.jpg"}/
+          %noscript
+            %img{:alt => "Name of user", :src => "/photos/75/people2.jpg"}/
+        %a{:href => "#"}
+          %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/people3.jpg"}/
+          %noscript
+            %img{:alt => "Name of user", :src => "/photos/75/people3.jpg"}/
+        %a{:href => "#"}
+          %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/people4.jpg"}/
+          %noscript
+            %img{:alt => "Name of user", :src => "/photos/75/people4.jpg"}/
+        %a{:href => "#"}
+          %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/people5.jpg"}/
+          %noscript
+            %img{:alt => "Name of user", :src => "/photos/75/people5.jpg"}/
+      %a{:href => "#"}
+        %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/people1.jpg"}/
+        %noscript
+          %img{:alt => "Name of user", :src => "/photos/75/people1.jpg"}/

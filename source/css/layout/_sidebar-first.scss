@@ -1,9 +1,23 @@
-@include breakpoint($desk) {
-  .l-has-sidebar-first .l-main-column .block {
-    display: block;
-    clear: none;
-    margin: 0 0 $def-mar 0;
+.sidebar-first .block {
+  margin-bottom: $def-mar;
+
+  p {
+    margin: 0;
   }
+
+}
+
+@include breakpoint($desk) {
+  .l-has-sidebar-first {
+
+    .l-main-column .block {
+      display: block;
+      clear: none;
+      margin: 0 0 $def-mar 0;
+    }
+
+  }
+
 
 }
 
@@ -40,6 +54,15 @@
 
   .sidebar-first .block {
     padding: 0;
+
+    p {
+      margin: 0.65em 0 0.95em;
+    }
+
+    + .block .content {
+      padding: 0 $def-mar $def-mar $def-mar;
+    }
+
   }
 
 }
@@ -58,6 +81,7 @@
   @include breakpoint($desk) {
     &:last-child {
       border: none;
+      border-radius: 0 0 4px 4px;
     }
   }
 
@@ -77,9 +101,6 @@
     color: $white;
   }
 
-  &:last-child {
-    border-radius: 0 0 4px 4px;
-  }
 }
 
 .sf-title {
@@ -89,4 +110,28 @@
     display: block;
   }
 
+}
+
+.cloned-fixed-menu {
+  position: fixed;
+  top: 0;
+  margin-top: 0;
+  z-index: 2;
+  display: none;
+  visibility: hidden;
+
+  @include breakpoint($desk) {
+    display: block;
+  }
+}
+
+@include breakpoint($desk) {
+
+  .deskvisible {
+    visibility: visible;
+  }
+
+  .deskinvisible {
+    visibility: hidden;
+  }
 }

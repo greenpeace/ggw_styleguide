@@ -3,13 +3,13 @@
   @include font-size($small);
   position: relative;
 
+  .view-header & {
+    margin: $def-mar-half 0 $def-mar;
+  }
+
   .page-search .view-header & {
     padding-right: 60px;
   }
-}
-
-.page-search .view-header .action-bar {
-  margin: $def-mar-half 0 $def-mar;
 }
 
 .action-bar-item {

@@ -1,3 +1,4 @@
+// each form item is wrapped
 .form-wrapper {
   @extend %cf;
   margin-bottom: $def-mar;
@@ -13,49 +14,9 @@
   margin: .5em 0 1em;
 }
 
-.form-wrapper.row {
-  display: inline-block;
-  vertical-align: bottom;
-
-  // a label for multiple inline fields
-  .inline-label {
-    display: inline-table;
-    margin-bottom: 0;
-    margin-right: .5em;
-    min-width: 60px;
-  }
-
-  .form-item {
-    display: inline-table;
-    margin-bottom: 0;
-    margin-right: .5em;
-  }
-  .button {
-    margin: 0;
-  }
-
-  // keep event edit form compact
-  .date-field {
-    width: 120px;
-  }
-  .time-field,
-  .number-field {
-    width: 100px;
-  }
-}
-
-.row {
-  vertical-align: bottom;
-
-  .form-item {
-    display: inline-table;
-    margin-bottom: 0;
-    margin-right: .5em;
-  }
-}
 
 .form-item {
-  margin-bottom: (1.5 * $def-mar);
+  margin-bottom: $def-mar;
 
   .sidebar & {
     margin-bottom: $def-mar-half;
@@ -106,16 +67,21 @@ label {
   line-height: 1.2em;
 }
 
-.date-padding + .form-description,
-.form-text + .form-description,
-.form-description + .form-text {
+.form-description,
+.form-description + .form-text,
+.form-description + .form-text + .form-feedback {
   margin-top: $def-mar-half;
+}
+
+.form-label + .form-description,
+.preview + .form-description {
+  margin-top: 0;
 }
 
 
 //
 // Inline fields (multiple fields on the same line)
-//
+// used in search filters with two dates
 
 .inline-fields {
   display: flex;
@@ -150,13 +116,13 @@ label {
 
 
 // browser specific
-
 .lt-ie9 {
   .page-register .date-padding .form-item {
     width: 100px;
   }
 }
 
+// used at login form
 @include breakpoint($tab) {
   form.flexrow {
     @include cf;

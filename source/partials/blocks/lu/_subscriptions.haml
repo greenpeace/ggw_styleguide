@@ -1,0 +1,55 @@
+#block-user-subscriptions.block.lazyload{"data-expand" => "-40"}
+  %i.block-icon.icon-bg-user.icon-subscription
+  %h2.block-title My subscriptions
+
+  .content
+
+    .tabwrapper
+      %ul.tabs
+        %li
+          =nav_link 'Groups you follow', '#group-subscriptions', :class => 'tab'
+        %li
+          =nav_link 'Content you follow', '#content-subscriptions', :class => 'tab'
+
+    .tabable
+      #group-subscriptions.tabable-block.active
+        .view-ggw-subscribe-node
+          .view-content
+            .views-row
+              .field.views-field-title
+                %a{:href => "#"} Vegan bbq at CeeCee
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+            .views-row
+              .field.views-field-title
+                %a{:href => "#"} Climbing training
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+            .views-row
+              .field.views-field-title
+                %a{:href => "#"} Local group Amsterdam
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+            .views-row
+              .field.views-field-title
+                %a{:href => "#"} Climate changing bootcampers
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+
+          %a.button{:href => "#"} load more
+
+      #content-subscriptions.tabable-block
+        .view-ggw-subscribe-node
+          .view-content
+            .views-row
+              .field.views-field-title
+                %a{:href => "#"} Some photos album
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+            .views-row
+              .field.views-field-title
+                %a{:href => "#"} The weirdest and longest blog with animations you will ever read!
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+
+          %a.button.disabled{:href => "#"} load more

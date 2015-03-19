@@ -24,7 +24,7 @@ $(window).load(function() {
     $('#file-name').removeClass('element-hidden').addClass('filename').html($('#uploadimage').val());
   };
 
-  $('.launcher').on('click', function () {
+  $('.launcher').click(function() {
     $('#uploadimage').click();
     setInterval(intervalFunc, 1);
     return false;

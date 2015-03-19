@@ -1,0 +1,327 @@
+---
+title: Edit user account
+body_class: not-front logged-in page-type-user-account l-has-sidebar-first page-edit
+direct_parent:
+  -
+    name: "John Doe Claus"
+    url: "my-profile.html"
+user_role: lu
+script: edit
+design_status: Needs review
+menu:
+  -
+    name: 'General settings'
+    url: '#section-general'
+  -
+    name: 'Language & timezone'
+    url: '#section-language'
+  -
+    name: 'Privacy preferences'
+    url: '#section-privacy'
+  -
+    name: 'E-mail notifications'
+    url: '#section-notifications'
+---
+
+
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first.sfmenu
+  %h1.group-heading.only-mobile
+    %i.icon-user
+      John Doe Claus
+  .block
+    %i.block-icon.icon-settings.icon-bg-user
+    %h2.block-title Edit account settings
+    .content
+      - for item in current_page.data.menu
+        %a.sf-navbtn{:href => "#{item.url}"}
+          #{item.name}
+
+  #block-edit-profile.block
+    %i.block-icon.icon-bg-user.icon-pencil
+    %h2.block-title Edit profile
+    .content
+      %p To change your personal details, contact details, skills, picture and social media click the button below.
+      %a.button{:href => "./edit-user-profile.html"} Edit profile
+
+.l-main-column
+  %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
+    %section#section-general.block.current.main-content
+      %i.block-icon.icon-pencil.icon-bg-user
+      %h2.block-title General settings
+      .content
+        .form-wrapper
+          .form-item.field-name-username
+            %label.form-label{:for => "edit-field-username"}
+              Username
+              %span.form-required{:title => "This field is required."} *
+            .form-description You are not allowed to use spaces, but hypens and underscores are allowed.
+            %input#edit-field-username.form-text{:name => "edit-field-username", :type => "text", :value => "", :tabindex => "1"}/
+
+          .form-item.field-name-username
+            %label.form-label{:for => "edit-field-username"}
+              E-mail
+              %span.form-required{:title => "This field is required."} *
+            .form-description Enter your current password and a valid email address in order to change your current email. All mails from Greenwire are send to this address.
+            %input#edit-field-username.form-text{:name => "edit-field-username", :type => "text", :value => "", :tabindex => "1"}/
+
+          .form-item.field-name-current-pass
+            %label.form-label{:for => "edit-field-current-pass"}
+              Current password
+            .form-description
+              Enter your current password in order to change your e-mailaddress or to change your password.
+              %a{:href => "#"} Have you lost your current password?
+            %input#edit-field-current-pass.form-text{:name => "edit-field-current-pass", :type => "text", :value => "", :tabindex => "1"}/
+
+        .form-wrapper.row
+
+          .form-item.field-name-pass-pass1
+            %label.form-label{:for => "edit-field-pass-pass1"}
+              New password
+            %input#edit-field-pass-pass1.form-text{:size => "25", :name => "edit-field-pass-pass1", :type => "text", :value => "", :tabindex => "1"}/
+
+          .form-item.field-name-pass-pass2
+            %label.form-label{:for => "edit-field-pass-pass2"}
+              Confirm password
+            %input#edit-field-pass-pass2.form-text{:size => "25", :name => "edit-field-pass-pass2", :type => "text", :value => "", :tabindex => "1"}/
+          .form-description
+            Enter your new password in both fields below. Do not forget to enter your current password in the field above.
+
+            A valid and safe password contains at least 8 characters, an Uppercase letter, a lowercase letter and digit and a special character.
+
+        %br/
+        %br/
+        .form-wrapper
+          .form-item.field-name-user-social-settings
+            %label.form-label{:for => "edit-field-current-pass"}
+              Connected accounts
+            .form-description
+              Connect your account with facebook or Google+ social login.
+            %hr
+            %p You have no connected accounts.
+            %a.social-icon.facebook{:href => "#", :target => "blank"}
+              %span.element-hidden facebook
+            %a.social-icon.googleplus{:href => "#", :target => "blank"}
+              %span.element-hidden googleplus
+
+
+    %section#section-language.block
+      %i.block-icon.icon-globe.icon-bg-user
+      %h2.block-title Language & timezone
+      .content
+        .form-wrapper
+          .form-item.field-name-language-settings
+            %label.form-label{:for => "edit-field-language-settings"}
+              Language
+            .form-radios
+              .form-type-radio
+                %input#edit-field-language-settings-und-0.form-radio{:name => "field-language-settings-0", :type => "radio", :value => "0", :checked => "checked", :tabindex => "4"}
+                %label.option{:for => "edit-field-language-settings-und-0"} Dutch
+              .form-type-radio
+                %input#edit-field-language-settings-und-1.form-radio{:name => "field-language-settings-0", :type => "radio", :value => "1"}
+                %label.option{:for => "edit-field-language-settings-und-1"} English
+
+          .form-item.field-name-language-settings
+            %label.form-label{:for => "edit-field-language-settings"}
+              Secondary language
+            .form-radios
+              .form-type-radio
+                %input#edit-field-language-settings-1-und-0.form-radio{:name => "edit-field-language-settings-1", :type => "radio", :value => "0", :tabindex => "4"}
+                %label.option{:for => "edit-field-language-settings-1-und-0"} English
+              .form-type-radio
+                %input#edit-field-language-settings-1-und-1.form-radio{:name => "edit-field-language-settings-1", :type => "radio", :value => "1", :checked => "checked"}
+                %label.option{:for => "edit-field-language-settings-1-und-1"} Dutch
+
+          .form-item.form-type-select.field-event-location-und-country
+            %label.form-label{:for => "edit-event-location"}
+              Timezone
+            %select.chosen-select{:name => "edit-timezone--2", :tabindex => "10"}
+              %option{:value => "-12"} (GMT-12:00) International Date Line West
+              %option{:value => "-11"} (GMT-11:00) Midway Island, Samoa
+              %option{:value => "-10"} (GMT-10:00) Hawaii
+              %option{:value => "-9"} (GMT-09:00) Alaska
+              %option{:value => "-8"} (GMT-08:00) Pacific Time (US  Canada)
+              %option{:value => "-8"} (GMT-08:00) Tijuana, Baja California
+              %option{:value => "-7"} (GMT-07:00) Arizona
+              %option{:value => "-7"} (GMT-07:00) Chihuahua, La Paz, Mazatlan
+              %option{:value => "-7"} (GMT-07:00) Mountain Time (US  Canada)
+              %option{ :value => "-6"} (GMT-06:00) Central America
+              %option{ :value => "-6"} (GMT-06:00) Central Time (US  Canada)
+              %option{ :value => "-6"} (GMT-06:00) Guadalajara, Mexico City, Monterrey
+              %option{ :value => "-6"} (GMT-06:00) Saskatchewan
+              %option{ :value => "-5"} (GMT-05:00) Bogota, Lima, Quito, Rio Branco
+              %option{ :value => "-5"} (GMT-05:00) Eastern Time (US  Canada)
+              %option{ :value => "-5"} (GMT-05:00) Indiana (East)
+              %option{ :value => "-4"} (GMT-04:00) Atlantic Time (Canada)
+              %option{ :value => "-4"} (GMT-04:00) Caracas, La Paz
+              %option{ :value => "-4"} (GMT-04:00) Manaus
+              %option{ :value => "-4"} (GMT-04:00) Santiago
+              %option{ :value => "-3.5"} (GMT-03:30) Newfoundland
+              %option{ :value => "-3"} (GMT-03:00) Brasilia
+              %option{ :value => "-3"} (GMT-03:00) Buenos Aires, Georgetown
+              %option{ :value => "-3"} (GMT-03:00) Greenland
+              %option{ :value => "-3"} (GMT-03:00) Montevideo
+              %option{ :value => "-2"} (GMT-02:00) Mid-Atlantic
+              %option{ :value => "-1"} (GMT-01:00) Cape Verde Is.
+              %option{ :value => "-1"} (GMT-01:00) Azores
+              %option{ :value => "0"} (GMT+00:00) Casablanca, Monrovia, Reykjavik
+              %option{ :value => "0"} (GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London
+              %option{ :value => "1", :selected => "selected"} (GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
+              %option{ :value => "1"} (GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague
+              %option{ :value => "1"} (GMT+01:00) Brussels, Copenhagen, Madrid, Paris
+              %option{ :value => "1"} (GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb
+              %option{ :value => "1"} (GMT+01:00) West Central Africa
+              %option{ :value => "2"} (GMT+02:00) Amman
+              %option{ :value => "2"} (GMT+02:00) Athens, Bucharest, Istanbul
+              %option{ :value => "2"} (GMT+02:00) Beirut
+              %option{ :value => "2"} (GMT+02:00) Cairo
+              %option{ :value => "2"} (GMT+02:00) Harare, Pretoria
+              %option{ :value => "2"} (GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius
+              %option{ :value => "2"} (GMT+02:00) Jerusalem
+              %option{ :value => "2"} (GMT+02:00) Minsk
+              %option{ :value => "2"} (GMT+02:00) Windhoek
+              %option{ :value => "3"} (GMT+03:00) Kuwait, Riyadh, Baghdad
+              %option{ :value => "3"} (GMT+03:00) Moscow, St. Petersburg, Volgograd
+              %option{ :value => "3"} (GMT+03:00) Nairobi
+              %option{ :value => "3"} (GMT+03:00) Tbilisi
+              %option{ :value => "3.5"} (GMT+03:30) Tehran
+              %option{ :value => "4"} (GMT+04:00) Abu Dhabi, Muscat
+              %option{ :value => "4"} (GMT+04:00) Baku
+              %option{ :value => "4"} (GMT+04:00) Yerevan
+              %option{ :value => "4.5"} (GMT+04:30) Kabul
+              %option{ :value => "5"} (GMT+05:00) Yekaterinburg
+              %option{ :value => "5"} (GMT+05:00) Islamabad, Karachi, Tashkent
+              %option{ :value => "5.5"} (GMT+05:30) Sri Jayawardenapura
+              %option{ :value => "5.5"} (GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi
+              %option{ :value => "5.75"} (GMT+05:45) Kathmandu
+              %option{ :value => "6"} (GMT+06:00) Almaty, Novosibirsk
+              %option{ :value => "6"} (GMT+06:00) Astana, Dhaka
+              %option{ :value => "6.5"} (GMT+06:30) Yangon (Rangoon)
+              %option{ :value => "7"} (GMT+07:00) Bangkok, Hanoi, Jakarta
+              %option{ :value => "7"} (GMT+07:00) Krasnoyarsk
+              %option{ :value => "8"} (GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi
+              %option{ :value => "8"} (GMT+08:00) Kuala Lumpur, Singapore
+              %option{ :value => "8"} (GMT+08:00) Irkutsk, Ulaan Bataar
+              %option{ :value => "8"} (GMT+08:00) Perth
+              %option{ :value => "8"} (GMT+08:00) Taipei
+              %option{ :value => "9"} (GMT+09:00) Osaka, Sapporo, Tokyo
+              %option{ :value => "9"} (GMT+09:00) Seoul
+              %option{ :value => "9"} (GMT+09:00) Yakutsk
+              %option{ :value => "9.5"} (GMT+09:30) Adelaide
+              %option{ :value => "9.5"} (GMT+09:30) Darwin
+              %option{ :value => "10"} (GMT+10:00) Brisbane
+              %option{ :value => "10"} (GMT+10:00) Canberra, Melbourne, Sydney
+              %option{ :value => "10"} (GMT+10:00) Hobart
+              %option{ :value => "10"} (GMT+10:00) Guam, Port Moresby
+              %option{ :value => "10"} (GMT+10:00) Vladivostok
+              %option{ :value => "11"} (GMT+11:00) Magadan, Solomon Is., New Caledonia
+              %option{ :value => "12"} (GMT+12:00) Auckland, Wellington
+              %option{ :value => "12"} (GMT+12:00) Fiji, Kamchatka, Marshall Is.
+              %option{ :value => "13"} (GMT+13:00) Nuku'alofa
+
+    %section#section-privacy.block
+      %i.block-icon.icon-eye.icon-bg-user
+      %h2.block-title Privacy preferences
+      .content
+        .form-wrapper
+          .form-item
+            %label.form-label
+              Hide my last name for other members
+            .form-radios
+              .form-type-radio
+                %input#edit-field-hide1-yes.form-radio{:name => "hide1", :type => "radio", :value => "0", :tabindex => "4"}
+                %label.option{:for => "edit-field-hide1-yes"} Yes
+              .form-type-radio
+                %input#edit-field-hide1-no.form-radio{:name => "hide1", :type => "radio", :value => "1", :checked => "checked"}
+                %label.option{:for => "edit-field-hide1-no"} No
+
+          .form-item
+            %label.form-label
+              Hide my date of birth name for other members
+            .form-radios
+              .form-type-radio
+                %input#edit-field-hide2-yes.form-radio{:name => "hide2", :type => "radio", :value => "0", :checked => "checked", :tabindex => "4"}
+                %label.option{:for => "edit-field-hide2-yes"} Yes
+              .form-type-radio
+                %input#edit-field-hide2-no.form-radio{:name => "hide2", :type => "radio", :value => "1"}
+                %label.option{:for => "edit-field-hide2-no"} No
+
+          .form-item
+            %label.form-label
+              Hide my avatar on public pages
+            .form-radios
+              .form-type-radio
+                %input#edit-field-hide3-yes.form-radio{:name => "hide3", :type => "radio", :value => "0", :tabindex => "4"}
+                %label.option{:for => "edit-field-hide3-yes"} Yes
+              .form-type-radio
+                %input#edit-field-hide3-no.form-radio{:name => "hide3", :type => "radio", :value => "1", :checked => "checked"}
+                %label.option{:for => "edit-field-hide3-no"} No
+
+          .form-item
+            %label.form-label
+              Hide my phone number for organisers of events
+            .form-description
+              The default setting is that Greenpeace staff and organisers of events that you subscribed to can see your phone number.
+            .form-radios
+              .form-type-radio
+                %input#edit-field-hide4-yes.form-radio{:name => "hide4", :type => "radio", :value => "0", :tabindex => "4"}
+                %label.option{:for => "edit-field-hide4-yes"} Yes
+              .form-type-radio
+                %input#edit-field-hide4-no.form-radio{:name => "hide4", :type => "radio", :value => "1", :checked => "checked"}
+                %label.option{:for => "edit-field-hide4-no"} No
+
+    %section#section-notifications.block
+      %i.block-icon.icon-mail.icon-bg-user
+      %h2.block-title Email notifications
+      .content
+        .form-wrapper
+
+          .form-item
+            %label.form-label
+              Only receive plain text emails
+            .form-description
+              Choose yes if you do not want to receive emails with images or with rich markup
+            .form-radios
+              .form-type-radio
+                %input#edit-field-plaintextemails-yes.form-radio{:name => "plaintextemails", :type => "radio", :value => "0", :tabindex => "4"}
+                %label.option{:for => "edit-field-plaintextemails-yes"} Yes
+              .form-type-radio
+                %input#edit-field-plaintextemails-no.form-radio{:name => "plaintextemails", :type => "radio", :value => "1", :checked => "checked"}
+                %label.option{:for => "edit-field-plaintextemails-no"} No
+
+          .form-item
+            %label.form-label
+              How often do wish to receive a digest from Greenwire?
+            .form-radios
+              .form-type-radio
+                %input#edit-field-digest1.form-radio{:name => "digest", :type => "radio", :value => "0", :tabindex => "4"}
+                %label.option{:for => "edit-field-digest1"} Disable digest
+              .form-type-radio
+                %input#edit-field-digest2-no.form-radio{:name => "digest", :type => "radio", :value => "1"}
+                %label.option{:for => "edit-field-digest2"} Immediatelly
+              .form-type-radio
+                %input#edit-field-digest3.form-radio{:name => "digest", :type => "radio", :value => "2"}
+                %label.option{:for => "edit-field-digest3"} Every hour
+              .form-type-radio
+                %input#edit-field-digest4.form-radio{:name => "digest", :type => "radio", :value => "3"}
+                %label.option{:for => "edit-field-digest4"} Daily
+              .form-type-radio
+                %input#edit-field-digest5.form-radio{:name => "digest", :type => "radio", :value => "4", :checked => "checked"}
+                %label.option{:for => "edit-field-digest5"} Weekly
+
+          .form-item
+            %label.form-label
+              Receive email notifications of private messages
+            .form-radios
+              .form-type-radio
+                %input#edit-field-private-messages-yes.form-radio{:name => "privatmsg", :type => "radio", :value => "0", :tabindex => "4"}
+                %label.option{:for => "edit-field-private-messages-yes"} Yes
+              .form-type-radio
+                %input#edit-field-private-messages-n0.form-radio{:name => "privatmsg", :type => "radio", :value => "1", :checked => "checked"}
+                %label.option{:for => "edit-field-private-messages-no"} No
+
+    %section#section-submit
+      .form-actions.form-wrapper
+        %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit"}
+        %input{:type => "submit", :class => "button btn-l", :value => "Cancel"}

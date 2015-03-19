@@ -1,6 +1,13 @@
 ---
 title: Event view enrollments
 body_class: not-front logged-in page-view-event-enrollments no-sidebar is-content-manager
+direct_parent:
+  -
+    name: "Events"
+    url: "events.html"
+  -
+    name: "Join us to festival Mundial"
+    url: "event-full-enrolled.html"
 user_role: lu
 design_status: Needs review
 ---
@@ -14,10 +21,6 @@ design_status: Needs review
     %i.block-icon.icon-bg-event.icon-users
     %h1.block-title#page-title
       = current_page.data.title
-
-    %a.button.btn-back{:href => "./event-full-enrolled.html"}
-      %i.icon-back
-      Back to event
 
     .content
 

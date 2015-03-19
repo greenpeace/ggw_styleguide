@@ -35,6 +35,16 @@ $( document ).ready(function() {
     $('input[type="time"]').after('<i class="icon-clock"></i>');
   }
 
+  // enhance date of birth input
+  $('.user-date-of-birth').pickadate({
+    format: 'd mmmm yyyy',
+    today: '',
+    min: [1900,1,1],
+    max: [2003,12,31],
+    selectYears: 100,
+    selectMonths: true
+  });
+
   //enhance with icons
   $('.has-error .form-text, .has-error textarea').after('<i class="form-feedback icon-cancel" aria-hidden="true"></i>');
 });

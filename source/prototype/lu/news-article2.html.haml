@@ -1,9 +1,35 @@
 ---
 title: News article idea
 body_class: not-front logged-in page-type-news l-has-sidebar node-full
+direct_parent:
+  -
+    name: "News"
+    url: "news.html"
 user_role: lu
 design_status: Needs review
+action_menu:
+  -
+    id: "#content"
+    label: "News article"
+    icon: "news"
+  -
+    id: "#block-comments"
+    label: "Comments"
+    icon: "comment"
+  -
+    id: "#block-go-to-group"
+    label: "Go to group"
+    icon: "users"
+  -
+    id: "#block-get-involved"
+    label: "Get involved"
+    icon: "plus"
+  -
+    id: "#block-subscribe"
+    label: "Updates"
+    icon: "eye"
 ---
+
 
 = partial :"blocks/breadcrumbs"
 
@@ -70,4 +96,3 @@ design_status: Needs review
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/lu/article_info"
-  = partial :"blocks/lu/get_involved"

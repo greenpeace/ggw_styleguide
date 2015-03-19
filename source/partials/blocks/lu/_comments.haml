@@ -1,6 +1,9 @@
 #block-comments.block.block-comments
-  - if current_page.data.front == "frontpage" || current_page.data.joined == "joined"
-    %i.block-icon.icon-chat.icon-bg-action
+  - if current_page.data.front == "frontpage" || current_page.data.joined == "joined" || current_page.data.profile == "home"
+    - if current_page.data.profile == "home"
+      %i.block-icon.icon-chat.icon-bg-user
+    - else
+      %i.block-icon.icon-chat.icon-bg-action
     %h2.block-title Shoutbox
   - else
     %i.block-icon.icon-comment.icon-bg-action
@@ -31,13 +34,13 @@
     %section.comments
       %article.comment
         .avatar-holder
-          %a{:href => "profile.html", :title => "View user profile"}
+          %a{:href => "./profile.html", :title => "View user profile"}
             %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
             %noscript
               %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
         .comment-holder
           .comment-head
-            %a.comment-author{:href => "#", :title => "View profile"}
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
               = lorem.name
           .comment-body
             I agree.
@@ -55,7 +58,7 @@
               %img{:alt => "Chico Konink", :src => "/photos/60/people2.jpg", :srcset => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
         .comment-holder
           .comment-head
-            %a.comment-author{:href => "#", :title => "View profile"}
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
               = lorem.name
             (
             %a{:href => "./who-is-who.html"}><

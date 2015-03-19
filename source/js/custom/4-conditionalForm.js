@@ -61,9 +61,6 @@ $(function() {
     });
   }
 
-});
-
-$(function() {
 
   $('#mygroups').on("click", function() {
 
@@ -77,10 +74,8 @@ $(function() {
 
   });
 
-});
 
 // Skills filter on search group pages.
-$(function() {
   if ($('#group-skills').length != 0 && $('#group-type').length != 0) {
     $('#group-type').on("change", function() {
       toggleSkillsFilter();
@@ -110,5 +105,14 @@ $(function() {
 
   // On page load toggle the skills filter.
   toggleSkillsFilter();
+
+
+  $('#landline').hide();
+  $('.phone-switch').on("click", function(e) {
+    $('.phone-wrapper').hide();
+    var currentTab = $(this).attr('href');
+    $(currentTab).show();
+    e.preventDefault();
+  });
 
 });

@@ -1,13 +1,34 @@
-.media-widget {
+.media {
   overflow: hidden;
+
+  .flexbox & {
+    display: flex;
+    align-items: flex-start;
+  }
+
+}
+
+.media-figure {
+  margin-right: .5em;
+  float: left;
+}
+
+.media-body {
+  overflow: hidden;
+
+  .flexbox & {
+    flex: 1;
+  }
+
+}
+
+.media-widget {
   margin-bottom: $def-mar + 5px;
   position: relative;
 
   .preview {
-    float: left;
-    margin-right: .5em;
     width: 90px;
-    height: 60px; //temp
+    height: 90px; //temp
     background-color: $grey-l;
     overflow: hidden;
     position: relative;
@@ -15,7 +36,7 @@
 
     @include breakpoint($smalltab) {
       width: 130px;
-      height: 90px;
+      height: 130px;
     }
 
     &:before {
@@ -23,7 +44,7 @@
       position: relative;
       font-size: 2.5rem;
       z-index: 2;
-      line-height: 60px;
+      line-height: 90px;
       width: 100%;
       @extend %load-icon;
       @extend %icon-camera;
@@ -43,10 +64,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 60px;
+    height: 90px;
 
     @include breakpoint($smalltab) {
-        height: 90px;
+        height: 130px;
     }
 
   }

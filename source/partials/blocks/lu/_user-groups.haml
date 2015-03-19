@@ -1,0 +1,44 @@
+#block-user-groups.block.lazyload{"data-expand" => "-40"}
+  %i.block-icon.icon-bg-user.icon-users
+  - if current_page.data.access == "mine"
+    %h2.block-title My groups
+  - else
+    %h2.block-title Groups
+
+  .content
+    .views-row
+      %article.node-type-small
+        %h2.node-title
+          %a{:href => "./group-home.html"}
+            = lorem.sentence
+        .field.field-created
+          .field-label Joined
+          .field-item 9 months and 2 days ago
+
+      %article.node-type-small
+        %h2.node-title
+          %a{:href => "./group-home.html"}
+            = lorem.sentence
+        .field.field-created
+          .field-label Joined
+          .field-item 11 months and 11 days ago
+
+      %article.node-type-small
+        %h2.node-title
+          %a{:href => "./group-home.html"}
+            = lorem.sentence
+        .field.field-created
+          .field-label Joined
+          .field-item 1 year, 2 months and 4 days ago
+
+      %article.node-type-small
+        %h2.node-title
+          %a{:href => "./group-home.html"}
+            = lorem.sentence
+        .field.field-created
+          .field-label Joined
+          .field-item 1 year, 9 months and 2 days ago
+
+    %a.button{:href => "#"} load more
+
+

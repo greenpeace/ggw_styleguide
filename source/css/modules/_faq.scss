@@ -1,0 +1,102 @@
+.node-accordion {
+  height: auto;
+  border-radius: 4px;
+  background: $white;
+  margin-bottom: $def-mar-half;
+
+  .field-name-body {
+    display: none;
+    line-height: 1.3em;
+    padding: 0 0 $def-mar 0;
+    @include font-size($p);
+
+    @include breakpoint($tab) {
+      padding: 0 $def-mar $def-mar $def-mar;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .no-js & {
+      display: block;
+    }
+
+  }
+
+}
+
+.node-accordion .node-title {
+  position: relative;
+  max-height: none;
+
+  @include breakpoint($tab) {
+    margin: 0;
+  }
+
+}
+
+
+.node-accordion .node-title {
+  @include font-size($p);
+  font-weight: normal;
+}
+
+.node-accordion .node-title a {
+  padding: 0 40px 0 0;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include breakpoint($tab) {
+    padding: $def-mar 50px $def-mar $def-mar;
+  }
+
+  &:before, &:after {
+  // arrow icon on the right
+    position: absolute;
+    content: '';
+    right: 14px;
+    top: 8px;
+    height: 2px;
+    width: 10px;
+    background: $green5;
+    backface-visibility: hidden;
+    transition-property: transform;
+    transition-duration: 0.2s;
+
+    @include breakpoint($tab) {
+      top: 50%;
+    }
+  }
+
+  &:before {
+    transform: rotate(45deg);
+    right: 20px;
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+
+}
+
+
+.content-visible .node-title a:before {
+  transform: rotate(-45deg);
+}
+
+.content-visible .node-title a:after {
+  transform: rotate(45deg);
+}
+
+.page-faq .l-main-column .block {
+  background: none;
+  margin: 0;
+  padding: 0;
+
+  .content {
+    margin-top: $def-mar;
+  }
+}

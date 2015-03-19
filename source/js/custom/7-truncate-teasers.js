@@ -25,9 +25,22 @@ $(function() {
 
   }
 
-  if (( $('#block-group-info').length!=0) && ($(window).width() > 900)) {
+  if ( $('#block-user-profile').length!=0 && $(window).width() > 900) {
+    $('#block-user-profile .field-name-body').truncate({
+      lines: 10,
+      lineHeight: 19,
+      showMore: '<a href="#" id="toggleblock" style="display: block;margin-top: 7px;"><span class="button btn-s">read more</span></a>'
+    });
+
+    $('#toggleblock').on("click", function(event) {
+      event.preventDefault();
+      $('#block-user-profile .field-name-body').truncate('expand');
+    });
+  }
+
+  if ( $('#block-group-info').length!=0 && $(window).width() > 900) {
     $('#block-group-info .field-name-body').truncate({
-      lines: 5,
+      lines: 10,
       lineHeight: 19,
       showMore: '<a href="#" id="toggleblock" style="display: block;margin-top: 7px;"><span class="button btn-s">read more</span></a>'
     });

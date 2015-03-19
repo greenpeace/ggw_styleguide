@@ -96,4 +96,11 @@
   margin-top: -36px;
 }
 
+.tabable-block {
+  @extend %element-hidden;
 
+  &.active {
+    display: block;
+  }
+
+}

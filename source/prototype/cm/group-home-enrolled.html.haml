@@ -1,12 +1,20 @@
 ---
 title: Greenwire London
-body_class: not-front logged-in page-group-home l-two-column
+body_class: not-front logged-in page-group-home l-two-column group-subscribed
+direct_parent:
+  -
+    name: "Groups"
+    url: "groups.html"
 user_role: lu
 design_status: Work in progress
 joined: joined
 group: home
 organiser: organiser
 action_menu:
+  -
+    id: "#block-comments"
+    label: "Shoutbox"
+    icon: "comment"
   -
     id: "#upcoming-events"
     label: "Events"
@@ -20,10 +28,6 @@ action_menu:
     label: "Group info"
     icon: "info"
   -
-    id: "#block-comments"
-    label: "Shoutbox"
-    icon: "comment"
-  -
     id: "#block-group-members"
     label: "Members"
     icon: "users"
@@ -32,6 +36,12 @@ action_menu:
 = partial :"blocks/breadcrumbs"
 
 .l-main-column
+
+  %h1.group-heading.only-mobile
+    %i.icon-users
+    = current_page.data.title
+    %i.icon-subscribed
+
   = partial :"blocks/upcoming_events"
   = partial :"blocks/updates"
   = partial :"blocks/lu/group-members"

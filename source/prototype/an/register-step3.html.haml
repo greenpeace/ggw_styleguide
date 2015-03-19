@@ -17,11 +17,10 @@ design_status: Needs review
         .progress-bar{:style => "width: 50%;"} 50%
       %form{:action => "./register-step4.html", :method => "get"}
         .form-wrapper
-          .form-item
-            %label.form-label{:for => "edit-field-location-und-0-country"}
+          .form-item.field-name-location-und-country.form-type-select
+            %label.form-label{:for => "edit-field-location-und-country"}
               Country
-              %span.form-required{:title => "This field is required."} *
-            %select.form-select
+            %select.chosen-select.form-select
               %option{:value => ""} Please select
               %option{:value => "xx"} NOT LISTED
               %option{:value => "af"} Afghanistan
@@ -103,68 +102,75 @@ design_status: Needs review
               %option{:value => "gf"} French Guiana
               %option{:value => "pf"} French Polynesia
               %option{:value => "tf"} French Southern Territories
-          .form-item
-            %label.form-label
-              Postal code
-              %span.form-required{:title => "This field is required."} *
-            %input.form-text{:type => "text", :value => ""}/
-          .form-item
-            %label.form-label
-              House number
-              %span.form-required{:title => "This field is required."} *
-            %input.form-text{:type => "text", :value => ""}/
-          .form-item
-            %label.form-label
-              Apartment number
-              %span.form-required{:title => "This field is required."} *
-            %input.form-text{:type => "text", :value => ""}/
-          .form-item
-            %label.form-label
-              Street
-              %span.form-required{:title => "This field is required."} *
-            %input.form-text{:type => "text", :value => ""}/
-          .form-item
-            %label.form-label
-              City
-              %span.form-required{:title => "This field is required."} *
-            %input.form-text{:type => "text", :value => ""}/
-          .wrapper
-            #mobileline
-              .phone-wrapper
-                .form-item.field-name-field-user-phone-mobile-country
-                  %label.form-label
-                    Phone (mobile)
-                    %span.form-required{:title => "This field is required."} *
-                  %select.form-select
-                    %option{:value => "be"} Belgium (+32)
-                    %option{:value => "fr"} France (+33)
-                    %option{:value => "in"} India (+91)
-                    %option{:selected => "selected", :value => "nl"} Netherlands (+31)
-                    %option{:value => "ru"} Russia (+7)
-                    %option{:value => "us"} USA (+1)
-                    %option{:value => "other"} Other
-                .form-item.field-name-field-user-phone-mobile
-                  %label.form-label.element-placeholder Phone (mobile)
-                  %input.form-text{:type => "text", :value => ""}/
-              %a.phone-switch{:href => "#landline"} I don't have a mobile phone
-            #landline
-              .phone-wrapper
-                .form-item.field-name-field-user-phone-house-country
-                  %label.form-label
-                    Phone (home)
-                    %span.form-required{:title => "This field is required."} *
-                  %select.form-select{:style => "width: 193px;"}
-                    %option{:value => "be"} Belgium (+32)
-                    %option{:value => "fr"} France (+33)
-                    %option{:value => "in"} India (+91)
-                    %option{:selected => "selected", :value => "nl"} Netherlands (+31)
-                    %option{:value => "ru"} Russia (+7)
-                    %option{:value => "us"} USA (+1)
-                    %option{:value => "other"} Other
-                .form-item.field-name-field-user-phone-house
-                  %label.form-label.element-placeholder Phone (home)
-                  %input.form-text{:type => "text", :value => ""}/
-              %a.phone-switch{:href => "#mobileline"} I'd rather use my mobile number
+
+          .row
+            .form-item.field-name-user-postal-code
+              %label.form-label{:for => "edit-field-user-postal-code"}
+                Postal code
+                %span.form-required{:title => "This field is required."} *
+              %input#edit-field-user-postal-code.form-text.input-medium{:name => "edit-field-user-postal-code", :type => "text", :value => "", :tabindex => "1", :size => "30"}/
+
+            .form-item.field-name-user-house-number
+              %label.form-label{:for => "edit-field-user-house-number"}
+                House number
+                %span.form-required{:title => "This field is required."} *
+              %input#edit-field-user-house-number.form-text.input-small{:name => "edit-field-user-house-number", :type => "text", :value => "", :tabindex => "1"}/
+
+            .form-item.field-name-user-apartment-number
+              %label.form-label{:for => "edit-field-user-apartment-number"}
+                Apartment number
+              %input#edit-field-user-apartment-number.form-text.input-small{:name => "edit-field-user-apartment-number", :type => "text", :value => "", :tabindex => "1"}/
+
+          .row
+            .form-item.field-user-street
+              %label.form-label{:for => "edit-field-user-street"}
+                Street
+                %span.form-required{:title => "This field is required."} *
+              %input#edit-field-user-street.form-text.user-street.input-medium{:name => "edit-field-user-street", :type => "text", :value => "", :tabindex => "1", :size => "35"}/
+
+            .form-item.field-user-city
+              %label.form-label{:for => "edit-field-user-city"}
+                City
+                %span.form-required{:title => "This field is required."} *
+              %input#edit-field-user-city.form-text.user-city.input-medium{:name => "edit-field-user-city", :type => "text", :value => "", :tabindex => "1", :size => "35"}/
+
+        .form-wrapper
+          .row
+            #mobile.phone-wrapper
+              .form-item.field-name-field-user-phone-mobile-country
+                %label.form-label
+                  Phone (mobile)
+                  %span.form-required{:title => "This field is required."} *
+                %select.form-select.input-medium
+                  %option{:value => "be"} Belgium (+32)
+                  %option{:value => "fr"} France (+33)
+                  %option{:value => "in"} India (+91)
+                  %option{:selected => "selected", :value => "nl"} Netherlands (+31)
+                  %option{:value => "ru"} Russia (+7)
+                  %option{:value => "us"} USA (+1)
+                  %option{:value => "other"} Other
+              .form-item.field-name-field-user-phone-mobile
+                %label.form-label.element-placeholder Phone (mobile)
+                %input.form-text.input-medium{:type => "text", :value => "", :size => "35"}/
+              %a.phone-switch.clear{:href => "#landline"} I don't have a mobile phone
+            #landline.phone-wrapper
+              .form-item.field-name-field-user-phone-house-country
+                %label.form-label
+                  Phone (home)
+                  %span.form-required{:title => "This field is required."} *
+                %select.form-select.input-medium
+                  %option{:value => "be"} Belgium (+32)
+                  %option{:value => "fr"} France (+33)
+                  %option{:value => "in"} India (+91)
+                  %option{:selected => "selected", :value => "nl"} Netherlands (+31)
+                  %option{:value => "ru"} Russia (+7)
+                  %option{:value => "us"} USA (+1)
+                  %option{:value => "other"} Other
+              .form-item.field-name-field-user-phone-house
+                %label.form-label.element-placeholder Phone (home)
+                %input.form-text.input-medium{:type => "text", :value => "", :size => "35"}/
+              %a.phone-switch.clear{:href => "#mobile"} I'd rather use my mobile number
+
         .form-actions.form-wrapper
           %input.button.pull-left{:type => "submit", :value => "Back to previous step"}/
           %input.button.btn-primary.pull-right{:type => "submit", :value => "Next"}/

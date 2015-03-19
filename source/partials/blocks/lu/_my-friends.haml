@@ -1,12 +1,17 @@
 #block-friends.block
-  - if current_page.data.access == "mine"
-    .action-bar-itemr
-      .action-bar-item.add-content
+  .action-bar
+    .action-bar-item.add-content
+      - if current_page.data.access == "mine"
         %a.button{:href => "./profile-manage-friends.html", :title => "Manage friends"} Manage friends
+      - else
+        %a.button{:href => "#", :title => "Send friend request"} Send friend request
 
   %i.block-icon.icon-bg-user.icon-users
   %h2.block-title
-    My friends
+    - if current_page.data.access == "mine"
+      My friends
+    - else
+      Friends
   .content
     .members
       - 4.times do |num|

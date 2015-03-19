@@ -99,6 +99,9 @@ action_menu:
         .field-label Profession:
         .field-item Accountmanager at Greenpeace International
 
+      .field.field-name-send-message
+        %p
+          %a.modal-inline.button.btn-primary{:href => "#send-private-message"} Send a private message
 
   #block-skills.block
     %i.block-icon.icon-bg-user.icon-skills
@@ -143,7 +146,31 @@ action_menu:
 
   = partial :"blocks/lu/user-events"
   = partial :"blocks/lu/user-groups"
+  = partial :"blocks/lu/user-activity"
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/lu/my-friends"
   = partial :"blocks/lu/comments"
+
+
+#send-private-message.block.white-popup.mfp-hide
+  %i.block-icon.icon-mail.icon-bg-user
+  %h2.block-title Send a private message
+  .content
+    %form.node-form.node-private-message-form
+      .form-wrapper
+        .form-item
+          %label To:
+          %input.form-text{:type => "text", :value => "Santa Doe Claus", :disabled => "disabled"}
+
+        .form-item
+          %label Subject:
+          %input.form-text{:type => "text", :value => "",  :placeholder => "This subject is shown in the notification the user receives"}
+        .form-item.form-type-textarea
+          %label{:for => "edit-body-und-0-value"}
+            Message:
+            %span.form-required{:title => "This field is required."} *
+          .form-textarea-wrapper.fullwidth
+            %textarea#edit-body-und-0-value.text-full.form-textarea{:rows => "8"}
+        .form-actions
+          %input.button.btn-primary{:type => "submit", :value => "Send message"}

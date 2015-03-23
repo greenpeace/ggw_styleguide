@@ -25,7 +25,8 @@ $( document ).ready(function() {
 $( window ).load(function() {
 
   // Universal selector for modal windows with external source
-  $('.modal-inline').magnificPopup({
+  $('body').magnificPopup({
+    delegate: '.modal-inline',
     type: 'inline',
     // When elemened is focused, some mobile browsers in some cases zoom in
     // It looks not nice, so we disable it:
@@ -70,6 +71,11 @@ $( window ).load(function() {
       }
     }
   });
+
+  $('.mfp-content .btn-close').click(function(e) {
+    $.magnificPopup.close();
+    e.preventDefault();
+  })
 
 
    // add class to external links so they can be styled

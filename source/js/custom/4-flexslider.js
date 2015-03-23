@@ -73,7 +73,7 @@ $(function() {
       video: true,
       start: function(slider){
         if ($('.flexslider .map').length != 0) {
-          map.invalidateSize(); //solve map is not loading correctly
+          //map.invalidateSize(); //solve map is not loading correctly
         }
       },
       before: function(slider){

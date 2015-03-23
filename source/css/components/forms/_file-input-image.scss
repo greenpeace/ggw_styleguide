@@ -1,0 +1,38 @@
+.nfi-wrapper {
+  height: 34px;
+  margin: 0 $def-mar-half 0 0;
+}
+
+.nfi-button {
+  padding: 0 .5em;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  line-height: 34px;
+  @include font-size(18px);
+  color: $grey-m;
+  @extend %load-icon;
+  @extend %icon-camera;
+  background: $secondary;
+  background-image: linear-gradient($secondary, darken($secondary, 3%));
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid $grey-l;
+}
+
+.nfi-current {
+  opacity: 0;
+  position: absolute;
+  border: none;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  right: 0;
+  height: 34px;
+  cursor: pointer;
+}
+
+.nfi-filename {
+  display: none;
+}

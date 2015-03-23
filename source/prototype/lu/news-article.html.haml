@@ -33,7 +33,11 @@ action_menu:
 = partial :"blocks/breadcrumbs"
 
 .l-main-column
-  .block.main-content#content.current
+  .block.main-content#content.current.editable
+    .action-bar
+      .action-bar-item.edit-content
+        %a.button{:href => "./news-article-edit.html", :title => "Edit news article"} Edit
+
     %i.block-icon.icon-bg-news-media.icon-news
     %h1#page-title.block-title
       = lorem.words 10

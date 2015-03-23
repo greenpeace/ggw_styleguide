@@ -1,92 +1,117 @@
 ---
-title: My news article example
-body_class: not-front logged-in page-type-news l-has-sidebar node-full
+title: Edit news article example
+body_class: not-front logged-in page-type-news l-has-sidebar-first page-edit
 user_role: lu
-design_status: Needs review
+script: edit
+design_status: Work in progress
+menu:
+  -
+    name: 'Title & body'
+    url: '#section-title'
+  -
+    name: 'Image'
+    url: '#section-image'
+  -
+    name: 'Visibility'
+    url: '#section-visibility'
 ---
+
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column
-  #content.block.main-content.current.editable
-    %a.edit-node-link{:href => "#"}
-      %i.icon-edit
-      Edit
-    %i.block-icon.icon-bg-news-media.icon-news
-    %h1#page-title.block-title
-      = lorem.words 10
+%aside.sidebar-first.sfmenu
+  .block
+    %i.block-icon.icon-news.icon-bg-news-media
+    %h2.block-title Edit news
     .content
-      %article.view-mode-full
-        .submitted
-          %a.type.news{:href => "./news.html"} News
-          by
-          %a{:href => "./profile.html"}
-            = lorem.name
-          -
-          %span.submitted-date June 5th 2014 - 11:29
+      - for item in current_page.data.menu
+        %a.sf-navbtn{:href => "#{item.url}"}
+          #{item.name}
+.l-main-column
+  %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
+    %section#section-title.block.current.main-content
+      %i.block-icon.icon-pencil.icon-bg-action
+      %h2.block-title Title, description & image
+      .content
+        .form-wrapper
+          .form-item.field-name-title
+            %label.form-label{:for => "edit-field-title"}
+              Title
+              %span.form-required{:title => "This field is required."} *
+            %input#edit-field-title.form-text{:name => "edit-field-title", :type => "text", :value => "quo excepturi dolor quos consequuntur itaque vel et vel voluptatem", :tabindex => "1"}/
+          .form-item
+            %label.form-label{:for => "field-edit-body"}
+              Body text
+              %span.form-required{:title => "This field is required."} *
+            %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "2"}
+              &lt;h1&gt;&lt;img alt="Saturn V carrying Apollo 11" class="right" src="http://sdk.ckeditor.com/samples/assets/sample.jpg"/&gt; Apollo 11&lt;/h1&gt;   &lt;p&gt;&lt;strong&gt;Apollo 11&lt;/strong&gt; was the spaceflight that landed the first humans, Americans &lt;a href="http://en.wikipedia.org/wiki/Neil_Armstrong"&gt;Neil    Armstrong&lt;/a&gt; and   &lt;a href="http://en.wikipedia.org/wiki/Buzz_Aldrin"&gt;Buzz Aldrin&lt;/a&gt;, on the Moon on July 20, 1969, at 20:18 UTC. Armstrong became the first to step onto the   lunar surface 6 hours   later on July 21 at 02:56 UTC.&lt;/p&gt;    &lt;p&gt;Armstrong spent about &lt;s&gt;three and a half&lt;/s&gt; two and a half hours outside the spacecraft, Aldrin slightly less; and together they collected 47.5 pounds (21.5&amp;nbsp;kg)    of lunar    material for return to Earth. A third member of the mission, &lt;a href="http://en.wikipedia.org/wiki/Michael_Collins_(astronaut)"&gt;Michael Collins&lt;/a&gt;, piloted    the   &lt;a href="http://en.wikipedia.org/wiki/Apollo_Command/Service_Module"&gt;command&lt;/a&gt; spacecraft alone in lunar orbit until Armstrong and Aldrin returned to it for    the trip back to    Earth.&lt;/p&gt;
 
-          %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
-            %i.icon-comment
-            10 comments
+    %section#section-image.block
+      %i.block-icon.icon-photo.icon-bg-action
+      %h2.block-title Image
+      .content
+        .form-wrapper
 
-        = partial :"images/article-image"
+          .form-item
+            %label.form-label{:for => "field-edit-image"}
+              Image
+              %span.form-required{:title => "This field is required."} *
+            .media-widget.media
+              .preview.media-figure
+                %img.media-item.lazyload{:alt => "Example of image.", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-sizes" => "(min-width: 64em) 603px, (min-width: 48em) 768px, (min-width: 24em) 640px, 320px", "data-srcset" => "/photos/nature8.jpg 1536w, /photos/nature6.jpg 1440w, /photos/nature12.jpg 1280w, /photos/nature7.jpg 768w, /photos/nature11.jpg 640w, /photos/nature9.jpg 603w, /photos/nature10.jpg 320w"}/
+              .media-body
+                .form-description
+                  Files must be smaller than3 MB <br/>
+                  Allowed file types: png gif jpg jpeg <br/>
+                  Images must be larger than 400x300 pixels.
+                %input#uploadimage.element-invisible{:type => "file", :value => "upload"}
+                %button.button.launcher select image
+                %a.button.remove{:href => "#", :tabindex => "3"} remove image
+                %br
+                %p.filename nature10.jpg
 
-        #editor1.field-name-body{:contenteditable => "true"}
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.paragraph
-          %blockquote
-            %p
-              = lorem.sentence
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.paragraph
-          %img.field-type-image.pull-right{:alt => "Description of the image.", :src => "http://placeimg.com/320/320/nature/9/image"}
-          %p
-            = lorem.paragraph
-          %ul
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-          %p
-            = lorem.paragraph
-          %ol
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://placeimg.com/100/100/nature/5/image"}/
-          %p
-            = lorem.sentence
-            %strong without
-            = lorem.sentence
+    %section#section-visibility.block
+      %i.block-icon.icon-eye.icon-bg-action
+      %h2.block-title Visibility
+      .content
+        .form-wrapper
+          .form-item.form-type-select
+            %label.form-label{:for => "groups"} Group(s)
+            %select#groups.chosen-select{"data-placeholder" => "Select one or more groups", :multiple => "multiple", :tabindex => "16"}
+              :preserve
+                <option value="1">Festivals</option>
+                <option value="2">Climate change</option>
+                <option value="3">Oceans</option>
+                <option value="4" selected>Local group Amsterdam</option>
+                <option value="5">Oil spill</option>
+                <option value="6">Solar energy</option>
+                <option value="7">Save the Arctic</option>
 
-        = partial :"blocks/tags"
+          .form-item.form-type-radios.radio-blocks
+            %label.form-label{:for => "edit-group-content-access"}
+              Private or public?
+              %span.form-required{:title => "This field is required."} *
+            .form-radios
+              .form-type-radio
+                %input#edit-group-content-access-und-0.form-radio{:name => "group_content_access", :type => "radio", :value => "0", :checked => "checked", :tabindex => "17"}
+                %label.option{:for => "edit-group-content-access-und-0"} Private - only for group members
+              .form-type-radio
+                %input#edit-group-content-access-und-1.form-radio{:name => "group_content_access", :type => "radio", :value => "1", :tabindex => "18"}
+                %label.option{:for => "edit-group-content-access-und-1"} All members of Greenwire
+              .form-type-radio
+                %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2", :tabindex => "19"}
+                %label.option{:for => "edit-group-content-access-und-2"} Public - visible for all visitors of Greenwire
 
-        .submitted.submitted-extended
-          .submitted-image
-            %img.lazyload{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
-          .submitted-info
-            %div
-              %a{:href => "./news.html"} News
-              by
-              %a{:href => "./profile.html"}
-                = lorem.name
-            .submitted-all-reference
-              %a{:href => "#"}
-                All News by
-                = lorem.name
-                \.
+          .form-item
+            %label Tags
+            %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "oceans, sustainable fishery, conservation", :placeholder => "Text input", :tabindex => "15"}
+            .autocomplete#tagsautocomplete
+              %ul
+                - 50.times do |num|
+                  %li
+                    = lorem.word
 
-  = partial :"blocks/lu/comments"
-
-%aside.l-sidebar.sidebar
-  = partial :"blocks/go_to_group"
-  = partial :"blocks/lu/subscribe"
+    %section#section-submit
+      .form-actions.form-wrapper
+        %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit"}
+        %input{:type => "submit", :class => "button btn-l", :value => "Cancel"}

@@ -96,3 +96,10 @@
   display: flex;
   justify-content: space-between;
 }
+
+@include breakpoint($smalltab) {
+  .field-name-subscription-type .form-type-radio {
+    display: block;
+  }
+}
+

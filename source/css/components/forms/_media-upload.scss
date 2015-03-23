@@ -50,7 +50,7 @@
       @extend %icon-camera;
 
       @include breakpoint($smalltab) {
-        line-height: 90px;
+        line-height: 130px;
         font-size: 3.5rem;
       }
 
@@ -80,21 +80,17 @@
 }
 
 .filename {
-  background: $grey-m;
-  color: $white;
   @include font-size($small);
-  border-radius: 3px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 
   &:before {
     color: $green5;
-    float: left;
-    line-height: 24px;
-    @include font-size($h3);
-    background: $grey-l;
-    padding: 0 $def-mar-half;
+    line-height: 20px;
+    @include font-size($h4);
+    margin-right: $def-mar-half;
     @extend %load-icon;
     @extend %icon-check;
-    margin-right: 1em;
-    border-radius: 3px 0 0 3px;
   }
 }

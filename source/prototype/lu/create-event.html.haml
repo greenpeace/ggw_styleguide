@@ -54,18 +54,19 @@ menu:
             %label.form-label{:for => "field-edit-image"}
               Image
               %span.form-required{:title => "This field is required."} *
-            .media-widget
-              .preview
+            .media-widget.media
+              .preview.media-figure
                 .media-item
-              .form-description
-                No image selected <br />
-                Files must be smaller than3 MB <br/>
-                Allowed file types: png gif jpg jpeg <br/>
-                Images must be larger than 400x300 pixels.
-              %input#uploadimage.hiddenfile{:accept => "image/*", :type => "file", :value => "upload"}
-              %button.button.launcher{:onmousedown => "triggerUpload()"} select image
-              %a.button.remove.element-hidden{:href => "#", :tabindex => "3"} remove image
-              %p#file-name.element-hidden
+              .media-body
+                .form-description
+                  No image selected <br />
+                  Files must be smaller than3 MB <br/>
+                  Allowed file types: png gif jpg jpeg <br/>
+                  Images must be larger than 400x300 pixels.
+                %input#uploadimage.hiddenfile{:accept => "image/*", :type => "file", :value => "upload"}
+                %button.button.launcher{:onmousedown => "triggerUpload()"} select image
+                %a.button.remove.element-hidden{:href => "#", :tabindex => "3"} remove image
+                %p#file-name.element-hidden
 
     %section#section-date.block
       %i.block-icon.icon-calendar.icon-bg-action
@@ -144,7 +145,7 @@ menu:
             .form-description We will attempt to calculate the coordinates from the supplied address.
             %input#edit-event-address.form-text{:name => "edit-event-address", :type => "text", :value => "", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
             #results
-            %a.small-link{:href => "#"} add geocoordinates manually
+            %a.small-link.modal-inline{:href => "#manual-coordinates-form"} add geocoordinates manually
 
           .preview-location
             #map{:style => "width: 100%; height: 100%;"}
@@ -234,6 +235,23 @@ menu:
       .form-actions.form-wrapper
         %input{:type => "submit", :class => "button btn-primary", :value => "Submit"}
         %input{:type => "submit", :class => "button", :value => "Cancel"}
+
+#manual-coordinates-form.block.white-popup.mfp-hide
+  %i.block-icon.icon-map.icon-bg-action
+  %h2.block-title Add coordinates of your local group
+  .content
+    %form
+      .form-wrapper
+        .form-item
+          %label.form-label{:for => "latitude"} Latitude
+          %input.form-text#latitude{:type => "text", :value => ""}
+        .form-item
+          %label.form-label{:for => "longitude"} Longitude
+          %input.form-text#longitude{:type => "text", :value => ""}
+      .form-actions.form-wrapper
+        %input{:type => "submit", :class => "button btn-primary", :value => "Save"}
+        %input{:type => "submit", :class => "button btn-close", :value => "Cancel"}
+
 
 = javascript_include_tag "leaflet"
 = javascript_include_tag "underscore"
@@ -348,24 +366,24 @@ menu:
     popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
   });
 
-  function load_map() {
-    map = new L.Map('map', {zoomControl: true});
-    marker = L.marker(new L.LatLng(0,0),{icon: eventIcon, draggable:true})
-    .animateDragging()
-    .addTo(map);
 
-    var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      osm = new L.TileLayer(osmUrl, {maxZoom: 18});
+  map = new L.Map('map', {zoomControl: true});
+  marker = L.marker(new L.LatLng(0,0),{icon: eventIcon, draggable:true})
+  .animateDragging()
+  .addTo(map);
 
-    map.setView(new L.LatLng(0, 0), 1).addLayer(osm);
+  var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    osm = new L.TileLayer(osmUrl, {maxZoom: 18});
 
-    map.on({
-      click: function() {
-        map.setView([0,0],2);
-      }
-    });
+  map.setView(new L.LatLng(0, 0), 1).addLayer(osm);
 
-  }
+  map.on({
+    click: function() {
+      map.setView([0,0],2);
+    }
+  });
+
+
 
   function country_select_search() {
     var inp = document.getElementById("country-select");
@@ -401,5 +419,3 @@ menu:
   function triggerUpload() {
     document.getElementById('uploadimage').click();
   }
-
-  window.onload = load_map;

@@ -1,0 +1,23 @@
+#addexternallink.block.white-popup.mfp-hide
+  %i.block-icon.icon-link.icon-bg-action
+  %h2.block-title Add link
+
+  .content
+    %form.comment-form
+      .form-wrapper
+        .form-item.form-comment-link
+          %label.form-label Enter a link
+          %input#shoutbox-comment-link.form-text{:type => "text", :value => "", :placeholder => "this is a demo, enter eg. www.greenpeace.org"}
+        .form-item
+          %button.button#show-linkinfo get link info
+          #linkinfo.element-hidden
+            .field.field-link-title
+              %h4 Greenpeace International
+            .field.field-link-image
+              %img{:src => "", :alt => ""}
+
+
+      .form-actions.form-wrapper
+        %input#addexternallink{:type => "submit", :class => "button btn-primary", :value => "Insert link" }
+        %input{:type => "submit", :class => "button ", :value => "Cancel"}
+

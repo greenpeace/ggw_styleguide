@@ -25,13 +25,8 @@ Based on previous work of:
         var d = new Date();
         var guid = d.getTime()+r.toString();
 
-        var filename = $('<input type="text" readonly="readonly">')
-          .addClass('nfi-filename nfi'+guid);
-        var wrapper = $("<div>")
-          .css({
-            'position': 'relative'
-          })
-          .addClass('nfi-button nfi'+guid)
+        var filename = $('<input type="text" readonly="readonly">').addClass('nfi-filename nfi'+guid);
+        var wrapper = $("<div>").addClass('nfi-button nfi'+guid)
 
         $(self).after(filename);
         $(self).wrap(wrapper);
@@ -47,18 +42,7 @@ Based on previous work of:
           $(self).removeClass('tooltip');
         }
 
-        $(self)
-          .css({
-            'opacity': 0,
-            'position': 'absolute',
-            'border': 'none',
-            'margin': 0,
-            'padding': 0,
-            'top': 0,
-            'right': 0,
-            'cursor': 'pointer'
-          })
-          .addClass('nfi-current');
+        $(self).addClass('nfi-current');
         $(self).on("change", function() {
           var fullPath = $(self).val();
           if (settings.fullPath) {

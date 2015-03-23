@@ -58,7 +58,7 @@ $(function() {
     target = $(selectedHref);
 
     //goto that anchor by setting the body scroll top to anchor top
-    $('html, body').animate({scrollTop: target.offset().top - 100}, 300);
+    $('html, body').animate({scrollTop: target.offset().top - 110}, 300);
   });
 
 

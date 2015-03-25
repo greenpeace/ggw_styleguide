@@ -7,11 +7,16 @@
           = lorem.sentence
       .submitted
         %a.type.event{:href => "./events.html"} Event
-        1 May - 4 May
-      .field-group-format
-        .field-type-date
-          %label Time:
-          August 10th, 8:00PM until 11:30 PM
-        .field-type-location
-          %label Address:
-          Oude Markt 9B, Enschede (Market Square)
+        %span.created-date 27 Dec 2014, by
+        %span.author
+          - if current_page.data.user_role != "an"
+            %a{:href => "./profile.html"}
+              = lorem.name
+          - else
+            = lorem.name.downcase.tr(' ', '_')
+      .field-type-date
+        %label Event Time:
+        %span 5 Jul, 8:00 - 12:00 CDT
+      .field-type-location
+        %label Address:
+        %span 3000 E Calhoun Parkway, Minneapolis (Lake Calhoun Park)

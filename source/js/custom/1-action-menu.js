@@ -101,6 +101,22 @@ $(function() {
 
   });
 
+  // Click on another button to trigger a action menu item switch
+  $('.show-block').click(function(e){
+    $('.action-menu li, .l-main-column .current, .sidebar .current').removeClass('current');
+    var currentTab = $(this).attr('href');
+
+    $('.action-menu li a').each(function() {
+      var link = $(this).attr('href');
+      if (link == currentTab) {
+        $(this).parent().addClass('current');
+      }
+    });
+
+    $(currentTab).addClass('current');
+
+  });
+
 
   function initiateResponsiveTabs() {
     $(window).trigger("resize");

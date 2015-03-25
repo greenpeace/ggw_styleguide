@@ -10,11 +10,16 @@
           = lorem.sentence
       .submitted
         %a.type.event{:href => "./events.html"} Event
-        2 Jan, 20:00 - 23:00 CET
-      .field-group-format
-        .field-type-date
-          %label Time:
-          August 10th, 8:00PM until 11:30 PM
-        .field-type-location
-          %label Address:
-          Oude Markt 9B, Enschede (Market Square)
+        %span.created-date 1 Apr 2015, by
+        %span.author
+          - if current_page.data.user_role != "an"
+            %a{:href => "./profile.html"}
+              = lorem.name
+          - else
+            = lorem.name.downcase.tr(' ', '_')
+      .field-type-date
+        %label Event Time:
+        %span 30 Jun, 7:00 - 22:00 GMT
+      .field-type-location
+        %label Address:
+        %span 184 Camden High Street, London (Camden market)

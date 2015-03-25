@@ -122,7 +122,7 @@
 $(function() {
   $('.form-comment-submit').click(function(e) {
     var posttext = $('.form-comment-message textarea').val();
-
+    var richLink = $('.comment-form-holder #linkinfo').html();
     console.log(posttext);
 
     var postmarkup = "<div class='avatar-holder'>";
@@ -141,6 +141,9 @@ $(function() {
     postmarkup +=  "  </div>";
     postmarkup +=  "  <div class='comment-body'>";
     postmarkup +=  posttext;
+    if ($(richLink).length != 0) {
+      postmarkup +=  richLink;
+    }
     postmarkup +=  "  </div>";
     postmarkup +=  "  <div class='comment-footer'>";
     postmarkup +=  "    <span class='comment-timestamp'>now</span>";
@@ -154,6 +157,7 @@ $(function() {
     $("<article class='comment'>").html(postmarkup).prependTo('.comments');
     $('.form-comment-message textarea').val('');
     $('.form-comment-submit').addClass('disabled');
+    $('.comment-form-holder #linkinfo').remove();
     e.preventDefault();
     $('.comment-body').linkify().urlToLink();
   });
@@ -176,17 +180,52 @@ $(function() {
   $('.form-comment-submit').addClass('disabled');
 
 
-  $('#show-linkinfo').click(function(e) {
-    $('#linkinfo').removeClass('element-hidden');
+  $('.show-linkinfo').click(function(e) {
+    $('#shoutbox-comment-link').urlive({
+      container: '#linkinfo',
+      imageSize: 'small',
+      callbacks: {
+        onStart: function () {
+          $('#shoutbox-comment-link').addClass('throbbing');
+          $('.show-linkinfo').html('loading ...');
+          $('.urlive-container').urlive('remove');
+          $('#linkinfo p').remove();
+          $('.close-linkinfo').addClass('element-hidden');
+        },
+        onSuccess: function() {
+          $('#linkinfo').show();
+        },
+        onFail: function() {
+          $('#linkinfo').show().prepend('<p>Cannot find a website here...</p>');
+          $('.show-linkinfo').html('Check link');
+        },
+        noData: function () {
+          $('#linkinfo').show().prepend('<p>Cannot find a website here...</p>');
+          $('#shoutbox-comment-link').removeClass('throbbing');
+          $('.show-linkinfo').html('Check link');
+        },
+        onLoadEnd: function() {
+          $('#shoutbox-comment-link').removeClass('throbbing');
+          $('.close-linkinfo').removeClass('element-hidden');
+          $('.show-linkinfo').html('Check link');
+          $('.btn-primary').prop('disabled', false);
+        }
+      }
+    });
     e.preventDefault();
   });
 
-  $('#addexternallink').click(function(e) {
-    if ($('#shoutbox-comment-link').val().length != 0) {
-      var getLink = $('#shoutbox-comment-link').val();
-      $(getLink).wrap('<div class="selectedlink"></div>').insertAfter('.form-comment-message');
-    }
+  $('.close-linkinfo').click(function(e) {
+    $('#shoutbox-comment-link').urlive("remove", 400);
+    $(this).addClass('element-hidden');
+    $('#linkinfo').hide();
     e.preventDefault();
   });
 
+  $('.form-addlink .btn-primary').click(function(e) {
+    $('.urlive-container .close-linkinfo').remove();
+    $('.urlive-container').clone().insertAfter('.block-comments .form-comment-message');
+    $.magnificPopup.close();
+    e.preventDefault();
+  });
 });

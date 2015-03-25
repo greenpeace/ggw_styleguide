@@ -1,4 +1,5 @@
 $(function() {
+
   lazyload_youtube.init({
     theme: 'dark',
     colour: 'white',
@@ -6,4 +7,9 @@ $(function() {
     responsive: true,
     thumbnailquality: '0'
   });
+
+  if ($('.node-full .container-lazyload').length != 0) {
+    $('.node-full .container-lazyload').insertBefore('.l-main-column');
+  }
+
 });

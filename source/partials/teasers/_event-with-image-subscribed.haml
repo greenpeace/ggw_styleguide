@@ -1,5 +1,5 @@
 .views-row
-  %article.node-teaser-event.node-teaser.lazyload{"data-expand" => "0"}
+  %article.node-teaser-event.node-teaser.event-subscribed.lazyload{"data-expand" => "0"}
     .field-type-image
       = partial :"teasers/teaser-image"
     .field-type-wrapper
@@ -8,12 +8,17 @@
           = lorem.sentence
       .submitted
         %a.type.event{:href => "./events.html"} Event
-        2 Jan, 20:00 - 23:00 CET
         .subscribed enrolled
-      .field-group-format
-        .field-type-date
-          %label Time:
-          August 10th, 8:00PM until 11:30 PM
-        .field-type-location
-          %label Address:
-          Oude Markt 9B, Enschede (Market Square)
+        %span.created-date 15 Mar 2015, by
+        %span.author
+          - if current_page.data.user_role != "an"
+            %a{:href => "./profile.html"}
+              = lorem.name
+          - else
+            = lorem.name.downcase.tr(' ', '_')
+      .field-type-date
+        %label Event Time:
+        %span 10 Aug, 20:00 - 23:30 CET
+      .field-type-location
+        %label Address:
+        %span Oude Markt 9B, Enschede (Market Square)

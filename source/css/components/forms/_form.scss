@@ -69,6 +69,8 @@ label {
 
 .form-description,
 .form-description + .form-text,
+.form-description + .chosen-select,
+.form-description + .chosen-select + .chosen-container,
 .form-description + .form-text + .form-feedback {
   margin-top: $def-mar-half;
 }

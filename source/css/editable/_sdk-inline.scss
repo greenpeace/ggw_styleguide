@@ -127,5 +127,34 @@
 
 .leaflet-marker-icon,
 .leaflet-marker-shadow {
-  transition: margin 0.2s;
+  transition: margin .2s;
+}
+
+@include breakpoint($smalltab) {
+  .flexbox .field-name-group-type {
+
+    .form-radios {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .form-type-radio {
+      margin: 0;
+      flex: 0 1 50%;
+    }
+
+  }
+
+}
+
+@include breakpoint($tab) {
+  .flexbox .field-name-group-type .form-type-radio {
+    flex: 0 1 33%;
+  }
+}
+
+@include breakpoint($desk) {
+  .flexbox .field-name-group-type .form-type-radio {
+    flex: 0 1 25%;
+  }
 }

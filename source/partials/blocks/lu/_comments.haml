@@ -26,6 +26,9 @@
             %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a shout...", :rows => "1"}
           - else
             %textarea#comment-comment{:cols => "50", :placeholder => "Write a comment...", :rows => "1"}
+        .preview-wrapper
+          %img#preview-image.shoutimage.element-hidden{:src => "#", :alt => "your image"}
+        .clear
         %input.tooltip.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
         - if current_page.data.front == "frontpage" || current_page.data.joined == "joined" ||current_page.data.profile == "home"
           %button.modal-inline.button.addlink-btn{:href => "#addexternallink"}

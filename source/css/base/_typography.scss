@@ -63,10 +63,6 @@ a {
   text-decoration: none;
 }
 
-.content a:hover {
-  text-decoration: underline;
-}
-
 .content .button:hover,
 .content .item-list a:hover {
   text-decoration: none;
@@ -152,11 +148,6 @@ article {
     }
   }
 
-}
-
-.no-touch a:focus {
-  outline: thin dotted;
-  text-decoration: underline;
 }
 
 .small-link {

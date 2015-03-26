@@ -111,27 +111,11 @@ menu:
       %h2.block-title Language & timezone
       .content
         .form-wrapper
-          .form-item.field-name-language-settings
-            %label.form-label{:for => "edit-field-language-settings"}
-              Language
-            .form-radios
-              .form-type-radio
-                %input#edit-field-language-settings-und-0.form-radio{:name => "field-language-settings-0", :type => "radio", :value => "0", :checked => "checked", :tabindex => "4"}
-                %label.option{:for => "edit-field-language-settings-und-0"} Dutch
-              .form-type-radio
-                %input#edit-field-language-settings-und-1.form-radio{:name => "field-language-settings-0", :type => "radio", :value => "1"}
-                %label.option{:for => "edit-field-language-settings-und-1"} English
-
-          .form-item.field-name-language-settings
-            %label.form-label{:for => "edit-field-language-settings"}
-              Secondary language
-            .form-radios
-              .form-type-radio
-                %input#edit-field-language-settings-1-und-0.form-radio{:name => "edit-field-language-settings-1", :type => "radio", :value => "0", :tabindex => "4"}
-                %label.option{:for => "edit-field-language-settings-1-und-0"} English
-              .form-type-radio
-                %input#edit-field-language-settings-1-und-1.form-radio{:name => "edit-field-language-settings-1", :type => "radio", :value => "1", :checked => "checked"}
-                %label.option{:for => "edit-field-language-settings-1-und-1"} Dutch
+          .form-item.form-type-select.field-name-language-settings
+            %label.form-label{:for => "edit-field-language-settings"} Interface language
+            %select#edit-field-language-settings.form-select{"data-placeholder" => "Choose a language"}
+              %option{:selected => ""} English, US
+              %option French
 
           .form-item.form-type-select.field-event-location-und-country
             %label.form-label{:for => "edit-event-location"}

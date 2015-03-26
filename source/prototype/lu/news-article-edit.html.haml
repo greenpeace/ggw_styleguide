@@ -6,11 +6,11 @@ script: edit
 design_status: Work in progress
 menu:
   -
-    name: 'Title & body'
+    name: 'Title, body & image'
     url: '#section-title'
   -
-    name: 'Image'
-    url: '#section-image'
+    name: 'Languages & tags'
+    url: '#section-language'
   -
     name: 'Visibility'
     url: '#section-visibility'
@@ -44,13 +44,7 @@ menu:
               Body text
               %span.form-required{:title => "This field is required."} *
             %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "2"}
-              &lt;h1&gt;&lt;img alt="Saturn V carrying Apollo 11" class="right" src="http://sdk.ckeditor.com/samples/assets/sample.jpg"/&gt; Apollo 11&lt;/h1&gt;   &lt;p&gt;&lt;strong&gt;Apollo 11&lt;/strong&gt; was the spaceflight that landed the first humans, Americans &lt;a href="http://en.wikipedia.org/wiki/Neil_Armstrong"&gt;Neil    Armstrong&lt;/a&gt; and   &lt;a href="http://en.wikipedia.org/wiki/Buzz_Aldrin"&gt;Buzz Aldrin&lt;/a&gt;, on the Moon on July 20, 1969, at 20:18 UTC. Armstrong became the first to step onto the   lunar surface 6 hours   later on July 21 at 02:56 UTC.&lt;/p&gt;    &lt;p&gt;Armstrong spent about &lt;s&gt;three and a half&lt;/s&gt; two and a half hours outside the spacecraft, Aldrin slightly less; and together they collected 47.5 pounds (21.5&amp;nbsp;kg)    of lunar    material for return to Earth. A third member of the mission, &lt;a href="http://en.wikipedia.org/wiki/Michael_Collins_(astronaut)"&gt;Michael Collins&lt;/a&gt;, piloted    the   &lt;a href="http://en.wikipedia.org/wiki/Apollo_Command/Service_Module"&gt;command&lt;/a&gt; spacecraft alone in lunar orbit until Armstrong and Aldrin returned to it for    the trip back to    Earth.&lt;/p&gt;
-
-    %section#section-image.block
-      %i.block-icon.icon-photo.icon-bg-action
-      %h2.block-title Image
-      .content
-        .form-wrapper
+              &lt;h1&gt;&lt;img alt="Saturn V carrying Apollo 11" class="pull-right" src="http://sdk.ckeditor.com/samples/assets/sample.jpg"/&gt; Apollo 11&lt;/h1&gt;   &lt;p&gt;&lt;strong&gt;Apollo 11&lt;/strong&gt; was the spaceflight that landed the first humans, Americans &lt;a href="http://en.wikipedia.org/wiki/Neil_Armstrong"&gt;Neil    Armstrong&lt;/a&gt; and   &lt;a href="http://en.wikipedia.org/wiki/Buzz_Aldrin"&gt;Buzz Aldrin&lt;/a&gt;, on the Moon on July 20, 1969, at 20:18 UTC. Armstrong became the first to step onto the   lunar surface 6 hours   later on July 21 at 02:56 UTC.&lt;/p&gt;    &lt;p&gt;Armstrong spent about &lt;s&gt;three and a half&lt;/s&gt; two and a half hours outside the spacecraft, Aldrin slightly less; and together they collected 47.5 pounds (21.5&amp;nbsp;kg)    of lunar    material for return to Earth. A third member of the mission, &lt;a href="http://en.wikipedia.org/wiki/Michael_Collins_(astronaut)"&gt;Michael Collins&lt;/a&gt;, piloted    the   &lt;a href="http://en.wikipedia.org/wiki/Apollo_Command/Service_Module"&gt;command&lt;/a&gt; spacecraft alone in lunar orbit until Armstrong and Aldrin returned to it for    the trip back to    Earth.&lt;/p&gt;
 
           .form-item
             %label.form-label{:for => "field-edit-image"}
@@ -69,6 +63,27 @@ menu:
                 %a.button.remove{:href => "#", :tabindex => "3"} remove image
                 %br
                 %p.filename nature10.jpg
+
+    %section#section-language.block
+      %i.block-icon.icon-globe.icon-bg-action
+      %h2.block-title Languages and tags
+      .content
+        .form-wrapper
+          .form-item.form-type-select
+            %label.form-label{:for => "language"} Language
+            .form-description What language is this news in? You can select more than one language.
+            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
+              %option{:selected => ""} English, US
+              %option French
+
+          .form-item
+            %label Tags
+            %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "oceans, sustainable fishery, conservation", :placeholder => "Text input", :tabindex => "15"}
+            .autocomplete#tagsautocomplete
+              %ul
+                - 50.times do |num|
+                  %li
+                    = lorem.word
 
     %section#section-visibility.block
       %i.block-icon.icon-eye.icon-bg-action
@@ -101,15 +116,6 @@ menu:
               .form-type-radio
                 %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2", :tabindex => "19"}
                 %label.option{:for => "edit-group-content-access-und-2"} Public - visible for all visitors of Greenwire
-
-          .form-item
-            %label Tags
-            %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "oceans, sustainable fishery, conservation", :placeholder => "Text input", :tabindex => "15"}
-            .autocomplete#tagsautocomplete
-              %ul
-                - 50.times do |num|
-                  %li
-                    = lorem.word
 
     %section#section-submit
       .form-actions.form-wrapper

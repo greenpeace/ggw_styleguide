@@ -1,6 +1,10 @@
 ---
 title: Create new group
 body_class: not-front logged-in page-type-group l-has-sidebar-first page-edit
+direct_parent:
+  -
+    name: "Groups"
+    url: "groups.html"
 user_role: lu
 script: edit
 design_status: Work in progress
@@ -12,8 +16,8 @@ menu:
     name: 'Group & subscription type'
     url: '#section-type'
   -
-    name: 'Image & labels'
-    url: '#section-image'
+    name: 'Language'
+    url: '#section-language'
   -
     name: 'Contact & social media'
     url: '#section-contact-social'
@@ -53,6 +57,26 @@ menu:
               %span.form-required{:title => "This field is required."} *
             %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "3"}
 
+        .form-wrapper
+          .form-item
+            %label.form-label{:for => "field-edit-image"}
+              Image
+              %span.form-required{:title => "This field is required."} *
+            .media-widget.media
+              .preview.media-figure
+                .media-item
+              .media-body
+                .form-description
+                  No image selected <br />
+                  Files must be smaller than 3 MB <br/>
+                  Allowed file types: png gif jpg jpeg <br/>
+                  Images must be larger than 400x300 pixels.
+                %input#uploadimage.hiddenfile{:accept => "image/*", :type => "file", :value => "upload"}
+                %button.button.launcher{:onmousedown => "triggerUpload()"} select image
+                %a.button.remove.element-hidden{:href => "#", :tabindex => "3"} remove image
+                %p#file-name.element-hidden
+
+
     %section#section-type.block
       %i.block-icon.icon-calendar.icon-bg-action
       %h2.block-title Group and subscription type
@@ -69,23 +93,20 @@ menu:
                 %input#edit-field-group-type-und-1.form-radio{:name => "field_group_type", :type => "radio", :value => "1"}
                 %label.option{:for => "edit-field-group-type-und-1"} Project group
               .form-type-radio
-                %input#edit-field-group-type-und-2.form-radio{:name => "field_group_type", :type => "radio", :value => "2", :tabindex => "4"}
-                %label.option{:for => "edit-field-group-type-und-2"} Country group
+                %input#edit-field-group-type-und-2.form-radio{:name => "field_group_type", :type => "radio", :value => "2"}
+                %label.option{:for => "edit-field-group-type-und-2"} Discussion group
               .form-type-radio
-                %input#edit-field-group-type-und-3.form-radio{:name => "field_group_type", :type => "radio", :value => "3", :tabindex => "4"}
-                %label.option{:for => "edit-field-group-type-und-3"} Discussion group
-              .form-type-radio
-                %input#edit-field-group-type-und-4.form-radio{:name => "field_group_type", :type => "radio", :value => "4", :tabindex => "4"}
-                %label.option{:for => "edit-field-group-type-und-4"} Interest group
+                %input#edit-field-group-type-und-3.form-radio{:name => "field_group_type", :type => "radio", :value => "3"}
+                %label.option{:for => "edit-field-group-type-und-3"} Interest group
               .form-type-radio#group-type-localgroup
-                %input#edit-field-group-type-und-5.form-radio{:name => "field_group_type", :type => "radio", :value => "5", :tabindex => "4"}
-                %label.option{:for => "edit-field-group-type-und-5"} Local group
+                %input#edit-field-group-type-und-4.form-radio{:name => "field_group_type", :type => "radio", :value => "4"}
+                %label.option{:for => "edit-field-group-type-und-4"} Local group
               .form-type-radio
-                %input#edit-field-group-type-und-6.form-radio{:name => "field_group_type", :type => "radio", :value => "6", :tabindex => "4"}
-                %label.option{:for => "edit-field-group-type-und-6"} Skill-based group
+                %input#edit-field-group-type-und-5.form-radio{:name => "field_group_type", :type => "radio", :value => "5"}
+                %label.option{:for => "edit-field-group-type-und-5"} Skill-based group
               .form-type-radio
-                %input#edit-field-group-type-und-7.form-radio{:name => "field_group_type", :type => "radio", :value => "7", :tabindex => "4"}
-                %label.option{:for => "edit-field-group-type-und-7"} Other type of group
+                %input#edit-field-group-type-und-6.form-radio{:name => "field_group_type", :type => "radio", :value => "6"}
+                %label.option{:for => "edit-field-group-type-und-6"} Other type of group
 
           .form-item.field-name-subscription-type
             %label.form-label{:for => "edit-field-subscription-type"}
@@ -108,6 +129,67 @@ menu:
                 %label.option{:for => "edit-field-group-subscription-type-und-3"} Hidden
                 .form-description The group will be hidden from search and overviews. Everything in the group is private.
 
+          .form-item
+            %label.form-label{:for => "tags"} Tags
+            %input.form-text.form-autocomplete#tags{:type => "text", :value => ""}
+            .autocomplete
+              %ul
+                - 20.times do |num|
+                  %li
+                    = lorem.word
+
+    %section#section-skillsgroup.block
+      %i.block-icon.icon-skills.icon-bg-action
+      %h2.block-title Skills-based group
+      .content
+        .form-wrapper.wrapper
+          .form-item.field-name-location-und-country.form-type-select
+            %label.form-label{:for => "field-general-skills"}
+              General skills
+            %select.chosen-select{:name => "field-general-skills", :multiple => "multiple", "data-placeholder" => "Select multiple skills..."}
+              %option{:value => ""}
+              %optgroup{:label => "Activist"}
+                %option Activist
+              %optgroup{:label => "Analytic"}
+                %option Research
+                %option Translation
+                %option Writing/blogging
+              %optgroup{:label => "Campaign fanatic"}
+                %option Climate & energy
+                %option Oceans
+                %option Sustainable agriculture
+                %option Toxics
+              %optgroup{:label => "Communicator"}
+                %option Crowd motivation, cheerleading
+                %option Environmental outreach
+                %option Facilitator
+                %option Fundraising
+                %option Media relations
+                %option Networking
+                %option Public speaking
+                %option Socialising
+                %option Storytelling
+              %optgroup{:label => "Nerd"}
+                %option Content management
+                %option Drupal
+                %option Online communities
+                %option Social media
+                %option Web development
+          .form-item.form-type-select
+            %label.form-label{:for => "language"} Language skills
+            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
+              %option English
+              %option French
+          .form-item.form-type-select
+            %label.form-label{:for => "language"} Campaigning skills
+            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
+              %option NVDA - General
+              %option NVDA - Climber
+              %option NVDA - Canoe
+              %option NVDA - Diver
+              %option NVDA - Paraglider
+              %option NVDA - Sailing
+              %option NVDA - Boat diver
 
     %section#section-localgroup.block
       %i.block-icon.icon-map.icon-bg-action
@@ -161,38 +243,17 @@ menu:
           .preview-location
             #map.map{:style => "width: 100%; height: 100%;"}
 
-    %section#section-image.block
-      %i.block-icon.icon-photo.icon-bg-action
-      %h2.block-title Image and labels
+    %section#section-language.block
+      %i.block-icon.icon-globe.icon-bg-action
+      %h2.block-title Group language
       .content
         .form-wrapper
-
-          .form-item
-            %label.form-label{:for => "field-edit-image"}
-              Image
-              %span.form-required{:title => "This field is required."} *
-            .media-widget.media
-              .preview.media-figure
-                .media-item
-              .media-body
-                .form-description
-                  No image selected <br />
-                  Files must be smaller than3 MB <br/>
-                  Allowed file types: png gif jpg jpeg <br/>
-                  Images must be larger than 400x300 pixels.
-                %input#uploadimage.hiddenfile{:accept => "image/*", :type => "file", :value => "upload"}
-                %button.button.launcher{:onmousedown => "triggerUpload()"} select image
-                %a.button.remove.element-hidden{:href => "#", :tabindex => "3"} remove image
-                %p#file-name.element-hidden
-
-          .form-item
-            %label.form-label{:for => "tags"} Tags
-            %input.form-text.form-autocomplete#tags{:type => "text", :value => ""}
-            .autocomplete
-              %ul
-                - 20.times do |num|
-                  %li
-                    = lorem.word
+          .form-item.form-type-select
+            %label.form-label{:for => "language"} Languages
+            .form-description What languages can people use to participate in this group? You can select multiple languages.
+            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
+              %option English, US
+              %option French
 
     %section#section-contact-social.block
       %i.block-icon.icon-user.icon-bg-action

@@ -66,11 +66,13 @@ input[type=time]::-webkit-inner-spin-button {
 // two small inputs plus margin-right
 .input-medium {
   width: 252px;
+  max-width: 100%;
 }
 
 // a small input + a large input + margin-right
 .input-large {
   width: 379px;
+  max-width: 100%;
 }
 
 .hiddenfile {

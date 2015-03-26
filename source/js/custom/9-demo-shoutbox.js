@@ -119,9 +119,31 @@
     }
 }(jQuery, window, document);
 
+
+
 $(function() {
+
+  function readURL(input) {
+
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('#preview-image').attr('src', e.target.result).removeClass('element-hidden');
+      }
+
+    reader.readAsDataURL(input.files[0]);
+
+    }
+
+  }
+
+  $(".form-comment-file").change(function(){
+    readURL(this);
+  });
+
   $('.form-comment-submit').click(function(e) {
     var posttext = $('.form-comment-message textarea').val();
+    var shoutImage = $('.comment-form-holder .preview-wrapper').html();
     var richLink = $('.comment-form-holder #linkinfo').html();
     console.log(posttext);
 
@@ -141,6 +163,9 @@ $(function() {
     postmarkup +=  "  </div>";
     postmarkup +=  "  <div class='comment-body'>";
     postmarkup +=  posttext;
+    if ($(shoutImage).length != 0) {
+      postmarkup +=  shoutImage;
+    }
     if ($(richLink).length != 0) {
       postmarkup +=  richLink;
     }
@@ -158,6 +183,7 @@ $(function() {
     $('.form-comment-message textarea').val('');
     $('.form-comment-submit').addClass('disabled');
     $('.comment-form-holder #linkinfo').remove();
+    $('.comment-form-holder #preview-image').addClass('element-hidden');
     e.preventDefault();
     $('.comment-body').linkify().urlToLink();
   });
@@ -209,6 +235,11 @@ $(function() {
           $('.close-linkinfo').removeClass('element-hidden');
           $('.show-linkinfo').html('Check link');
           $('.btn-primary').prop('disabled', false);
+          $('.urlive-img-wrapper').append('<a href="#" class="remove-image"></a>');
+          $('.remove-image').click(function(e) {
+            $('.urlive-img-wrapper').remove();
+            e.preventDefault();
+          });
         }
       }
     });
@@ -223,8 +254,10 @@ $(function() {
   });
 
   $('.form-addlink .btn-primary').click(function(e) {
-    $('.urlive-container .close-linkinfo').remove();
-    $('.urlive-container').clone().insertAfter('.block-comments .form-comment-message');
+    var linkclone = $('.urlive-container').clone().wrapInner('<div class="linkclone"></div>');
+    linkclone.insertAfter('.block-comments .form-comment-message');
+    $('.linkclone .close-linkinfo').remove();
+    $('.linkclone .remove-image').remove();
     $.magnificPopup.close();
     e.preventDefault();
   });

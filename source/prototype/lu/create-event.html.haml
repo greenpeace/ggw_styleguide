@@ -1,6 +1,10 @@
 ---
 title: Create new event
 body_class: not-front logged-in page-type-event l-has-sidebar-first page-edit
+direct_parent:
+  -
+    name: "Events"
+    url: "events.html"
 user_role: lu
 script: edit
 design_status: Needs review
@@ -12,14 +16,14 @@ menu:
     name: 'Date and location'
     url: '#section-date'
   -
-    name: 'Organisers and role'
-    url: '#section-organisers'
-  -
-    name: 'Event type and tags'
-    url: '#section-event-type'
-  -
     name: 'Visibility'
     url: '#section-visibility'
+  -
+    name: 'Event type, language & tags'
+    url: '#section-language'
+  -
+    name: 'Organisers and roles'
+    url: '#section-organisers'
 ---
 
 
@@ -72,18 +76,6 @@ menu:
       %i.block-icon.icon-calendar.icon-bg-action
       %h2.block-title Date and location
       .content
-        .form-wrapper.row
-          .form-item.field-name-event-date-type
-            %label.form-label{:for => "edit-field-event-date-type"}
-              Date and duration
-            .form-radios
-              .form-type-radio
-                %input#edit-field-event-date-type-und-0.form-radio{:name => "field_event_date_type", :type => "radio", :value => "0", :checked => "checked", :tabindex => "4"}
-                %label.option{:for => "edit-field-event-date-type-und-0"} One time event
-              .form-type-radio
-                %input#edit-field-event-date-type-und-1.form-radio{:name => "field_event_date_type", :type => "radio", :value => "1"}
-                %label.option{:for => "edit-field-event-date-type-und-1"} Ongoing event
-        .clear
         .form-wrapper.row.deskwidth50
           .inline-label
             %label
@@ -150,58 +142,6 @@ menu:
           .preview-location
             #map{:style => "width: 100%; height: 100%;"}
 
-
-    %section#section-organisers.block
-      %i.block-icon.icon-users.icon-bg-action
-      %h2.block-title Organisers and roles
-      .content
-        .form-wrapper
-          .form-item.form-type-select
-            %label.form-label{:for => "organisersinput"} Organisers
-            %select#organisersinput.chosen-select{"data-placeholder" => "Select organisers...", :multiple => "multiple", :tabindex => "11"}
-              - 50.times do |num|
-                :preserve
-                  <option>
-                = lorem.name
-                :preserve
-                  </option>
-
-          .form-item
-            %label.form-label
-              Roles & maximum of people needed
-            .form-description Enter the roles to which the users can subscribe to. Example: Driver (9:00 - 13:00).
-
-            .row.clone-item
-              .form-item.edit-field-event-roles-und-0-human{:style => "margin-top:7px;"}
-                %input#edit-field-event-roles-und-0-human.form-text{:size => "29", :type => "text", :value => "", :placeholder => "describe the role", :tabindex => "12"}
-              .form-item.field-event-roles-und-0-role-limit{:style => "margin-top:7px;"}
-                %input#edit-field-event-roles-und-0-role-limit.form-text.number-field{:type => "number", :value => "", :min => "1", :max => "9999", :step => "1", :placeholder => "max. no.", :tabindex => "13"}
-            %a.small-link.clone-trigger{:href => "#"} add another role
-
-    %section#section-event-type.block
-      %i.block-icon.icon-tag.icon-bg-action
-      %h2.block-title Event type and tags
-      .content
-        .form-wrapper
-          .form-item.form-type-select
-            %label.form-label{:for => "eventtype"} Event type
-            %select#eventtype.chosen-select{"data-placeholder" => "Select one or more types", :multiple => "multiple", :tabindex => "14"}
-              - 50.times do |num|
-                :preserve
-                  <option>
-                = lorem.word
-                :preserve
-                  </option>
-
-          .form-item
-            %label Tags
-            %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "", :placeholder => "Text input", :tabindex => "15"}
-            .autocomplete#tagsautocomplete
-              %ul
-                - 50.times do |num|
-                  %li
-                    = lorem.word
-
     %section#section-visibility.block
       %i.block-icon.icon-eye.icon-bg-action
       %h2.block-title Visibility
@@ -231,6 +171,65 @@ menu:
                 %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2", :tabindex => "19"}
                 %label.option{:for => "edit-group-content-access-und-2"} Public - visible for all visitors of Greenwire
 
+    %section#section-language.block
+      %i.block-icon.icon-tag.icon-bg-action
+      %h2.block-title Event type, language & tags
+      .content
+        .form-wrapper
+
+          .form-item.form-type-select
+            %label.form-label{:for => "eventtype"} Event type
+            %select#eventtype.chosen-select{"data-placeholder" => "Select one or more types", :multiple => "multiple", :tabindex => "14"}
+              - 50.times do |num|
+                :preserve
+                  <option>
+                = lorem.word
+                :preserve
+                  </option>
+
+          .form-item.form-type-select
+            %label.form-label{:for => "language"} Language
+            .form-description What language is this event in? You can select more than one language.
+            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
+              %option{:selected => ""} English, US
+              %option French
+
+          .form-item
+            %label Tags
+            %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "", :placeholder => "Text input", :tabindex => "15"}
+            .autocomplete#tagsautocomplete
+              %ul
+                - 50.times do |num|
+                  %li
+                    = lorem.word
+
+    %section#section-organisers.block
+      %i.block-icon.icon-users.icon-bg-action
+      %h2.block-title Organisers and roles
+      .content
+        .form-wrapper
+          .form-item.form-type-select
+            %label.form-label{:for => "organisersinput"} Organisers
+            %select#organisersinput.chosen-select{"data-placeholder" => "Select organisers...", :multiple => "multiple", :tabindex => "11"}
+              - 50.times do |num|
+                :preserve
+                  <option>
+                = lorem.name
+                :preserve
+                  </option>
+
+          .form-item
+            %label.form-label
+              Roles & maximum of people needed
+            .form-description Enter the roles to which the users can subscribe to. Example: Driver (9:00 - 13:00).
+
+            .row.clone-item
+              .form-item.edit-field-event-roles-und-0-human{:style => "margin-top:7px;"}
+                %input#edit-field-event-roles-und-0-human.form-text{:size => "29", :type => "text", :value => "", :placeholder => "describe the role", :tabindex => "12"}
+              .form-item.field-event-roles-und-0-role-limit{:style => "margin-top:7px;"}
+                %input#edit-field-event-roles-und-0-role-limit.form-text.number-field{:type => "number", :value => "", :min => "1", :max => "9999", :step => "1", :placeholder => "max. no.", :tabindex => "13"}
+            %a.small-link.clone-trigger{:href => "#"} add another role
+
     %section#section-submit
       .form-actions.form-wrapper
         %input{:type => "submit", :class => "button btn-primary", :value => "Submit"}
@@ -238,7 +237,7 @@ menu:
 
 #manual-coordinates-form.block.white-popup.mfp-hide
   %i.block-icon.icon-map.icon-bg-action
-  %h2.block-title Add coordinates of your local group
+  %h2.block-title Add coordinates of your event
   .content
     %form
       .form-wrapper

@@ -27,19 +27,29 @@ $(function() {
     $('#edit-event-address').prop("placeholder", "venue, street, city etc.");
   });
 
-  $('#section-localgroup').hide();
+  $('#section-localgroup, #section-skillsgroup').hide();
 
   $('input:radio[name="field_group_type"]').change(
     function(){
-      if ($(this).is(':checked') && $(this).val() == '5') {
+      if ($(this).is(':checked') && $(this).val() == '4') {
         $('#section-localgroup').show();
 
         if ($('.block .map').length != 0) {
           map.invalidateSize(); //solve map is not loading correctly
         }
 
-      } else if ($(this).is(':checked') && $(this).val() != '5') {
+      } else if ($(this).is(':checked') && $(this).val() != '4') {
         $('#section-localgroup').hide();
+      }
+      if ($(this).is(':checked') && $(this).val() == '5') {
+        $('#section-skillsgroup').show();
+
+        if ($('.block .map').length != 0) {
+          map.invalidateSize(); //solve map is not loading correctly
+        }
+
+      } else if ($(this).is(':checked') && $(this).val() != '5') {
+        $('#section-skillsgroup').hide();
       }
     });
 

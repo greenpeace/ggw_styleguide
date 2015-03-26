@@ -1,15 +1,16 @@
-.off-canvas {
+.nav-selector {
 
   .dropdown a {
-    border-top: 1px solid #CCCCCC;
+    border-top: 1px solid $grey-l;
     color: $base;
     display: block;
     padding: 1em 1em 1em 2em;
     font-weight: 700;
   }
+
   .dropdown-list a {
     font-weight: 400;
-    color: #7d7d7d;
+    color: $grey-d;
   }
 
   .country-img {
@@ -19,7 +20,7 @@
   @include breakpoint($desk) {
 
     .trigger {
-      border: none;
+      border: 0;
       font-weight: 300;
       height: 100%;
       position: relative;
@@ -30,45 +31,6 @@
         @include element-hidden;
       }
 
-    }
-
-    .country-selector .trigger {
-      @include font-size(16px);
-    }
-
-    .language-selector .trigger {
-      @include font-size(13px);
-      padding-top: 0;
-      top: 5px;
-
-      &:after {
-        width: 0;
-        height: 0;
-        border: 0.313em solid transparent; /* 5 */
-        border-bottom: none;
-        content: '';
-        vertical-align: middle;
-        display: inline-block;
-        position: relative;
-        right: -0.313em; /* 5 */
-        border-top-color: $white;
-        margin: 0 .3em;
-      }
-
-      &.dropdown-open:after {
-        border-top-color: $base;
-      }
-
-    }
-
-    .language-selector {
-      text-align: right;
-      width: 100px;
-
-      .dropdown {
-        left: auto;
-        right: 0;
-      }
     }
 
     .dropdown {
@@ -110,14 +72,14 @@
       overflow: auto;
       list-style: none;
       background: $white;
-      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
       border-radius: 0 0 4px 4px;
       background-clip: padding-box;
     }
 
     .dropdown a {
       padding: 3px 10px;
-      border: none;
+      border: 0;
       font-weight: 300;
       @include font-size(13px);
 
@@ -126,6 +88,46 @@
         background: $base;
       }
 
+    }
+
+  }
+
+}
+
+@include breakpoint($desk) {
+
+  .language-selector .trigger {
+    @include font-size(13px);
+    padding-top: 0;
+    top: 5px;
+
+    &:after {
+      width: 0;
+      height: 0;
+      border: .313em solid transparent; // 5
+      border-bottom: 0;
+      content: '';
+      vertical-align: middle;
+      display: inline-block;
+      position: relative;
+      right: -.313em; // 5
+      border-top-color: $white;
+      margin: 0 .3em;
+    }
+
+    &.dropdown-open:after {
+      border-top-color: $base;
+    }
+
+  }
+
+  .language-selector {
+    text-align: right;
+    width: 100px;
+
+    .dropdown {
+      left: auto;
+      right: 0;
     }
 
   }

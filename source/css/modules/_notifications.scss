@@ -1,0 +1,58 @@
+.notifications-dropdown {
+
+  @include breakpoint($desk) {
+    position: fixed;
+    top: 84px !important;
+
+    .notifications-section {
+      max-height: 420px;
+      overflow: auto;
+      border: 1px solid $background;
+    }
+
+  }
+
+  .tabwrapper {
+    text-align: center;
+  }
+
+  .load-more-wrapper {
+    padding: $def-mar 0 0;
+    text-align: center;
+  }
+
+}
+
+.notifications-section {
+  @include font-size($p);
+
+  a {
+    color: $base;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+  }
+
+  .notification {
+    padding: $def-mar-half;
+    line-height: 1.1em;
+    overflow: hidden;
+
+    &:hover {
+      background: $background;
+    }
+  }
+
+  .notifications-body {
+    line-height: 1.35em;
+  }
+
+  .notifications-footer {
+    color: $grey-m;
+    line-height: 1.5em;
+    @include font-size($small);
+  }
+
+}

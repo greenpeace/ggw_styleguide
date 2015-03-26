@@ -46,6 +46,9 @@ action_menu:
     .content
 
       .field-name-user-image
+        %img.lazyload{:alt => "John Doe Claus", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/polar.png"}/
+        %noscript
+          %img{:src => "/photos/polar.png", :alt => "Santa Doe Claus"}/
 
       .field.field-name-user-name
         Santa Doe Claus

@@ -4,11 +4,15 @@ $(function() {
 
   var resizeTimer; // Set resizeTimer to empty so it resets on page load
 
-   if ($('.tabwrapper').length!=0) {
+  if ($('.tabwrapper').length!=0) {
 
     function responsiveTabs() {
 
-      var menuWrapper = $('.tabwrapper');
+      $('.tabwrapper').each(function() {
+
+      var menuWrapper = $(this);
+
+      console.log($(this));
 
       var fullMenu = menuWrapper.children('.tabs');
 
@@ -16,7 +20,7 @@ $(function() {
 
       var fullHeight = menuWrapper.outerHeight();
 
-      var triggerWidth = $('.tabwrapper .tab-overflow-trigger').outerWidth();
+      var triggerWidth = $(this).find('.tab-overflow-trigger').outerWidth();
 
       var handle = menuWrapper.find('.tab-overflow-trigger').addClass('element-invisible');
 
@@ -43,11 +47,11 @@ $(function() {
       });
 
       // Position the 'more' button
-      $('.tabwrapper .tabs-overflow').css("left", totalWidth);
+      $(this).find('.tabs-overflow').css("left", totalWidth);
 
       // For desktop we need extra space
       if ($(window).width() > 900) {
-        $('.tabwrapper .tabs-overflow').css("left", totalWidth + 15);
+        $(this).find('.tabs-overflow').css("left", totalWidth + 15);
       }
 
       if (overFlowMenu.children('li').length!=0) {
@@ -57,11 +61,11 @@ $(function() {
         fullMenu.css('padding-right', '0');
       }
 
-    };
+      $(this).find('.tabs li:first .tab').addClass('active');
 
-    $('.tabwrapper').each(function() {
-     $(this).find('.tabs li:first .tab').addClass('active');
     });
+
+    };
 
     $('.tabwrapper .tab').click(function(e){
       // find only the closest mathcing elements, because the tabwrapper can be implemented multiple times on a page.

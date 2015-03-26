@@ -15,7 +15,7 @@ $(function() {
         save: true,
         cookie: {
           name: 'navgoco',
-          expires: false,
+          expires: 1,
           path: '/'
         },
         slide: {

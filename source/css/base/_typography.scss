@@ -229,9 +229,9 @@ article {
   width: 1.2em;
   line-height: 1.2em;
   display: inline-block;
-  position: relative;
-  top: -12px;
-  left: -5px;
+  position: absolute;
+  top: -7px;
+  right: -5px;
   text-align: center;
   @include font-size(11px);
   color: $white;

@@ -1,17 +1,18 @@
 .node-accordion {
   height: auto;
-  border-radius: 4px;
-  background: $white;
   margin-bottom: $def-mar-half;
 
+  border-radius: 4px;
+  background: $white;
+
   .field-name-body {
-    display: none;
     line-height: 1.3em;
-    padding: 0 0 $def-mar 0;
+    display: none;
+    padding: 0 0 $def-mar;
     @include font-size($p);
 
     @include breakpoint($tab) {
-      padding: 0 $def-mar $def-mar $def-mar;
+      padding: 0 $def-mar $def-mar;
     }
 
     p {
@@ -24,60 +25,62 @@
 
   }
 
-}
-
-.node-accordion .node-title {
-  position: relative;
-  max-height: none;
-
-  @include breakpoint($tab) {
-    margin: 0;
-  }
-
-}
-
-
-.node-accordion .node-title {
-  @include font-size($p);
-  font-weight: normal;
-}
-
-.node-accordion .node-title a {
-  padding: 0 40px 0 0;
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  @include breakpoint($tab) {
-    padding: $def-mar 50px $def-mar $def-mar;
-  }
-
-  &:before, &:after {
-  // arrow icon on the right
-    position: absolute;
-    content: '';
-    right: 14px;
-    top: 8px;
-    height: 2px;
-    width: 10px;
-    background: $green5;
-    backface-visibility: hidden;
-    transition-property: transform;
-    transition-duration: 0.2s;
+  .node-title {
+    position: relative;
+    font-weight: normal;
+    @include font-size($p);
+    max-height: none;
 
     @include breakpoint($tab) {
-      top: 50%;
+      margin: 0;
     }
-  }
 
-  &:before {
-    transform: rotate(45deg);
-    right: 20px;
-  }
+    a {
+      padding: 0 40px 0 0;
 
-  &:after {
-    transform: rotate(-45deg);
+      @include breakpoint($tab) {
+        padding: $def-mar 50px $def-mar $def-mar;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:before,
+      &:after {
+        // arrow icon on the right
+        position: absolute;
+        top: 8px;
+        right: 14px;
+
+        width: 10px;
+        height: 2px;
+
+        content: '';
+        transition-duration: .2s;
+        transition-property: transform;
+
+        background: $green5;
+
+        backface-visibility: hidden;
+
+        @include breakpoint($tab) {
+          top: 50%;
+        }
+
+      }
+
+      &:before {
+        right: 20px;
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+
+    }
+
   }
 
 }
@@ -92,10 +95,10 @@
 }
 
 .page-faq .l-main-column .block {
-  background: none;
   margin: 0;
   padding: 0;
 
+  background: none;
   .content {
     margin-top: $def-mar;
   }

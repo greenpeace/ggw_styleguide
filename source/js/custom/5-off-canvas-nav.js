@@ -89,17 +89,6 @@ $(function() {
       return menuOpen;
     }
 
-    if ($('.logged-in').length!==0) {
-      var totalNotifications = 0
-
-      $('.user-menu .num-notifications').each(function() {
-        var notification =+ Number($(this).text());
-        totalNotifications = totalNotifications + notification;
-      });
-
-      $('<li class="menu-item notifications-trigger" data-dropdown="notifications-panel"><i class="icon icon-globe"></i><span class="num-notifications">' + totalNotifications +'</span></li>').insertBefore($('.user-menu .menu-item:nth-of-type(2)'));
-    }
-
     // Hide Header on on scroll down
     var didScroll;
     var lastScrollTop = 0;

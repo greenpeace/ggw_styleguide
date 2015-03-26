@@ -129,6 +129,7 @@ $(function() {
       var reader = new FileReader();
       reader.onload = function (e) {
         $('#preview-image').attr('src', e.target.result).removeClass('element-hidden');
+        $('.form-comment-submit').removeClass('disabled');
       }
 
     reader.readAsDataURL(input.files[0]);
@@ -258,6 +259,7 @@ $(function() {
     linkclone.insertAfter('.block-comments .form-comment-message');
     $('.linkclone .close-linkinfo').remove();
     $('.linkclone .remove-image').remove();
+    $('.form-comment-submit').removeClass('disabled');
     $.magnificPopup.close();
     e.preventDefault();
   });

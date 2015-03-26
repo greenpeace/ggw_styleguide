@@ -303,7 +303,7 @@
 // List all background-images for types which will show if there is no image present
 // and list all submitted type icons
 
-@each $type, $icon in (news: book-open, blog: feather, event: calendar, group: users, photo: camera, document: attach, video: video, idea: thumbs-up, page: info, material: bucket, faq: help, notification: user, user: user, download: download, idea2: chat) {
+@each $type, $icon in (news: book-open, blog: feather, event: calendar, group: users, photo: camera, document: attach, video: video, idea: thumbs-up, page: info, material: bucket, faq: help, user: user, download: download, idea2: chat) {
 
   .node-teaser-#{$type} .field-type-image {
     @extend %icon-#{$icon};

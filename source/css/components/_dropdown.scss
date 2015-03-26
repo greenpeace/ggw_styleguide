@@ -1,11 +1,53 @@
 .dropdown {
   display: none;
-}
-
-.dropdown {
   position: absolute;
   z-index: 9999999;
+
+  .form-item,
+  .form-wrapper {
+    margin: 0;
+  }
+
+  .form-type-checkbox .option {
+    @include font-size($small);
+    line-height: 20px;
+    white-space: nowrap;
+  }
+
 }
+
+.dropdown-menu li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 18px;
+}
+
+.dropdown-menu li > a,
+.dropdown-menu label {
+  display: block;
+  color: $base;
+  text-decoration: none;
+  @include font-size($small);
+  line-height: 18px;
+  padding: 3px $def-mar;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $green5;
+    color: $white;
+    cursor: pointer;
+  }
+
+}
+
+.dropdown-menu .dropdown-divider {
+  font-size: 1px;
+  border-top: solid 1px $background;
+  padding: 0;
+  margin: 5px 0;
+}
+
 
 .nav-inner-wrap .dropdown {
   position: relative;
@@ -19,11 +61,11 @@
   padding: 4px 0;
   overflow: visible;
   margin: 0;
-  background-color: white;
+  background-color: $white;
   border-radius: 3px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .13);
   border: 1px solid $grey-l;
-  border: 1px solid rgba(0,0,0,0.2);
+  border-color: rgba(0, 0, 0, .2);
 }
 
 .dropdown-panel {
@@ -42,11 +84,11 @@
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
   border-bottom: 7px solid $grey-l;
-  border-bottom-color: rgba(0, 0, 0, 0.2);
+  border-bottom-color: rgba(0, 0, 0, .2);
   display: inline-block;
 }
 
-.dropdown.dropdown-tip.dropdown-anchor-right:before {
+.dropdown-anchor-right:before {
   left: auto;
   right: 9px;
 }
@@ -62,7 +104,7 @@
   display: inline-block;
 }
 
-.dropdown.dropdown-tip.dropdown-anchor-right:after {
+.dropdown-anchor-right:after {
   left: auto;
   right: 10px;
 }
@@ -73,44 +115,12 @@
   overflow: auto;
 }
 
-.dropdown .dropdown-menu li {
-  list-style: none;
-  padding: 0 0;
-  margin: 0;
-  line-height: 18px;
-}
-
-.dropdown .dropdown-menu li > a,
-.dropdown .dropdown-menu label {
-  display: block;
-  color: $base;
-  text-decoration: none;
-  @include font-size($small);
-  line-height: 18px;
-  padding: 3px $def-mar;
-  white-space: nowrap;
-}
-
-.dropdown .dropdown-menu li > a:hover,
-.dropdown .dropdown-menu label:hover {
-  background-color: $green5;
-  color: $white;
-  cursor: pointer;
-}
-
-.dropdown .dropdown-menu .dropdown-divider {
-  font-size: 1px;
-  border-top: solid 1px $background;
-  padding: 0;
-  margin: 5px 0;
-}
-
 .btn-group .dropdown {
   background-clip: padding-box;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: $white;
+  border: 1px solid rgba(0, 0, 0, .15);
   border-radius: 4px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .176);
   left: 0;
   margin: 2px 0 0;
   position: absolute;
@@ -132,51 +142,8 @@
       background: $background;
       text-decoration: none;
     }
+
   }
-}
-
-.dropdown {
-
-  i {
-    width: 1.2em;
-  }
-
-  // my friends page accepting friends
-  .icon-check {
-    color: $green5;
-  }
-
-  // my friends page declining friends
-  .icon-cancel {
-    color: $error;
-  }
-
-  a {
-    display: block;
-    color: $base;
-    padding: 0 10px;
-
-    &.active {
-      font-weight: bold;
-    }
-
-    &:hover {
-      background: $background;
-      text-decoration: none;
-    }
-  }
-
-  .form-item,
-  .form-wrapper {
-    margin: 0;
-  }
-
-  .form-type-checkbox .option {
-    @include font-size($small);
-    line-height: 20px;
-    white-space: nowrap;
-  }
-
 
 }
 

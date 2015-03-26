@@ -64,7 +64,7 @@
                 %li.menu-item
                   =nav_link item.name, item.url, :class => 'menu-link'
 
-        .l-country-selector.country-selector
+        .l-country-selector.country-selector.nav-selector
           .dropdown-controller
             %a.trigger{"data-dropdown" => "#dropdown-content-country", :href => "#"}
               International
@@ -75,7 +75,7 @@
                 %li
                   %a{:href => "#"}
                     = item
-        .l-language-selector.language-selector
+        .l-language-selector.language-selector.nav-selector
           .dropdown-controller
             %a.trigger{"data-dropdown" => "#dropdown-content-language", :href => "#"} Francais
           #dropdown-content-language.dropdown.dropdown-scroll.relative

@@ -89,6 +89,17 @@ $(function() {
       return menuOpen;
     }
 
+    // On resize, close the menu
+    // 250 is the delay in milliseconds.
+    $(window).resize(function() {
+      if(root.hasClass('primary-nav')) {
+        root.removeClass('primary-nav')
+      }
+      if(root.hasClass('secondary-nav')) {
+        root.removeClass('secondary-nav')
+      }
+    });
+
     // Hide Header on on scroll down
     var didScroll;
     var lastScrollTop = 0;
@@ -97,6 +108,13 @@ $(function() {
 
     $(window).scroll(function(event){
       didScroll = true;
+    });
+
+    root.touchwipe({
+      wipeDown: function(e) {
+        e.preventDefault();
+        didScroll = true;
+      }
     });
 
     setInterval(function() {

@@ -1,5 +1,7 @@
 $(function() {
 
+  var resizeTimer;
+
   if ($('.logged-in').length!==0) {
 
     var notiValue = $.cookie("notifications");
@@ -14,7 +16,7 @@ $(function() {
       var notifications = notiValue;
     }
 
-    $('<li class="menu-item"><a href="#" class="notifications-trigger" data-dropdown="#notifications-panel"><i class="icon icon-globe"></i><span class="num-notifications">'+ notifications +'</span></a></li>').insertBefore($('.user-menu .menu-item:nth-of-type(2)'));
+    $('.num-notifications').text(notifications);
 
     if (notiValue == "0") {
       $('.num-notifications').hide();
@@ -46,5 +48,43 @@ $(function() {
 
   }
 
+      function notificationTrigger() {
+
+      if($(window).width() <= 899) {
+
+        $('.notifications-trigger')
+        .attr('href', '#notifications-panel')
+        .addClass('modal-inline')
+        .removeAttr('data-dropdown');
+
+        $('#notifications-panel')
+        .removeClass('dropdown dropdown-tip dropdown-anchor-right')
+        .addClass('mfp-hide')
+        .removeAttr('style');
+
+        console.log('kleiner');
+
+      } else if ($(window).width() > 900) {
+        console.log('groter');
+        $('.notifications-trigger')
+        .removeClass('modal-inline')
+        .attr('data-dropdown', '#notifications-panel')
+        .attr('href', '#');
+
+        $('#notifications-panel')
+        .addClass('dropdown dropdown-tip dropdown-anchor-right')
+        .removeClass('mfp-hide');
+      }
+
+    }
+
+      // On resize, run the function and reset the timeout
+    // 250 is the delay in milliseconds.
+    $(window).resize(function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(notificationTrigger, 250);
+    });
+
+    notificationTrigger();
 
 });

@@ -12,8 +12,6 @@ $(function() {
 
       var menuWrapper = $(this);
 
-      console.log($(this));
-
       var fullMenu = menuWrapper.children('.tabs');
 
       var overFlowMenu = menuWrapper.find('.dropdown ul');

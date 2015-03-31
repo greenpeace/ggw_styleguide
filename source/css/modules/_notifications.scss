@@ -1,4 +1,67 @@
+.num-notifications {
+  border-radius: 10px;
+  background: $primary;
+  line-height: 1.2em;
+  display: inline-block;
+  position: relative;
+  padding: 0 4px;
+  top: -$def-mar;
+  right: 0;
+  text-align: center;
+  @include font-size(11px);
+  color: $white;
+
+  @include breakpoint($desk) {
+    position: absolute;
+    top: -7px;
+    right: -5px;
+  }
+}
+
+
+.notifications-trigger i {
+  @extend %element-hidden;
+}
+
+@include breakpoint($desk) {
+
+  .notifications-trigger {
+    padding: 0;
+
+    &:hover {
+      background: none;
+      color: $white;
+    }
+
+    .menu-link-text {
+      display: none;
+    }
+  }
+
+  .notifications-trigger .icon {
+    display: inline-block;
+    color: darken($green2, 10%);
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 1.3em;
+    vertical-align: bottom;
+    padding-right: 5px;
+    top: 1px;
+    position: relative;
+
+    &:hover {
+      color: $white;
+    }
+
+  }
+
+}
+
 .notifications-dropdown {
+
+  .dropdown-panel {
+    max-width: none;
+  }
 
   @include breakpoint($desk) {
     position: fixed;
@@ -8,6 +71,10 @@
       max-height: 420px;
       overflow: auto;
       border: 1px solid $background;
+    }
+
+    .dropdown-panel {
+      max-width: 360px;
     }
 
   }

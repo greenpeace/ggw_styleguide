@@ -215,26 +215,12 @@ article {
     @extend %block;
   }
 
-}
+  .username {
+    color: $grey-m;
+    font-weight: 300;
+    font-size: .85em;
+  }
 
-.node-title .username {
-  color: $grey-m;
-  font-weight: 300;
-  font-size: 0.85em;
-}
-
-.num-notifications {
-  border-radius: 100%;
-  background: $primary;
-  width: 1.2em;
-  line-height: 1.2em;
-  display: inline-block;
-  position: absolute;
-  top: -7px;
-  right: -5px;
-  text-align: center;
-  @include font-size(11px);
-  color: $white;
 }
 
 @include breakpoint($desk) {

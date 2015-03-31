@@ -49,13 +49,10 @@
                 %a.menu-link{:href => "my-profile.html"}
                   John Doe Claus
               %li.menu-item
-                %a.menu-link{:href => "#", "data-dropdown" => "#alerts"}
-                  Alerts
-                  %span.num-notifications 2
-              %li.menu-item
-                %a.menu-link{:href => "#", "data-dropdown" => "#notifications"}
-                  Updates
-                  %span.num-notifications 4
+                %a.menu-link.notifications-trigger{:href => "#", "data-dropdown" => "#notifications-panel"}
+                  %span.menu-link-text Notifications
+                  %i.icon.icon-globe
+                  %span.num-notifications 6
               %li.menu-item
                 %a.menu-link{:href => "../an/index.html"} Log out
 

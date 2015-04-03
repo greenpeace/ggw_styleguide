@@ -129,3 +129,21 @@
 .load-more-btn {
   margin-top: $def-mar-half;
 }
+
+.btn-add {
+  background: $green5;
+  border: 1px solid darken($green5, 10%);
+  color: $white;
+}
+
+.btn-upload {
+  background: $group;
+  border: 1px solid darken($group, 10%);
+  color: $white;
+}
+
+.btn-delete {
+  background: $delete;
+  border: 1px solid darken($delete, 10%);
+  color: $white;
+}

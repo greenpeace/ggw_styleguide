@@ -23,7 +23,7 @@ $( document ).ready(function() {
   }).attr('target', '_blank').addClass('external');
 
   // Activate fastclick function
-  FastClick.attach(document.body);
+  //FastClick.attach(document.body);
 });
 
 

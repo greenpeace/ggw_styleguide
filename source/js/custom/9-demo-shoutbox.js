@@ -204,7 +204,7 @@ $(function() {
     }
   });
 
-  $('.form-comment-submit').addClass('disabled');
+  $('.comment-form .form-comment-submit').addClass('disabled');
 
 
   $('.show-linkinfo').click(function(e) {

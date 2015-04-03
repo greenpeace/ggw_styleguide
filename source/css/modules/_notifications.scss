@@ -1,4 +1,4 @@
-.num-notifications {
+.attention-number {
   border-radius: 10px;
   background: $primary;
   line-height: 1.2em;
@@ -19,13 +19,13 @@
 }
 
 
-.notifications-trigger i {
+.attention-trigger i {
   @extend %element-hidden;
 }
 
 @include breakpoint($desk) {
 
-  .notifications-trigger {
+  .attention-trigger {
     padding: 0;
 
     &:hover {
@@ -38,7 +38,7 @@
     }
   }
 
-  .notifications-trigger .icon {
+  .attention-trigger .icon {
     display: inline-block;
     color: darken($green2, 10%);
     cursor: pointer;
@@ -57,7 +57,7 @@
 
 }
 
-.notifications-dropdown {
+.attention-panel {
 
   .dropdown-panel {
     max-width: none;
@@ -75,6 +75,10 @@
 
     .dropdown-panel {
       max-width: 360px;
+    }
+
+    .messages {
+      border: 0;
     }
 
   }
@@ -102,24 +106,28 @@
 
   }
 
-  .notification {
-    padding: $def-mar-half;
-    line-height: 1.1em;
-    overflow: hidden;
-
-    &:hover {
-      background: $background;
-    }
+  .notification:hover {
+    background: $background;
   }
 
-  .notifications-body {
-    line-height: 1.35em;
-  }
+}
 
-  .notifications-footer {
-    color: $grey-m;
-    line-height: 1.5em;
-    @include font-size($small);
-  }
+.notification {
+  padding: $def-mar-half;
+  line-height: 1.1em;
+  overflow: hidden;
 
+  p {
+    margin:  0 0 .65em;
+  }
+}
+
+.notifications-body {
+  line-height: 1.35em;
+}
+
+.notifications-footer {
+  color: $grey-m;
+  line-height: 1.5em;
+  @include font-size($small);
 }

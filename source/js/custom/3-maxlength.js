@@ -17,7 +17,7 @@ $(window).load(function() {
   };
 
   function niceInput() {
-    $('.comment-form input[type=file]').nicefileinput();
+    $('.comment-form input[type=file], .private-message-form input[type=file]').nicefileinput();
   };
 
   var intervalFunc = function () {

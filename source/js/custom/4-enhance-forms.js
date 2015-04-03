@@ -16,7 +16,7 @@ $( document ).ready(function() {
     $(this).parent('.selector').removeClass('focused');
   });
 
-  // attach datepicker plugin to date iput fields
+  // attach datepicker plugin to date input fields
   if (!Modernizr.inputtypes.date) {
     $('input[type="date"]').pickadate({
       format: 'dd/mm/yy',
@@ -26,7 +26,7 @@ $( document ).ready(function() {
     $('input[type="date"]').after('<i class="icon-calendar"></i>');
   }
 
-  // attach datepicker plugin to time iput fields
+  // attach datepicker plugin to time input fields
   if (!Modernizr.inputtypes.time) {
     $('input[type="time"]').pickatime({
       interval: 15

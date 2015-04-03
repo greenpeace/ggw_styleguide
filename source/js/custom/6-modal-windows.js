@@ -22,7 +22,29 @@ $( window ).load(function() {
         $(window).trigger("load");
         $('.form-comment-message textarea').trigger('keyup');
         if($(window).width() < 700) {
-          alignTop: true;
+          alignTop: true
+        }
+      }
+    }
+  });
+
+  $('.popup-iframe').magnificPopup({
+    disableOn: 700,
+    type: 'iframe',
+    mainClass: 'mfp-fade',
+    removalDelay: 160,
+    preloader: false,
+    fixedContentPos: false
+  });
+
+  $('.popup-ajax').magnificPopup({
+    type: 'ajax',
+    fixedContentPos: true,
+    callbacks: {
+      ajaxContentAdded: function() {
+        $('.private-message-form input[type=file]').nicefileinput();
+        if($(window).width() < 700) {
+          alignTop: true
         }
       }
     }

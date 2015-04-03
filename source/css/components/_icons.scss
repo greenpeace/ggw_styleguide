@@ -1,64 +1,66 @@
-[class*="icon-"] { @extend %load-icon;}
+[class*="icon-"] {  @extend %load-icon;}
 
-.icon-users {     @extend %icon-users; }
-.icon-user-add {  @extend %icon-user-add; }
-.icon-menu {      @extend %icon-menu; }
-.icon-user {      @extend %icon-user; }
-.icon-login {     @extend %icon-login; }
-.icon-leave {     @extend %icon-logout; }
-.icon-close {     @extend %icon-cancel; }
-.icon-back {      @extend %icon-left-open; }
-.icon-reply {     @extend %icon-reply; }
-.icon-pencil {    @extend %icon-pencil; }
-.icon-trash {     @extend %icon-trash; }
-.icon-clock {     @extend %icon-clock; }
-.icon-tag {       @extend %icon-tag; }
-.icon-plus {      @extend %icon-plus; }
-.icon-comment {   @extend %icon-comment; }
-.icon-dot {       @extend %icon-dot;}
-.icon-eye {       @extend %icon-eye;}
-.icon-search {    @extend %icon-search;}
-.icon-shout {     @extend %icon-megaphone;}
-.icon-map {       @extend %icon-location;}
-.icon-globe {     @extend %icon-globe;}
-.icon-down-open { @extend %icon-down-open;}
-.icon-up-open {   @extend %icon-up-open;}
-.icon-down-dir {  @extend %icon-down-dir;}
-.icon-bell {      @extend %icon-bell;}
-.icon-edit {      @extend %icon-pencil;}
-.icon-subscription{@extend %icon-bookmark;}
-.icon-mail {      @extend %icon-mail;}
-.icon-check {     @extend %icon-check;}
-.icon-cancel {    @extend %icon-cancel;}
-.icon-attention { @extend %icon-attention;}
-.icon-calendar {  @extend %icon-calendar;}
-.icon-adjust {    @extend %icon-layout;}
-.icon-dot-3 {     @extend %icon-dot-3;}
-.icon-down-mini { @extend %icon-down-open-mini;}
-.icon-download {  @extend %icon-download;}
-.icon-vote-up {   @extend %icon-thumbs-up;}
-.icon-vote-down { @extend %icon-thumbs-down;}
-.icon-subscribed {@extend %icon-star;}
-.icon-bookmark {  @extend %icon-bookmark;}
-.icon-chat {      @extend %icon-chat;}
-.icon-teasers {   @extend %icon-stop;}
-.icon-list {      @extend %icon-menu;}
-.icon-skills {    @extend %icon-graduation-cap;}
-.icon-settings {  @extend %icon-cog;}
-.icon-social {    @extend %icon-share;}
-.icon-link {      @extend %icon-link;}
+.icon-users {       @extend %icon-users; }
+.icon-user-add {    @extend %icon-user-add; }
+.icon-menu {        @extend %icon-menu; }
+.icon-user {        @extend %icon-user; }
+.icon-login {       @extend %icon-login; }
+.icon-leave {       @extend %icon-logout; }
+.icon-close {       @extend %icon-cancel; }
+.icon-back {        @extend %icon-left-open; }
+.icon-reply {       @extend %icon-reply; }
+.icon-pencil {      @extend %icon-pencil; }
+.icon-trash {       @extend %icon-trash; }
+.icon-clock {       @extend %icon-clock; }
+.icon-tag {         @extend %icon-tag; }
+.icon-plus {        @extend %icon-plus; }
+.icon-comment {     @extend %icon-comment; }
+.icon-dot {         @extend %icon-dot;}
+.icon-eye {         @extend %icon-eye;}
+.icon-search {      @extend %icon-search;}
+.icon-shout {       @extend %icon-megaphone;}
+.icon-map {         @extend %icon-location;}
+.icon-globe {       @extend %icon-globe;}
+.icon-down-open {   @extend %icon-down-open;}
+.icon-up-open {     @extend %icon-up-open;}
+.icon-down-dir {    @extend %icon-down-dir;}
+.icon-bell {        @extend %icon-bell;}
+.icon-edit {        @extend %icon-pencil;}
+.icon-subscription {@extend %icon-bookmark;}
+.icon-mail {        @extend %icon-mail;}
+.icon-check {       @extend %icon-check;}
+.icon-cancel {      @extend %icon-cancel;}
+.icon-attention {   @extend %icon-attention;}
+.icon-calendar {    @extend %icon-calendar;}
+.icon-adjust {      @extend %icon-layout;}
+.icon-dot-3 {       @extend %icon-dot-3;}
+.icon-down-mini {   @extend %icon-down-open-mini;}
+.icon-download {    @extend %icon-download;}
+.icon-vote-up {     @extend %icon-thumbs-up;}
+.icon-vote-down {   @extend %icon-thumbs-down;}
+.icon-subscribed {  @extend %icon-star;}
+.icon-bookmark {    @extend %icon-bookmark;}
+.icon-chat {        @extend %icon-chat;}
+.icon-teasers {     @extend %icon-stop;}
+.icon-list {        @extend %icon-menu;}
+.icon-skills {      @extend %icon-graduation-cap;}
+.icon-settings {    @extend %icon-cog;}
+.icon-social {      @extend %icon-share;}
+.icon-link {        @extend %icon-link;}
+.icon-upload {      @extend %icon-upload;}
+.icon-block {       @extend %icon-block;}
 
-.icon-event {     @extend %icon-calendar; }
-.icon-news {      @extend %icon-book-open; }
-.icon-blog {      @extend %icon-feather; }
-.icon-photo {     @extend %icon-camera; }
-.icon-video {     @extend %icon-video; }
-.icon-document {  @extend %icon-attach; }
-.icon-idea {      @extend %icon-thumbs-up; }
-.icon-idea2 {     @extend %icon-chat; }
-.icon-material {  @extend %icon-bucket; }
-.icon-info {      @extend %icon-info; }
-.icon-help {      @extend %icon-help; }
+.icon-event {       @extend %icon-calendar; }
+.icon-news {        @extend %icon-book-open; }
+.icon-blog {        @extend %icon-feather; }
+.icon-photo {       @extend %icon-camera; }
+.icon-video {       @extend %icon-video; }
+.icon-document {    @extend %icon-attach; }
+.icon-idea {        @extend %icon-thumbs-up; }
+.icon-idea2 {       @extend %icon-chat; }
+.icon-material {    @extend %icon-bucket; }
+.icon-info {        @extend %icon-info; }
+.icon-help {        @extend %icon-help; }
 
 .icon-facebook { @extend %icon-facebook;}
 .icon-gplus { @extend %icon-gplus;}
@@ -78,7 +80,7 @@
   .field-label + div:before {
     @extend %load-icon;
     @include font-size($h3);
-    margin-left: -1.25em;;
+    margin-left: -1.25em;
     position: absolute;
     width: 1em;
     line-height: 1em;

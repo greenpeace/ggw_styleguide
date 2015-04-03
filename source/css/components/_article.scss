@@ -16,18 +16,20 @@ article {
     margin: 0;
     @include font-size($h3);
 
-      @include breakpoint($desk) {
-        @include font-size($h4);
-        margin-left: 30px;
-      }
+    @include breakpoint($desk) {
+      @include font-size($h4);
+      margin-left: 30px;
+    }
+
   }
 
   .main-content .content {
     margin-top: $def-mar-half;
 
-      @include breakpoint($desk) {
-        margin-top: $def-mar;
-      }
+    @include breakpoint($desk) {
+      margin-top: $def-mar;
+    }
+
   }
 
   .editable .block-title {
@@ -85,19 +87,41 @@ article {
 
   .field-label {
     @extend %element-invisible;
+
+    + div {
+      margin-left: 2em;
+    }
+
+    + div:before {
+      @extend %load-icon;
+      @include font-size($h3);
+      margin-left: -1.25em;
+      position: absolute;
+      width: 1em;
+    }
+
   }
 
-  .field-label + div:before {
-    @extend %load-icon;
-    @include font-size($h3);
-    margin-left: -1.25em;;
-    position: absolute;
-    width: 1em;
-  }
+  .field-name-document {
+    padding: 0;
 
+    .type {
+      @include font-size($p);
+      width: auto;
+      display: block;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
 
-  .field-label + div {
-    margin-left: 2em;
+    .type:before {
+      @extend %load-icon;
+      display: inline-block;
+      top: -1px;
+      position: relative;
+      width: 1em;
+      margin-right: .2em;
+    }
+
   }
 
 }
@@ -135,28 +159,6 @@ article {
       color: $base-desk;
     }
 
-  }
-
-}
-
-.view-mode-full .field-name-document {
-  padding: 0;
-
-  .type {
-    @include font-size($p);
-    width: auto;
-    display: block;
-    overflow: hidden;
-    vertical-align: bottom;
-  }
-
-  .type:before {
-    @extend %load-icon;
-    display: inline-block;
-    top: -1px;
-    position: relative;
-    width: 1em;
-    margin-right: .2em;
   }
 
 }

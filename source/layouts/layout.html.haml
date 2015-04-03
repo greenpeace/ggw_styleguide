@@ -58,24 +58,22 @@
 
       = partial :"nav/footer"
 
-      = partial :"blocks/lu/notifications"
+      - if current_page.data.user_role == "lu"
+        = partial :"blocks/lu/notifications"
+        = partial :"blocks/lu/messages"
+        = partial :"blocks/lu/compose-message"
 
     = javascript_include_tag  "theme"
 
     - if current_page.data.script == "edit"
       = javascript_include_tag  "edit"
 
+    - if current_page.data.upload == "image"
+      = partial :"editable/photo-upload"
+
     - if current_page.data.mapsds == "event"
       :javascript
          $(document).ready(function() {
-          $('.popup-maps').magnificPopup({
-            disableOn: 700,
-            type: 'iframe',
-            mainClass: 'mfp-fade',
-            removalDelay: 160,
-            preloader: false,
-            fixedContentPos: false
-          });
           $('#open-confirm-rsvp').on('click', function(e) {
             e.preventDefault();
             $.magnificPopup.open({

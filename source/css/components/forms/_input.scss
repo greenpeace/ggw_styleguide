@@ -1,7 +1,7 @@
 .form-text,
 .form-password,
 textarea {
-  padding:5px .5em;
+  padding: 5px .5em;
   border: 1px solid $grey-l;
   border-radius: 3px;
   width: 100%;
@@ -60,19 +60,20 @@ input[type=time]::-webkit-inner-spin-button {
 }
 
 .input-small {
-  width: 120px;
+  width: 100%;
+  max-width: 120px;
 }
 
 // two small inputs plus margin-right
 .input-medium {
-  width: 252px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 252px;
 }
 
 // a small input + a large input + margin-right
 .input-large {
-  width: 379px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 379px;
 }
 
 .hiddenfile {

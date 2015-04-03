@@ -1,45 +1,94 @@
 .files-table {
   width: 100%;
 }
-  .file-row {
-    -webkit-touch-callout: none;
-    user-select: none;
-    position: relative;
-    height: 95px;
+
+.file-row {
+  -webkit-touch-callout: none;
+  user-select: none;
+  position: relative;
+  height: 95px;
+  display: inline-block;
+  overflow: hidden;
+
+  @include breakpoint($tab) {
+    border-left: 1px solid $grey-l;
+    border-right: 1px solid $grey-l;
+
+    &:nth-child(odd) {
+      background: $background;
+    }
+
+    .flexbox & {
+      display: flex;
+    }
+
+  }
+
+  > div {
     display: inline-block;
-    overflow: hidden;
+    vertical-align: top;
+    padding: $def-mar-half;
 
     @include breakpoint($tab) {
-      border-left: 1px solid $grey-l;
-      border-right: 1px solid $grey-l;
-
-      &:nth-child(odd) {
-        background: $background;
-      }
-
-      .flexbox & {
-        display: flex;
-      }
-
+      border-top: 1px solid $grey-l;
     }
 
-    > div {
+    .flexbox & {
+      flex: 1 1 auto;
+    }
+
+  }
+
+  .image-preview {
+    width: 94px;
+
+    .flexbox & {
+      flex: 0 1 auto;
+    }
+
+  }
+
+
+  .image-name,
+  .btn-upload {
+    display: none;
+
+    @include breakpoint($tab) {
       display: inline-block;
-      vertical-align: top;
-      padding: $def-mar-half;
+    }
+  }
 
-      @include breakpoint($tab) {
-        border-top: 1px solid $grey-l;
-      }
+  .name {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
-      .flexbox & {
-        flex: 1 1 auto;
-      }
+  .progress {
+    opacity: 0;
+  }
 
+  &.dz-processing .progress {
+    opacity: 1;
+  }
+
+  .action-buttons {
+    position: absolute;
+    left: 70px;
+    padding: 0;
+    top: -5px;
+
+    .page-type-document & {
+      left: 40px;
     }
 
-    .image-preview {
-      width: 94px;
+    @include breakpoint($tab) {
+      position: relative;
+      left: 0;
+      top: 0;
+      padding: $def-mar-half;
+      width: 200px;
 
       .flexbox & {
         flex: 0 1 auto;
@@ -47,77 +96,37 @@
 
     }
 
+  }
 
-    .image-name,
-    .btn-upload {
+
+  .action-buttons .button {
+    border-radius: 20px;
+    padding: 3px;
+
+    span {
       display: none;
-
-      @include breakpoint($tab) {
-        display: inline-block;
-      }
     }
 
-    .name {
-      width: 100%;
-    }
-
-    .progress {
-      opacity: 0;
-    }
-
-    &.dz-processing .progress {
-      opacity: 1;
-    }
-
-    .action-buttons {
-      position: absolute;
-      left: 70px;
-      padding: 0;
-      top: -5px;
-
-      @include breakpoint($tab) {
-        position: relative;
-        left: 0;
-        top: 0;
-        padding: $def-mar-half;
-        width: 200px;
-
-        .flexbox & {
-          flex: 0 1 auto;
-        }
-
-      }
-
-    }
-
-    .action-buttons .button {
-      border-radius: 20px;
-      padding: 3px;
+    @include breakpoint($tab) {
+      border-radius: 3px;
+      padding: 5px 12px;
 
       span {
-        display: none;
-      }
-
-      @include breakpoint($tab) {
-        border-radius: 3px;
-        padding: 5px 12px;
-
-        span {
-          display: inline;
-        }
+        display: inline;
       }
     }
-
-    .preview {
-      display: block;
-    }
-
-    &:nth-child(odd) .progress {
-      background: $white;
-      box-shadow: inset 0 1px 2px rgba(0, 0, 0, .25);
-    }
-
   }
+
+  .preview {
+    display: block;
+  }
+
+  &:nth-child(odd) .progress {
+    background: $white;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .25);
+  }
+
+}
 
 .dz-message {
   display: none;
@@ -130,6 +139,7 @@
 
   .dz-message {
     text-align: center;
+    display: block;
     padding: 2em 0;
     border-left: 1px solid $grey-l;
     border-right: 1px solid $grey-l;
@@ -238,4 +248,17 @@
 .progress-striped .progress-bar-success {
 
   background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+}
+
+
+// file types
+
+@each $type, $image in (pdf: pdf, xls: xls, xlsx: xlsx, doc: doc, docx: doc, ppt: ppt, pptx: ppt, odt: odt, odp: otp, ods: ods) {
+
+  .image-preview.#{$type} {
+    background: url('../images/filetypes/#{$image}.png') 50% 50% no-repeat;
+    width: 68px;
+    height: 68px;
+  }
+
 }

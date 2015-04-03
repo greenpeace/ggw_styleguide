@@ -68,8 +68,8 @@
     - if current_page.data.script == "edit"
       = javascript_include_tag  "edit"
 
-    - if current_page.data.upload == "image"
-      = partial :"editable/photo-upload"
+    - if current_page.data.upload == "image" || current_page.data.upload == "document"
+      = javascript_include_tag "dropzone"
 
     - if current_page.data.mapsds == "event"
       :javascript

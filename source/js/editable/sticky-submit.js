@@ -1,3 +1,4 @@
+/*
 $(function() {
 
   if ( ($('#section-submit').length!=0) && ($(window).width() < 900) ) {
@@ -47,3 +48,4 @@ $(function() {
   }
 
 });
+*/

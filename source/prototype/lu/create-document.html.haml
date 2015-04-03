@@ -6,7 +6,7 @@ direct_parent:
     name: "Documents"
     url: "documents.html"
 user_role: lu
-script: edit
+editor: ckeditor
 upload: document
 design_status: Work in progress
 menu:
@@ -28,7 +28,7 @@ menu:
 
 %aside.sidebar-first.sfmenu
   .block
-    %i.block-icon.icon-news.icon-bg-news-media
+    %i.block-icon.icon-document.icon-bg-news-media
     %h2.block-title Create document
     .content
       - for item in current_page.data.menu
@@ -54,7 +54,7 @@ menu:
 
 
   %section#section-documents.block
-    %i.block-icon.icon-photo.icon-bg-action
+    %i.block-icon.icon-document.icon-bg-action
     %h2.block-title Documents
     .content
       .form-wrapper

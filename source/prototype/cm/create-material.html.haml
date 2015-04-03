@@ -1,21 +1,23 @@
 ---
-title: Create new photo album
-body_class: not-front logged-in page-type-photo l-has-sidebar-first page-edit
+title: Create new material
+body_class: not-front logged-in page-type-material l-has-sidebar-first page-edit
 direct_parent:
   -
-    name: "Photos"
-    url: "photos.html"
+    name: "Home"
+    url: "index.html"
+  -
+    name: "Materials"
+    url: "materials.html"
 user_role: lu
 editor: ckeditor
-upload: image
 design_status: Work in progress
 menu:
   -
-    name: 'Title & body'
+    name: 'Title, body & image'
     url: '#section-title'
   -
-    name: 'Images'
-    url: '#section-images'
+    name: 'Specifications'
+    url: '#section-specs'
   -
     name: 'Languages & tags'
     url: '#section-language'
@@ -28,8 +30,8 @@ menu:
 
 %aside.sidebar-first.sfmenu
   .block
-    %i.block-icon.icon-photo.icon-bg-news-media
-    %h2.block-title Create photo album
+    %i.block-icon.icon-material.icon-bg-news-media
+    %h2.block-title Create material
     .content
       - for item in current_page.data.menu
         %a.sf-navbtn{:href => "#{item.url}"}
@@ -48,57 +50,85 @@ menu:
           %input#edit-field-title.form-text{:name => "edit-field-title", :type => "text", :value => "", :tabindex => "1"}/
         .form-item
           %label.form-label{:for => "field-edit-body"}
-            Body text
+            Description
             %span.form-required{:title => "This field is required."} *
           %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "2"}
+        .form-item
+          %label.form-label{:for => "field-edit-image"}
+            Image
+            %span.form-required{:title => "This field is required."} *
+          .media-widget.media
+            .preview.media-figure
+            .media-body
+              .form-description
+                Files must be smaller than3 MB <br/>
+                Allowed file types: png gif jpg jpeg <br/>
+                Images must be larger than 400x300 pixels.
+              %input#uploadimage.element-invisible{:type => "file", :value => "upload", :accept => "image/*"}
+              %button.button.launcher{:tabindex => "3"} select image
+              %a.button.remove.element-invisible{:href => "#"} remove image
 
-
-  %section#section-images.block
-    %i.block-icon.icon-photo.icon-bg-action
-    %h2.block-title Images
+  %section#section-specs.block
+    %i.block-icon.icon-material.icon-bg-action
+    %h2.block-title Specifications
     .content
       .form-wrapper
 
-        .form-item#dropzone-actions
-          %span.button.btn-add.fileinput-button.needsclick
-            %i.icon-plus
-            %span Add files
-          %button.button.btn-upload.start
-            %i.icon-upload
-            %span Start upload
-          %button.button.cancel{"type" => "reset"}
-            %i.icon-block
-            %span Cancel upload
-          .total-fileupload-process
-            .fileupload-process
-              #total-progress.progress.progress-striped.active{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "0", :role => "progressbar"}
-                .progress-bar.progress-bar-success{"data-dz-uploadprogress" => "", :style => "width:0%;"}
-        .form-item.dropzone-droparea
-          .dz-message.disabled
-            Drop files here or click to upload.
-          %ul#previews.files-table
-            %li#template.file-row
-              .image-preview
-                %span.preview
-                  %img{"data-dz-thumbnail" => ""}/
-              .image-name
-                %input.name.form-text{"data-dz-name" => "", :type => "text", :placeholder => "Give a description of the photo"}
-                %strong.error.text-danger{"data-dz-errormessage" => ""}
-                .fileupload-process
-                  .size{"data-dz-size" => ""}
-                  .progress.progress-striped.active{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "0", :role => "progressbar"}
-                    .progress-bar.progress-bar-success{"data-dz-uploadprogress" => "", :style => "width:0%;"}
-              .action-buttons
-                %button.button.btn-upload.start
-                  %i.icon-upload
-                  %span Start
-                %button.button.cancel{"data-dz-remove" => ""}
-                  %i.icon-cancel
-                  %span Cancel
-                %button.button.btn-delete.delete{"data-dz-remove" => ""}
-                  %i.icon-trash
-                  %span Delete
+        .form-item.form-type-select
+          %label.form-label{:for => "campaign"} Related to campaign
+          %select#campaign.chosen-select{"data-placeholder" => "Choose a campaign", :multiple => "multiple", :tabindex => "4"}
+            - 20.times do |num|
+              %option
+                = lorem.words 4
 
+        .form-item.form-type-select
+          %label.form-label{:for => "purpose"} Purpose
+          .form-description What can this item best be used for ?
+          %select#purpose.chosen-select{"data-placeholder" => "Choose a purpose", :multiple => "multiple", :tabindex => "5"}
+            %option Decoration
+            %option Education
+            %option Electronics
+            %option Merchandise
+            %option Other
+            %option Stand Materials
+            %option Suits
+            %option Volunteers Clothing
+
+        .form-item.form-type-select
+          %label.form-label{:for => "state"} Purpose
+          .form-description What state is the item in ?
+          %select#state.form-select{:tabindex => "6"}
+            %option Bad
+            %option Fair
+            %option Good
+            %option As new
+
+        .form-item.form-type-select
+          %label.form-label{:for => "material"} Material type
+          .form-description Select the type of material.
+          %select#material.form-select{:tabindex => "7"}
+            %option Metal
+            %option Paper
+            %option Plastic
+            %option Textile
+            %option Wood
+            %option Other material
+
+        .form-item.form-type-select
+          %label.form-label{:for => "location"} Material location
+          .form-description Where can this item be found?
+          %select#location.form-select{:tabindex => "8"}
+            %option Office storage
+            %option Office desk area
+            %option Brown container
+            %option Green container
+
+        .form-item
+          %label.form-label
+            Quantity
+            %span.form-required{:title => "This field is required."} *
+          .form-description How many are there available?
+          %input.form-text{:type => "text", :value => "", :tabindex => "9"}
 
   %section#section-language.block
     %i.block-icon.icon-globe.icon-bg-action
@@ -156,7 +186,7 @@ menu:
   %section#section-submit
     .form-actions.form-wrapper
       %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit", :tabindex => "7"}
-      %input{:type => "submit", :class => "button btn-l", :value => "Cancel", :tabindex => "8"}
+      %a.button.btn-l{:href => "./documents.html", :tabindex => "8"} Cancel
 
 :javascript
   CKEDITOR.editorConfig = function( config ) {

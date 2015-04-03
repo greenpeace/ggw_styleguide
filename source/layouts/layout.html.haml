@@ -20,7 +20,7 @@
     = stylesheet_link_tag "all"
     <!--<![endif]-->
 
-    - if current_page.data.script == "edit"
+    - if current_page.data.editor
       = stylesheet_link_tag "x-editable"
       = javascript_include_tag "//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"
       = javascript_include_tag "ckeditorconfig.js"
@@ -65,11 +65,15 @@
 
     = javascript_include_tag  "theme"
 
-    - if current_page.data.script == "edit"
-      = javascript_include_tag  "edit"
-
     - if current_page.data.upload == "image" || current_page.data.upload == "document"
       = javascript_include_tag "dropzone"
+      = javascript_include_tag "editable/attach_dropzone"
+
+    - if current_page.data.upload == "video"
+      = javascript_include_tag "editable/attach_video"
+
+    - if current_page.data.script == "event"
+      = javascript_include_tag  "editable/edit-event"
 
     - if current_page.data.mapsds == "event"
       :javascript

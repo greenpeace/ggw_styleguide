@@ -1,10 +1,10 @@
 ---
-title: Create new blog
-body_class: not-front logged-in page-type-blog l-has-sidebar-first page-edit
+title: Create news
+body_class: not-front logged-in page-type-news l-has-sidebar-first page-edit
 direct_parent:
   -
-    name: "Blogs"
-    url: "blogs.html"
+    name: "News"
+    url: "news.html"
 user_role: lu
 editor: ckeditor
 design_status: Work in progress
@@ -24,8 +24,8 @@ menu:
 
 %aside.sidebar-first.sfmenu
   .block
-    %i.block-icon.icon-blog.icon-bg-news-media
-    %h2.block-title Create blog
+    %i.block-icon.icon-news.icon-bg-news-media
+    %h2.block-title Create news
     .content
       - for item in current_page.data.menu
         %a.sf-navbtn{:href => "#{item.url}"}
@@ -60,7 +60,7 @@ menu:
                   Allowed file types: png gif jpg jpeg <br/>
                   Images must be larger than 400x300 pixels.
                 %input#uploadimage.element-invisible{:type => "file", :value => "upload", :accept => "image/*"}
-                %button.button.launcher{:tabindex => "3"} select image
+                %button.button.launcher.needsclick{:tabindex => "3"} select image
                 %a.button.remove.element-invisible{:href => "#"} remove image
 
     %section#section-language.block

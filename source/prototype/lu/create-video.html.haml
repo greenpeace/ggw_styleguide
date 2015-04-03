@@ -1,16 +1,17 @@
 ---
-title: Create new blog
-body_class: not-front logged-in page-type-blog l-has-sidebar-first page-edit
+title: Create new video
+body_class: not-front logged-in page-type-video l-has-sidebar-first page-edit
 direct_parent:
   -
     name: "Blogs"
     url: "blogs.html"
 user_role: lu
 editor: ckeditor
+upload: video
 design_status: Work in progress
 menu:
   -
-    name: 'Title, body & image'
+    name: 'Title, body & video'
     url: '#section-title'
   -
     name: 'Languages & tags'
@@ -24,8 +25,8 @@ menu:
 
 %aside.sidebar-first.sfmenu
   .block
-    %i.block-icon.icon-blog.icon-bg-news-media
-    %h2.block-title Create blog
+    %i.block-icon.icon-video.icon-bg-news-media
+    %h2.block-title Create video
     .content
       - for item in current_page.data.menu
         %a.sf-navbtn{:href => "#{item.url}"}
@@ -49,19 +50,17 @@ menu:
             %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "2"}
 
           .form-item
-            %label.form-label{:for => "field-edit-image"}
-              Image
+            %label.form-label{:for => "field-edit-video"}
+              Video
               %span.form-required{:title => "This field is required."} *
             .media-widget.media
               .preview.media-figure
               .media-body
                 .form-description
-                  Files must be smaller than3 MB <br/>
-                  Allowed file types: png gif jpg jpeg <br/>
-                  Images must be larger than 400x300 pixels.
-                %input#uploadimage.element-invisible{:type => "file", :value => "upload", :accept => "image/*"}
-                %button.button.launcher{:tabindex => "3"} select image
-                %a.button.remove.element-invisible{:href => "#"} remove image
+                  You can embed a Youtube or Vimeo video in your post
+                %input.form-text#selectmedia{:type => "text", :value => ""}
+                %p#mediainvalid.element-hidden That ain't a valid youtube or vimeo url.
+                %a.button.remove.element-invisible{:href => "#"} remove media
 
     %section#section-language.block
       %i.block-icon.icon-globe.icon-bg-action

@@ -1,21 +1,17 @@
 ---
-title: Create new photo album
-body_class: not-front logged-in page-type-photo l-has-sidebar-first page-edit
+title: Create new document
+body_class: not-front logged-in page-type-idea l-has-sidebar-first page-edit
 direct_parent:
   -
-    name: "Photos"
-    url: "photos.html"
+    name: "Ideas"
+    url: "ideas.html"
 user_role: lu
 editor: ckeditor
-upload: image
 design_status: Work in progress
 menu:
   -
-    name: 'Title & body'
+    name: 'Title, body & voting'
     url: '#section-title'
-  -
-    name: 'Images'
-    url: '#section-images'
   -
     name: 'Languages & tags'
     url: '#section-language'
@@ -28,8 +24,8 @@ menu:
 
 %aside.sidebar-first.sfmenu
   .block
-    %i.block-icon.icon-photo.icon-bg-news-media
-    %h2.block-title Create photo album
+    %i.block-icon.icon-idea.icon-bg-news-media
+    %h2.block-title Create document
     .content
       - for item in current_page.data.menu
         %a.sf-navbtn{:href => "#{item.url}"}
@@ -38,7 +34,7 @@ menu:
 
   %section#section-title.block.current.main-content
     %i.block-icon.icon-pencil.icon-bg-action
-    %h2.block-title Title, description & image
+    %h2.block-title Title, description & voting
     .content
       .form-wrapper
         .form-item.field-name-title
@@ -51,54 +47,18 @@ menu:
             Body text
             %span.form-required{:title => "This field is required."} *
           %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "2"}
-
-
-  %section#section-images.block
-    %i.block-icon.icon-photo.icon-bg-action
-    %h2.block-title Images
-    .content
-      .form-wrapper
-
-        .form-item#dropzone-actions
-          %span.button.btn-add.fileinput-button.needsclick
-            %i.icon-plus
-            %span Add files
-          %button.button.btn-upload.start
-            %i.icon-upload
-            %span Start upload
-          %button.button.cancel{"type" => "reset"}
-            %i.icon-block
-            %span Cancel upload
-          .total-fileupload-process
-            .fileupload-process
-              #total-progress.progress.progress-striped.active{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "0", :role => "progressbar"}
-                .progress-bar.progress-bar-success{"data-dz-uploadprogress" => "", :style => "width:0%;"}
-        .form-item.dropzone-droparea
-          .dz-message.disabled
-            Drop files here or click to upload.
-          %ul#previews.files-table
-            %li#template.file-row
-              .image-preview
-                %span.preview
-                  %img{"data-dz-thumbnail" => ""}/
-              .image-name
-                %input.name.form-text{"data-dz-name" => "", :type => "text", :placeholder => "Give a description of the photo"}
-                %strong.error.text-danger{"data-dz-errormessage" => ""}
-                .fileupload-process
-                  .size{"data-dz-size" => ""}
-                  .progress.progress-striped.active{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "0", :role => "progressbar"}
-                    .progress-bar.progress-bar-success{"data-dz-uploadprogress" => "", :style => "width:0%;"}
-              .action-buttons
-                %button.button.btn-upload.start
-                  %i.icon-upload
-                  %span Start
-                %button.button.cancel{"data-dz-remove" => ""}
-                  %i.icon-cancel
-                  %span Cancel
-                %button.button.btn-delete.delete{"data-dz-remove" => ""}
-                  %i.icon-trash
-                  %span Delete
-
+        .form-item
+          %label.form-label
+            Voting
+            %span.form-required{:title => "This field is required."} *
+          .form-description Enable the option to vote on your idea. Only members can vote.
+          .form-radios
+            .form-type-radio
+              %input#radio-one.form-radio{:name => "radio", :type => "radio", :value => "one"}
+              %label.option{:for => "radio-one"} Enable
+            .form-type-radio
+              %input#radio-two.form-radio{:name => "radio", :type => "radio", :value => "two"}
+              %label.option{:for => "radio-two"} Turn off
 
   %section#section-language.block
     %i.block-icon.icon-globe.icon-bg-action
@@ -156,7 +116,7 @@ menu:
   %section#section-submit
     .form-actions.form-wrapper
       %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit", :tabindex => "7"}
-      %input{:type => "submit", :class => "button btn-l", :value => "Cancel", :tabindex => "8"}
+      %a.button.btn-l{:href => "./documents.html", :tabindex => "8"} Cancel
 
 :javascript
   CKEDITOR.editorConfig = function( config ) {

@@ -4,12 +4,13 @@
   .content
 
     %h1.group-heading
-      %i.icon-user
-      %span
-        = lorem.name
+      %a{:href => "./profile.html"}
+        %i.icon-user
+        %span
+          = lorem.name
 
     %article.notification
-      .media-figure.avatar-holder
+      %a.media-figure.avatar-holder{:href => "./profile.html"}
         %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,    R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
         %noscript
           %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/

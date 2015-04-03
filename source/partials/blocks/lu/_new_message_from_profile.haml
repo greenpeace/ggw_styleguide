@@ -1,0 +1,30 @@
+#send-private-message.block.white-popup.mfp-hide
+  %i.block-icon.icon-mail.icon-bg-user
+  %h2.block-title Send a private message
+  .content
+    %form.node-form.private-message-form
+      .form-item
+        %label To:
+        %input.form-text{:type => "text", :value => "Santa Doe Claus", :disabled => "disabled"}
+
+      .form-item
+        %label Subject:
+        %input.form-text{:type => "text", :value => "",  :placeholder => "This subject is shown in the notification the user receives"}
+      .form-comment-message
+        %label{:for => "edit-body-und-0-value"}
+          Message:
+          %span.form-required{:title => "This field is required."} *
+        .form-textarea-wrapper.fullwidth
+          %textarea#edit-private-message-body.text-full.form-textarea{:rows => "6"}
+
+      .preview-wrapper
+        %img#preview-image.shoutimage.element-hidden{:src => "#", :alt => "your image"}
+      .clear
+      %input.tooltip.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type   => "file"}
+
+      %button.modal-inline.button.addlink-btn{:href => "#addexternallink"}
+        %i.icon-link
+
+      %input.button.form-comment-submit{:type => "submit", :value => "Send message"}
+
+= partial :"blocks/lu/add-external-link"

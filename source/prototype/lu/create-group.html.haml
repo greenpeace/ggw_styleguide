@@ -6,6 +6,7 @@ direct_parent:
     name: "Groups"
     url: "groups.html"
 user_role: lu
+script: event
 editor: ckeditor
 design_status: Work in progress
 menu:
@@ -180,16 +181,6 @@ menu:
             %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
               %option English
               %option French
-          .form-item.form-type-select
-            %label.form-label{:for => "language"} Campaigning skills
-            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
-              %option NVDA - General
-              %option NVDA - Climber
-              %option NVDA - Canoe
-              %option NVDA - Diver
-              %option NVDA - Paraglider
-              %option NVDA - Sailing
-              %option NVDA - Boat diver
 
     %section#section-localgroup.block
       %i.block-icon.icon-map.icon-bg-action

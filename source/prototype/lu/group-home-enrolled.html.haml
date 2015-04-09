@@ -11,21 +11,21 @@ design_status: Work in progress
 joined: joined
 action_menu:
   -
-    id: "#block-comments"
-    label: "Shoutbox"
-    icon: "comment"
-  -
     id: "#block-group-info"
     label: "Group info"
     icon: "info"
   -
-    id: "#upcoming-events"
-    label: "Events"
-    icon: "event"
+    id: "#block-comments"
+    label: "Shoutbox"
+    icon: "comment"
   -
     id: "#content"
     label: "Updates"
     icon: "news"
+  -
+    id: "#upcoming-events"
+    label: "Events"
+    icon: "event"
   -
     id: "#block-group-members"
     label: "Members"
@@ -45,8 +45,7 @@ action_menu:
 
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/lu/group-members"
   = partial :"blocks/lu/comments"
-
+  = partial :"blocks/lu/group-members"
 
 = partial :"blocks/lu/group-members-full"

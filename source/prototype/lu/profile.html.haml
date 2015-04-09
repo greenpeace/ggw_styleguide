@@ -11,25 +11,29 @@ action_menu:
     label: "Profile"
     icon: "user"
   -
-    id: "#block-skills"
-    label: "Skills"
-    icon: "skills"
+    id: "#block-comments"
+    label: "Shoutbox"
+    icon: "chat"
   -
     id: "#block-friends"
     label: "Friends"
     icon: "users"
   -
-    id: "#block-comments"
-    label: "Shoutbox"
-    icon: "chat"
-  -
     id: "#block-user-events"
     label: "Events"
     icon: "event"
   -
+    id: "#block-skills"
+    label: "Skills"
+    icon: "skills"
+  -
     id: "#block-user-groups"
     label: "Groups"
     icon: "users"
+  -
+    id: "#block-user-activity"
+    label: "Activity log"
+    icon: "clock"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -146,11 +150,10 @@ action_menu:
 
   = partial :"blocks/lu/user-events"
   = partial :"blocks/lu/user-groups"
-  = partial :"blocks/lu/user-activity"
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/lu/my-friends"
   = partial :"blocks/lu/comments"
-
+  = partial :"blocks/lu/user-activity"
 
 = partial :"blocks/lu/new_message_from_profile"

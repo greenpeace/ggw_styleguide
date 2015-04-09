@@ -11,14 +11,6 @@ action_menu:
     label: "My profile"
     icon: "user"
   -
-    id: "#block-skills"
-    label: "My skills"
-    icon: "skills"
-  -
-    id: "#block-friends"
-    label: "My friends"
-    icon: "users"
-  -
     id: "#block-comments"
     label: "My shoutbox"
     icon: "chat"
@@ -30,6 +22,14 @@ action_menu:
     id: "#block-user-groups"
     label: "My groups"
     icon: "users"
+  -
+    id: "#block-friends"
+    label: "My friends"
+    icon: "users"
+  -
+    id: "#block-skills"
+    label: "My skills"
+    icon: "skills"
   -
     id: "#block-user-subscriptions"
     label: "My subscriptions"
@@ -122,6 +122,9 @@ action_menu:
         .field-label Profession:
         .field-item Accountmanager at Greenpeace International
 
+  = partial :"blocks/lu/user-events"
+  = partial :"blocks/lu/user-groups"
+
   #block-skills.block
     .action-bar
       .action-bar-item.edit-content
@@ -166,11 +169,10 @@ action_menu:
             %a.tag{:href => "./search-members.html"} NVDA diving
           %a.tag{:href => "./search-members.html"} NVDA sailing
 
-  = partial :"blocks/lu/user-events"
-  = partial :"blocks/lu/user-groups"
+
   = partial :"blocks/lu/subscriptions"
-  = partial :"blocks/lu/user-activity"
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/lu/my-friends"
   = partial :"blocks/lu/comments"
+  = partial :"blocks/lu/my-friends"
+  = partial :"blocks/lu/user-activity"

@@ -11,25 +11,29 @@ action_menu:
     label: "Profile"
     icon: "user"
   -
-    id: "#block-skills"
-    label: "Skills"
-    icon: "skills"
+    id: "#block-comments"
+    label: "Shoutbox"
+    icon: "chat"
   -
     id: "#block-friends"
     label: "Friends"
     icon: "users"
   -
-    id: "#block-comments"
-    label: "Shoutbox"
-    icon: "chat"
-  -
     id: "#block-user-events"
     label: "Events"
     icon: "event"
   -
+    id: "#block-skills"
+    label: "Skills"
+    icon: "skills"
+  -
     id: "#block-user-groups"
     label: "Groups"
     icon: "users"
+  -
+    id: "#block-user-activity"
+    label: "Activity log"
+    icon: "clock"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -117,20 +121,6 @@ action_menu:
             .field-label Joined
             .field-item today
 
-  #block-user-activity.block.lazyload{"data-expand" => "-40"}
-    %i.block-icon.icon-bg-user.icon-clock
-    %h2.block-title Activity log
-    .content
-      .view-ggw-user-activity
-        .view-content
-          .views-row
-            .views-field.views-field-timestamp
-              Today
-            .views-field.views-field-rendered-entity
-              %p
-                %a{:href => "#"} John Doe Claus
-                joined
-                %a{:href => "#"} Greenpeace Greenwire United Kingdom
 
 %aside.l-sidebar.sidebar
   #block-friends.block
@@ -158,5 +148,20 @@ action_menu:
 
       %section.comments
         %p There are no shouts yet.
+
+  #block-user-activity.block.lazyload{"data-expand" => "-40"}
+    %i.block-icon.icon-bg-user.icon-clock
+    %h2.block-title Activity log
+    .content
+      .view-ggw-user-activity
+        .view-content
+          .views-row
+            .views-field.views-field-timestamp
+              Today
+            .views-field.views-field-rendered-entity
+              %p
+                %a{:href => "#"} John Doe Claus
+                joined
+                %a{:href => "#"} Greenpeace Greenwire United Kingdom
 
 = partial :"blocks/lu/new_message_from_profile"

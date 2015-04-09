@@ -106,7 +106,6 @@
                 }
             ))
         });
-        console.log('here');
     }
 
     /**
@@ -146,7 +145,6 @@ $(function() {
     var posttext = $('.form-comment-message textarea').val();
     var shoutImage = $('.comment-form-holder .preview-wrapper').html();
     var richLink = $('.comment-form-holder #linkinfo').html();
-    console.log(posttext);
 
     var postmarkup = "<div class='avatar-holder'>";
     postmarkup +=  "<a href='./profile.html' title='View user profile'>";
@@ -263,4 +261,11 @@ $(function() {
     $.magnificPopup.close();
     e.preventDefault();
   });
+
+  $('.form-comment-submit').click(function(event) {
+     event.preventDefault();
+    $('html, body').animate({scrollTop: 0}, 300);
+    $('<div class="form-sent form-success"><i class="icon icon-check"></i> <p>Your comment has been posted.</p></div>').insertBefore('.l-main').hide().slideDown('slow').delay(6000).slideUp();
+  });
+
 });

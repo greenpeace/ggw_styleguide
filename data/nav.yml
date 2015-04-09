@@ -60,7 +60,7 @@ docs:
     url: "/documentation/progressive-enhancement.html"
   -
     name: "Development principles"
-    url: "/documentation/development.html"
+    url: "/documentation/development-principles.html"
   -
     name: "Editing the style guide"
     url: "/documentation/editing.html"

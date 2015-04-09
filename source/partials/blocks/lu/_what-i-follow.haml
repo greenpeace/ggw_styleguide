@@ -1,0 +1,72 @@
+#block-what-i-follow.block.white-popup.mfp-hide
+  %i.block-icon.icon-bg-user.icon-subscription
+  %h2.block-title What I follow
+
+  .content
+
+    .tabwrapper
+      %ul.tabs
+        %li
+          =nav_link 'Groups', '#group-subscriptions', :class => 'tab'
+        %li
+          =nav_link 'Events', '#event-subscriptions', :class => 'tab'
+        %li
+          =nav_link 'News &amp; media', '#content-subscriptions', :class => 'tab'
+
+    .tabable
+      #group-subscriptions.tabable-block.active
+        .view-ggw-subscribe-node
+          .view-content
+            .views-row
+              .field.views-field-title
+                %a.type.group{:href => "./group-home-enrolled.html#"} Vegan bbq at CeeCee
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+            .views-row
+              .field.views-field-title
+                %a.type.group{:href => "./group-home-enrolled.html"} Climbing training
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+            .views-row
+              .field.views-field-title
+                %a.type.group{:href => "./group-home-enrolled.html"} Local group Amsterdam
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+            .views-row
+              .field.views-field-title
+                %a.type.group{:href => "./group-home-enrolled.html"} Climate changing bootcampers
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+
+          %a.button{:href => "#"} load more
+
+      #event-subscriptions.tabable-block
+        .view-ggw-subscribe-node
+          .view-content
+            .views-row
+              .field.views-field-title
+                %a.type.event{:href => "./event-full-enrolled.html"}
+                  = lorem.words 4
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+            .views-row
+              .field.views-field-title
+                %a.type.event{:href => "./event-full-enrolled.html"}
+                  = lorem.words 3
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+
+      #content-subscriptions.tabable-block
+        .view-ggw-subscribe-node
+          .view-content
+            .views-row
+              .field.views-field-title
+                %a.type.photo{:href => "./photo-album.html"} Some photos album
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+            .views-row
+              .field.views-field-title
+                %a.type.blog{:href => "./blog-article.html"} The weirdest and longest blog with animations you will ever read!
+              .field.views-field-ops
+                %a.button.btn-s{:href => "#"} Unfollow
+

@@ -11,10 +11,6 @@ action_menu:
     label: "My profile"
     icon: "user"
   -
-    id: "#block-user-account"
-    label: "My settings"
-    icon: "settings"
-  -
     id: "#block-skills"
     label: "My skills"
     icon: "skills"
@@ -53,7 +49,14 @@ action_menu:
   #block-user-profile.block.current.editable
     .action-bar
       .action-bar-item.edit-content
-        %a.button{:href => "./edit-user-profile.html", :title => "Edit profile"} Edit
+        %button.button{"data-dropdown" => "#edit-profile", :href => "#"}
+          %span Edit
+        #edit-profile.dropdown.dropdown-relative.dropdown-tip.dropdown-anchor-right
+          %ul.dropdown-menu
+            %li
+              %a{:href => "./edit-user-profile.html"} Edit profile
+            %li
+              %a{:href => "./edit-user-account.html"} Edit account settings
 
     %i.block-icon.icon-bg-user.icon-user
     %h2.block-title
@@ -118,8 +121,6 @@ action_menu:
       .field.field-name-field-profession.field-inline-block
         .field-label Profession:
         .field-item Accountmanager at Greenpeace International
-
-  = partial :"blocks/lu/user-account"
 
   #block-skills.block
     .action-bar

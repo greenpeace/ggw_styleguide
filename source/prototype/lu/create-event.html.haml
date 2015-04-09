@@ -231,10 +231,11 @@ menu:
                 %input#edit-field-event-roles-und-0-role-limit.form-text.number-field{:type => "number", :value => "", :min => "1", :max => "9999", :step => "1", :placeholder => "max. no.", :tabindex => "13"}
             %a.small-link.clone-trigger{:href => "#"} add another role
 
-    %section#section-submit
-      .form-actions.form-wrapper
-        %input{:type => "submit", :class => "button btn-primary", :value => "Submit"}
-        %input{:type => "submit", :class => "button", :value => "Cancel"}
+
+  %section#section-submit
+    .form-actions.form-wrapper
+      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Submit", :tabindex => "7"}
+      %a.button.btn-l{:href => "./events.html", :tabindex => "8"} Cancel
 
 #manual-coordinates-form.block.white-popup.mfp-hide
   %i.block-icon.icon-map.icon-bg-action

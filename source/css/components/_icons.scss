@@ -49,6 +49,7 @@
 .icon-link {        @extend %icon-link;}
 .icon-upload {      @extend %icon-upload;}
 .icon-block {       @extend %icon-block;}
+.icon-minus {       @extend %icon-minus;}
 
 .icon-event {       @extend %icon-calendar; }
 .icon-news {        @extend %icon-book-open; }
@@ -62,9 +63,13 @@
 .icon-info {        @extend %icon-info; }
 .icon-help {        @extend %icon-help; }
 
-.icon-facebook { @extend %icon-facebook;}
-.icon-gplus { @extend %icon-gplus;}
-.icon-skype { @extend %icon-skype;}
+.icon-facebook {    @extend %icon-facebook;}
+.icon-gplus {       @extend %icon-gplus;}
+.icon-skype {       @extend %icon-skype;}
+.icon-linkedin {    @extend %icon-linkedin;}
+.icon-pinterest {   @extend %icon-pinterest;}
+.icon-twitter {     @extend %icon-twitter;}
+.icon-vkontakte {   @extend %icon-vkontakte;}
 
 .view-mode-full .submitted {
 

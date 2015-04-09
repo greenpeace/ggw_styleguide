@@ -1,11 +1,12 @@
 ---
-title: Create new document
+title: Create new idea
 body_class: not-front logged-in page-type-idea l-has-sidebar-first page-edit
 direct_parent:
   -
     name: "Ideas"
     url: "ideas.html"
 user_role: lu
+script: event
 editor: ckeditor
 design_status: Work in progress
 menu:
@@ -25,7 +26,7 @@ menu:
 %aside.sidebar-first.sfmenu
   .block
     %i.block-icon.icon-idea.icon-bg-news-media
-    %h2.block-title Create document
+    %h2.block-title Create Idea
     .content
       - for item in current_page.data.menu
         %a.sf-navbtn{:href => "#{item.url}"}
@@ -115,8 +116,8 @@ menu:
 
   %section#section-submit
     .form-actions.form-wrapper
-      %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit", :tabindex => "7"}
-      %a.button.btn-l{:href => "./documents.html", :tabindex => "8"} Cancel
+      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Submit", :tabindex => "7"}
+      %a.button.btn-l{:href => "./ideas.html", :tabindex => "8"} Cancel
 
 :javascript
   CKEDITOR.editorConfig = function( config ) {

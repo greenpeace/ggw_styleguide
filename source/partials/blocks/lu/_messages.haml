@@ -1,39 +1,38 @@
 #messages-panel.attention-panel.dropdown.dropdown-tip.dropdown-anchor-right
   .dropdown-panel.content
 
-    %a{:href => "./my-messages.html#block-compose-message"}
+    %a.small-link{:href => "./my-messages.html#block-compose-message"}
       %i.icon-pencil
       New message
     .clear
 
     %section.notifications-section.messages
-      %article.notification
-        %a.media.popup-ajax{:href => "./random-private-message.html"}
-          .media-figure.avatar-holder
-            %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
-            %noscript
-              %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
-          .media-body.notifications-body
-            %strong
-              = lorem.name
-            Are you still coming to our event?
-            .notifications-footer
-              %span.timestamp
-                1 day ago
+      %a.notification.media.popup-ajax{:href => "./random-private-message.html"}
+        .media-figure.avatar-holder
+          %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
+          %noscript
+            %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
+        .media-body.notifications-body
+          %strong
+            = lorem.name
+          Are you still coming to our event?
+          .notifications-footer
+            %span.timestamp
+              1 day ago
 
-      %article.notification
-        %a.media.popup-ajax{:href => "./random-private-message.html"}
-          .media-figure.avatar-holder
-            %img.lazyload{:alt => "Bob Hunter", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
-            %noscript
-              %img{:alt => "Bob Hunter", :src => "/photos/60/people2.jpg", :srcset => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
-          .media-body.notifications-body
-            %strong
-              = lorem.name
-            Thank you for your support
-            .notifications-footer
-              %span.timestamp
-                5 days ago
+
+      %a.notification.media.popup-ajax{:href => "./random-private-message.html"}
+        .media-figure.avatar-holder
+          %img.lazyload{:alt => "Bob Hunter", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
+          %noscript
+            %img{:alt => "Bob Hunter", :src => "/photos/60/people2.jpg", :srcset => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
+        .media-body.notifications-body
+          %strong
+            = lorem.name
+          Thank you for your support
+          .notifications-footer
+            %span.timestamp
+              5 days ago
 
     .load-more-wrapper
       %a.button.btn-block{:href => "./my-messages.html"} View all messages

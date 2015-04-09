@@ -1,5 +1,11 @@
-// will only run once the page DOM is ready for JavaScript code to execute.
-$( document ).ready(function() {
+
+
+//enhance with icons
+function showErrorIcons() {
+  $('.has-error .form-text, .has-error textarea').after('<i class="form-feedback icon-cancel" aria-hidden="true"></i>');
+  }
+
+$(function() {
   'use strict';
 
   // Selector styling wrapper
@@ -45,6 +51,26 @@ $( document ).ready(function() {
     selectMonths: true
   });
 
-  //enhance with icons
-  $('.has-error .form-text, .has-error textarea').after('<i class="form-feedback icon-cancel" aria-hidden="true"></i>');
+
+  // toggle a fieldset  with a link
+  $('#more-options-fieldset').hide();
+  $('#toggle-more-options').click(function(event) {
+    event.preventDefault();
+    $(this).next('.collapsible-fieldset-wrapper').slideToggle(400);
+  });
+
+  var cookies_accepted = $.cookie("cookie_acceptance");
+
+  $('#hide-cookies').click(function(event) {
+    $(this).closest('.cookiewall').hide();
+    $.cookie('cookie_acceptance', 'is_dismissed', { expires: 7, path: '/' });
+    event.preventDefault();
+  });
+
+  if (cookies_accepted != 'is_dismissed') {
+    $('.cookiewall').removeClass('element-hidden');
+  }
+
+  showErrorIcons();
+
 });

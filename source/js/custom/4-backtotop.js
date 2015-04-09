@@ -1,3 +1,5 @@
+// Global Back to back button is shown when scrolling down
+
 $(function() {
 
   function backToTop() {

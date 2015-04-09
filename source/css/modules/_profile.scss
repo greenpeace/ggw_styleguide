@@ -52,6 +52,15 @@
 
   .views-field-title {
     padding-right: 65px; // width of button
+
+    .type:before {
+      @extend %load-icon;
+      position: relative;
+      top: -1px;
+      width: 1em;
+      margin-right: .5em;
+    }
+
   }
 
   .views-field-ops {
@@ -59,6 +68,8 @@
     right: $def-mar-half;
     top: $def-mar-half;
   }
+
+
 
 }
 

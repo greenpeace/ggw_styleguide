@@ -2,7 +2,8 @@
 
   .form-text,
   .form-password,
-  textarea {
+  textarea,
+  .chosen-container-multi .chosen-choices {
     border: 1px solid $error;
     position: relative;
     padding-right: 2em;
@@ -11,6 +12,10 @@
       border-color: $green1;
     }
 
+  }
+
+  .chosen-container-active .chosen-choices {
+    border-color: $green1;
   }
 
   .form-radio + label,

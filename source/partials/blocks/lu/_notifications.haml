@@ -1,4 +1,4 @@
-#notifications-panel.notifications-panel.dropdown.dropdown-tip.dropdown-anchor-right
+#notifications-panel.attention-panel.dropdown.dropdown-tip.dropdown-anchor-right
   .dropdown-panel.content
 
     .tabwrapper
@@ -41,8 +41,8 @@
                   %span.timestamp
                     3 days ago
 
-          %article.notification
-            %a.media{:href => "#"}
+          %article.notification.notification-read
+            %a.media{:href => "./index.html#block-comments"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Dorothy Stowe", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people3.jpg 1x, /photos/120/people3.jpg 2x"}/
                 %noscript
@@ -56,8 +56,8 @@
                   %span.timestamp
                     4 days ago
 
-          %article.notification
-            %a.media{:href => "#"}
+          %article.notification.notification-read
+            %a.media{:href => "./profile-manage-friends.html"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Irving Stowe", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people5.jpg 1x, /photos/120/people5.jpg 2x"}/
                 %noscript
@@ -72,7 +72,7 @@
                     4 days ago
 
           %article.notification
-            %a.media{:href => "#"}
+            %a.media{:href => "#./index.html#block-comments"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Bob Hunter", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people6.jpg 1x, /photos/120/people6.jpg 2x"}/
                 %noscript
@@ -81,13 +81,13 @@
                 .notifications-body
                   %strong
                     = lorem.name
-                  mentioned you in a comment.
+                  mentioned you in a shout.
                 .notifications-footer
                   %span.timestamp
                     5 days ago
 
-          %article.notification
-            %a.media{:href => "#"}
+          %article.notification.notification-read
+            %a.media{:href => "./group-home.html"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Dorothy Stowe", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people7.jpg 1x, /photos/120/people7.jpg 2x"}/
                 %noscript
@@ -101,8 +101,8 @@
                   %span.timestamp
                     5 days ago
 
-          %article.notification
-            %a.media{:href => "#"}
+          %article.notification.notification-read
+            %a.media{:href => "./profile-manage-friends.html"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Irving Stowe", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people8.jpg 1x, /photos/120/people8.jpg 2x"}/
                 %noscript
@@ -116,13 +116,8 @@
                   %span.timestamp
                     6 days ago
 
-        .load-more-wrapper
-          %a.button.btn-block#showallnotifications{:href => "#"} see all
-
-        #hidden-notifications.element-hidden
-
           %article.notification
-            %a.media{:href => "#"}
+            %a.media{:href => "./profile-manage-friends.html"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people9.jpg 1x, /photos/120/people9.jpg 2x"}/
                 %noscript
@@ -131,13 +126,18 @@
                 .notifications-body
                   %strong
                     = lorem.name
-                  wants to be friends with you.
+                  has sent you a friend request.
                 .notifications-footer
                   %span.timestamp
                     5 minutes ago
 
-          %article.notification
-            %a.media{:href => "#"}
+        .load-more-wrapper
+          %a.button.btn-block#showallnotifications{:href => "#"} see all
+
+        #hidden-notifications.element-hidden
+
+          %article.notification.notification-read
+            %a.media{:href => "./group-home.html"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Bob Hunter", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
                 %noscript
@@ -146,13 +146,13 @@
                 .notifications-body
                   %strong
                     = lorem.name
-                  has sent you a private message.
+                  has invited you to join group 'local group Amsterdam'.
                 .notifications-footer
                   %span.timestamp
                     1 days ago
 
-          %article.notification
-            %a.media{:href => "#"}
+          %article.notification.notification-read
+            %a.media{:href => "./index.html#block-comments"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Dorothy Stowe", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people3.jpg 1x, /photos/120/people3.jpg 2x"}/
                 %noscript
@@ -167,7 +167,7 @@
                     2 days ago
 
           %article.notification
-            %a.media{:href => "#"}
+            %a.media{:href => "./profile-manage-friends.html"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Irving Stowe", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people5.jpg 1x, /photos/120/people5.jpg 2x"}/
                 %noscript
@@ -181,8 +181,8 @@
                   %span.timestamp
                     2 days ago
 
-          %article.notification
-            %a.media{:href => "#"}
+          %article.notification.notification-read
+            %a.media{:href => "./event-full.html"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Bob Hunter", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
                 %noscript
@@ -191,13 +191,13 @@
                 .notifications-body
                   %strong
                     = lorem.name
-                  has sent you a private message.
+                  has invited you to join the event 'color the streets'.
                 .notifications-footer
                   %span.timestamp
                     4 days ago
 
           %article.notification
-            %a.media{:href => "#"}
+            %a.media{:href => "./index.html#block-comments"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Dorothy Stowe", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people3.jpg 1x, /photos/120/people3.jpg 2x"}/
                 %noscript
@@ -211,8 +211,8 @@
                   %span.timestamp
                     4 days ago
 
-          %article.notification
-            %a.media{:href => "#"}
+          %article.notification.notification-read
+            %a.media{:href => "./profile-manage-friends.html"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Irving Stowe", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people5.jpg 1x, /photos/120/people5.jpg 2x"}/
                 %noscript
@@ -226,8 +226,8 @@
                   %span.timestamp
                     5 days ago
 
-          %article.notification
-            %a.media{:href => "#"}
+          %article.notification.notification-read
+            %a.media{:href => "./profile-manage-friends.html"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people8.jpg 1x, /photos/120/people8.jpg 2x"}/
                 %noscript
@@ -236,13 +236,13 @@
                 .notifications-body
                   %strong
                     = lorem.name
-                  wants to be friends with you.
+                  has sent you a friend request.
                 .notifications-footer
                   %span.timestamp
                     5 days ago
 
-          %article.notification
-            %a.media{:href => "#"}
+          %article.notification.notification-read
+            %a.media{:href => "./index.html#block-comments"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Bob Hunter", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people9.jpg 1x, /photos/120/people9.jpg 2x"}/
                 %noscript
@@ -251,13 +251,13 @@
                 .notifications-body
                   %strong
                     = lorem.name
-                  has sent you a private message.
+                  has mentioned you in a comment.
                 .notifications-footer
                   %span.timestamp
                     1 week ago
 
-          %article.notification
-            %a.media{:href => "#"}
+          %article.notification.notification-read
+            %a.media{:href => "./index.html#block-comments"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Dorothy Stowe", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people6.jpg 1x, /photos/120/people6.jpg 2x"}/
                 %noscript
@@ -271,8 +271,8 @@
                   %span.timestamp
                     1 week ago
 
-          %article.notification
-            %a.media{:href => "#"}
+          %article.notification.notification-read
+            %a.media{:href => "./profile-manage-friends.html"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Irving Stowe", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people5.jpg 1x, /photos/120/people5.jpg 2x"}/
                 %noscript
@@ -286,8 +286,8 @@
                   %span.timestamp
                     2 weeks ago
 
-          %article.notification
-            %a.media{:href => "#"}
+          %article.notification.notification-read
+            %a.media{:href => "./group-home.html"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Bob Hunter", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
                 %noscript
@@ -302,7 +302,7 @@
                     3 weeks ago
 
           %article.notification
-            %a.media{:href => "#"}
+            %a.media{:href => "./event-full.html"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Dorothy Stowe", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people3.jpg 1x, /photos/120/people3.jpg 2x"}/
                 %noscript
@@ -319,7 +319,7 @@
       #notiupdates.tabable-block
         %section.notifications-section
           %article.notification
-            %a.media{:href => "#"}
+            %a.media{:href => "./group-home-enrolled.html#block-comments"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
                 %noscript
@@ -333,8 +333,8 @@
                   %span.timestamp
                     5 minutes ago
 
-          %article.notification
-            %a.media{:href => "#"}
+          %article.notification.notification-read
+            %a.media{:href => "./photo-album.html"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people9.jpg 1x, /photos/120/people9.jpg 2x"}/
                 %noscript
@@ -348,8 +348,8 @@
                   %span.timestamp
                     7 minutes ago
 
-          %article.notification
-            %a.media{:href => "#"}
+          %article.notification.notification-read
+            %a.media{:href => "./blog-article.html"}
               .media-figure.avatar-holder
                 %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people6.jpg 1x, /photos/120/people6.jpg 2x"}/
                 %noscript

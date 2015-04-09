@@ -30,7 +30,7 @@ colors:
 - name: "$admin"
   hex:  "#93005F"
 - name: "$error"
-  hex:  "#D50D00"
+  hex:  "#AC2925"
 - name: "$grey-l"
   hex:  "#CCCCCC"
 - name: "$grey-m"

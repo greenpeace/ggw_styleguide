@@ -223,11 +223,11 @@ menu:
               %option{:value => "us"} USA
               %option{:value => "uk"} United Kingdom
 
-          .form-item.field-event-address
-            %label.form-label{:for => "edit-event-address"}
+          .form-item.field-group-location-und-address
+            %label.form-label{:for => "edit-group-address"}
               Address
             .form-description We will attempt to calculate the coordinates from the supplied address.
-            %input#edit-event-address.form-text{:name => "edit-event-address", :type => "text", :value => "", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
+            %input#edit-group-address.form-text{:name => "edit-group-address", :type => "text", :value => "", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
             #results
             %a.small-link.modal-inline{:href => "#manual-coordinates-form"} add geocoordinates manually
 
@@ -290,10 +290,10 @@ menu:
             %a.small-link.clone-trigger{:href => "#"} add another item
 
 
-    %section#section-submit
-      .form-actions.form-wrapper
-        %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit"}
-        %input{:type => "submit", :class => "button btn-l", :value => "Cancel"}
+  %section#section-submit
+    .form-actions.form-wrapper
+      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Submit", :tabindex => "7"}
+      %a.button.btn-l{:href => "./groups.html", :tabindex => "8"} Cancel
 
 #manual-coordinates-form.block.white-popup.mfp-hide
   %i.block-icon.icon-map.icon-bg-action

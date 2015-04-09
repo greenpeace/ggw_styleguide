@@ -11,7 +11,7 @@ $(function() {
     var minutes = 1;
     date.setTime(date.getTime() + (minutes * 60 * 1000));
     var notiValue = $.cookie("notifications");
-    var messagesValue = $.cookie("messages");
+
 
     if (notiValue == undefined) {
       $.cookie("notifications", "6", { expires: date });
@@ -41,18 +41,38 @@ $(function() {
     });
 
     // Messages
+    var messagesValue = $.cookie("messages");
+
     if (messagesValue == undefined) {
-      $.cookie("messages", "2", { expires: date });
-      var messages = '2';
+      $.cookie("messages", 2, { expires: date });
+      var messages = 2;
     } else {
       var messages = messagesValue;
     }
 
+    console.log(messages);
     $('#messages-number').text(messages);
 
-    if (messagesValue == "0") {
+    if (messages == 0) {
+      $('#messages-trigger').attr('href', './my-messages.html').removeAttr('data-dropdown');
       $('#messages-number').hide();
     }
+
+    if (messages > 0) {
+
+      $('#messages-panel .media').click(function(e) {
+        messages--;
+        console.log(messages);
+        $('#messages-number').text(messages);
+        $.cookie('messages', messages, { expires: date });
+        if (messages == 0) {
+          $('#messages-number').hide();
+          $('#messages-trigger').attr('href', './my-messages.html').removeAttr('data-dropdown');
+        }
+      });
+
+    }
+
     // demo part end
 
     $('#showallnotifications').click(function(e) {
@@ -65,6 +85,12 @@ $(function() {
       e.preventDefault();
     });
 
+    var combinedNotifications = parseInt($('#notifications-number').text()) + parseInt($('#messages-number').text());
+    $('#combined-number').text(combinedNotifications);
+    if (combinedNotifications == 0) {
+      $('#combined-number').hide();
+    }
+
   }
 
     function notificationTrigger() {
@@ -72,32 +98,34 @@ $(function() {
       if($(window).width() <= 899) {
 
         $('#notifications-trigger').attr('href', '#notifications-panel');
-        $('#messages-trigger').attr('href', '#messages-panel');
+        $('#messages-trigger').attr('href', './my-messages.html');
 
-        $('.attention-trigger')
-          .addClass('modal-inline')
-          .removeAttr('data-dropdown');
+        $('.attention-trigger').removeAttr('data-dropdown');
 
-        $('.attention-panel')
-          .removeClass('dropdown dropdown-tip dropdown-anchor-right')
-          .addClass('mfp-hide')
-          .removeAttr('style');
+        $('#notifications-trigger').addClass('modal-inline');
+
+        $('.attention-panel').removeClass('dropdown dropdown-tip dropdown-anchor-right').addClass('mfp-hide').removeAttr('style');
 
       } else if ($(window).width() > 900) {
 
         $('.attention-trigger')
-          .removeClass('modal-inline')
-          .attr('href', '#');
+          .removeClass('modal-inline');
 
-        $('#notifications-trigger').attr('data-dropdown', '#notifications-panel');
-        $('#messages-trigger').attr('data-dropdown', '#messages-panel');
+        $('#notifications-trigger').attr('data-dropdown', '#notifications-panel').attr('href', '#');
 
-        $('.attention-panel')
-          .addClass('dropdown dropdown-tip dropdown-anchor-right')
-          .removeClass('mfp-hide');
+        if (messages > 0) {
+          $('#messages-trigger').attr('data-dropdown', '#messages-panel').attr('href', '#');
+        }
+
+        $('.attention-panel').addClass('dropdown dropdown-tip dropdown-anchor-right');
+        $('#notifications-panel').removeClass('mfp-hide');
       }
 
     }
+
+    $('.messages .media').click(function(event) {
+      $(this).remove();
+    });
 
       // On resize, run the function and reset the timeout
     // 250 is the delay in milliseconds.

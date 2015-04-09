@@ -7,6 +7,7 @@ direct_parent:
     url: "documents.html"
 user_role: lu
 editor: ckeditor
+script: event
 upload: document
 design_status: Work in progress
 menu:
@@ -41,7 +42,7 @@ menu:
     %h2.block-title Title, description & image
     .content
       .form-wrapper
-        .form-item.field-name-title
+        .form-item.field-name-title.has-error-hidden
           %label.form-label{:for => "edit-field-title"}
             Title
             %span.form-required{:title => "This field is required."} *
@@ -105,7 +106,7 @@ menu:
     %h2.block-title Languages and tags
     .content
       .form-wrapper
-        .form-item.form-type-select
+        .form-item.form-type-select.has-error-hidden
           %label.form-label{:for => "language"} Language
           .form-description What language is this news in? You can select more than one language.
           %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple", :tabindex => "4"}
@@ -155,7 +156,7 @@ menu:
 
   %section#section-submit
     .form-actions.form-wrapper
-      %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit", :tabindex => "7"}
+      %input{:type => "submit", :class => "button btn-primary btn-l input-false", :value => "Submit", :tabindex => "7"}
       %a.button.btn-l{:href => "./documents.html", :tabindex => "8"} Cancel
 
 :javascript

@@ -1,22 +1,31 @@
 interface:
 - menu
 - close
-- cancel
 - check
 - reply
 - pencil
-- clock
+- trash
 - tag
 - comment
 - dot
 - eye
 - search
 - map
-- bell
 - edit
 - mail
 - subscription
 - down-open
+- up-open
+- down-dir
+- vote-up
+- vote-down
+- download
+- upload
+- block
+- calendar
+- clock
+- attention
+- leave
 section:
 - login
 - users
@@ -32,9 +41,24 @@ section:
 - info
 - plus
 - comment
-- shout
+- chat
 - pencil
-socialmedia:
+- search
+- skills
+- bookmark
+- globe
+- mail
+- settings
+- help
+- link
+- social
+- eye
+- trash
+social:
 - facebook
 - gplus
 - skype
+- linkedin
+- twitter
+- pinterest
+- vkontakte

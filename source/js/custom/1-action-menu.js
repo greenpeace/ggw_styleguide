@@ -80,7 +80,6 @@ $(function() {
   if (window.location.hash) {
     $('.action-menu li, .l-main-column .current, .sidebar .current').removeClass('current');
     var hash = window.location.hash.substring(1);
-    console.log(hash);
     $('#' + hash).addClass('current');
     $('.action-menu li a[href="#' + hash + '"]').parent().addClass('current');
   }

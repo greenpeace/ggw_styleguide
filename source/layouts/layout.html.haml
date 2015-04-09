@@ -32,6 +32,9 @@
       - if current_page.data.design_status
         = partial :status
 
+      - if current_page.data.cookies
+        = partial :"blocks/cookies"
+
       .l-branding-header.nav-down
         .container
           %a.logo{:href => "./index.html", :rel => "home", :title => "Home"}
@@ -40,6 +43,7 @@
             %a#main-menu-show.nav-btn.icon-menu{"data-nav" => "js-nav", :href => "#primary-nav"}
               %span.element-invisible Show primary navigation
             %a#secondary-menu-show.nav-btn.icon-user{"data-nav" => "js-nav2", :href => "#secondary-nav"}
+              %span.attention-number#combined-number
               %span.element-invisible Show secondary navigation
 
       - if current_page.data.action_menu
@@ -61,7 +65,6 @@
       - if current_page.data.user_role == "lu"
         = partial :"blocks/lu/notifications"
         = partial :"blocks/lu/messages"
-        = partial :"blocks/lu/compose-message"
 
     = javascript_include_tag  "theme"
 

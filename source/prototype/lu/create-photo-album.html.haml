@@ -7,6 +7,7 @@ direct_parent:
     url: "photos.html"
 user_role: lu
 editor: ckeditor
+script: event
 upload: image
 design_status: Work in progress
 menu:
@@ -155,8 +156,8 @@ menu:
 
   %section#section-submit
     .form-actions.form-wrapper
-      %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit", :tabindex => "7"}
-      %input{:type => "submit", :class => "button btn-l", :value => "Cancel", :tabindex => "8"}
+      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Submit", :tabindex => "7"}
+      %a.button.btn-l{:href => "./photos.html", :tabindex => "8"} Cancel
 
 :javascript
   CKEDITOR.editorConfig = function( config ) {

@@ -43,3 +43,15 @@ design_status: Work in progress
         .card.icon
           %i{:class => "icon-#{icon}"}
           %code #{icon}
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Social media icons
+    %p These are the icons we use for linking to social media profiles and pages.
+
+  %section.cardbox
+    - for icon in data.icons.social
+      .cardholder
+        .card.icon
+          %i{:class => "icon-#{icon}"}
+          %code #{icon}

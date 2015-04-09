@@ -50,6 +50,38 @@ label {
 
 }
 
+.collapsible-fieldset-wrapper {
+  max-width: (400px - $def-mar);
+  margin: -$def-mar 0 $def-mar $def-mar;
+  padding: $def-mar $def-mar 0;
+  border: 1px solid $grey-l;
+  border-radius: 3px;
+
+  @include breakpoint($smalltab) {
+
+    .form-item {
+      display: flex;
+    }
+
+    .form-label {
+      display: inline-block;
+      width: 60%;
+      font-weight: 300;
+      line-height: 1.3em;
+      flex: 1 1 auto;
+      align-self: center;
+    }
+
+    .selector {
+      display: inline-block;
+      width: 40%;
+      flex: 1 1 auto;
+    }
+
+  }
+
+}
+
 // labels for checkboxes
 .option {
   font-weight: 300;
@@ -70,6 +102,7 @@ label {
 .form-description,
 .form-description + .form-text,
 .form-description + .chosen-select,
+.form-description + .selector,
 .form-description + .chosen-select + .chosen-container,
 .form-description + .form-text + .form-feedback {
   margin-top: $def-mar-half;
@@ -116,6 +149,25 @@ label {
   }
 }
 
+// explain what a form item is for, usually triggers a modal window
+.explain-label-trigger {
+  margin-left: .5em;
+  font-weight: 300;
+  text-decoration: underline;
+  @include font-size($small);
+}
+
+.show-more-options {
+  @include font-size($p);
+  display: block;
+  margin: 0 0 (2 * $def-mar);
+
+  &:before {
+    @extend %load-icon;
+    @extend %icon-right-open;
+    margin-right: .5em;
+  }
+}
 
 // browser specific
 .lt-ie9 {

@@ -16,6 +16,7 @@ if(jQuery) (function($) {
                     hide();
                     return $(this);
                 case 'attach':
+                    console('test');
                     return $(this).attr('data-dropdown', data);
                 case 'detach':
                     hide();

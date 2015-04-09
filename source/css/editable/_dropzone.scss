@@ -79,10 +79,6 @@
     padding: 0;
     top: -5px;
 
-    .page-type-document & {
-      left: 40px;
-    }
-
     @include breakpoint($tab) {
       position: relative;
       left: 0;
@@ -92,6 +88,15 @@
 
       .flexbox & {
         flex: 0 1 auto;
+      }
+
+    }
+
+    .page-type-document & {
+      left: 40px;
+
+      @include breakpoint($tab) {
+        left: 0;
       }
 
     }

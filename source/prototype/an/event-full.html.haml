@@ -9,12 +9,33 @@ user_role: an
 mapsds: event
 design_status: Work in progress
 script: leaflet
+action_menu:
+  -
+    id: "#content"
+    label: "Event"
+    icon: "event"
+  -
+    id: "#block-enroll"
+    label: "RSVP"
+    icon: "login"
+  -
+    id: "#block-comments"
+    label: "Comments"
+    icon: "chat"
+  -
+    id: "#block-go-to-group"
+    label: "Go to group"
+    icon: "users"
+  -
+    id: "#create-account"
+    label: "Create account"
+    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .block.main-content
+.l-main-column
+  #content.block.main-content.current
     %i.block-icon.icon-bg-event.icon-event
     %h1#page-title.block-title
       = current_page.data.title
@@ -44,7 +65,7 @@ script: leaflet
               .field.field-name-field-event-location
                 .field-label Location:
                 %div
-                  %a.popup-iframe{:href => "./event_map_single.html"}
+                  %a.popup-iframe{:href => "../lu/event_map_single.html"}
                     %span Somewhere down town
                     %span Mainstreet 234
                     %span London

@@ -1,11 +1,21 @@
 ---
 title: Buttons
-body_class: page-buttons
+body_class: page-buttons l-has-sidebar-first
 layout: styleguide
-design_status: Needs review
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "UI Components"
+    url: "./blocks.html"
+
+layout: styleguide
 ---
 
-%aside.sidebar-left
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
   = partial :"nav/uicomponents"
 #content.l-main-column
   %section.block

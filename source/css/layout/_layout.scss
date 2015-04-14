@@ -126,13 +126,19 @@
 
 }
 
-.l-footer {
-  display: none;
+.csstransforms3d .with-action-menu .l-main.with-action-bar {
+  padding-top: 84px;
+  transform: translate3d(0, -50px, 0);
+  transition: transform 500ms ease;
+}
 
-  @include breakpoint($desk) {
-    display: block;
-    margin-top: 2em;
-  }
+// when the off canvas menu is active and there is an action menu and the user scrolls, prevent content from moving to the side.
+.csstransforms3d.primary-nav .with-action-menu .l-main.with-action-bar {
+  transform: translate3d(265px, 0, 0);
+}
+
+.csstransforms3d.secondary-nav .with-action-menu .l-main.with-action-bar {
+  transform: translate3d(-265px, 0, 0);
 }
 
 //
@@ -145,7 +151,7 @@
   position: fixed;
   z-index: 2;
   top: 0;
-  transition: top 0.2s ease-in-out;
+  transition: top .2s ease-in-out;
 
   .csstransforms3d & {
     transform: translate3d(0, 0, 0);
@@ -169,28 +175,6 @@
   }
 }
 
-.l-country-selector {
-  @include breakpoint($desk) {
-    position: absolute;
-    width: 200px;
-    left: 200px;
-    bottom: 10px;
-  }
-}
-
-.l-language-selector {
-  @include breakpoint($desk) {
-    position: absolute;
-    width: auto;
-    right: 10px;
-    bottom: 32px;
-  }
-
-  @include breakpoint($deskplus) {
-    right: 0;
-  }
-}
-
 .l-header-navigation {
 
   @include breakpoint($desk) {
@@ -200,51 +184,19 @@
   }
 }
 
-.block-search {
-
-  @include breakpoint($desk) {
-    @include grid-span(4, 9, $output-style: 'isolation');
-    bottom: 10px;
-    position: absolute;
-    right: 10px;
-    .icon-search {
-      display: none;
-    }
-  }
-
-  @include breakpoint($deskplus) {
-    right: 0;
-  }
-
-}
-
-.breadcrumb {
-  @extend %element-hidden;
-
-  @include breakpoint($desk) {
-    display: block;
-    flex: 1 1 100%;
-    order: 0;
-  }
-
-}
-
+// block presented as a single image slideshow
 @include breakpoint($desk) {
   .region-highlight {
     display: block;
     flex: 1 1 100%;
     order: 0;
+    margin-bottom: $def-mar;
   }
 }
 
 .l-main-column {
   margin: $def-mar-half;
   z-index: 1;
-
-  .page-profile &,
-  .page-group-home & {
-    margin-bottom: 0;
-  }
 
   @include breakpoint($desk) {
     margin: 0;
@@ -274,7 +226,7 @@
     float: right;
     width: (100%/3);
     background: none;
-    border: none;
+    border: 0;
     overflow: visible;
 
   }
@@ -295,6 +247,7 @@
 
   @include breakpoint($desk) {
     width: 100%;
+    padding: 0;
   }
 
 }
@@ -325,7 +278,7 @@
   .footer-offset {
     height: 100px;
     background: #e4e4e4;
-    border-bottom: 3px solid #CCC;
+    border-bottom: 3px solid $grey-l;
   }
 
 }
@@ -334,15 +287,18 @@
 .l-has-sidebar {
   .l-main .block {
     display: none;
+    height: 0;
 
     &.current {
       display: block;
+      height: auto;
     }
 
     @include breakpoint($desk) {
       display: block;
+      height: auto;
       clear: none;
-      margin: 0 0 $def-mar 0;
+      margin: 0 0 $def-mar;
     }
 
   }
@@ -353,26 +309,9 @@
   display: block;
 }
 
-.hidden-mobile {
-  display: none;
-
-  @include breakpoint($desk) {
-    display: block;
-  }
-}
-
-@include breakpoint($desk) {
-  .only-mobile {
-    display: none;
-  }
-}
-
 @include breakpoint($desk) {
   .deskwidth50 {
-    width: 49.5%
+    width: 49.5%;
   }
 }
 
-.block.affix {
-  position: fixed;
-}

@@ -157,7 +157,25 @@ $(function() {
       thumbnailWidth: 80,
       thumbnailHeight: 80,
       parallelUploads: 20,
+      maxFilesize: 3,
       acceptedFiles: "image/*",
+      accept: function(file, done) {
+        var pixels = 0;
+        var reader = new FileReader();
+        reader.onload = (function(file) {
+          var image = new Image();
+          image.src = file.target.result;
+          image.onload = function() {
+            pixels = this.width * this.height;
+            if (pixels < 20000) {
+              done("This file is too small");
+            } else {
+              done();
+            }
+          };
+        });
+        reader.readAsDataURL(file);
+      },
       previewTemplate: previewTemplate,
       autoQueue: false, // Make sure the files aren't queued until manually added
       previewsContainer: "#previews", // Define the container to display the previews
@@ -171,6 +189,7 @@ $(function() {
       thumbnailWidth: 80,
       thumbnailHeight: 80,
       parallelUploads: 20,
+      maxFilesize: 15,
       acceptedFiles: ".doc, .docx, .xls, .xlsx, .ppt, .pptx, .odt, .odp, .ods, .pdf",
       previewTemplate: previewTemplate,
       autoQueue: false, // Make sure the files aren't queued until manually added
@@ -193,6 +212,12 @@ $(function() {
     file.previewElement.querySelector(".start").onclick = function() {
       myDropzone.enqueueFile(file);
     };
+  });
+
+  myDropzone.on("error", function(file) {
+    file.previewElement.querySelector(".preview").style.opacity='.5';
+    file.previewElement.querySelector(".name").remove();
+    file.previewElement.querySelector(".start").remove();
   });
 
   // Update the total progress bar

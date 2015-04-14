@@ -40,6 +40,14 @@ $(function() {
       $('html, body').animate({scrollTop: 0}, 300);
     });
 
+    $('.form-text, textarea')
+      .blur(function() {
+        $('.backtotop-button').removeClass('element-hidden');
+      })
+      .focus(function() {
+        $('.backtotop-button').addClass('element-hidden');
+      });
+
   };
 
   backToTop();

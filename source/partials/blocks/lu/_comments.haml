@@ -29,7 +29,7 @@
         .preview-wrapper
           %img#preview-image.shoutimage.element-hidden{:src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", :alt => "your image"}
         .clear
-        %input.tooltip.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
+        %input.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
         - if current_page.data.front == "frontpage" || current_page.data.joined == "joined" ||current_page.data.profile == "home"
           %button.modal-inline.button.addlink-btn{:href => "#addexternallink"}
             %i.icon-link

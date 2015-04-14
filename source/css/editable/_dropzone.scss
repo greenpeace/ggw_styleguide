@@ -58,6 +58,18 @@
     }
   }
 
+  @include breakpoint($tab) {
+
+    .button {
+      margin-top: 0;
+    }
+
+    &.dz-error .btn-upload {
+      display: none;
+    }
+
+  }
+
   .name {
     width: 100%;
     overflow: hidden;
@@ -193,6 +205,10 @@
 
 .preview {
   cursor: move;
+}
+
+.text-danger {
+  color: $error;
 }
 
 .sortable-placeholder {

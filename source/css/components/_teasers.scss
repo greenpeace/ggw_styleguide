@@ -92,10 +92,11 @@
 
   .field-type-date {
     @extend %fontsizesmall;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    line-height: 1.5em;
 
     label {
       display: none;

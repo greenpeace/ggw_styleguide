@@ -2,6 +2,7 @@
   max-width: none;
 }
 
+
 // Style the CKEditor element to look like a textfield
 .cke_editor_field-edit-description {
   padding: 5px .5em;
@@ -16,53 +17,21 @@
 
 .cke_editable {
   @include font-size(16px);
-}
+  padding: 14px;
 
-#section-submit .button {
-  background: $white;
-
-  &.btn-primary {
-    background: $primary;
+  p {
+    margin: .65em 0 .95em;
   }
 }
 
-.js {
+@include breakpoint($desk) {
 
-  .section-submit {
+  .section-submit .button {
     background: $white;
-    box-shadow: 0 1px 3px rgba(0,0,0,.5);
-    padding: $def-mar-half;
-    width: 100%;
-    position: fixed;
-    z-index: 2;
-    top: -70px;
-    transition: top 0.2s ease-in-out;
-    text-align: center;
-
-    .stick-to-top {
-      top: 0;
-    }
-
-    .form-wrapper,
-    .form-wrapper .button {
-      margin: 0;
-    }
-
   }
 
-}
-
-.csstransforms3d {
-
-  .section-submit {
-    transform: translate3d(0, -70px, 0);
-    transition: transform 500ms ease;
-    top: 0;
-
-    &.stick-to-top {
-      transform: translate3d(0px, 0px, 0px);
-    }
-
+  .section-submit .btn-primary {
+    background: $primary;
   }
 
 }
@@ -87,7 +56,7 @@
   z-index: 99;
   background-color: #fff;
   border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 4px;
   width: 100%;
   max-width: 400px;

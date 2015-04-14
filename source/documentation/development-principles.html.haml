@@ -1,11 +1,20 @@
 ---
 title: Development principles
-body_class: development-principles
+body_class: development-principles l-has-sidebar-first
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "Documentation"
+    url: "./getting-started.html"
 layout: styleguide
 design_status: Work in progress
 ---
 
-%aside.sidebar-left
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
   = partial :"nav/documentation"
 
 #content.l-main-column

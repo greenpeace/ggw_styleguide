@@ -1,11 +1,20 @@
 ---
 title: Icons
-body_class: page-icons
+body_class: page-icons l-has-sidebar-first
 layout: styleguide
-design_status: Work in progress
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "Design elements"
+    url: "./colors.html"
+layout: styleguide
 ---
 
-%aside.sidebar-left
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
   = partial :"nav/designelements"
 
 #content.l-main-column

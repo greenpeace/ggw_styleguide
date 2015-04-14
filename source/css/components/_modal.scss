@@ -51,7 +51,8 @@ $mfp-include-iframe-type:             true !default;
 $mfp-iframe-padding-top:              40px !default;
 $mfp-iframe-background:               #000 !default;
 $mfp-iframe-max-width:                900px !default;
-$mfp-iframe-ratio:                    9/16 !default;
+$mfp-iframe-ratio-mobile:             1/1 !default;
+$mfp-iframe-ratio-desk:               9/16 !default;
 
 // Image-type options
 $mfp-include-image-type:              true !default;
@@ -398,7 +399,11 @@ button.mfp-arrow-right {
     width: 100%;
     height: 0;
     overflow: hidden;
-    padding-top: $mfp-iframe-ratio * 100%;
+    padding-top: $mfp-iframe-ratio-mobile * 100%;
+
+    @include breakpoint($desk) {
+      padding-top: $mfp-iframe-ratio-desk * 100%;
+    }
     iframe {
       position: absolute;
       display: block;

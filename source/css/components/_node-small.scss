@@ -6,7 +6,7 @@
     @include font-size (14px);
     margin: 0;
 
-     &:before {
+    &:before {
       @extend %load-icon;
       @extend %icon-right-open;
       color: $green5;

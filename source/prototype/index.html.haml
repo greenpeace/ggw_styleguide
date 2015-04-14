@@ -1,5 +1,5 @@
 ---
-title: Prototype index
+title: Prototype overview
 body_class: not-logged-in page-home l-has-sidebar
 ---
 
@@ -8,18 +8,137 @@ body_class: not-logged-in page-home l-has-sidebar
 .l-main-column
   .block.current
     %i.block-icon.icon-bg-default.icon-info
-    %h1#page-title.block-title Prototype index
+    %h1#page-title.block-title Prototype overview
     %article.view-mode-full.content
       :markdown
-        Choose a role to go through the prototype
+        The prototype consists of an anonymous section and a member section. Community members have some more options available than normal users. You can switch between both sections using the login page and log out button, which just act as demo links (no validation). Pages for comminuty coaches usually have incorrect urls, so use the browser back button if you get a page not found (sorry).
 
-      =nav_link 'Anonymous', '/prototype/an/index.html',  :class => 'button'
-      =nav_link 'Member', '/prototype/lu/index.html',  :class => 'button'
-      <br/><br/>
-      =nav_link 'Concept Action-based Navigation', '/prototype/concept/index.html',  :class => 'button'
-      <br/><br/>
-      =nav_link '404', '/prototype/404.html',  :class => 'button'
-      =nav_link 'Maintenance', '/prototype/maintenance.html',  :class => 'button'
+        The following pages are available in the prototype. You can use links on the pages itself, most should work.
+
+      .l-two-column
+        .l-sidebar
+          %h3.section-heading Anonymous pages
+          .item-list
+            %a{:href => '/prototype/an/index.html'} Home
+            %br/
+            %a{:href => '/prototype/an/events.html'} Event overview
+            %a.sublevel{:href => '/prototype/an/event-full.html'} Event node
+            %br/
+            %a{:href => '/prototype/an/groups.html'} Group overview
+            %a.sublevel{:href => '/prototype/an/group-home.html'} Group home
+            %br/
+            %a{:href => '/prototype/an/news.html'} News overview
+            %a.sublevel{:href => '/prototype/an/news-article.html'} News node
+            %br/
+            %a{:href => '/prototype/an/blogs.html'} Blogs overview
+            %a.sublevel{:href => '/prototype/an/blog-article.html'} Blog node
+            %br/
+            %a{:href => '/prototype/an/photos.html'} Photos overview
+            %a.sublevel{:href => '/prototype/an/photo-album.html'} Photo node
+            %br/
+            %a{:href => '/prototype/an/videos.html'} Videos overview
+            %a.sublevel{:href => '/prototype/an/video-article.html'} Video node
+            %br/
+            %a{:href => '/prototype/an/documents.html'} Documents overview
+            %a.sublevel{:href => '/prototype/an/document.html'} Document node
+            %br/
+            %a{:href => '/prototype/an/ideas.html'} Ideas overview
+            %a.sublevel{:href => '/prototype/an/idea.html'} Idea node
+            %br/
+            %a{:href => '/prototype/an/about.html'} Page node
+            %a{:href => '/prototype/an/tags.html'} Tags page
+            %a{:href => '/prototype/an/faq.html'} FAQ page
+            %a{:href => '/prototype/an/contact.html'} Contact page
+            %br/
+            %a{:href => '/prototype/an/login.html'} Login
+            %a{:href => '/prototype/an/register-step1.html'} Register
+            %br/
+            %a{:href => '/prototype/404.html'} Page not found
+            %a{:href => '/prototype/maintenance.html'} Maintenance page
+            %br/
+            %a{:href => '/prototype/an/search.html'} Search
+            %a.sublevel{:href => '/prototype/an/search-newsmedia.html'} Search news &amp; media
+            %a.sublevel{:href => '/prototype/an/search-newsmedia-listview.html'} Search news &amp; media list view
+            %a.sublevel{:href => '/prototype/an/search-events.html'} Search events
+            %a.sublevel{:href => '/prototype/an/search-groups.html'} Search groups
+            %a.sublevel{:href => '/prototype/an/search-members.html'} Search members
+            %a.sublevel{:href => '/prototype/no-search-result.html'} No search results
+        .l-sidebar
+          %h3.section-heading Member pages
+          .item-list
+            %a{:href => '/prototype/lu/index.html'} Home
+            %br/
+            %a{:href => '/prototype/lu/events.html'} Event overview
+            %a.sublevel{:href => '/prototype/lu/event-full.html'} Event node
+            %a.sublevel{:href => '/prototype/lu/event-full-enrolled.html'} Event node (enrolled)
+            %a.sublevel{:href => '/prototype/lu/create-event.html'} Create event node
+            %br/
+            %a{:href => '/prototype/lu/groups.html'} Group overview
+            %a.sublevel{:href => '/prototype/lu/group-home.html'} Group home
+            %a.sublevel{:href => '/prototype/lu/group-home-enrolled.html'} Group home (member)
+            %a.sublevel{:href => '/prototype/cm/group-home-enrolled.html'} Group home (manager)
+            %a.sublevel{:href => '/prototype/cm/group-manage-members.html'} Group manage members
+            %a.sublevel{:href => '/prototype/lu/create-group.html'} Create group node
+            %br/
+            %a{:href => '/prototype/lu/news.html'} News overview
+            %a.sublevel{:href => '/prototype/lu/news-article.html'} News node
+            %a.sublevel{:href => '/prototype/lu/create-news.html'} Create news node
+            %a.sublevel{:href => '/prototype/lu/news-article-edit.html'} Edit news node
+            %br/
+            %a{:href => '/prototype/lu/blogs.html'} Blogs overview
+            %a.sublevel{:href => '/prototype/lu/blog-article.html'} Blog node
+            %a.sublevel{:href => '/prototype/lu/create-blog.html'} Create blog node
+            %br/
+            %a{:href => '/prototype/lu/photos.html'} Photos overview
+            %a.sublevel{:href => '/prototype/lu/photo-album.html'} Photo node
+            %a.sublevel{:href => '/prototype/lu/create-photo-album.html'} Create photo node
+            %br/
+            %a{:href => '/prototype/lu/videos.html'} Videos overview
+            %a.sublevel{:href => '/prototype/lu/video-article.html'} Video node
+            %a.sublevel{:href => '/prototype/lu/create-video.html'} Create video node
+            %br/
+            %a{:href => '/prototype/lu/documents.html'} Documents overview
+            %a.sublevel{:href => '/prototype/lu/document.html'} Document node
+            %a.sublevel{:href => '/prototype/lu/create-document.html'} Create document node
+            %br/
+            %a{:href => '/prototype/lu/ideas.html'} Ideas overview
+            %a.sublevel{:href => '/prototype/lu/idea.html'} Idea node
+            %a.sublevel{:href => '/prototype/lu/create-idea.html'} Create idea node
+            %br/
+            %a{:href => '/prototype/lu/materials.html'} Materials page
+            %a{:href => '/prototype/lu/getting-started.html'} Page node
+            %a{:href => '/prototype/lu/faq.html'} FAQ page
+            %a{:href => '/prototype/lu/who-is-who.html'} Who is who page
+            %br/
+            %a{:href => '/prototype/lu/search.html'} Search
+            %a.sublevel{:href => '/prototype/lu/search-newsmedia.html'} Search news &amp; media
+            %a.sublevel{:href => '/prototype/lu/search-newsmedia-listview.html'} Search news &amp; media list view
+            %a.sublevel{:href => '/prototype/lu/search-events.html'} Search events
+            %a.sublevel{:href => '/prototype/lu/search-groups.html'} Search groups
+            %a.sublevel{:href => '/prototype/lu/search-members.html'} Search members
+            %br/
+            %a{:href => '/prototype/lu/profile.html'} Profile
+            %a.sublevel{:href => '/prototype/lu/profile-incomplete.html'} Profile incomplete
+            %a.sublevel{:href => '/prototype/lu/my-profile.html'} My profile
+            %a.sublevel{:href => '/prototype/lu/my-profile-incomplete.html'} My profile incomplete
+            %a.sublevel{:href => '/prototype/lu/edit-user-profile.html'} Edit profile
+            %a.sublevel{:href => '/prototype/lu/edit-user-account.html'} Edit account
+            %a.sublevel{:href => '/prototype/lu/profile-manage-friends.html'} Manage friends
+            %a.sublevel{:href => '/prototype/lu/my-messages.html'} My messages
+
+        .l-sidebar
+          %h3.section-heading Community coach pages
+          .item-list
+            %a{:href => '/prototype/cm/create-material.html'} Create material node
+            %a{:href => '/prototype/cm/search-members.html'} Search members
+            %a{:href => '/prototype/cm/search-members-listview.html'} Search members list view
+
+        .l-sidebar
+          %h3.section-heading Concepts / ideas
+          .item-list
+            %a{:href => '/prototype/concept/index.html'} Action-based navigation
+
+
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/an/save_planet5"
+  = partial :"blocks/prototype-hints"

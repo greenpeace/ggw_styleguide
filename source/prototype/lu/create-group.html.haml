@@ -29,12 +29,12 @@ menu:
 = partial :"blocks/breadcrumbs"
 
 %aside.sidebar-first.sfmenu
-  .block
+  .block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
     %i.block-icon.icon-users.icon-bg-group
     %h2.block-title Create group
     .content
       - for item in current_page.data.menu
-        %a.sf-navbtn{:href => "#{item.url}"}
+        %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
           #{item.name}
 .l-main-column
   %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
@@ -290,7 +290,7 @@ menu:
             %a.small-link.clone-trigger{:href => "#"} add another item
 
 
-  %section#section-submit
+  %section#section-submit.section-submit
     .form-actions.form-wrapper
       %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Submit", :tabindex => "7"}
       %a.button.btn-l{:href => "./groups.html", :tabindex => "8"} Cancel

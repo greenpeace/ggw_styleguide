@@ -37,7 +37,7 @@
 
 }
 
-.block-events #map{
+.block-events #map {
   height: 300px;
   margin-bottom: $def-mar;
   width: 100%;
@@ -47,7 +47,7 @@
   display: none;
 
   @include breakpoint ($desk) {
-    display:block;
+    display: block;
     height: 300px;
     width: 100%;
   }

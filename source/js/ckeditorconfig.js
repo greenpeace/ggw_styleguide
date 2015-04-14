@@ -5,3 +5,5 @@ CKEDITOR.config.toolbar = [
    ['Image','Maximize','Link','Unlink'],
    ['Source']
 ];
+
+CKEDITOR.config.contentsCss = ['/css/all.css', '/css/x-editable.css'];

@@ -20,12 +20,14 @@
     = stylesheet_link_tag "all"
     <!--<![endif]-->
 
+    = partial :"loadfont"
+
     - if current_page.data.editor
       = stylesheet_link_tag "x-editable"
       = javascript_include_tag "//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"
       = javascript_include_tag "ckeditorconfig.js"
 
-  %body{:class => "#{current_page.data.body_class || page_classes}"}
+  %body{:class => "#{current_page.data.body_class || page_classes}", "data-spy" => "scroll", "data-target" => ".block-sf-nav", "data-offset" => "110"}
     /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
     .layout-base
 
@@ -91,8 +93,6 @@
             });
           });
         });
-
-    = partial :"loadfont"
 
     /[if lte IE 8]
       = javascript_include_tag "oldie"

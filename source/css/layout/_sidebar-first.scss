@@ -24,10 +24,10 @@
 .sidebar-first {
   margin: 7px;
 
-  @include breakpoint($tab) {
+  @include breakpoint($desk) {
     float: left;
     width: 25%;
-    padding: 7px;
+    padding: 7px 7px 0 0;
     margin: 0;
   }
 
@@ -39,7 +39,7 @@
 
 }
 
-@include breakpoint($tab) {
+@include breakpoint($desk) {
 
   .l-has-sidebar-first .l-main-column {
     float: right;
@@ -91,14 +91,12 @@
     @extend %icon-right-open;
   }
 
-  &:hover {
-    background: $background;
-    text-decoration: none !important;
-  }
-
-  &.current {
+  &:hover,
+  &.current,
+  &.active {
     background: $green2;
     color: $white;
+    text-decoration: none !important;
   }
 
 }
@@ -112,26 +110,29 @@
 
 }
 
-.cloned-fixed-menu {
-  position: fixed;
-  top: 0;
-  margin-top: 0;
-  z-index: 2;
-  display: none;
-  visibility: hidden;
-
-  @include breakpoint($desk) {
-    display: block;
-  }
-}
-
 @include breakpoint($desk) {
 
-  .deskvisible {
-    visibility: visible;
+  .l-has-sidebar-first .l-main {
+    display: block;
+    transform: none;
   }
 
-  .deskinvisible {
-    visibility: hidden;
+  // by default highlight the first button
+  .affix-top .sf-navbtn:first-of-type {
+    background: $green2;
+    color: $white;
   }
+
+  .block-sf-nav.affix {
+    width: 23%;
+    max-width: 233px;
+    margin-top: -50px;
+    z-index: 10;
+
+    // once affix is active, hide following blocks as they conflict with fixed position
+    + .block {
+      display: none;
+    }
+  }
+
 }

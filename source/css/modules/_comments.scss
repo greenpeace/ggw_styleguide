@@ -18,7 +18,7 @@
     display: inline-block;
 
     &:last-child {
-      border-left: 1px solid #dbdbdb;
+      border-left: 1px solid $grey-l;
     }
 
     &:first-child {
@@ -115,23 +115,20 @@
 .comment-form {
   @extend %cf;
   position: relative;
-}
 
-.comment-form .hint {
-  float: right;
-  margin: 0 $def-mar-half 0 0;
-  @include font-size($small);
-  color: $grey-m;
-  line-height: 34px;
-}
 
-// fix the bug when firing the apple keyboard
-.touch .fixfixed .comment-form {
-  position: absolute;
-}
+  .hint {
+    float: right;
+    margin: 0 $def-mar-half 0 0;
+    @include font-size($small);
+    color: $grey-m;
+    line-height: 34px;
+  }
 
-.comment-form .nfi-wrapper {
-  float: left;
+  .nfi-wrapper {
+    float: left;
+  }
+
 }
 
 // autogrow js gets applied on this element
@@ -139,10 +136,10 @@
   position: relative;
   margin-bottom: .5em;
 
-  textarea{
-    line-height: 1.1em;
-    padding: 0.5em;
+  textarea {
     @include font-size(16px);
+    line-height: 1.1em;
+    padding: .5em;
     max-width: 100%; //override default of 400px;
   }
 }
@@ -174,25 +171,26 @@
 
 .mentions {
   max-width: 100%;
-}
 
-.mentions li a {
-  @include font-size($p);
-  color: $grey-d;
-  line-height: $h4;
-  height: 40px;
-  overflow: hidden;
-  display: block;
-  padding: 3px 20px;
-  clear: both;
-  font-weight: normal;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
+  li a {
+    @include font-size($p);
+    color: $grey-d;
+    line-height: $h4;
+    height: 40px;
+    overflow: hidden;
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 
-.mentions .active {
-  background: $background;
-  color: $white;
+  .active {
+    background: $background;
+    color: $white;
+  }
+
 }
 
 .mention-item a:hover {

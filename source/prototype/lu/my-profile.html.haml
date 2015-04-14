@@ -46,7 +46,7 @@ action_menu:
   %h1.group-heading.only-mobile
     %i.icon-user
     %span John Doe Claus
-  #block-user-profile.block.current.editable
+  #block-user-profile.block.block-profile.current
     .action-bar
       .action-bar-item.edit-content
         %button.button{"data-dropdown" => "#edit-profile", :href => "#"}
@@ -60,7 +60,7 @@ action_menu:
 
     %i.block-icon.icon-bg-user.icon-user
     %h2.block-title
-      Profile
+      My profile
 
     .content
 
@@ -125,7 +125,7 @@ action_menu:
   = partial :"blocks/lu/user-events"
   = partial :"blocks/lu/user-groups"
 
-  #block-skills.block
+  #block-skills.block.lazyload{"data-expand" => "-40"}
     .action-bar
       .action-bar-item.edit-content
         %a.button{:href => "./edit-user-profile.html#section-skills", :title => "Edit skills"} Edit

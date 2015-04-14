@@ -18,17 +18,16 @@
   ],
   "scenarios": [
     {
-      "label": "http://greenwire.greenpeace.org",
-      "url": "../../../build/prototype/lu/index.html",
+      "label": "Greenwire",
+      "url": "http://ggw-prototype.goalgorilla.com/prototype/lu/index.html",
       "hideSelectors": [],
       "removeSelectors": [],
       "selectors": [
         "header",
         ".block-events",
-        ".block-comments",
+        ".comment-form-holder",
         ".l-branding-header",
-        "footer",
-        "body"
+        ".footer"
       ],
       "readyEvent": null,
       "delay": 500

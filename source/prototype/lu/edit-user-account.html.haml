@@ -31,12 +31,12 @@ menu:
   %h1.group-heading.only-mobile
     %i.icon-user
       John Doe Claus
-  .block
+  .block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
     %i.block-icon.icon-settings.icon-bg-user
     %h2.block-title Edit account settings
     .content
       - for item in current_page.data.menu
-        %a.sf-navbtn{:href => "#{item.url}"}
+        %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
           #{item.name}
 
   #block-edit-profile.block
@@ -534,7 +534,7 @@ menu:
 
 
 
-    %section#section-submit
+    %section#section-submit.section-submit
       .form-actions.form-wrapper
         %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit", :tabindex => "19"}
         %input{:type => "submit", :class => "button btn-l", :value => "Cancel",       :tabindex => "20"}

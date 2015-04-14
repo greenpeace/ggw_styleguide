@@ -24,12 +24,12 @@ menu:
 = partial :"blocks/breadcrumbs"
 
 %aside.sidebar-first.sfmenu
-  .block
+  .block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
     %i.block-icon.icon-news.icon-bg-news-media
     %h2.block-title Create news
     .content
       - for item in current_page.data.menu
-        %a.sf-navbtn{:href => "#{item.url}"}
+        %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
           #{item.name}
 .l-main-column
   %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
@@ -117,13 +117,7 @@ menu:
                 %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2"}
                 %label.option{:for => "edit-group-content-access-und-2"} Public - visible for all visitors of Greenwire
 
-  %section#section-submit
+  %section#section-submit.section-submit
     .form-actions.form-wrapper
       %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Submit", :tabindex => "7"}
       %a.button.btn-l{:href => "./news.html", :tabindex => "8"} Cancel
-
-:javascript
-  CKEDITOR.editorConfig = function( config ) {
-    config.tabIndex = 3;
-    config.fontSize_defaultLabel = '16px';
-  };

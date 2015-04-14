@@ -1,54 +1,5 @@
-@include breakpoint($tab) {
-  .style-guide {
-
-    .sidebar-left {
-      float: left;
-      width: 25%;
-
-      .block {
-        margin-right: 1.5em;
-      }
-    }
-
-    .l-main-column {
-      float: right;
-      width: 75%;
-      margin: 0;
-    }
-
-    &.l-has-sidebar {
-      .l-main-column {
-        width: 66%
-      }
-    }
-
-  }
-
-}
-
-@include breakpoint($desk) {
-
-  .style-guide .sidebar-left .block {
-    margin: 1em 1.5em 1.5em 0;
-    padding: 0;
-  }
-
-}
-
-.style-guide {
-
-  .block {
-    margin: 1em 0;
-
-    .block {
-      margin: 0;
-    }
-
-  }
-
-  p + p {
-    margin-top: 0;
-  }
+.style-guide p + p {
+  margin-top: 0;
 }
 
 // create a 2 columns grid
@@ -146,44 +97,6 @@
   }
 }
 
-// buttons for styleguide navigation
-.sg-navbtn {
-  display: block;
-  line-height: 1.2em;
-  padding: .8em 1em;
-  font-size: $p;
-  color: $base;
-  border-bottom: 1px solid $grey-l;
-  position: relative;
-
-  &:last-child {
-    border: none;
-  }
-
-  &:before {
-    float: right;
-    @extend %load-icon;
-    @extend %icon-right-open;
-  }
-
-  &:hover {
-    background: $background;
-  }
-
-  &.active {
-    background: $green2;
-    color: $white;
-  }
-}
-
-// label above the left navigation
-.sidebar-left .block-title {
-  margin: 0;
-  padding: 1em;
-  font-size: $p;
-  color: $heading;
-  border-bottom: 1px solid $grey-l;
-}
 
 .sg-title {
   @extend %element-hidden;
@@ -196,3 +109,44 @@
   }
 
 }
+
+.style-guide .affix-top .sf-navbtn:first-of-type {
+  background: $white;
+  color: $base;
+
+  &:hover,
+  &.current,
+  &.active {
+    background: $green2;
+    color: $white;
+    text-decoration: none !important;
+  }
+
+}
+
+@include breakpoint($desk) {
+  .l-has-sidebar-first .l-two-column {
+
+    .l-main-column,
+    .l-sidebar {
+      float: left;
+      position: relative;
+      width: 50%;
+      margin: 0;
+    }
+
+  }
+
+  .l-has-sidebar-first .l-has-sidebar {
+
+    .l-main-column{
+      float: left;
+      position: relative;
+      width: 66.66667%;
+      margin: 0;
+    }
+
+  }
+
+}
+

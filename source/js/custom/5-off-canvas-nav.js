@@ -1,5 +1,10 @@
 $(function() {
 
+  function isMobile() {
+    try{ document.createEvent("TouchEvent"); return true; }
+    catch(e){ return false; }
+  }
+
   function offCanvasNav() {
 
     var root = $(document.documentElement)
@@ -11,23 +16,8 @@ $(function() {
       if(root.hasClass('secondary-nav')) {
         root.removeClass('secondary-nav')
       }
-      if(root.hasClass('sidebar-active')) {
-        root.removeClass('sidebar-active')
-      }
-
       e.preventDefault();
 
-    });
-
-    // When the primary-nav is open, you can close it with a left swipe
-    root.touchwipe({
-      wipeLeft: function(e) {
-        e.preventDefault();
-        if(checkOpenMenu()==1)
-        {
-          $('html').toggleClass('primary-nav');
-        }
-      }
     });
 
     // Open and close the secondary-nav clicking on
@@ -37,22 +27,26 @@ $(function() {
       if(root.hasClass('primary-nav')) {
         root.removeClass('primary-nav')
       }
-      if(root.hasClass('sidebar-active')) {
-        root.removeClass('sidebar-active')
-      }
       e.preventDefault();
     });
 
-    // When the secondary-nav is open, you can close it with a right swipe
-    root.touchwipe({
-      wipeRight: function(e) {
-        e.preventDefault();
-        if(checkOpenMenu()==2)
-        {
-          $('html').toggleClass('secondary-nav');
+    if ( isMobile() == true ) {
+      root.swipe({
+        // If primary-nav is open, close it with a left swipe
+        swipeLeft: function(e) {
+          if(checkOpenMenu()==1) {
+            $('html').toggleClass('primary-nav');
+          }
+        },
+
+        // If secondary-nav is open, close it with a right swipe
+        swipeRight: function(e) {
+          if(checkOpenMenu()==2) {
+            $('html').toggleClass('secondary-nav');
+          }
         }
-      }
-    });
+      });
+    }
 
     //function to check if the primary-nav or secondary-nav is opened
     var menuOpen=0;
@@ -110,19 +104,21 @@ $(function() {
       didScroll = true;
     });
 
-    root.touchwipe({
-      wipeDown: function(e) {
-        e.preventDefault();
-        didScroll = true;
-      }
-    });
+    if ( isMobile() == true ) {
+      root.swipe( {
+        swipeDown:function(e) {
+          didScroll = true;
+        },
+        threshold: 50 // user must at least swipe down 50px.
+      });
+    }
 
     setInterval(function() {
       if (didScroll) {
         hasScrolled();
         didScroll = false;
       }
-    }, 150);
+    }, 50);
 
     function hasScrolled() {
       var st = $(this).scrollTop();
@@ -150,8 +146,21 @@ $(function() {
       lastScrollTop = st;
     }
 
+    if ( isMobile() == true ) {
+      $('.form-text, textarea')
+        .blur(function() {
+          $('.l-branding-header, .header').removeClass('element-hidden');
+        })
+        .focus(function() {
+          $('.l-branding-header, .header').addClass('element-hidden');
+        });
+
+    }
+
   }
 
-  offCanvasNav()
+  if($(window).width() <= 901) {
+    offCanvasNav()
+  }
 
 });

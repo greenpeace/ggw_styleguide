@@ -33,12 +33,12 @@ menu:
   %h1.group-heading.only-mobile
     %i.icon-user
       John Doe Claus
-  .block
+  .block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
     %i.block-icon.icon-user.icon-bg-user
     %h2.block-title Edit profile
     .content
       - for item in current_page.data.menu
-        %a.sf-navbtn{:href => "#{item.url}"}
+        %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
           #{item.name}
 
   #block-user-account.block
@@ -392,7 +392,7 @@ menu:
             .form-description To add multiple skills, separate them with a comma.
             %input#field-otherskills.form-text{:name => "field-otherskills", :type => "text", :value => "", :tabindex => "13"}
 
-    %section#section-submit
+    %section#section-submit.section-submit
       .form-actions.form-wrapper
         %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit"}
         %input{:type => "submit", :class => "button btn-l", :value => "Cancel"}

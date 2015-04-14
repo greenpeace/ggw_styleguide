@@ -106,7 +106,7 @@ activate :title, site: 'GGW Style Guide', separator: ' — '
 configure :build do
   # For example, change the Compass output style for deployment
   activate :minify_css
-  activate :minify_html
+  #activate :minify_html
 
   activate :imageoptim
 
@@ -116,7 +116,7 @@ configure :build do
 
   ignore 'libraries/*'
 
-  activate :gzip
+  #activate :gzip
 
   # Uniquely-named assets, preventing users from using outdated files
   # Exclude files that are called from template files directly

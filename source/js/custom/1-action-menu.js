@@ -55,8 +55,7 @@ $(function() {
       } else {
         //If it is empty hide the dropdown menu,
         $('.action-menu .tabs-overflow').hide();
-        fullMenu.css({'padding-right': '0', 'display': 'flex'});
-        fullMenu.children('li').css('flex', '1');
+        fullMenu.addClass('flexthis').css({'padding-right': '0'});
       }
 
     }
@@ -69,12 +68,6 @@ $(function() {
   if ($('body').hasClass('front')) {
     $('#content').removeClass('current');
     $('#upcoming-events').addClass('current');
-  }
-
-  // for prototype only
-  if ($('body').hasClass('group-subscribed')) {
-    $('#block-group-info').removeClass('current');
-    $('#block-comments').addClass('current');
   }
 
   if (window.location.hash) {

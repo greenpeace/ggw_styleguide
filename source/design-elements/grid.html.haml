@@ -1,12 +1,22 @@
 ---
 title: Grid
-body_class: page-grid
+body_class: page-grid l-has-sidebar-first
 layout: styleguide
-design_status: Needs review
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "Design elements"
+    url: "./colors.html"
+layout: styleguide
 ---
 
-%aside.sidebar-left
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
   = partial :"nav/designelements"
+
 #content.l-main-column
   %section.block
     %i.block-icon.icon-info.icon-bg-default

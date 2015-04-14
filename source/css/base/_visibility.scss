@@ -21,3 +21,25 @@
 .clear {
   @extend %inline-cf;
 }
+
+@include breakpoint($desk) {
+
+  .affix {
+    position: fixed;
+  }
+
+}
+
+.hidden-mobile {
+  display: none;
+
+  @include breakpoint($desk) {
+    display: block;
+  }
+}
+
+@include breakpoint($desk) {
+  .only-mobile {
+    display: none;
+  }
+}

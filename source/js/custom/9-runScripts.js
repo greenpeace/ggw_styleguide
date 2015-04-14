@@ -24,6 +24,9 @@ $( document ).ready(function() {
 
   // Activate fastclick function
   //FastClick.attach(document.body);
+
+  // for css regression testing
+  console.log("dom_ready");
 });
 
 

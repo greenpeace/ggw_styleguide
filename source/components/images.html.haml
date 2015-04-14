@@ -1,11 +1,21 @@
 ---
 title: Images
-body_class: page-images
+body_class: page-images l-has-sidebar-first
 layout: styleguide
-design_status: Work in progress
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "UI Components"
+    url: "./blocks.html"
+
+layout: styleguide
 ---
 
-%aside.sidebar-left
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
   = partial :"nav/uicomponents"
 #content.l-main-column
   %section.block

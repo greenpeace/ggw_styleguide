@@ -113,3 +113,13 @@
 .no-js .action-menu {
   display: none;
 }
+
+// when there is no "overflow dropdown" stretch the items over the row.
+.flexthis {
+  display: flex;
+
+  li {
+    flex: 1 1 auto;
+  }
+
+}

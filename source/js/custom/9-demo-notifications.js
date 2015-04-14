@@ -50,7 +50,6 @@ $(function() {
       var messages = messagesValue;
     }
 
-    console.log(messages);
     $('#messages-number').text(messages);
 
     if (messages == 0) {
@@ -62,7 +61,6 @@ $(function() {
 
       $('#messages-panel .media').click(function(e) {
         messages--;
-        console.log(messages);
         $('#messages-number').text(messages);
         $.cookie('messages', messages, { expires: date });
         if (messages == 0) {

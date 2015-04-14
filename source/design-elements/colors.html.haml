@@ -1,11 +1,20 @@
 ---
 title: Color Palette
-body_class: page-colors
+body_class: page-colors l-has-sidebar-first
 layout: styleguide
-design_status: Needs review
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "Design elements"
+    url: "./colors.html"
+layout: styleguide
 ---
 
-%aside.sidebar-left
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
   = partial :"nav/designelements"
 
 #content.l-main-column

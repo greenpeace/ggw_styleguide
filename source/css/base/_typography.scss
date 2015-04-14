@@ -150,6 +150,12 @@ article {
 
 }
 
+::selection {
+  background: $green1;
+  color: $white;
+  text-shadow: none;
+}
+
 .small-link {
   @include font-size($p);
   display: block;

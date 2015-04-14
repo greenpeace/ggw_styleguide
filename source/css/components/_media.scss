@@ -22,7 +22,7 @@ td img {
 
 }
 
-article img.nofloat {
+img.nofloat {
   float: none;
   margin-left: 0;
   margin-right: 0;
@@ -41,7 +41,7 @@ article img.nofloat {
 .l-main-column figcaption {
   position: absolute;
   bottom: 0;
-  background: #000;
+  background: $heading;
   background: rgba(0,0,0,.7);
   padding: .5em;
   width: 100%;
@@ -62,7 +62,7 @@ article img.nofloat {
 
 .js [data-expand].lazyload {
   opacity: 0;
-  transform: scale(0.8);
+  transform: scale(.8);
 }
 
 .js [data-expand].lazyloaded {

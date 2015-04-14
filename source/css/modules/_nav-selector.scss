@@ -1,3 +1,28 @@
+// Layout only
+.l-country-selector {
+  @include breakpoint($desk) {
+    position: absolute;
+    width: 200px;
+    left: 200px;
+    bottom: 10px;
+  }
+}
+
+// layout only
+.l-language-selector {
+  @include breakpoint($desk) {
+    position: absolute;
+    width: auto;
+    right: 10px;
+    bottom: 32px;
+  }
+
+  @include breakpoint($deskplus) {
+    right: 0;
+  }
+}
+
+// generic class for NRO and language selector
 .nav-selector {
 
   .dropdown a {

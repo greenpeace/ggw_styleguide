@@ -1,94 +1,4 @@
-.block {
-  .field {
-    @include font-size($p);
-    margin-bottom: $def-mar;
-  }
-
-  .field-label {
-    font-weight: 700;
-  }
-
-  .field-item {
-    line-height: 1.35em;
-    word-wrap: break-word;
-  }
-
-  .field-inline-block {
-    display: inline-block;
-    width: 49%;
-    vertical-align: top;
-  }
-
-  .field-name-group-image,
-  .field-name-user-image {
-    float: left;
-    margin: 0 $def-mar $def-mar 0;
-    width: 140px;
-    height: 140px; //temp
-    background-color: $grey-l;
-    overflow: hidden;
-    position: relative;
-
-    @include breakpoint($tab) {
-      width: 210px;
-      height: 210px;
-    }
-
-    &:before {
-      color: $white;
-      position: relative;
-      @include font-size(80px);
-      z-index: 2;
-      line-height: 140px;
-      width: 100%;
-      @extend %load-icon;
-
-      @include breakpoint($tab) {
-        line-height: 210px;
-        @include font-size(112px);
-      }
-    }
-
-    img {
-      position: relative;
-      z-index: 3;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-  }
-
-  .field-name-user-image {
-    @extend %icon-user;
-  }
-
-  .field-name-group-image {
-    @extend %icon-users;
-  }
-
-
-  .field-name-group-name,
-  .field-name-user-name {
-    display: none;
-
-    @include breakpoint($desk) {
-      display: block;
-      color: $heading;
-      font-weight: 700;
-      @include font-size($h3);
-      line-height: 1.1em; // must be able to span multiple lines
-
-       span {
-        color: $grey-m;
-       }
-    }
-
-  }
-
-}
-
-.block .view-header .field {
+.view-header .field {
   display: inline-block;
   margin-right: $def-mar;
 }
@@ -98,6 +8,7 @@
   justify-content: space-between;
 }
 
+// edit group node
 @include breakpoint($smalltab) {
   .field-name-subscription-type .form-type-radio {
     display: block;

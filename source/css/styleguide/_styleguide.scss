@@ -1,5 +1,10 @@
 .style-guide p + p {
   margin-top: 0;
+
+  .l-main-column .block {
+    margin-top: $def-mar;
+  }
+
 }
 
 // create a 2 columns grid

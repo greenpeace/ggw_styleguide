@@ -38,6 +38,9 @@ comp:
     name: "Breadcrumbs"
     url: "/components/breadcrumbs.html"
   -
+    name: "Hero / Slideshow"
+    url: "/components/hero.html"
+  -
     name: "Progress bar"
     url: "/components/progress-bar.html"
   -

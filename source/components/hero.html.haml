@@ -1,0 +1,61 @@
+---
+title: Hero
+body_class: page-hero l-has-sidebar-first
+layout: styleguide
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "UI Components"
+    url: "./blocks.html"
+
+layout: styleguide
+---
+
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
+  = partial :"nav/uicomponents"
+#content.l-main-column
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Hero / Slideshow
+    .content
+      %p
+        The Hero element can be used to make content stand out. It is usually placed as the first block and always contains media. The media can be an image, a video or a map. The Hero element can be a single item or a slideshow. In case of a slideshow we use the
+        %a{:href => "#section-flexslider", "data-scroll" => ""} FlexSlider
+        module.
+    .code
+      :code
+        # lang: html
+          <div class='block hero'>
+            <img src="/photos/group_public_large.jpg" alt="description of the image" />
+            <p>
+              <span> Example with an image </span>
+            </p>
+          </div>
+
+  .region-highlight
+    .block.hero{:style => "min-height: 0"}
+      =image_tag("/photos/group_public_large.jpg", :alt => "description")
+      %p
+        %span Example with an image
+
+  %section.block#section-flexslider
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title FlexSlider
+    .content
+      :markdown
+        If you want to show multiple items in a hero block, you can use the FlexSlider module. The FlexSlider markup is simple and straightforward. First, start with a single containing element, `<div class=”flexslider hero”>` in this example. Then, create a `<ul class=”slides”>`. It is important to use this class because the slider targets that class specifically. Put your images and anything else you desire into each `<li>` and you are ready to rock.
+
+  %section.slider
+    .flexslider.hero{:style => "min-height: 0"}
+      %ul.slides
+        %li
+          %iframe.vimeo#player_2{:frameborder => "0", :width => "500", :height => "281", :src => "http://player.vimeo.com/video/27243869?api=1&player_id=player_2", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}
+        %li
+          %a{:href => "#"}
+            =image_tag("/images/slide3.jpg")
+            %p
+              %span This is a campaign slide to a separate page

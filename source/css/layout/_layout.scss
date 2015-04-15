@@ -92,17 +92,7 @@
     padding:88px $def-mar 0;
     border: none;
     min-height: none;
-    overflow: visible;
-    flex: 1;
-    display: flex;
-    flex-flow: row wrap;
-    align-content: flex-start;
-    align-items: flex-start;
-    -ms-flex-preferred-size: auto;
-
-    .no-flexbox & {
-      overflow: hidden;
-    }
+    overflow: hidden;
 
     // .container doesn't get applied
     @if $oldie {
@@ -181,16 +171,6 @@
     position: relative;
     top: 44px;
     z-index: 2;
-  }
-}
-
-// block presented as a single image slideshow
-@include breakpoint($desk) {
-  .region-highlight {
-    display: block;
-    flex: 1 1 100%;
-    order: 0;
-    margin-bottom: $def-mar;
   }
 }
 

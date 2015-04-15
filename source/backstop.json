@@ -6,28 +6,49 @@
       "height": 480
     },
     {
-      "name": "tablet_v",
-      "width": 568,
+      "name": "tablet_small",
+      "width": 480,
+      "height": 768
+    },
+    {
+      "name": "tablet",
+      "width": 768,
       "height": 1024
     },
     {
-      "name": "tablet_h",
+      "name": "desktop",
       "width": 1024,
       "height": 768
     }
   ],
   "scenarios": [
     {
-      "label": "Greenwire",
-      "url": "http://ggw-prototype.goalgorilla.com/prototype/lu/index.html",
+      "label": "Anonymous home",
+      "url": "../../../build/prototype/an/index.html",
+      "hideSelectors": [
+        ".design-status",
+        ".cookiewall"
+      ],
+      "removeSelectors": [],
+      "selectors": [
+        ".l-branding-header",
+        ".header",
+        ".footer",
+        ".block-events",
+        "#content",
+        "#welcome"
+      ],
+      "readyEvent": null,
+      "delay": 500
+    },
+    {
+      "label": "Forms",
+      "url": "../../../build/components/forms.html",
       "hideSelectors": [],
       "removeSelectors": [],
       "selectors": [
-        "header",
-        ".block-events",
-        ".comment-form-holder",
-        ".l-branding-header",
-        ".footer"
+        "#test-basic-form",
+        "#test-horizontal-form"
       ],
       "readyEvent": null,
       "delay": 500

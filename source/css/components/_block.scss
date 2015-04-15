@@ -59,11 +59,12 @@
   @include breakpoint($desk) {
     width: 23.5%;
   }
-}
 
-.sidebar .enrollments img {
-  margin: auto;
-  display: flex;
+  img {
+    margin: auto;
+    display: flex;
+  }
+
 }
 
 .members a {

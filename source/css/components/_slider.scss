@@ -1,7 +1,3 @@
-.slider {
-  flex: 1 1 100%;
-}
-
 // Browser Resets
 .flex-container a:active,
 .flexslider a:active,
@@ -19,78 +15,7 @@
 }
 
 .slides > li {-webkit-backface-visibility: hidden; display: none; position: relative;} // Hide the slides before the JS is loaded. Avoids image jumping
-.slides img {width: 100%; display: block;}
 
-.slides p {
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  position: absolute;
-  width: 100%;
-  bottom: 0px;
-  margin: 0;
-  background: #000;
-  background: rgba(0,0,0,.9);
-  color: $white;
-  padding: 0 .5em;
-  text-align: center;
-  @include font-size(12px);
-
-  .youtube {
-    line-height: 1.5em;
-  }
-
-  @include breakpoint($smalltab) {
-    @include font-size(16px);
-    padding: .5em;
-    font-weight: 700;
-  }
-
-  @include breakpoint($desk) {
-    background: none;
-    @include font-size(22px);
-    bottom: 15%;
-    right: 7%;
-    width: auto;
-    max-width: 45%;
-    white-space: normal;
-    text-align: right;
-    text-overflow: initial;
-
-    span {
-      background: #000;
-      background: rgba(0,0,0,.8);
-      box-shadow: rgba(0,0,0,.8) 6px 0 0 0,rgba(0,0,0,.8) -6px 0 0 0;
-      -webkit-box-decoration-break: clone;
-      box-decoration-break: clone;
-      padding: 4px 6px;
-      line-height: 33px;
-    }
-  }
-}
-
-.slides .button {
-  @extend %element-hidden;
-
-  &:active,
-  &.active {
-    top: auto;
-  }
-
-  @include breakpoint($smalltab) {
-    position: absolute;
-    display: inline-block;
-    bottom: 3.5em;
-    right: $def-mar;
-  }
-
-  @include breakpoint($desk) {
-    bottom: 1em;
-    right: 7%;
-  }
-
-}
 
 .flex-pauseplay span {text-transform: capitalize;}
 
@@ -108,17 +33,13 @@ html[xmlns] .slides {display: block;}
 // FlexSlider Default Theme
 
 .flexslider {
-  margin: 0;
-  position: relative;
-  zoom: 1;
 
   @include breakpoint($tab) {
     @include block-rich;
-    padding:0;
+    padding: 0;
   }
 
   @include breakpoint($desk) {
-    border: 4px $white solid;
     margin: $def-mar 0;
   }
 
@@ -136,29 +57,18 @@ html[xmlns] .slides {display: block;}
   max-height: 2000px;
   transition: all 1s ease;
 
-  @include breakpoint($desk) {
-    min-height: 340px;
-  }
+  //@include breakpoint($desk) {
+  //  min-height: 340px;
+  //}
 
 }
 
-.slidermap {
-  display:block;
-  height: 250px;
-  width: 100%;
-
-  @include breakpoint($desk) {
-    height: 440px;
-  }
-}
 
 .loading .flex-viewport { max-height: 300px; }
 .flexslider .slides { zoom: 1; }
 .carousel li { margin-right: 5px; }
 
 // Direction Nav
-
-
 .flex-direction-nav {
   @if $oldie {
     *height: 0;

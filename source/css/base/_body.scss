@@ -13,12 +13,12 @@ html {
 
 body {
   @include font-size($base-font-size);
+
   @include breakpoint($desk) {
     background-color: $grey-sl;
-
     color: $base-desk;
   }
-  
+
   background-color: $white;
   color: $base;
   font-family: $base-font-family;

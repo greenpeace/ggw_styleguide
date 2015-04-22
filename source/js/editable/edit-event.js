@@ -72,14 +72,18 @@ $(function() {
   $('.input-good').click(function(e) {
     e.preventDefault(); // stop default behaviour
     e.stopPropagation(); // stop the click event from bubbling up when we click on the trigger
-    $('<div class="form-sent form-success"><i class="icon icon-check"></i> <p>Your changes have been saved.</p></div>').insertBefore('.l-main').hide().fadeIn('slow').delay(5000).fadeOut('slow');
-    $('html, body').animate({scrollTop: 0}, 1000);
+
+    var target = $(this).data('target');
+    if (target != undefined || target != null) {
+      window.location = './' + target;
+    }
+
   });
 
-
-  $('.input-false').click(function(e) {
+  $('.input-false').one('click', function(e) {
     e.preventDefault(); // stop default behaviour
     e.stopPropagation(); // stop the click event from bubbling up when we click on the trigger
+    $('.help-block').removeClass('element-invisible');
     $('<div class="form-sent form-error"><i class="icon icon-cancel"></i> <p>You need to fill in the required fields.</p></div>').insertBefore('.l-main').hide().fadeIn('slow');
     $('.has-error-hidden').removeClass('has-error-hidden').addClass('has-error');
     $('html, body').animate({

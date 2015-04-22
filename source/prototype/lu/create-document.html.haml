@@ -47,6 +47,7 @@ menu:
             Title
             %span.form-required{:title => "This field is required."} *
           %input#edit-field-title.form-text{:name => "edit-field-title", :type => "text", :value => "", :tabindex => "1"}/
+          %span.help-block.element-invisible Please fill in a correct title. (example)
         .form-item
           %label.form-label{:for => "field-edit-body"}
             Body text
@@ -74,9 +75,11 @@ menu:
             .fileupload-process
               #total-progress.progress.progress-striped.active{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "0", :role => "progressbar"}
                 .progress-bar.progress-bar-success{"data-dz-uploadprogress" => "", :style => "width:0%;"}
+        .form-item
+          .form-description The maximum size per file is 15MB. Allowed file formats are doc, docx, xls, xlsx, ppt, pptx, odt, odp, ods and pdf.
         .form-item.dropzone-droparea
           .dz-message.disabled
-            Drop files here or click to upload.
+            Drop files here or click on the 'Add files' button above to upload.
           %ul#previews.files-table
             %li#template.file-row
               .image-preview
@@ -112,7 +115,7 @@ menu:
           %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple", :tabindex => "4"}
             %option{:selected => ""} English, US
             %option French
-
+          %span.help-block.element-invisible Please select at least one language. (example)
         .form-item
           %label Tags
           %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "", :tabindex => "5"}
@@ -156,7 +159,7 @@ menu:
 
   %section#section-submit.section-submit
     .form-actions.form-wrapper
-      %input{:type => "submit", :class => "button btn-primary btn-l input-false", :value => "Submit", :tabindex => "7"}
+      %input{:type => "submit", :class => "button btn-primary btn-l input-false", :value => "Save and view", :tabindex => "7", "data-target" => "document.html#form-saved"}
       %a.button.btn-l{:href => "./documents.html", :tabindex => "8"} Cancel
 
 :javascript

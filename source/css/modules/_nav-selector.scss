@@ -1,68 +1,18 @@
 // Layout only
 .l-country-selector {
+
   @include breakpoint($desk) {
     position: absolute;
     width: 200px;
     left: 200px;
     bottom: 10px;
-  }
-}
-
-// layout only
-.l-language-selector {
-  @include breakpoint($desk) {
-    position: absolute;
-    width: auto;
-    right: 10px;
-    bottom: 32px;
-  }
-
-  @include breakpoint($deskplus) {
-    right: 0;
-  }
-}
-
-// generic class for NRO and language selector
-.nav-selector {
-
-  .dropdown a {
-    border-top: 1px solid $grey-l;
-    color: $base;
-    display: block;
-    padding: 1em 1em 1em 2em;
-    font-weight: 700;
-  }
-
-  .dropdown-list a {
-    font-weight: 400;
-    color: $grey-d;
-  }
-
-  .country-img {
-    @extend %element-hidden;
-  }
-
-  @include breakpoint($desk) {
 
     .trigger {
-      border: 0;
-      font-weight: 300;
-      height: 100%;
-      position: relative;
       color: $white;
-      padding: 5px;
-
-      &:before {
-        @include element-hidden;
-      }
-
     }
 
     .dropdown {
       width: 100%;
-      position: absolute;
-      z-index: 9999999;
-      text-align: left;
     }
 
     .country-img {
@@ -79,16 +29,72 @@
       display: inline-block;
     }
 
-    .dropdown-open .country-img {
-      background-color: $white;
-      background-position: -4px -231px;
-    }
-
     .dropdown-open {
       background-color: $white;
       color: $base;
       display: block;
       border-radius: 4px 4px 0 0;
+
+      .country-img {
+        background-color: $white;
+        background-position: -4px -231px;
+      }
+
+    }
+
+  }
+
+}
+
+// layout only
+.l-language-selector {
+  @include breakpoint($desk) {
+    position: absolute;
+    width: auto;
+    right: 10px;
+    bottom: 34px;
+  }
+
+  @include breakpoint($deskplus) {
+    right: 0;
+  }
+}
+
+// generic class for NRO and language selector
+.nav-selector {
+
+  .dropdown a {
+    border-top: 1px solid $grey-l;
+    color: $base;
+    display: block;
+    padding: 1em 1em 1em 2em;
+    font-weight: 400;
+    color: $grey-d;
+  }
+
+  .country-img {
+    @extend %element-hidden;
+  }
+
+  @include breakpoint($desk) {
+
+    .trigger {
+      border: 0;
+      font-weight: 300;
+      height: 100%;
+      position: relative;
+      padding: 5px;
+
+      &:before {
+        @include element-hidden;
+      }
+
+    }
+
+    // extra override of mobile
+    .dropdown {
+      position: absolute;
+      z-index: 9999999;
     }
 
     .dropdown-list {
@@ -104,6 +110,7 @@
 
     .dropdown a {
       padding: 3px 10px;
+      line-height: 18px;
       border: 0;
       font-weight: 300;
       @include font-size(13px);
@@ -119,40 +126,41 @@
 
 }
 
+
 @include breakpoint($desk) {
 
-  .language-selector .trigger {
-    @include font-size(13px);
-    padding-top: 0;
-    top: 5px;
-
-    &:after {
-      width: 0;
-      height: 0;
-      border: .313em solid transparent; // 5
-      border-bottom: 0;
-      content: '';
-      vertical-align: middle;
-      display: inline-block;
-      position: relative;
-      right: -.313em; // 5
-      border-top-color: $white;
-      margin: 0 .3em;
-    }
-
-    &.dropdown-open:after {
-      border-top-color: $base;
-    }
-
-  }
-
   .language-selector {
-    text-align: right;
-    width: 100px;
 
-    .dropdown {
-      left: auto;
-      right: 0;
+    .trigger {
+      @include font-size(13px);
+      padding: 0 5px;
+      text-align: right;
+      color: $white;
+
+      &:after {
+        width: 0;
+        height: 0;
+        border: .313em solid transparent; // 5
+        border-bottom: 0;
+        content: '';
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        right: -.313em; // 5
+        border-top-color: $white;
+        margin: 0 .3em;
+      }
+
+    }
+
+
+
+    .dropdown-list {
+      border-radius: 3px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, .13);
+      border: 1px solid $grey-l;
+      border-color: rgba(0, 0, 0, .2);
+      padding: 4px 0;
     }
 
   }

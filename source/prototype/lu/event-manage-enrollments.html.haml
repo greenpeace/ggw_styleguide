@@ -24,6 +24,9 @@ design_status: Needs review
 
     .content
 
+      .view-filters
+        = partial :"nav/manage-enrollments-actions"
+
       .view-search-results
         .view-content
           %table.tablesaw{"data-tablesaw-mode" => "swipe"}
@@ -36,10 +39,11 @@ design_status: Needs review
                 %th.views-field-username Username
                 %th.views-field-email Email
                 %th Phone
-                %th Is going?
-                %th Roles
-                %th Enrolled on
-                %th Comment
+                %th Status
+                %th Member roles
+                %th Member since
+                %th Request message
+                %th{"data-tablesaw-priority" => "persist"} Actions
 
             %tbody
               - 25.times do |num|
@@ -59,12 +63,21 @@ design_status: Needs review
                   %td
                     = rand(100000000)
                   %td
-                    Yes
+                    active
                   %td
                     -
                   %td
                     = lorem.date
                   %td
                     = lorem.sentence
+                  %td
+                    .btn-group
+                      %a.button
+                        %i.icon.icon-pencil
+                        %span.element-hidden edit
+                      %a.button
+                        %i.icon.icon-trash
+                        %span.element-hidden delete
+
           .align-center
             %a.button{:href => "#"} show some more

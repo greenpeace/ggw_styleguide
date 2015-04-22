@@ -48,6 +48,10 @@
 
   }
 
+  &::selection {
+    background: none;
+  }
+
 }
 
 %button {

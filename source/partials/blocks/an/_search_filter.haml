@@ -31,10 +31,10 @@
 
           .views-widget.inline-fields
             .form-item.form-type-textfield#eventbefore
-              %input.form-text{:type => "date", :placeholder => "select date"}
+              %input.form-text.input-date{:type => "text", :placeholder => "select date"}
             %span.separator#eventbetween and
             .form-item.form-type-textfield#eventafter
-              %input.form-text{:type => "date", :placeholder => "select date"}
+              %input.form-text.input-date{:type => "text", :placeholder => "select date"}
 
       - if current_page.data.search_location == "y"
 
@@ -79,10 +79,10 @@
 
           .views-widget.inline-fields
             .form-item.form-type-textfield#createdbefore
-              %input.form-text{:type => "date", :placeholder => "select date"}
+              %input.form-text.input-date{:type => "text", :placeholder => "select date"}
             %span.separator#createdbetween and
             .form-item.form-type-textfield#createdafter
-              %input.form-text{:type => "date", :placeholder => "select date"}
+              %input.form-text.input-date{:type => "text", :placeholder => "select date"}
 
 
       .views-exposed-widget.views-submit-button

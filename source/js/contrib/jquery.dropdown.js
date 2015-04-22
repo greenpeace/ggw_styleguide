@@ -105,7 +105,9 @@ if(jQuery) (function($) {
         if( dropdown.length === 0 || !trigger ) return;
 
         // Exclude off-canvas nav elements from this function
-        if (!(dropdown).hasClass("relative")) {
+        if ( (dropdown.hasClass("relative") && ($(window).width() < 900)) ) {
+            return;
+        } else {
 
           // Position the dropdown relative-to-parent...
           if (dropdown.hasClass('dropdown-relative')) {
@@ -125,6 +127,16 @@ if(jQuery) (function($) {
           }
         }
     }
+
+    var resizeTimer;
+
+    // On resize, run the function and reset the timeout
+    // 250 is the delay in milliseconds.
+    $(window).resize(function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(position, 250);
+    });
+
 
     $(document).on('click.dropdown', '[data-dropdown]', show);
     $(document).on('click.dropdown', hide);

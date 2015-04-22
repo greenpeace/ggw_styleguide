@@ -1,5 +1,9 @@
 // SELECT
 
+select {
+  max-width: 100%;
+}
+
 //create a width to where chosen can stretch to
 .form-type-select {
   max-width: 400px;

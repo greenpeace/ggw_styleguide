@@ -71,7 +71,7 @@
             %a.trigger{"data-dropdown" => "#dropdown-content-country", :href => "#"}
               International
               %span.country-img
-          #dropdown-content-country.dropdown.dropdown-scroll.relative
+          #dropdown-content-country.dropdown.dropdown-scroll.relative.dropdown-relative
             %ul.dropdown-list
               - data.nav.nro.each do |item|
                 %li
@@ -80,7 +80,7 @@
         .l-language-selector.language-selector.nav-selector
           .dropdown-controller
             %a.trigger{"data-dropdown" => "#dropdown-content-language", :href => "#"} Francais
-          #dropdown-content-language.dropdown.dropdown-scroll.relative
+          #dropdown-content-language.dropdown.dropdown-scroll.relative.dropdown-anchor-right.dropdown-relative
             %ul.dropdown-list
               %li
                 %a{:href => "#"} Francais

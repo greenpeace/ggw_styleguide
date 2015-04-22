@@ -83,17 +83,17 @@ menu:
               Start:
               %span.form-required{:title => "This field is required."} *
           .form-item.field-name-event-date-und-0-value-date
-            %input#edit-field-event-date-und-0-value-date.form-text.input-small{:type => "date", :value => "", :placeholder => "date", :tabindex => "5"}
+            %input#edit-field-event-date-und-0-value-date.form-text.input-small.input-date{:type => "text", :value => "", :placeholder => "date", :tabindex => "5"}
           .form-item.field-name-event-date-und-0-value-time
-            %input#edit-field-event-date-und-0-value-time.form-text.input-small{:type => "time", :value => "", :placeholder => "time", :tabindex => "6"}
+            %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time{:type => "text", :value => "", :placeholder => "time", :tabindex => "6"}
         .form-wrapper.row.deskwidth50
           .inline-label
             %label
               End:
           .form-item.field-name-event-date-und-1-value-date
-            %input#edit-field-event-date-und-1-value-date.form-text.input-small{:type => "date", :value => "", :placeholder => "date", :tabindex => "7"}
+            %input#edit-field-event-date-und-1-value-date.form-text.input-small.input-date{:type => "text", :value => "", :placeholder => "date", :tabindex => "7"}
           .form-item.field-name-event-date-und-1-value-time
-            %input#edit-field-event-date-und-1-value-time.form-text.input-small{:type => "time", :value => "", :placeholder => "time", :tabindex => "8"}
+            %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time{:type => "text", :value => "", :placeholder => "time", :tabindex => "8"}
 
         .form-wrapper.wrapper
 
@@ -234,8 +234,8 @@ menu:
 
   %section#section-submit.section-submit
     .form-actions.form-wrapper
-      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Submit", :tabindex => "7"}
-      %a.button.btn-l{:href => "./events.html", :tabindex => "8"} Cancel
+      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "event-full.html#form-saved"}
+        %a.button.btn-l{:href => "./events.html", :tabindex => "8"} Cancel
 
 #manual-coordinates-form.block.white-popup.mfp-hide
   %i.block-icon.icon-map.icon-bg-action
@@ -250,7 +250,7 @@ menu:
           %label.form-label{:for => "longitude"} Longitude
           %input.form-text#longitude{:type => "text", :value => ""}
       .form-actions.form-wrapper
-        %input{:type => "submit", :class => "button btn-primary", :value => "Save"}
+        %input{:type => "submit", :class => "button btn-primary", :value => "Submit"}
         %input{:type => "submit", :class => "button btn-close", :value => "Cancel"}
 
 

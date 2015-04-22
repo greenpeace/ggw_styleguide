@@ -292,7 +292,7 @@ menu:
 
   %section#section-submit.section-submit
     .form-actions.form-wrapper
-      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Submit", :tabindex => "7"}
+      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save  and view", :tabindex => "7", "data-target" => "group-home-enrolled.html#form-saved"}
       %a.button.btn-l{:href => "./groups.html", :tabindex => "8"} Cancel
 
 #manual-coordinates-form.block.white-popup.mfp-hide
@@ -308,7 +308,7 @@ menu:
           %label.form-label{:for => "longitude"} Longitude
           %input.form-text#longitude{:type => "text", :value => ""}
       .form-actions.form-wrapper
-        %input{:type => "submit", :class => "button btn-primary", :value => "Save"}
+        %input{:type => "submit", :class => "button btn-primary", :value => "Submit"}
         %input{:type => "submit", :class => "button btn-close", :value => "Cancel"}
 
 

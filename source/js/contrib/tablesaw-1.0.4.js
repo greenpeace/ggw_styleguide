@@ -21,6 +21,23 @@
   }
 
 })( jQuery );
+
+
+if( typeof Tablesaw === "undefined" ) {
+  Tablesaw = {
+    i18n: {
+      modes: [ 'Stack', 'Swipe', 'Toggle' ],
+      columns: 'Col<span class=\"a11y-sm\">umn</span>s',
+      columnBtnText: 'Columns',
+      columnsDialogError: 'No eligible columns.',
+      sort: 'Sort'
+    }
+  };
+}
+if( !Tablesaw.config ) {
+  Tablesaw.config = {};
+}
+
 ;(function( $ ) {
   var pluginName = "table",
     classes = {
@@ -32,7 +49,7 @@
       refresh: "tablesawrefresh"
     },
     defaultMode = "stack",
-    initSelector = "table[data-mode],table[data-sortable]";
+    initSelector = "table[data-tablesaw-mode],table[data-tablesaw-sortable]";
 
   var Table = function( element ) {
     if( !element ) {
@@ -42,7 +59,7 @@
     this.table = element;
     this.$table = $( element );
 
-    this.mode = this.$table.attr( "data-mode" ) || defaultMode;
+    this.mode = this.$table.attr( "data-tablesaw-mode" ) || defaultMode;
 
     this.init();
   };
@@ -57,7 +74,7 @@
 
     var colstart = this._initCells();
 
-    this.$table.trigger( events.create, [ this.mode, colstart ] );
+    this.$table.trigger( events.create, [ this, colstart ] );
   };
 
   Table.prototype._initCells = function() {
@@ -118,12 +135,14 @@
       this.className = this.className.replace( /\bmode\-\w*\b/gi, '' );
     });
 
-    $( window ).off( 'resize.' + this.$table.attr( 'id' ) );
+    var tableId = this.$table.attr( 'id' );
+    $( document ).unbind( "." + tableId );
+    $( window ).unbind( "." + tableId );
 
     // other plugins
-    this.$table.trigger( events.destroy, [ this.mode ] );
+    this.$table.trigger( events.destroy, [ this ] );
 
-    this.$table.removeAttr( 'data-mode' );
+    this.$table.removeAttr( 'data-tablesaw-mode' );
 
     this.$table.removeData( pluginName );
   };
@@ -234,21 +253,31 @@
 
 ;(function( win, $, undefined ){
 
+  $.extend( Tablesaw.config, {
+    swipe: {
+      horizontalThreshold: 15,
+      verticalThreshold: 30
+    }
+  });
 
   function createSwipeTable( $table ){
 
     var $btns = $( "<div class='tablesaw-advance'></div>" ),
-      $prevBtn = $( "<a href='#' class='tablesaw-nav-btn left' title='Previous Column'></a>" ).appendTo( $btns ),
-      $nextBtn = $( "<a href='#' class='tablesaw-nav-btn right' title='Next Column'></a>" ).appendTo( $btns ),
+      $prevBtn = $( "<a href='#' class='tablesaw-nav-btn btn btn-micro left' title='Previous Column'></a>" ).appendTo( $btns ),
+      $nextBtn = $( "<a href='#' class='tablesaw-nav-btn btn btn-micro right' title='Next Column'></a>" ).appendTo( $btns ),
       hideBtn = 'disabled',
       persistWidths = 'tablesaw-fix-persist',
       $headerCells = $table.find( "thead th" ),
-      $headerCellsNoPersist = $headerCells.not( '[data-priority="persist"]' ),
+      $headerCellsNoPersist = $headerCells.not( '[data-tablesaw-priority="persist"]' ),
       headerWidths = [],
       $head = $( document.head || 'head' ),
       tableId = $table.attr( 'id' ),
       // TODO switch this to an nth-child feature test
       isIE8 = $( 'html' ).is( '.ie-lte8' );
+
+    if( !$headerCells.length ) {
+      throw new Error( "tablesaw swipe: no header cells found. Are you using <th> inside of <thead>?" );
+    }
 
     // Calculate initial widths
     $table.css('width', 'auto');
@@ -283,7 +312,7 @@
     }
 
     function isPersistent( headerCell ) {
-      return $( headerCell ).is( '[data-priority="persist"]' );
+      return $( headerCell ).is( '[data-tablesaw-priority="persist"]' );
     }
 
     function unmaintainWidths() {
@@ -292,9 +321,11 @@
     }
 
     function maintainWidths() {
-      var prefix = '#' + tableId + ' ',
+      var prefix = '#' + tableId + '.tablesaw-swipe ',
         styles = [],
-        tableWidth = $table.width();
+        tableWidth = $table.width(),
+        hash = [],
+        newHash;
 
       $headerCells.each(function( index ) {
         var width;
@@ -303,14 +334,28 @@
 
           // Only save width on non-greedy columns (take up less than 75% of table width)
           if( width < tableWidth * 0.75 ) {
+            hash.push( index + '-' + width );
             styles.push( prefix + ' .tablesaw-cell-persist:nth-child(' + ( index + 1 ) + ') { width: ' + width + 'px; }' );
           }
         }
       });
+      newHash = hash.join( '_' );
 
-      unmaintainWidths();
       $table.addClass( persistWidths );
-      $head.append( $( '<style>' + styles.join( "\n" ) + '</style>' ).attr( 'id', tableId + '-persist' ) );
+
+      var $style = $( '#' + tableId + '-persist' );
+      // If style element not yet added OR if the widths have changed
+      if( !$style.length || $style.data( 'hash' ) !== newHash ) {
+        // Remove existing
+        $style.remove();
+
+        if( styles.length ) {
+          $( '<style>' + styles.join( "\n" ) + '</style>' )
+            .attr( 'id', tableId + '-persist' )
+            .data( 'hash', newHash )
+            .appendTo( $head );
+        }
+      }
     }
 
     function getNext(){
@@ -347,28 +392,54 @@
       return pair[ 1 ] > -1 && pair[ 1 ] < $headerCellsNoPersist.length;
     }
 
+    function matchesMedia() {
+      var matchMedia = $table.attr( "data-tablesaw-swipe-media" );
+      return !matchMedia || ( "matchMedia" in win ) && win.matchMedia( matchMedia ).matches;
+    }
+
     function fakeBreakpoints() {
+      if( !matchesMedia() ) {
+        return;
+      }
+
       var extraPaddingPixels = 20,
         containerWidth = $table.parent().width(),
-        sum = 0;
+        persist = [],
+        sum = 0,
+        sums = [],
+        visibleNonPersistantCount = $headerCells.length;
 
       $headerCells.each(function( index ) {
         var $t = $( this ),
-          isPersist = $t.is( '[data-priority="persist"]' );
-        sum += headerWidths[ index ] + ( isPersist ? 0 : extraPaddingPixels );
+          isPersist = $t.is( '[data-tablesaw-priority="persist"]' );
 
-        if( isPersist ) {
+        persist.push( isPersist );
+
+        sum += headerWidths[ index ] + ( isPersist ? 0 : extraPaddingPixels );
+        sums.push( sum );
+
+        // is persistent or is hidden
+        if( isPersist || sum > containerWidth ) {
+          visibleNonPersistantCount--;
+        }
+      });
+
+      var needsNonPersistentColumn = visibleNonPersistantCount === 0;
+
+      $headerCells.each(function( index ) {
+        if( persist[ index ] ) {
+
           // for visual box-shadow
           persistColumn( this );
           return;
         }
 
-        if( sum > containerWidth ) {
-          hideColumn( this );
-        } else {
+        if( sums[ index ] <= containerWidth || needsNonPersistentColumn ) {
+          needsNonPersistentColumn = false;
           showColumn( this );
+        } else {
+          hideColumn( this );
         }
-
       });
 
       if( !isIE8 ) {
@@ -405,30 +476,42 @@
       e.preventDefault();
     });
 
+    function getCoord( event, key ) {
+      return ( event.touches || event.originalEvent.touches )[ 0 ][ key ];
+    }
+
     $table
       .bind( "touchstart.swipetoggle", function( e ){
-        var originX = ( e.touches || e.originalEvent.touches )[ 0 ].pageX,
-          originY = ( e.touches || e.originalEvent.touches )[ 0 ].pageY,
+        var originX = getCoord( e, 'pageX' ),
+          originY = getCoord( e, 'pageY' ),
           x,
           y;
 
+        $( win ).off( "resize", fakeBreakpoints );
+
         $( this )
           .bind( "touchmove", function( e ){
-            x = ( e.touches || e.originalEvent.touches )[ 0 ].pageX;
-            y = ( e.touches || e.originalEvent.touches )[ 0 ].pageY;
-
-            if( Math.abs( x - originX ) > 15 && Math.abs( y - originY ) < 20 ) {
+            x = getCoord( e, 'pageX' );
+            y = getCoord( e, 'pageY' );
+            var cfg = Tablesaw.config.swipe;
+            if( Math.abs( x - originX ) > cfg.horizontalThreshold && Math.abs( y - originY ) < cfg.verticalThreshold ) {
               e.preventDefault();
             }
           })
           .bind( "touchend.swipetoggle", function(){
-            if( x - originX < 15 ){
-              advance( true );
-            }
-            if( x - originX > -15 ){
-              advance( false );
+            var cfg = Tablesaw.config.swipe;
+            if( Math.abs( y - originY ) < cfg.verticalThreshold ) {
+              if( x - originX < -1 * cfg.horizontalThreshold ){
+                advance( true );
+              }
+              if( x - originX > cfg.horizontalThreshold ){
+                advance( false );
+              }
             }
 
+            window.setTimeout(function() {
+              $( win ).on( "resize", fakeBreakpoints );
+            }, 300);
             $( this ).unbind( "touchmove touchend" );
           });
 
@@ -460,11 +543,10 @@
 
 
   // on tablecreate, init
-  $( document ).on( "tablesawcreate", "table", function( e, mode ){
+  $( document ).on( "tablesawcreate", function( e, Tablesaw ){
 
-    var $table = $( this );
-    if( mode === 'swipe' ){
-      createSwipeTable( $table );
+    if( Tablesaw.mode === 'swipe' ){
+      createSwipeTable( Tablesaw.$table );
     }
 
   } );

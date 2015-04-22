@@ -1,8 +1,11 @@
+
+// doesn't look like this is used anymore
 .view-header .field {
   display: inline-block;
   margin-right: $def-mar;
 }
 
+// manage group members
 .flexbox .page-manage-group-members .block .view-header {
   display: flex;
   justify-content: space-between;

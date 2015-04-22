@@ -75,6 +75,7 @@
 }
 
 .l-main {
+  @extend %cf;
   margin: 0 auto;
   padding: 50px 0 0;
   width: 100%;
@@ -82,8 +83,6 @@
   transition: transform 500ms ease;
   z-index: 1;
   position: relative;
-  overflow: hidden;
-  min-height: 100vh;
   -webkit-overflow-scrolling: touch;
   transform: translate3d(0, 0, 0);
 
@@ -92,7 +91,6 @@
     padding:88px $def-mar 0;
     border: none;
     min-height: none;
-    overflow: hidden;
 
     // .container doesn't get applied
     @if $oldie {

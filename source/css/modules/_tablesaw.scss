@@ -9,35 +9,26 @@
 
 .tablesaw {
   empty-cells: show;
-
-  @include breakpoint($desk) {
-    width: 96%;
-    margin-right: 25px;
-  }
-}
-
-@include breakpoint($desk) {
-  .no-sidebar .tablesaw {
-    width: 98%;
-  }
-}
-
-.tablesaw-fix-persist {
+  max-width: 100%;
+  width: 100%;
   table-layout: fixed;
 }
 
-.tablesaw-bar {
-  clear: both;
+.mode-swipe {
+  position: absolute;
+  right: 0;
+  margin-top: -45px;
 }
 
-.tablesaw-bar.mode-swipe {
-  position: relative;
+.tablesaw-advance {
+  @extend .btn-group;
 }
 
 .tablesaw-nav-btn {
-  position: absolute;
-  line-height: 26px;
-  width: 25px;
+  @extend %button;
+  @extend .btn-s;
+  float: left;
+  padding: 2px 8px;
 
   &:hover {
     text-decoration: none;
@@ -48,45 +39,21 @@
   }
 }
 
-// Firefox hack
-@-moz-document url-prefix() {
-  .tablesaw-nav-btn {
-    line-height: 27px;
-  }
-}
-
-//IE has different line-height
-.ie .tablesaw-nav-btn {
-  line-height: 28px;
-}
-
-//IE10+ hack, ie1- + do not listen to condional stylesheets
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .tablesaw-nav-btn {
-    line-height: 28px;
-  }
-}
-
 .tablesaw-nav-btn.left {
-  left: 165px;
-
-  .is-content-manager & {
-    left: 185px;
-  }
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .tablesaw-nav-btn.right {
-  right: 0;
-  padding-right: .5em;
-  text-align: right;
-  border-bottom: 1px solid $grey-l;
-  background: $background;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -1px;
 }
 
 .tablesaw-nav-btn:before {
   @extend %load-icon;
   color: $heading;
-  @include font-size($h3);
+  @include font-size($h4);
 }
 
 .tablesaw-nav-btn.left:before {
@@ -95,6 +62,7 @@
 
 .tablesaw-nav-btn.right:before {
   @extend %icon-right-open;
+
 }
 
 .tablesaw-nav-btn.disabled {
@@ -121,7 +89,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  min-width: 120px;
   border: none;
 }
 
@@ -133,19 +100,30 @@
   border-bottom: 1px solid #dfdfdf;
 }
 
-.tablesaw-swipe th.tablesaw-cell-hidden,
-.tablesaw-swipe td.tablesaw-cell-hidden {
+.tablesaw-cell-hidden {
   @extend %element-hidden;
 }
 
-// Specific width for Drupal columns
-// Title must be name + avatar
-@each $column, $width in (body: 200, title: 177, avatar: 77, image: 77, name: 100, views-bulk-operations: 22, email: 200) {
-
-  .tablesaw th.views-field-#{$column} {
-    width: #{$width}px;
-    min-width: #{$width}px;
-  }
-
+// persistant styling
+.tablesaw thead .tablesaw-cell-persist {
+  background: darken($background, 8%);
+  color: $heading;
 }
+
+.tablesaw .tablesaw-cell-persist:last-child {
+  text-align: center;
+}
+
+.tablesaw th.views-field-views-bulk-operations{
+  min-width: 23px;
+  width: 23px;
+}
+
+.tablesaw th.views-field-avatar,
+.tablesaw th.views-field-image {
+  min-width: 77px;
+  width: 77px;
+}
+
+
 

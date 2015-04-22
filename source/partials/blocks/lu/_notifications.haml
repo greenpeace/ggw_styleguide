@@ -1,7 +1,7 @@
 #notifications-panel.attention-panel.dropdown.dropdown-tip.dropdown-anchor-right
   .dropdown-panel.content
 
-    .tabwrapper
+    .tabwrapper.tabable-wrapper
       %ul.tabs
         %li
           =nav_link 'Alerts (4)', '#notialerts', :class => 'tab'
@@ -149,7 +149,7 @@
                   has invited you to join group 'local group Amsterdam'.
                 .notifications-footer
                   %span.timestamp
-                    1 days ago
+                    1 day ago
 
           %article.notification.notification-read
             %a.media{:href => "./index.html#block-comments"}

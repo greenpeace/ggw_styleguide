@@ -71,10 +71,14 @@ $(function() {
   }
 
   if (window.location.hash) {
-    $('.action-menu li, .l-main-column .current, .sidebar .current').removeClass('current');
-    var hash = window.location.hash.substring(1);
-    $('#' + hash).addClass('current');
-    $('.action-menu li a[href="#' + hash + '"]').parent().addClass('current');
+    var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+    if (hash != 'form-saved') {
+
+      $('.action-menu li, .l-main-column .current, .sidebar .current').removeClass('current');
+      $('#' + hash).addClass('current');
+      $('.action-menu li a[href="#' + hash + '"]').parent().addClass('current');
+    }
+
   }
 
   $('.action-menu .tab').click(function(e){
@@ -114,6 +118,9 @@ $(function() {
     });
 
     $(currentTab).addClass('current');
+
+    e.preventDefault();
+    $('html, body').animate({scrollTop: 0}, 300);
 
   });
 

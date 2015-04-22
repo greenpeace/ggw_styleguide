@@ -1,9 +1,9 @@
-.block .node-type-small {
+.node-type-small {
   margin: 0 0 .5em;
   padding-left: 1em;
 
   h2 {
-    @include font-size (14px);
+    @include font-size($p);
     margin: 0;
 
     &:before {
@@ -20,6 +20,10 @@
       display: block;
     }
 
+  }
+
+  .date-display-single {
+    @include font-size($p);
   }
 
   .field {

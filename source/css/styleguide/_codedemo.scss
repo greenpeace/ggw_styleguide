@@ -54,6 +54,8 @@ code {
 
 code.html,
 code.haml,
+code.javascript,
+code.json,
 code.css {
   &:after {
     position: absolute;
@@ -81,6 +83,14 @@ code.html:after {
 }
 code.haml:after {
   content: "HAML";
+  color: $green3;
+}
+code.javascript:after {
+  content: "JAVASCRIPT";
+  color: $green3;
+}
+code.json:after {
+  content: "JSON";
   color: $green3;
 }
 

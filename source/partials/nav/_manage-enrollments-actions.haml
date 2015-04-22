@@ -2,14 +2,15 @@
 
   .action-bar
 
-    .form-wrapper.row
+    .form-wrapper.row.action-bar-item
 
       .form-item.action-bar-item.name
-        %label Name
-        %input.form-text{:type => "text", :value => ""}
+        .inline-label
+          %label Name
+        %input.form-text{:type => "text", :value => "", :placeholder => "filter by name"}
 
-    .form-actions.form-wrapper.row
-      %input{:type => "submit", :class => "button", :value => "Apply"}
+    .form-actions.form-wrapper.row.action-bar-item
+      %input{:type => "submit", :class => "button", :value => "Filter"}
 
     .form-wrapper.row.action-bar-item.actions
       %label Actions

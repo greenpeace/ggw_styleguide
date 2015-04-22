@@ -39,13 +39,15 @@
   position: fixed;
   z-index: 1000;
   overflow: hidden;
+  text-align: center;
+  width: 500px;
+  max-width: 90%;
 
   @include breakpoint($tab) {
     left: 50%;
     margin-left: -200px;
     margin-top: 50px;
     padding: (2 * $def-mar);
-    max-width: 500px;
   }
 
   .icon {

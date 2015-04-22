@@ -1,0 +1,158 @@
+---
+title: CSS Regression testing
+body_class: index l-has-sidebar-first
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "Documentation"
+    url: "./getting-started.html"
+layout: styleguide
+design_status: Work in progress
+---
+
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
+  = partial :"nav/documentation"
+
+#content.l-main-column
+  .block.main-content
+    %i.block-icon.icon-bg-default.icon-info
+    %h1.block-title CSS regression testing with BackstopJS
+
+    %article.content
+
+      %em Breaking CSS is easy. Checking every responsive page element is hard.
+      %p BackstopJS automates CSS regression testing of your responsive web UI by comparing DOM screenshots at various viewport sizes.
+
+      %h2.section-heading Heres how it works:
+
+      %ol
+        %li Set up a test config file: specify screen sizes and DOM selectors.
+        %li Use BackstopJS to create reference screenshots.
+        %li Make some changes to your CSS or add new DOM components.
+        %li Run a test. BackstopJS creates a set of test screenshots and any changes show up in a nice report.
+
+  %section.block
+    %i.block-icon.icon-install.icon-bg-default
+    %h2.block-title Installation
+
+    %article.content
+      :markdown
+
+        **BackstopJS package**
+
+        You can add BackstopJS from the root directory of any project.
+
+            $ npm install --save-dev backstopjs
+
+
+        This will create the folder structure `./node_modules/backstopjs`.
+
+
+        **If you don't already have a global Gulp instance...** http://gulpjs.com
+
+            $ sudo npm install -g gulp
+
+            //test for a correct install with...
+            $ gulp -v
+            > CLI version 3.8.10
+            > Local version 3.8.10
+
+
+        **If you don't already have a global PhantomJS install...** http://phantomjs.org/download.html
+
+            $ sudo npm install -g phantomjs
+
+            //test for a correct install with...
+            $ phantomjs -v
+            > 1.9.8
+
+
+        **If you don't already have a global CasperJS install...** http://docs.casperjs.org/en/latest/        installation.html
+
+            $ sudo npm install -g casperjs
+
+            //test for a correct install with...
+            $ casperjs --version
+            > 1.1.0-beta3
+
+  %section.block
+    %i.block-icon.icon-settings.icon-bg-default
+    %h2.block-title Configuration
+
+    %article.content
+      :markdown
+        **If you don't already have a BackstopJS config file.** The following command will create a config template file which you can modify in your root directory. *Note: this will overwrite any existing backstopjs config file.*
+
+        From `./node_modules/backstopjs` ...
+
+            $ gulp genConfig
+
+
+        This will generate a boilerplate JSON configuration file for you at the root of your project e.g. `greenwire-styleguide/source/backstop.json`. This is where you can specify the URL's, selectors to test and at which breakpoints you want to test them at.
+
+      :code
+        # lang: json
+            {
+              "viewports": [
+                {
+                  "name": "phone",
+                  "width": 320,
+                  "height": 480
+                }, {
+                  "name": "tablet_small",
+                  "width": 480,
+                  "height": 768
+                }, {
+                  "name": "tablet",
+                  "width": 768,
+                  "height": 1024
+                }, {
+                   "name": "desktop",
+                   "width": 1024,
+                   "height": 768
+                }
+              ],
+              "scenarios": [
+                {
+                  "label": "Forms",
+                  "url": "http://ggw-prototype.goalgorilla.com/components/forms.html",
+                  "selectors": [
+                    "#test-basic-form",
+                    "#test-horizontal-form"
+                  ],
+                  "readyEvent": "domready",
+                  "delay": 500
+                }
+              ]
+            }
+
+      :markdown
+        In this configuration you can see three **viewports** objects, one for phone, one for small tablets, one for iPad tablet landscape and one for desktop, each with a name and a viewport property. You can add as many viewports objects as you need. BackstopJS requires at least one.
+
+        Then we have **scenarios**. This specifies the URLs and element selectors that BackstopJS will test. The selectors generally accept standard CSS selector notation. It's useful to think of every scenario as a test for a specific static page. Here too, you can add as many scenarios as you need. BackstopJS requires at least one.
+
+        You may notice that in this config, our URL is pointing to http://ggw-prototype.goalgorilla.com/ (the form page of the UI component library) and that is what we would see if we were to run our test now. This is here to illustrate that BackstopJS can point to local or remote URLs so it's easy to imagine repurposing the same tests for local development, QA, staging and production environments.
+
+  %section.block
+    %i.block-icon.icon-pencil.icon-bg-default
+    %h2.block-title Configuration options
+
+    %article.content
+
+      %h4 ReadyEvent and delay
+
+      :markdown
+        Because we have developed Greenwire primarely for speed we initialy do not render any more resources then we need. Once this has completed, javascript progressively loads more content or enhances the user experience. The problem testing this is knowing when to take the screenshot. BackstopJS solves this problem with two config properties: readyEvent and delay.
+
+        The `readyEvent` property enables you to trigger the screen capture by logging a predefined string to the console. For example, the following line will delay screen capture until the page calls `console.log("domready")`, which we have defined as the last task to execute by javascript.
+
+        The `delay` property enables us to pause screen capturing for a specified duration of time. This delay is applied after `readyEvent`. In the above example the delay is 0.5 seconds.
+
+      %h4 Hiding and removing selectors
+
+
+

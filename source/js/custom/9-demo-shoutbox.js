@@ -146,7 +146,7 @@ $(function() {
     var shoutImage = $('.comment-form-holder .preview-wrapper').html();
     var richLink = $('.comment-form-holder #linkinfo').html();
 
-    var postmarkup = "<div class='avatar-holder'>";
+    var postmarkup = "<div class='avatar-holder media-figure'>";
     postmarkup +=  "<a href='./profile.html' title='View user profile'>";
     postmarkup +=  "<img alt='John Doe Claus' class='lazyload' data-srcset='/photos/60/people7.jpg 1x, /photos/120/people8.jpg 2x' src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='>";
     postmarkup +=  "<noscript>";
@@ -154,7 +154,7 @@ $(function() {
     postmarkup +=  "    </noscript>";
     postmarkup +=  "  </a>";
     postmarkup +=  "</div>";
-    postmarkup +=  "<div class='comment-holder'>";
+    postmarkup +=  "<div class='comment-holder media-body'>";
     postmarkup +=  "  <div class='comment-head'>";
     postmarkup +=  "    <a class='comment-author' href='./my-profile.html' title='View profile'>";
     postmarkup +=  "      John Doe Claus";
@@ -178,7 +178,7 @@ $(function() {
     postmarkup +=  "    </span>";
     postmarkup +=  "  </div>";
     postmarkup +=  "</div>";
-    $("<article class='comment'>").html(postmarkup).prependTo('.comments');
+    $("<article class='comment media'>").html(postmarkup).prependTo('.comments');
     $('.form-comment-message textarea').val('');
     $('.form-comment-submit').addClass('disabled');
     $('.comment-form-holder #linkinfo').remove();

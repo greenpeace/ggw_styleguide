@@ -23,23 +23,19 @@ $(function() {
   });
 
   // attach datepicker plugin to date input fields
-  if (!Modernizr.inputtypes.date) {
-    $('input[type="date"]').pickadate({
+  $('.input-date')
+    .pickadate({
       format: 'dd/mm/yy',
       formatSubmit: 'yyyy-mm-dd'
-    });
-    $('input[type="date"]').addClass('date-field');
-    $('input[type="date"]').after('<i class="icon-calendar"></i>');
-  }
+    })
+    .addClass('date-field')
+    .after('<i class="icon-calendar"></i>');
 
   // attach datepicker plugin to time input fields
-  if (!Modernizr.inputtypes.time) {
-    $('input[type="time"]').pickatime({
-      interval: 15
-    });
-    $('input[type="time"]').addClass('time-field');
-    $('input[type="time"]').after('<i class="icon-clock"></i>');
-  }
+  $('.input-time')
+    .pickatime({ interval: 15 })
+    .addClass('time-field')
+    .after('<i class="icon-clock"></i>');
 
   // enhance date of birth input
   $('.user-date-of-birth').pickadate({
@@ -69,6 +65,15 @@ $(function() {
 
   if (cookies_accepted != 'is_dismissed') {
     $('.cookiewall').removeClass('element-hidden');
+  }
+
+  if(window.location.hash) {
+    var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+
+    if (hash == 'form-saved') {
+      $('<div class="form-sent form-success"><i class="icon icon-check"></i> <p>Your changes have been saved.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
+    }
+
   }
 
   showErrorIcons();

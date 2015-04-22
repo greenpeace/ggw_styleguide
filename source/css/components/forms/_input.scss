@@ -35,8 +35,8 @@ textarea {
 
 // 1) fix for ios7 heights on date inputs
 // 2) make sure the text doesn't continue over the icon, if there is an icon
-input[type=date],
-input[type=time] {
+.input-date,
+.input-time {
   height: 30px; // 1
 
   &.picker__input {
@@ -44,18 +44,18 @@ input[type=time] {
   }
 }
 
-input[type=date] + i,
-input[type=time] + i {
+.input-date + i,
+.input-time + i {
   margin-left: -1.5em;
   top: .4em;
   line-height: normal;
 }
 
 // hide two icons in chrome that hide a part of the selected date.
-input[type=date]::-webkit-clear-button,
-input[type=date]::-webkit-inner-spin-button,
-input[type=time]::-webkit-clear-button,
-input[type=time]::-webkit-inner-spin-button {
+.input-date::-webkit-clear-button,
+.input-date::-webkit-inner-spin-button,
+.input-time::-webkit-clear-button,
+.input-time::-webkit-inner-spin-button {
   display: none;
 }
 

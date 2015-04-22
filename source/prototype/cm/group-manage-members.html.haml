@@ -102,13 +102,13 @@ action_menu:
 
       .view-search-results
         .view-content
-          %table.tablesaw{"data-mode" => "swipe"}
+          %table.tablesaw{"data-tablesaw-mode" => "swipe"}
             %thead
               %tr
-                %th.views-field-views-bulk-operations{"data-priority" => "persist"}
+                %th.views-field-views-bulk-operations{"data-tablesaw-priority" => "persist"}
                   %input.form-checkbox{:type => "checkbox"}
-                %th.views-field-avatar{"data-priority" => "persist"}
-                %th.views-field-name{"data-priority" => "persist"} Name
+                %th.views-field-avatar{"data-tablesaw-priority" => "persist"}
+                %th.views-field-name{"data-tablesaw-priority" => "persist"} Name
                 %th.views-field-username Username
                 %th.views-field-email Email
                 %th Phone

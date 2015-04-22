@@ -9,6 +9,8 @@
   @include breakpoint($desk) {
     display: block;
     margin-top: 2em;
+    position: relative;
+    z-index: 0;
   }
 
 }

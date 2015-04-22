@@ -1,12 +1,25 @@
+
+// Comments can be used in Shoutbox, article comments and private messages.
+
+// 1. Block
+// 2. Sort
+// 3. Comment item
+// 4. Form
+// 5. Mentions
+
+
+// 1. Block general layout
 .block-comments {
   @include font-size(14px);
 
+  // extra margin except in sidebar
   .l-main-column & {
     margin-top: $def-mar;
   }
 
 }
 
+// 2. Sort comments, top right of block
 .sort-comments {
   position: absolute;
   right: $def-mar;
@@ -47,6 +60,7 @@
   }
 }
 
+// 3. Comment item
 .comments {
   margin: $def-mar 0 $def-mar-half;
 }
@@ -54,7 +68,6 @@
 .comment {
   padding: $def-mar-half 0;
   line-height: 1.1em;
-  overflow: hidden;
 
   &:last-child {
     border-bottom: none;
@@ -70,7 +83,6 @@
 }
 
 .avatar-holder {
-  float: left;
   margin-right: $def-mar;
   width: 45px;
 
@@ -80,18 +92,16 @@
 }
 
 .comment-holder {
-  overflow: hidden;
+  padding: 0;
 }
 
-.comment-head,
 .comment-body {
   line-height: 1.35em;
-}
 
-.comment-body img {
-  margin: $def-mar-half 0;
+  img {
+    margin: $def-mar-half 0;
+  }
 }
-
 
 .comment-footer {
   color: $grey-m;
@@ -99,34 +109,26 @@
   @include font-size(13px);
 }
 
-.comment-actionlink {
-  color: $green5;
-  @include font-size(13px);
-
-  &:before {
-    @extend %load-icon;
-    @extend %icon-dot;
-    margin: 0 .5em 0 .2em;
-    color: $grey-m;
-  }
-
+.comment-actionlink:before {
+  @extend %load-icon;
+  @extend %icon-dot;
+  margin: 0 .5em 0 .2em;
+  color: $grey-m;
 }
 
+
+// 4. Comment form
 .comment-form {
   @extend %cf;
   position: relative;
 
-
+  // used to give extra information
   .hint {
     float: right;
     margin: 0 $def-mar-half 0 0;
     @include font-size($small);
     color: $grey-m;
     line-height: 34px;
-  }
-
-  .nfi-wrapper {
-    float: left;
   }
 
 }
@@ -169,6 +171,8 @@
   color: $grey-m;
 }
 
+
+// 5. Mentions (tagging members)
 .mentions {
   max-width: 100%;
 
@@ -179,7 +183,7 @@
     height: 40px;
     overflow: hidden;
     display: block;
-    padding: 3px 20px;
+    padding: 3px 10px;
     clear: both;
     font-weight: normal;
     white-space: nowrap;
@@ -209,7 +213,6 @@
 .mention_image{
   float: left;
   margin-right: $def-mar-half;
-  border-radius: 3px;
   width: 34px;
   height: 34px;
 }

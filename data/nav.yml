@@ -46,6 +46,9 @@ comp:
   -
     name: "Teasers"
     url: "/components/teasers.html"
+  -
+    name: "Collapse"
+    url: "/components/collapse.html"
 
 # Documentation menu
 docs:
@@ -67,6 +70,9 @@ docs:
   -
     name: "Editing the style guide"
     url: "/documentation/editing.html"
+  -
+    name: "CSS regression testing"
+    url: "/documentation/regression-testing.html"
 
 # Primary navigation in prototype for AN
 primary_an:

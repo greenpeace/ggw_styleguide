@@ -19,27 +19,43 @@
 
         %article.node-type-small
           %h2
-            %a{:href => "./event-full.html"} Heb jij interesse in een Act for Arctic training of webinar?
+            - if current_page.data.access == "mine"
+              %a{:href => "./event-full-organiser.html"} Are you interested in an Act for Arctic training or webinar?
+            - else
+              %a{:href => "./event-full.html"} Are you interested in an Act for Arctic training or webinar?
+
           .field.field-field-event-date
-            .date-display-single 20 juli, 2014 - 09:00
+            .date-display-single 20 july, 2014 - 09:00
         %article.node-type-small
           %h2
-            %a{:href => "./event-full.html"} Act for Arctic Kick-Off training
+            - if current_page.data.access == "mine"
+              %a{:href => "./event-full-organiser.html"} Act for Arctic Kick-Off training
+            - else
+              %a{:href => "./event-full.html"} Act for Arctic Kick-Off training
           .field.field-field-event-date
-            .date-display-single 24 juli, 2014 - 18:00
+            .date-display-single 24 july, 2014 - 18:00
         %article.node-type-small
           %h2.node-title
-            %a{:href => "./event-full.html"} De héle Noordzeekust schoon van 1 t/m 31 augustus! Help je mee?
+            - if current_page.data.access == "mine"
+              %a{:href => "./event-full-organiser.html"} Help to clean up the North Sea
+            - else
+              %a{:href => "./event-full.html"} Help to clean up the North Sea
           .field.field-field-event-date
-            .date-display-single 1 augustus, 2014 - 00:00
+            .date-display-single 1 august, 2014 - 00:00
         %article.node-type-small
           %h2
-            %a{:href => "./event-full.html"} Netwerkborrel 28 augustus
+            - if current_page.data.access == "mine"
+              %a{:href => "./event-full-organiser.html"} Meet up Greenpeace Headquarters
+            - else
+              %a{:href => "./event-full.html"} Meet up Greenpeace Headquarters
           .field.field-field-event-date
             .date-display-single 28 augustus, 2014 - 17:00
         %article.node-type-small
           %h2
-            %a{:href => "./event-full.html"} Opschonen Enschede
+            - if current_page.data.access == "mine"
+              %a{:href => "./event-full-organiser.html"} Lowlands festival forest campaign
+            - else
+              %a{:href => "./event-full.html"} Lowlands festival forest campaign
           .field.field-field-event-date
             .date-display-single 20 July, 2014 - 12:09
 

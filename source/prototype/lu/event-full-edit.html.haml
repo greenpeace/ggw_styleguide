@@ -1,14 +1,13 @@
 ---
-title: Create new event
+title: Edit event
 body_class: not-front logged-in page-type-event l-has-sidebar-first page-edit
 direct_parent:
   -
     name: "Events"
-    url: "events.html"
+    url: "search-events.html"
 user_role: lu
 script: event
 editor: ckeditor
-design_status: Needs review
 menu:
   -
     name: 'Title, description & image'
@@ -33,7 +32,7 @@ menu:
 %aside.sidebar-first.sfmenu
   .block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
     %i.block-icon.icon-calendar.icon-bg-event
-    %h2.block-title Create event
+    %h2.block-title Edit event
     .content
       - for item in current_page.data.menu
         %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
@@ -234,7 +233,7 @@ menu:
 
   %section#section-submit.section-submit
     .form-actions.form-wrapper
-      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "event-full-organiser.html#form-saved"}
+      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "./event-full-organiser.html#form-saved"}
         %a.button.btn-l{:href => "./events.html", :tabindex => "8"} Cancel
 
 #manual-coordinates-form.block.white-popup.mfp-hide

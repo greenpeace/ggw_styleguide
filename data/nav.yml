@@ -81,17 +81,17 @@ primary_an:
     url: "/prototype/an/index.html"
   -
     name: "Community"
-    url: "#"
+    url: "/prototype/an/search-events.html"
     sub:
       -
         name: "Events"
-        url: "/prototype/an/events.html"
+        url: "/prototype/an/search-events.html"
       -
         name: "Groups"
         url: "/prototype/an/groups.html"
   -
     name: "News and Media"
-    url: "#"
+    url: "/prototype/an/search-newsmedia.html"
     sub:
       -
         name: "News"
@@ -113,7 +113,7 @@ primary_an:
         url: "/prototype/an/ideas.html"
   -
     name: "Info"
-    url: "#"
+    url: "/prototype/an/about.html"
     sub:
       -
         name: "About"
@@ -130,11 +130,11 @@ primary_lu:
     url: "/prototype/lu/index.html"
   -
     name: "Community"
-    url: "#"
+    url: "/prototype/lu/search-events.html"
     sub:
       -
         name: "Events"
-        url: "/prototype/lu/events.html"
+        url: "/prototype/lu/search-events.html"
       -
         name: "Groups"
         url: "/prototype/lu/groups.html"
@@ -143,7 +143,7 @@ primary_lu:
         url: "/prototype/lu/search-members.html"
   -
     name: "News and Media"
-    url: "#"
+    url: "/prototype/lu/search-newsmedia.html"
     sub:
       -
         name: "News"

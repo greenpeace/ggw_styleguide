@@ -4,7 +4,7 @@ body_class: not-front logged-in page-type-event l-has-sidebar node-full
 direct_parent:
   -
     name: "Events"
-    url: "events.html"
+    url: "search-events.html"
 user_role: lu
 mapsds: event
 design_status: Work in progress
@@ -46,7 +46,7 @@ action_menu:
     .content
       %article.view-mode-full
         .submitted
-          %a.type.event{:href => "./events.html"} Event
+          %a.type.event{:href => "./search-events.html"} Event
           by
           %a{:href => "./profile.html"}
             = lorem.name
@@ -89,7 +89,7 @@ action_menu:
                 .field-label Event organiser:
                 %div
                   Organised by
-                  %a{:href => "#"}
+                  %a{:href => "./profile.html"}
                     = lorem.name
 
               .field.field-name-field-event-num-attendees
@@ -133,13 +133,13 @@ action_menu:
               %img{:src => "/photos/75/people5.jpg", :alt => "Name of the author."}/
           .submitted-info
             %div
-              %a{:href => "./events.html"} Event
+              %a{:href => "./search-events.html"} Event
               by
               = lorem.name
             .submitted-bio
               %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
             .submitted-all-reference
-              %a{:href => "#"}
+              %a{:href => "./search-events.html"}
                 All events by
                 = lorem.name
                 \.

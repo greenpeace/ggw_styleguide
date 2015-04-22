@@ -7,6 +7,7 @@ direct_parent:
     url: "search-events.html"
 user_role: lu
 mapsds: event
+organiser: organiser
 design_status: Work progress
 action_menu:
   -
@@ -34,7 +35,11 @@ action_menu:
 = partial :"blocks/breadcrumbs"
 
 .l-main-column
-  #content.block.main-content.current
+  #content.block.main-content.current.editable
+    .action-bar
+      .action-bar-item.edit-content
+        %a.button{:href => "./event-full-edit.html", :title => "Edit event"} Edit
+
     %i.block-icon.icon-bg-event.icon-event
     %h1#page-title.block-title
       = current_page.data.title

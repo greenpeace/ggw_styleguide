@@ -2,17 +2,6 @@
   margin-bottom: $def-mar + 5px;
   position: relative;
 
-  img {
-    width: 90px;
-    display: block;
-    margin-right: $def-mar-half;
-
-    @include breakpoint($smalltab) {
-      width: 130px;
-    }
-
-  }
-
   .description {
     overflow: hidden;
     position: relative;

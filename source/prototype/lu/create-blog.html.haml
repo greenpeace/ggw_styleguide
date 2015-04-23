@@ -55,15 +55,17 @@ menu:
               Image
               %span.form-required{:title => "This field is required."} *
             .media-widget.media
-              .preview.media-figure
+              .preview-wrapper.media-figure.field-type-blog
+                %img#preview-image{:src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", :alt => "your image"}
               .media-body
                 .form-description
-                  Files must be smaller than3 MB <br/>
+                  Files must be smaller than 3 MB <br/>
                   Allowed file types: png gif jpg jpeg <br/>
                   Images must be larger than 400x300 pixels.
                 %input#uploadimage.element-invisible{:type => "file", :value => "upload", :accept => "image/*"}
                 %button.button.launcher{:tabindex => "3"} select image
-                %a.button.remove.element-invisible{:href => "#"} remove image
+                %button#remove-image.button.element-invisible remove image
+                %p#file-name.element-hidden
 
     %section#section-language.block
       %i.block-icon.icon-globe.icon-bg-action

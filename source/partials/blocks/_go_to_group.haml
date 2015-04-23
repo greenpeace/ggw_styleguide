@@ -4,7 +4,14 @@
   .content
     %p
       This belongs to
-      = succeed "." do
-        %a{:href => "./group-home.html"} local groups amsterdam
+      - if current_page.data.user_role == "an"
+        = succeed "." do
+          %a{:href => "./group-home.html"} Local group Amsterdam
+      - else
+        = succeed "," do
+          %a{:href => "./group-home.html"} Local group Amsterdam
+        = succeed "." do
+          %a{:href => "./group-home-enrolled.html"} Save the Artic
+
     %p
       %a.button{:href => "./group-home.html"} Go to this group

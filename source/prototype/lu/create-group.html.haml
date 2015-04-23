@@ -58,23 +58,21 @@ menu:
               %span.form-required{:title => "This field is required."} *
             %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "3"}
 
-        .form-wrapper
           .form-item
             %label.form-label{:for => "field-edit-image"}
               Image
               %span.form-required{:title => "This field is required."} *
             .media-widget.media
-              .preview.media-figure
-                .media-item
+              .preview-wrapper.media-figure.field-type-group
+                %img#preview-image{:src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", :alt => "your image"}
               .media-body
                 .form-description
-                  No image selected <br />
                   Files must be smaller than 3 MB <br/>
                   Allowed file types: png gif jpg jpeg <br/>
                   Images must be larger than 400x300 pixels.
-                %input#uploadimage.hiddenfile{:accept => "image/*", :type => "file", :value => "upload"}
-                %button.button.launcher{:onmousedown => "triggerUpload()"} select image
-                %a.button.remove.element-hidden{:href => "#", :tabindex => "3"} remove image
+                %input#uploadimage.element-invisible{:type => "file", :value => "upload", :accept => "image/*"}
+                %button.button.launcher{:tabindex => "3"} select image
+                %button#remove-image.button.element-invisible remove image
                 %p#file-name.element-hidden
 
 

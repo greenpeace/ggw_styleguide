@@ -39,7 +39,7 @@ $(function() {
       }
       var image = 'http://img.youtube.com/vi/' + id + '/mqdefault.jpg';
 
-      $('.media-figure').empty().prepend('<img src=' + image + ' />');
+      $('.media-figure').empty().prepend('<img src=' + image + ' + id="preview-image" />');
       $("#mediainvalid").addClass('element-hidden');
     }
 
@@ -48,6 +48,19 @@ $(function() {
 
   $("#selectmedia").focusout(function() {
     processURL(this.value);
+    $('.preview-wrapper').css('background-color', '#fff');
+    $('#remove-video').removeClass('element-invisible');
+  });
+
+    // The button that removes an image.
+  $('#remove-video').on('click', function(e) {
+    e.preventDefault();
+    $('#preview-image').attr('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
+    $('.preview-wrapper').removeAttr('style');
+    $('#selectmedia').val('');
+    $("#mediainvalid").addClass('element-hidden');
+    $(this).addClass('element-invisible');
+    return false;
   });
 
 });

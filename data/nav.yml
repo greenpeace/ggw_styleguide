@@ -81,17 +81,17 @@ primary_an:
     url: "/prototype/an/index.html"
   -
     name: "Community"
-    url: "/prototype/an/search-events.html"
+    url: "#"
     sub:
       -
         name: "Events"
-        url: "/prototype/an/search-events.html"
+        url: "/prototype/an/events.html"
       -
         name: "Groups"
         url: "/prototype/an/groups.html"
   -
     name: "News and Media"
-    url: "/prototype/an/search-newsmedia.html"
+    url: "#"
     sub:
       -
         name: "News"
@@ -130,11 +130,11 @@ primary_lu:
     url: "/prototype/lu/index.html"
   -
     name: "Community"
-    url: "/prototype/lu/search-events.html"
+    url: "#"
     sub:
       -
         name: "Events"
-        url: "/prototype/lu/search-events.html"
+        url: "/prototype/lu/events.html"
       -
         name: "Groups"
         url: "/prototype/lu/groups.html"
@@ -143,7 +143,7 @@ primary_lu:
         url: "/prototype/lu/search-members.html"
   -
     name: "News and Media"
-    url: "/prototype/lu/search-newsmedia.html"
+    url: "#"
     sub:
       -
         name: "News"
@@ -207,7 +207,7 @@ idea_menu:
         url: "/prototype/lu/ideas.html"
   -
     name: "Connect"
-    url: "#"
+    url: "/prototype/lu/events.html"
     sub:
       -
         name: "Find an event"
@@ -220,58 +220,58 @@ idea_menu:
         url: "/prototype/lu/search-members.html"
       -
         name: "Contact a coach"
-        url: "#"
+        url: "/prototype/lu/who-is-who.html"
   -
     name: "Contribute"
     url: "#"
     sub:
       -
         name: "Post a news article"
-        url: "#"
+        url: "/prototype/lu/create-news.html"
       -
         name: "Write a blog"
-        url: "#"
+        url: "/prototype/lu/create-blog.html"
       -
         name: "Upload photos"
-        url: "#"
+        url: "/prototype/lu/create-photo-album.html"
       -
         name: "Submit a video"
-        url: "#"
+        url: "/prototype/lu/create-video.html"
       -
         name: "Upload documents"
-        url: "#"
+        url: "/prototype/lu/create-document.html"
       -
         name: "Propose an idea"
-        url: "#"
+        url: "/prototype/lu/create-idea.html"
   -
     name: "Organize"
     url: "#"
     sub:
       -
         name: "Create an event"
-        url: "#"
+        url: "/prototype/lu/create-event.html"
       -
         name: "Start a group"
-        url: "#"
+        url: "/prototype/lu/create-group.html"
       -
         name: "Browse material list"
-        url: "#"
+        url: "/prototype/lu/materials.html"
       -
         name: "Propose an idea"
-        url: "#"
+        url: "/prototype/lu/create-idea.html"
   -
     name: "Help"
     url: "#"
     sub:
       -
         name: "New to greenwire?"
-        url: "#"
+        url: "/prototype/lu/getting-started.html"
       -
         name: "FAQ"
-        url: "#"
+        url: "/prototype/lu/faq.html"
       -
         name: "Contact a coach"
-        url: "#"
+        url: "/prototype/lu/who-is-who.html"
 
 
 # secondary menu, user menu for AN

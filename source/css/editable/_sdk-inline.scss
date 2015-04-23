@@ -36,9 +36,79 @@
 
 }
 
+// image upload preview
+.preview-wrapper {
+  background-color: $grey-l;
+  float: left;
+  height: 60px; //temp
+  margin-right: $def-mar;
+  overflow: hidden;
+  position: relative;
+  width: 90px;
+  z-index: 1;
+
+  @include breakpoint($smalltab) {
+    height: 90px;
+    width: 130px;
+  }
+
+  &:before {
+    @extend %load-icon;
+    color: $white;
+    font-size: 2.5rem;
+    line-height: 60px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+
+    @include breakpoint($smalltab) {
+      font-size: 3.5rem;
+      line-height: 90px;
+    }
+
+  }
+
+  img {
+    position: relative;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    max-width: 90px;
+
+    @include breakpoint($smalltab) {
+      max-width: 130px;
+    }
+
+  }
+
+}
+
+.field-type-blog {
+  @extend %icon-feather;
+}
+
+.field-type-news {
+  @extend %icon-book-open;
+}
+
+.field-type-event {
+  @extend %icon-calendar;
+}
+
+.field-type-group {
+  @extend %icon-users;
+}
+
+.field-type-video {
+  @extend %icon-video;
+}
+
 .wrapper {
   @extend %wrapper;
 }
+
 
 .launcher {
   position: relative;

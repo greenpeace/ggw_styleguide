@@ -96,4 +96,43 @@ $(function() {
     $('.form-sent').fadeOut('slow');
   });
 
+
+  // Image field upload for edit node
+
+  // The button that triggers the selection of an image.
+  $('.launcher').on('click', function(e) {
+    e.preventDefault();
+    $('#uploadimage').click();
+  });
+
+  // The button that removes an image.
+  $('#remove-image').on('click', function(e) {
+    e.preventDefault();
+    $('#preview-image').attr('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
+    $('.preview-wrapper').removeAttr('style');
+    $('#file-name').addClass('element-hidden').removeClass('filename').html('');
+    return false;
+  });
+
+  // Image preview for uploading files
+  function readURL(input) {
+
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('#preview-image').attr('src', e.target.result);
+        $('.preview-wrapper').css('background-color', '#fff');
+        $('#remove-image').removeClass('element-invisible');
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+
+  }
+
+  $("#uploadimage").change(function(){
+    readURL(this);
+    $('#file-name').removeClass('element-hidden').addClass('filename').html(this.files[0].name);
+  });
+
+
 });

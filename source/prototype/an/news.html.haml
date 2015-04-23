@@ -1,8 +1,11 @@
 ---
-title: News
-body_class: not-front not-logged-in page-news l-has-sidebar
+title: Find news
+body_class: not-front not-logged-in page-search l-has-sidebar
 user_role: an
-design_status: Needs review
+search_page: newsmedia
+filter_type: news
+listview: search-newsmedia-listview.html
+teaserview: search-newsmedia.html
 action_menu:
   -
     id: "#content"
@@ -21,16 +24,49 @@ action_menu:
 = partial :"blocks/breadcrumbs"
 
 .l-main-column
+
   #content.block.current
+
     %i.block-icon.icon-bg-news-media.icon-news
-    %h1#page-title.block-title
+    %h1.block-title#page-title
       = current_page.data.title
+
     .content
-      = partial :"teasers/news-no-image"
-      = partial :"teasers/news-with-image"
-      = partial :"teasers/news-no-image"
-      = partial :"teasers/news-with-image"
+
+      // search box above results
+      = partial :"blocks/search-header-search-box"
+
+      .view-header
+        = partial :"nav/search-tabs"
+        = partial :"nav/search-actions"
+
+      .view-search-results
+        .view-content
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
+          .align-center
+            %a.button{:href => "#"} show some more
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/find_news"
+  .block
+    %i.block-icon.icon-bg-default.icon-adjust
+    %h2.block-title Filter
+    .content
+      %form
+
+        = partial :"blocks/search_filters/type"
+        = partial :"blocks/search_filters/created"
+        = partial :"blocks/search_filters/tags"
+        = partial :"blocks/search_filters/form-action"
+
   = partial :"blocks/an/create_account"

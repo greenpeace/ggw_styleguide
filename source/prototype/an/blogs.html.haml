@@ -6,6 +6,15 @@ search_page: newsmedia
 filter_type: blog
 listview: search-newsmedia-listview.html
 teaserview: search-newsmedia.html
+action_menu:
+  -
+    id: "#content"
+    label: "Blogs"
+    icon: "blog"
+  -
+    id: "#block-find-blogs"
+    label: "Find blogs"
+    icon: "search"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -14,7 +23,7 @@ teaserview: search-newsmedia.html
 
   #content.block.current
 
-    %i.block-icon.icon-bg-default.icon-search
+    %i.block-icon.icon-bg-news-media.icon-blog
     %h1.block-title#page-title
       = current_page.data.title
 
@@ -53,3 +62,4 @@ teaserview: search-newsmedia.html
         = partial :"blocks/search_filters/tags"
         = partial :"blocks/search_filters/form-action"
 
+  = partial :"blocks/an/create_account"

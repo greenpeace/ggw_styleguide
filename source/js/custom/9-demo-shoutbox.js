@@ -128,6 +128,8 @@ $(function() {
       var reader = new FileReader();
       reader.onload = function (e) {
         $('#preview-image').attr('src', e.target.result).removeClass('element-hidden');
+        $('#remove-image').removeClass('element-hidden');
+        $('.preview-wrapper').css('display', 'inline-block');
         $('.form-comment-submit').removeClass('disabled');
       }
 
@@ -136,6 +138,14 @@ $(function() {
     }
 
   }
+
+  $('#remove-image').on('click', function(e) {
+    e.preventDefault();
+    $('#preview-image').attr('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
+    $('.preview-wrapper').removeAttr('style');
+    $(this).addClass('element-hidden');
+    return false;
+  });
 
   $(".form-comment-file").change(function(){
     readURL(this);
@@ -253,19 +263,34 @@ $(function() {
   });
 
   $('.form-addlink .btn-primary').click(function(e) {
+    if ($('.comment-form-holder .urlive-container').length) {
+      $('.comment-form-holder .urlive-container').remove();
+    }
     var linkclone = $('.urlive-container').clone().wrapInner('<div class="linkclone"></div>');
     linkclone.insertAfter('.block-comments .form-comment-message');
-    $('.linkclone .close-linkinfo').remove();
-    $('.linkclone .remove-image').remove();
+
     $('.form-comment-submit').removeClass('disabled');
     $.magnificPopup.close();
     e.preventDefault();
+
+    $('.linkclone .remove-image').click(function(e) {
+      $('.linkclone .urlive-img-wrapper').remove();
+      e.preventDefault();
+    });
+
+    $('.linkclone .close-linkinfo').click(function(e) {
+      $(this).closest('.urlive-container').remove();
+      e.preventDefault();
+    });
+
   });
 
   $('.form-comment-submit').click(function(event) {
      event.preventDefault();
     $('html, body').animate({scrollTop: 0}, 300);
     $('<div class="form-sent form-success"><i class="icon icon-check"></i> <p>Your comment has been posted.</p></div>').insertBefore('.l-main').hide().slideDown('slow').delay(6000).slideUp();
+    $('.remove-image').addClass('element-hidden');
+    $('.comment-body .remove-image, .comment-body .close-linkinfo').remove();
   });
 
 });

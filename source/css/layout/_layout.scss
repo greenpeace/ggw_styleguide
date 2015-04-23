@@ -91,6 +91,7 @@
     padding:88px $def-mar 0;
     border: none;
     min-height: none;
+    flex: 1; //push footer down to bottom
 
     // .container doesn't get applied
     @if $oldie {

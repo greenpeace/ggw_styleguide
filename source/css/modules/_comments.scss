@@ -146,6 +146,10 @@
   }
 }
 
+.preview-wrapper {
+  position: relative; // keep remove button inside img
+}
+
 .form-comment-submit {
   @include button;
   padding: .3em 1em;

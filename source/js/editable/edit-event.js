@@ -111,6 +111,7 @@ $(function() {
     $('#preview-image').attr('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
     $('.preview-wrapper').removeAttr('style');
     $('#file-name').addClass('element-hidden').removeClass('filename').html('');
+    $(this).addClass('element-hidden');
     return false;
   });
 
@@ -122,7 +123,7 @@ $(function() {
       reader.onload = function (e) {
         $('#preview-image').attr('src', e.target.result);
         $('.preview-wrapper').css('background-color', '#fff');
-        $('#remove-image').removeClass('element-invisible');
+        $('#remove-image').removeClass('element-hidden');
       }
       reader.readAsDataURL(input.files[0]);
     }

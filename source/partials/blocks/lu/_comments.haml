@@ -27,6 +27,7 @@
           - else
             %textarea#comment-comment{:cols => "50", :placeholder => "Write a comment...", :rows => "1"}
         .preview-wrapper
+          %a#remove-image.remove-image.element-hidden{:href => "#"}
           %img#preview-image.shoutimage.element-hidden{:src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", :alt => "your image"}
         .clear
         %input.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}

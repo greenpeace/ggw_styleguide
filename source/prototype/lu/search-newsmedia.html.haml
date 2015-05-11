@@ -3,7 +3,6 @@ title: News & media
 body_class: not-front logged-in page-search l-has-sidebar
 user_role: lu
 search_page: newsmedia
-design_status: Needs review
 action_menu:
   -
     id: "#content"
@@ -21,7 +20,7 @@ action_menu:
 
   #content.block.current
     = partial :"blocks/lu/add-content"
-    %i.block-icon.icon-bg-default.icon-news
+    %i.block-icon.icon-bg-news-media.icon-news
     %h1.block-title#page-title
       = current_page.data.title
 
@@ -52,7 +51,7 @@ action_menu:
 
 %aside.l-sidebar.sidebar
   .block
-    %i.block-icon.icon-bg-default.icon-adjust
+    %i.block-icon.icon-bg-news-media.icon-adjust
     %h2.block-title Filter
     .content
       %form

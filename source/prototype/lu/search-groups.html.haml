@@ -3,7 +3,6 @@ title: Search groups
 body_class: not-front logged-in page-search l-has-sidebar
 user_role: lu
 search_page: groups
-design_status: Needs review
 action_menu:
   -
     id: "#content"
@@ -21,7 +20,7 @@ action_menu:
 
   #content.block.current
     = partial :"blocks/lu/add-content"
-    %i.block-icon.icon-bg-default.icon-search
+    %i.block-icon.icon-bg-group.icon-search
     %h1.block-title#page-title
       = current_page.data.title
 
@@ -48,7 +47,7 @@ action_menu:
 
 %aside.l-sidebar.sidebar
   .block
-    %i.block-icon.icon-bg-default.icon-adjust
+    %i.block-icon.icon-bg-group.icon-adjust
     %h2.block-title Filter
     .content
       %form

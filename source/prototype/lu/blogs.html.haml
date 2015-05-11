@@ -1,5 +1,5 @@
 ---
-title: Find blogs
+title: Blogs
 body_class: not-front logged-in page-search l-has-sidebar
 user_role: lu
 search_page: newsmedia
@@ -56,8 +56,9 @@ action_menu:
     %h2.block-title Filter
     .content
       %form
-
         = partial :"blocks/search_filters/type"
+        = partial :"blocks/search_filters/groups"
         = partial :"blocks/search_filters/created"
         = partial :"blocks/search_filters/tags"
+        = partial :"blocks/search_filters/author"
         = partial :"blocks/search_filters/form-action"

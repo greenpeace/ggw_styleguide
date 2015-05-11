@@ -1,8 +1,11 @@
 ---
 title: Videos
-body_class: not-front not-logged-in page-videos l-has-sidebar
+body_class: not-front not-logged-in page-search l-has-sidebar
 user_role: an
-design_status: Needs review
+search_page: newsmedia
+filter_type: videos
+listview: search-newsmedia-listview.html
+teaserview: search-newsmedia.html
 action_menu:
   -
     id: "#content"
@@ -25,11 +28,34 @@ action_menu:
     %i.block-icon.icon-bg-news-media.icon-video
     %h1#page-title.block-title
       = current_page.data.title
+
     .content
-      - 10.times do |num|
-        = partial :"teasers/video"
+
+      // search box above results
+      = partial :"blocks/search-header-search-box"
+
+      .view-header
+        = partial :"nav/search-tabs"
+        = partial :"nav/search-actions"
+
+      .view-search-results
+        .view-content
+          - 10.times do |num|
+            = partial :"teasers/video"
+
+          .align-center
+            %a.button{:href => "#"} show some more
 
 %aside.l-sidebar.sidebar
-  .content
-    = partial :"blocks/find_videos"
-    = partial :"blocks/an/create_account"
+  .block
+    %i.block-icon.icon-bg-default.icon-adjust
+    %h2.block-title Filter
+    .content
+      %form
+
+        = partial :"blocks/search_filters/type"
+        = partial :"blocks/search_filters/created"
+        = partial :"blocks/search_filters/tags"
+        = partial :"blocks/search_filters/form-action"
+
+  = partial :"blocks/an/create_account"

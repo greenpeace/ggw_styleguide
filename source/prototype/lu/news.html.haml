@@ -1,6 +1,6 @@
 ---
-title: Find news
-body_class: not-front logged-in page-news l-has-sidebar
+title: News
+body_class: not-front logged-in page-search l-has-sidebar
 user_role: lu
 search_page: newsmedia
 filter_type: news
@@ -30,7 +30,6 @@ action_menu:
 
     .content
 
-      // search box above results
       = partial :"blocks/search-header-search-box"
 
       .view-header
@@ -60,8 +59,9 @@ action_menu:
     %h2.block-title Filter
     .content
       %form
-
         = partial :"blocks/search_filters/type"
+        = partial :"blocks/search_filters/groups"
         = partial :"blocks/search_filters/created"
         = partial :"blocks/search_filters/tags"
+        = partial :"blocks/search_filters/author"
         = partial :"blocks/search_filters/form-action"

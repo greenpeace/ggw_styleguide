@@ -44,6 +44,8 @@ $(function() {
           totalWidth += $(this).outerWidth(true) + 4;
         });
 
+        console.log(totalWidth);
+
         // Position the 'more' button
         $(this).find('.tabs-overflow').css("left", totalWidth);
 

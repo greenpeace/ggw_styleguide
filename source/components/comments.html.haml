@@ -1,0 +1,193 @@
+---
+title: Comments
+body_class: page-comments l-has-sidebar-first
+layout: styleguide
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "UI Components"
+    url: "./blocks.html"
+
+layout: styleguide
+---
+
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
+  = partial :"nav/uicomponents"
+
+#content.l-main-column
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Comments
+    %article.content
+      :markdown
+        Comments is a components designed to stimulate and facilitate interaction and feedback by members. It consists of a simple form with a textarea that grows on typing and an image upload button by default. Depending on the settings the block can have a maximum amount of characters, an option to insert rich links and the option to tag othrr members. You will see this form in the shoutbox on dashboards (domain, group, profile), for private messages and as the comment form with nodes.
+
+        Some key features are that users can...
+
+        * edit and delete their own submissions
+        * attach a photo (from camera or system)
+        * tag multiple members
+        * insert a rich link (with title and image)
+        * insert content links
+        * not submit an empty form
+
+        This module uses several scripts to provide enhanced functionality for the user:
+
+          * **[jQuery URLive](http://markserbol.github.io/urlive/)**: create a live preview snippet of a url based on the Open Graph properties
+          * **[jQuery Autogrow](https://github.com/ultimatedelman/autogrow)**: the ability for a `textarea` to automatically grow and shrink dynamically with its content
+          * **[jQuery NiceFileInput](https://github.com/alterebro/jQuery.NiceFileInput.js)**: enable styling of file inputs
+          * **[jQuery Linkify](https://github.com/SoapBox/jQuery-linkify)**: finding URLs in plain-text and converting them to HTML links.
+          * **[jQuery Mentions Input](http://podio.github.io/jquery-mentions-input/)**: Allows users to "@mention" members in a text message
+
+  %section#block-comments.block.block-comments
+    %i.block-icon.icon-chat.icon-bg-action
+    %h2.block-title Shoutbox
+
+    .content
+      .comment-form-holder
+        %form.comment-form
+          .form-comment-message
+            %textarea#comment-comment{:cols => "50", :placeholder => "Write a shout...", :rows => "1"}
+          .preview-wrapper
+            %a#remove-image.remove-image.element-hidden{:href => "#"}
+            %img#preview-image.shoutimage.element-hidden{:src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", :alt => "your image"}
+          .clear
+          %input.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
+          %button.modal-inline.button.addlink-btn{:href => "#addexternallink"}
+            %i.icon-link
+          %span#remain
+          %input.form-comment-submit{:type => "submit", :value => "share"}
+
+      %section.comments
+        %article.comment.media
+          .avatar-holder.media-figure
+            %a{:href => "./profile.html", :title => "View Brendan Woodard's profile"}
+              %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
+              %noscript
+                %img{:alt => "Brendan Woodard", :src => "/photos/60/people2.jpg", :srcset => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
+          .comment-holder.media-body
+            .comment-head
+              %a.comment-author{:href => "./profile.html", :title => "View Brendan Woodard's profile"}
+                Brendan Woodard
+              (
+              %a{:href => "./who-is-who.html"}><
+                Greenpeace staff
+              )
+            .comment-body
+              Today we have published the
+              %a{:href => "./photo-album.html"} photos
+              of the conference of marine reserves in the North Sea. Have a look and if you have made some photos yourself you can mail them to
+              %a{:href => "./profile.html"} Edward Fischer
+              %img.lazyload{:alt => "", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/fisheries.jpg"}/
+              %noscript
+                %img{:alt => "", :src => "/photos/fisheries.jpg"}/
+            .comment-footer
+              %span.comment-timestamp 2 days ago
+              %span.comment-actions
+                %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+        %article.comment.comment-reply.media
+          .avatar-holder.media-figure
+            %a{:href => "profile.html", :title => "View user profile"}
+              %img.lazyload{:alt => "Kaleigh O'Brien", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people3.jpg 1x, /photos/120/people3.jpg 2x"}/
+              %noscript
+                %img{:alt => "Kaleigh O'Brien", :src => "/photos/60/people3.jpg", :srcset => "/photos/60/people3.jpg 1x, /photos/120/people3.jpg 2x"}/
+          .comment-holder.media-body
+            .comment-head
+              %a.comment-author{:href => "./profile.html", :title => "View profile"}
+                Kaleigh O'Brien
+            .comment-body
+              Thanks for adding the photos Edward. Do you know when the next conference will be held?
+            .comment-footer
+              %span.comment-timestamp 1 day ago
+              %span.comment-actions
+                %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+        %article.comment.comment-reply.media
+          .avatar-holder.media-figure
+            %a{:href => "profile.html", :title => "View user profile"}
+              %img.lazyload{:alt => "Vance Sharpe", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people7.jpg 1x, /photos/120/people7.jpg 2x"}/
+              %noscript
+                %img{:alt => "Vance Sharpe", :src => "/photos/60/people7.jpg", :srcset => "/photos/60/people7.jpg 1x, /photos/120/people7.jpg 2x"}/
+          .comment-holder.media-body
+            .comment-head
+              %a.comment-author{:href => "./profile.html", :title => "View profile"}
+                Vance Sharpe
+            .comment-body
+              Their will be a meet up in London next month. If you want to join the meet up, you can enroll
+              %a{:href => "./event-full.html"} here.
+            .comment-footer
+              %span.comment-timestamp 2 hours ago
+              %span.comment-actions
+                %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+
+    .section-heading Comment form
+
+    .code
+      :code
+        # lang: html
+          <div class='comment-form-holder'>
+            <form class='comment-form'>
+              <div class='form-comment-message'>
+                <textarea cols='50' id='comment-comment' placeholder='Write a shout...' rows='1'></textarea>
+              </div>
+              <div class='preview-wrapper'>
+                <a class='remove-image element-hidden' href='#' id='remove-image'></a>
+                <img alt='your image' class='shoutimage element-hidden' id='preview-image' src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='>
+              </div>
+              <div class='clear'></div>
+              <input accept='image/*' class='form-comment-file' data-tip='Attach a photo' type='file'>
+              <button class='modal-inline button addlink-btn' href='#addexternallink'>
+                <i class='icon-link'></i>
+              </button>
+              <span id='remain'></span>
+              <input class='form-comment-submit' type='submit' value='share'>
+            </form>
+          </div>
+
+    .section-heading Comment node
+    .code
+      :code
+        # lang: html
+
+          <article class='comment media'>
+            <div class='avatar-holder media-figure'>
+              <a href='./profile.html' title="View Brendan Woodard's profile">
+                <img alt='Dora Tilman' class='lazyload' data-srcset='/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x' src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='>
+                <noscript>
+                  <img alt='Brendan Woodard' src='/photos/60/people2.jpg' srcset='/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x'>
+                </noscript>
+              </a>
+            </div>
+            <div class='comment-holder media-body'>
+              <div class='comment-head'>
+                <a class='comment-author' href='./profile.html' title="View Brendan Woodard's profile">
+                  Brendan Woodard
+                </a>
+                (<a href='./who-is-who.html'>Greenpeace staff</a>)
+              </div>
+              <div class='comment-body'>
+                Today we have published the
+                <a href='./photo-album.html'>photos</a>
+                of the conference of marine reserves in the North Sea. Have a look and if you have made some photos yourself you can mail them to
+                <a href='./profile.html'>Edward Fischer</a>
+                <img alt='' class='lazyload' data-srcset='/photos/fisheries.jpg' src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='>
+                <noscript>
+                  <img alt='' src='/photos/fisheries.jpg'>
+                </noscript>
+              </div>
+              <div class='comment-footer'>
+                <span class='comment-timestamp'>2 days ago</span>
+                <span class='comment-actions'>
+                  <a class='comment-actionlink modal-inline' href='#reply-comment'>reply</a>
+                </span>
+              </div>
+            </div>
+          </article>
+
+  = partial :"blocks/lu/reply-comment"
+  = partial :"blocks/lu/edit-comment"
+  = partial :"blocks/lu/delete-comment"
+  = partial :"blocks/lu/add-external-link"

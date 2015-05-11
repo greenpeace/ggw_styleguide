@@ -79,9 +79,10 @@
   margin: 0 auto;
   padding: 50px 0 0;
   width: 100%;
-  background:#FFF;
+  background: $white;
   transition: transform 500ms ease;
   z-index: 1;
+  min-height: 100vh;
   position: relative;
   -webkit-overflow-scrolling: touch;
   transform: translate3d(0, 0, 0);

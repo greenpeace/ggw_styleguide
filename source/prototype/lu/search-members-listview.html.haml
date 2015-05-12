@@ -38,15 +38,15 @@ action_menu:
 
       .view-search-results
         .view-content
-          %table.tablesaw{"data-tablesaw-mode" => "swipe"}
+          %table.tablesaw{"data-tablesaw-mode" => "swipe", "data-tablesaw-sortable" => ""}
             %thead
               %tr
                 %th.views-field-avatar{"data-tablesaw-priority" => "persist"}
-                %th.views-field-name{"data-tablesaw-priority" => "persist"} Name
-                %th.views-field-username Username
-                %th Location
-                %th Date joined
-                %th Relevance
+                %th.views-field-name{"data-tablesaw-priority" => "persist", "data-tablesaw-sortable-col" => ""} Name
+                %th.views-field-username{"data-tablesaw-sortable-col" => "#"} Username
+                %th{"data-tablesaw-sortable-col" => ""} Location
+                %th{"data-tablesaw-sortable-col" => ""} Date joined
+                %th{"data-tablesaw-sortable-col" => "", "data-tablesaw-sortable-default-col" => "#"} Relevance
                 %th Member roles
                 %th Proximity to me
                 %th Profession

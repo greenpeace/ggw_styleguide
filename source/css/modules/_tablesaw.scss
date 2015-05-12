@@ -12,6 +12,30 @@
   max-width: 100%;
   width: 100%;
   table-layout: fixed;
+
+  thead {
+    border-bottom: 1px solid $grey-l;
+    background: $background;
+
+    a {
+      color: $base;
+    }
+
+    th {
+      color: $grey-d;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border: 0;
+    }
+
+    td {
+      border: 0;
+    }
+
+  }
+
 }
 
 .mode-swipe {
@@ -37,64 +61,43 @@
   @if $oldie {
     display: none;
   }
-}
 
-.tablesaw-nav-btn.left {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
+  &.left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 
-.tablesaw-nav-btn.right {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  margin-left: -1px;
-}
-
-.tablesaw-nav-btn:before {
-  @extend %load-icon;
-  color: $heading;
-  @include font-size($h4);
-}
-
-.tablesaw-nav-btn.left:before {
-  @extend %icon-left-open;
-}
-
-.tablesaw-nav-btn.right:before {
-  @extend %icon-right-open;
-
-}
-
-.tablesaw-nav-btn.disabled {
-  cursor: default;
-  pointer-events: none;
+  &.right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+  }
 
   &:before {
-    color: $grey-l;
+    @extend %load-icon;
+    color: $heading;
+    @include font-size($h4);
   }
-}
 
-.tablesaw thead {
-  border-bottom: 1px solid $grey-l;
-  background: $background;
-
-  a {
-    color: $base;
+  &.left:before {
+    @extend %icon-left-open;
   }
+
+  &.right:before {
+    @extend %icon-right-open;
+  }
+
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+
+    &:before {
+      color: $grey-l;
+    }
+  }
+
 }
 
-.tablesaw thead th {
-  color: $grey-d;
-  font-weight: 700;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border: none;
-}
-
-.tablesaw td {
-  border: none;
-}
 
 .tablesaw tbody tr {
   border-bottom: 1px solid #dfdfdf;
@@ -125,5 +128,56 @@
   width: 77px;
 }
 
+.tablesaw-sortable,
+.tablesaw-sortable thead,
+.tablesaw-sortable thead tr,
+.tablesaw-sortable thead tr th {
+  position: relative;
+}
 
+.tablesaw-sortable thead th {
+  padding-right: 1.6em;
+  vertical-align: top;
+}
+
+.tablesaw-sortable .tablesaw-sortable-head button {
+  min-width: 100%;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  text-transform: inherit;
+  position: relative;
+}
+
+.tablesaw-sortable-ascending button:after,
+.tablesaw-sortable-descending button:after {
+  font-family: 'greenwire';
+  speak: none;
+  text-align: center;
+  display: inline-block;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 .5em;
+}
+
+.tablesaw-sortable .tablesaw-sortable-head.tablesaw-sortable-ascending button:after {
+  content: '\e889';
+}
+
+.tablesaw-sortable .tablesaw-sortable-head.tablesaw-sortable-descending button:after {
+  content: '\e886';
+}
+
+.tablesaw-sortable .not-applicable:after {
+  content: "--";
+  display: block;
+}
+
+.tablesaw-sortable .not-applicable span {
+  display: none;
+}
 

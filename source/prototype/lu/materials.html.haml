@@ -13,13 +13,13 @@ design_status: Work in progress
     %h1#page-title.block-title
       = current_page.data.title
     .content
-      %table.tablesaw{"data-tablesaw-mode" => "swipe"}
+      %table.tablesaw{"data-tablesaw-mode" => "swipe", "data-tablesaw-sortable" => ""}
         %thead
           %tr
             %th.views-field-image{"data-tablesaw-priority" => "persist"}
-            %th.views-field-title{"data-tablesaw-priority" => "persist"} Title
-            %th Amount
-            %th Condition
+            %th.views-field-title{"data-tablesaw-priority" => "persist", "data-tablesaw-sortable-col" => ""} Title
+            %th{"data-tablesaw-sortable-col" => "", "data-sortable-numeric" => ""} Amount
+            %th{"data-tablesaw-sortable-col" => ""} Condition
             %th Description
 
         %tbody

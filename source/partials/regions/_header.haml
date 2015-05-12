@@ -65,9 +65,11 @@
                 %a.menu-link{:href => "../an/index.html"} Log out
 
             - else
-              - data.nav.secondary_an.each do |item|
-                %li.menu-item
-                  =nav_link item.name, item.url, :class => 'menu-link'
+              %li.menu-item
+                %a.menu-link.modal-inline{:href => "#login-block"} Login
+              %li.menu-item
+                %a.menu-link{:href => "/prototype/an/register-step1.html"} Sign up
+
 
         .l-country-selector.country-selector.nav-selector
           .dropdown-controller
@@ -89,3 +91,6 @@
                 %a{:href => "#"} Francais
               %li
                 %a{:href => "#"} Nederlands
+
+
+= partial :"blocks/an/login_block"

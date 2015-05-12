@@ -51,6 +51,7 @@
 .icon-block {       @extend %icon-block;}
 .icon-minus {       @extend %icon-minus;}
 .icon-install {     @extend %icon-install;}
+.icon-password {        @extend %icon-lock; }
 
 .icon-event {       @extend %icon-calendar; }
 .icon-news {        @extend %icon-book-open; }
@@ -63,6 +64,7 @@
 .icon-material {    @extend %icon-bucket; }
 .icon-info {        @extend %icon-info; }
 .icon-help {        @extend %icon-help; }
+
 
 .icon-facebook {    @extend %icon-facebook;}
 .icon-gplus {       @extend %icon-gplus;}

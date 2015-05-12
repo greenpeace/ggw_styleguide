@@ -2,3 +2,4 @@
 //= require "jquery-touchswipe/jquery.touchSwipe.min.js"
 //= require_tree ./contrib
 //= require_tree ./custom
+//= require_tree ./demo

@@ -6,5 +6,8 @@
     %p
       If you follow {this content title} you will receive notifications when something changes or is added. You can choose how frequently you receive notifications in your
       = succeed "." do
-        %a{:href => "#"} profile settings
-    %a.button{:href => "#"} Follow
+        %a{:href => "./edit-user-account.html"} account settings
+    - if current_page.data.subscribed
+      %a.button.active#subscribe-toggle{:href => "#", "data-toggled-text" => "Follow"} Unfollow
+    - else
+      %a.button#subscribe-toggle{:href => "#", "data-toggled-text" => "Unfollow"} Follow

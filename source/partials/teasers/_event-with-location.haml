@@ -17,6 +17,8 @@
               = lorem.name
           - else
             = lorem.name.downcase.tr(' ', '_')
+        - if current_page.data.user_role != "an"
+          %a.teaser-comments{:href => "./event-full.html#block-comments"} 3
       .field-type-date
         %label Event Time:
         %span 30 Jun, 7:00 - 22:00 GMT

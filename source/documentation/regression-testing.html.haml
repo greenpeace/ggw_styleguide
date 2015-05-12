@@ -146,7 +146,7 @@ design_status: Work in progress
       %h4 ReadyEvent and delay
 
       :markdown
-        Because we have developed Greenwire primarely for speed we initialy do not render any more resources then we need. Once this has completed, javascript progressively loads more content or enhances the user experience. The problem testing this is knowing when to take the screenshot. BackstopJS solves this problem with two config properties: readyEvent and delay.
+        Because we have developed Greenwire primarely for speed, we initialy do not render any more resources than we need. Once this has completed, javascript progressively loads more content or enhances the user experience. The problem testing this is knowing when to take the screenshot. BackstopJS solves this problem with two config properties: readyEvent and delay.
 
         The `readyEvent` property enables you to trigger the screen capture by logging a predefined string to the console. For example, the following line will delay screen capture until the page calls `console.log("domready")`, which we have defined as the last task to execute by javascript.
 
@@ -154,5 +154,66 @@ design_status: Work in progress
 
       %h4 Hiding and removing selectors
 
+      :markdown
+        You will have the option to remove or hide element before the taking the snapshot. For example the cookie message will be in the way on most protype page, so we might want to hide this always. For any regression we want to test on blocks with dynamic content we need to eliminate the dynamic part as in will always fail the test.
+
+        When you want to hide a selector we apply the style `visibility:hidden`. There may also be elements which need to be completely removed from the DOM during testing. For that we have `removeSelectors` which sets elements to `display: none`.
+
+      :code
+        # lang: json
+          {
+            "viewports": [],
+            "scenarios": [
+              {
+                "url": "https://greenwire.greenpeace.org",
+                "hideSelectors": [
+                  "#elementToHide"
+                ],
+                "removeSelectors": [
+                  "#elementToRemove"
+                ],
+                "selectors": [
+                  "header"
+                ]
+              }
+            ]
+          }
 
 
+  %section.block
+    %i.block-icon.icon-pencil.icon-bg-default
+    %h2.block-title Usage
+
+    %h4 Generating (or updating) reference screenshots
+
+    :markdown
+      For each iteration consider if you need to create a new reference. This is how the blocks / screens / pages look before you start making changes. This should always be accurate. You only need to create a reference the first time you work on the project or when you pull in changes a team mate has made and you have not yet included in your reference images.
+
+      To generate a reference run the following command in your terminal from the root of the backstopJS folder. This task will create a (or update an existing) bitmaps_reference directory with screen captures representing all specified selectors at every breakpoint. Take a look inside `../backstopjs/bitmaps_reference` to see the images that are created.
+
+    :code
+      # lang: bash
+        $ gulp reference
+
+    %h4 Running a test
+
+    :markdown
+      When the reference screenshots are made you a good to go and start modifying the project. If you want to be sure you haven't made any mistakes (like included dynamic content), you better run a test before you start working. To run a test, from the backstopJS folder:
+
+    :code
+      # lang: bash
+        $ gulp test
+
+    :markdown
+      This task will create a new set of images in `../backstopjs/bitmaps_test/<timestamp>/`.
+
+      Once the test images are generated, a web browser should open and a report comparing the most recent test bitmaps against the current reference images will run. Significant differences will be detected and shown.
+
+    %img{:src => "/photos/backstopJS-example-report.jpg", :alt => "Example of a report"}
+
+    :markdown
+      Fix any differences before you start changing your CSS. You should be able to do this by adjusting the configuration.
+
+      When all scenarios have passed, you can start working on the code. Once you are done developing run `gulp test` to see if you have not created any regression.
+
+      The best workflow is to always run a test before committing your changes. If you have a peer reviewer the reviewer should of course also run the test as well.

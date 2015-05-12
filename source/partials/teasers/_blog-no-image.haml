@@ -13,5 +13,7 @@
             = lorem.name
         - else
           = lorem.name.downcase.tr(' ', '_')
+        - if current_page.data.user_role != "an"
+          %a.teaser-comments{:href => "./blog-article.html#block-comments"} 4
       .field-name-body
         =lorem.paragraph

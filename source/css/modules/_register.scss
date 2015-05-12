@@ -61,7 +61,8 @@
 
 @include breakpoint($smalltab) {
 
-  .login-block {
+  .login-block,
+  .signup-block {
     width: 315px;
   }
 

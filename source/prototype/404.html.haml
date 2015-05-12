@@ -1,29 +1,22 @@
 ---
 title: page not found
-body_class: index l-has-sidebar page-not-found
+body_class: index no-sidebar page-not-found
 ---
 
-= partial :"blocks/breadcrumbs"
-
 #content.l-main-column
-  .block
-    %i.block-icon.icon-bg-error.icon-info
-    %h1#page-title.block-title
-      = current_page.data.title
-    %article.view-mode-full.content
-      %p Oops! We lost you...
 
-      %h2.section-heading Now what?
-      %ul.hints
-        %li
-          If you typed in the address, check your spelling. Could just be a typo.
-        %li
-          If you followed a link, it's probably broken. Please
-          %a{:href => "/netherlands/nl/contact"} contact us
-          and we'll fix it.
-        %li
-          If you're not sure what you are looking for, start at
-          %a{:href => "https://greenwire.greenpeace.org"} the homepage
+  %article
+    %h1.align-center Oops! We lost you...
 
-%aside.l-sidebar.sidebar
-  = partial :"blocks/an/save_planet5"
+    %h2.section-heading Now what?
+    %ul.hints
+      %li
+        If you typed in the address, check your spelling. Could just be a typo.
+      %li
+        If you followed a link, it's probably broken. Please
+        %a{:href => "/netherlands/nl/contact"} contact us
+        and we'll fix it.
+      %li
+        If you're not sure what you are looking for, start at
+        %a{:href => "https://greenwire.greenpeace.org"} the homepage
+

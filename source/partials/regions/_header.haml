@@ -61,14 +61,17 @@
               %li.menu-item.only-mobile
                 %a.menu-link{:href => "./my-profile.html#block-user-groups"}
                   My groups
+              %li.menu-item.only-mobile
+                %a.menu-link{:href => "./my-profile.html#block-user-events"}
+                  My events
               %li.menu-item
                 %a.menu-link{:href => "../an/index.html"} Log out
 
             - else
               %li.menu-item
-                %a.menu-link.modal-inline{:href => "#login-block"} Login
+                %a.menu-link{:href => "./login.html"} Login
               %li.menu-item
-                %a.menu-link.modal-inline{:href => "#signup-block"} Sign up
+                %a.menu-link{:href => "./register-step1.html"} Sign up
 
 
         .l-country-selector.country-selector.nav-selector

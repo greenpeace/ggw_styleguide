@@ -59,20 +59,18 @@
 
 }
 
-@include breakpoint($smalltab) {
-
-  .login-block,
-  .signup-block {
-    width: 315px;
-  }
-
+.login-block .content,
+.signup-block .content {
+  max-width: 400px;
+  position: relative;
+  margin: (2*$def-mar) auto;
 }
 
 .signup-or-separator {
   height: 34px;
   position: relative;
   text-align: center;
-  margin: 3px 0;
+  margin: $def-mar 0;
 
   label {
     display: inline-block;

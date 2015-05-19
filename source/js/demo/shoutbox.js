@@ -60,6 +60,7 @@ $(function() {
     postmarkup +=  "  <div class='comment-footer'>";
     postmarkup +=  "    <span class='comment-timestamp'>now</span>";
     postmarkup +=  "    <span class='comment-actions'>";
+    postmarkup +=  "      <a class='comment-actionlink modal-inline' href='#reply-comment'>reply</a>";
     postmarkup +=  "      <a class='comment-actionlink modal-inline' href='#edit-comment'>edit</a>";
     postmarkup +=  "      <a class='comment-actionlink modal-inline' href='#delete-comment'>delete</a>";
     postmarkup +=  "    </span>";

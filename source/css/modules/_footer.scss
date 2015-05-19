@@ -27,10 +27,11 @@
   span {
     line-height: 1em;
     float: left;
+    @include font-size ($p);
   }
 
   .logo-footer {
-    background-position: 0 -45px;
+    background-position: 3px -45px;
     width: 98px;
     margin: -2px 3px 0 4px;
     text-indent: -999px;
@@ -43,7 +44,7 @@
 
 .footer-menu {
   padding-top: .7em;
-  float: left;
+  float: right;
 
   li {
     float: left;
@@ -63,6 +64,3 @@
 
 }
 
-.bottom-menu {
-  float: right;
-}

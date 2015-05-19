@@ -25,8 +25,8 @@ $(function() {
   // attach datepicker plugin to date input fields
   $('.input-date')
     .pickadate({
-      format: 'dd/mm/yy',
-      formatSubmit: 'yyyy-mm-dd'
+      format: 'd mmmm yyyy',
+      formatSubmit: 'yyyy/mm/dd'
     })
     .addClass('date-field')
     .after('<i class="icon-calendar"></i>');

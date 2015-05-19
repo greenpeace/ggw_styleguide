@@ -1,8 +1,13 @@
 #block-group-info.block.block-profile.current
-  - if current_page.data.user_role == "cm"
-    .action-bar
-      .action-bar-item.edit-content
-        %a.button{:href => "#", :title => "Click to edit info"} Edit
+  .action-bar
+    .action-bar-item.edit-content
+      - if current_page.data.joined != "joined"
+        - if current_page.data.user_role == "lu"
+          %a.button.btn-primary.modal-inline{:href => "#confirm-group-subscription"} Join group
+        - else
+          %a.button.btn-primary{:href => "/prototype/an/login.html"} Join group
+      - else
+        %a.button.modal-inline{:href => "#confirm-group-leave"} Leave this group
 
   %i.block-icon.icon-users.icon-bg-group
   %h2.block-title About
@@ -86,16 +91,5 @@
         = succeed "," do
           %a.tag{:href => "./tags.html"} food
         %a.tag{:href => "./tags.html"} transport
-
-    .field.field-group-join
-      - if current_page.data.joined != "joined"
-        .field-item
-          %p To find more about this group, join the conversation or contribute, you need to join...
-          - if current_page.data.user_role == "lu"
-            %a.button.btn-primary.modal-inline{:href => "#confirm-group-subscription"} Join group
-          - else
-            %a.button.btn-primary{:href => "/prototype/an/login.html"} Join group
-      - else
-        %a.button.modal-inline{:href => "#confirm-group-leave"} Leave this group
 
     = partial :"blocks/lu/confirm-group-leave"

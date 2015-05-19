@@ -22,8 +22,8 @@
 // 2. Sort comments, top right of block
 .sort-comments {
   position: absolute;
-  right: $def-mar;
-  top: 8px;
+  right: 0;
+  top: -45px;
 
   li {
     margin-left: 10px;

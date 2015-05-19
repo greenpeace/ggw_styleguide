@@ -44,7 +44,7 @@ design_status: Needs review
               %label.form-label{:for => "edit-field-user-date-of-birth"}
                 Date of birth
                 %span.form-required{:title => "This field is required."} *
-              %input#edit-field-user-date-of-birth.form-text.user-date-of-birth.input-medium.input-date{:name => "edit-field-user-date-of-birth", :type => "text", :value => "", :tabindex => "1", "data-value" => "1 January 1980", :size => "35"}/
+              %input#edit-field-user-date-of-birth.form-text.user-date-of-birth.input-medium.input-date{:name => "edit-field-user-date-of-birth", :type => "text", :value => "", :tabindex => "1", "data-value" => "1980/01/01", :size => "35"}/
 
             .form-item.field-user-place-of-birth
               %label.form-label{:for => "edit-field-user-place-of-birth"}
@@ -53,7 +53,7 @@ design_status: Needs review
               %input#edit-field-user-place-of-birth.form-text.user-place-of-birth.input-medium{:name => "edit-field-user-place-of-birth", :type => "text", :value => "", :tabindex => "1", :size => "35"}/
 
         .form-actions.form-wrapper
-          %input.button.pull-left{:type => "submit", :value => "Back to previous step", :tabindex => "11"}/
+          %a.button.pull-left{:href => "./register-step1.html", :tabindex => "11"} Back to previous step
           %input.button.btn-primary.pull-right{:type => "submit", :value => "Next", :tabindex => "10"}/
 %aside.l-sidebar.sidebar
   = partial :"blocks/an/save_planet2"

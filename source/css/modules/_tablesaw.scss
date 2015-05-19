@@ -110,7 +110,6 @@
 // persistant styling
 .tablesaw thead .tablesaw-cell-persist {
   background: darken($background, 8%);
-  color: $heading;
 }
 
 .tablesaw .tablesaw-cell-persist:last-child {
@@ -140,9 +139,9 @@
   vertical-align: top;
 }
 
-.tablesaw-sortable .tablesaw-sortable-head button {
+.tablesaw-sortable-btn {
   min-width: 100%;
-  color: inherit;
+  color: $heading;
   background: transparent;
   border: 0;
   padding: 0;

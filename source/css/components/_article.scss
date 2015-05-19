@@ -27,7 +27,8 @@ article {
     margin-top: $def-mar-half;
 
     @include breakpoint($desk) {
-      margin-top: $def-mar + 10px;
+      //margin-top: $def-mar + 10px;
+      margin-top: $def-mar;
     }
 
   }

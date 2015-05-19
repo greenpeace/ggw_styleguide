@@ -11,14 +11,10 @@
       %select.chosen-select#groups{"data-placeholder" => "Select groups", :multiple => "multiple"}
         %option{:value => ""}
         %optgroup{:label => "My groups"}
-          %option{:value => "group1"} Local group Eindhoven
-          %option{:value => "group2"} Solar energy
-          %option{:value => "group3"} Web editors
-          %option{:value => "group4"} Coal campaign
-          %option{:value => "group5"} Photographers
+          - for groups in data.groups.my_groups
+            %option{:value => ""}
+              #{groups}
         %optgroup{:label => "All groups"}
-          %option{:value => "group6"} Local group New York
-          %option{:value => "group7"} Wind energy
-          %option{:value => "group8"} Festivals
-          %option{:value => "group9"} Cooking
-          %option{:value => "group10"} Save and protect Rainforests
+          - for groups in data.groups.all_groups
+            %option{:value => ""}
+              #{groups}

@@ -1,22 +1,34 @@
-.views-row
-  %article.node-teaser-event.node-teaser.lazyload{"data-expand" => "0"}
-    .field-type-image
-    .field-type-wrapper
-      %h2.node-title
-        %a{:href => "./event-full.html"}
-          = lorem.sentence
-      .submitted
-        %a.type.event{:href => "./search-events.html"} Event
-        %span.created-date 27 Dec 2014, by
-        %span.author
+- data.event.no_image.each do |item|
+  .views-row
+    %article.node-teaser-event.node-teaser
+      .field-type-image
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./event-full.html"}
+            = item.title
+        .submitted
+          %a.type.event{:href => "./events.html"} Event
+          %span.created-date
+          = succeed ", by" do
+            = item.date
           - if current_page.data.user_role != "an"
             %a{:href => "./profile.html"}
-              = lorem.name
+              = item.author
           - else
-            = lorem.name.downcase.tr(' ', '_')
+            = item.author.downcase.tr(' ', '_')
+          - if current_page.data.user_role != "an"
+            - if item.comment_amount
+              %a.teaser-comments{:href => "./event-full.html#block-comments"}
+                = item.comment_amount
       .field-type-date
         %label Event Time:
-        %span 5 Jul, 8:00 - 12:00 CDT
+        %span
+          = item.event_date
       .field-type-location
         %label Address:
-        %span 3000 E Calhoun Parkway, Minneapolis (Lake Calhoun Park)
+        %span
+          = succeed " - " do
+            = item.location_name
+          = succeed ", " do
+            = item.address
+          = item.city

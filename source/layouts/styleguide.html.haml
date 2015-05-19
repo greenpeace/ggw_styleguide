@@ -20,7 +20,8 @@
     = stylesheet_link_tag "all"
     <!--<![endif]-->
 
-    = partial :"loadfont"
+    // for regression testing we use the old simple way of including the font
+    = stylesheet_link_tag "fonticons.woff"
 
   %body{:class => "#{current_page.data.body_class || page_classes} style-guide"}
     /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
@@ -52,15 +53,3 @@
 
     /[if lte IE 8]
       = javascript_include_tag "oldie"
-
-    :javascript
-      function lazyImg() {
-        var imgDefer = document.getElementsByTagName('img');
-        for (var i=0; i<imgDefer.length; i++) {
-          if(imgDefer[i].getAttribute('data-src')) {
-            imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
-          }
-        }
-      }
-      window.onload = lazyImg;
-

@@ -5,8 +5,6 @@
       %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => ""}
       .autocomplete#tagsautocomplete
         %ul
-          %li Arctic Ocean
-          %li Atlantic Ocean
-          %li Indian Ocean
-          %li Pacific Ocean
-          %li Southern Ocean
+          - for tags in data.tags.suggestion
+            %li
+              #{tags}

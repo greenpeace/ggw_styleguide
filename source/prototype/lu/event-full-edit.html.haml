@@ -1,5 +1,5 @@
 ---
-title: Edit event
+title: Edit event example
 body_class: not-front logged-in page-type-event l-has-sidebar-first page-edit
 direct_parent:
   -
@@ -37,220 +37,203 @@ menu:
       - for item in current_page.data.menu
         %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
           #{item.name}
-.l-main-column
-  %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
-    %section#section-title.block.current.main-content
-      %i.block-icon.icon-pencil.icon-bg-action
-      %h2.block-title Title, description & image
-      .content
-        .form-wrapper
-          .form-item.field-name-title
-            %label.form-label{:for => "edit-field-title"}
-              Title
-              %span.form-required{:title => "This field is required."} *
-            %input#edit-field-title.form-text{:name => "edit-field-title", :type => "text", :value => "", :tabindex => "1"}/
-          .form-item
-            %label.form-label{:for => "field-edit-description"}
-              Description
-              %span.form-required{:title => "This field is required."} *
-            %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "2"}
-          .form-item
-            %label.form-label{:for => "field-edit-image"}
-              Image
-              %span.form-required{:title => "This field is required."} *
-            .media-widget.media
-              .preview.media-figure
-                .media-item
-              .media-body
-                .form-description
-                  No image selected <br />
-                  Files must be smaller than3 MB <br/>
-                  Allowed file types: png gif jpg jpeg <br/>
-                  Images must be larger than 400x300 pixels.
-                %input#uploadimage.hiddenfile{:accept => "image/*", :type => "file", :value => "upload"}
-                %button.button.launcher{:onmousedown => "triggerUpload()"} select image
-                %a.button.remove.element-hidden{:href => "#", :tabindex => "3"} remove image
-                %p#file-name.element-hidden
 
-    %section#section-date.block
-      %i.block-icon.icon-calendar.icon-bg-action
-      %h2.block-title Date and location
-      .content
-        .form-wrapper.row.deskwidth50
-          .inline-label
-            %label
-              Start:
-              %span.form-required{:title => "This field is required."} *
-          .form-item.field-name-event-date-und-0-value-date
-            %input#edit-field-event-date-und-0-value-date.form-text.input-small.input-date{:type => "text", :value => "", :placeholder => "date", :tabindex => "5"}
-          .form-item.field-name-event-date-und-0-value-time
-            %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time{:type => "text", :value => "", :placeholder => "time", :tabindex => "6"}
-        .form-wrapper.row.deskwidth50
-          .inline-label
-            %label
-              End:
-          .form-item.field-name-event-date-und-1-value-date
-            %input#edit-field-event-date-und-1-value-date.form-text.input-small.input-date{:type => "text", :value => "", :placeholder => "date", :tabindex => "7"}
-          .form-item.field-name-event-date-und-1-value-time
-            %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time{:type => "text", :value => "", :placeholder => "time", :tabindex => "8"}
+- data.event.with_image_organising.each do |item|
 
-        .form-wrapper.wrapper
+  .l-main-column
+    %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
+      %section#section-title.block.current.main-content
+        %i.block-icon.icon-pencil.icon-bg-action
+        %h2.block-title Title, description & image
+        .content
+          .form-wrapper
+            .form-item.field-name-title
+              %label.form-label{:for => "edit-field-title"}
+                Title
+                %span.form-required{:title => "This field is required."} *
+              %input#edit-field-title.form-text{:name => "edit-field-title", :type => "text", :value => "#{item.title}", :tabindex => "1"}/
+            .form-item
+              %label.form-label{:for => "field-edit-description"}
+                Description
+                %span.form-required{:title => "This field is required."} *
+              %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "2"}
+                = item.full_text
+            .form-item
+              %label.form-label{:for => "field-edit-image"}
+                Image
+                %span.form-required{:title => "This field is required."} *
+              .media-widget.media
+                .preview.media-figure
+                  %img.media-item{:alt => "Example of image.", :src => "/photos/nature10.jpg"}/
+                .media-body
+                  .form-description
+                    No image selected <br />
+                    Files must be smaller than3 MB <br/>
+                    Allowed file types: png gif jpg jpeg <br/>
+                    Images must be larger than 400x300 pixels.
+                  %input#uploadimage.hiddenfile{:accept => "image/*", :type => "file", :value => "upload"}
+                  %button.button.launcher{:onmousedown => "triggerUpload()"} select image
+                  %a.button.remove.element-hidden{:href => "#", :tabindex => "3"} remove image
+                  %p#file-name.element-hidden
 
-          .form-item.field-event-location
-            %label.form-label{:for => "edit-event-location"}
-              Location name
-            .form-description Name of the building, market etc. where the event is held. <br />Can be anything you like.
-            %input#edit-event-location.form-text{:name => "edit-event-location", :type => "text", :value => "", :placeholder => "venue name", :tabindex => "9"}/
+      %section#section-date.block
+        %i.block-icon.icon-calendar.icon-bg-action
+        %h2.block-title Date and location
+        .content
+          .form-wrapper.row.deskwidth50
+            .inline-label
+              %label
+                Start:
+                %span.form-required{:title => "This field is required."} *
+            .form-item.field-name-event-date-und-0-value-date
+              %input#edit-field-event-date-und-0-value-date.form-text.input-small.input-date{:type => "text", :value => "#{item.event_start_date}", :placeholder => "date", :tabindex => "5"}
+            .form-item.field-name-event-date-und-0-value-time
+              %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time{:type => "text", :value => "#{item.event_start_time}", :placeholder => "time", :tabindex => "6"}
+          .form-wrapper.row.deskwidth50
+            .inline-label
+              %label
+                End:
+            .form-item.field-name-event-date-und-1-value-date
+              %input#edit-field-event-date-und-1-value-date.form-text.input-small.input-date{:type => "text", :value => "#{item.event_end_date}", :placeholder => "date", :tabindex => "7"}
+            .form-item.field-name-event-date-und-1-value-time
+              %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time{:type => "text", :value => "#{item.event_end_time}", :placeholder => "time", :tabindex => "8"}
 
-          .form-item.form-type-select.field-event-location-und-country
-            %label.form-label{:for => "country-select"}
-              Country
-              %span.form-required{:title => "This field is required."} *
-            %select#country-select.form-select{:name => "edit-event-location-und-country", :tabindex => "10", :onchange => "country_select_search()"}
-              %option{:value => ""} Please select
-              %option{:value => "un"} NOT LISTED
-              %option{:value => "au"} Australia
-              %option{:value => "be"} Belgium
-              %option{:value => "br"} Brazil
-              %option{:value => "ca"} Canada
-              %option{:value => "de"} Germany
-              %option{:value => "fi"} Finland
-              %option{:value => "fr"} France
-              %option{:value => "in"} India
-              %option{:value => "id"} Indonesia
-              %option{:value => "it"} Italy
-              %option{:value => "mx"} Mexico
-              %option{:value => "nl"} The Netherlands
-              %option{:value => "no"} Norway
-              %option{:value => "nz"} New Zealand
-              %option{:value => "ru"} Russia
-              %option{:value => "za"} South Africa
-              %option{:value => "se"} Sweden
-              %option{:value => "th"} Thailand
-              %option{:value => "ug"} Uganda
-              %option{:value => "us"} USA
-              %option{:value => "uk"} United Kingdom
+          .form-wrapper.wrapper
 
-          .form-item.field-event-address
-            %label.form-label{:for => "edit-event-address"}
-              Address
-            .form-description We will attempt to calculate the coordinates from the supplied address.
-            %input#edit-event-address.form-text{:name => "edit-event-address", :type => "text", :value => "", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
-            #results
-            %a.small-link.modal-inline{:href => "#manual-coordinates-form"} add geocoordinates manually
+            .form-item.field-event-location
+              %label.form-label{:for => "edit-event-location"}
+                Location name
+              .form-description Name of the building, market etc. where the event is held. <br />Can be anything you like.
+              %input#edit-event-location.form-text{:name => "edit-event-location", :type => "text", :value => "#{item.location_name}", :placeholder => "venue name", :tabindex => "9"}/
 
-          .preview-location
-            #map{:style => "width: 100%; height: 100%;"}
+            .form-item.form-type-select.field-event-location-und-country
+              %label.form-label{:for => "country-select"}
+                Country
+                %span.form-required{:title => "This field is required."} *
+              %select#country-select.chosen-select{"data-placeholder" => "Select one or more groups", :tabindex => "10", :onchange => "country_select_search()"}
+                - for country in data.countries.countries
+                  %option{:value => "#{country}"}
+                    #{country}
+                %option{:value => "", :selected => "US"} United States
 
-    %section#section-visibility.block
-      %i.block-icon.icon-eye.icon-bg-action
-      %h2.block-title Visibility
-      .content
-        .form-wrapper
-          .form-item.form-type-select
-            %label.form-label{:for => "groups"} Group(s)
-            %select#groups.chosen-select{"data-placeholder" => "Select one or more groups", :multiple => "multiple", :tabindex => "16"}
-              - 50.times do |num|
-                :preserve
-                  <option>
-                = lorem.words 3
-                :preserve
-                  </option>
-          .form-item.form-type-radios.radio-blocks
-            %label.form-label{:for => "edit-group-content-access"}
-              Private or public?
-              %span.form-required{:title => "This field is required."} *
-            .form-radios
-              .form-type-radio
-                %input#edit-group-content-access-und-0.form-radio{:name => "group_content_access", :type => "radio", :value => "0", :checked => "checked", :tabindex => "17"}
-                %label.option{:for => "edit-group-content-access-und-0"} Private - only for group members
-              .form-type-radio
-                %input#edit-group-content-access-und-1.form-radio{:name => "group_content_access", :type => "radio", :value => "1", :tabindex => "18"}
-                %label.option{:for => "edit-group-content-access-und-1"} All members of Greenwire
-              .form-type-radio
-                %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2", :tabindex => "19"}
-                %label.option{:for => "edit-group-content-access-und-2"} Public - visible for all visitors of Greenwire
+            .form-item.field-event-address
+              %label.form-label{:for => "edit-event-address"}
+                Address
+              .form-description We will attempt to calculate the coordinates from the supplied address.
+              %input#edit-event-address.form-text{:name => "edit-event-address", :type => "text", :value => "#{item.address}", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
+              #results
+              %a.small-link.modal-inline{:href => "#manual-coordinates-form"} add geocoordinates manually
 
-    %section#section-language.block
-      %i.block-icon.icon-tag.icon-bg-action
-      %h2.block-title Event type, language & tags
-      .content
-        .form-wrapper
+            .preview-location
+              #map{:style => "width: 100%; height: 100%;"}
 
-          .form-item.form-type-select
-            %label.form-label{:for => "eventtype"} Event type
-            %select#eventtype.chosen-select{"data-placeholder" => "Select one or more types", :multiple => "multiple", :tabindex => "14"}
-              - 50.times do |num|
-                :preserve
-                  <option>
-                = lorem.word
-                :preserve
-                  </option>
+      %section#section-visibility.block
+        %i.block-icon.icon-eye.icon-bg-action
+        %h2.block-title Visibility
+        .content
+          .form-wrapper
+            .form-item.form-type-select
+              %label.form-label{:for => "groups"} Group(s)
+              %select#groups.chosen-select{"data-placeholder" => "Select one or more groups", :multiple => "multiple", :tabindex => "16"}
+                - for groups in data.groups.my_groups
+                  %option{:value => ""}
+                    #{groups}
+                %option{:value => "", :selected => ""} Local group London
+            .form-item.form-type-radios.radio-blocks
+              %label.form-label{:for => "edit-group-content-access"}
+                Private or public?
+                %span.form-required{:title => "This field is required."} *
+              .form-radios
+                .form-type-radio
+                  %input#edit-group-content-access-und-0.form-radio{:name => "group_content_access", :type => "radio", :value => "0", :checked => "checked", :tabindex => "17"}
+                  %label.option{:for => "edit-group-content-access-und-0"} Private - only for group members
+                .form-type-radio
+                  %input#edit-group-content-access-und-1.form-radio{:name => "group_content_access", :type => "radio", :value => "1", :tabindex => "18"}
+                  %label.option{:for => "edit-group-content-access-und-1"} All members of Greenwire
+                .form-type-radio
+                  %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2", :tabindex => "19"}
+                  %label.option{:for => "edit-group-content-access-und-2"} Public - visible for all visitors of Greenwire
 
-          .form-item.form-type-select
-            %label.form-label{:for => "language"} Language
-            .form-description What language is this event in? You can select more than one language.
-            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
-              %option{:selected => ""} English, US
-              %option French
+      %section#section-language.block
+        %i.block-icon.icon-tag.icon-bg-action
+        %h2.block-title Event type, language & tags
+        .content
+          .form-wrapper
 
-          .form-item
-            %label Tags
-            %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "", :placeholder => "Text input", :tabindex => "15"}
-            .autocomplete#tagsautocomplete
-              %ul
+            .form-item.form-type-select
+              %label.form-label{:for => "eventtype"} Event type
+              %select#eventtype.chosen-select{"data-placeholder" => "Select one or more types", :multiple => "multiple", :tabindex => "14"}
                 - 50.times do |num|
-                  %li
-                    = lorem.word
+                  :preserve
+                    <option>
+                  = lorem.word
+                  :preserve
+                    </option>
 
-    %section#section-organisers.block
-      %i.block-icon.icon-users.icon-bg-action
-      %h2.block-title Organisers and roles
-      .content
-        .form-wrapper
-          .form-item.form-type-select
-            %label.form-label{:for => "organisersinput"} Organisers
-            %select#organisersinput.chosen-select{"data-placeholder" => "Select organisers...", :multiple => "multiple", :tabindex => "11"}
-              - 50.times do |num|
-                :preserve
-                  <option>
-                = lorem.name
-                :preserve
-                  </option>
+            .form-item.form-type-select
+              %label.form-label{:for => "language"} Language
+              .form-description What language is this event in? You can select more than one language.
+              %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
+                %option{:selected => ""} English, US
+                %option French
 
-          .form-item
-            %label.form-label
-              Roles & maximum of people needed
-            .form-description Enter the roles to which the users can subscribe to. Example: Driver (9:00 - 13:00).
+            .form-item
+              %label Tags
+              %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "", :placeholder => "Text input", :tabindex => "15"}
+              .autocomplete#tagsautocomplete
+                %ul
+                  - 50.times do |num|
+                    %li
+                      = lorem.word
 
-            .row.clone-item
-              .form-item.edit-field-event-roles-und-0-human{:style => "margin-top:7px;"}
-                %input#edit-field-event-roles-und-0-human.form-text{:size => "29", :type => "text", :value => "", :placeholder => "describe the role", :tabindex => "12"}
-              .form-item.field-event-roles-und-0-role-limit{:style => "margin-top:7px;"}
-                %input#edit-field-event-roles-und-0-role-limit.form-text.number-field{:type => "number", :value => "", :min => "1", :max => "9999", :step => "1", :placeholder => "max. no.", :tabindex => "13"}
-            %a.small-link.clone-trigger{:href => "#"} add another role
+      %section#section-organisers.block
+        %i.block-icon.icon-users.icon-bg-action
+        %h2.block-title Organisers and roles
+        .content
+          .form-wrapper
+            .form-item.form-type-select
+              %label.form-label{:for => "organisersinput"} Organisers
+              %select#organisersinput.chosen-select{"data-placeholder" => "Select organisers...", :multiple => "multiple", :tabindex => "11"}
+                - 50.times do |num|
+                  :preserve
+                    <option>
+                  = lorem.name
+                  :preserve
+                    </option>
+
+            .form-item
+              %label.form-label
+                Roles & maximum of people needed
+              .form-description Enter the roles to which the users can subscribe to. Example: Driver (9:00 - 13:00).
+
+              .row.clone-item
+                .form-item.edit-field-event-roles-und-0-human{:style => "margin-top:7px;"}
+                  %input#edit-field-event-roles-und-0-human.form-text{:size => "29", :type => "text", :value => "", :placeholder => "describe the role", :tabindex => "12"}
+                .form-item.field-event-roles-und-0-role-limit{:style => "margin-top:7px;"}
+                  %input#edit-field-event-roles-und-0-role-limit.form-text.number-field{:type => "number", :value => "", :min => "1", :max => "9999", :step => "1", :placeholder => "max. no.", :tabindex => "13"}
+              %a.small-link.clone-trigger{:href => "#"} add another role
 
 
-  %section#section-submit.section-submit
-    .form-actions.form-wrapper
-      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "./event-full-organiser.html#form-saved"}
-        %a.button.btn-l{:href => "./events.html", :tabindex => "8"} Cancel
-
-#manual-coordinates-form.block.white-popup.mfp-hide
-  %i.block-icon.icon-map.icon-bg-action
-  %h2.block-title Add coordinates of your event
-  .content
-    %form
-      .form-wrapper
-        .form-item
-          %label.form-label{:for => "latitude"} Latitude
-          %input.form-text#latitude{:type => "text", :value => ""}
-        .form-item
-          %label.form-label{:for => "longitude"} Longitude
-          %input.form-text#longitude{:type => "text", :value => ""}
+    %section#section-submit.section-submit
       .form-actions.form-wrapper
-        %input{:type => "submit", :class => "button btn-primary", :value => "Submit"}
-        %input{:type => "submit", :class => "button btn-close", :value => "Cancel"}
+        %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "./event-full-organiser.html#form-saved"}
+          %a.button.btn-l{:href => "./events.html", :tabindex => "8"} Cancel
+
+  #manual-coordinates-form.block.white-popup.mfp-hide
+    %i.block-icon.icon-map.icon-bg-action
+    %h2.block-title Add coordinates of your event
+    .content
+      %form
+        .form-wrapper
+          .form-item
+            %label.form-label{:for => "latitude"} Latitude
+            %input.form-text#latitude{:type => "text", :value => ""}
+          .form-item
+            %label.form-label{:for => "longitude"} Longitude
+            %input.form-text#longitude{:type => "text", :value => ""}
+        .form-actions.form-wrapper
+          %input{:type => "submit", :class => "button btn-primary", :value => "Submit"}
+          %input{:type => "submit", :class => "button btn-close", :value => "Cancel"}
 
 
 = javascript_include_tag "leaflet"

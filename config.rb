@@ -99,7 +99,7 @@ helpers do
 end
 
 
-activate :title, site: 'GGW Style Guide', separator: ' — '
+activate :title, site: 'Your brand Style Guide', separator: ' — '
 
 
 # Build-specific configuration

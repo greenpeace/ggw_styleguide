@@ -8,28 +8,15 @@
     - if current_page.data.group == "home"
       #map.map
 
-    %article.node-type-small
-      %h2
-        %a{:href => "./event-full.html"} Heb jij interesse in een Act for Arctic training of webinar?
-      .date-display-single 20 juli, 2014 - 09:00
-    %article.node-type-small
-      %h2
-        %a{:href => "./event-full-enrolled.html"} Act for Arctic Kick-Off training
-      .date-display-single 24 juli, 2014 - 18:00
-    %article.node-type-small
-      %h2
-        %a{:href => "./event-full.html"} De héle Noordzeekust schoon van 1 t/m 31 augustus! Help je mee?
-      .date-display-single 1 augustus, 2014 - 00:00
-    %article.node-type-small
-      %h2
-        %a{:href => "./event-full.html"} Netwerkborrel 28 augustus
-      .date-display-single 28 augustus, 2014 - 17:00
-    %article.node-type-small
-      %h2
-        %a{:href => "./event-full.html"} Opschonen Enschede
-      .date-display-single 20 July, 2014 - 12:09
+    - data.event.upcoming.each do |item|
+      %article.node-type-small
+        %h2
+          %a{:href => "./event-full.html"}
+            = item.title
+        .date-display-single
+          = item.date
 
-    %a.button{:href => "./search-events.html"} load more
+    %a.button{:href => "./events.html"} load more
 
 - if current_page.data.group == "home"
   = javascript_include_tag "leaflet"
@@ -62,7 +49,7 @@
     for (var i = 0; i < 5; i++) {
       var a = upcomingEvents[i];
       var marker = L.marker(new L.LatLng(a[0], a[1]), {icon: eventIcon});
-      marker.bindPopup('<h2 class="node-title"><a href="#">Join us to Festival Mundial</a></h2><div   class="field field-name-field-event-date"><span class="date-display-single">25 September,   2014 - 14:57</span></div>');
+      marker.bindPopup('<h2 class="node-title"><a href="./event-full.html">Join us to Festival Mundial</a></h2><div class="field field-name-field-event-date"><span class="date-display-single">25 September, 2014 - 14:57</span></div>');
       markers.addLayer(marker);
     }
 

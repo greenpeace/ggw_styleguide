@@ -1,0 +1,19 @@
+with_image:
+  -
+    title: "First Direct Observation of Carbon Dioxide’s Increasing Greenhouse Effect at the Earth’s Surface"
+    date: "2 Mar 2015"
+    datetime: "2 March 2015 - 10:06 PM"
+    author: "Michelle Heath"
+    comment_amount: "7"
+    tags: "CO2 forcing, Berkley Labs, atmospheric CO2"
+    introtext: "Scientists have observed an increase in carbon dioxide’s greenhouse effect at the Earth’s surface for the first time, news from Berkeley Lab: http://newscenter.lbl.gov/2015/02/25/co2-greenhouse-effect-increase/"
+    full_text: "<p>Scientists have observed an increase in carbon dioxide’s greenhouse effect at the Earth’s surface for the first time, news from Berkeley Lab: <a href='http://newscenter.lbl.gov/2015/02/25/co2-greenhouse-effect-increase/'>http://newscenter.lbl.gov/2015/02/25/co2-greenhouse-effect-increase/</a></p>"
+
+no_image:
+  -
+    title: "Farmer Phills Music Festival"
+    date: "12 Apr 2015"
+    datetime: "12 April 2015 - 9:12 PM"
+    author: "Bart Goldman"
+    introtext: "We're really pleased to confirm that we will be back at Farmer Phills music festival this year. The festival is held just outside Shrewsbury in the Shropshire hills on the 14th-16th August."
+    comment_amount: "1"

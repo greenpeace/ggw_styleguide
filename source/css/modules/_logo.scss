@@ -5,7 +5,7 @@
   top: $def-mar-half;
   display:block;
   height: 34px;
-  background-position: 0 0;
+  background: url(../images/logo1.png) 0 0 / auto 32px no-repeat;
 
   @include breakpoint($desk) {
     position: absolute;

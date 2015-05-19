@@ -7,13 +7,23 @@
         .views-exposed-widget
           %label Author
           .views-widget
-            .form-item.form-type-textfield
-              %input.form-autocomplete.form-text{:type => "text"}/
+            .form-item
+              %input.form-text.form-autocomplete#authorinput{:type => "text", :value => ""}
+              .autocomplete#authorautocomplete
+                %ul
+                  - for members in data.members.suggestion
+                    %li
+                      #{members}
       .views-exposed-widget
         %label Tags
         .views-widget
-          .form-item.form-type-textfield
-            %input.form-autocomplete.form-text{:type => "text"}/
+          .form-item
+            %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => ""}
+            .autocomplete#tagsautocomplete
+              %ul
+                - for tags in data.tags.suggestion
+                  %li
+                    #{tags}
       .views-exposed-widget
         %label City
         .views-widget

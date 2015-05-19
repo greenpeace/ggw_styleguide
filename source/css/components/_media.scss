@@ -1,4 +1,6 @@
-img, picture, media {
+img,
+picture,
+media {
   max-width: 100%;
 }
 
@@ -22,7 +24,7 @@ td img {
 
 }
 
-img.nofloat {
+.nofloat {
   float: none;
   margin-left: 0;
   margin-right: 0;
@@ -42,7 +44,7 @@ img.nofloat {
   position: absolute;
   bottom: 0;
   background: $heading;
-  background: rgba(0,0,0,.7);
+  background: rgba(0, 0, 0, .7);
   padding: .5em;
   width: 100%;
   color: $grey-l;
@@ -50,23 +52,3 @@ img.nofloat {
   line-height: 1.35em;
 }
 
-.js .lazyload,
-.js .lazyloading {
-  opacity: 0;
-}
-
-.js .lazyloaded {
-  opacity: 1;
-  transition: opacity 300ms;
-}
-
-.js [data-expand].lazyload {
-  opacity: 0;
-  transform: scale(.8);
-}
-
-.js [data-expand].lazyloaded {
-  opacity: 1;
-  transition: all 700ms;
-  transform: scale(1);
-}

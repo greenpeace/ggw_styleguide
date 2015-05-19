@@ -27,104 +27,102 @@ menu:
 = partial :"blocks/breadcrumbs"
 
 %aside.sidebar-first.sfmenu
-  .block
+  .block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
     %i.block-icon.icon-news.icon-bg-news-media
     %h2.block-title Edit news
     .content
       - for item in current_page.data.menu
-        %a.sf-navbtn{:href => "#{item.url}"}
+        %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
           #{item.name}
-.l-main-column
-  %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
-    %section#section-title.block.current.main-content
-      %i.block-icon.icon-pencil.icon-bg-action
-      %h2.block-title Title, description & image
-      .content
-        .form-wrapper
-          .form-item.field-name-title
-            %label.form-label{:for => "edit-field-title"}
-              Title
-              %span.form-required{:title => "This field is required."} *
-            %input#edit-field-title.form-text{:name => "edit-field-title", :type => "text", :value => "quo excepturi dolor quos consequuntur itaque vel et vel voluptatem", :tabindex => "1"}/
-          .form-item
-            %label.form-label{:for => "field-edit-body"}
-              Body text
-              %span.form-required{:title => "This field is required."} *
-            %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "2"}
-              &lt;h1&gt;&lt;img alt="Saturn V carrying Apollo 11" class="pull-right" src="http://sdk.ckeditor.com/samples/assets/sample.jpg"/&gt; Apollo 11&lt;/h1&gt;   &lt;p&gt;&lt;strong&gt;Apollo 11&lt;/strong&gt; was the spaceflight that landed the first humans, Americans &lt;a href="http://en.wikipedia.org/wiki/Neil_Armstrong"&gt;Neil    Armstrong&lt;/a&gt; and   &lt;a href="http://en.wikipedia.org/wiki/Buzz_Aldrin"&gt;Buzz Aldrin&lt;/a&gt;, on the Moon on July 20, 1969, at 20:18 UTC. Armstrong became the first to step onto the   lunar surface 6 hours   later on July 21 at 02:56 UTC.&lt;/p&gt;    &lt;p&gt;Armstrong spent about &lt;s&gt;three and a half&lt;/s&gt; two and a half hours outside the spacecraft, Aldrin slightly less; and together they collected 47.5 pounds (21.5&amp;nbsp;kg)    of lunar    material for return to Earth. A third member of the mission, &lt;a href="http://en.wikipedia.org/wiki/Michael_Collins_(astronaut)"&gt;Michael Collins&lt;/a&gt;, piloted    the   &lt;a href="http://en.wikipedia.org/wiki/Apollo_Command/Service_Module"&gt;command&lt;/a&gt; spacecraft alone in lunar orbit until Armstrong and Aldrin returned to it for    the trip back to    Earth.&lt;/p&gt;
 
-          .form-item
-            %label.form-label{:for => "field-edit-image"}
-              Image
-              %span.form-required{:title => "This field is required."} *
-            .media-widget.media
-              .preview.media-figure
-                %img.media-item.lazyload{:alt => "Example of image.", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-sizes" => "(min-width: 64em) 603px, (min-width: 48em) 768px, (min-width: 24em) 640px, 320px", "data-srcset" => "/photos/nature8.jpg 1536w, /photos/nature6.jpg 1440w, /photos/nature12.jpg 1280w, /photos/nature7.jpg 768w, /photos/nature11.jpg 640w, /photos/nature9.jpg 603w, /photos/nature10.jpg 320w"}/
-              .media-body
-                .form-description
-                  Files must be smaller than3 MB <br/>
-                  Allowed file types: png gif jpg jpeg <br/>
-                  Images must be larger than 400x300 pixels.
-                %input#uploadimage.element-invisible{:type => "file", :value => "upload"}
-                %button.button.launcher select image
-                %a.button.remove{:href => "#", :tabindex => "3"} remove image
-                %br
-                %p.filename nature10.jpg
+- data.news.with_image.each do |item|
+  .l-main-column
+    %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
+      %section#section-title.block.current.main-content
+        %i.block-icon.icon-pencil.icon-bg-action
+        %h2.block-title Title, description & image
+        .content
+          .form-wrapper
+            .form-item.field-name-title
+              %label.form-label{:for => "edit-field-title"}
+                Title
+                %span.form-required{:title => "This field is required."} *
+              %input#edit-field-title.form-text{:name => "edit-field-title", :type => "text", :value => "#{item.title}", :tabindex => "1"}/
+            .form-item
+              %label.form-label{:for => "field-edit-body"}
+                Body text
+                %span.form-required{:title => "This field is required."} *
+              %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "2"}
+                = item.full_text
 
-    %section#section-language.block
-      %i.block-icon.icon-globe.icon-bg-action
-      %h2.block-title Languages and tags
-      .content
-        .form-wrapper
-          .form-item.form-type-select
-            %label.form-label{:for => "language"} Language
-            .form-description What language is this news in? You can select more than one language.
-            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
-              %option{:selected => ""} English, US
-              %option French
+            .form-item
+              %label.form-label{:for => "field-edit-image"}
+                Image
+                %span.form-required{:title => "This field is required."} *
+              .media-widget.media
+                .preview.media-figure
+                  %img.media-item{:alt => "Example of image.", :src => "/photos/nature10.jpg"}/
+                .media-body
+                  .form-description
+                    Files must be smaller than3 MB <br/>
+                    Allowed file types: png gif jpg jpeg <br/>
+                    Images must be larger than 400x300 pixels.
+                  %input#uploadimage.element-invisible{:type => "file", :value => "upload"}
+                  %button.button.launcher select image
+                  %a.button.remove{:href => "#", :tabindex => "3"} remove image
+                  %br
+                  %p.filename nature10.jpg
 
-          .form-item
-            %label Tags
-            %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "oceans, sustainable fishery, conservation", :placeholder => "Text input", :tabindex => "15"}
-            .autocomplete#tagsautocomplete
-              %ul
-                - 50.times do |num|
-                  %li
-                    = lorem.word
+      %section#section-language.block
+        %i.block-icon.icon-globe.icon-bg-action
+        %h2.block-title Languages and tags
+        .content
+          .form-wrapper
+            .form-item.form-type-select
+              %label.form-label{:for => "language"} Language
+              .form-description What language is this news in? You can select more than one language.
+              %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
+                %option{:selected => ""} English, US
+                %option French
 
-    %section#section-visibility.block
-      %i.block-icon.icon-eye.icon-bg-action
-      %h2.block-title Visibility
-      .content
-        .form-wrapper
-          .form-item.form-type-select
-            %label.form-label{:for => "groups"} Group(s)
-            %select#groups.chosen-select{"data-placeholder" => "Select one or more groups", :multiple => "multiple", :tabindex => "16"}
-              :preserve
-                <option value="1">Festivals</option>
-                <option value="2">Climate change</option>
-                <option value="3">Oceans</option>
-                <option value="4" selected>Local group Amsterdam</option>
-                <option value="5">Oil spill</option>
-                <option value="6">Solar energy</option>
-                <option value="7">Save the Arctic</option>
+            .form-item
+              %label Tags
+              %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "#{item.tags}", :placeholder => "Text input", :tabindex => "15"}
+              .autocomplete#tagsautocomplete
+                %ul
+                  - for tags in data.tags.suggestion
+                    %li
+                      #{tags}
 
-          .form-item.form-type-radios.radio-blocks
-            %label.form-label{:for => "edit-group-content-access"}
-              Private or public?
-              %span.form-required{:title => "This field is required."} *
-            .form-radios
-              .form-type-radio
-                %input#edit-group-content-access-und-0.form-radio{:name => "group_content_access", :type => "radio", :value => "0", :checked => "checked", :tabindex => "17"}
-                %label.option{:for => "edit-group-content-access-und-0"} Private - only for group members
-              .form-type-radio
-                %input#edit-group-content-access-und-1.form-radio{:name => "group_content_access", :type => "radio", :value => "1", :tabindex => "18"}
-                %label.option{:for => "edit-group-content-access-und-1"} All members of Greenwire
-              .form-type-radio
-                %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2", :tabindex => "19"}
-                %label.option{:for => "edit-group-content-access-und-2"} Public - visible for all visitors of Greenwire
+      %section#section-visibility.block
+        %i.block-icon.icon-eye.icon-bg-action
+        %h2.block-title Visibility
+        .content
+          .form-wrapper
+            .form-item.form-type-select
+              %label.form-label{:for => "groups"} Group(s)
+              %select#groups.chosen-select{"data-placeholder" => "Select one or more groups", :multiple => "multiple", :tabindex => "16"}
+                - for groups in data.groups.my_groups
+                  %option{:value => ""}
+                    #{groups}
+                %option{:value => "", :selected => ""} Local group London
 
-    %section#section-submit.section-submit
-      .form-actions.form-wrapper
-        %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit"}
-        %input{:type => "submit", :class => "button btn-l", :value => "Cancel"}
+            .form-item.form-type-radios.radio-blocks
+              %label.form-label{:for => "edit-group-content-access"}
+                Private or public?
+                %span.form-required{:title => "This field is required."} *
+              .form-radios
+                .form-type-radio
+                  %input#edit-group-content-access-und-0.form-radio{:name => "group_content_access", :type => "radio", :value => "0", :checked => "checked", :tabindex => "17"}
+                  %label.option{:for => "edit-group-content-access-und-0"} Private - only for group members
+                .form-type-radio
+                  %input#edit-group-content-access-und-1.form-radio{:name => "group_content_access", :type => "radio", :value => "1", :tabindex => "18"}
+                  %label.option{:for => "edit-group-content-access-und-1"} All members of Your brand community
+                .form-type-radio
+                  %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2", :tabindex => "19"}
+                  %label.option{:for => "edit-group-content-access-und-2"} Public - visible for all visitors of Your brand community
+
+      %section#section-submit.section-submit
+        .form-actions.form-wrapper
+          %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit"}
+          %input{:type => "submit", :class => "button btn-l", :value => "Cancel"}

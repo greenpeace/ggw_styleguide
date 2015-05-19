@@ -1,27 +1,33 @@
-.views-row
-  %article.node-teaser-event.node-teaser.lazyload{"data-expand" => "0"}
-    .field-type-image
-      %img.lazyload{:alt => "Example of image.", :src => "/images/event-map-example_90.jpg", "data-sizes" => "(min-width: 48em) 130px, 90px", "data-srcset" => "/images/event-map-example_260.jpg 260w, /images/event-map-example_130.jpg 130w, /images/event-map-example_180.jpg 180w, /images/event-map-example_90.jpg 90w"}/
-      %noscript
-        %img{:alt => "Example of image.", :src => "/images/event-map-example_90.jpg", "sizes" => "(min-width: 48em) 130px, 90px", "srcset" => "/images/event-map-example_260.jpg 260w, /images/event-map-example_130.jpg 130w, /images/event-map-example_180.jpg 180w, /images/event-map-example_90.jpg 90w"}/
-    .field-type-wrapper
-      %h2.node-title
-        %a{:href => "./event-full.html"}
-          = lorem.sentence
-      .submitted
-        %a.type.event{:href => "./search-events.html"} Event
-        %span.created-date 1 Apr 2015, by
-        %span.author
+- data.event.with_location.each do |item|
+  .views-row
+    %article.node-teaser-event.node-teaser
+      .field-type-image
+        %img.lazyload{:alt => "Example of image.", :src => "/images/event-map-example_90.jpg", "data-sizes" => "(min-width: 48em) 130px, 90px", "data-srcset" => "/images/event-map-example_260.jpg 260w, /images/event-map-example_130.jpg 130w, /images/event-map-example_180.jpg 180w, /images/event-map-example_90.jpg 90w"}/
+        %noscript
+          %img{:alt => "Example of image.", :src => "/images/event-map-example_90.jpg", "sizes" => "(min-width: 48em) 130px, 90px", "srcset" => "/images/event-map-example_260.jpg 260w, /images/event-map-example_130.jpg 130w, /images/event-map-example_180.jpg 180w, /images/event-map-example_90.jpg 90w"}/
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./event-full.html"}
+            = item.title
+        .submitted
+          %a.type.event{:href => "./events.html"} Event
+          %span.created-date
+          = succeed ", by" do
+            = item.date
           - if current_page.data.user_role != "an"
             %a{:href => "./profile.html"}
-              = lorem.name
+              = item.author
           - else
-            = lorem.name.downcase.tr(' ', '_')
-        - if current_page.data.user_role != "an"
-          %a.teaser-comments{:href => "./event-full.html#block-comments"} 3
+            = item.author.downcase.tr(' ', '_')
+          - if current_page.data.user_role != "an"
+            - if item.comment_amount
+              %a.teaser-comments{:href => "./event-full.html#block-comments"}
+                = item.comment_amount
       .field-type-date
         %label Event Time:
-        %span 30 Jun, 7:00 - 22:00 GMT
+        %span
+          = item.event_date
       .field-type-location
         %label Address:
-        %span 184 Camden High Street, London (Camden market)
+        %span
+          = item.location

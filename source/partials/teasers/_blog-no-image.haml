@@ -1,19 +1,23 @@
-.views-row
-  %article.node-teaser-blog.node-teaser.lazyload{"data-expand" => "0"}
-    .field-type-image
-    .field-type-wrapper
-      %h2.node-title
-        %a{:href => "./blog-article.html"}
-          = lorem.sentence
-      .submitted
-        %a.type.blog{:href => "./blogs.html"} Blog
-        11 Nov 2014, by
-        - if current_page.data.user_role != "an"
-          %a{:href => "#"}
-            = lorem.name
-        - else
-          = lorem.name.downcase.tr(' ', '_')
-        - if current_page.data.user_role != "an"
-          %a.teaser-comments{:href => "./blog-article.html#block-comments"} 4
-      .field-name-body
-        =lorem.paragraph
+- data.blog.no_image.each do |item|
+  .views-row
+    %article.node-teaser-blog.node-teaser
+      .field-type-image
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./blog-article.html"}
+            = item.title
+        .submitted
+          %a.type.blog{:href => "./blogs.html"} Blog
+          = succeed ", by" do
+            = item.date
+          - if current_page.data.user_role != "an"
+            %a{:href => "./profile.html"}
+              = item.author
+          - else
+            = item.author.downcase.tr(' ', '_')
+          - if current_page.data.user_role != "an"
+            - if item.comment_amount
+              %a.teaser-comments{:href => "./blog-article.html#block-comments"}
+                = item.comment_amount
+        .field-name-body
+          = item.introtext

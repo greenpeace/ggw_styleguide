@@ -32,88 +32,61 @@ action_menu:
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column
-  .block.main-content#content.current.editable
-    .action-bar
-      .action-bar-item.edit-content
-        %a.button{:href => "./news-article-edit.html", :title => "Edit news article"} Edit
 
-    %i.block-icon.icon-bg-news-media.icon-news
-    %h1#page-title.block-title
-      = lorem.words 10
-    .content
-      %article.view-mode-full
-        .submitted
-          %a.type.news{:href => "./news.html"} News
-          by
-          %a{:href => "./profile.html"}
-            = lorem.name
-          -
-          %span.submitted-date June 5th 2014 - 11:29
+- data.news.with_image.each do |item|
 
-          %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
-            %i.icon-comment
-            10 comments
+  .l-main-column
+    .block.main-content#content.current.editable
+      .action-bar
+        .action-bar-item.edit-content
+          %a.button{:href => "./news-article-edit.html", :title => "Edit news article"} Edit
 
-        = partial :"images/article-image"
-
-        .field-name-body
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.paragraph
-          %blockquote
-            %p
-              = lorem.sentence
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.paragraph
-          %img.field-type-image.pull-right{:alt => "Description of the image.", :src => "http://placeimg.com/320/320/nature/9/image"}
-          %p
-            = lorem.paragraph
-          %ul
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-          %p
-            = lorem.paragraph
-          %ol
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://placeimg.com/100/100/nature/5/image"}/
-          %p
-            = lorem.sentence
-            %strong without
-            = lorem.sentence
-
-        = partial :"blocks/tags"
-
-        .submitted.submitted-extended
-          .submitted-image
-            %img.lazyload{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
-            %noscript
-              %img{:alt => "Name of the author.", :src => "/photos/75/people5.jpg"}/
-          .submitted-info
-            %div
-              %a{:href => "./news.html"} News
-              by
+      %i.block-icon.icon-bg-news-media.icon-news
+      %h1#page-title.block-title
+        = item.title
+      .content
+        %article.view-mode-full
+          .submitted
+            %a.type.news{:href => "./news.html"} News
+            by
+            = succeed " -" do
               %a{:href => "./profile.html"}
-                = lorem.name
-            .submitted-all-reference
-              %a{:href => "#"}
-                All News by
-                = lorem.name
-                \.
+                = item.author
+            %span.submitted-date
+              = item.datetime
 
-  = partial :"blocks/lu/comments"
+            %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
+              %i.icon-comment
+              = item.comment_amount
+              comments
+
+          = partial :"images/article-image"
+
+          .field-name-body
+            = item.full_text
+
+          .tags
+            Tags:
+            %a.tag
+              = item.tags
+
+          .submitted.submitted-extended
+            .submitted-image
+              %img.lazyload{:alt => "#{item.author}", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+              %noscript
+                %img{:alt => "#{item.author}", :src => "/photos/75/people5.jpg"}/
+            .submitted-info
+              %div
+                %a{:href => "./news.html"} News
+                by
+                %a{:href => "./profile.html"}
+                  = item.author
+              .submitted-all-reference
+                %a{:href => "./news.html"}<
+                  All News by #{item.author}.
+
+
+    = partial :"blocks/lu/comments"
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/go_to_group"

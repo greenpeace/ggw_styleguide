@@ -23,20 +23,16 @@
   ],
   "scenarios": [
     {
-      "label": "Anonymous home",
-      "url": "../../../build/prototype/an/index.html",
+      "label": "Teasers",
+      "url": "../../../build/components/teasers.html",
       "hideSelectors": [
-        ".design-status",
-        ".cookiewall"
+        ".code",
+        ".js-show-code"
       ],
       "removeSelectors": [],
       "selectors": [
-        ".l-branding-header",
-        ".header",
-        ".footer",
-        ".block-events",
-        "#content",
-        "#welcome"
+        ".node-teaser-news",
+        ".node-teaser-blog"
       ],
       "readyEvent": null,
       "delay": 500

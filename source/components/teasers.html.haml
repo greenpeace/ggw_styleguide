@@ -24,7 +24,7 @@ layout: styleguide
     %h2.block-title Teasers
     .content
       :markdown
-        To show an overview of content we us teasers. On average the content of the teasers is pretty consistent, but each content type can have different fields.
+        To show an overview of nodes we us teasers. On average the content of the teasers is pretty consistent, but each content type can have different fields.
 
         Teasers always have an image on the left. This can be a photo is the content contains an image field. The fallback is always an image showing the content type icon.
 
@@ -73,7 +73,7 @@ layout: styleguide
               </div>
             </article>
           </div>
-  %section.block
+  %section.block#block-news
     %i.block-icon.icon-news.icon-bg-default
     %h2.block-title News
     .content
@@ -82,29 +82,28 @@ layout: styleguide
     .code
       :code
         #lang: html
-        <div class='views-row'>
-          <article class='node-teaser-news node-teaser'>
-            <div class='field-type-image'>
-              <picture>
-                <!--[if IE 9]> <video style="display: none;"> <![endif]-->
-                <source media='(min-width: 48em)' srcset='http://lorempixel.com/130/90/animals/1/desk, http://lorempixel.com/260/180/animals/2/deskx1.5 1.5x'>
-                <source srcset='http://lorempixel.com/180/120/animals/3/mobx2 2x, http://lorempixel.com/90/60/animals/4/mob 1x'>
-                <!--[if IE 9]> </video> <![endif]-->
-                <img alt='Example of image.' src='http://lorempixel.com/90/60/animals/5/img'>
-              </picture>
-            </div>
-            <div class='field-type-wrapper'>
-              <h2 class='node-title'><a href='./news-article.html'>voluptatem nostrum quibusdam unde repudiandae vero mollitia provident nobis magni</a></h2>
-              <div class='submitted'>
-                <a class='type news' href='#'>News</a> 23 Jul 2014, by <a href='#'>Doris Schultz</a>
+          <div class='views-row'>
+            <article class='node-teaser-news node-teaser lazyload' data-expand='0'>
+              <div class='field-type-image'></div>
+              <div class='field-type-wrapper'>
+                <h2 class='node-title'>
+                  <a href='./news-article.html'>
+                    Farmer Phills Music Festival
+                  </a>
+                </h2>
+                <div class='submitted'>
+                  <a class='type news' href='./news.html'>News</a>
+                  12 Apr 2015, by
+                  bart_goldman
+                </div>
+                <div class='field-name-body'>
+                  We're  really pleased to confirm that we will be back at Farmer Phills music festival this year. The festival is held just outside Shrewsbury in the Shropshire hills on the 14th-16th August.
+                </div>
               </div>
-              <div class='field-name-body'>
-                Laboriosam vel expedita maiores quaerat sed et architecto earum in vel. at qui laborum harum. provident delectus omnis voluptate occaecati qui ad eaque et atque fuga dolorum. neque explicabo excepturi minima soluta dolores nobis sequi temporibus et. maxime eligendi est facere. at veniam qui perferendis adipisci nemo consequatur alias explicabo repellendus. ab aut voluptates odio est expedita
-              </div>
-            </div>
-          </article>
-        </div>
-  %section.block
+            </article>
+          </div>
+
+  %section.block#block-blog
     %i.block-icon.icon-blog.icon-bg-default
     %h2.block-title Blog
     .content

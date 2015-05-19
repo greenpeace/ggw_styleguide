@@ -47,6 +47,9 @@ comp:
     name: "Collapse"
     url: "/components/collapse.html"
   -
+    name: "Teasers"
+    url: "/components/teasers.html"
+  -
     name: "Comments"
     url: "/components/comments.html"
 

@@ -146,7 +146,7 @@ design_status: Work in progress
       %h4 ReadyEvent and delay
 
       :markdown
-        Because we have developed Greenwire primarely for speed, we initialy do not render any more resources than we need. Once this has completed, javascript progressively loads more content or enhances the user experience. The problem testing this is knowing when to take the screenshot. BackstopJS solves this problem with two config properties: readyEvent and delay.
+        Because we have developed the site primarely for speed, we initialy do not render any more resources than we need. Once this has completed, javascript progressively loads more content or enhances the user experience. The problem testing this is knowing when to take the screenshot. BackstopJS solves this problem with two config properties: readyEvent and delay.
 
         The `readyEvent` property enables you to trigger the screen capture by logging a predefined string to the console. For example, the following line will delay screen capture until the page calls `console.log("domready")`, which we have defined as the last task to execute by javascript.
 
@@ -165,7 +165,7 @@ design_status: Work in progress
             "viewports": [],
             "scenarios": [
               {
-                "url": "https://greenwire.greenpeace.org",
+                "url": "https://www.yourbrand.com",
                 "hideSelectors": [
                   "#elementToHide"
                 ],

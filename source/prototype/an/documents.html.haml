@@ -29,8 +29,9 @@ teaserview: search-newsmedia.html
 
       .view-search-results
         .view-content
-          - 10.times do |num|
+          - 5.times do |num|
             = partial :"teasers/document"
+            = partial :"teasers/document_2"
 
           .align-center
             %a.button{:href => "#"} show some more

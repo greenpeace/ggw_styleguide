@@ -12,3 +12,149 @@ suggestion:
 - Alondra Cross
 - Vanessa Heath
 - Vance Gallagher
+- Courtney Walker
+- Gabriel Lane
+
+member_one:
+  -
+    first_name: "Ashton"
+    last_name: "Johnston"
+    gender: "Male"
+    username: "awesome_johnston"
+    locality: ""
+    address: "82-96 Old Kent Road"
+    postcode: "SE1 4NX"
+    city: "London"
+    country: "England"
+    birth_day: "26"
+    birth_month: "04"
+    birth_month_written: "April"
+    birth_year: "1996"
+    geocoordinates: "51.915625, -2.077950"
+    phone_mobile: "793672929"
+    phone_home: "12372929"
+    skype: "awesome_johnston"
+    about: "I was born in Bristol, u.k. a long time ago, I make a living as a Fine Artist/Muralist, I spent 20 years abroad accumulating a wealth of experiences in order to obtain some sort of idea regards Homoerectus the planet and where on earth we are going....."
+    profession: "Accountmanager Finance"
+    employer: "Greenpeace International"
+    social_facebook: "http://www.facebook.com/awesome_johnston"
+    social_twitter: "http://www.twitter.com/awesome_johnston"
+    social_linkedin: "http://www.linkedin.com/awesome_johnston"
+    education: "I have a degree"
+    general_skills:
+      - Research
+      - Painting
+    language_skills:
+      - German
+      - Finish
+    other_skills:
+      - gardening
+      - composing music
+
+member_two:
+  -
+    first_name: "Madeline"
+    last_name: "Fox"
+    gender: "Female"
+    username: "Madie_fox"
+    locality: ""
+    address: "82-96 Old Kent Road"
+    postcode: "SE1 4NX"
+    city: "London"
+    country: "England"
+    birth_day: "26"
+    birth_month: "04"
+    birth_month_written: "April"
+    birth_year: "1996"
+    geocoordinates: "51.915625, -2.077950"
+    phone_mobile: "793672929"
+    phone_home: "12372929"
+    skype: "awesome_johnston"
+    about: "I was born in Bristol, u.k. a long time ago, I make a living as a Fine Artist/Muralist, I spent 20 years abroad accumulating a wealth of experiences in order to obtain some sort of idea regards Homoerectus the planet and where on earth we are going....."
+    profession: "Accountmanager Finance"
+    employer: "Greenpeace International"
+    social_facebook: "http://www.facebook.com/awesome_johnston"
+    social_twitter: "http://www.twitter.com/awesome_johnston"
+    social_linkedin: "http://www.linkedin.com/awesome_johnston"
+    education: "I have a degree"
+    general_skills:
+      - Research
+      - Painting
+    language_skills:
+      - German
+      - Finish
+    other_skills:
+      - gardening
+      - composing music
+
+member_three:
+  -
+    first_name: "Reid"
+    last_name: "Abrams"
+    gender: "Male"
+    username: "abrams_reid"
+    locality: ""
+    address: "82-96 Old Kent Road"
+    postcode: "SE1 4NX"
+    city: "Twickenham"
+    country: "England"
+    birth_day: "26"
+    birth_month: "04"
+    birth_month_written: "April"
+    birth_year: "1996"
+    geocoordinates: "51.915625, -2.077950"
+    phone_mobile: "793672929"
+    phone_home: "12372929"
+    skype: "awesome_johnston"
+    about: "I was born in Bristol, u.k. a long time ago, I make a living as a Fine Artist/Muralist, I spent 20 years abroad accumulating a wealth of experiences in order to obtain some sort of idea regards Homoerectus the planet and where on earth we are going....."
+    profession: "Accountmanager Finance"
+    employer: "Greenpeace International"
+    social_facebook: "http://www.facebook.com/awesome_johnston"
+    social_twitter: "http://www.twitter.com/awesome_johnston"
+    social_linkedin: "http://www.linkedin.com/awesome_johnston"
+    education: "I have a degree"
+    general_skills:
+      - Research
+      - Painting
+    language_skills:
+      - German
+      - Finish
+    other_skills:
+      - gardening
+      - composing music
+
+member_four:
+  -
+    first_name: "Alondra"
+    last_name: "Cross"
+    gender: "Female"
+    username: "cross_478"
+    locality: ""
+    address: "82-96 Old Kent Road"
+    postcode: "SE1 4NX"
+    city: "UxBridge"
+    country: "England"
+    birth_day: "26"
+    birth_month: "04"
+    birth_month_written: "April"
+    birth_year: "1996"
+    geocoordinates: "51.915625, -2.077950"
+    phone_mobile: "793672929"
+    phone_home: "12372929"
+    skype: "awesome_johnston"
+    about: "I was born in Bristol, u.k. a long time ago, I make a living as a Fine Artist/Muralist, I spent 20 years abroad accumulating a wealth of experiences in order to obtain some sort of idea regards Homoerectus the planet and where on earth we are going....."
+    profession: "Accountmanager Finance"
+    employer: "Greenpeace International"
+    social_facebook: "http://www.facebook.com/awesome_johnston"
+    social_twitter: "http://www.twitter.com/awesome_johnston"
+    social_linkedin: "http://www.linkedin.com/awesome_johnston"
+    education: "I have a degree"
+    general_skills:
+      - Research
+      - Painting
+    language_skills:
+      - German
+      - Finish
+    other_skills:
+      - gardening
+      - composing music

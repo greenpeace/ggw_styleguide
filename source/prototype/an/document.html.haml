@@ -24,82 +24,56 @@ action_menu:
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column
-  #content.block.current.main-content
-    %i.block-icon.icon-bg-news-media.icon-document
-    %h1#page-title.block-title
-      = lorem.words 10
-    .content
-      %article.view-mode-full
-        .submitted
-          %a.type.document{:href => "./documents.html"} Document
-          by
-          = lorem.name
-          -
-          %span.submitted-date June 5th 2014 - 11:29
 
-        .field-name-body
-          .field-group-wrapper
-            .field-group-format
-              .field.field-name-document
-                %a.type.download{:href => "#"} Sunt_quo_aut_inventore.pdf
-                %a.type.download{:href => "#", "type" => "application/msword"} Vel_esse_aliquam.doc
-                %a.type.download{:href => "#"} Mollitia_rerum_sed.pdf
-                %a.type.download{:href => "#"} Magnam-est-ipsam-voluptatem.docx
-                %a.type.download{:href => "#"} Magnam-est-ipsam-voluptatem-02.xls
+- data.documents.document_one.each do |item|
 
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.paragraph
-          %blockquote
-            %p
-              = lorem.sentence
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.paragraph
-          %img.field-type-image.pull-right{:alt => "Description of the image.", :src => "http://placeimg.com/320/320/nature/9/image"}
-          %p
-            = lorem.paragraph
-          %ul
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-          %p
-            = lorem.paragraph
-          %ol
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://placeimg.com/100/100/nature/5/image"}/
-          %p
-            = lorem.sentence
-            %strong without
-            = lorem.sentence
+  .l-main-column
+    #content.block.current.main-content
+      %i.block-icon.icon-bg-news-media.icon-document
+      %h1.block-title
+        = item.title
 
-        = partial :"blocks/tags"
+      .content
+        %article.view-mode-full
+          .submitted
+            %a.type.document{:href => "./documents.html"} Document
+            by
+            = item.author.downcase.tr(' ', '_')
+            \-
+            %span.submitted-date
+              = item.datetime
 
-        .submitted.submitted-extended
-          .submitted-image
-            %img.lazyload{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
-            %noscript
-              %img{:alt => "Name of the author.", :src => "/photos/75/people5.jpg"}/
-          .submitted-info
-            %div
-              %a{:href => "#"} Document
-              by Willie Mackenzie
-            .submitted-all-reference
-              %a{:href => "#"} All documents by Willy Mackenzie
-              \.
+          .field-name-body
+            .field-group-wrapper
+              .field-group-format
+                .field.field-name-document
+                  %a.type.download{:href => "#"} file01.pdf
+                  %a.type.download{:href => "#", "type" => "application/msword"} file02.doc
+                  %a.type.download{:href => "#"} file03.pdf
+                  %a.type.download{:href => "#"} file04.docx
+                  %a.type.download{:href => "#"} file05.xls
 
-  = partial :"blocks/an/comments"
+            = item.full_text
+
+          .tags
+            Tags:
+            - for tag in item.tags
+              = succeed ", " do
+                %a.tag{:href => "./search-newsmedia.html"} #{tag}
+            %a.tag{:href => "./search-newsmedia.html"} Arctic oil
+
+          .submitted.submitted-extended
+            .submitted-image
+              %img.lazyload{:alt => "#{item.author}", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+              %noscript
+                %img{:alt => "#{item.author}", :src => "/photos/75/people5.jpg"}/
+            .submitted-info
+              %div
+                %a{:href => "./documents.html"} Document
+                by
+                = item.author.downcase.tr(' ', '_')
+
+    = partial :"blocks/an/comments"
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/go_to_group"

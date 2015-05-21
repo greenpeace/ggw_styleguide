@@ -1,12 +1,13 @@
-.views-row
-  %article.node-teaser-group.node-teaser.lazyload{"data-expand" => "0"}
-    .field-type-image
-    .field-type-wrapper
-      %h2.node-title
-        %a{:href => "./group-home.html"}
-          = lorem.sentence
-      .submitted
-        %a.type.group{:href => "./groups.html"} Group
-        Campaign group (on request)
-      .field-name-body
-        =lorem.paragraph
+- data.groups.group_local.each do |item|
+  .views-row
+    %article.node-teaser-group.node-teaser
+      .field-type-image
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./group-home.html"}
+            = item.title
+        .submitted
+          %a.type.group{:href => "./groups.html"} Group
+          #{item.group_type} (#{item.enrollment_type})
+        .field-name-body
+          = item.about

@@ -1,14 +1,13 @@
-- data.photos.album_one.each do |item|
+- data.documents.document_two.each do |item|
   .views-row
-    %article.node-teaser-photo.node-teaser
+    %article.node-teaser-document.node-teaser
       .field-type-image
-        = partial :"teasers/teaser-image"
       .field-type-wrapper
         %h2.node-title
-          %a{:href => "./photo-album.html"}
+          %a{:href => "./document.html"}
             = item.title
         .submitted
-          %a.type.document{:href => "./photos.html"} Photos
+          %a.type.document{:href => "./documents.html"} Document
           = succeed ", by" do
             = item.date
           - if current_page.data.user_role != "an"
@@ -18,7 +17,7 @@
             = item.author.downcase.tr(' ', '_')
           - if current_page.data.user_role != "an"
             - if item.comment_amount
-              %a.teaser-comments{:href => "./photo-album.html#block-comments"}
+              %a.teaser-comments{:href => "./blog-article.html#block-comments"}
                 = item.comment_amount
         .field-name-body
           = item.introtext

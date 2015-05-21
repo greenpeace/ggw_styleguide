@@ -5,7 +5,12 @@ with_image:
     datetime: "5 May 2015 - 7:25 PM"
     author: "Dennis Watson"
     comment_amount: "2"
-    tags: "Labour, Chelsea & Fulham, fracking, sustainability, Alex Sanderson"
+    tags:
+      - Labour
+      - Chelsea & Fulham
+      - fracking
+      - sustainability
+      - Alex Sanderson
     introtext: "Recently, Kensington Greenpeace caught up with Labour Party candidate for Chelsea & Fulham, Alexandra Sanderson."
     full_text: "<p>Recently, Kensington Greenpeace caught up with Labour Party candidate for Chelsea & Fulham, Alexandra Sanderson. During the conversation, we heard from Alexandra about her important work with The Money Charity, helping everyday people manage their money well now and throughout their lives. In addition, Alexandra expressed the importance that sustainability and the environment play in her policy priorities. She reemphasized Labour’s commitment to put sustainability back at the top of the agenda if it forms the next government with measures like sticking to ambitious, legally binding targets for carbon reduction. In the conversation, we also talked about Labour’s pledge to invest heavily in wind and solar—and create one million new high technology, green jobs, and commitment to retrofit at least five million homes.</p><p>On the topic of shale, Alexandra noted that, in her view, the UK needs a mixed energy strategy in order to handle the needs of a growing economy. While she expressed that fracking should not be ruled out from the options for UK’s energy future, Alexandra made clear her concerns with drilling without the express permission of the local community and added that fracking needs to be more heavily regulated.</p><p>We thank Alexandra for spending an evening with us and sharing her views! And, we ask for her continued stewardship of pro-environment policies.</p><p><img src='/photos/party-offices.jpg' alt='party offices' /></p>"
 

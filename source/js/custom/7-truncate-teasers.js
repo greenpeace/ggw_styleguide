@@ -16,7 +16,7 @@ $(function() {
       });
 
       $('.node-teaser .node-title').each(function() {
-        if ($(this).height() > 19) {
+        if ($(this).height() > 21) {
           $(this).nextAll('.field-name-body').addClass('body-ellipsis');
           $(this).siblings('.field-group-format').children('.field-type-location').hide();
         }

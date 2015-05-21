@@ -1,23 +1,29 @@
-.views-row
-  %article.node-teaser-user.node-teaser.lazyload
-    .field-type-image
-      %img.lazyload{:alt => "Example of image.", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-sizes" => "(min-width: 768px) 130px, 90px", "data-srcset" => "/photos/90/people3.jpg 90w, /photos/130/people4.jpg 130w, /photos/180/people1.jpg 180w, /photos/260/people5.jpg 260w"}/
-      %noscript
-        %img{:src => "/photos/90/people3.jpg", "srcset" => "/photos/90/people3.jpg 90w, /photos/130/people4.jpg 130w, /photos/180/people1.jpg 180w, /photos/260/people5.jpg 260w"}/
-    .field-type-wrapper
-      %h2.node-title
-        %a{:href => "#"}
-          = lorem.name
-          %span.username (alexandra_scarborough)
-      .submitted
-        %a.type.user{:href => "#"} Greenpeace staff
-        %span Portland
-      - if current_page.data.profile == "friends" && current_page.data.access == "mine"
-        .field.field-friend-status
-          .btn-group
-            %a.button.btn-s{:href => "#"}
-              %i.icon-trash
-              Unfriend
-      - else
-        .field-name-body
-          = lorem.paragraph
+- data.members.member_four.each do |item|
+  .views-row
+    %article.node-teaser-user.node-teaser
+      .field-type-image
+        %a{:href => "./profile.html"}
+          %img.lazyload{:alt => "Example of image.", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-sizes" => "(min-width: 768px) 130px, 90px", "data-srcset" => "/photos/90/people3.jpg 90w, /photos/130/people4.jpg 130w, /photos/180/people1.jpg 180w, /photos/260/people5.jpg 260w"}/
+          %noscript
+            %img{:src => "/photos/90/people3.jpg", "srcset" => "/photos/90/people3.jpg 90w, /photos/130/people4.jpg 130w, /photos/180/people1.jpg 180w, /photos/260/people5.jpg 260w"}/
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./profile.html"}
+            = item.first_name
+            = item.last_name
+            %span.username
+              (#{item.username})
+        .submitted
+          %a.type.user{:href => "./profile.html"}
+          %span #{item.city} //
+          %a{:href => "./who-is-who.html"} Greenpeace staff
+
+        - if current_page.data.profile == "friends" && current_page.data.access == "mine"
+          .field.field-friend-status
+            .btn-group
+              %a.button.btn-s{:href => "#"}
+                %i.icon-trash
+                Unfriend
+        - else
+          .field-name-body
+            = item.about

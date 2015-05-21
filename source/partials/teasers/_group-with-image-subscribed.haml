@@ -1,14 +1,17 @@
-.views-row
-  %article.node-teaser-group.node-teaser.subscribed.lazyload{"data-expand" => "0"}
-    .field-type-image
-      = partial :"teasers/teaser-image"
-    .field-type-wrapper
-      %h2.node-title
+- data.groups.group_local.each do |item|
+  .views-row
+    %article.node-teaser-group.node-teaser
+      .field-type-image
         %a{:href => "./group-home-enrolled.html"}
-          = lorem.sentence
-      .submitted
-        %a.type.group{:href => "./groups.html"} Group
-        .subscribed member
-        %span Country group
-      .field-name-body
-        =lorem.paragraph
+          = partial :"teasers/teaser-image"
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./group-home-enrolled.html"}
+            = item.title
+        .submitted
+          %a.type.group{:href => "./groups.html"} Group
+          .subscribed member
+          #{item.group_type} (#{item.enrollment_type})
+        .field-name-body
+          = item.about
+

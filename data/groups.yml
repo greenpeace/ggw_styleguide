@@ -19,3 +19,37 @@ all_groups:
 - Sustainability
 - Save the Arctic
 - Deforestation
+
+group_local:
+  -
+    title: "Emlyn Gardens local group"
+    date: "2 May 2015"
+    datetime: "2 may 2015 - 10:06 PM"
+    author: "Carly Merritt"
+    comment_amount: "7"
+    tags:
+      - Gardening
+    group_type: "Local group"
+    enrollment_type: "Open"
+    mission: "To support Greenpeace UK in their mission to save our beautiful Earth"
+    about: "A local group of volunteer activists. We meet every 2nd Wednesday of the month at 8pm in the Nags Head. It's just opposite Rochester station and about 10 minutes walk from Chatham town centre. Join us and you can make a positive difference."
+    primary_contact: "Matt Bull"
+    secondary_contact: "Tish Tiziana Romagna"
+    social_facebook: "https://www.facebook.com/groups/NorthKentGreenpeace/"
+
+group_skills:
+  -
+    title: "Greenspreakers"
+    date: "2 May 2015"
+    datetime: "2 may 2015 - 10:06 PM"
+    author: "Rachel King"
+    comment_amount: "7"
+    tags:
+      - Gardening
+    group_type: "Skills-based group"
+    enrollment_type: "On invitation"
+    mission: "To support Greenpeace UK in their mission to save our beautiful Earth"
+    about: "Group for Greenpeace trained Greenspeakers "
+    primary_contact: "Rachel King"
+    secondary_contact: ""
+    social_facebook: ""

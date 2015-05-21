@@ -28,7 +28,7 @@ action_menu:
   .l-main-column
     #content.block.main-content.current
       %i.block-icon.icon-bg-news-media.icon-blog
-      %h1#page-title.block-title
+      %h1.block-title
         = item.title
       .content
         %article.view-mode-full
@@ -43,14 +43,14 @@ action_menu:
           = partial :"images/article-image"
 
           .field-name-body
-            - data.blog.with_image.each do |item|
-              = item.full_text
+            = item.full_text
 
           .tags
             Tags:
-            - data.blog.with_image.each do |item|
-              %a.tag
-                = item.tags
+            - for tag in item.tags
+              = succeed ", " do
+                %a.tag{:href => "./search-newsmedia.html"} #{tag}
+            %a.tag{:href => "./search-newsmedia.html"} Arctic oil
 
           .submitted.submitted-extended
             .submitted-image

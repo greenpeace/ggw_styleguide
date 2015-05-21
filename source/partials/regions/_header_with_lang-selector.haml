@@ -85,6 +85,16 @@
                 %li
                   %a{:href => "#"}
                     = item
+        .l-language-selector.language-selector.nav-selector
+          .dropdown-controller
+            %a.trigger{"data-dropdown" => "#dropdown-content-language", :href => "#"} Francais
+          #dropdown-content-language.dropdown.dropdown-scroll.relative.dropdown-anchor-right.dropdown-relative
+            %ul.dropdown-list
+              %li
+                %a{:href => "#"} Francais
+              %li
+                %a{:href => "#"} Nederlands
+
 
 = partial :"blocks/an/login_block"
 = partial :"blocks/an/sign_up_block"

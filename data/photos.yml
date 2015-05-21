@@ -1,0 +1,31 @@
+album_one:
+  -
+    title: "Stop shell. Save the artic"
+    date: "5 Sep 2015"
+    datetime: "5 Sep 2015 - 7:25 PM"
+    author: "Gabriel Lane"
+    comment_amount: "3"
+    tags:
+      - Labour
+      - Chelsea & Fulham
+      - fracking
+      - sustainability
+      - Alex Sanderson
+    introtext: "We have to stop shell in order to save the artic"
+    full_text: "<p>We have to stop shell in order to save the artic</p>"
+
+album_two:
+  -
+    title: "A couple of nice pictures"
+    date: "5 Sep 2015"
+    datetime: "5 Sep 2015 - 7:25 PM"
+    author: "Reece Hobs"
+    comment_amount: "3"
+    tags:
+      - Labour
+      - Chelsea & Fulham
+      - fracking
+      - sustainability
+      - Alex Sanderson
+    introtext: "A couple of Greenpeace pictures from my personal collection"
+    full_text: "<p>A couple of Greenpeace pictures from my personal collection</p>"

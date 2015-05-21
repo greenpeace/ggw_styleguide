@@ -1,13 +1,11 @@
 ---
-title: Greenwire London
+title: Example of a group
 direct_parent:
   -
     name: "Groups"
     url: "groups.html"
 body_class: not-front not-logged-in page-group-home l-two-column
 user_role: an
-group: home
-design_status: Work in progress
 action_menu:
   -
     id: "#block-group-info"
@@ -26,19 +24,22 @@ action_menu:
     label: "Members"
     icon: "users"
 ---
+
 = partial :"blocks/breadcrumbs"
 
-.l-main-column
+- data.groups.group_local.each do |item|
 
-  %h1.group-heading.only-mobile
-    %i.icon-users
-    = current_page.data.title
+  .l-main-column
 
-  = partial :"blocks/group-info"
-  = partial :"blocks/upcoming_events"
+    %h1.group-heading.only-mobile
+      %i.icon-users
+      = item.title
 
-%aside.l-sidebar.sidebar
-  = partial :"blocks/group-members"
-  = partial :"blocks/updates"
+    = partial :"blocks/group_info_local"
+    = partial :"blocks/upcoming_events"
+
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/group-members"
+    = partial :"blocks/updates"
 
 

@@ -1,28 +1,32 @@
-.views-row
-  %article.node-teaser-user.node-teaser.lazyload
-    .field-type-image
-      %img.lazyload{:alt => "Example of image.", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-sizes" => "(min-width: 768px) 130px, 90px", "data-srcset" => "/photos/90/people4.jpg 90w, /photos/130/people1.jpg 130w, /photos/180/people3.jpg 180w, /photos/260/people2.jpg 260w"}/
-      %noscript
-        %img{:src => "/photos/90/people4.jpg", "srcset" => "/photos/90/people4.jpg 90w, /photos/130/people1.jpg 130w, /photos/180/people3.jpg 180w, /photos/260/people2.jpg 260w"}/
-    .field-type-wrapper
-      %h2.node-title
-        %a{:href => "#"}
-          = lorem.name
-          %span.username (ken_burns)
-      .submitted
-        %a.type.user{:href => "#"}
-        %span Moscow
-      - if current_page.data.profile == "friends" && current_page.data.access == "mine"
-        .field.field-friend-status
-          %a.button.btn-s{"data-dropdown" => "#dropdown-friends-1"}
-            Wants to be friends
-            %span.caret
-          .dropdown.dropdown-tip.dropdown-relative#dropdown-friends-1
-            %ul.dropdown-menu{:role => "menu"}
-              %li
-                %a{:href => "#"} Approve
-              %li
-                %a{:href => "#"} Decline
-      - else
-        .field-name-body
-          = lorem.paragraph
+- data.members.member_one.each do |item|
+  .views-row
+    %article.node-teaser-user.node-teaser
+      .field-type-image
+        %a{:href => "./profile.html"}
+          %img.lazyload{:alt => "Example of image.", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-sizes" => "(min-width: 768px) 130px, 90px", "data-srcset" => "/photos/90/people4.jpg 90w, /photos/130/people1.jpg 130w, /photos/180/people3.jpg 180w, /photos/260/people2.jpg 260w"}/
+        %noscript
+          %img{:src => "/photos/90/people4.jpg", "srcset" => "/photos/90/people4.jpg 90w, /photos/130/people1.jpg 130w, /photos/180/people3.jpg 180w, /photos/260/people2.jpg 260w"}/
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./profile.html"}
+            = item.first_name
+            = item.last_name
+            %span.username
+              (#{item.username})
+        .submitted
+          %a.type.user{:href => "./profile.html"}
+          %span #{item.city}
+        - if current_page.data.profile == "friends" && current_page.data.access == "mine"
+          .field.field-friend-status
+            %a.button.btn-s{"data-dropdown" => "#dropdown-friends-1"}
+              Wants to be friends
+              %span.caret
+            .dropdown.dropdown-tip.dropdown-relative#dropdown-friends-1
+              %ul.dropdown-menu{:role => "menu"}
+                %li
+                  %a{:href => "#"} Approve
+                %li
+                  %a{:href => "#"} Decline
+        - else
+          .field-name-body
+            = item.about

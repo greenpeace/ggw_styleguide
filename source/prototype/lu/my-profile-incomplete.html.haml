@@ -49,7 +49,7 @@ action_menu:
 .l-main-column
   %h1.group-heading.only-mobile
     %i.icon-user
-    %span John Doe Claus
+    %span Grace O'Flynn
   #block-user-profile.block.current.editable
     .action-bar
       .action-bar-item.edit-content
@@ -69,13 +69,13 @@ action_menu:
     .content
 
       .field-name-user-image
-        %img.lazyload{:alt => "John Doe Claus", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/polar.png"}/
+        %img.lazyload{:alt => "Grace O'Flynn", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/polar.png"}/
         %noscript
-          %img{:src => "/photos/polar.png", :alt => "John Doe Claus"}/
+          %img{:src => "/photos/polar.png", :alt => "Grace O'Flynn"}/
 
       .field.field-name-user-name
-        John Doe Claus
-        %span.username (johnny_claus)
+        Grace O'Flynn
+        %span.username (grace_oflynn)
 
       .field.field-name-body
         .field-label.element-hidden About me:
@@ -100,7 +100,7 @@ action_menu:
 
       .field.field-name-field-mail.field-inline-block
         .field-label Email:
-        .field-item john_doe_claus@greenpeace.org
+        .field-item grace@risup.net
 
       .field.field-name-field-telephone.field-inline-block
         .field-label Phone:
@@ -108,7 +108,7 @@ action_menu:
 
       .field.field-name-field-location.field-inline-block
         .field-label Address:
-        .field-item Ottho Heldringstraat 5, Amsterdam, The Netherlands
+        .field-item Uxbridge Road, London, UK
 
 
   = partial :"blocks/lu/user-account"
@@ -127,94 +127,10 @@ action_menu:
         You have not entered any skills yet.
         [Click here](./edit-user-profile.html#section-skills) to add them.
 
-  #block-user-events.block.lazyload{"data-expand" => "-40"}
-    %i.block-icon.icon-bg-user.icon-event
-    %h2.block-title My events
-    .content
-      :markdown
-        You have haven't joined any Greenwire event yet. Find events you might want to join [here](./search-events.html).
-
-  #block-user-groups.block.lazyload{"data-expand" => "-40"}
-    %i.block-icon.icon-bg-user.icon-users
-    %h2.block-title My groups
-    .content
-      .views-row
-        %article.node-type-small
-          %h2.node-title
-            %a{:href => "./group-home.html"}
-              Greenpeace Greenwire United Kingdom
-          .field.field-created
-            .field-label Joined
-            .field-item today
-      :markdown
-        There are many interesting groups on Greenwire. Find groups you might want to join [here](./search-groups.html).
-
-  #block-user-subscriptions.block.lazyload{"data-expand" => "-40"}
-    %i.block-icon.icon-bg-user.icon-subscription
-    %h2.block-title My subscriptions
-
-    .content
-
-      .tabwrapper.tabable-wrapper
-        %ul.tabs
-          %li
-            =nav_link 'Groups you follow', '#group-subscriptions', :class => 'tab'
-          %li
-            =nav_link 'Content you follow', '#content-subscriptions', :class => 'tab'
-
-      .tabable
-        #group-subscriptions.tabable-block.active
-          .view-ggw-subscribe-node
-            .view-content
-              :markdown
-                You are not following any groups yet.
-
-        #content-subscriptions.tabable-block
-          .view-ggw-subscribe-node
-            .view-content
-              :markdown
-                You are not following any content yet.
-
+  = partial :"blocks/lu/user-events-empty"
+  = partial :"blocks/lu/subscription-empty"
 
 %aside.l-sidebar.sidebar
-  #block-friends.block
-    .action-bar
-      .action-bar-item.add-content
-        %a.button{:href => "./profile-manage-friends.html", :title => "Manage friends"} Manage friends
-
-    %i.block-icon.icon-bg-user.icon-users
-    %h2.block-title My friends
-    .content
-      %p You do not have any friends yet. Click on the "Manage friends" button to add new friends.
-
-
-  #block-comments.block.block-comments
-    %i.block-icon.icon-chat.icon-bg-action
-    %h2.block-title Shoutbox
-
-    .content
-      .comment-form-holder
-        %form.comment-form
-          .form-comment-message
-            %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a shout...", :rows => "1"}
-            %span#remain
-            %input.form-comment-submit{:type => "submit", :value => "share"}
-            %input.tooltip.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
-
-      %section.comments
-        %p There are no shouts yet.
-
-  #block-user-activity.block.lazyload{"data-expand" => "-40"}
-    %i.block-icon.icon-bg-user.icon-clock
-    %h2.block-title Activity log
-    .content
-      .view-ggw-user-activity
-        .view-content
-          .views-row
-            .views-field.views-field-timestamp
-              Today
-            .views-field.views-field-rendered-entity
-              %p
-                %a{:href => "#"} John Doe Claus
-                joined
-                %a{:href => "#"} Greenpeace Greenwire United Kingdom
+  = partial :"blocks/lu/comments-empty"
+  = partial :"blocks/lu/my-friends-empty"
+  = partial :"blocks/lu/user-activity-gracestart"

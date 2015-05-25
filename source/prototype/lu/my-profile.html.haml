@@ -45,7 +45,7 @@ action_menu:
 .l-main-column
   %h1.group-heading.only-mobile
     %i.icon-user
-    %span John Doe Claus
+    %span Grace O'Flynn
   #block-user-profile.block.block-profile.current
     .action-bar
       .action-bar-item.edit-content
@@ -54,7 +54,7 @@ action_menu:
         #edit-profile.dropdown.dropdown-relative.dropdown-tip.dropdown-anchor-right
           %ul.dropdown-menu
             %li
-              %a{:href => "./edit-user-profile.html"} Edit profile
+              %a{:href => "./edit-user-profile-full.html"} Edit profile
             %li
               %a{:href => "./edit-user-account.html"} Edit account settings
 
@@ -65,18 +65,18 @@ action_menu:
     .content
 
       .field-name-user-image
-        %img.lazyload{:alt => "John Doe Claus", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/avatar210.jpg"}/
+        %img.lazyload{:alt => "Grace O'Flynn", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/grace210.jpg"}/
         %noscript
-          %img{:src => "/photos/avatar210.jpg", :alt => "John Doe Claus"}/
+          %img{:src => "/photos/grace210.jpg", :alt => "Grace O'Flynn"}/
 
       .field.field-name-user-name
-        John Doe Claus
-        %span.username (johnny_claus)
+        Grace O'Flynn
+        %span.username (grace_oflynn)
 
       .field.field-name-body
         .field-label.element-hidden About me:
         .field-item
-          In et sagittis turpis, quis malesuada urna! Duis tempus pellentesque eros, eget bibendum quam rhoncus posuere. Duis commodo lobortis elit; eu condimentum ante feugiat ut. In dictum risus sed tempor rhoncus. Pellentesque tellus risus, sodales ut eleifend vel, porta sit amet nisi. Praesent vestibulum vitae nibh nec ultricies. Vivamus semper, ipsum ut eleifend eleifend, dui dui tempor neque, sit amet gravida ligula sapien et est.
+          Hello, I'm Grace. I work in bike repair shop in the west side of London. Initially I studied law but it wasn't really for me. I also run a small community Garden. I'm not sure what else to write here, but well, nice to meet you all :)
 
       .clear
 
@@ -86,21 +86,12 @@ action_menu:
           %a.social-icon.twitter{:href => "#", :target => "blank"}
             %span.element-hidden twitter
           %a.social-icon.facebook{:href => "#", :target => "blank"}
-            %span.element-hidden facebook
-          %a.social-icon.googleplus{:href => "#", :target => "blank"}
-            %span.element-hidden googleplus
-          %a.social-icon.linkedin{:href => "#", :target => "blank"}
-            %span.element-hidden linkedin
-          %a.social-icon.pinterest{:href => "#", :target => "blank"}
-            %span.element-hidden pinterest
-          %a.social-icon.vk{:href => "#", :target => "blank"}
-            %span.element-hidden vkontakte
 
       .field.field-name-field-skype.field-inline-block
         .field-label Skype:
         .field-item
           %i.icon-skype
-          %span john_doe_north_pole
+          %span grace_oflynn
 
       .field.field-name-field-birthday.field-inline-block
         .field-label Date of birth:
@@ -108,7 +99,7 @@ action_menu:
 
       .field.field-name-field-mail.field-inline-block
         .field-label Email:
-        .field-item john_doe_claus@greenpeace.org
+        .field-item grace@riseup.net
 
       .field.field-name-field-telephone.field-inline-block
         .field-label Phone:
@@ -116,14 +107,14 @@ action_menu:
 
       .field.field-name-field-location.field-inline-block
         .field-label Address:
-        .field-item Ottho Heldringstraat 5, Amsterdam, The Netherlands
+        .field-item Uxbridge Road, London, UK
 
       .field.field-name-field-profession.field-inline-block
         .field-label Profession:
-        .field-item Accountmanager at Greenpeace International
+        .field-item Bike doctor!
 
-  = partial :"blocks/lu/user-events"
-  = partial :"blocks/lu/user-groups"
+  = partial :"blocks/lu/user-events-empty"
+  = partial :"blocks/lu/user-groups-empty"
 
   #block-skills.block.lazyload{"data-expand" => "-40"}
     .action-bar
@@ -138,41 +129,19 @@ action_menu:
       .field.field-name-field-education
         .field-label Education:
         .field-item
-          Cras porttitor convallis porta. Praesent nibh sapien, tempus vitae lacus ut, convallis molestie odio. Sed porttitor turpis sed velit feugiat, at consequat dolor mattis. Aenean bibendum dolor id orci facilisis, non vestibulum odio posuere. Vivamus lobortis nulla in neque ullamcorper mattis.
+          Environmental Law Master in University of London
 
       .field.field-name-field-skills-general
         .field-label General skills
         .field-item
           = succeed "," do
-            %a.tag{:href => "./search-members.html"} Research
+            %a.tag{:href => "./search-members.html"} Bike
           = succeed "," do
-            %a.tag{:href => "./search-members.html"} Oceans
-          = succeed "," do
-            %a.tag{:href => "./search-members.html"} Storytelling
-          = succeed "," do
-            %a.tag{:href => "./search-members.html"} Blogging
-          = succeed "," do
-            %a.tag{:href => "./search-members.html"} Painting
-          = succeed "," do
-            %a.tag{:href => "./search-members.html"} French
-          = succeed "," do
-            %a.tag{:href => "./search-members.html"} Custome design
-          %a.tag{:href => "./search-members.html"} Fundraising
-      .field.field-name-field-skills-campaigning
-        .field-label Campaigning skills
-        .field-item
-          = succeed "," do
-            %a.tag{:href => "./search-members.html"} NVDA general
-          = succeed "," do
-            %a.tag{:href => "./search-members.html"} NVDA climbing
-          = succeed "," do
-            %a.tag{:href => "./search-members.html"} NVDA diving
-          %a.tag{:href => "./search-members.html"} NVDA sailing
+            %a.tag{:href => "./search-members.html"} Gardening
 
-
-  = partial :"blocks/lu/subscriptions"
+  = partial :"blocks/lu/subscription-empty"
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/lu/comments"
-  = partial :"blocks/lu/my-friends"
-  = partial :"blocks/lu/user-activity"
+  = partial :"blocks/lu/comments-empty"
+  = partial :"blocks/lu/my-friends-empty"
+  = partial :"blocks/lu/user-activity-gracestart"

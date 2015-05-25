@@ -36,16 +36,16 @@ $(function() {
 
     var postmarkup = "<div class='avatar-holder media-figure'>";
     postmarkup +=  "<a href='./profile.html' title='View user profile'>";
-    postmarkup +=  "<img alt='John Doe Claus' class='lazyload' data-srcset='/photos/60/people7.jpg 1x, /photos/120/people8.jpg 2x' src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='>";
+    postmarkup +=  "<img alt='Grace O'Flynn' class='lazyload' data-srcset='/photos/60/people7.jpg 1x, /photos/120/people8.jpg 2x' src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='>";
     postmarkup +=  "<noscript>";
-    postmarkup +=  "<img alt='John Doe Claus' src='/photos/60/people7.jpg' srcset='/photos/60/people7.jpg 1x, /photos/120/people8.jpg 2x'>";
+    postmarkup +=  "<img alt='Grace O'Flynn' src='/photos/60/people7.jpg' srcset='/photos/60/people7.jpg 1x, /photos/120/people8.jpg 2x'>";
     postmarkup +=  "    </noscript>";
     postmarkup +=  "  </a>";
     postmarkup +=  "</div>";
     postmarkup +=  "<div class='comment-holder media-body'>";
     postmarkup +=  "  <div class='comment-head'>";
     postmarkup +=  "    <a class='comment-author' href='./my-profile.html' title='View profile'>";
-    postmarkup +=  "      John Doe Claus";
+    postmarkup +=  "      Grace O'Flynn";
     postmarkup +=  "    </a>";
     postmarkup +=  "  </div>";
     postmarkup +=  "  <div class='comment-body'>";

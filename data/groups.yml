@@ -20,6 +20,25 @@ all_groups:
 - Save the Arctic
 - Deforestation
 
+my_groups_joined:
+  -
+    name: Festivals
+    date: "3 days ago"
+  -
+    name: Climate change
+    date: "11 months and 11 days ago"
+  -
+    name: Oceans
+    date: "1 year, 2 months and 4 days ago"
+  -
+    name: Local group Amsterdam
+    date: "1 year, 9 months and 2 days ago"
+
+  -
+    name: Save the Arctic
+    date: "1 year, 9 months and 3 days ago"
+
+
 group_local:
   -
     title: "Emlyn Gardens local group"

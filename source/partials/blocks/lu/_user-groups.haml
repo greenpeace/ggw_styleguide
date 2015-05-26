@@ -7,37 +7,15 @@
 
   .content
     .views-row
-      %article.node-type-small
-        %h2.node-title
-          %a{:href => "./group-home-organiser.html"}
-            = lorem.sentence
-        .field.field-created
-          .field-label Joined
-          .field-item 9 months and 2 days ago
 
-      %article.node-type-small
-        %h2.node-title
-          %a{:href => "./group-home-organiser.html"}
-            = lorem.sentence
-        .field.field-created
-          .field-label Joined
-          .field-item 11 months and 11 days ago
-
-      %article.node-type-small
-        %h2.node-title
-          %a{:href => "./group-home-organiser.html"}
-            = lorem.sentence
-        .field.field-created
-          .field-label Joined
-          .field-item 1 year, 2 months and 4 days ago
-
-      %article.node-type-small
-        %h2.node-title
-          %a{:href => "./group-home-organiser.html"}
-            = lorem.sentence
-        .field.field-created
-          .field-label Joined
-          .field-item 1 year, 9 months and 2 days ago
+      - data.groups.my_groups_joined.each do |group, index|
+        %article.node-type-small
+          %h2.node-title
+            %a{:href => "./group-home-organiser.html"}
+              = group.name
+          .field.field-created
+            .field-label Joined
+            .field-item #{group.date}
 
     %a.button{:href => "#"} load more
 

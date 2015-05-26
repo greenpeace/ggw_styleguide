@@ -19,11 +19,59 @@
       #actions.dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right
         %ul.dropdown-menu
           %li
-            %a{:href => "#"} Export CSV
+            %a.modal-inline{:href => "#export-csv"} Export CSV
           %li
-            %a{:href => "#"} Export XLS
+            %a.modal-inline{:href => "#export-xls"} Export XLS
           %hr
           %li
-            %a{:href => "#"} Send message
+            %a.modal-inline{:href => "#send-message"} Send message
           %li
-            %a{:href => "#"} Send email
+            %a.modal-inline{:href => "#send-email"} Send email
+
+
+- data.event.with_image_organising.each do |item|
+
+  #export-csv.block.white-popup.mfp-hide
+    %i.block-icon.icon-export.icon-bg-action
+    %h2.block-title Export CSV
+    .content
+      .spinner
+        .rect1
+        .rect2
+        .rect3
+        .rect4
+        .rect5
+      = item.csv_body
+
+  #export-xls.block.white-popup.mfp-hide
+    %i.block-icon.icon-export.icon-bg-action
+    %h2.block-title Export XLS
+    .content
+      .spinner
+        .rect1
+        .rect2
+        .rect3
+        .rect4
+        .rect5
+
+      = item.xls_body
+
+  #send-message.block.white-popup.mfp-hide
+    %i.block-icon.icon-comment.icon-bg-action
+    %h2.block-title Send message
+    .content
+      .comment-form-holder
+        %form.comment-form
+          .form-comment-message
+            %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a message", :rows => "5"}
+          %input.form-comment-submit{:type => "submit", :value => "Send message"}
+
+  #send-email.block.white-popup.mfp-hide
+    %i.block-icon.icon-mail.icon-bg-action
+    %h2.block-title Send email
+    .content
+      .comment-form-holder
+        %form.comment-form
+          .form-comment-message
+            %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a message", :rows => "5"}
+          %input.form-comment-submit{:type => "submit", :value => "Send email"}

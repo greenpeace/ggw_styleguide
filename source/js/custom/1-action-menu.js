@@ -1,5 +1,37 @@
 $(function() {
 
+  //check if there are at least two blocks and they are not hidden on mobile
+  var total_amount_blocks = 0;
+  total_amount_blocks += parseInt($('.l-main-column > .block').not('.hidden-mobile').length);
+  total_amount_blocks += parseInt($('.l-sidebar > .block').not('.hidden-mobile').length);
+
+  console.log(total_amount_blocks);
+
+  if (total_amount_blocks >= 2) {
+
+    // create menu wrapper
+    var action_menu_object = "<nav class='action-menu'><ul class='tabs'></ul></nav>";
+
+    $(action_menu_object).insertBefore('header');
+
+    // create menu items from sidebar
+    $('.l-sidebar > .block').not('.hidden-mobile').each(function() {
+      var blockId = $(this).attr('id');
+      var blockLabel = $(this).children('.block-title').text();
+      var menuItem = "<li><a href='"+ blockId +"'> "+ blockLabel +" </a></li>"
+    }).appendTo($(action_menu_object));
+
+    // create menu items from main-column
+    $('.l-main-column > .block').not('.hidden-mobile').each(function() {
+      var blockId = $(this).attr('id');
+      var blockLabel = $(this).children('.block-title').text();
+      var menuItem = "<li><a href='"+ blockId +"'> "+ blockLabel +" </a></li>"
+    }).appendTo('nav.action-menu .tabs');
+
+    $(action_menu_object).children('li:first-child').addClass('current');
+
+  }
+
   var resizeTimer;
 
   // This script creates a dropdown of the action menu, when there are more then 2 buttons.

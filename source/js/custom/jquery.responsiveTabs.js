@@ -2,7 +2,7 @@
      $.fn.responsiveTabs = function() {
 
       $(this).each(function() {
-        
+
         var menuWrapper = $(this);
 
         var fullMenu = menuWrapper.children('.tabs');
@@ -24,16 +24,17 @@
 
         // find all of the .items that arent visible and add/clone them to the overflow menu
         fullMenu.children('li').filter(function() {
-            var elementOffset = $(this).position().top;
-            return elementOffset + $(this).height() > fullHeight;
-        }).addClass('moved').clone(true).prependTo(overFlowMenu[0]).children('a').removeClass('tab');
+          var elementOffset = $(this).position().top;
+          return elementOffset + $(this).height() > fullHeight;
+        })
+        .addClass('moved')
+        .clone(true)
+        .prependTo(overFlowMenu[0])
+        .children('a')
+        .removeClass('tab');
 
         fullMenu.children('li:not(.moved)').each(function() {
-            
-            console.log($(this).outerWidth(true));
-
-            totalWidth += $(this).outerWidth(true);
-            console.log(totalWidth);
+          totalWidth += $(this).outerWidth(true);
         });
 
         // Position the 'more' button
@@ -45,6 +46,6 @@
             //If it is empty hide the dropdown menu,
             fullMenu.css('padding-right', '0');
         }
-      }); 
+      });
     };
 }( jQuery ));

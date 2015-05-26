@@ -19,6 +19,7 @@ member_one:
   -
     first_name: "Ashton"
     last_name: "Johnston"
+    image: "people1.jpg"
     gender: "Male"
     username: "awesome_johnston"
     locality: ""
@@ -56,6 +57,7 @@ member_two:
   -
     first_name: "Madeline"
     last_name: "Fox"
+    image: "people2.jpg"
     gender: "Female"
     username: "Madie_fox"
     locality: ""
@@ -93,6 +95,7 @@ member_three:
   -
     first_name: "Reid"
     last_name: "Abrams"
+    image: "people3.jpg"
     gender: "Male"
     username: "abrams_reid"
     locality: ""
@@ -129,6 +132,7 @@ member_four:
   -
     first_name: "Alondra"
     last_name: "Cross"
+    image: "people4.jpg"
     gender: "Female"
     username: "cross_478"
     locality: ""

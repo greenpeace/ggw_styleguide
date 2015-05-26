@@ -3,9 +3,7 @@
     %article.node-teaser-user.node-teaser
       .field-type-image
         %a{:href => "./profile.html"}
-          %img.lazyload{:alt => "Example of image.", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-sizes" => "(min-width: 768px) 130px, 90px", "data-srcset" => "/photos/90/people4.jpg 90w, /photos/130/people1.jpg 130w, /photos/180/people3.jpg 180w, /photos/260/people2.jpg 260w"}/
-        %noscript
-          %img{:src => "/photos/90/people4.jpg", "srcset" => "/photos/90/people4.jpg 90w, /photos/130/people1.jpg 130w, /photos/180/people3.jpg 180w, /photos/260/people2.jpg 260w"}/
+          = partial :"teasers/teaser-image", :locals => {:image => "#{item.image}"}
       .field-type-wrapper
         %h2.node-title
           %a{:href => "./profile.html"}

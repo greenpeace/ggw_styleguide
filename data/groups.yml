@@ -44,6 +44,7 @@ group_local:
     title: "Emlyn Gardens local group"
     date: "2 May 2015"
     datetime: "2 may 2015 - 10:06 PM"
+    image: "people5.jpg"
     author: "Carly Merritt"
     comment_amount: "7"
     tags:
@@ -61,6 +62,7 @@ group_skills:
     title: "Greenspreakers"
     date: "2 May 2015"
     datetime: "2 may 2015 - 10:06 PM"
+    image: "animals4.jpg"
     author: "Rachel King"
     comment_amount: "7"
     tags:

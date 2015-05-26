@@ -3,7 +3,7 @@
     %article.node-teaser-event.node-teaser.event-subscribed
       .field-type-image
         %a{:href => "./event-full-enrolled.html"}
-          = partial :"teasers/teaser-image"
+          = partial :"teasers/teaser-image", :locals => {:image => "#{item.image}"}
       .field-type-wrapper
         %h2.node-title
           %a{:href => "./event-full-enrolled.html"}

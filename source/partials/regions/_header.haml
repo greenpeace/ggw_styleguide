@@ -46,8 +46,8 @@
 
             - if current_page.data.user_role == "lu" || current_page.data.user_role == "cm"
               %li.menu-item
-                %a.menu-link{:href => "my-profile.html"}
-                  John Doe Claus
+                %a.menu-link{:href => "my-profile-incomplete.html"}
+                  Grace O'Flynn
               %li.menu-item
                 %a.menu-link.attention-trigger#notifications-trigger{:href => "#", "data-dropdown" => "#notifications-panel"}
                   %span.menu-link-text Notifications
@@ -59,10 +59,10 @@
                   %i.icon.icon-mail
                   %span.attention-number#messages-number
               %li.menu-item.only-mobile
-                %a.menu-link{:href => "./my-profile.html#block-user-groups"}
+                %a.menu-link{:href => "./my-profile-incomplete.html#block-user-groups"}
                   My groups
               %li.menu-item.only-mobile
-                %a.menu-link{:href => "./my-profile.html#block-user-events"}
+                %a.menu-link{:href => "./my-profile-incomplete.html#block-user-events"}
                   My events
               %li.menu-item
                 %a.menu-link{:href => "../an/index.html"} Log out

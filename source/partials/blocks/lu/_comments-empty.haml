@@ -1,0 +1,15 @@
+#block-comments.block.block-comments
+  %i.block-icon.icon-chat.icon-bg-action
+  %h2.block-title Shoutbox
+
+  .content
+    .comment-form-holder
+      %form.comment-form
+        .form-comment-message
+          %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a shout...", :rows => "1"}
+          %span#remain
+          %input.form-comment-submit{:type => "submit", :value => "share"}
+          %input.tooltip.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
+
+    %section.comments
+      %p There are no shouts yet.

@@ -4,6 +4,7 @@ body_class: not-front logged-in page-profile l-two-column
 profile: home
 access: mine
 user_role: lu
+design_status: Work in progress
 action_menu:
   -
     id: "#block-user-profile"
@@ -112,8 +113,8 @@ action_menu:
         .field-label Profession:
         .field-item Bike doctor!
 
-  = partial :"blocks/lu/user-events-empty"
-  = partial :"blocks/lu/user-groups-empty"
+  = partial :"blocks/lu/user-events"
+  = partial :"blocks/lu/user-groups-grace"
 
   #block-skills.block.lazyload{"data-expand" => "-40"}
     .action-bar
@@ -138,9 +139,9 @@ action_menu:
           = succeed "," do
             %a.tag{:href => "./search-members.html"} Gardening
 
-  = partial :"blocks/lu/subscription-empty"
+  = partial :"blocks/lu/subscriptions"
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/lu/comments-empty"
-  = partial :"blocks/lu/my-friends-empty"
-  = partial :"blocks/lu/user-activity-gracestart"
+  = partial :"blocks/lu/comments"
+  = partial :"blocks/lu/my-friends"
+  = partial :"blocks/lu/user-activity"

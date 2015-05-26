@@ -49,34 +49,40 @@ menu:
       %a.button{:href => "./edit-user-account.html"} Edit account settings
 
 .l-main-column
-  %form{:action => "./my-profile.html", :method => "get", :enctype => "multipart/form-data"}
+  %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
     %section#section-personal.block.current.main-content
       %i.block-icon.icon-user.icon-bg-user
       %h2.block-title Personal details
       .content
         .form-wrapper
           .row
+            .form-item.field-name-user-initials
+              %label.form-label{:for => "edit-field-user-initials"}
+                Initials
+                %span.form-required{:title => "This field is required."} *
+              %input#edit-field-user-initials.form-text.input-small{:name => "edit-field-user-initials", :type => "text", :value => "J", :tabindex => "1", :size => "10"}/
+
             .form-item.field-name-user-first-name
               %label.form-label{:for => "edit-field-user-first-name"}
                 First name
                 %span.form-required{:title => "This field is required."} *
-              %input#edit-field-user-first-name.form-text.input-medium{:name => "edit-field-user-first-name", :type => "text", :value => "Grace", :tabindex => "1", :size => "35"}/
+              %input#edit-field-user-first-name.form-text.input-medium{:name => "edit-field-user-first-name", :type => "text", :value => "John Doe", :tabindex => "1", :size => "35"}/
 
             .form-item.field-name-user-last-name
               %label.form-label{:for => "edit-field-user-last-name"}
                 Last name
                 %span.form-required{:title => "This field is required."} *
-              %input#edit-field-user-last-name.form-text.input-medium{:name => "edit-field-user-last-name", :type => "text", :value => "O'Flynn", :tabindex => "1", :size => "35"}/
+              %input#edit-field-user-last-name.form-text.input-medium{:name => "edit-field-user-last-name", :type => "text", :value => "Claus", :tabindex => "1", :size => "35"}/
 
           .form-item.field-name-user-gender
             %label.form-label{:for => "edit-field-user-gender"}
               Gender
             .form-radios
               .form-type-radio
-                %input#edit-field-user-gender-und-0.form-radio{:name => "field-user-gender", :type => "radio", :value => "0",  :tabindex => "4"}
+                %input#edit-field-user-gender-und-0.form-radio{:name => "field-user-gender", :type => "radio", :value => "0", :checked => "checked", :tabindex => "4"}
                 %label.option{:for => "edit-field-user-gender-und-0"} Male
               .form-type-radio
-                %input#edit-field-user-gender-und-1.form-radio{:name => "field-user-gender", :type => "radio", :value => "1", :checked => "checked"}
+                %input#edit-field-user-gender-und-1.form-radio{:name => "field-user-gender", :type => "radio", :value => "1"}
                 %label.option{:for => "edit-field-user-gender-und-1"} Female
               .form-type-radio
                 %input#edit-field-user-gender-und-2.form-radio{:name => "field-user-gender", :type => "radio", :value => "2"}
@@ -87,7 +93,13 @@ menu:
               %label.form-label{:for => "edit-field-user-date-of-birth"}
                 Date of birth
                 %span.form-required{:title => "This field is required."} *
-              %input#edit-field-user-date-of-birth.form-text.user-date-of-birth.input-medium.input-date{:name => "edit-field-user-date-of-birth", :type => "text", :value => "25 October 1980", :tabindex => "1", "data-value" => "25 October 1980", :size => "35"}/
+              %input#edit-field-user-date-of-birth.form-text.user-date-of-birth.input-medium.input-date{:name => "edit-field-user-date-of-birth", :type => "text", :value => "25 October 1980", :tabindex => "1", "data-value" => "1 January 1980", :size => "35"}/
+
+            .form-item.field-user-place-of-birth
+              %label.form-label{:for => "edit-field-user-place-of-birth"}
+                Place of birth
+                %span.form-required{:title => "This field is required."} *
+              %input#edit-field-user-place-of-birth.form-text.user-place-of-birth.input-medium{:name => "edit-field-user-place-of-birth", :type => "text", :value => "Amsterdam", :tabindex => "1", :size => "35"}/
 
     %section#section-contact.block
       %i.block-icon.icon-mail.icon-bg-user
@@ -160,7 +172,7 @@ menu:
               %option{:value => "cy"} Cyprus
               %option{:value => "cz"} Czech Republic
               %option{:value => "ci"} Côte d'Ivoire
-              %option{:value => "dk"} Denmark
+              %option{:value => "dk", :selected => "selected"} Denmark
               %option{:value => "dj"} Djibouti
               %option{:value => "dm"} Dominica
               %option{:value => "do"} Dominican Republic
@@ -179,15 +191,6 @@ menu:
               %option{:value => "gf"} French Guiana
               %option{:value => "pf"} French Polynesia
               %option{:value => "tf"} French Southern Territories
-              %option{:value => "uk", :selected => "selected"} United Kingdom
-
-
-          .row
-            .form-item.field-user-street
-              %label.form-label{:for => "edit-field-user-street"}
-                Street
-                %span.form-required{:title => "This field is required."} *
-              %input#edit-field-user-street.form-text.user-street.input-medium{:name => "edit-field-user-street", :type => "text", :value => "Uxbridge road", :tabindex => "1", :size => "35"}/
 
           .row
             .form-item.field-name-user-postal-code
@@ -196,12 +199,29 @@ menu:
                 %span.form-required{:title => "This field is required."} *
               %input#edit-field-user-postal-code.form-text.input-medium{:name => "edit-field-user-postal-code", :type => "text", :value => "7741 CV", :tabindex => "1", :size => "30"}/
 
+            .form-item.field-name-user-house-number
+              %label.form-label{:for => "edit-field-user-house-number"}
+                House number
+                %span.form-required{:title => "This field is required."} *
+              %input#edit-field-user-house-number.form-text.input-small{:name => "edit-field-user-house-number", :type => "text", :value => "5", :tabindex => "1"}/
+
+            .form-item.field-name-user-apartment-number
+              %label.form-label{:for => "edit-field-user-apartment-number"}
+                Apartment number
+              %input#edit-field-user-apartment-number.form-text.input-small{:name => "edit-field-user-apartment-number", :type => "text", :value => "", :tabindex => "1"}/
+
           .row
+            .form-item.field-user-street
+              %label.form-label{:for => "edit-field-user-street"}
+                Street
+                %span.form-required{:title => "This field is required."} *
+              %input#edit-field-user-street.form-text.user-street.input-medium{:name => "edit-field-user-street", :type => "text", :value => "Ottho Heldringstraat 5", :tabindex => "1", :size => "35"}/
+
             .form-item.field-user-city
               %label.form-label{:for => "edit-field-user-city"}
                 City
                 %span.form-required{:title => "This field is required."} *
-              %input#edit-field-user-city.form-text.user-city.input-medium{:name => "edit-field-user-city", :type => "text", :value => "London", :tabindex => "1", :size => "35"}/
+              %input#edit-field-user-city.form-text.user-city.input-medium{:name => "edit-field-user-city", :type => "text", :value => "Amsterdam", :tabindex => "1", :size => "35"}/
 
         .form-wrapper
           #mobile.phone-wrapper.row
@@ -213,10 +233,9 @@ menu:
                 %option{:value => "be"} Belgium (+32)
                 %option{:value => "fr"} France (+33)
                 %option{:value => "in"} India (+91)
-                %option{:value => "nl"} Netherlands (+31)
+                %option{:selected => "selected", :value => "nl"} Netherlands (+31)
                 %option{:value => "ru"} Russia (+7)
                 %option{:value => "us"} USA (+1)
-                %option{:selected => "selected", :value => "uk"} UK (+44)
                 %option{:value => "other"} Other
             .form-item.field-name-field-user-phone-mobile
               %label.form-label.element-placeholder Phone (mobile)
@@ -242,7 +261,7 @@ menu:
           .form-item.field-user-skype
             %label.form-label{:for => "edit-field-user-skype"}
               Skype username
-            %input#edit-field-user-skype.form-text{:name => "edit-field-user-skype", :type => "text", :value => "grace_oflynn", :tabindex => "1"}/
+            %input#edit-field-user-skype.form-text{:name => "edit-field-user-skype", :type => "text", :value => "john_doe_north_pole", :tabindex => "1"}/
 
     %section#section-about.block
       %i.block-icon.icon-photo.icon-bg-user
@@ -255,7 +274,7 @@ menu:
               %span.form-required{:title => "This field is required."} *
             .media-widget.media
               .preview.media-figure
-                %img{:src => "/photos/polar210.jpg", :alt => "Your avatar!" }
+                %img{:src => "/photos/avatar210.jpg", :alt => "Your avatar!" }
               .media-body
                 .form-description
                   Upload a photo that represents you on Greenpeace Greenwire. <br/>
@@ -272,6 +291,7 @@ menu:
             %label.form-label{:for => "field-edit-about-me"}
               About me
             %textarea#field-edit-about-me.ckeditor{:name => "field-edit-about-me", :rows => "5", :cols => "80", :tabindex => "2"}
+              In et sagittis turpis, quis malesuada urna! Duis tempus pellentesque eros, eget bibendum quam rhoncus posuere. Duis commodo lobortis elit; eu condimentum ante feugiat ut. In dictum risus sed tempor rhoncus. Pellentesque tellus risus, sodales ut eleifend vel, porta sit amet nisi. Praesent vestibulum vitae nibh nec ultricies. Vivamus semper, ipsum ut eleifend eleifend, dui dui tempor neque, sit amet gravida ligula sapien et est.
 
           .row
             .form-item.field-name-profession
@@ -319,6 +339,7 @@ menu:
             %label.form-label{:for => "field-edit-education"}
               Education
             %textarea#field-edit-education.ckeditor{:name => "field-edit-education", :rows => "3", :cols => "80", :tabindex => "2"}
+              Cras porttitor convallis porta. Praesent nibh sapien, tempus vitae lacus ut, convallis molestie odio. Sed porttitor turpis sed velit feugiat, at consequat dolor mattis. Aenean bibendum dolor id orci facilisis, non vestibulum odio posuere. Vivamus lobortis nulla in neque ullamcorper mattis.
 
           .form-item.field-name-location-und-country.form-type-select
             %label.form-label{:for => "field-general-skills"}
@@ -329,19 +350,19 @@ menu:
                 %option Activist
               %optgroup{:label => "Analytic"}
                 %option Research
-                %option Translation
+                %option{:selected => true} Translation
                 %option Writing/blogging
               %optgroup{:label => "Campaign fanatic"}
                 %option Climate & energy
-                %option Oceans
-                %option Sustainable agriculture
+                %option{:selected => true} Oceans
+                %option{:selected => true} Sustainable agriculture
                 %option Toxics
               %optgroup{:label => "Communicator"}
                 %option Crowd motivation, cheerleading
                 %option Environmental outreach
-                %option Facilitator
+                %option{:selected => true} Facilitator
                 %option Fundraising
-                %option Media relations
+                %option{:selected => true} Media relations
                 %option Networking
                 %option Public speaking
                 %option Socialising
@@ -352,20 +373,16 @@ menu:
                 %option Online communities
                 %option Social media
                 %option Web development
-              %optgroup{:label => "Handy"}
-                %option Bike repair
-                %option Car repair
-                %option Gardening
 
           .form-item.form-type-select
             %label.form-label{:for => "language"} Language skills
             %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
               %option Afrikaans
               %option Chinese
-              %option Dutch
+              %option{:selected => true} Dutch
               %option{:selected => true} English
               %option French
-              %option German
+              %option{:selected => true} German
               %option Italian
               %option Spanish
 

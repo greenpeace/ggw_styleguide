@@ -49,7 +49,7 @@ menu:
       %a.button{:href => "./edit-user-account.html"} Edit account settings
 
 .l-main-column
-  %form{:action => "./my-profile.html", :method => "get", :enctype => "multipart/form-data"}
+  %form{:action => "./my-profile.html", :method => "post", :enctype => "multipart/form-data"}
     %section#section-personal.block.current.main-content
       %i.block-icon.icon-user.icon-bg-user
       %h2.block-title Personal details
@@ -272,6 +272,7 @@ menu:
             %label.form-label{:for => "field-edit-about-me"}
               About me
             %textarea#field-edit-about-me.ckeditor{:name => "field-edit-about-me", :rows => "5", :cols => "80", :tabindex => "2"}
+              Hello, I'm Grace. I work in bike repair shop in the west side of London. Initially I studied law but it wasn't really for me. I also run a small community Garden. I'm not sure what else to write here, but well, nice to meet you all :)
 
           .row
             .form-item.field-name-profession
@@ -353,9 +354,9 @@ menu:
                 %option Social media
                 %option Web development
               %optgroup{:label => "Handy"}
-                %option Bike repair
+                %option{:selected => true} Bike repair
                 %option Car repair
-                %option Gardening
+                %option{:selected => true} Gardening
 
           .form-item.form-type-select
             %label.form-label{:for => "language"} Language skills

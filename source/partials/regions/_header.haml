@@ -68,11 +68,11 @@
                   %span.menu-link-text Notifications
                   %i.icon.icon-globe
               %li.menu-item
-                %a.menu-link.attention-trigger#messages-trigger{:href => "#", "data-dropdown" => "#messages-panel"}
+                %a.menu-link.attention-trigger#messages-trigger{:href => "my-messages.html"}
                   %span.menu-link-text Messages
                   %i.icon.icon-mail
 
-            - if current_page.data.user_role == "lu" || current_page.data.user_role == "lu_first" || current_page.data.user_role == "cm"
+            - if current_page.data.user_role == "lu" || current_page.data.user_role == "cm"
               %li.menu-item.only-mobile
                 %a.menu-link{:href => "./my-profile-incomplete.html#block-user-groups"}
                   My groups

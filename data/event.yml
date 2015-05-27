@@ -191,6 +191,38 @@ upcoming:
     title: "Mile X Festival Stall"
     date: "24 Jun, 7:30 PM - 9:00 PM BST"
 
+upcoming_events_with_location:
+  -
+    title: "Black Ice - Bristols Screening"
+    date: "7 Jun, 10:00 AM - 5:00 PM BST"
+    lat: "54.275695"
+    lng: "-0.403235"
+    link: "./event-full.html"
+  -
+    title: "Bristols BIG Green Week"
+    date: "13 Jun - 21 Jun"
+    lat: "51.458332"
+    lng: "-2.582895"
+    link: "./event-full.html"
+  -
+    title: "Speak Up: Mass Lobby of Parliament"
+    date: "19 july, 12:30 PM - 4:30 PM BST"
+    lat: "53.795145"
+    lng: "-1.537967"
+    link: "./event-full.html"
+  -
+    title: "Day of Action on Climate Change"
+    date: "20 Jun, 6:00 PM - 6:30 PM BST"
+    lat: "52.954348"
+    lng: "-1.144259"
+    link: "./event-full.html"
+  -
+    title: "Mile X Festival Stall"
+    date: "24 Jun, 7:30 PM - 9:00 PM BST"
+    lat: "52.197382"
+    lng: "-2.223585"
+    link: "./event-full.html"
+
 past:
   -
     title: "May meeting of the Yorkshire Coast group"

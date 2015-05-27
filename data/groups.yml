@@ -22,21 +22,85 @@ all_groups:
 
 my_groups_joined:
   -
-    name: Festivals
+    name: "Festivals"
     date: "3 days ago"
   -
-    name: Climate change
+    name: "Emlyn Gardens local group"
     date: "11 months and 11 days ago"
   -
-    name: Oceans
+    name: "Oceans"
     date: "1 year, 2 months and 4 days ago"
   -
-    name: Local group Amsterdam
+    name: "Local group Amsterdam"
     date: "1 year, 9 months and 2 days ago"
-
   -
-    name: Save the Arctic
+    name: "Save the Arctic"
     date: "1 year, 9 months and 3 days ago"
+
+# shown on home page, groups overview
+local_groups_all:
+  -
+    name: "Emlyn Gardens local group"
+    lat: "51.501560"
+    lng: "-0.252359"
+    subscription_type: "Open"
+    link: "./group-home.html"
+  -
+    name: "Newcastle Greenpeace"
+    lat: "54.9732800"
+    lng: "-1.6139600"
+    subscription_type: "Open"
+    link: "./group-home.html"
+  -
+    name: "Cardiff Greenpeace"
+    lat: "51.479806"
+    lng: "-3.180831"
+    subscription_type: "Open"
+    link: "./group-home.html"
+  -
+    name: "Bristol East Greenpeace"
+    lat: "51.458332"
+    lng: "-2.582895"
+    subscription_type: "Enroll"
+    link: "./group-home.html"
+  -
+    name: "Leeds Greenpeace"
+    lat: "53.475145"
+    lng: "-1.3237967"
+    subscription_type: "Open"
+    link: "./group-home.html"
+  -
+    name: "Nottingham Greenpeace"
+    lat: "52.954348"
+    lng: "-1.144259"
+    subscription_type: "Open"
+    link: "./group-home.html"
+  -
+    name: "Worchester Greenpeace"
+    lat: "52.197382"
+    lng: "-2.223585"
+    subscription_type: "Open"
+    link: "./group-home.html"
+  -
+    name: "Norwich Greenpeace"
+    lat: "52.62783"
+    lng: "1.29834"
+    subscription_type: "Open"
+    link: "./group-home.html"
+  -
+    name: "Cambridge Greenpeace"
+    lat: "52.204751"
+    lng: "0.135894"
+    subscription_type: "Open"
+    link: "./group-home.html"
+  -
+    name: "Salisbury Greenpeace"
+    lat: "51.068509"
+    lng: "-1.797804"
+    subscription_type: "Open"
+    link: "./group-home.html"
+
+
 
 
 group_local:
@@ -56,6 +120,10 @@ group_local:
     primary_contact: "Matt Bull"
     secondary_contact: "Tish Tiziana Romagna"
     social_facebook: "https://www.facebook.com/groups/NorthKentGreenpeace/"
+    address: "Emlyn Road 20"
+    city: "London"
+    location_name: "Emlyn Road"
+    geocoordinates: "51.501560, -0.252359"
 
 group_skills:
   -

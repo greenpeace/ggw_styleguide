@@ -1,0 +1,47 @@
+.block.white-popup
+  %i.block-icon.icon-pencil.icon-bg-action
+  %h2.block-title Are you still coming to our event?
+  .content
+
+    %h1.group-heading
+      %a{:href => "./profile.html"}
+        %i.icon-user
+        %span
+          = lorem.name
+
+    %article.notification
+      %a.media-figure.avatar-holder{:href => "./profile.html"}
+        %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,    R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
+        %noscript
+          %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
+      .media-body.notifications-body
+        %p
+          = lorem.paragraph
+        %p
+          = lorem.paragraph
+
+        .notifications-footer
+          %span.timestamp 1 day ago
+
+    .action-bar
+      .action-bar-item
+        %a.button Mark as unread
+        %a.button Delete message
+
+    %form.private-message-form
+      .form-item.form-type-textarea
+        %label{:for => "edit-body-und-0-value"}
+          Message:
+          %span.form-required{:title => "This field is required."} *
+        .form-textarea-wrapper.fullwidth
+          %textarea#edit-private-message-body.text-full.form-textarea{:rows => "6"}
+
+      .preview-wrapper
+        %img#preview-image.shoutimage.element-hidden{:src => "#", :alt => "your image"}
+      .clear
+      %input.tooltip.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
+
+      %button.modal-inline.button.addlink-btn{:href => "#addexternallink"}
+        %i.icon-link
+
+      %input.button.form-comment-submit{:type => "submit", :value => "Reply"}

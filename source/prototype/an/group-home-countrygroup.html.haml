@@ -1,5 +1,5 @@
 ---
-title: Emlyn Garden Local Group
+title: Greenpeace Greenwire United Kingdom
 direct_parent:
   -
     name: "Groups"
@@ -27,7 +27,7 @@ action_menu:
 
 = partial :"blocks/breadcrumbs"
 
-- data.groups.group_local.each do |item|
+- data.groups.group_country.each do |item|
 
   .l-main-column
 
@@ -35,7 +35,7 @@ action_menu:
       %i.icon-users
       = item.title
 
-    = partial :"blocks/group_info_local"
+    = partial :"blocks/group_info_country"
     = partial :"blocks/upcoming_events"
 
   %aside.l-sidebar.sidebar

@@ -1,0 +1,51 @@
+---
+title: Greenpeace Greenwire United Kingdom
+body_class: not-front logged-in page-group-home l-two-column group-subscribed
+direct_parent:
+  -
+    name: "Groups"
+    url: "groups.html"
+user_role: lu
+group: home
+design_status: Work in progress
+joined: joined
+action_menu:
+  -
+    id: "#block-group-info"
+    label: "Group info"
+    icon: "info"
+  -
+    id: "#block-comments"
+    label: "Shoutbox"
+    icon: "comment"
+  -
+    id: "#content"
+    label: "Updates"
+    icon: "news"
+  -
+    id: "#upcoming-events"
+    label: "Events"
+    icon: "event"
+  -
+    id: "#block-group-members"
+    label: "Members"
+    icon: "users"
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column
+  %h1.group-heading.only-mobile
+    %i.icon-users
+    = current_page.data.title
+    %i.icon-subscribed
+  = partial :"blocks/group_info_country"
+  = partial :"blocks/upcoming_events"
+  = partial :"blocks/updates"
+
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/lu/comments"
+  = partial :"blocks/lu/group-members"
+
+= partial :"blocks/lu/group-members-full"

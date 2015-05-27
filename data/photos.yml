@@ -1,9 +1,9 @@
 album_one:
   -
-    title: "Photos of induction training"
-    date: "10 june 2015"
-    datetime: "10 june 2015 - 7:25 PM"
-    image: "animals2.jpg"
+    title: "Album one"
+    date: "1 june 2015"
+    datetime: "1 june 2015 - 7:25 PM"
+    image: "animals1.jpg"
     author: "Grace O’Flynn"
     comment_amount: "0"
     tags:
@@ -12,6 +12,68 @@ album_one:
       - Gardening
     introtext: "We have to stop shell in order to save the artic"
     full_text: "<p>We have to stop shell in order to save the artic</p>"
+    photos:
+      -
+        url: "nature1.jpg"
+        caption: ""
+      -
+        url: "nature2.jpg"
+        caption: ""
+      -
+        url: "nature3.jpg"
+        caption: ""
+      -
+        url: "nature4.jpg"
+        caption: ""
+      -
+        url: "nature5.jpg"
+        caption: ""
+
+
+album_two:
+  -
+    title: "A couple of nice pictures"
+    date: "5 Sep 2015"
+    datetime: "5 Sep 2015 - 7:25 PM"
+    image: "nature1.jpg"
+    author: "Reece Hobs"
+    comment_amount: "3"
+    tags:
+      - Labour
+      - Chelsea & Fulham
+      - fracking
+      - sustainability
+      - Alex Sanderson
+    introtext: "A couple of Greenpeace pictures from my personal collection"
+    full_text: "<p>A couple of Greenpeace pictures from my personal collection</p>"
+    photos:
+      -
+        url: "animals1.jpg"
+        caption: ""
+      -
+        url: "animals2.jpg"
+        caption: ""
+      -
+        url: "animals3.jpg"
+        caption: ""
+      -
+        url: "animals4.jpg"
+        caption: ""
+
+album_three:
+  -
+    title: "Photos of induction training"
+    date: "10 june 2015"
+    datetime: "10 june 2015 - 7:25 PM"
+    image: "animals4.jpg"
+    author: "Grace O’Flynn"
+    comment_amount: "0"
+    tags:
+      - Community garden
+      - London
+      - Gardening
+    introtext: "We have to stop shell in order to save the artic"
+    full_text: "<p>Some photos of the induction training day. As you can see everybody had a great time. We are looking forward for the next training.</p>"
     photos:
       -
         url: "album1_1.jpg"
@@ -105,34 +167,4 @@ album_one:
         caption: ""
       -
         url: "album1_31.jpg"
-        caption: ""
-
-album_two:
-  -
-    title: "A couple of nice pictures"
-    date: "5 Sep 2015"
-    datetime: "5 Sep 2015 - 7:25 PM"
-    image: "nature1.jpg"
-    author: "Reece Hobs"
-    comment_amount: "3"
-    tags:
-      - Labour
-      - Chelsea & Fulham
-      - fracking
-      - sustainability
-      - Alex Sanderson
-    introtext: "A couple of Greenpeace pictures from my personal collection"
-    full_text: "<p>A couple of Greenpeace pictures from my personal collection</p>"
-    photos:
-      -
-        url: "animals1.jpg"
-        caption: ""
-      -
-        url: "animals2.jpg"
-        caption: ""
-      -
-        url: "animals3.jpg"
-        caption: ""
-      -
-        url: "animals4.jpg"
         caption: ""

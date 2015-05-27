@@ -44,9 +44,9 @@
         %nav.user-menu{:role => "navigation"}
           %ul.menu
 
-            - if current_page.data.user_role == "lu" || current_page.data.user_role == "cm"
+            - if current_page.data.user_role == "lu" && current_page.data.user_context != "first-login" || current_page.data.user_role == "cm"
               %li.menu-item
-                %a.menu-link{:href => "my-profile-incomplete.html"}
+                %a.menu-link{:href => "my-profile.html"}
                   Grace O'Flynn
               %li.menu-item
                 %a.menu-link.attention-trigger#notifications-trigger{:href => "#", "data-dropdown" => "#notifications-panel"}
@@ -58,6 +58,21 @@
                   %span.menu-link-text Messages
                   %i.icon.icon-mail
                   %span.attention-number#messages-number
+
+            - if current_page.data.user_role == "lu" && current_page.data.user_context == "first-login"
+              %li.menu-item
+                %a.menu-link{:href => "my-profile-incomplete.html"}
+                  Grace O'Flynn
+              %li.menu-item
+                %a.menu-link.attention-trigger#notifications-trigger{:href => "#", "data-dropdown" => "#notifications-panel"}
+                  %span.menu-link-text Notifications
+                  %i.icon.icon-globe
+              %li.menu-item
+                %a.menu-link.attention-trigger#messages-trigger{:href => "my-messages.html"}
+                  %span.menu-link-text Messages
+                  %i.icon.icon-mail
+
+            - if current_page.data.user_role == "lu" || current_page.data.user_role == "cm"
               %li.menu-item.only-mobile
                 %a.menu-link{:href => "./my-profile-incomplete.html#block-user-groups"}
                   My groups

@@ -121,9 +121,9 @@ $(function() {
 
     }
 
-    $('.messages .media').click(function(event) {
-      $(this).remove();
-    });
+    //$('.dropdown-panel .messages .media').click(function(event) {
+    //  $(this).remove();
+    //});
 
       // On resize, run the function and reset the timeout
     // 250 is the delay in milliseconds.

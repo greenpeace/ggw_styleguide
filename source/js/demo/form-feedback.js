@@ -12,6 +12,10 @@ $(function() {
       $('<div class="form-sent form-success"><i class="icon icon-check"></i> <p>The album "Photos of induction training" has been published.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
     }
 
+    if (hash == 'enrolled-for-event') {
+      $('<div class="form-sent form-success"><i class="icon icon-check"></i> <p>You have succesfully enrolled for "Induction training".</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
+    }
+
   }
 
 });

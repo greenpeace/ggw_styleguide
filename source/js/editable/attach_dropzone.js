@@ -153,7 +153,7 @@ $(function() {
 
   if( $("body").hasClass("page-type-photo") ){
     var myDropzone = new Dropzone(document.body, {
-      url: "http://www.torrentplease.com/dropzone.php",
+      url: "http://www.tubanters.nl/tmp/upload.php",
       thumbnailWidth: 80,
       thumbnailHeight: 80,
       parallelUploads: 20,
@@ -185,7 +185,7 @@ $(function() {
   } else if ( $("body").hasClass("page-type-document") ) {
 
     var myDropzone = new Dropzone(document.body, {
-      url: "http://www.torrentplease.com/dropzone.php",
+      url: "http://www.tubanters.nl/tmp/upload.php",
       thumbnailWidth: 80,
       thumbnailHeight: 80,
       parallelUploads: 20,

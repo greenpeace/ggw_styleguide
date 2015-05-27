@@ -1,0 +1,48 @@
+#content.block
+  - if current_page.data.user_role == "lu"
+    = partial :"blocks/lu/add-content"
+  %i.block-icon.icon-bg-news-media.icon-news
+  %h2.block-title Updates
+  .content
+    .tabwrapper{"data-responsive-tabs" => ""}
+      %ul.tabs
+        %li
+          =nav_link 'All', '#', :class => 'tab'
+        %li
+          =nav_link 'News', '#', :class => 'tab'
+        %li
+          =nav_link 'Blog', '#', :class => 'tab'
+        %li
+          =nav_link 'Event', '#', :class => 'tab'
+        %li
+          =nav_link 'Idea', '#', :class => 'tab'
+        %li
+          =nav_link 'Photo', '#', :class => 'tab'
+        %li
+          =nav_link 'Video', '#', :class => 'tab'
+        %li
+          =nav_link 'Document', '#', :class => 'tab'
+      %ul.tabs-overflow
+        %li
+          %a.tab.tab-overflow-trigger{:href => "#", "data-dropdown" => "#dropdown-tabs"}
+            more
+            %i.icon-down-mini
+          .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#dropdown-tabs
+            %ul.dropdown-menu
+
+    = partial :"teasers/news-no-image"
+    = partial :"teasers/news-with-image"
+    = partial :"teasers/blog-with-image"
+    = partial :"teasers/blog-no-image"
+    = partial :"teasers/event-with-image"
+    = partial :"teasers/event-with-location"
+    = partial :"teasers/event-to-join"
+    = partial :"teasers/group-no-image"
+    = partial :"teasers/group-with-image"
+    = partial :"teasers/idea"
+    = partial :"teasers/photo"
+    = partial :"teasers/video"
+    = partial :"teasers/document"
+
+    .align-center
+      %a.button{:href => "#"} show some more

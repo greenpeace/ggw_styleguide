@@ -14,6 +14,19 @@ album_one:
       - Alex Sanderson
     introtext: "We have to stop shell in order to save the artic"
     full_text: "<p>We have to stop shell in order to save the artic</p>"
+    photos:
+      -
+        url: "animals1.jpg"
+        caption: ""
+      -
+        url: "animals2.jpg"
+        caption: ""
+      -
+        url: "animals3.jpg"
+        caption: ""
+      -
+        url: "animals4.jpg"
+        caption: ""
 
 album_two:
   -
@@ -31,3 +44,16 @@ album_two:
       - Alex Sanderson
     introtext: "A couple of Greenpeace pictures from my personal collection"
     full_text: "<p>A couple of Greenpeace pictures from my personal collection</p>"
+    photos:
+      -
+        url: "animals1.jpg"
+        caption: ""
+      -
+        url: "animals2.jpg"
+        caption: ""
+      -
+        url: "animals3.jpg"
+        caption: ""
+      -
+        url: "animals4.jpg"
+        caption: ""

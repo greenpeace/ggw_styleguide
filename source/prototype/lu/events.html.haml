@@ -40,7 +40,7 @@ action_menu:
   = partial :"blocks/find_events"
 
 = javascript_include_tag "leaflet"
-= javascript_include_tag "upcoming-events"
+= javascript_include_tag "map-data"
 
 :javascript
 
@@ -66,10 +66,10 @@ action_menu:
     popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
   });
 
-  for (var i = 0; i < upcomingEvents.length; i++) {
-    var a = upcomingEvents[i];
-    var marker = L.marker(new L.LatLng(a[0], a[1]), {icon: eventIcon});
-    marker.bindPopup('<h2 class="node-title"><a href="#">Join us to Festival Mundial</a></h2><div class="field field-name-field-event-date"><span class="date-display-single">25 September, 2014 - 14:57</span></div>');
+  for (var i = 0; i < events.length; i++) {
+    var a = events[i];
+    var marker = L.marker(new L.LatLng(a.lat, a.lng), {icon: eventIcon});
+    marker.bindPopup('<h2 class="node-title"><a href="' + a.link + '">' + a.title +'</a></h2><div class="field field-name-field-event-date"><span class="date-display-single">'+ a.date +'</span></div>');
     markers.addLayer(marker);
   }
 

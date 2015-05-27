@@ -2,7 +2,7 @@
      $.fn.responsiveTabs = function() {
 
       $(this).each(function() {
-        
+
         var menuWrapper = $(this);
 
         var fullMenu = menuWrapper.children('.tabs');
@@ -29,11 +29,7 @@
         }).addClass('moved').clone(true).prependTo(overFlowMenu[0]).children('a').removeClass('tab');
 
         fullMenu.children('li:not(.moved)').each(function() {
-            
-            console.log($(this).outerWidth(true));
-
-            totalWidth += $(this).outerWidth(true);
-            console.log(totalWidth);
+          totalWidth += $(this).outerWidth(true);
         });
 
         // Position the 'more' button
@@ -45,6 +41,6 @@
             //If it is empty hide the dropdown menu,
             fullMenu.css('padding-right', '0');
         }
-      }); 
+      });
     };
 }( jQuery ));

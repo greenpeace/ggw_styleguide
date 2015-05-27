@@ -7,7 +7,6 @@ direct_parent:
     url: "my-profile.html"
 user_role: lu
 editor: ckeditor
-design_status: Needs review
 menu:
   -
     name: 'Personal details'
@@ -29,354 +28,356 @@ menu:
 
 = partial :"blocks/breadcrumbs"
 
-%aside.sidebar-first.sfmenu
-  %h1.group-heading.only-mobile
-    %i.icon-user
-      Grace O'Flynn
-  .block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
-    %i.block-icon.icon-user.icon-bg-user
-    %h2.block-title Edit profile
-    .content
-      - for item in current_page.data.menu
-        %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
-          #{item.name}
+- data.members.member_one.each do |item|
 
-  #block-user-account.block
-    %i.block-icon.icon-bg-user.icon-settings
-    %h2.block-title Account settings
-    .content
-      %p To change your username, e-mail, password, privacy settings, language and notifications click the button below.
-      %a.button{:href => "./edit-user-account.html"} Edit account settings
-
-.l-main-column
-  %form{:action => "./my-profile.html", :method => "post", :enctype => "multipart/form-data"}
-    %section#section-personal.block.current.main-content
+  %aside.sidebar-first.sfmenu
+    %h1.group-heading.only-mobile
+      %i.icon-user
+        #{item.first_name} #{item.last_name}
+    .block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
       %i.block-icon.icon-user.icon-bg-user
-      %h2.block-title Personal details
+      %h2.block-title Edit profile
       .content
-        .form-wrapper
-          .row
-            .form-item.field-name-user-first-name
-              %label.form-label{:for => "edit-field-user-first-name"}
-                First name
-                %span.form-required{:title => "This field is required."} *
-              %input#edit-field-user-first-name.form-text.input-medium{:name => "edit-field-user-first-name", :type => "text", :value => "Grace", :tabindex => "1", :size => "35"}/
+        - for menuitem in current_page.data.menu
+          %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
+            #{menuitem.name}
 
-            .form-item.field-name-user-last-name
-              %label.form-label{:for => "edit-field-user-last-name"}
-                Last name
-                %span.form-required{:title => "This field is required."} *
-              %input#edit-field-user-last-name.form-text.input-medium{:name => "edit-field-user-last-name", :type => "text", :value => "O'Flynn", :tabindex => "1", :size => "35"}/
-
-          .form-item.field-name-user-gender
-            %label.form-label{:for => "edit-field-user-gender"}
-              Gender
-            .form-radios
-              .form-type-radio
-                %input#edit-field-user-gender-und-0.form-radio{:name => "field-user-gender", :type => "radio", :value => "0",  :tabindex => "4"}
-                %label.option{:for => "edit-field-user-gender-und-0"} Male
-              .form-type-radio
-                %input#edit-field-user-gender-und-1.form-radio{:name => "field-user-gender", :type => "radio", :value => "1", :checked => "checked"}
-                %label.option{:for => "edit-field-user-gender-und-1"} Female
-              .form-type-radio
-                %input#edit-field-user-gender-und-2.form-radio{:name => "field-user-gender", :type => "radio", :value => "2"}
-                %label.option{:for => "edit-field-user-gender-und-2"} Not relevant
-
-          .row
-            .form-item.field-user-date-of-birth
-              %label.form-label{:for => "edit-field-user-date-of-birth"}
-                Date of birth
-                %span.form-required{:title => "This field is required."} *
-              %input#edit-field-user-date-of-birth.form-text.user-date-of-birth.input-medium.input-date{:name => "edit-field-user-date-of-birth", :type => "text", :value => "25 October 1980", :tabindex => "1", "data-value" => "25 October 1980", :size => "35"}/
-
-    %section#section-contact.block
-      %i.block-icon.icon-mail.icon-bg-user
-      %h2.block-title Contact details
+    #block-user-account.block
+      %i.block-icon.icon-bg-user.icon-settings
+      %h2.block-title Account settings
       .content
-        .form-wrapper
-          .form-item.field-name-location-und-country.form-type-select
-            %label.form-label{:for => "edit-field-location-und-country"}
-              Country
-            %select#edit-field-location-und-country.chosen-select{:name => "edit-field-location-und-country"}
-              %option{:value => ""} Please select
-              %option{:value => "xx"} NOT LISTED
-              %option{:value => "af"} Afghanistan
-              %option{:value => "ax"} Aland Islands
-              %option{:value => "al"} Albania
-              %option{:value => "dz"} Algeria
-              %option{:value => "as"} American Samoa
-              %option{:value => "ad"} Andorra
-              %option{:value => "ao"} Angola
-              %option{:value => "ai"} Anguilla
-              %option{:value => "aq"} Antarctica
-              %option{:value => "ag"} Antigua and Barbuda
-              %option{:value => "ar"} Argentina
-              %option{:value => "am"} Armenia
-              %option{:value => "aw"} Aruba
-              %option{:value => "au"} Australia
-              %option{:value => "at"} Austria
-              %option{:value => "az"} Azerbaijan
-              %option{:value => "bs"} Bahamas
-              %option{:value => "bh"} Bahrain
-              %option{:value => "bd"} Bangladesh
-              %option{:value => "bb"} Barbados
-              %option{:value => "by"} Belarus
-              %option{:value => "be"} Belgium
-              %option{:value => "bz"} Belize
-              %option{:value => "bj"} Benin
-              %option{:value => "bm"} Bermuda
-              %option{:value => "bt"} Bhutan
-              %option{:value => "bo"} Bolivia, Plurinational State of
-              %option{:value => "bq"} Bonaire, Sint Eustatius and Saba
-              %option{:value => "ba"} Bosnia and Herzegovina
-              %option{:value => "bw"} Botswana
-              %option{:value => "bv"} Bouvet Island
-              %option{:value => "br"} Brazil
-              %option{:value => "io"} British Indian Ocean Territory
-              %option{:value => "bn"} Brunei Darussalam
-              %option{:value => "bg"} Bulgaria
-              %option{:value => "bf"} Burkina Faso
-              %option{:value => "bi"} Burundi
-              %option{:value => "kh"} Cambodia
-              %option{:value => "cm"} Cameroon
-              %option{:value => "ca"} Canada
-              %option{:value => "cv"} Cape Verde
-              %option{:value => "ky"} Cayman Islands
-              %option{:value => "cf"} Central African Republic
-              %option{:value => "td"} Chad
-              %option{:value => "cl"} Chile
-              %option{:value => "cn"} China
-              %option{:value => "cx"} Christmas Island
-              %option{:value => "cc"} Cocos (Keeling) Islands
-              %option{:value => "co"} Colombia
-              %option{:value => "km"} Comoros
-              %option{:value => "cg"} Congo
-              %option{:value => "cd"} Congo, The Democratic Republic of the
-              %option{:value => "ck"} Cook Islands
-              %option{:value => "cr"} Costa Rica
-              %option{:value => "hr"} Croatia
-              %option{:value => "cu"} Cuba
-              %option{:value => "cw"} Curaçao
-              %option{:value => "cy"} Cyprus
-              %option{:value => "cz"} Czech Republic
-              %option{:value => "ci"} Côte d'Ivoire
-              %option{:value => "dk"} Denmark
-              %option{:value => "dj"} Djibouti
-              %option{:value => "dm"} Dominica
-              %option{:value => "do"} Dominican Republic
-              %option{:value => "ec"} Ecuador
-              %option{:value => "eg"} Egypt
-              %option{:value => "sv"} El Salvador
-              %option{:value => "gq"} Equatorial Guinea
-              %option{:value => "er"} Eritrea
-              %option{:value => "ee"} Estonia
-              %option{:value => "et"} Ethiopia
-              %option{:value => "fk"} Falkland Islands (Malvinas)
-              %option{:value => "fo"} Faroe Islands
-              %option{:value => "fj"} Fiji
-              %option{:value => "fi"} Finland
-              %option{:value => "fr"} France
-              %option{:value => "gf"} French Guiana
-              %option{:value => "pf"} French Polynesia
-              %option{:value => "tf"} French Southern Territories
-              %option{:value => "uk", :selected => "selected"} United Kingdom
+        %p To change your username, e-mail, password, privacy settings, language and notifications click the button below.
+        %a.button{:href => "./edit-user-account.html"} Edit account settings
+
+  .l-main-column
+    %form{:action => "./my-profile.html", :method => "post", :enctype => "multipart/form-data"}
+      %section#section-personal.block.current.main-content
+        %i.block-icon.icon-user.icon-bg-user
+        %h2.block-title Personal details
+        .content
+          .form-wrapper
+            .row
+              .form-item.field-name-user-first-name
+                %label.form-label{:for => "edit-field-user-first-name"}
+                  First name
+                  %span.form-required{:title => "This field is required."} *
+                %input#edit-field-user-first-name.form-text.input-medium{:name => "edit-field-user-first-name", :type => "text", :value => "#{item.first_name}", :tabindex => "1", :size => "35"}/
+
+              .form-item.field-name-user-last-name
+                %label.form-label{:for => "edit-field-user-last-name"}
+                  Last name
+                  %span.form-required{:title => "This field is required."} *
+                %input#edit-field-user-last-name.form-text.input-medium{:name => "edit-field-user-last-name", :type => "text", :value => "#{item.last_name}", :tabindex => "1", :size => "35"}/
+
+            .form-item.field-name-user-gender
+              %label.form-label{:for => "edit-field-user-gender"}
+                Gender
+              .form-radios
+                .form-type-radio
+                  %input#edit-field-user-gender-und-0.form-radio{:name => "field-user-gender", :type => "radio", :value => "0",  :tabindex => "4"}
+                  %label.option{:for => "edit-field-user-gender-und-0"} Male
+                .form-type-radio
+                  %input#edit-field-user-gender-und-1.form-radio{:name => "field-user-gender", :type => "radio", :value => "1", :checked => "checked"}
+                  %label.option{:for => "edit-field-user-gender-und-1"} Female
+                .form-type-radio
+                  %input#edit-field-user-gender-und-2.form-radio{:name => "field-user-gender", :type => "radio", :value => "2"}
+                  %label.option{:for => "edit-field-user-gender-und-2"} Not relevant
+
+            .row
+              .form-item.field-user-date-of-birth
+                %label.form-label{:for => "edit-field-user-date-of-birth"}
+                  Date of birth
+                  %span.form-required{:title => "This field is required."} *
+                %input#edit-field-user-date-of-birth.form-text.user-date-of-birth.input-medium.input-date{:name => "edit-field-user-date-of-birth", :type => "text", :value => "#{item.birth_day} #{item.birth_month_written} #{item.birth_year}", :tabindex => "1", "data-value" => "#{item.birth_year}/#{item.birth_month}/#{item.birth_day}", :size => "35"}/
+
+      %section#section-contact.block
+        %i.block-icon.icon-mail.icon-bg-user
+        %h2.block-title Contact details
+        .content
+          .form-wrapper
+            .form-item.field-name-location-und-country.form-type-select
+              %label.form-label{:for => "edit-field-location-und-country"}
+                Country
+              %select#edit-field-location-und-country.chosen-select{:name => "edit-field-location-und-country"}
+                %option{:value => ""} Please select
+                %option{:value => "xx"} NOT LISTED
+                %option{:value => "af"} Afghanistan
+                %option{:value => "ax"} Aland Islands
+                %option{:value => "al"} Albania
+                %option{:value => "dz"} Algeria
+                %option{:value => "as"} American Samoa
+                %option{:value => "ad"} Andorra
+                %option{:value => "ao"} Angola
+                %option{:value => "ai"} Anguilla
+                %option{:value => "aq"} Antarctica
+                %option{:value => "ag"} Antigua and Barbuda
+                %option{:value => "ar"} Argentina
+                %option{:value => "am"} Armenia
+                %option{:value => "aw"} Aruba
+                %option{:value => "au"} Australia
+                %option{:value => "at"} Austria
+                %option{:value => "az"} Azerbaijan
+                %option{:value => "bs"} Bahamas
+                %option{:value => "bh"} Bahrain
+                %option{:value => "bd"} Bangladesh
+                %option{:value => "bb"} Barbados
+                %option{:value => "by"} Belarus
+                %option{:value => "be"} Belgium
+                %option{:value => "bz"} Belize
+                %option{:value => "bj"} Benin
+                %option{:value => "bm"} Bermuda
+                %option{:value => "bt"} Bhutan
+                %option{:value => "bo"} Bolivia, Plurinational State of
+                %option{:value => "bq"} Bonaire, Sint Eustatius and Saba
+                %option{:value => "ba"} Bosnia and Herzegovina
+                %option{:value => "bw"} Botswana
+                %option{:value => "bv"} Bouvet Island
+                %option{:value => "br"} Brazil
+                %option{:value => "io"} British Indian Ocean Territory
+                %option{:value => "bn"} Brunei Darussalam
+                %option{:value => "bg"} Bulgaria
+                %option{:value => "bf"} Burkina Faso
+                %option{:value => "bi"} Burundi
+                %option{:value => "kh"} Cambodia
+                %option{:value => "cm"} Cameroon
+                %option{:value => "ca"} Canada
+                %option{:value => "cv"} Cape Verde
+                %option{:value => "ky"} Cayman Islands
+                %option{:value => "cf"} Central African Republic
+                %option{:value => "td"} Chad
+                %option{:value => "cl"} Chile
+                %option{:value => "cn"} China
+                %option{:value => "cx"} Christmas Island
+                %option{:value => "cc"} Cocos (Keeling) Islands
+                %option{:value => "co"} Colombia
+                %option{:value => "km"} Comoros
+                %option{:value => "cg"} Congo
+                %option{:value => "cd"} Congo, The Democratic Republic of the
+                %option{:value => "ck"} Cook Islands
+                %option{:value => "cr"} Costa Rica
+                %option{:value => "hr"} Croatia
+                %option{:value => "cu"} Cuba
+                %option{:value => "cw"} Curaçao
+                %option{:value => "cy"} Cyprus
+                %option{:value => "cz"} Czech Republic
+                %option{:value => "ci"} Côte d'Ivoire
+                %option{:value => "dk"} Denmark
+                %option{:value => "dj"} Djibouti
+                %option{:value => "dm"} Dominica
+                %option{:value => "do"} Dominican Republic
+                %option{:value => "ec"} Ecuador
+                %option{:value => "eg"} Egypt
+                %option{:value => "sv"} El Salvador
+                %option{:value => "gq"} Equatorial Guinea
+                %option{:value => "er"} Eritrea
+                %option{:value => "ee"} Estonia
+                %option{:value => "et"} Ethiopia
+                %option{:value => "fk"} Falkland Islands (Malvinas)
+                %option{:value => "fo"} Faroe Islands
+                %option{:value => "fj"} Fiji
+                %option{:value => "fi"} Finland
+                %option{:value => "fr"} France
+                %option{:value => "gf"} French Guiana
+                %option{:value => "pf"} French Polynesia
+                %option{:value => "tf"} French Southern Territories
+                %option{:value => "uk", :selected => "selected"} United Kingdom
 
 
-          .row
-            .form-item.field-user-street
-              %label.form-label{:for => "edit-field-user-street"}
-                Street
-                %span.form-required{:title => "This field is required."} *
-              %input#edit-field-user-street.form-text.user-street.input-medium{:name => "edit-field-user-street", :type => "text", :value => "Uxbridge road", :tabindex => "1", :size => "35"}/
+            .row
+              .form-item.field-user-street
+                %label.form-label{:for => "edit-field-user-street"}
+                  Street
+                  %span.form-required{:title => "This field is required."} *
+                %input#edit-field-user-street.form-text.user-street.input-medium{:name => "edit-field-user-street", :type => "text", :value => "#{item.address}", :tabindex => "1", :size => "35"}/
 
-          .row
-            .form-item.field-name-user-postal-code
-              %label.form-label{:for => "edit-field-user-postal-code"}
-                Postal code
-                %span.form-required{:title => "This field is required."} *
-              %input#edit-field-user-postal-code.form-text.input-medium{:name => "edit-field-user-postal-code", :type => "text", :value => "7741 CV", :tabindex => "1", :size => "30"}/
+            .row
+              .form-item.field-name-user-postal-code
+                %label.form-label{:for => "edit-field-user-postal-code"}
+                  Postal code
+                  %span.form-required{:title => "This field is required."} *
+                %input#edit-field-user-postal-code.form-text.input-medium{:name => "edit-field-user-postal-code", :type => "text", :value => "#{item.postcode}", :tabindex => "1", :size => "30"}/
 
-          .row
-            .form-item.field-user-city
-              %label.form-label{:for => "edit-field-user-city"}
-                City
-                %span.form-required{:title => "This field is required."} *
-              %input#edit-field-user-city.form-text.user-city.input-medium{:name => "edit-field-user-city", :type => "text", :value => "London", :tabindex => "1", :size => "35"}/
+            .row
+              .form-item.field-user-city
+                %label.form-label{:for => "edit-field-user-city"}
+                  City
+                  %span.form-required{:title => "This field is required."} *
+                %input#edit-field-user-city.form-text.user-city.input-medium{:name => "edit-field-user-city", :type => "text", :value => "#{item.city}", :tabindex => "1", :size => "35"}/
 
-        .form-wrapper
-          #mobile.phone-wrapper.row
-            .form-item.field-name-field-user-phone-mobile-country
-              %label.form-label
-                Phone (mobile)
-                %span.form-required{:title => "This field is required."} *
-              %select.form-select.input-medium
-                %option{:value => "be"} Belgium (+32)
-                %option{:value => "fr"} France (+33)
-                %option{:value => "in"} India (+91)
-                %option{:value => "nl"} Netherlands (+31)
-                %option{:value => "ru"} Russia (+7)
-                %option{:value => "us"} USA (+1)
-                %option{:selected => "selected", :value => "uk"} UK (+44)
-                %option{:value => "other"} Other
-            .form-item.field-name-field-user-phone-mobile
-              %label.form-label.element-placeholder Phone (mobile)
-              %input.form-text.input-medium{:type => "text", :value => "06 5983 8973", :size => "35"}/
-            %a.phone-switch.clear{:href => "#landline"} I don't have a mobile phone
-          #landline.phone-wrapper.row
-            .form-item.field-name-field-user-phone-house-country
-              %label.form-label
-                Phone (home)
-                %span.form-required{:title => "This field is required."} *
-              %select.form-select.input-medium
-                %option{:value => "be"} Belgium (+32)
-                %option{:value => "fr"} France (+33)
-                %option{:value => "in"} India (+91)
-                %option{:selected => "selected", :value => "nl"} Netherlands (+31)
-                %option{:value => "ru"} Russia (+7)
-                %option{:value => "us"} USA (+1)
-                %option{:value => "other"} Other
-            .form-item.field-name-field-user-phone-house
-              %label.form-label.element-placeholder Phone (home)
-              %input.form-text.input-medium{:type => "text", :value => "", :size => "35"}/
-            %a.phone-switch.clear{:href => "#mobile"} I'd rather use my mobile number
-          .form-item.field-user-skype
-            %label.form-label{:for => "edit-field-user-skype"}
-              Skype username
-            %input#edit-field-user-skype.form-text{:name => "edit-field-user-skype", :type => "text", :value => "grace_oflynn", :tabindex => "1"}/
-
-    %section#section-about.block
-      %i.block-icon.icon-photo.icon-bg-user
-      %h2.block-title Picture & About me
-      .content
-        .form-wrapper
-          .form-item
-            %label.form-label{:for => "field-edit-image"}
-              Profile picture
-              %span.form-required{:title => "This field is required."} *
-            .media-widget.media
-              .preview.media-figure
-                %img{:src => "/photos/grace210.jpg", :alt => "Your avatar!" }
-              .media-body
-                .form-description
-                  Upload a photo that represents you on Greenpeace Greenwire. <br/>
-                  Files must be smaller than 3 MB <br/>
-                  Allowed file types: png gif jpg jpeg <br/>
-                  Images must be larger than 200x200 pixels.
-                %input#uploadimage.element-invisible{:type => "file", :value => "upload"}
-                %button.button.launcher select image
-                %button.button.cropper crop image
-                %a.button.remove{:href => "#", :tabindex => "3"} remove image
-                %p#file-name.element-hidden
-
-          .form-item
-            %label.form-label{:for => "field-edit-about-me"}
-              About me
-            %textarea#field-edit-about-me.ckeditor{:name => "field-edit-about-me", :rows => "5", :cols => "80", :tabindex => "2"}
-              Hello, I'm Grace. I work in bike repair shop in the west side of London. Initially I studied law but it wasn't really for me. I also run a small community Garden. I'm not sure what else to write here, but well, nice to meet you all :)
-
-          .row
-            .form-item.field-name-profession
-              %label.form-label{:for => "edit-field-profession"}
-                Profession
-              %input#edit-field-profession.form-text.input-medium{:name => "edit-field-profession", :type => "text", :value => "Accountmanager at Greenpeace International", :tabindex => "1", :size => "35"}/
-
-            .form-item.field-name-employer
-              %label.form-label{:for => "edit-field-employer"}
-                Employer
-              %input#edit-field-employer.form-text.input-medium{:name => "edit-field-employer", :type => "text", :value => "Greenpeace", :tabindex => "1", :size => "35"}/
-
-    %section#section-social.block
-      %i.block-icon.icon-social.icon-bg-user
-      %h2.block-title Social media
-      .content
-        .form-wrapper
-          .form-item
-            %label.form-label
-              Social media profiles
-            .form-description Select the desired social network and copy/paste the full URL to your profile page.
-
-            .row.clone-item
-              .form-item.edit-field-select-social-media{:style => "margin-top:7px;"}
+          .form-wrapper
+            #mobile.phone-wrapper.row
+              .form-item.field-name-field-user-phone-mobile-country
+                %label.form-label
+                  Phone (mobile)
+                  %span.form-required{:title => "This field is required."} *
                 %select.form-select.input-medium
-                  %option{:value => ""} Select a platform
-                  %option{:value => "tw"} Twitter
-                  %option{:value => "fb"} Facebook
-                  %option{:value => "in"} Linkedin
-                  %option{:value => "pi"} Pinterest
-                  %option{:value => "gp"} Google plus
-                  %option{:value => "vk"} Vkontakte
+                  %option{:value => "be"} Belgium (+32)
+                  %option{:value => "fr"} France (+33)
+                  %option{:value => "in"} India (+91)
+                  %option{:value => "nl"} Netherlands (+31)
+                  %option{:value => "ru"} Russia (+7)
+                  %option{:value => "us"} USA (+1)
+                  %option{:selected => "selected", :value => "uk"} UK (+44)
                   %option{:value => "other"} Other
-              .form-item.field-event-roles-und-0-role-limit
-                %input#edit-field-event-roles-und-0-role-limit.form-text.input-medium{:type => "url", :value => "", :tabindex => "13", :size => "35", :pattern => "https?://.+"}
-            %a.small-link.clone-trigger{:href => "#"} add another social media profile
+              .form-item.field-name-field-user-phone-mobile
+                %label.form-label.element-placeholder Phone (mobile)
+                %input.form-text.input-medium{:type => "text", :value => "#{item.phone_mobile}", :size => "35"}/
+              %a.phone-switch.clear{:href => "#landline"} I don't have a mobile phone
+            #landline.phone-wrapper.row
+              .form-item.field-name-field-user-phone-house-country
+                %label.form-label
+                  Phone (home)
+                  %span.form-required{:title => "This field is required."} *
+                %select.form-select.input-medium
+                  %option{:value => "be"} Belgium (+32)
+                  %option{:value => "fr"} France (+33)
+                  %option{:value => "in"} India (+91)
+                  %option{:selected => "selected", :value => "nl"} Netherlands (+31)
+                  %option{:value => "ru"} Russia (+7)
+                  %option{:value => "us"} USA (+1)
+                  %option{:value => "other"} Other
+              .form-item.field-name-field-user-phone-house
+                %label.form-label.element-placeholder Phone (home)
+                %input.form-text.input-medium{:type => "text", :value => "", :size => "35"}/
+              %a.phone-switch.clear{:href => "#mobile"} I'd rather use my mobile number
+            .form-item.field-user-skype
+              %label.form-label{:for => "edit-field-user-skype"}
+                Skype username
+              %input#edit-field-user-skype.form-text{:name => "edit-field-user-skype", :type => "text", :value => "grace_oflynn", :tabindex => "1"}/
 
-    %section#section-skills.block
-      %i.block-icon.icon-skills.icon-bg-user
-      %h2.block-title Skills
-      .content
-        .form-wrapper
+      %section#section-about.block
+        %i.block-icon.icon-photo.icon-bg-user
+        %h2.block-title Picture & About me
+        .content
+          .form-wrapper
+            .form-item
+              %label.form-label{:for => "field-edit-image"}
+                Profile picture
+                %span.form-required{:title => "This field is required."} *
+              .media-widget.media
+                .preview.media-figure
+                  %img{:src => "/photos/grace210.jpg", :alt => "Your avatar!" }
+                .media-body
+                  .form-description
+                    Upload a photo that represents you on Greenpeace Greenwire. <br/>
+                    Files must be smaller than 3 MB <br/>
+                    Allowed file types: png gif jpg jpeg <br/>
+                    Images must be larger than 200x200 pixels.
+                  %input#uploadimage.element-invisible{:type => "file", :value => "upload"}
+                  %button.button.launcher select image
+                  %button.button.cropper crop image
+                  %a.button.remove{:href => "#", :tabindex => "3"} remove image
+                  %p#file-name.element-hidden
 
-          .form-item
-            %label.form-label{:for => "field-edit-education"}
-              Education
-            %textarea#field-edit-education.ckeditor{:name => "field-edit-education", :rows => "3", :cols => "80", :tabindex => "2"}
+            .form-item
+              %label.form-label{:for => "field-edit-about-me"}
+                About me
+              %textarea#field-edit-about-me.ckeditor{:name => "field-edit-about-me", :rows => "5", :cols => "80", :tabindex => "2"}
+                Hello, I'm Grace. I work in bike repair shop in the west side of London. Initially I studied law but it wasn't really for me. I also run a small community Garden. I'm not sure what else to write here, but well, nice to meet you all :)
 
-          .form-item.field-name-location-und-country.form-type-select
-            %label.form-label{:for => "field-general-skills"}
-              General skills
-            %select.chosen-select{:name => "field-general-skills", :multiple => "multiple", "data-placeholder" => "Select multiple skills..."}
-              %option{:value => ""}
-              %optgroup{:label => "Activist"}
-                %option Activist
-              %optgroup{:label => "Analytic"}
-                %option Research
-                %option Translation
-                %option Writing/blogging
-              %optgroup{:label => "Campaign fanatic"}
-                %option Climate & energy
-                %option Oceans
-                %option Sustainable agriculture
-                %option Toxics
-              %optgroup{:label => "Communicator"}
-                %option Crowd motivation, cheerleading
-                %option Environmental outreach
-                %option Facilitator
-                %option Fundraising
-                %option Media relations
-                %option Networking
-                %option Public speaking
-                %option Socialising
-                %option Storytelling
-              %optgroup{:label => "Nerd"}
-                %option Content management
-                %option Drupal
-                %option Online communities
-                %option Social media
-                %option Web development
-              %optgroup{:label => "Handy"}
-                %option{:selected => true} Bike repair
-                %option Car repair
-                %option{:selected => true} Gardening
+            .row
+              .form-item.field-name-profession
+                %label.form-label{:for => "edit-field-profession"}
+                  Profession
+                %input#edit-field-profession.form-text.input-medium{:name => "edit-field-profession", :type => "text", :value => "Accountmanager at Greenpeace International", :tabindex => "1", :size => "35"}/
 
-          .form-item.form-type-select
-            %label.form-label{:for => "language"} Language skills
-            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
-              %option Afrikaans
-              %option Chinese
-              %option Dutch
-              %option{:selected => true} English
-              %option French
-              %option German
-              %option Italian
-              %option Spanish
+              .form-item.field-name-employer
+                %label.form-label{:for => "edit-field-employer"}
+                  Employer
+                %input#edit-field-employer.form-text.input-medium{:name => "edit-field-employer", :type => "text", :value => "Greenpeace", :tabindex => "1", :size => "35"}/
 
-          .form-item
-            %label.form-label{:for => "field-otherskills"}
-              Other skills
-            .form-description To add multiple skills, separate them with a comma.
-            %input#field-otherskills.form-text{:name => "field-otherskills", :type => "text", :value => "", :tabindex => "13"}
+      %section#section-social.block
+        %i.block-icon.icon-social.icon-bg-user
+        %h2.block-title Social media
+        .content
+          .form-wrapper
+            .form-item
+              %label.form-label
+                Social media profiles
+              .form-description Select the desired social network and copy/paste the full URL to your profile page.
 
-    %section#section-submit.section-submit
-      .form-actions.form-wrapper
-        %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit"}
-        %input{:type => "submit", :class => "button btn-l", :value => "Cancel"}
+              .row.clone-item
+                .form-item.edit-field-select-social-media{:style => "margin-top:7px;"}
+                  %select.form-select.input-medium
+                    %option{:value => ""} Select a platform
+                    %option{:value => "tw"} Twitter
+                    %option{:value => "fb"} Facebook
+                    %option{:value => "in"} Linkedin
+                    %option{:value => "pi"} Pinterest
+                    %option{:value => "gp"} Google plus
+                    %option{:value => "vk"} Vkontakte
+                    %option{:value => "other"} Other
+                .form-item.field-event-roles-und-0-role-limit
+                  %input#edit-field-event-roles-und-0-role-limit.form-text.input-medium{:type => "url", :value => "", :tabindex => "13", :size => "35", :pattern => "https?://.+"}
+              %a.small-link.clone-trigger{:href => "#"} add another social media profile
+
+      %section#section-skills.block
+        %i.block-icon.icon-skills.icon-bg-user
+        %h2.block-title Skills
+        .content
+          .form-wrapper
+
+            .form-item
+              %label.form-label{:for => "field-edit-education"}
+                Education
+              %textarea#field-edit-education.ckeditor{:name => "field-edit-education", :rows => "3", :cols => "80", :tabindex => "2"}
+
+            .form-item.field-name-location-und-country.form-type-select
+              %label.form-label{:for => "field-general-skills"}
+                General skills
+              %select.chosen-select{:name => "field-general-skills", :multiple => "multiple", "data-placeholder" => "Select multiple skills..."}
+                %option{:value => ""}
+                %optgroup{:label => "Activist"}
+                  %option Activist
+                %optgroup{:label => "Analytic"}
+                  %option Research
+                  %option Translation
+                  %option Writing/blogging
+                %optgroup{:label => "Campaign fanatic"}
+                  %option Climate & energy
+                  %option Oceans
+                  %option Sustainable agriculture
+                  %option Toxics
+                %optgroup{:label => "Communicator"}
+                  %option Crowd motivation, cheerleading
+                  %option Environmental outreach
+                  %option Facilitator
+                  %option Fundraising
+                  %option Media relations
+                  %option Networking
+                  %option Public speaking
+                  %option Socialising
+                  %option Storytelling
+                %optgroup{:label => "Nerd"}
+                  %option Content management
+                  %option Drupal
+                  %option Online communities
+                  %option Social media
+                  %option Web development
+                %optgroup{:label => "Handy"}
+                  %option{:selected => true} Bike repair
+                  %option Car repair
+                  %option{:selected => true} Gardening
+
+            .form-item.form-type-select
+              %label.form-label{:for => "language"} Language skills
+              %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
+                %option Afrikaans
+                %option Chinese
+                %option Dutch
+                %option{:selected => true} English
+                %option French
+                %option German
+                %option Italian
+                %option Spanish
+
+            .form-item
+              %label.form-label{:for => "field-otherskills"}
+                Other skills
+              .form-description To add multiple skills, separate them with a comma.
+              %input#field-otherskills.form-text{:name => "field-otherskills", :type => "text", :value => "", :tabindex => "13"}
+
+      %section#section-submit.section-submit
+        .form-actions.form-wrapper
+          %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit"}
+          %input{:type => "submit", :class => "button btn-l", :value => "Cancel"}

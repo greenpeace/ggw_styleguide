@@ -17,35 +17,35 @@ suggestion:
 
 member_one:
   -
-    first_name: "Ashton"
-    last_name: "Johnston"
-    image: "people1.jpg"
-    gender: "Male"
-    username: "awesome_johnston"
+    first_name: "Grace"
+    last_name: "O'Flynn"
+    image: "grace210.jpg"
+    gender: "Female"
+    username: "grace_oflynn"
     locality: ""
-    address: "82-96 Old Kent Road"
+    address: "96 Uxbridge Road"
     postcode: "SE1 4NX"
     city: "London"
     country: "England"
-    birth_day: "26"
-    birth_month: "04"
-    birth_month_written: "April"
-    birth_year: "1996"
+    birth_day: "25"
+    birth_month: "10"
+    birth_month_written: "October"
+    birth_year: "1980"
     geocoordinates: "51.915625, -2.077950"
-    phone_mobile: "793672929"
+    phone_mobile: "065 983 8973"
     phone_home: "12372929"
-    email: "johnston_goes_abroad@yahoo.co.uk"
-    skype: "awesome_johnston"
-    about: "I was born in Bristol, u.k. a long time ago, I make a living as a Fine Artist/Muralist, I spent 20 years abroad accumulating a wealth of experiences in order to obtain some sort of idea regards Homoerectus the planet and where on earth we are going....."
-    profession: "Accountmanager Finance"
-    employer: "Greenpeace International"
+    email: "grace@riseup.net"
+    skype: "grace_oflynn"
+    about: "Hello, I'm Grace. I work in bike repair shop in the west side of London. Initially I studied law but it wasn't really for me. I also run a small community Garden. I'm not sure what else to write here, but well, nice to meet you all :)"
+    profession: "Bike doctor!"
+    employer: ""
     social_facebook: "http://www.facebook.com/awesome_johnston"
     social_twitter: "http://www.twitter.com/awesome_johnston"
     social_linkedin: "http://www.linkedin.com/awesome_johnston"
-    education: "I have a degree"
+    education: "Environmental Law Master in University of London"
     general_skills:
-      - Research
-      - Painting
+      - Bike
+      - Cooking
     language_skills:
       - German
       - Finish

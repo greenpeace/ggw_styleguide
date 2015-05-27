@@ -1,0 +1,39 @@
+%section.slider
+  .flexslider.hero
+    %ul.slides
+      %li
+        #map.map
+
+= javascript_include_tag "leaflet"
+= javascript_include_tag "upcoming-events"
+
+:javascript
+  var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  }),
+  latlng = L.latLng(52.5, -2);
+
+  var map = L.map('map', {center: latlng, zoom: 5, scrollWheelZoom: false, layers: [tiles]});
+
+  var markers = L.markerClusterGroup();
+
+  var groupIcon = L.icon({
+    iconUrl: '/images/marker-groups.png',
+    iconRetinaUrl: '/images/marker-groups@2x.png',
+    shadowUrl: '/images/marker-shadow.png',
+    shadowRetinaUrl: '/images/marker-shadow@2x.png',
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [41, 41], // size of the shadow
+    iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
+    shadowAnchor: [13, 41],  // the same for the shadow
+  });
+
+  for (var i = 0; i < groups.length; i++) {
+    var a = groups[i];
+    var marker = L.marker(new L.LatLng(a[0], a[1]), {icon: groupIcon});
+    marker.bindPopup('<h2 class="node-title"><a href="group-home.html">Emlyn Garden Local Group</a></h2><div class="field field-name-field-group-type">Local group (open)</div>');
+    markers.addLayer(marker);
+  }
+
+  map.addLayer(markers);

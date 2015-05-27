@@ -45,16 +45,16 @@ group_local:
     date: "2 May 2015"
     datetime: "2 may 2015 - 10:06 PM"
     image: "people5.jpg"
-    author: "Carly Merritt"
+    author: "Matt Bull"
     comment_amount: "7"
     tags:
       - Gardening
     group_type: "Local group"
     enrollment_type: "Open"
     mission: "To support Greenpeace UK in their mission to save our beautiful Earth"
-    about: "A local group of volunteer activists. We meet every 2nd Wednesday of the month at 8pm in the Nags Head. It's just opposite Rochester station and about 10 minutes walk from Chatham town centre. Join us and you can make a positive difference."
-    primary_contact: "Matt Bull"
-    secondary_contact: "Tish Tiziana Romagna"
+    about: "A local group of volunteer activists on Uxbridge Road. We meet every 2nd Wednesday of the month at 8pm at the King's Head. It's just about 10 minutes walk from the metro. Join us and you can make a positive difference."
+    primary_contact: "Alen Marsh"
+    secondary_contact: "Matt Bull"
     social_facebook: "https://www.facebook.com/groups/NorthKentGreenpeace/"
 
 group_skills:
@@ -74,3 +74,95 @@ group_skills:
     primary_contact: "Rachel King"
     secondary_contact: ""
     social_facebook: ""
+
+group_country:
+  -
+    title: "Greenpeace Greenwire United Kingdom"
+    date: "2 May 2015"
+    datetime: "2 may 2015 - 10:06 PM"
+    image: "nature1.jpg"
+    author: "Rachel King"
+    comment_amount: "2"
+    tags:
+      - Gardening
+    group_type: "Country Group"
+    enrollment_type: "Open"
+    mission: "Country group for Greenpeace Greenwire United Kingdom"
+    about: "Saving the world, one step at the time. We are passionate about protecting the Earth – the only life support system we have. We are independent. That means we can tackle power, not problems. We do this by investigating, documenting and exposing the causes of environmental destruction. We work to bring about change through political lobbying, citizen action and consumer pressure. And we will take peaceful direct action to protect this fragile planet and promote the solutions for a green and peaceful future."
+    primary_contact: "Rachel King"
+    secondary_contact: ""
+    social_facebook: "http://www.facebook.com/greenpeaceuk"
+    social_twitter: "http://www.twitter.com/greenpeaceuk"
+
+group_local2:
+  -
+    title: "Manchester Greenpeace"
+    date: "1 May 2015"
+    datetime: "2 may 2015 - 10:06 PM"
+    image: "nature2.jpg"
+    author: "Evey Hammond"
+    comment_amount: "3"
+    tags:
+      - Manchester
+    group_type: "Local group"
+    enrollment_type: "Open"
+    mission: "Campaigning for Greenpeace in Manchester...and having fun"
+    about: "Our regular meeting date is the first Wednesday of every month, at 7:00PM at the Cheeky Coffee Company on Hulme Street, just off Oxford Road."
+    primary_contact: "Evey Hammond"
+    secondary_contact: "Martin Porter"
+    social_facebook: "https://www.facebook.com/groups/5341980673/"
+    social_twitter: "https://twitter.com/GPManchester"
+
+group_local3:
+  -
+    title: "North Kent Greenpeace"
+    date: "1 May 2015"
+    datetime: "2 may 2015 - 10:06 PM"
+    image: "nature3.jpg"
+    author: "Tish Tiziana Romagna"
+    comment_amount: "0"
+    tags:
+      - Kent
+    group_type: "Local group"
+    enrollment_type: "Open"
+    mission: "To support Greenpeace UK in their mission to save our beautiful Eart"
+    about: "A local group of volunteer activists. We meet every 2nd Wednesday of the month at 8pm in the Nags Head. It's just opposite Rochester station and about 10 minutes walk from Chatham town centre. Join us and you can make a positive difference."
+    primary_contact: "Matt Bull"
+    secondary_contact: "Tish Tiziana Romagna"
+    social_facebook: "https://www.facebook.com/groups/NorthKentGreenpeace/"
+
+group_local4:
+  -
+    title: "South West London Greenpeace"
+    date: "1 May 2015"
+    datetime: "2 may 2015 - 10:06 PM"
+    image: "nature4.jpg"
+    author: "Emily Thompson-Bell"
+    comment_amount: "1"
+    tags:
+      - Lodon
+    group_type: "Local group"
+    enrollment_type: "Open"
+    mission: "Get in touch with group coordinators Emily and Tom: swlondongp@gmail.com or 07847560294"
+    about: " Thanks for joining Greenpeace South West London. We look forward to meeting you! Join us at our next monthly meeting, we meet on the second Wednesday of each month at 8pm at the BBC pub (Balham Bowls Club), 7-9 Ramsden Rd, London SW12 8QX"
+    primary_contact: "Emily Thompson-Bell"
+    secondary_contact: "Tom Venner Woodcock"
+    social_facebook: "https://www.facebook.com/groups/swlondonGP/"
+
+group_local5:
+  -
+    title: "Kensington Greenpeace"
+    date: "1 May 2015"
+    datetime: "2 may 2015 - 10:06 PM"
+    image: "nature5.jpg"
+    author: "Vin Aithal"
+    comment_amount: "4"
+    tags:
+      - London
+    group_type: "Local group"
+    enrollment_type: "Open"
+    mission: ""
+    about: "Greenpeace Kensington is the new name for West London Greenpeace! We meet on the first Tuesday of every month at 7.30pm near Earl's Court station. You don't need to live in Kensington to join us - we have people coming over from various parts of London to our meetings, campaigns and actions. New members are always welcome!"
+    primary_contact: "Vin Aithal"
+    secondary_contact: ""
+    social_facebook: "https://www.facebook.com/groups/greenpeacewestlondon/"

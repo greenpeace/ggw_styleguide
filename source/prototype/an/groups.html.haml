@@ -19,6 +19,7 @@ action_menu:
 ---
 
 = partial :"blocks/breadcrumbs"
+= partial :"blocks/slider_group"
 
 .l-main-column
   #content.block.current
@@ -50,12 +51,13 @@ action_menu:
             .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#dropdown-tabs
               %ul.dropdown-menu
 
-      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-country"
       = partial :"teasers/group-with-image"
+      = partial :"teasers/group-with-image2"
+      = partial :"teasers/group-with-image3"
       = partial :"teasers/group-no-image"
-      = partial :"teasers/group-with-image"
-      = partial :"teasers/group-no-image"
-      = partial :"teasers/group-with-image"
+      = partial :"teasers/group-with-image4"
+      = partial :"teasers/group-with-image5"
       .align-center
         %a.button{:href => "#"} show some more
 

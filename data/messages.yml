@@ -1,0 +1,15 @@
+alen_message:
+  -
+    author: "Alen Marsh"
+    title: "Welcome to Emlyn Garden Local Group"
+    body: "Hello Grace! I'm Alen Marsh the group organizer for the Emlyn Garden Local Group. I noticed you just joined so I wanted to introduce myself. We are holding a meeting every month to introduce new group members. If you can that would be nice if you could drop by. You can find a link to this even on the group page!"
+    teaser: "Hello Grace! I'm Alen Marsh the group organizer for the Emlyn Garden Local Group."
+    date: "1 day ago"
+
+rachael_message :
+  -
+    author: "Rachael King"
+    title: "Welcome on Greenpeace Greenwire!"
+    body: "Hi there! Just a quick message to welcome you on Greenwire. I'm Rachel King from Greenpeace UK. I work as a volunteer coordinator, feel free to ping me if you need anything to get started!"
+    teaser : "Hi there! Just a quick message to welcome you on Greenwire. "
+    date: "1 day ago"

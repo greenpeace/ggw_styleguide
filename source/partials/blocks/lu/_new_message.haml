@@ -1,6 +1,6 @@
 #block-compose-message.block.block-comments
   %i.block-icon.icon-pencil.icon-bg-user
-  %h2.block-title Write a new message
+  %h2.block-title dWrite a new message
   .content
     %form.comment-form
       .form-item
@@ -14,6 +14,7 @@
             - 20.times do |num|
               %li
                 = lorem.name
+
       .form-comment-message
         %label{:for => "edit-body-und-0-value"}
           Message:

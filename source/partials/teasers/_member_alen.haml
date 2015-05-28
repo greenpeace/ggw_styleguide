@@ -1,0 +1,31 @@
+- data.members.member_alen.each do |item|
+  .views-row
+    %article.node-teaser-user.node-teaser
+      .field-type-image
+        %a{:href => "./profile-alen.html"}
+          = partial :"teasers/teaser-image", :locals => {:image => "#{item.image}"}
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./profile-alen.html"}
+            = item.first_name
+            = item.last_name
+            %span.username
+              (#{item.username})
+        .submitted
+          %a.type.user{:href => "./profile-alen.html"}
+          %span #{item.city}
+
+        - if current_page.data.profile == "friends" && current_page.data.access == "mine"
+          .field.field-friend-status
+            %a.button.btn-s{"data-dropdown" => "#dropdown-friends-1"}
+              Wants to be friends
+              %span.caret
+            .dropdown.dropdown-tip.dropdown-relative#dropdown-friends-1
+              %ul.dropdown-menu{:role => "menu"}
+                %li
+                  %a{:href => "#"} Approve
+                %li
+                  %a{:href => "#"} Decline
+        - else
+          .field-name-body
+            = item.about

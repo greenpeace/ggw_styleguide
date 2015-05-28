@@ -1,5 +1,5 @@
 ---
-title: Alen Marsh
+title: Rachael King
 body_class: not-front logged-in page-profile l-two-column
 profile: home
 access: other
@@ -37,7 +37,8 @@ action_menu:
 ---
 
 = partial :"blocks/breadcrumbs"
-- data.members.member_alen.each do |item|
+
+- data.members.member_rachael.each do |item|
   .l-main-column
     %h1.group-heading.only-mobile
       %i.icon-user
@@ -50,9 +51,9 @@ action_menu:
       .content
 
         .field-name-user-image
-          %img.lazyload{:alt => "#{item.first_name} #{item.last_name}", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/#{item.image}"}/
+          %img.lazyload{:alt => "Rachael King", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/#{item.image}"}/
           %noscript
-            %img{:src => "/photos/#{item.image}", :alt => "#{item.first_name} #{item.last_name}"}/
+            %img{:src => "/photos/#{item.image}", :alt => "Rachael King"}/
 
         .field.field-name-user-name
           #{item.first_name} #{item.last_name}

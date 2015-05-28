@@ -24,14 +24,18 @@ $(function() {
       $('<div class="form-sent form-success"><i class="icon icon-check"></i> <p>Your event has been created and published.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
     }
 
-    if (hash == 'message-attendees-sent') {
-      $('<div class="form-sent form-success"><i class="icon icon-comment"></i> <p>A message is sent to the selected attendees.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
-    }
-
-    if (hash == 'email-attendees-sent') {
-      $('<div class="form-sent form-success"><i class="icon icon-mail"></i> <p>An email is sent to all selected attendees.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
-    }
-
   }
+
+  $('#send-message .form-comment-submit').click(function(e) {
+    console.log('ja');
+    $.magnificPopup.close();
+    $('<div class="form-sent form-success"><i class="icon icon-comment"></i> <p>A message is sent to the selected attendees.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
+  });
+
+  $('#send-email .form-comment-submit').click(function(e) {
+    console.log('ja');
+    $.magnificPopup.close();
+    $('<div class="form-sent form-success"><i class="icon icon-mail"></i> <p>An email is sent to all selected attendees.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
+  });
 
 });

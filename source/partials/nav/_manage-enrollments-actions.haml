@@ -14,7 +14,7 @@
 
     .form-wrapper.row.action-bar-item.actions
       %label Actions
-      %a.button.results-page{"data-dropdown" => "#actions", :href => "#", :title => "Click to     show options"}
+      %a.button.results-page{"data-dropdown" => "#actions", :href => "#", :title => "Click to show options"}
         %span Actions
       #actions.dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right
         %ul.dropdown-menu
@@ -61,7 +61,7 @@
     %h2.block-title Send message
     .content
       .comment-form-holder
-        %form.comment-form{:action => "#email-attendees-sent", :method => "post"}
+        %form.node-form.comment-form
           .form-comment-message
             %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a message", :rows => "5"}
           %input.form-comment-submit.btn-primary{:type => "submit", :value => "Send message"}
@@ -71,7 +71,7 @@
     %h2.block-title Send email
     .content
       .comment-form-holder
-        %form.comment-form{:action => "#message-attendees-sent", :method => "post"}
+        %form.node-form.comment-form
           .form-comment-message
             %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a message", :rows => "5"}
-          %input.form-comment-submit.btn-primary{:type => "submit", :value => "Send email", "data-target" => "#message-attendees-sent"}
+          %input.form-comment-submit.btn-primary{:type => "submit", :value => "Send email"}

@@ -51,9 +51,9 @@ action_menu:
       .content
 
         .field-name-user-image
-          %img.lazyload{:alt => "Alen Marsh", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/rachael210.jpg"}/
+          %img.lazyload{:alt => "Rachael King", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/#{item.image}"}/
           %noscript
-            %img{:src => "/photos/rachael210.jpg", :alt => "Rachael King"}/
+            %img{:src => "/photos/#{item.image}", :alt => "Rachael King"}/
 
         .field.field-name-user-name
           #{item.first_name} #{item.last_name}
@@ -130,7 +130,7 @@ action_menu:
 
   %aside.l-sidebar.sidebar
     = partial :"blocks/lu/my-friends"
-    = partial :"blocks/lu/comments-roseturner"
+    = partial :"blocks/lu/comments"
     = partial :"blocks/lu/user-activity"
 
   = partial :"blocks/lu/new_message_from_profile"

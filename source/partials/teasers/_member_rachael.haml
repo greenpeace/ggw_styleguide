@@ -1,0 +1,29 @@
+- data.members.member_rachael.each do |item|
+  .views-row
+    %article.node-teaser-user.node-teaser
+      .field-type-image
+        %a{:href => "./profile-rachael.html"}
+          = partial :"teasers/teaser-image", :locals => {:image => "#{item.image}"}
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./profile-rachael.html"}
+            = item.first_name
+            = item.last_name
+            %span.username
+              (#{item.username})
+        .submitted
+          %a.type.user{:href => "./profile-rachael.html"}
+          %span #{item.city}
+          (
+          %a{:href => "./who-is-who.html"} Greenpeace staff
+          )
+
+        - if current_page.data.profile == "friends" && current_page.data.access == "mine"
+          .field.field-friend-status
+            .btn-group
+              %a.button.btn-s{:href => "#"}
+                %i.icon-trash
+                Unfriend
+        - else
+          .field-name-body
+            = item.about

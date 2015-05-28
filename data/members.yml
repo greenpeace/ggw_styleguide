@@ -93,8 +93,8 @@ member_rachael :
   -
     first_name: "Rachael"
     last_name: "King"
-    image: "rachel.jpg"
-    gender: "Male"
+    image: "rachael.jpg"
+    gender: "Female"
     username: "rachael_king"
     locality: "London"
     address: "82-96 MG Road"
@@ -111,12 +111,47 @@ member_rachael :
     skype: "rachael_king"
     email: "rachael@greenpeace.org"
     about: ""
-    profession: "Video Producer"
+    profession: "Community Manager at Greenpeace U"
     employer: ""
     social_facebook: "http://www.facebook.com/rachael_king8"
     social_twitter: "http://www.twitter.com/rachael_king8"
     social_linkedin: "http://www.linkedin.com/rachael_king8"
     education: "London school of economics"
+    general_skills:
+      - Community manager
+    language_skills:
+      - English
+    other_skills:
+      - Juggling
+
+member_rose :
+  -
+    first_name: "Rose"
+    last_name: "Turner"
+    image: "rose.jpg"
+    gender: "Female"
+    username: "rose_turner"
+    locality: "London"
+    address: "42 Lakshmi Bahvan"
+    postcode: "SE1 4NX"
+    city: "London"
+    country: "England"
+    birth_day: "22"
+    birth_month: "01"
+    birth_month_written: "January"
+    birth_year: "1983"
+    geocoordinates: "51.915625, -2.077950"
+    phone_mobile: "793672929"
+    phone_home: "12372929"
+    skype: "rachael_king"
+    email: "rachael@greenpeace.org"
+    about: "Hello I'm Rose Turner from Manchester. I'm originally from London. My master in Environmental Law sparked my passion for the environment. Now I want nothing more than do my fair share to save the planet. Let's campaign hard and party harder! "
+    profession: "Lawyer at Casper & Co"
+    employer: "Casper & Co"
+    social_facebook: "http://www.facebook.com/roseturner974"
+    social_twitter: "http://www.twitter.com/roseturner974"
+    social_linkedin: "http://www.linkedin.com/roseturner974"
+    education: ""
     general_skills:
       - Community manager
     language_skills:

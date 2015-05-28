@@ -51,7 +51,7 @@ action_menu:
           .submitted
             %a.type.event{:href => "./search-events.html"} Event
             by
-            %a{:href => "./profile.html"}
+            %a{:href => "./profile-alen.html"}
               = item.author
             \-
             %span.submitted-date
@@ -65,8 +65,6 @@ action_menu:
           .field-name-body
 
             .field-group-wrapper
-
-              = partial :"images/article-image"
 
               .event-actions
                 %a.button.btn-block.btn-primary.btn-l.show-block{:href => "#block-enroll"} Enroll for this event
@@ -122,32 +120,31 @@ action_menu:
             - for tag in item.tags
               = succeed ", " do
                 %a.tag{:href => "./search-newsmedia.html"} #{tag}
-            %a.tag{:href => "./search-newsmedia.html"} Arctic oil
 
           .submitted.submitted-extended
             .submitted-image
-              %img.lazyload{:alt => "#{item.author}", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+              %img.lazyload{:alt => "#{item.author}", :src => "/photos/blank.png", "data-src" => "/photos/75/alen.jpg"}/
               %noscript
-                %img{:alt => "#{item.author}", :src => "/photos/75/people5.jpg"}/
+                %img{:alt => "#{item.author}", :src => "/photos/75/alen.jpg"}/
             .submitted-info
               %div
                 %a{:href => "./search-events.html"} Event
                 by
                 = item.author
               .submitted-bio
-                %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
+                %p
               .submitted-all-reference
                 %a{:href => "./search-events.html"}>
                   All events by
                   = item.author
                   \.
 
-    = partial :"blocks/lu/comments"
+    = partial :"blocks/lu/comments-empty"
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/go_to_group_induction_training"
   = partial :"blocks/lu/enrolled"
-  = partial :"blocks/lu/enrollments"
+  = partial :"blocks/lu/enrollments-induction2"
   = partial :"blocks/lu/subscribe"
 
 

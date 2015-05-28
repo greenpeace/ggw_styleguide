@@ -66,8 +66,6 @@ action_menu:
 
             .field-group-wrapper
 
-              = partial :"images/article-image"
-
               .event-actions
                 %a.button.btn-block.btn-primary.btn-l.show-block{:href => "#block-enroll"} Enroll for this event
 
@@ -122,13 +120,12 @@ action_menu:
             - for tag in item.tags
               = succeed ", " do
                 %a.tag{:href => "./search-newsmedia.html"} #{tag}
-            %a.tag{:href => "./search-newsmedia.html"} Arctic oil
 
           .submitted.submitted-extended
             .submitted-image
-              %img.lazyload{:alt => "#{item.author}", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+              %img.lazyload{:alt => "#{item.author}", :src => "/photos/blank.png", "data-src" => "/photos/75/alen.jpg"}/
               %noscript
-                %img{:alt => "#{item.author}", :src => "/photos/75/people5.jpg"}/
+                %img{:alt => "#{item.author}", :src => "/photos/75/alen.jpg"}/
             .submitted-info
               %div
                 %a{:href => "./search-events.html"} Event
@@ -142,12 +139,12 @@ action_menu:
                   = item.author
                   \.
 
-    = partial :"blocks/lu/comments"
+    = partial :"blocks/lu/comments-empty"
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/go_to_group_induction_training"
   = partial :"blocks/lu/enroll"
-  = partial :"blocks/lu/enrollments"
+  = partial :"blocks/lu/enrollments-induction"
   = partial :"blocks/lu/subscribe"
 
 

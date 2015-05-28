@@ -1,0 +1,36 @@
+- data.event.dummy_event1.each do |item|
+  .views-row
+    %article.node-teaser-event.node-teaser
+      .field-type-image
+        %a{:href => "./event-full.html"}
+          = partial :"teasers/teaser-image", :locals => {:image => "#{item.image}"}
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./event-full.html"}
+            = item.title
+        .submitted
+          %a.type.event{:href => "./events.html"} Event
+          %span.created-date
+          = succeed ", by" do
+            = item.date
+          - if current_page.data.user_role != "an"
+            %a{:href => "./profile.html"}
+              = item.author
+          - else
+            = item.author.downcase.tr(' ', '_')
+          - if current_page.data.user_role != "an"
+            - if item.comment_amount
+              %a.teaser-comments{:href => "./event-full.html#block-comments"}
+                = item.comment_amount
+      .field-type-date
+        %label Event Time:
+        %span
+          = item.event_date
+      .field-type-location
+        %label Address:
+        %span
+          = succeed " - " do
+            = item.location_name
+          = succeed ", " do
+            = item.address
+          = item.city

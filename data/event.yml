@@ -120,10 +120,17 @@ with_image_organising:
     organiser: "Grace O'Flynn"
     comment_amount: "0"
     event_date: "11 June 2015, 8:00 - 12:00 GMT"
+    groups:
+      - Emlyn Garden local group
+      - Greenpeace Greenwire UK
     event_start: "11 June 2015, 8:00 GMT"
     event_end: "11 June 2015, 12:00 GMT"
     event_start_date: "2015/06/11"
     event_end_date: "2015/06/11"
+    event_start_changed: "12 June 2015, 8:00 GMT"
+    event_end_changed: "12 June 2015, 12:00 GMT"
+    event_start_date_changed: "2015/06/12"
+    event_end_date_changed: "2015/06/12"
     event_start_time: "8:00"
     event_end_time: "12:00"
     address: "Emlyn Gardens, London W12, UK"
@@ -151,6 +158,68 @@ with_image_organising:
         roles: "organizer"
         member_since: "29 May 2015"
         message: ""
+    enrollments_changed:
+      -
+        image: "grace.jpg"
+        name: "Grace O'Flynn"
+        username: "grace_oflynn"
+        city: "London"
+        email: "grace@yahoo.com"
+        phone: "0634768433"
+        is_there: "yes"
+        enrolled_on: "6 June 2015"
+        roles: "organizer"
+        member_since: "29 May 2015"
+        message: ""
+      -
+        image: "alen.jpg"
+        name: "Alen Marsh"
+        username: "alen_marsh"
+        city: "London"
+        email: "alen@yahoo.co.uk"
+        phone: "12372929"
+        is_there: "yes"
+        enrolled_on: "7 June 2015"
+        roles: ""
+        member_since: "29 April 2014"
+        message: ""
+      -
+        image: "member1.jpg"
+        name: "Raul Fox"
+        username: "raul_fox"
+        city: "London"
+        email: "raul@yahoo.co.uk"
+        phone: "3453452929"
+        is_there: "yes"
+        enrolled_on: "7 June 2015"
+        roles: ""
+        member_since: "2 November 2014"
+        message: ""
+      -
+        image: "member2.jpg"
+        name: "Reid Abrams"
+        username: "reid_abrams"
+        city: "London"
+        email: "abrahms_reid@gamil.com"
+        phone: "1244565649"
+        is_there: "yes"
+        enrolled_on: "8 June 2015"
+        roles: ""
+        member_since: "9 October 2014"
+        message: ""
+      -
+        image: "member3.jpg"
+        name: "Jamie Lativeu"
+        username: "lativue0123"
+        city: "London"
+        email: "lati_is_here@yahoo.co.uk"
+        phone: "5645677568758"
+        is_there: "yes"
+        enrolled_on: "7 June 2015"
+        roles: ""
+        member_since: "25 January 2014"
+        message: ""
+
 
     csv_body: "Please wait for a few seconds, we are creating a csv file for you."
     xls_body: "Please wait for a few seconds, we are creating a xls file for you."
@@ -231,3 +300,19 @@ listed_in_map:
   -
     title: "Are you interested in an Act for Arctic training or webinar?"
     date: "20 july, 2014 - 09:00"
+
+
+event_types:
+  - Art performance or exhibit
+  - Festival/Market etc
+  - Film Screening
+  - Fundraising
+  - In-store Product Labelling
+  - Lobbying meeting
+  - Meeting - Planning - Organising or Evaluating
+  - Online activity
+  - Other
+  - Party or Celebration
+  - Photo Opportunity
+  - Presentation or Debate
+  -

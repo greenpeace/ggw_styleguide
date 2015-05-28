@@ -150,12 +150,13 @@ menu:
           .form-item.form-type-select
             %label.form-label{:for => "groups"} Group(s)
             %select#groups.chosen-select{"data-placeholder" => "Select one or more groups", :multiple => "multiple", :tabindex => "16"}
-              - 50.times do |num|
-                :preserve
-                  <option>
-                = lorem.words 3
-                :preserve
-                  </option>
+              - for groups in data.groups.my_groups
+                %option{:value => ""}
+                  #{groups}
+              - for groups in data.event.with_image_organising.groups
+                %option{:value => ""}
+                  #{groups}
+
           .form-item.form-type-radios.radio-blocks
             %label.form-label{:for => "edit-group-content-access"}
               Private or public?
@@ -226,7 +227,7 @@ menu:
 
   %section#section-submit.section-submit
     .form-actions.form-wrapper
-      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "./event-full-organiser-first_view.html#event-created"}
+      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "./event-full-organiser.html#event-created"}
         %a.button.btn-l{:href => "./events.html", :tabindex => "8"} Cancel
 
 #manual-coordinates-form.block.white-popup.mfp-hide

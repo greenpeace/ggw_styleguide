@@ -29,7 +29,7 @@ $(function() {
     readURL(this);
   });
 
-  $('.form-comment-submit').click(function(e) {
+  $('.l-main .form-comment-submit').click(function(e) {
     var posttext = $('.form-comment-message textarea').val();
     var shoutImage = $('.comment-form-holder .preview-wrapper').html();
     var richLink = $('.comment-form-holder #linkinfo').html();
@@ -163,7 +163,7 @@ $(function() {
 
   });
 
-  $('.form-comment-submit').click(function(event) {
+  $('.block-comments .form-comment-submit').click(function(event) {
      event.preventDefault();
     $('html, body').animate({scrollTop: 0}, 300);
     $('<div class="form-sent form-success"><i class="icon icon-check"></i> <p>Your comment has been posted.</p></div>').insertBefore('.l-main').hide().slideDown('slow').delay(6000).slideUp();

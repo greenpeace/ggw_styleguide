@@ -7,12 +7,17 @@
 
   .content
     .enrollments
-    %p There are no enrollments for this event yet.
+      - 21.times do |num|
+        - if num  > 1
+          %a{:href => "#"}
+            %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/member#{num}.jpg"}/
+            %noscript
+              %img{:alt => "Name of user", :src => "/photos/75/member#{num}.jpg"}/
 
   - if current_page.data.organiser == "organiser"
-    %a.button.btn-block.disabled{:href => "./event-manage-enrollments.html"} Manage enrollments
+    %a.button.btn-block{:href => "./event-manage-enrollments_changed.html"} Manage enrollments
   - else
-    %a.button.btn-block.disabled{:href => "./event-view-enrollments.html"} View enrollments
+    %a.button.btn-block{:href => "./event-view-enrollments.html"} View enrollments
 
 #invite-friends.block.white-popup.mfp-hide
   %i.block-icon.icon-user-add.icon-bg-action

@@ -21,7 +21,7 @@ design_status: Needs review
     .block
       .action-bar
         .action-bar-item.edit-content
-          %a.button{:href => "./event-full-organiser.html", :title => "view event"} View event
+          %a.button{:href => "./event-full-organiser_changed.html", :title => "view event"} View event
 
       %i.block-icon.icon-bg-event.icon-users
       %h1.block-title
@@ -52,7 +52,7 @@ design_status: Needs review
                   %th{"data-tablesaw-priority" => "persist"} Actions
 
               %tbody
-                - for member in item.enrollments
+                - for member in item.enrollments_changed
                   %tr
                     %td
                       %input.form-checkbox{:type => "checkbox"}

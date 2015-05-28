@@ -61,17 +61,17 @@
     %h2.block-title Send message
     .content
       .comment-form-holder
-        %form.comment-form
+        %form.comment-form{:action => "#email-attendees-sent", :method => "post"}
           .form-comment-message
             %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a message", :rows => "5"}
-          %input.form-comment-submit{:type => "submit", :value => "Send message"}
+          %input.form-comment-submit.btn-primary{:type => "submit", :value => "Send message"}
 
   #send-email.block.white-popup.mfp-hide
     %i.block-icon.icon-mail.icon-bg-action
     %h2.block-title Send email
     .content
       .comment-form-holder
-        %form.comment-form
+        %form.comment-form{:action => "#message-attendees-sent", :method => "post"}
           .form-comment-message
             %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a message", :rows => "5"}
-          %input.form-comment-submit{:type => "submit", :value => "Send email"}
+          %input.form-comment-submit.btn-primary{:type => "submit", :value => "Send email", "data-target" => "#message-attendees-sent"}

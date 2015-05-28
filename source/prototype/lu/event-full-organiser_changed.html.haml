@@ -78,10 +78,10 @@ action_menu:
                   .field-label Date:
                   %div
                     %span.date-display-start
-                      = item.event_start
+                      = item.event_start_changed
                     to
                     %span.date-display-end
-                      = item.event_end
+                      = item.event_end_changed
 
                 .field.field-name-field-event-location
                   .field-label Location:
@@ -148,7 +148,7 @@ action_menu:
 %aside.l-sidebar.sidebar
   = partial :"blocks/go_to_group_induction_training"
   = partial :"blocks/lu/enrolled"
-  = partial :"blocks/lu/enrollments_empty"
+  = partial :"blocks/lu/enrollments_changed"
   = partial :"blocks/lu/subscribe"
 
 

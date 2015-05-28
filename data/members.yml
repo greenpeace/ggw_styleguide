@@ -53,7 +53,7 @@ member_one:
       - gardening
       - composing music
 
-member_alen :
+member_alen:
   -
     first_name: "Alen"
     last_name: "Marsh"

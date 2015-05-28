@@ -53,6 +53,77 @@ member_one:
       - gardening
       - composing music
 
+member_alen :
+  -
+    first_name: "Alen"
+    last_name: "Marsh"
+    image: "alen.jpg"
+    gender: "Male"
+    username: "alen_marsh"
+    locality: "London"
+    address: "82-96 MG Road"
+    postcode: "SE1 4NX"
+    city: "London"
+    country: "England"
+    birth_day: "26"
+    birth_month: "04"
+    birth_month_written: "April"
+    birth_year: "1996"
+    geocoordinates: "51.915625, -2.077950"
+    phone_mobile: "793672929"
+    phone_home: "12372929"
+    skype: "alen_marsh"
+    email: "alen@yahoo.co.uk"
+    about: "Hi everybody! I’m Alen and in addition to being a Greenwire coach, I co-ordinate the Emlyn Garden Local group London and work as a production editor for educational materials. In a previous career, I worked in IT support for almost six years, so I’d like to think that I’ve got endless patience when dealing with people’s technical queries. I’m very excited to be helping out on Greenwire and am really looking forward to seeing how it develops as a community platform. When I’m not working or helping out with Greenpeace, you can find me at one of the many indoor rock climbing centres in London, probably looking thoughtfully at a wall as I plan out a move that I’m not strong enough to do."
+    profession: "Video Producer"
+    employer: ""
+    social_facebook: "http://www.facebook.com/alen_marsh7"
+    social_twitter: "http://www.twitter.com/alen_marsh7"
+    social_linkedin: "http://www.linkedin.com/alen_marsh7"
+    education: "Gobelin, Paris"
+    general_skills:
+      - Video
+      - Painting
+    language_skills:
+      - English
+    other_skills:
+      - gardening
+
+member_rachael :
+  -
+    first_name: "Rachael"
+    last_name: "King"
+    image: "rachel.jpg"
+    gender: "Male"
+    username: "rachael_king"
+    locality: "London"
+    address: "82-96 MG Road"
+    postcode: "SE1 4NX"
+    city: "London"
+    country: "England"
+    birth_day: "22"
+    birth_month: "04"
+    birth_month_written: "April"
+    birth_year: "1984"
+    geocoordinates: "51.915625, -2.077950"
+    phone_mobile: "793672929"
+    phone_home: "12372929"
+    skype: "rachael_king"
+    email: "rachael@greenpeace.org"
+    about: ""
+    profession: "Video Producer"
+    employer: ""
+    social_facebook: "http://www.facebook.com/rachael_king8"
+    social_twitter: "http://www.twitter.com/rachael_king8"
+    social_linkedin: "http://www.linkedin.com/rachael_king8"
+    education: "London school of economics"
+    general_skills:
+      - Community manager
+    language_skills:
+      - English
+    other_skills:
+      - Juggling
+
 member_two:
   -
     first_name: "Madeline"

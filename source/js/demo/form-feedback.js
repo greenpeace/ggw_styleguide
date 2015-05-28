@@ -20,6 +20,10 @@ $(function() {
       $('<div class="form-sent form-success"><i class="icon icon-mail"></i> <p>An invitation has been sent to your friend(s).</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
     }
 
+    if (hash == 'event-created') {
+      $('<div class="form-sent form-success"><i class="icon icon-check"></i> <p>Your event has been created and published.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
+    }
+
   }
 
 });

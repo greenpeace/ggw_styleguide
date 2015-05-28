@@ -173,7 +173,7 @@ menu:
 
     %section#section-language.block
       %i.block-icon.icon-tag.icon-bg-action
-      %h2.block-title Event type, language & tags
+      %h2.block-title Event type & tags
       .content
         .form-wrapper
 
@@ -186,13 +186,6 @@ menu:
                 = lorem.word
                 :preserve
                   </option>
-
-          .form-item.form-type-select
-            %label.form-label{:for => "language"} Language
-            .form-description What language is this event in? You can select more than one language.
-            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
-              %option{:selected => ""} English, US
-              %option French
 
           .form-item
             %label Tags
@@ -233,7 +226,7 @@ menu:
 
   %section#section-submit.section-submit
     .form-actions.form-wrapper
-      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "event-full-organiser.html#form-saved"}
+      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "./event-full-organiser-first_view.html#event-created"}
         %a.button.btn-l{:href => "./events.html", :tabindex => "8"} Cancel
 
 #manual-coordinates-form.block.white-popup.mfp-hide

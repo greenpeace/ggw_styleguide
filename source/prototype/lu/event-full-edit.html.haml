@@ -1,5 +1,5 @@
 ---
-title: Edit event example
+title: Edit Organic farming
 body_class: not-front logged-in page-type-event l-has-sidebar-first page-edit
 direct_parent:
   -
@@ -63,8 +63,8 @@ menu:
                 Image
                 %span.form-required{:title => "This field is required."} *
               .media-widget.media
-                .preview.media-figure
-                  %img.media-item{:alt => "Example of image.", :src => "/photos/nature10.jpg"}/
+                .preview-wrapper.media-figure.field-type-event
+                  %img#preview-image{:alt => "Example of image.", :src => "/photos/#{item.image}"}/
                 .media-body
                   .form-description
                     No image selected <br />
@@ -114,7 +114,7 @@ menu:
                 - for country in data.countries.countries
                   %option{:value => "#{country}"}
                     #{country}
-                %option{:value => "", :selected => "US"} United States
+                %option{:value => "", :selected => "UK"} United Kingdom
 
             .form-item.field-event-address
               %label.form-label{:for => "edit-event-address"}

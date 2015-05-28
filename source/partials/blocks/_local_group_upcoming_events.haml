@@ -16,6 +16,14 @@
         .date-display-single
           = item.date
 
+    - data.event.to_join.each do |item|
+      %article.node-type-small
+        %h2
+          %a{:href => "./event-full-induction-training.html"}
+            = item.title
+        .date-display-single
+          = item.date
+
     %a.button{:href => "./events.html"} load more
 
 - if current_page.data.group == "home"
@@ -49,8 +57,11 @@
     for (var i = 0; i < events.length; i++) {
       var a = events[i];
       var marker = L.marker(new L.LatLng(a.lat, a.lng), {icon: eventIcon});
-      marker.bindPopup('<h2 class="node-title"><a href="' + a.link + '">' + a.title +'</a></h2><div   class="field field-name-field-event-date"><span class="date-display-single">'+ a.date +'</span><  /div>');
+      marker.bindPopup('<h2 class="node-title"><a href="' + a.link + '">' + a.title +'</a></h2><div class="field field-name-field-event-date"><span class="date-display-single">'+ a.date +'</span></div>');
       markers.addLayer(marker);
     }
+
+    L.marker([51.502560, -0.262359], {icon: eventIcon}).bindPopup('<h2 class="node-title"><a href="#">Induction training</a></h2><div class="field field-name-field-event-date"><span class="date-display-single">4 May 2015 - 1:33 PM</span></div>').addTo(map)
+
 
     map.addLayer(markers);

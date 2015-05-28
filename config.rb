@@ -33,6 +33,7 @@ activate :syntax
 
 page "*/event_map_single.html", :layout => false
 page "*/random-private-message.html", :layout => false
+page "*/random-private-message*.html", :layout => false
 
 # Per-page layout changes:
 #

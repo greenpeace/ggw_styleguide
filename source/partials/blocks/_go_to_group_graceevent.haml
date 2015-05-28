@@ -1,0 +1,18 @@
+.block#block-go-to-group
+  %i.block-icon.icon-users.icon-bg-group
+  %h2.block-title Go to group
+  .content
+    %p
+      This belongs to
+      - if current_page.data.user_role == "an"
+        = succeed "." do
+          %a{:href => "./group-home.html"} Emlyn Gardens local group,
+      - else
+        = succeed "." do
+          %a{:href => "./group-home-enrolled.html"} Emlyn Gardens local group,
+      - if current_page.data.user_role == "an"
+        = succeed "." do
+          %a{:href => "./group-home-countrygroup.html"} Greenpeace Greenwire UK
+      - else
+        = succeed "." do
+          %a{:href => "./group-home-country-enrolled.html"} Greenpeace Greenwire UK

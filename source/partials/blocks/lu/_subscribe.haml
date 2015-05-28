@@ -4,7 +4,9 @@
     Updates
   .content
     %p
-      If you follow {this content title} you will receive notifications when something changes or is added. You can choose how frequently you receive notifications in your
+      If you follow
+      %em #{current_page.data.title}
+      you will receive notifications when something changes or is added. You can choose how frequently you receive notifications in your
       = succeed "." do
         %a{:href => "./edit-user-account.html"} account settings
     - if current_page.data.subscribed

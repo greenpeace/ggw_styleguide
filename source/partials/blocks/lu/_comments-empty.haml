@@ -1,6 +1,13 @@
 #block-comments.block.block-comments
-  %i.block-icon.icon-chat.icon-bg-action
-  %h2.block-title Shoutbox
+  - if current_page.data.front == "frontpage" || current_page.data.joined == "joined" || current_page.data.profile == "home"
+    - if current_page.data.profile == "home"
+      %i.block-icon.icon-chat.icon-bg-user
+    - else
+      %i.block-icon.icon-chat.icon-bg-action
+    %h2.block-title Shoutbox
+  - else
+    %i.block-icon.icon-comment.icon-bg-action
+    %h2.block-title Comments
 
   .content
     .comment-form-holder
@@ -10,6 +17,8 @@
           %span#remain
           %input.form-comment-submit{:type => "submit", :value => "share"}
           %input.tooltip.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
-
     %section.comments
-      %p There are no shouts yet.
+      - if current_page.data.front == "frontpage" || current_page.data.joined == "joined" || current_page.data.profile == "home"
+        %p There are no shouts yet.
+      - else
+        %p There are no comments yet.

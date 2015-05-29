@@ -2,7 +2,6 @@
 title: Register step 4/4
 body_class: page-register not-logged-in l-has-sidebar
 user_role: an
-design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -18,37 +17,16 @@ design_status: Needs review
       %form{:action => "./register-step5.html", :method => "get"}
         .form-wrapper
           .form-item.form-type-checkbox
-            %input#check1.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
-            %label.option{:for => "check1"} Subscribe to the  newsletter
-          .form-item
-            %label.form-label Language
-            .form-description The selected language will show content available in that language as well as serve as the preferred language for the interface and e-mails.
-            .form-radios
-              .form-type-radio
-                %input#edit-language-nl.form-radio{:checked => "checked", :name => "language", :type => "radio", :value => "nl"}/
-                %label.option{:for => "edit-language-nl"} Dutch (Nederlands)
-              .form-type-radio
-                %input#edit-language-en-us.form-radio{:name => "language", :type => "radio", :value => "en-US"}/
-                %label.option{:for => "edit-language-en-us"} English, US
-          .form-item
-            %label.form-label Secondary language
-            .form-description When selected you will also see content that is available for this language.
-            .form-radios
-              .form-type-radio
-                %input#edit-language-en-us2.form-radio{:checked => "checked", :name => "language2", :type => "radio", :value => "en-us"}/
-                %label.option{:for => "edit-language-en-us2"} English, US
-              .form-type-radio
-                %input#edit-language-nl2.form-radio{:name => "language2", :type => "radio", :value => "nl"}/
-                %label.option{:for => "edit-language-nl2"} Dutch
-          .form-item.form-type-checkbox
             %input#check2.form-checkbox{:checked => "checked", :type => "checkbox", :value => "1"}/
             %label.option{:for => "check2"}
               I want to signup as a volunteer at Greenpeace and agree to the
               = succeed "." do
-                %a.modal{:href => "modules/agreement.html"} user agreement
+                %a.modal-inline{:href => "#agreement"} user agreement
               %span.form-required{:title => "This field is required."} *
         .form-actions.form-wrapper
           %a.button.pull-left{:href => "./register-step3.html", :tabindex => "11"} Back to previous step
           %input.button.btn-primary.pull-right{:type => "submit", :value => "Subscribe"}/
 %aside.l-sidebar.sidebar
   = partial :"blocks/an/save_planet4"
+
+= partial :"blocks/an/agreement"

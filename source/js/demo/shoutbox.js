@@ -29,7 +29,7 @@ $(function() {
     readURL(this);
   });
 
-  $('.l-main .form-comment-submit').click(function(e) {
+  $('.form-comment-submit').click(function(e) {
     var posttext = $('.form-comment-message textarea').val();
     var shoutImage = $('.comment-form-holder .preview-wrapper').html();
     var richLink = $('.comment-form-holder #linkinfo').html();

@@ -24,6 +24,14 @@ $(function() {
       $('<div class="form-sent form-success"><i class="icon icon-check"></i> <p>Your event has been created and published.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
     }
 
+    if (hash == 'confirmed-join-group') {
+      $('<div class="form-sent form-success"><i class="icon icon-check"></i> <p>You are now a member of Emlyn Gardens local group.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
+    }
+
+    if (hash == 'confirmed-leave-group') {
+      $('<div class="form-sent form-success"><i class="icon icon-cancel"></i> <p>You are not longer a member of Emlyn Gardens local group.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
+    }
+
   }
 
   $('#send-message .form-comment-submit').click(function(e) {
@@ -39,7 +47,7 @@ $(function() {
   $('#confirm-friend-request').click(function(e) {
     $.magnificPopup.close();
     $('#button-friend-request').addClass('disabled').text('Friend request has been sent.');
-    $('<div class="form-sent form-success"><i class="icon icon-mail"></i> <p>A friend request has been sent to Alen Marsh.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
+    $('<div class="form-sent form-success"><i class="icon icon-mail"></i> <p>Your friend request has been sent.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
   });
 
 

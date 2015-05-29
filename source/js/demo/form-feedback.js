@@ -27,15 +27,20 @@ $(function() {
   }
 
   $('#send-message .form-comment-submit').click(function(e) {
-    console.log('ja');
     $.magnificPopup.close();
     $('<div class="form-sent form-success"><i class="icon icon-comment"></i> <p>A message is sent to the selected attendees.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
   });
 
   $('#send-email .form-comment-submit').click(function(e) {
-    console.log('ja');
     $.magnificPopup.close();
     $('<div class="form-sent form-success"><i class="icon icon-mail"></i> <p>An email is sent to all selected attendees.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
   });
+
+  $('#confirm-friend-request').click(function(e) {
+    $.magnificPopup.close();
+    $('#button-friend-request').addClass('disabled').text('Friend request has been sent.');
+    $('<div class="form-sent form-success"><i class="icon icon-mail"></i> <p>A friend request has been sent to Alen Marsh.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
+  });
+
 
 });

@@ -86,17 +86,17 @@ menu:
                 Start:
                 %span.form-required{:title => "This field is required."} *
             .form-item.field-name-event-date-und-0-value-date
-              %input#edit-field-event-date-und-0-value-date.form-text.input-small.input-date{:type => "text", :value => "#{item.event_start_date}", :placeholder => "date", :tabindex => "5"}
+              %input#edit-field-event-date-und-0-value-date.form-text.input-small.input-date.js-date-picker{:type => "text", :value => "#{item.event_start_date}", :placeholder => "date", :tabindex => "5"}
             .form-item.field-name-event-date-und-0-value-time
-              %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time{:type => "text", :value => "#{item.event_start_time}", :placeholder => "time", :tabindex => "6"}
+              %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time.js-time-picker{:type => "text", :value => "#{item.event_start_time}", :placeholder => "time", :tabindex => "6"}
           .form-wrapper.row.deskwidth50
             .inline-label
               %label
                 End:
             .form-item.field-name-event-date-und-1-value-date
-              %input#edit-field-event-date-und-1-value-date.form-text.input-small.input-date{:type => "text", :value => "#{item.event_end_date}", :placeholder => "date", :tabindex => "7"}
+              %input#edit-field-event-date-und-1-value-date.form-text.input-small.input-date.js-date-picker{:type => "text", :value => "#{item.event_end_date}", :placeholder => "date", :tabindex => "7"}
             .form-item.field-name-event-date-und-1-value-time
-              %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time{:type => "text", :value => "#{item.event_end_time}", :placeholder => "time", :tabindex => "8"}
+              %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time.js-time-picker{:type => "text", :value => "#{item.event_end_time}", :placeholder => "time", :tabindex => "8"}
 
           .form-wrapper.wrapper
 

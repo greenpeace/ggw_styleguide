@@ -1,20 +1,20 @@
 .action-bar {
-  clear: both;
-  @include font-size($small);
   position: relative;
 
   .view-header & {
     margin: $def-mar-half 0 $def-mar;
   }
 
-  .page-search .view-header & {
+  .page-search .view-header &,
+  .page-enrollments .view-header & {
     padding-right: 50px;
   }
+
 }
 
 .action-bar-item {
-  margin-bottom: .5em;
-  margin-right: .5em;
+  margin-bottom: $def-mar-half;
+  margin-right: $def-mar-half;
   display: inline-block;
 
   &.disabled,
@@ -25,8 +25,15 @@
 
   @include breakpoint($smalltab) {
     margin-right: $def-mar-half;
-    display: inline-block;
   }
+
+  .button {
+    margin-top: 0 !important;
+  }
+}
+
+.action-bar .resultstats {
+  @include font-size($p);
 }
 
 .action-bar-item > label {
@@ -36,9 +43,10 @@
   margin-right: .3em;
 }
 
-.action-bar-item > .form-text {
+.action-bar-item .form-text {
   display: inline-block;
   width: auto;
+  @include font-size($p);
 }
 
 .action-bar .actions > label,

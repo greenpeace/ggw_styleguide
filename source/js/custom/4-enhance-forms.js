@@ -23,7 +23,7 @@ $(function() {
   });
 
   // attach datepicker plugin to date input fields
-  $('.input-date')
+  $('.js-date-picker')
     .pickadate({
       format: 'd mmmm yyyy',
       formatSubmit: 'yyyy/mm/dd'
@@ -32,20 +32,24 @@ $(function() {
     .after('<i class="icon-calendar"></i>');
 
   // attach datepicker plugin to time input fields
-  $('.input-time')
+  $('.js-time-picker')
     .pickatime({ interval: 15 })
     .addClass('time-field')
     .after('<i class="icon-clock"></i>');
 
   // enhance date of birth input
-  $('.user-date-of-birth').pickadate({
-    format: 'd mmmm yyyy',
-    today: '',
-    min: [1900,1,1],
-    max: [2003,12,31],
-    selectYears: 100,
-    selectMonths: true
-  });
+  $('.js-birthdate-picker')
+    .pickadate({
+      format: 'd mmmm yyyy',
+      formatSubmit: 'yyyy/mm/dd',
+      today: '',
+      min: [1900,1,1],
+      max: [1997,6,10],
+      selectYears: 100,
+      selectMonths: true
+    })
+    .addClass('date-field')
+    .after('<i class="icon-calendar"></i>');
 
 
   // toggle a fieldset  with a link

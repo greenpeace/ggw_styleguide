@@ -72,7 +72,7 @@ $(function() {
 
   if (window.location.hash) {
     var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
-    if (hash != 'form-saved') {
+    if (hash.match("^block") ) {
 
       $('.action-menu li, .l-main-column .current, .sidebar .current').removeClass('current');
       $('#' + hash).addClass('current');

@@ -36,6 +36,22 @@
 
   }
 
+  .btn-group .button {
+    padding: .3em .6em;
+
+    i {
+      @include font-size($small);
+    }
+
+    @include breakpoint($tab) {
+      padding: 5px 12px;
+
+      i {
+        @include font-size($base-font-size);
+      }
+    }
+  }
+
 }
 
 .mode-swipe {
@@ -135,7 +151,6 @@
 }
 
 .tablesaw-sortable thead th {
-  padding-right: 1.6em;
   vertical-align: top;
 }
 
@@ -179,4 +194,5 @@
 .tablesaw-sortable .not-applicable span {
   display: none;
 }
+
 

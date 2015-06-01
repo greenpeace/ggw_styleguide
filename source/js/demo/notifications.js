@@ -83,10 +83,14 @@ $(function() {
       e.preventDefault();
     });
 
-    var combinedNotifications = parseInt($('#notifications-number').text()) + parseInt($('#messages-number').text());
-    $('#combined-number').text(combinedNotifications);
-    if (combinedNotifications == 0) {
-      $('#combined-number').hide();
+    if ($.isNumeric(combinedNotifications) ) {
+
+      var combinedNotifications = parseInt($('#notifications-number').text()) + parseInt($('#messages-number').text());
+      $('#combined-number').text(combinedNotifications);
+      if (combinedNotifications == 0) {
+        $('#combined-number').hide();
+      }
+
     }
 
   }

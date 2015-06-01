@@ -6,26 +6,13 @@
     %a.modal-inline.button.btn-block.btn-primary{:href => "#invite-friends"} Invite friends
 
   .content
-    .enrollments
-      - 3.times do |num|
-        %a{:href => "#"}
-          %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/people1.jpg"}/
-          %noscript
-            %img{:alt => "Name of user", :src => "/photos/75/people1.jpg"}/
-        %a{:href => "#"}
-          %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/people2.jpg"}/
-          %noscript
-            %img{:alt => "Name of user", :src => "/photos/75/people2.jpg"}/
-        %a{:href => "#"}
-          %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/people3.jpg"}/
-          %noscript
-            %img{:alt => "Name of user", :src => "/photos/75/people3.jpg"}/
-        %a{:href => "#"}
-          %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/people4.jpg"}/
-          %noscript
-            %img{:alt => "Name of user", :src => "/photos/75/people4.jpg"}/
-        %a{:href => "#"}
-          %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/people5.jpg"}/
+    .members
+      - 15.times do |num|
+        - if num  > 1
+          %a.member-item{:href => "#"}
+            %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/member#{num}.jpg"}/
+            %noscript
+              %img{:alt => "Name of user", :src => "/photos/75/member#{num}.jpg"}/
           %noscript
             %img{:alt => "Name of user", :src => "/photos/75/people5.jpg"}/
     %p 15 persons are going
@@ -86,14 +73,14 @@
           %label
             Subject:
             %span.form-required{:title => "This field is required."} *
-          %input.form-text{:type => "text", :value => "Event invitation: Join us to festival Mundial",  :placeholder => "Event invitation: This event name"}
+          %input.form-text{:type => "text", :value => "",  :placeholder => "Event invitation: #{event}"}
         .form-item.form-type-textarea
           %label{:for => "edit-body-und-0-value"}
             Message:
             %span.form-required{:title => "This field is required."} *
           .form-textarea-wrapper.fullwidth
             %textarea#edit-body-und-0-value.text-full.form-textarea{:rows => "8"}
-              = lorem.paragraph
+              Hi friend, I would like to ask you to join the event #{event}.
               &#10;&#10;To join this event click here: &#10;http://greenwire.greenpeace.org/united-kingdom/en/events/this-event-url
         .form-actions
           %input.button.btn-primary{:type => "submit", :value => "Send message", "data-target" => "#friend-request-sent"}

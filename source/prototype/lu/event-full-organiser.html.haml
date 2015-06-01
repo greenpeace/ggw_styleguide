@@ -147,11 +147,11 @@ action_menu:
 
     = partial :"blocks/lu/comments-empty"
 
-%aside.l-sidebar.sidebar
-  = partial :"blocks/go_to_group_graceevent"
-  = partial :"blocks/lu/enrolled"
-  = partial :"blocks/lu/enrollements_onlygrace"
-  = partial :"blocks/lu/subscribe"
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/go_to_group_graceevent"
+    = partial :"blocks/lu/enrolled"
+    = partial :"blocks/lu/enrollements_onlygrace", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/subscribe"
 
 
 = javascript_include_tag "leaflet"

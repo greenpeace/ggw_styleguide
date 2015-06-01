@@ -141,11 +141,11 @@ action_menu:
 
     = partial :"blocks/lu/comments-empty"
 
-%aside.l-sidebar.sidebar
-  = partial :"blocks/go_to_group_induction_training"
-  = partial :"blocks/lu/enroll"
-  = partial :"blocks/lu/enrollments-induction"
-  = partial :"blocks/lu/subscribe"
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/go_to_group_induction_training"
+    = partial :"blocks/lu/enroll"
+    = partial :"blocks/lu/enrollments-induction", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/subscribe"
 
 
 = javascript_include_tag "leaflet"

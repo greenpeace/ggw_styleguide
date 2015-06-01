@@ -8,7 +8,6 @@ direct_parent:
 user_role: lu
 script: event
 editor: ckeditor
-design_status: Needs review
 menu:
   -
     name: 'General settings'
@@ -38,7 +37,7 @@ menu:
       %h2.block-title Edit account settings
       .content
         - for menuitem in current_page.data.menu
-          %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
+          %a.sf-navbtn{:href => "#{menuitem.url}", "data-scroll" => ""}
             #{menuitem.name}
 
     #block-edit-profile.block
@@ -49,7 +48,7 @@ menu:
         %a.button{:href => "./edit-user-profile.html"} Edit profile
 
   .l-main-column
-    %form{:action => "./my-profile.html#form-saved", :method => "post", :enctype => "multipart/form-data"}
+    %form{:action => "./my-profile.html#form-saved", :method => "get", :enctype => "multipart/form-data"}
       %section#section-general.block.current.main-content
         %i.block-icon.icon-pencil.icon-bg-user
         %h2.block-title General settings
@@ -225,7 +224,7 @@ menu:
 
             .form-item
               %label.form-label
-                Hide my date of birth name for other members
+                Hide my date of birth for other members
               .form-radios
                 .form-type-radio
                   %input#edit-field-hide2-yes.form-radio{:name => "hide2", :type => "radio", :value => "0", :checked => "checked", :tabindex => "11"}
@@ -530,9 +529,9 @@ menu:
 
               .views-widget.inline-fields
                 .form-item.form-type-textfield
-                  %input.form-text.min.input-date{:type => "text", :placeholder => "select date"}
+                  %input.form-text.min.input-date.js-date-picker{:type => "text", :placeholder => "select date"}
                 .form-item.form-type-textfield
-                  %input.form-text.max.input-date{:type => "text", :placeholder => "select date"}
+                  %input.form-text.max.input-date.js-date-picker{:type => "text", :placeholder => "select date"}
 
 
 

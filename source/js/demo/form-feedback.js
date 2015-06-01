@@ -34,6 +34,12 @@ $(function() {
 
   }
 
+
+  $('#send-private-message .form-comment-submit').click(function(e) {
+    $.magnificPopup.close();
+    $('<div class="form-sent form-success"><i class="icon icon-mail"></i> <p>A private message has been sent.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
+  });
+
   $('#send-message .form-comment-submit').click(function(e) {
     $.magnificPopup.close();
     $('<div class="form-sent form-success"><i class="icon icon-comment"></i> <p>A message is sent to the selected attendees.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');

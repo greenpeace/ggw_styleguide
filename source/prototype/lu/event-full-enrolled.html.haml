@@ -64,7 +64,7 @@ action_menu:
 
             .field-group-wrapper
 
-              = partial :"images/article-image"
+              = partial :"images/custom-article-image", :locals => {:image => "#{item.image}", :caption => "Tea Sutra Newcastle"}
 
               .event-actions
                 %a.button.btn-block.btn-l.modal-inline{:href => "#event-signup"} You are currently enrolled
@@ -115,12 +115,7 @@ action_menu:
 
             = item.full_text
 
-          .tags
-            Tags:
-            - for tag in item.tags
-              = succeed ", " do
-                %a.tag{:href => "./search-newsmedia.html"} #{tag}
-            %a.tag{:href => "./search-newsmedia.html"} Arctic oil
+
 
           .submitted.submitted-extended
             .submitted-image
@@ -142,11 +137,11 @@ action_menu:
 
     = partial :"blocks/lu/comments"
 
-%aside.l-sidebar.sidebar
-  = partial :"blocks/go_to_group"
-  = partial :"blocks/lu/enrolled"
-  = partial :"blocks/lu/enrollments"
-  = partial :"blocks/lu/subscribe"
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/go_to_group"
+    = partial :"blocks/lu/enrolled"
+    = partial :"blocks/lu/enrollments", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/subscribe"
 
 
 = javascript_include_tag "leaflet"
@@ -161,7 +156,7 @@ action_menu:
     }),
     latlng = L.latLng(#{item.geocoordinates});
 
-    var map = L.map('eventmap-desk', {center: latlng, zoom: 7, scrollWheelZoom: false, layers: [tiles]});
+    var map = L.map('eventmap-desk', {center: latlng, zoom: 11, scrollWheelZoom: false, layers: [tiles]});
 
     var eventIcon = L.icon({
       iconUrl: '/images/marker-events.png',

@@ -6,10 +6,9 @@
   code,
   .form-text,
   textarea,
-  label,
   legend,
   select {
-    @include font-size ($p);
+    @include font-size($p);
   }
 }
 

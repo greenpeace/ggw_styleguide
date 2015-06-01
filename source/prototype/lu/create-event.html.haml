@@ -82,17 +82,17 @@ menu:
               Start:
               %span.form-required{:title => "This field is required."} *
           .form-item.field-name-event-date-und-0-value-date
-            %input#edit-field-event-date-und-0-value-date.form-text.input-small.input-date{:type => "text", :value => "", :placeholder => "date", :tabindex => "5"}
+            %input#edit-field-event-date-und-0-value-date.form-text.input-small.input-date.js-date-picker{:type => "text", :value => "", :placeholder => "date", :tabindex => "5"}
           .form-item.field-name-event-date-und-0-value-time
-            %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time{:type => "text", :value => "", :placeholder => "time", :tabindex => "6"}
+            %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time.js-time-picker{:type => "text", :value => "", :placeholder => "time", :tabindex => "6"}
         .form-wrapper.row.deskwidth50
           .inline-label
             %label
               End:
           .form-item.field-name-event-date-und-1-value-date
-            %input#edit-field-event-date-und-1-value-date.form-text.input-small.input-date{:type => "text", :value => "", :placeholder => "date", :tabindex => "7"}
+            %input#edit-field-event-date-und-1-value-date.form-text.input-small.input-date.js-date-picker{:type => "text", :value => "", :placeholder => "date", :tabindex => "7"}
           .form-item.field-name-event-date-und-1-value-time
-            %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time{:type => "text", :value => "", :placeholder => "time", :tabindex => "8"}
+            %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time.js-time-picker{:type => "text", :value => "", :placeholder => "time", :tabindex => "8"}
 
         .form-wrapper.wrapper
 
@@ -182,21 +182,17 @@ menu:
           .form-item.form-type-select
             %label.form-label{:for => "eventtype"} Event type
             %select#eventtype.chosen-select{"data-placeholder" => "Select one or more types", :multiple => "multiple", :tabindex => "14"}
-              - 50.times do |num|
-                :preserve
-                  <option>
-                = lorem.word
-                :preserve
-                  </option>
+              - for type in data.event.event_types
+                %option{:value => ""}
+                  #{type}
 
           .form-item
             %label Tags
             %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "", :placeholder => "Text input", :tabindex => "15"}
             .autocomplete#tagsautocomplete
               %ul
-                - 50.times do |num|
-                  %li
-                    = lorem.word
+                - for tag in data.tags.suggestion
+                  %li #{tag}
 
     %section#section-organisers.block
       %i.block-icon.icon-users.icon-bg-action
@@ -265,7 +261,6 @@ menu:
 
     $.getJSON('http://nominatim.openstreetmap.org/search/' + country.value + '/' + addressfield.value + ' ?format=json&limit=3&addressdetails=1', function(data) {
         var items = [];
-        console.log(data);
 
         venue = "";
         street = "";
@@ -314,17 +309,35 @@ menu:
           items.push("<li><a href='#' onclick='chooseAddr(" + lat + ", " + lon + ");return false;'>" + venue + street + house_number + suburb + city + postcode + "</a></li>");
         });
 
-      $('#results').empty().show();
+      $('#results')
+        .empty()
+        .show();
       if (items.length != 0) {
         $('<ul/>', {
           'class': 'location-lookup-resultlist',
           html: items.join('')
         }).appendTo('#results');
+        $('<button class="close-result"><i class="icon-cancel"></i></button>').appendTo('#results');
+        $('.close-result').click(function(e) {
+          e.preventDefault();
+          $('#results').empty().hide();
+        });
       } else {
-        $('<p/>', {
-          html: 'Address not found'
+        $('<ul/>', {
+          'class': 'location-lookup-resultlist',
+          html: '<li><a href="#" onclick="return false">Address not found</a></li>'
         }).appendTo('#results');
+        $('<button class="close-result"><i class="icon-cancel"></i></button>').appendTo('#results');
+
+        $('.close-result').click(function(e) {
+          e.preventDefault();
+          $('#results').empty().hide();
+        });
       }
+
+      $(document).click(function() {
+        $('#results').empty().hide();
+      });
 
       });
   }, 500);

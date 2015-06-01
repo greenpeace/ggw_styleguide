@@ -1,32 +1,35 @@
 %form
 
-  .action-bar
+  .view-header
 
-    .form-wrapper.row.action-bar-item
+    .action-bar
 
-      .form-item.action-bar-item.name
-        .inline-label
-          %label Name
-        %input.form-text{:type => "text", :value => "", :placeholder => "filter by name"}
+      .form-wrapper.row.action-bar-item
+        .form-item
+          .inline-label
+            %label Name
+          %input.form-text{:type => "text", :value => "", :placeholder => "filter by name"}
 
-    .form-actions.form-wrapper.row.action-bar-item
-      %input{:type => "submit", :class => "button", :value => "Filter"}
+      .form-actions.form-wrapper.row.action-bar-item
+        .form-item
+          %input{:type => "submit", :class => "button", :value => "Filter"}
 
-    .form-wrapper.row.action-bar-item.actions
-      %label Actions
-      %a.button.results-page{"data-dropdown" => "#actions", :href => "#", :title => "Click to show options"}
-        %span Actions
-      #actions.dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right
-        %ul.dropdown-menu
-          %li
-            %a.modal-inline{:href => "#export-csv"} Export CSV
-          %li
-            %a.modal-inline{:href => "#export-xls"} Export XLS
-          %hr
-          %li
-            %a.modal-inline{:href => "#send-message"} Send message
-          %li
-            %a.modal-inline{:href => "#send-email"} Send email
+      .form-wrapper.row.action-bar-item.actions
+        .form-item
+          %label.element-invisible Actions
+          %a.button.results-page{"data-dropdown" => "#actions", :href => "#", :title => "Click to show options"}
+            %span Actions
+          #actions.dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right
+            %ul.dropdown-menu
+              %li
+                %a.modal-inline{:href => "#export-csv"} Export CSV
+              %li
+                %a.modal-inline{:href => "#export-xls"} Export XLS
+              %hr
+              %li
+                %a.modal-inline{:href => "#send-message"} Send message
+              %li
+                %a.modal-inline{:href => "#send-email"} Send email
 
 
 - data.event.with_image_organising.each do |item|

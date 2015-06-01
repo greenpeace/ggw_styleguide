@@ -143,4 +143,5 @@ action_menu:
     = partial :"blocks/lu/comments"
     = partial :"blocks/lu/user-activity"
 
-= partial :"blocks/lu/new_message_from_profile"
+  = partial :"blocks/lu/new_message_from_profile", :locals => {:name => "#{item.first_name} #{item.last_name}"}
+  = partial :"blocks/lu/confirm-friend-request", :locals => {:name => "#{item.first_name} #{item.last_name}"}

@@ -8,7 +8,7 @@ direct_parent:
 user_role: lu
 user_context : first-login
 editor: ckeditor
-design_status: Needs review
+script: event
 menu:
   -
     name: 'Personal details'
@@ -255,8 +255,8 @@ menu:
               Profile picture
               %span.form-required{:title => "This field is required."} *
             .media-widget.media
-              .preview.media-figure
-                %img{:src => "/photos/polar210.jpg", :alt => "Your avatar!" }
+              .preview-wrapper.media-figure
+                %img#preview-image{:src => "/photos/polar210.jpg", :alt => "Your avatar!" }
               .media-body
                 .form-description
                   Upload a photo that represents you on Greenpeace Greenwire. <br/>

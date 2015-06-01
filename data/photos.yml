@@ -62,7 +62,7 @@ album_two:
 
 album_three:
   -
-    title: "Photos of induction training"
+    title: "Photos of Community gardening project"
     date: "10 june 2015"
     datetime: "10 june 2015 - 7:25 PM"
     image: "animals4.jpg"
@@ -72,8 +72,8 @@ album_three:
       - Community garden
       - London
       - Gardening
-    introtext: "We have to stop shell in order to save the artic"
-    full_text: "<p>Some photos of the induction training day. As you can see everybody had a great time. We are looking forward for the next training.</p>"
+    introtext: "Some photos of the Community gardening project day. As you can see everybody had a great time. We are looking forward for the next meet up."
+    full_text: "<p>Some photos of the iCommunity gardening project day. As you can see everybody had a great time. We are looking forward for the next meet up.</p>"
     photos:
       -
         url: "album1_1.jpg"

@@ -124,7 +124,7 @@ member_rachael :
     other_skills:
       - Juggling
 
-member_rose :
+member_rose:
   -
     first_name: "Rose"
     last_name: "Turner"
@@ -143,7 +143,7 @@ member_rose :
     geocoordinates: "51.915625, -2.077950"
     phone_mobile: "793672929"
     phone_home: "12372929"
-    skype: "rachael_king"
+    skype: "rose_turner_uk_man"
     email: "rachael@greenpeace.org"
     about: "Hello I'm Rose Turner from Manchester. I'm originally from London. My master in Environmental Law sparked my passion for the environment. Now I want nothing more than do my fair share to save the planet. Let's campaign hard and party harder! "
     profession: "Lawyer at Casper & Co"

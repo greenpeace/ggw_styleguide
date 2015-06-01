@@ -4,7 +4,7 @@
       - if current_page.data.access == "mine"
         %a.button{:href => "./profile-manage-friends.html", :title => "Manage friends"} Manage friends
       - else
-        %a.button{:href => "#", :title => "Send friend request"} Send friend request
+        %a.button.modal-inline#button-friend-request{:href => "#send-friend-request", :title => "Send friend request"} Send friend request
 
   %i.block-icon.icon-bg-user.icon-users
   %h2.block-title

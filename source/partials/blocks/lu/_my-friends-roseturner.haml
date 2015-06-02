@@ -7,7 +7,7 @@
         %a.button.modal-inline#button-friend-request{:href => "#send-friend-request", :title => "Send friend request"} Send friend request
 
   %i.block-icon.icon-bg-user.icon-users
-  %h2.block-title
+  %h2.block-title{"data-amtitle" => "Friends"}
     - if current_page.data.access == "mine"
       My friends
     - else

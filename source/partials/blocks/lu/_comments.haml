@@ -4,10 +4,10 @@
       %i.block-icon.icon-chat.icon-bg-user
     - else
       %i.block-icon.icon-chat.icon-bg-action
-    %h2.block-title Shoutbox
+    %h2.block-title{"data-amtitle" => "Shoutbox"} Shoutbox
   - else
     %i.block-icon.icon-comment.icon-bg-action
-    %h2.block-title Comments
+    %h2.block-title{"data-amtitle" => "Comments"} Comments
 
   .content
     - if current_page.data.front != "frontpage" && current_page.data.joined != "joined"

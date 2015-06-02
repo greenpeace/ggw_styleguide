@@ -1,13 +1,16 @@
 $(function() {
 
   //check if there are at least two blocks and they are not hidden on mobile nor in a modal window
-  var totalBlocks = 0;
-  totalBlocks += parseInt($('.l-main-column > .block').not('.hidden-mobile').not('.white-popup').length);
-  totalBlocks += parseInt($('.l-sidebar > .block').not('.hidden-mobile').not('.white-popup').length);
+  var blocksMain = $('.l-main-column > .block').not('.hidden-mobile').not('.white-popup');
+  var blocksSidebar = $('.l-sidebar > .block').not('.hidden-mobile').not('.white-popup');
+  var blocks = blocksMain.add(blocksSidebar);
 
-  console.log(totalBlocks);
+  var no = $(blocks).length;
 
-  if (totalBlocks >= 2) {
+  if (no >= 2) {
+
+    // create space for the action menu
+    $('body').once().addClass('with-action-menu');
 
     // create menu wrapper
     var action_menu_object = "<nav class='action-menu'><ul class='tabs'></ul></nav>";
@@ -15,8 +18,12 @@ $(function() {
     $(action_menu_object).insertBefore('header');
 
     // create menu items from sidebar
-    $('.l-sidebar > .block').not('.hidden-mobile').not('.white-popup').each(function() {
+    $(blocks).each(function() {
+
+      // get the ID to link to
       var blockId     = $(this).attr('id');
+
+      // manipulate the classes, so we end with 1 class to use
       var blockIcon   = $(this).children('i').clone().removeClass(function (index, css) {
         var class1 = css.match(/(^|\s)block-\S+/g);
         var class2 = css.match(/(^|\s)icon-bg\S+/g);
@@ -24,26 +31,14 @@ $(function() {
       });
       var blockIconClass = blockIcon.attr("class");
 
-      var blockLabel  = $(this).children('.block-title').text();
+      // use the data attribute to set the anchor text
+      var blockLabel = $(this).find('.block-title').attr("data-amtitle");
+      console.log(blockLabel);
+
+      // build the nav item
       var menuItem = "<li><a href='#"+ blockId +"' class='tab'><i class='icon "+ blockIconClass +"'></i>"+ blockLabel +" </a></li>";
       $(menuItem).appendTo($('nav.action-menu .tabs'));
-    })
-
-    // create menu items from main-column
-    $('.l-main-column > .block').not('.hidden-mobile').not('.white-popup').each(function() {
-      var blockId = $(this).attr('id');
-      var blockIcon   = $(this).children('i').clone().removeClass(function (index, css) {
-        var class1 = css.match(/(^|\s)block-\S+/g);
-        var class2 = css.match(/(^|\s)icon-bg\S+/g);
-        return class1+ " "+class2
-      });
-      var blockIconClass = blockIcon.attr("class");
-      var blockLabel = $(this).children('.block-title').text();
-      var menuItem = "<li><a href='#"+ blockId +"' class='tab'><i class='icon "+ blockIconClass +"'></i>"+ blockLabel +" </a></li>";
-      $(menuItem).prependTo($('nav.action-menu .tabs'));
-    })
-
-    $('nav.action-menu').children('li:first-child').addClass('current');
+    });
 
   }
 
@@ -53,9 +48,6 @@ $(function() {
   function overflowDropdown() {
 
     if ($(window).width() < 900) {
-
-       // Add class so we know to push down the content some more
-      $('body').once().addClass('with-action-menu');
 
       $('.action-menu .tabs, .action-menu .tabs li').removeAttr('style');
 
@@ -73,7 +65,6 @@ $(function() {
       var fullHeight = menuWrapper.outerHeight();
 
       var triggerWidth = $('.action-menu .tab-overflow-trigger').outerWidth();
-      console.log(triggerWidth);
 
       //var handle = menuWrapper.find('.tab-overflow-trigger').addClass('element-invisible');
 
@@ -175,11 +166,6 @@ $(function() {
     $('html, body').animate({scrollTop: 0}, 300);
 
   });
-
-
-  function initiateResponsiveTabs() {
-    $(window).trigger("resize");
-  }
 
   // On resize, run the function and reset the timeout
   // 250 is the delay in milliseconds.

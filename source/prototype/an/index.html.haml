@@ -4,19 +4,6 @@ body_class: front not-logged-in page-home l-two-column
 user_role: an
 cookies: okay
 loadvideo: youtube
-action_menu:
-  -
-    id: "#upcoming-events"
-    label: "Events"
-    icon: "event"
-  -
-    id: "#welcome"
-    label: "Welcome"
-    icon: "info"
-  -
-    id: "#content"
-    label: "Updates"
-    icon: "news"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -28,8 +15,9 @@ action_menu:
   = partial :"blocks/updates"
 
 %aside.l-sidebar.sidebar
-  #welcome.block.block-no-icon
-    %h2.block-title A platform for change-makers
+  #welcome.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title{"data-amtitle" => "Welcome"} A platform for change-makers
     .content
       %p Welcome to Greenpeace Greenwire where people like you connect with other volunteers, activists and groups working on environmental campaigns all across the country.  This is your meeting place to start groups, host events, run campaigns, share photos,videos, blogs and join with other interested activists eager to help.
       %a.button.btn-primary{:href => "./register-step1.html"} Get wired!

@@ -2,7 +2,7 @@
   - if current_page.data.user_role == "lu"
     = partial :"blocks/lu/add-event"
   %i.block-icon.icon-bg-event.icon-event
-  %h2.block-title Upcoming events
+  %h2.block-title{"data-amtitle" => "Events"} Upcoming events
   .content
 
     - if current_page.data.group == "home"

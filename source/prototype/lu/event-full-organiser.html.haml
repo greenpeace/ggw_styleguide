@@ -6,34 +6,8 @@ direct_parent:
     name: "Events"
     url: "events.html"
 user_role: lu
-mapsds: event
 organiser: organiser
 subscribed : true
-action_menu:
-  -
-    id: "#content"
-    label: "Event"
-    icon: "event"
-  -
-    id: "#block-enroll"
-    label: "Enroll"
-    icon: "login"
-  -
-    id: "#block-enrollments"
-    label: "Enrollments"
-    icon: "users"
-  -
-    id: "#block-comments"
-    label: "Comments"
-    icon: "chat"
-  -
-    id: "#block-subscribe"
-    label: "Subscribe"
-    icon: "eye"
-  -
-    id: "#block-go-to-group"
-    label: "Go to group"
-    icon: "users"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -47,8 +21,9 @@ action_menu:
           %a.button{:href => "./event-full-edit.html", :title => "Edit event"} Edit
 
       %i.block-icon.icon-bg-event.icon-event
-      %h1.block-title
+      %h1.block-title{"data-amtitle" => "Event"}
         = item.title
+
 
       .content
         %article.view-mode-full

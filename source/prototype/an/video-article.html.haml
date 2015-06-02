@@ -6,21 +6,7 @@ direct_parent:
     name: "Videos"
     url: "videos.html"
 user_role: an
-design_status: Work in progress
 loadvideo: youtube
-action_menu:
-  -
-    id: "#content"
-    label: "Video"
-    icon: "video"
-  -
-    id: "#block-go-to-group"
-    label: "Go to group"
-    icon: "users"
-  -
-    id: "#create-account"
-    label: "Create account"
-    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -28,7 +14,7 @@ action_menu:
 .l-main-column
   #content.block.current.main-content
     %i.block-icon.icon-bg-news-media.icon-video
-    %h1#page-title.block-title
+    %h1.block-title{"data-amtitle" => "Video"}
       = lorem.words 10
     .content
       %article.view-mode-full

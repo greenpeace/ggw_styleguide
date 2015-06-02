@@ -11,8 +11,8 @@ search_page: groups
 
   #content.block.current
 
-    %i.block-icon.icon-bg-default.icon-search
-    %h1.block-title#page-title
+    %i.block-icon.icon-bg-group.icon-search
+    %h1.block-title{"data-amtitle" => "Search groups"}
       = current_page.data.title
 
     .content
@@ -38,9 +38,9 @@ search_page: groups
 
 
 %aside.l-sidebar.sidebar
-  .block
-    %i.block-icon.icon-bg-groups.icon-adjust
-    %h2.block-title Filter
+  .block#block-filter-groups
+    %i.block-icon.icon-bg-group.icon-adjust
+    %h2.block-title{"data-amtitle" => "Filter"} Filter
     .content
       %form
         = partial :"blocks/search_filters/group_type"

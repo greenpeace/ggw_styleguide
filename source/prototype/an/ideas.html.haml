@@ -26,7 +26,7 @@ action_menu:
 .l-main-column
   #content.block.current
     %i.block-icon.icon-bg-news-media.icon-idea
-    %h1#page-title.block-title
+    %h1.block-title{"data-amtitle" => "Ideas"}
       = current_page.data.title
 
     .content
@@ -54,9 +54,9 @@ action_menu:
             %a.button{:href => "#"} show some more
 
 %aside.l-sidebar.sidebar
-  .block
-    %i.block-icon.icon-bg-default.icon-adjust
-    %h2.block-title Filter
+  .block#block-find-ideas
+    %i.block-icon.icon-bg-news-media.icon-adjust
+    %h2.block-title{"data-amtitle" => "Filter"} Filter
     .content
       %form
 

@@ -1,13 +1,13 @@
 $(function() {
 
-  //check if there are at least two blocks and they are not hidden on mobile
-  var total_amount_blocks = 0;
-  total_amount_blocks += parseInt($('.l-main-column > .block').not('.hidden-mobile').length);
-  total_amount_blocks += parseInt($('.l-sidebar > .block').not('.hidden-mobile').length);
+  //check if there are at least two blocks and they are not hidden on mobile nor in a modal window
+  var totalBlocks = 0;
+  totalBlocks += parseInt($('.l-main-column > .block').not('.hidden-mobile').not('.white-popup').length);
+  totalBlocks += parseInt($('.l-sidebar > .block').not('.hidden-mobile').not('.white-popup').length);
 
-  console.log(total_amount_blocks);
+  console.log(totalBlocks);
 
-  if (total_amount_blocks >= 2) {
+  if (totalBlocks >= 2) {
 
     // create menu wrapper
     var action_menu_object = "<nav class='action-menu'><ul class='tabs'></ul></nav>";
@@ -15,20 +15,35 @@ $(function() {
     $(action_menu_object).insertBefore('header');
 
     // create menu items from sidebar
-    $('.l-sidebar > .block').not('.hidden-mobile').each(function() {
-      var blockId = $(this).attr('id');
-      var blockLabel = $(this).children('.block-title').text();
-      var menuItem = "<li><a href='"+ blockId +"'> "+ blockLabel +" </a></li>"
-    }).appendTo($(action_menu_object));
+    $('.l-sidebar > .block').not('.hidden-mobile').not('.white-popup').each(function() {
+      var blockId     = $(this).attr('id');
+      var blockIcon   = $(this).children('i').clone().removeClass(function (index, css) {
+        var class1 = css.match(/(^|\s)block-\S+/g);
+        var class2 = css.match(/(^|\s)icon-bg\S+/g);
+        return class1+ " "+class2
+      });
+      var blockIconClass = blockIcon.attr("class");
+
+      var blockLabel  = $(this).children('.block-title').text();
+      var menuItem = "<li><a href='#"+ blockId +"' class='tab'><i class='icon "+ blockIconClass +"'></i>"+ blockLabel +" </a></li>";
+      $(menuItem).appendTo($('nav.action-menu .tabs'));
+    })
 
     // create menu items from main-column
-    $('.l-main-column > .block').not('.hidden-mobile').each(function() {
+    $('.l-main-column > .block').not('.hidden-mobile').not('.white-popup').each(function() {
       var blockId = $(this).attr('id');
+      var blockIcon   = $(this).children('i').clone().removeClass(function (index, css) {
+        var class1 = css.match(/(^|\s)block-\S+/g);
+        var class2 = css.match(/(^|\s)icon-bg\S+/g);
+        return class1+ " "+class2
+      });
+      var blockIconClass = blockIcon.attr("class");
       var blockLabel = $(this).children('.block-title').text();
-      var menuItem = "<li><a href='"+ blockId +"'> "+ blockLabel +" </a></li>"
-    }).appendTo('nav.action-menu .tabs');
+      var menuItem = "<li><a href='#"+ blockId +"' class='tab'><i class='icon "+ blockIconClass +"'></i>"+ blockLabel +" </a></li>";
+      $(menuItem).prependTo($('nav.action-menu .tabs'));
+    })
 
-    $(action_menu_object).children('li:first-child').addClass('current');
+    $('nav.action-menu').children('li:first-child').addClass('current');
 
   }
 
@@ -37,7 +52,7 @@ $(function() {
   // This script creates a dropdown of the action menu, when there are more then 2 buttons.
   function overflowDropdown() {
 
-    if ( ($('.action-menu').length!=0) && ($(window).width() < 900) ) {
+    if ($(window).width() < 900) {
 
        // Add class so we know to push down the content some more
       $('body').once().addClass('with-action-menu');
@@ -48,31 +63,37 @@ $(function() {
 
       var fullMenu = menuWrapper.children('.tabs');
 
-      var overFlowMenu = menuWrapper.find('.dropdown ul');
+      fullMenu.removeClass('flexthis').removeAttr('style');
+
+      $('.tabs-overflow').remove();
+
+      var overFlowMenu = "<ul class='tabs-overflow element-invisible'><li><a class='tab-overflow-trigger' href='#' data-dropdown='#am-dropdown'>more <i class='icon-down-mini'></i></a><div class='dropdown dropdown-tip dropdown-relative dropdown-anchor-right' id='am-dropdown'><ul class='dropdown-menu'></ul></div></li></ul>";
+      $(overFlowMenu).appendTo('.action-menu');
 
       var fullHeight = menuWrapper.outerHeight();
 
       var triggerWidth = $('.action-menu .tab-overflow-trigger').outerWidth();
+      console.log(triggerWidth);
 
-      var handle = menuWrapper.find('.tab-overflow-trigger').addClass('element-invisible');
+      //var handle = menuWrapper.find('.tab-overflow-trigger').addClass('element-invisible');
 
       // The 'more' button is translatable and must always fit
       newfullMenu = fullMenu.css('padding-right', triggerWidth);
 
       // Remove the moved class on each resize
-      fullMenu.find('li.moved').removeClass('moved');
+      fullMenu.find('.moved').removeClass('moved');
 
       // remove all of the actions out of the overflow menu
-      overFlowMenu.children('li').remove();
+      //overFlowMenu.('li').remove();
 
       // find all of the .items that arent visible and add/clone them to the overflow menu
       fullMenu.children('li:visible').filter(function() {
         var elementOffset = $(this).position().top;
         return elementOffset+$(this).height() > fullHeight;
 
-      }).addClass('moved').clone(true).prependTo(overFlowMenu[0]).children('a');
+      }).addClass('moved').clone(true).prependTo('#am-dropdown .dropdown-menu').children('a');
 
-      // Calculte the width of the items the user sees, so we determine the position of the more  button
+      // Calculate the width of the items the user sees, so we determine the position of the more  button
       var totalWidth = 0;
 
       fullMenu.children('li:visible:not(.moved)').each(function() {
@@ -82,11 +103,10 @@ $(function() {
       // Position the 'more' button
       $('.action-menu .tabs-overflow').css("left", totalWidth);
 
-      if (overFlowMenu.children('li').length!==0) {
-        handle.removeClass('element-invisible');
+      if ($('#am-dropdown .dropdown-menu').children('li').length!==0) {
+        $('.tabs-overflow').removeClass('element-invisible');
       } else {
         //If it is empty hide the dropdown menu,
-        $('.action-menu .tabs-overflow').hide();
         fullMenu.addClass('flexthis').css({'padding-right': '0'});
       }
 

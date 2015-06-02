@@ -143,11 +143,11 @@ action_menu:
 
     = partial :"blocks/lu/comments"
 
-%aside.l-sidebar.sidebar
-  = partial :"blocks/go_to_group"
-  = partial :"blocks/lu/enrolled"
-  = partial :"blocks/lu/enrollments"
-  = partial :"blocks/lu/subscribe"
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/go_to_group"
+    = partial :"blocks/lu/enrolled"
+    = partial :"blocks/lu/enrollments", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/subscribe"
 
 
 = javascript_include_tag "leaflet"

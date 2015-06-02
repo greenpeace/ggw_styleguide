@@ -1,5 +1,5 @@
 ---
-title: Organic gardening
+title: Community gardening project on-site visit
 body_class: not-front logged-in page-type-event l-has-sidebar node-full
 direct_parent:
   -
@@ -8,6 +8,7 @@ direct_parent:
 user_role: lu
 mapsds: event
 organiser: organiser
+subscribed : true
 action_menu:
   -
     id: "#content"
@@ -145,11 +146,11 @@ action_menu:
 
     = partial :"blocks/lu/comments-empty"
 
-%aside.l-sidebar.sidebar
-  = partial :"blocks/go_to_group_induction_training"
-  = partial :"blocks/lu/enrolled"
-  = partial :"blocks/lu/enrollments_changed", :locals => {:event => "#{item.title}"}
-  = partial :"blocks/lu/subscribe"
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/go_to_group_induction_training"
+    = partial :"blocks/lu/enrolled"
+    = partial :"blocks/lu/enrollments_changed", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/subscribe"
 
 
 = javascript_include_tag "leaflet"

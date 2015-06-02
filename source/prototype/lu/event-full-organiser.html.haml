@@ -1,5 +1,5 @@
 ---
-title: Event article example
+title: Community gardening project on-site visit
 body_class: not-front logged-in page-type-event l-has-sidebar node-full
 direct_parent:
   -
@@ -8,6 +8,7 @@ direct_parent:
 user_role: lu
 mapsds: event
 organiser: organiser
+subscribed : true
 action_menu:
   -
     id: "#content"
@@ -68,7 +69,7 @@ action_menu:
 
             .field-group-wrapper
 
-              = partial :"images/article-image"
+              = partial :"images/custom-article-image", :locals => {:image => "#{item.image}", :caption => "#{item.image_caption}"}
 
               .event-actions
                 %a.button.btn-block.btn-primary.btn-l.modal-inline{:href => "#event-signup"} You are currently enrolled
@@ -113,7 +114,7 @@ action_menu:
                   %div
                     %span
                       = item.no_attendees
-                      persons are going
+                      person is going
 
             #eventmap-desk.map
 
@@ -124,33 +125,33 @@ action_menu:
             - for tag in item.tags
               = succeed ", " do
                 %a.tag{:href => "./search-newsmedia.html"} #{tag}
-            %a.tag{:href => "./search-newsmedia.html"} Arctic oil
 
           .submitted.submitted-extended
             .submitted-image
-              %img.lazyload{:alt => "#{item.author}", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+              %img.lazyload{:alt => "#{item.author}", :src => "/photos/grace210.jpg", "data-src" => "/photos/75/grace.jpg"}/
               %noscript
-                %img{:alt => "#{item.author}", :src => "/photos/75/people5.jpg"}/
+                %img{:alt => "#{item.author}", :src => "/photos/75/grace.jpg"}/
             .submitted-info
               %div
                 %a{:href => "./search-events.html"} Event
                 by
                 = item.author
               .submitted-bio
-                %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
+                %p
+                  = item.bio
               .submitted-all-reference
                 %a{:href => "./search-events.html"}>
                   All events by
                   = item.author
                   \.
 
-    = partial :"blocks/lu/comments"
+    = partial :"blocks/lu/comments-empty"
 
-%aside.l-sidebar.sidebar
-  = partial :"blocks/go_to_group"
-  = partial :"blocks/lu/enrolled"
-  = partial :"blocks/lu/enrollments"
-  = partial :"blocks/lu/subscribe"
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/go_to_group_graceevent"
+    = partial :"blocks/lu/enrolled"
+    = partial :"blocks/lu/enrollements_onlygrace", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/subscribe"
 
 
 = javascript_include_tag "leaflet"

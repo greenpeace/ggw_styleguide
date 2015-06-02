@@ -45,8 +45,9 @@
 
   @include breakpoint($tab) {
     left: 50%;
-    margin-left: -200px;
+    margin-left: -300px;
     margin-top: 50px;
+    width: 600px;
     padding: (2 * $def-mar);
   }
 

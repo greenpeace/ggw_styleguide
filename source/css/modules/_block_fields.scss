@@ -18,3 +18,8 @@
   }
 }
 
+@include breakpoint($tab) {
+  .block-profile .content{
+    @include cf;
+  }
+}

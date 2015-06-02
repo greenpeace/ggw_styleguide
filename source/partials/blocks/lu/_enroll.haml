@@ -2,21 +2,44 @@
   %i.block-icon.icon-login.icon-bg-action
   %h2.block-title Enroll for this event
   .content
-    %form.node-form.node-event_signup-form{:action => "event-full-enrolled.html", :method => "get"}
-      .form-item.form-type-radios
-        %label{:for => "edit-field-signup-status-und"}
-          Are you joining this event?
-          %span.form-required{:title => "This field is required."} *
-        #edit-field-signup-status-und.form-radios
-          .form-type-radio
-            %input#edit-field-signup-status-und-0.form-radio{:checked => "checked", :name => "joining-yes-no", :type => "radio", :value => "0"}
-            %label.option{:for => "edit-field-signup-status-und-0"} Yes
-          .form-type-radio
-            %input#edit-field-signup-status-und-1.form-radio{:name => "joining-yes-no", :type => "radio", :value => "1"}/
-            %label.option{:for => "edit-field-signup-status-und-1"} No
-      .form-item.form-type-textarea
-        %label{:for => "edit-body-und-0-value"} Message:
-        .form-textarea-wrapper.resizable
-          %textarea#edit-body-und-0-value.text-full.form-textarea
-      .form-actions
-        %input.button.btn-primary{:type => "submit", :value => "Save"}
+    - if current_page.data.context == "induction_training"
+
+      %form.node-form.node-event_signup-form{:action => "event-full-induction-training-enrolled.html#enrolled-for-event", :method => "get"}
+        .form-item.form-type-radios
+          %label{:for => "edit-field-signup-status-und"}
+            Are you joining this event?
+            %span.form-required{:title => "This field is required."} *
+          #edit-field-signup-status-und.form-radios
+            .form-type-radio
+              %input#edit-field-signup-status-und-0.form-radio{:checked => "checked", :name => "joining-yes-no", :type => "radio", :value => "0"}
+              %label.option{:for => "edit-field-signup-status-und-0"} Yes
+            .form-type-radio
+              %input#edit-field-signup-status-und-1.form-radio{:name => "joining-yes-no", :type => "radio", :value => "1"}/
+              %label.option{:for => "edit-field-signup-status-und-1"} No
+        .form-item.form-type-textarea
+          %label{:for => "edit-body-und-0-value"} Message:
+          .form-textarea-wrapper.resizable
+            %textarea#edit-body-und-0-value.text-full.form-textarea
+        .form-actions
+          %input.button.btn-primary{:type => "submit", :value => "Save"}
+
+    - else
+
+      %form.node-form.node-event_signup-form{:action => "event-full-enrolled.html", :method => "get"}
+        .form-item.form-type-radios
+          %label{:for => "edit-field-signup-status-und"}
+            Are you joining this event?
+            %span.form-required{:title => "This field is required."} *
+          #edit-field-signup-status-und.form-radios
+            .form-type-radio
+              %input#edit-field-signup-status-und-0.form-radio{:checked => "checked", :name => "joining-yes-no", :type => "radio", :value => "0"}
+              %label.option{:for => "edit-field-signup-status-und-0"} Yes
+            .form-type-radio
+              %input#edit-field-signup-status-und-1.form-radio{:name => "joining-yes-no", :type => "radio", :value => "1"}/
+              %label.option{:for => "edit-field-signup-status-und-1"} No
+        .form-item.form-type-textarea
+          %label{:for => "edit-body-und-0-value"} Message:
+          .form-textarea-wrapper.resizable
+            %textarea#edit-body-und-0-value.text-full.form-textarea
+        .form-actions
+          %input.button.btn-primary{:type => "submit", :value => "Save"}

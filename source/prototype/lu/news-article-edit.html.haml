@@ -10,7 +10,7 @@ direct_parent:
     url: "news-article.html"
 user_role: lu
 editor: ckeditor
-design_status: Work in progress
+script: event
 menu:
   -
     name: 'Title, body & image'
@@ -37,7 +37,7 @@ menu:
 
 - data.news.with_image.each do |item|
   .l-main-column
-    %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
+    %form{:action => "#", :method => "get", :enctype => "multipart/form-data"}
       %section#section-title.block.current.main-content
         %i.block-icon.icon-pencil.icon-bg-action
         %h2.block-title Title, description & image

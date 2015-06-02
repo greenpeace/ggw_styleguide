@@ -1,5 +1,5 @@
 ---
-title: Greenwire London
+title: Emlyn Gardens local group
 body_class: not-front logged-in page-group-home l-two-column group-subscribed
 direct_parent:
   -
@@ -7,7 +7,6 @@ direct_parent:
     url: "groups.html"
 user_role: lu
 group: home
-design_status: Work in progress
 joined: joined
 action_menu:
   -
@@ -40,8 +39,8 @@ action_menu:
     = current_page.data.title
     %i.icon-subscribed
   = partial :"blocks/group_info_local"
-  = partial :"blocks/upcoming_events"
-  = partial :"blocks/updates"
+  = partial :"blocks/local_group_upcoming_events"
+  = partial :"blocks/group_local_updates"
 
 
 %aside.l-sidebar.sidebar
@@ -49,3 +48,4 @@ action_menu:
   = partial :"blocks/lu/group-members"
 
 = partial :"blocks/lu/group-members-full"
+= partial :"blocks/lu/confirm-group-leave"

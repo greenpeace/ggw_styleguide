@@ -1,18 +1,25 @@
-.views-row
-  %article.node-teaser-video.node-teaser.lazyload{"data-expand" => "0"}
-    .field-type-image
-      = partial :"teasers/teaser-image"
-    .field-type-wrapper
-      %h2.node-title
+- data.videos.video_one.each do |item|
+  .views-row
+    %article.node-teaser-video.node-teaser
+      .field-type-image
         %a{:href => "./video-article.html"}
-          = lorem.sentence
-      .submitted
-        %a.type.video{:href => "./videos.html"} Video
-        14 Apr, by
-        - if current_page.data.user_role != "an"
-          %a{:href => "#"}
-            = lorem.name
-        - else
-          = lorem.name.downcase.tr(' ', '_')
-      .field-name-body
-        =lorem.paragraph
+          = partial :"teasers/teaser-image", :locals => {:image => "#{item.image}"}
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./video-article.html"}
+            = item.title
+        .submitted
+          %a.type.video{:href => "./videos.html"} Video
+          = succeed ", by" do
+            = item.date
+          - if current_page.data.user_role != "an"
+            %a{:href => "./profile.html"}
+              = item.author
+          - else
+            = item.author.downcase.tr(' ', '_')
+          - if current_page.data.user_role != "an"
+            - if item.comment_amount
+              %a.teaser-comments{:href => "./video-article.html#block-comments"}
+                = item.comment_amount
+        .field-name-body
+          = item.introtext

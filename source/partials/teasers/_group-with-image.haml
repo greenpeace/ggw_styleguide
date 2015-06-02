@@ -3,10 +3,10 @@
     %article.node-teaser-group.node-teaser
       .field-type-image
         %a{:href => "./group-home.html"}
-          = partial :"teasers/teaser-image"
+          = partial :"teasers/teaser-image", :locals => {:image => "#{item.image}"}
       .field-type-wrapper
         %h2.node-title
-          %a{:href => "./group-home.html"}
+          %a{:href => "./group-home-local2.html"}
             = item.title
         .submitted
           %a.type.group{:href => "./groups.html"} Group

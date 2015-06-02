@@ -4,7 +4,7 @@
   %i.block-icon.icon-bg-news-media.icon-news
   %h1#page-title.block-title Updates
   .content
-    .tabwrapper{"data-responsive-tabs" => ""}
+    .tabwrapper.clearfix
       %ul.tabs
         %li
           =nav_link 'All', '#', :class => 'tab'
@@ -37,8 +37,7 @@
     = partial :"teasers/event-with-image"
     = partial :"teasers/event-with-location"
     = partial :"teasers/event-no-image"
-    = partial :"teasers/group-no-image"
-    = partial :"teasers/group-with-image"
+    = partial :"teasers/event-dummy1"
     = partial :"teasers/idea"
     = partial :"teasers/photo"
     = partial :"teasers/video"

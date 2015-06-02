@@ -1,5 +1,5 @@
 ---
-title: Edit event example
+title: Edit Organic farming
 body_class: not-front logged-in page-type-event l-has-sidebar-first page-edit
 direct_parent:
   -
@@ -41,7 +41,7 @@ menu:
 - data.event.with_image_organising.each do |item|
 
   .l-main-column
-    %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
+    %form{:action => "#", :method => "get", :enctype => "multipart/form-data"}
       %section#section-title.block.current.main-content
         %i.block-icon.icon-pencil.icon-bg-action
         %h2.block-title Title, description & image
@@ -63,8 +63,8 @@ menu:
                 Image
                 %span.form-required{:title => "This field is required."} *
               .media-widget.media
-                .preview.media-figure
-                  %img.media-item{:alt => "Example of image.", :src => "/photos/nature10.jpg"}/
+                .preview-wrapper.media-figure.field-type-event
+                  %img#preview-image{:alt => "Example of image.", :src => "/photos/#{item.image}"}/
                 .media-body
                   .form-description
                     No image selected <br />
@@ -86,17 +86,17 @@ menu:
                 Start:
                 %span.form-required{:title => "This field is required."} *
             .form-item.field-name-event-date-und-0-value-date
-              %input#edit-field-event-date-und-0-value-date.form-text.input-small.input-date{:type => "text", :value => "#{item.event_start_date}", :placeholder => "date", :tabindex => "5"}
+              %input#edit-field-event-date-und-0-value-date.form-text.input-small.input-date.js-date-picker{:type => "text", :value => "#{item.event_start_date}", :placeholder => "date", :tabindex => "5"}
             .form-item.field-name-event-date-und-0-value-time
-              %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time{:type => "text", :value => "#{item.event_start_time}", :placeholder => "time", :tabindex => "6"}
+              %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time.js-time-picker{:type => "text", :value => "#{item.event_start_time}", :placeholder => "time", :tabindex => "6"}
           .form-wrapper.row.deskwidth50
             .inline-label
               %label
                 End:
             .form-item.field-name-event-date-und-1-value-date
-              %input#edit-field-event-date-und-1-value-date.form-text.input-small.input-date{:type => "text", :value => "#{item.event_end_date}", :placeholder => "date", :tabindex => "7"}
+              %input#edit-field-event-date-und-1-value-date.form-text.input-small.input-date.js-date-picker{:type => "text", :value => "#{item.event_end_date}", :placeholder => "date", :tabindex => "7"}
             .form-item.field-name-event-date-und-1-value-time
-              %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time{:type => "text", :value => "#{item.event_end_time}", :placeholder => "time", :tabindex => "8"}
+              %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time.js-time-picker{:type => "text", :value => "#{item.event_end_time}", :placeholder => "time", :tabindex => "8"}
 
           .form-wrapper.wrapper
 
@@ -114,7 +114,7 @@ menu:
                 - for country in data.countries.countries
                   %option{:value => "#{country}"}
                     #{country}
-                %option{:value => "", :selected => "US"} United States
+                %option{:value => "", :selected => "UK"} United Kingdom
 
             .form-item.field-event-address
               %label.form-label{:for => "edit-event-address"}
@@ -138,53 +138,46 @@ menu:
                 - for groups in data.groups.my_groups
                   %option{:value => ""}
                     #{groups}
-                %option{:value => "", :selected => ""} Local group London
+                - for groups in item.groups
+                  %option{:value => "", :selected => ""}
+                    #{groups}
             .form-item.form-type-radios.radio-blocks
               %label.form-label{:for => "edit-group-content-access"}
                 Private or public?
                 %span.form-required{:title => "This field is required."} *
               .form-radios
                 .form-type-radio
-                  %input#edit-group-content-access-und-0.form-radio{:name => "group_content_access", :type => "radio", :value => "0", :checked => "checked", :tabindex => "17"}
+                  %input#edit-group-content-access-und-0.form-radio{:name => "group_content_access", :type => "radio", :value => "0", :tabindex => "17"}
                   %label.option{:for => "edit-group-content-access-und-0"} Private - only for group members
                 .form-type-radio
                   %input#edit-group-content-access-und-1.form-radio{:name => "group_content_access", :type => "radio", :value => "1", :tabindex => "18"}
                   %label.option{:for => "edit-group-content-access-und-1"} All members of Greenwire
                 .form-type-radio
-                  %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2", :tabindex => "19"}
+                  %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2", :checked => "checked", :tabindex => "19"}
                   %label.option{:for => "edit-group-content-access-und-2"} Public - visible for all visitors of Greenwire
 
       %section#section-language.block
         %i.block-icon.icon-tag.icon-bg-action
-        %h2.block-title Event type, language & tags
+        %h2.block-title Event type & tags
         .content
           .form-wrapper
 
             .form-item.form-type-select
               %label.form-label{:for => "eventtype"} Event type
               %select#eventtype.chosen-select{"data-placeholder" => "Select one or more types", :multiple => "multiple", :tabindex => "14"}
-                - 50.times do |num|
-                  :preserve
-                    <option>
-                  = lorem.word
-                  :preserve
-                    </option>
-
-            .form-item.form-type-select
-              %label.form-label{:for => "language"} Language
-              .form-description What language is this event in? You can select more than one language.
-              %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
-                %option{:selected => ""} English, US
-                %option French
+                - for type in data.event.event_types
+                  %option{:value => ""}
+                    #{type}
+                %option{:value => "", :selected => ""}
+                  #{item.event_type}
 
             .form-item
               %label Tags
-              %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "", :placeholder => "Text input", :tabindex => "15"}
+              %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "gardening, London, community", :placeholder => "Text input", :tabindex => "15"}
               .autocomplete#tagsautocomplete
                 %ul
-                  - 50.times do |num|
-                    %li
-                      = lorem.word
+                  - for tag in data.tags.suggestion
+                    %li #{tag}
 
       %section#section-organisers.block
         %i.block-icon.icon-users.icon-bg-action
@@ -194,6 +187,8 @@ menu:
             .form-item.form-type-select
               %label.form-label{:for => "organisersinput"} Organisers
               %select#organisersinput.chosen-select{"data-placeholder" => "Select organisers...", :multiple => "multiple", :tabindex => "11"}
+                %option{:value => "", :selected => ""}
+                  #{item.organiser}
                 - 50.times do |num|
                   :preserve
                     <option>
@@ -216,7 +211,7 @@ menu:
 
     %section#section-submit.section-submit
       .form-actions.form-wrapper
-        %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "./event-full-organiser.html#form-saved"}
+        %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "./event-full-organiser_changed.html#form-saved"}
           %a.button.btn-l{:href => "./events.html", :tabindex => "8"} Cancel
 
   #manual-coordinates-form.block.white-popup.mfp-hide
@@ -351,14 +346,14 @@ menu:
 
 
   map = new L.Map('map', {zoomControl: true});
-  marker = L.marker(new L.LatLng(0,0),{icon: eventIcon, draggable:true})
+  marker = L.marker(new L.LatLng(51.5016335,-0.25239780000003975),{icon: eventIcon, draggable:true})
   .animateDragging()
   .addTo(map);
 
   var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     osm = new L.TileLayer(osmUrl, {maxZoom: 18});
 
-  map.setView(new L.LatLng(0, 0), 1).addLayer(osm);
+  map.setView(new L.LatLng(51.5016335,-0.25239780000003975), 9).addLayer(osm);
 
   map.on({
     click: function() {

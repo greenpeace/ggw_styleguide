@@ -7,7 +7,7 @@ direct_parent:
     url: "my-profile.html"
 user_role: lu
 editor: ckeditor
-design_status: Needs review
+script: event
 menu:
   -
     name: 'Personal details'
@@ -49,7 +49,7 @@ menu:
       %a.button{:href => "./edit-user-account.html"} Edit account settings
 
 .l-main-column
-  %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
+  %form{:action => "#", :method => "get", :enctype => "multipart/form-data"}
     %section#section-personal.block.current.main-content
       %i.block-icon.icon-user.icon-bg-user
       %h2.block-title Personal details
@@ -93,7 +93,7 @@ menu:
               %label.form-label{:for => "edit-field-user-date-of-birth"}
                 Date of birth
                 %span.form-required{:title => "This field is required."} *
-              %input#edit-field-user-date-of-birth.form-text.user-date-of-birth.input-medium.input-date{:name => "edit-field-user-date-of-birth", :type => "text", :value => "25 October 1980", :tabindex => "1", "data-value" => "1 January 1980", :size => "35"}/
+              %input#edit-field-user-date-of-birth.form-text.input-medium.input-date.js-birthdate-picker{:name => "edit-field-user-date-of-birth", :type => "text", :value => "25 October 1980", :tabindex => "1", "data-value" => "1 January 1980", :size => "35"}/
 
             .form-item.field-user-place-of-birth
               %label.form-label{:for => "edit-field-user-place-of-birth"}

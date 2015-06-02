@@ -32,126 +32,62 @@ action_menu:
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column
-  #content.block.main-content.current
-    %i.block-icon.icon-bg-news-media.icon-photo
-    %h1#page-title.block-title
-      = lorem.words 10
-    .content
-      %article.view-mode-full
-        .submitted
-          %a.type.photo{:href => "./photos.html"} Photos
-          by
-          %a{:href => "./profile.html"}
-            = lorem.name
+- data.photos.album_two.each do |item|
 
-          %span.submitted-date June 5th 2014 - 11:29
+  .l-main-column
+    #content.block.main-content.current
+      %i.block-icon.icon-bg-news-media.icon-photo
+      %h1.block-title
+        = item.title
+      .content
+        %article.view-mode-full
+          .submitted
+            %a.type.photo{:href => "./photos.html"} Photos
+            by
+            %a{:href => "./profile.html"}
+              = item.author
 
-          %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
-            %i.icon-comment
-            10 comments
+            %span.submitted-date
+              = item.datetime
 
-        .field-name-gallery
-          - 7.times do |num|
-            %a.album-thumbnail{:href => "/photos/nature1.jpg", :title => "Title of the image"}
-              %img.lazyload{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature1.jpg" }
-              %noscript
-                %img{:alt => "", :src => "/photos/96/nature1.jpg" }
-            %a.album-thumbnail{:href => "/photos/nature2.jpg", :title => "Title of the image"}
-              %img.lazyload{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature2.jpg" }
-              %noscript
-                %img{:alt => "", :src => "/photos/96/nature2.jpg" }
-            %a.album-thumbnail{:href => "/photos/nature3.jpg", :title => "Title of the image"}
-              %img.lazyload{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature3.jpg" }
-              %noscript
-                %img{:alt => "", :src => "/photos/96/nature3.jpg" }
-            %a.album-thumbnail{:href => "/photos/animals1.jpg", :title => "Title of the image"}
-              %img.lazyload{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/animals1.jpg" }
-              %noscript
-                %img{:alt => "", :src => "/photos/96/animals1.jpg" }
-            %a.album-thumbnail{:href => "/photos/animals1.jpg", :title => "Title of the image"}
-              %img.lazyload{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature5.jpg" }
-              %noscript
-                %img{:alt => "", :src => "/photos/96/animals1.jpg" }
-            %a.album-thumbnail{:href => "/photos/nature4.jpg", :title => "Title of the image"}
-              %img.lazyload{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature4.jpg" }
-              %noscript
-                %img{:alt => "", :src => "/photos/96/nature4.jpg" }
-            %a.album-thumbnail{:href => "/photos/animals2.jpg", :title => "Title of the image"}
-              %img.lazyload{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/animals2.jpg" }
-              %noscript
-                %img{:alt => "", :src => "/photos/96/animals2.jpg" }
-            %a.album-thumbnail{:href => "/photos/animals3.jpg", :title => "Title of the image"}
-              %img.lazyload{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/animals3.jpg" }
-              %noscript
-                %img{:alt => "", :src => "/photos/96/animals3.jpg" }
-            %a.album-thumbnail{:href => "/photos/people2.jpg", :title => "Title of the image"}
-              %img.lazyload{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/people2.jpg" }
-              %noscript
-                %img{:alt => "", :src => "/photos/96/people2.jpg" }
-            %a.album-thumbnail{:href => "/photos/nightlife1.jpg", :title => "Title of the image"}
-              %img.lazyload{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nightlife1.jpg" }
-              %noscript
-                %img{:alt => "", :src => "/photos/96/nightlife1.jpg" }
-            %a.album-thumbnail{:href => "/photos/animals4.jpg", :title => "Title of the image"}
-              %img.lazyload{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/animals4.jpg" }
-              %noscript
-                %img{:alt => "", :src => "/photos/96/animals4.jpg" }
-            %a.album-thumbnail{:href => "/photos/people3.jpg", :title => "Title of the image"}
-              %img.lazyload{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/people3.jpg" }
-              %noscript
-                %img{:alt => "", :src => "/photos/96/people3.jpg" }
-            %a.album-thumbnail{:href => "/photos/food1.jpg", :title => "Title of the image"}
-              %img.lazyload{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/food1.jpg" }
-              %noscript
-                %img{:alt => "", :src => "/photos/96/food1.jpg" }
-            %a.album-thumbnail{:href => "/photos/people4.jpg", :title => "Title of the image"}
-              %img.lazyload{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/people4.jpg" }
-              %noscript
-                %img{:alt => "", :src => "/photos/96/people4.jpg" }
+            %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
+              %i.icon-comment
+              #{item.comment_amount} comments
 
-        .field-name-body
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.paragraph
-          %ul
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.sentence
-            %strong without
-            = lorem.sentence
-        .tags
-          Tags:
-          %a.tag{:href => "#"} oceans,
-          %a.tag{:href => "#"} Sustainable fishery,
-          %a.tag{:href => "#"} conservation
-        .submitted.submitted-extended
-          .submitted-image
-            %img.lazyload{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
-          .submitted-info
-            %div
-              %a{:href => "./photo.html"} Photos
-              by
-              %a{:href => "./profile.html"}
-                = lorem.name
-            .submitted-all-reference
-              %a{:href => "#"}
-                All Photos by
-                = lorem.name
-                \.
+          .field-name-gallery
+            - for photo in item.photos
+              %a.album-thumbnail{:href => "/photos/#{photo.url}", :title => "View large image"}
+                %img.lazyload{:alt => "#{photo.caption}", :src => "/photos/blank.png", "data-src" => "/photos/96/#{photo.url}" }
+                %noscript
+                  %img{:alt => "#{photo.caption}", :src => "/photos/96/#{photo.url}" }
 
-  = partial :"blocks/lu/comments"
+          .field-name-body
+            = item.full_text
 
-%aside.l-sidebar.sidebar
-  = partial :"blocks/related_photos"
-  = partial :"blocks/go_to_group"
-  = partial :"blocks/lu/subscribe"
+          .tags
+            Tags:
+            - for tag in item.tags
+              = succeed ", " do
+                %a.tag{:href => "./search-newsmedia.html"} #{tag}
+            %a.tag{:href => "./search-newsmedia.html"} Arctic oil
+
+          .submitted.submitted-extended
+            .submitted-image
+              %img.lazyload{:alt => "#{item.author}", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+            .submitted-info
+              %div
+                %a{:href => "./photo.html"} Photos
+                by
+                %a{:href => "./profile.html"}
+                  = item.author
+              .submitted-all-reference
+                %a{:href => "./photos.html"}<
+                  All photo albums by #{item.author}.
+
+    = partial :"blocks/lu/comments"
+
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/related_photos"
+    = partial :"blocks/go_to_group"
+    = partial :"blocks/lu/subscribe"
 

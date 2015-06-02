@@ -20,7 +20,7 @@
 
 - if current_page.data.group == "home"
   = javascript_include_tag "leaflet"
-  = javascript_include_tag "upcoming-events"
+  = javascript_include_tag "map-data"
 
   :javascript
 
@@ -30,7 +30,7 @@
     }),
     latlng = L.latLng(52.5, -2);
 
-    var map = L.map('map', {center: latlng, zoom: 6, scrollWheelZoom: false, layers: [tiles]});
+    var map = L.map('map', {center: latlng, zoom: 5, scrollWheelZoom: false, layers: [tiles]});
 
     var markers = L.markerClusterGroup();
 
@@ -46,10 +46,10 @@
       popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
     });
 
-    for (var i = 0; i < 5; i++) {
-      var a = upcomingEvents[i];
-      var marker = L.marker(new L.LatLng(a[0], a[1]), {icon: eventIcon});
-      marker.bindPopup('<h2 class="node-title"><a href="./event-full.html">Join us to Festival Mundial</a></h2><div class="field field-name-field-event-date"><span class="date-display-single">25 September, 2014 - 14:57</span></div>');
+    for (var i = 0; i < events.length; i++) {
+      var a = events[i];
+      var marker = L.marker(new L.LatLng(a.lat, a.lng), {icon: eventIcon});
+      marker.bindPopup('<h2 class="node-title"><a href="' + a.link + '">' + a.title +'</a></h2><div   class="field field-name-field-event-date"><span class="date-display-single">'+ a.date +'</span><  /div>');
       markers.addLayer(marker);
     }
 

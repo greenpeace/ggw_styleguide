@@ -2,7 +2,8 @@
   .views-row
     %article.node-teaser-photo.node-teaser
       .field-type-image
-        = partial :"teasers/teaser-image"
+        %a{:href => "./photo-album.html"}
+          = partial :"teasers/teaser-image", :locals => {:image => "#{item.image}"}
       .field-type-wrapper
         %h2.node-title
           %a{:href => "./photo-album.html"}

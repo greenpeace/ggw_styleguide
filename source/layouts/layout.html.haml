@@ -58,9 +58,10 @@
 
       = partial :"nav/footer"
 
-      - if current_page.data.user_role == "lu"
+      - if current_page.data.user_role == "lu" && current_page.data.user_context != "first-login"
         = partial :"blocks/lu/notifications"
         = partial :"blocks/lu/messages"
+
 
     = javascript_include_tag  "theme"
 

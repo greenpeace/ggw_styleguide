@@ -6,8 +6,9 @@ direct_parent:
     name: "Grace O'Flynn"
     url: "my-profile.html"
 user_role: lu
+user_context : first-login
 editor: ckeditor
-design_status: Needs review
+script: event
 menu:
   -
     name: 'Personal details'
@@ -87,7 +88,7 @@ menu:
               %label.form-label{:for => "edit-field-user-date-of-birth"}
                 Date of birth
                 %span.form-required{:title => "This field is required."} *
-              %input#edit-field-user-date-of-birth.form-text.user-date-of-birth.input-medium.input-date{:name => "edit-field-user-date-of-birth", :type => "text", :value => "25 October 1980", :tabindex => "1", "data-value" => "25 October 1980", :size => "35"}/
+              %input#edit-field-user-date-of-birth.form-text.input-medium.input-date.js-birthdate-picker{:name => "edit-field-user-date-of-birth", :type => "text", :value => "25 October 1980", :tabindex => "1", "data-value" => "25 October 1980", :size => "35"}/
 
     %section#section-contact.block
       %i.block-icon.icon-mail.icon-bg-user
@@ -254,8 +255,8 @@ menu:
               Profile picture
               %span.form-required{:title => "This field is required."} *
             .media-widget.media
-              .preview.media-figure
-                %img{:src => "/photos/polar210.jpg", :alt => "Your avatar!" }
+              .preview-wrapper.media-figure
+                %img#preview-image{:src => "/photos/polar210.jpg", :alt => "Your avatar!" }
               .media-body
                 .form-description
                   Upload a photo that represents you on Greenpeace Greenwire. <br/>
@@ -277,12 +278,12 @@ menu:
             .form-item.field-name-profession
               %label.form-label{:for => "edit-field-profession"}
                 Profession
-              %input#edit-field-profession.form-text.input-medium{:name => "edit-field-profession", :type => "text", :value => "Accountmanager at Greenpeace International", :tabindex => "1", :size => "35"}/
+              %input#edit-field-profession.form-text.input-medium{:name => "edit-field-profession", :type => "text", :value => " ", :tabindex => "1", :size => "35"}/
 
             .form-item.field-name-employer
               %label.form-label{:for => "edit-field-employer"}
                 Employer
-              %input#edit-field-employer.form-text.input-medium{:name => "edit-field-employer", :type => "text", :value => "Greenpeace", :tabindex => "1", :size => "35"}/
+              %input#edit-field-employer.form-text.input-medium{:name => "edit-field-employer", :type => "text", :value => " ", :tabindex => "1", :size => "35"}/
 
     %section#section-social.block
       %i.block-icon.icon-social.icon-bg-user

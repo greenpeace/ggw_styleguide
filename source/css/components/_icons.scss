@@ -51,7 +51,8 @@
 .icon-block {       @extend %icon-block;}
 .icon-minus {       @extend %icon-minus;}
 .icon-install {     @extend %icon-install;}
-.icon-password {        @extend %icon-lock; }
+.icon-password {    @extend %icon-lock; }
+.icon-export {      @extend %icon-export;}
 
 .icon-event {       @extend %icon-calendar; }
 .icon-news {        @extend %icon-book-open; }

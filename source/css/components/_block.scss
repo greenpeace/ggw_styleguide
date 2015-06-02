@@ -54,31 +54,18 @@
   margin-left: 0;
 }
 
-.enrollments a {
-  display: inline-block;
 
-  @include breakpoint($desk) {
-    width: 23.5%;
-  }
+.members {
+  @extend %cf;
+}
+
+.member-item {
+  float:left;
+  margin: 0 $def-mar-half $def-mar-half 0;
 
   img {
-    margin: auto;
-    display: flex;
+    width: 64px;
+    height: 64px;
   }
 
-}
-
-.members a {
-  display: inline-block;
-  margin-right: 4px;
-
-  @include breakpoint($desk) {
-    width: 13.4%;
-    margin-right: 0;
-  }
-}
-
-.members .enrollments img {
-  margin: auto;
-  display: flex;
 }

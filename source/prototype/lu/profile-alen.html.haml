@@ -1,0 +1,136 @@
+---
+title: Alen Marsh
+body_class: not-front logged-in page-profile l-two-column
+profile: home
+access: other
+user_role: lu
+design_status: Work in progress
+action_menu:
+  -
+    id: "#block-user-profile"
+    label: "Profile"
+    icon: "user"
+  -
+    id: "#block-comments"
+    label: "Shoutbox"
+    icon: "chat"
+  -
+    id: "#block-friends"
+    label: "Friends"
+    icon: "users"
+  -
+    id: "#block-user-events"
+    label: "Events"
+    icon: "event"
+  -
+    id: "#block-skills"
+    label: "Skills"
+    icon: "skills"
+  -
+    id: "#block-user-groups"
+    label: "Groups"
+    icon: "users"
+  -
+    id: "#block-user-activity"
+    label: "Activity log"
+    icon: "clock"
+---
+
+= partial :"blocks/breadcrumbs"
+- data.members.member_alen.each do |item|
+  .l-main-column
+    %h1.group-heading.only-mobile
+      %i.icon-user
+      #{item.first_name} #{item.last_name}
+    #block-user-profile.block.current
+      %i.block-icon.icon-bg-user.icon-user
+      %h1#page-title.block-title
+        Profile
+
+      .content
+
+        .field-name-user-image
+          %img.lazyload{:alt => "#{item.first_name} #{item.last_name}", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/#{item.image}"}/
+          %noscript
+            %img{:src => "/photos/#{item.image}", :alt => "#{item.first_name} #{item.last_name}"}/
+
+        .field.field-name-user-name
+          #{item.first_name} #{item.last_name}
+          %span.username (#{item.username})
+
+        .field.field-name-body
+          .field-label.element-hidden About me:
+          .field-item
+            = item.about
+        .clear
+
+        .field.field-name-field-social-media.field-inline-block
+          .field-label Social media:
+          .field-item
+            %a.social-icon.twitter{:href => "#", :target => "blank"}
+              %span.element-hidden twitter
+            %a.social-icon.facebook{:href => "#", :target => "blank"}
+              %span.element-hidden facebook
+
+        .field.field-name-field-skype.field-inline-block
+          .field-label Skype:
+          .field-item
+            %i.icon-skype
+            %span #{item.skype}
+
+        .field.field-name-field-mail.field-inline-block
+          .field-label Email:
+          .field-item  #{item.email}
+
+        .field.field-name-field-telephone.field-inline-block
+          .field-label Phone:
+          .field-item  #{item.phone_home}
+
+        .field.field-name-field-location.field-inline-block
+          .field-label Address:
+          .field-item #{item.address}, #{item.city}, #{item.country}
+
+        .field.field-name-field-profession.field-inline-block
+          .field-label Profession:
+          .field-item  #{item.profession}
+
+        .field.field-name-send-message
+          %p
+            %a.modal-inline.button.btn-primary{:href => "#send-private-message"} Send a private message
+
+    #block-skills.block
+      %i.block-icon.icon-bg-user.icon-skills
+      %h2.block-title
+        Skills
+
+      .content
+
+        .field.field-name-field-education
+          .field-label Education:
+          .field-item
+            = item.education
+
+        .field.field-name-field-skills-general
+          .field-label General skills
+          .field-item
+            = succeed "," do
+              %a.tag{:href => "./search-members.html"} Activist
+            = succeed "," do
+              %a.tag{:href => "./search-members.html"} Online Communities
+            %a.tag{:href => "./search-members.html"} Writting/Blogging
+
+        .field.field-name-field-skills-campaigning
+          .field-label Campaigning skills
+          .field-item
+            %a.tag{:href => "./search-members.html"} NVDA general
+
+    = partial :"blocks/lu/user-events"
+    = partial :"blocks/lu/user-groups"
+
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/lu/my-friends-alen"
+    = partial :"blocks/lu/comments"
+    = partial :"blocks/lu/user-activity"
+
+  = partial :"blocks/lu/new_message_from_profile", :locals => {:name => "#{item.first_name} #{item.last_name}"}
+  = partial :"blocks/lu/confirm-friend-request", :locals => {:name => "#{item.first_name} #{item.last_name}"}

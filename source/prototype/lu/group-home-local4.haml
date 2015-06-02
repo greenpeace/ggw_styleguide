@@ -1,0 +1,44 @@
+---
+title: Southwest London Greenpeace
+body_class: not-front logged-in page-group-home l-two-column
+direct_parent:
+  -
+    name: "Groups"
+    url: "groups.html"
+user_role: lu
+group: home
+design_status: Work in progress
+action_menu:
+  -
+    id: "#block-group-info"
+    label: "Group info"
+    icon: "info"
+  -
+    id: "#content"
+    label: "Updates"
+    icon: "news"
+  -
+    id: "#upcoming-events"
+    label: "Events"
+    icon: "event"
+  -
+    id: "#block-group-members"
+    label: "Members"
+    icon: "users"
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column
+  %h1.group-heading.only-mobile
+    %i.icon-users
+    = current_page.data.title
+  = partial :"blocks/group_info_local4"
+  = partial :"blocks/upcoming_events"
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/group-members"
+  = partial :"blocks/updates"
+
+
+= partial :"blocks/lu/confirm-group-subscription"

@@ -5,7 +5,7 @@ profile: friends
 access: mine
 direct_parent:
   -
-    name: "Santa Doe Claus"
+    name: "Grace O'Flynn"
     url: "./../lu/my-profile.html"
 user_role: lu
 design_status: Needs review
@@ -29,10 +29,10 @@ action_menu:
 .l-main-column
   %h1.group-heading.only-mobile
     %i.icon-user
-      Santa Doe Claus
+      Grace O'Flynn
   #content.block.current
     %i.block-icon.icon-bg-user.icon-users
-    %h2#page-title.block-title
+    %h2.block-title
       Manage friends
 
     .content
@@ -40,7 +40,7 @@ action_menu:
       .view-header
         %form
           .action-bar
-            .action-bar-item.resultstats 95 Friends
+            .action-bar-item.resultstats 3 Friends
 
             .action-bar-item.sorting
               %label Sort by
@@ -72,19 +72,9 @@ action_menu:
 
       .view-search-results
         .view-content
-          = partial :"teasers/member"
-          = partial :"teasers/member_2"
-          = partial :"teasers/member_3"
-          = partial :"teasers/member_4"
-          = partial :"teasers/member_2"
-          = partial :"teasers/member_3"
-          = partial :"teasers/member_4"
-          = partial :"teasers/member_2"
-          = partial :"teasers/member_3"
-          = partial :"teasers/member_4"
-          = partial :"teasers/member_2"
-          = partial :"teasers/member_3"
-          = partial :"teasers/member_4"
+          = partial :"teasers/member_alen"
+          = partial :"teasers/member_rose"
+          = partial :"teasers/member_rachael"
           .align-center
             %a.button{:href => "#"} show some more
 

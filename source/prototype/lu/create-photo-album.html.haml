@@ -105,15 +105,9 @@ menu:
 
   %section#section-language.block
     %i.block-icon.icon-globe.icon-bg-action
-    %h2.block-title Languages and tags
+    %h2.block-title Tags
     .content
       .form-wrapper
-        .form-item.form-type-select
-          %label.form-label{:for => "language"} Language
-          .form-description What language is this news in? You can select more than one language.
-          %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple", :tabindex => "4"}
-            %option{:selected => ""} English, US
-            %option French
 
         .form-item
           %label Tags
@@ -136,7 +130,7 @@ menu:
               <option value="1">Festivals</option>
               <option value="2">Climate change</option>
               <option value="3">Oceans</option>
-              <option value="4" selected>Local group Amsterdam</option>
+              <option value="4" selected>Emlyn Gardens local group</option>
               <option value="5">Oil spill</option>
               <option value="6">Solar energy</option>
               <option value="7">Save the Arctic</option>
@@ -158,5 +152,5 @@ menu:
 
   %section#section-submit.section-submit
     .form-actions.form-wrapper
-      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "photo-album.html#form-saved"}
+      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "./photo-album-created.html#album-created"}
       %a.button.btn-l{:href => "./photos.html", :tabindex => "8"} Cancel

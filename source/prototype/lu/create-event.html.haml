@@ -39,7 +39,7 @@ menu:
         %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
           #{item.name}
 .l-main-column
-  %form{:action => "#", :method => "post", :enctype => "multipart/form-data"}
+  %form{:action => "#", :method => "get", :enctype => "multipart/form-data"}
     %section#section-title.block.current.main-content
       %i.block-icon.icon-pencil.icon-bg-action
       %h2.block-title Title, description & image
@@ -82,17 +82,17 @@ menu:
               Start:
               %span.form-required{:title => "This field is required."} *
           .form-item.field-name-event-date-und-0-value-date
-            %input#edit-field-event-date-und-0-value-date.form-text.input-small.input-date{:type => "text", :value => "", :placeholder => "date", :tabindex => "5"}
+            %input#edit-field-event-date-und-0-value-date.form-text.input-small.input-date.js-date-picker{:type => "text", :value => "", :placeholder => "date", :tabindex => "5"}
           .form-item.field-name-event-date-und-0-value-time
-            %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time{:type => "text", :value => "", :placeholder => "time", :tabindex => "6"}
+            %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time.js-time-picker{:type => "text", :value => "", :placeholder => "time", :tabindex => "6"}
         .form-wrapper.row.deskwidth50
           .inline-label
             %label
               End:
           .form-item.field-name-event-date-und-1-value-date
-            %input#edit-field-event-date-und-1-value-date.form-text.input-small.input-date{:type => "text", :value => "", :placeholder => "date", :tabindex => "7"}
+            %input#edit-field-event-date-und-1-value-date.form-text.input-small.input-date.js-date-picker{:type => "text", :value => "", :placeholder => "date", :tabindex => "7"}
           .form-item.field-name-event-date-und-1-value-time
-            %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time{:type => "text", :value => "", :placeholder => "time", :tabindex => "8"}
+            %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time.js-time-picker{:type => "text", :value => "", :placeholder => "time", :tabindex => "8"}
 
         .form-wrapper.wrapper
 
@@ -150,58 +150,49 @@ menu:
           .form-item.form-type-select
             %label.form-label{:for => "groups"} Group(s)
             %select#groups.chosen-select{"data-placeholder" => "Select one or more groups", :multiple => "multiple", :tabindex => "16"}
-              - 50.times do |num|
-                :preserve
-                  <option>
-                = lorem.words 3
-                :preserve
-                  </option>
+              - for item in data.event.with_image_organising
+                - for group in item.groups
+                  %option{:value => ""}
+                    #{group}
+              - for groups in data.groups.my_groups
+                %option{:value => ""}
+                  #{groups}
+
           .form-item.form-type-radios.radio-blocks
             %label.form-label{:for => "edit-group-content-access"}
               Private or public?
               %span.form-required{:title => "This field is required."} *
             .form-radios
               .form-type-radio
-                %input#edit-group-content-access-und-0.form-radio{:name => "group_content_access", :type => "radio", :value => "0", :checked => "checked", :tabindex => "17"}
+                %input#edit-group-content-access-und-0.form-radio{:name => "group_content_access", :type => "radio", :value => "0", :tabindex => "17"}
                 %label.option{:for => "edit-group-content-access-und-0"} Private - only for group members
               .form-type-radio
                 %input#edit-group-content-access-und-1.form-radio{:name => "group_content_access", :type => "radio", :value => "1", :tabindex => "18"}
                 %label.option{:for => "edit-group-content-access-und-1"} All members of Greenwire
               .form-type-radio
-                %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2", :tabindex => "19"}
+                %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2", :checked => "checked", :tabindex => "19"}
                 %label.option{:for => "edit-group-content-access-und-2"} Public - visible for all visitors of Greenwire
 
     %section#section-language.block
       %i.block-icon.icon-tag.icon-bg-action
-      %h2.block-title Event type, language & tags
+      %h2.block-title Event type & tags
       .content
         .form-wrapper
 
           .form-item.form-type-select
             %label.form-label{:for => "eventtype"} Event type
             %select#eventtype.chosen-select{"data-placeholder" => "Select one or more types", :multiple => "multiple", :tabindex => "14"}
-              - 50.times do |num|
-                :preserve
-                  <option>
-                = lorem.word
-                :preserve
-                  </option>
-
-          .form-item.form-type-select
-            %label.form-label{:for => "language"} Language
-            .form-description What language is this event in? You can select more than one language.
-            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
-              %option{:selected => ""} English, US
-              %option French
+              - for type in data.event.event_types
+                %option{:value => ""}
+                  #{type}
 
           .form-item
             %label Tags
             %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "", :placeholder => "Text input", :tabindex => "15"}
             .autocomplete#tagsautocomplete
               %ul
-                - 50.times do |num|
-                  %li
-                    = lorem.word
+                - for tag in data.tags.suggestion
+                  %li #{tag}
 
     %section#section-organisers.block
       %i.block-icon.icon-users.icon-bg-action
@@ -233,7 +224,7 @@ menu:
 
   %section#section-submit.section-submit
     .form-actions.form-wrapper
-      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "event-full-organiser.html#form-saved"}
+      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "./event-full-organiser.html#event-created"}
         %a.button.btn-l{:href => "./events.html", :tabindex => "8"} Cancel
 
 #manual-coordinates-form.block.white-popup.mfp-hide
@@ -270,7 +261,6 @@ menu:
 
     $.getJSON('http://nominatim.openstreetmap.org/search/' + country.value + '/' + addressfield.value + ' ?format=json&limit=3&addressdetails=1', function(data) {
         var items = [];
-        console.log(data);
 
         venue = "";
         street = "";
@@ -319,17 +309,35 @@ menu:
           items.push("<li><a href='#' onclick='chooseAddr(" + lat + ", " + lon + ");return false;'>" + venue + street + house_number + suburb + city + postcode + "</a></li>");
         });
 
-      $('#results').empty().show();
+      $('#results')
+        .empty()
+        .show();
       if (items.length != 0) {
         $('<ul/>', {
           'class': 'location-lookup-resultlist',
           html: items.join('')
         }).appendTo('#results');
+        $('<button class="close-result"><i class="icon-cancel"></i></button>').appendTo('#results');
+        $('.close-result').click(function(e) {
+          e.preventDefault();
+          $('#results').empty().hide();
+        });
       } else {
-        $('<p/>', {
-          html: 'Address not found'
+        $('<ul/>', {
+          'class': 'location-lookup-resultlist',
+          html: '<li><a href="#" onclick="return false">Address not found</a></li>'
         }).appendTo('#results');
+        $('<button class="close-result"><i class="icon-cancel"></i></button>').appendTo('#results');
+
+        $('.close-result').click(function(e) {
+          e.preventDefault();
+          $('#results').empty().hide();
+        });
       }
+
+      $(document).click(function() {
+        $('#results').empty().hide();
+      });
 
       });
   }, 500);

@@ -1,0 +1,23 @@
+var events = [
+  <% data.event.upcoming_events_with_location.each_with_index do |geo, index| %>
+  {
+    'title' : <%= "'#{geo.title}'" %>,
+    'lat' : <%= "'#{geo.lat}'" %>,
+    'lng' : <%= "'#{geo.lng}'" %>,
+    'link' : <%= "'#{geo.link}'" %>,
+    'date' : <%= "'#{geo.date}'" %>
+  }<%= ',' unless index == data.event.upcoming_events_with_location.length-1 %>
+  <% end %>
+];
+
+var groups = [
+  <% data.groups.local_groups_all.each_with_index do |geo, index| %>
+  {
+    'name' : <%= "'#{geo.name}'" %>,
+    'lat' : <%= "'#{geo.lat}'" %>,
+    'lng' : <%= "'#{geo.lng}'" %>,
+    'link' : <%= "'#{geo.link}'" %>,
+    'subscription_type' : <%= "'#{geo.subscription_type}'" %>
+  }<%= ',' unless index == data.groups.local_groups_all.length-1 %>
+  <% end %>
+];

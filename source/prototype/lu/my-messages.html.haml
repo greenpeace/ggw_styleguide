@@ -22,81 +22,37 @@ action_menu:
     %h1.block-title My private messages
     .content
       %section.notifications-section.messages
+        - data.messages.alen_message.each do |item|
+          %article.notification
+            %a.media.popup-ajax{:href => "./random-private-message2.html"}
+              .media-figure.avatar-holder
+                %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/alen.jpg 1x, /photos/120/alen.jpg 2x"}/
+                %noscript
+                  %img{:alt => "Alen Marsh", :src => "/photos/60/alen.jpg", :srcset => "/photos/60/alen.jpg 1x, /photos/120/alen.jpg 2x"}/
+              .media-body.notifications-body
+                %strong
+                  from: #{item.author}
+                %br
+                  = item.teaser
+                .notifications-footer
+                  %span.timestamp
+                    = item.date
 
-        %article.notification
-          %a.media.popup-ajax{:href => "./random-private-message.html"}
-            .media-figure.avatar-holder
-              %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
-              %noscript
-                %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
-            .media-body.notifications-body
-              %strong
-                = lorem.name
-              %br
-                = lorem.sentence
-              .notifications-footer
-                %span.timestamp
-                  1 day ago
-
-        %article.notification
-          %a.media.popup-ajax{:href => "./random-private-message.html"}
-            .media-figure.avatar-holder
-              %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
-              %noscript
-                %img{:alt => "Dora Tilman", :src => "/photos/60/people2.jpg", :srcset => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
-            .media-body.notifications-body
-              %strong
-                = lorem.name
-              %br
-                = lorem.sentence
-              .notifications-footer
-                %span.timestamp
-                  2 days ago
-
-        %article.notification
-          %a.media.popup-ajax{:href => "./random-private-message.html"}
-            .media-figure.avatar-holder
-              %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people3.jpg 1x, /photos/120/people3.jpg 2x"}/
-              %noscript
-                %img{:alt => "Dora Tilman", :src => "/photos/60/people3.jpg", :srcset => "/photos/60/people3.jpg 1x, /photos/120/people3.jpg 2x"}/
-            .media-body.notifications-body
-              %strong
-                = lorem.name
-              %br
-                = lorem.sentence
-              .notifications-footer
-                %span.timestamp
-                  1 week ago
-
-        %article.notification
-          %a.media.popup-ajax{:href => "./random-private-message.html"}
-            .media-figure.avatar-holder
-              %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people6.jpg 1x, /photos/120/people6.jpg 2x"}/
-              %noscript
-                %img{:alt => "Dora Tilman", :src => "/photos/60/people6.jpg", :srcset => "/photos/60/people6.jpg 1x, /photos/120/people6.jpg 2x"}/
-            .media-body.notifications-body
-              %strong
-                = lorem.name
-              %br
-                = lorem.sentence
-              .notifications-footer
-                %span.timestamp
-                  5 feb
-
-        %article.notification
-          %a.media.popup-ajax{:href => "./random-private-message.html"}
-            .media-figure.avatar-holder
-              %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people5.jpg 1x, /photos/120/people5.jpg 2x"}/
-              %noscript
-                %img{:alt => "Dora Tilman", :src => "/photos/60/people5.jpg", :srcset => "/photos/60/people5.jpg 1x, /photos/120/people5.jpg 2x"}/
-            .media-body.notifications-body
-              %strong
-                = lorem.name
-              %br
-                = lorem.sentence
-              .notifications-footer
-                %span.timestamp
-                  1 feb
+        - data.messages.rachael_message.each do |item|
+          %article.notification
+            %a.media.popup-ajax{:href => "./random-private-message1.html"}
+              .media-figure.avatar-holder
+                %img.lazyload{:alt => "Rachael King", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/rachael.jpg 1x, /photos/120/rachael.jpg 2x"}/
+                %noscript
+                  %img{:alt => "Rachael King", :src => "/photos/60/rachael.jpg", :srcset => "/photos/60/rachael.jpg 1x, /photos/120/rachael.jpg 2x"}/
+              .media-body.notifications-body
+                %strong
+                  from: #{item.author}
+                %br
+                  = item.teaser
+                .notifications-footer
+                  %span.timestamp
+                    = item.date
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/lu/new_message"

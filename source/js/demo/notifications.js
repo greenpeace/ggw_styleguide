@@ -83,10 +83,14 @@ $(function() {
       e.preventDefault();
     });
 
-    var combinedNotifications = parseInt($('#notifications-number').text()) + parseInt($('#messages-number').text());
-    $('#combined-number').text(combinedNotifications);
-    if (combinedNotifications == 0) {
-      $('#combined-number').hide();
+    if ($.isNumeric(combinedNotifications) ) {
+
+      var combinedNotifications = parseInt($('#notifications-number').text()) + parseInt($('#messages-number').text());
+      $('#combined-number').text(combinedNotifications);
+      if (combinedNotifications == 0) {
+        $('#combined-number').hide();
+      }
+
     }
 
   }
@@ -121,9 +125,9 @@ $(function() {
 
     }
 
-    $('.messages .media').click(function(event) {
-      $(this).remove();
-    });
+    //$('.dropdown-panel .messages .media').click(function(event) {
+    //  $(this).remove();
+    //});
 
       // On resize, run the function and reset the timeout
     // 250 is the delay in milliseconds.

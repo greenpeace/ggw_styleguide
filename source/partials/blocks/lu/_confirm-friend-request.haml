@@ -1,0 +1,12 @@
+#send-friend-request.block.white-popup.mfp-hide
+  %i.block-icon.icon-user-add.icon-bg-user
+  %h2.block-title Send friend request
+  .content
+    %form.comment-form
+      %p
+        Are you sure want to send a friend request to #{name}?
+
+      .form-actions.form-wrapper
+        %input.button.btn-primary#confirm-friend-request{:type => "submit", :value => "Confirm"}
+        %a.button.btn-close{:href => "#0"} Cancel
+

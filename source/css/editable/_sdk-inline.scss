@@ -117,6 +117,8 @@
 
 #results {
   position: relative;
+  width: 100%;
+  max-width: 400px;
 }
 
 .location-lookup-resultlist {
@@ -124,7 +126,7 @@
   top: 0;
   left: 0;
   z-index: 99;
-  background-color: #fff;
+  background-color: $white;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 4px;
@@ -152,6 +154,18 @@
 
   }
 
+}
+
+.close-result {
+  position: absolute;
+  top: -28px;
+  right: 0;
+  z-index: 100;
+  background: none;
+  border: none;
+  color: $grey-d;
+  font-weight: 700;
+  font-size: $h3;
 }
 
 .preview-location {

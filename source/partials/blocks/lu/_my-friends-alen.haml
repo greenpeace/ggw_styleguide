@@ -1,0 +1,40 @@
+#block-friends.block
+  .action-bar
+    .action-bar-item.add-content
+      - if current_page.data.access == "mine"
+        %a.button{:href => "./profile-manage-friends.html", :title => "Manage friends"} Manage friends
+      - else
+        %a.button.modal-inline#button-friend-request{:href => "#send-friend-request", :title => "Send friend request"} Send friend request
+
+  %i.block-icon.icon-bg-user.icon-users
+  %h2.block-title
+    - if current_page.data.access == "mine"
+      My friends
+    - else
+      Friends
+  .content
+    .members
+      %a.member-item{:href => "./profile.html"}
+        %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/member2.jpg"}/
+        %noscript
+          %img{:alt => "Name of user", :src => "/photos/75/member2.jpg"}/
+
+      %a.member-item{:href => "./profile.html"}
+        %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/member3.jpg"}/
+        %noscript
+          %img{:alt => "Name of user", :src => "/photos/75/member3.jpg"}/
+
+      %a.member-item{:href => "./profile.html"}
+        %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/member10.jpg"}/
+        %noscript
+          %img{:alt => "Name of user", :src => "/photos/75/member10.jpg"}/
+
+      %a.member-item{:href => "./profile.html"}
+        %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/member12.jpg"}/
+        %noscript
+          %img{:alt => "Name of user", :src => "/photos/75/member12.jpg"}/
+      %a.member-item{:href => "./profile.html"}
+        %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/member14.jpg"}/
+        %noscript
+          %img{:alt => "Name of user", :src => "/photos/75/member14.jpg"}/
+

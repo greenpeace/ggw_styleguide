@@ -2,6 +2,7 @@
 // body font-size
 $base-font-size: 16px;
 $p: 14px;
+$small: 12px;
 
 // base line-height
 $base-line-height: 1.5em;
@@ -16,7 +17,7 @@ $h4: 16px;
 $h5: 13px;
 $h6: 11px;
 
-$small: 12px;
+
 
 // we need this here because it is used in abstractions already
 // Use REMs with a pixel fallback for font-sizing.

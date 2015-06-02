@@ -4,7 +4,7 @@ body_class: not-front logged-in page-profile l-two-column
 profile: home
 access: mine
 user_role: lu
-design_status: Work in progress
+user_context : first-login
 action_menu:
   -
     id: "#block-user-profile"
@@ -128,6 +128,7 @@ action_menu:
         [Click here](./edit-user-profile.html#section-skills) to add them.
 
   = partial :"blocks/lu/user-events-empty"
+  = partial :"blocks/lu/user-groups-empty"
   = partial :"blocks/lu/subscription-empty"
 
 %aside.l-sidebar.sidebar

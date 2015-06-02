@@ -41,6 +41,7 @@
 label {
   font-weight: 700;
   display: block;
+  @include font-size($p);
 
   .sidebar & {
     line-height: 1.5em;

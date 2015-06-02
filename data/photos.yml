@@ -1,24 +1,41 @@
 album_one:
   -
-    title: "Stop shell. Save the artic"
-    date: "5 Sep 2015"
-    datetime: "5 Sep 2015 - 7:25 PM"
-    author: "Gabriel Lane"
-    comment_amount: "3"
+    title: "Album one"
+    date: "1 june 2015"
+    datetime: "1 june 2015 - 7:25 PM"
+    image: "animals1.jpg"
+    author: "Grace O’Flynn"
+    comment_amount: "0"
     tags:
-      - Labour
-      - Chelsea & Fulham
-      - fracking
-      - sustainability
-      - Alex Sanderson
+      - Community garden
+      - London
+      - Gardening
     introtext: "We have to stop shell in order to save the artic"
     full_text: "<p>We have to stop shell in order to save the artic</p>"
+    photos:
+      -
+        url: "nature1.jpg"
+        caption: ""
+      -
+        url: "nature2.jpg"
+        caption: ""
+      -
+        url: "nature3.jpg"
+        caption: ""
+      -
+        url: "nature4.jpg"
+        caption: ""
+      -
+        url: "nature5.jpg"
+        caption: ""
+
 
 album_two:
   -
     title: "A couple of nice pictures"
     date: "5 Sep 2015"
     datetime: "5 Sep 2015 - 7:25 PM"
+    image: "nature1.jpg"
     author: "Reece Hobs"
     comment_amount: "3"
     tags:
@@ -29,3 +46,125 @@ album_two:
       - Alex Sanderson
     introtext: "A couple of Greenpeace pictures from my personal collection"
     full_text: "<p>A couple of Greenpeace pictures from my personal collection</p>"
+    photos:
+      -
+        url: "animals1.jpg"
+        caption: ""
+      -
+        url: "animals2.jpg"
+        caption: ""
+      -
+        url: "animals3.jpg"
+        caption: ""
+      -
+        url: "animals4.jpg"
+        caption: ""
+
+album_three:
+  -
+    title: "Photos of Community gardening project"
+    date: "10 june 2015"
+    datetime: "10 june 2015 - 7:25 PM"
+    image: "animals4.jpg"
+    author: "Grace O’Flynn"
+    comment_amount: "0"
+    tags:
+      - Community garden
+      - London
+      - Gardening
+    introtext: "Some photos of the Community gardening project day. As you can see everybody had a great time. We are looking forward for the next meet up."
+    full_text: "<p>Some photos of the iCommunity gardening project day. As you can see everybody had a great time. We are looking forward for the next meet up.</p>"
+    photos:
+      -
+        url: "album1_1.jpg"
+        caption: ""
+      -
+        url: "album1_2.jpg"
+        caption: ""
+      -
+        url: "album1_3.jpg"
+        caption: ""
+      -
+        url: "album1_4.jpg"
+        caption: ""
+      -
+        url: "album1_5.jpg"
+        caption: ""
+      -
+        url: "album1_6.jpg"
+        caption: ""
+      -
+        url: "album1_7.jpg"
+        caption: ""
+      -
+        url: "album1_8.jpg"
+        caption: ""
+      -
+        url: "album1_9.jpg"
+        caption: ""
+      -
+        url: "album1_10.jpg"
+        caption: ""
+      -
+        url: "album1_11.jpg"
+        caption: ""
+      -
+        url: "album1_12.jpg"
+        caption: ""
+      -
+        url: "album1_13.jpg"
+        caption: ""
+      -
+        url: "album1_14.jpg"
+        caption: ""
+      -
+        url: "album1_15.jpg"
+        caption: ""
+      -
+        url: "album1_16.jpg"
+        caption: ""
+      -
+        url: "album1_17.jpg"
+        caption: ""
+      -
+        url: "album1_18.jpg"
+        caption: ""
+      -
+        url: "album1_19.jpg"
+        caption: ""
+      -
+        url: "album1_20.jpg"
+        caption: ""
+      -
+        url: "album1_21.jpg"
+        caption: ""
+      -
+        url: "album1_22.jpg"
+        caption: ""
+      -
+        url: "album1_23.jpg"
+        caption: ""
+      -
+        url: "album1_24.jpg"
+        caption: ""
+      -
+        url: "album1_25.jpg"
+        caption: ""
+      -
+        url: "album1_26.jpg"
+        caption: ""
+      -
+        url: "album1_27.jpg"
+        caption: ""
+      -
+        url: "album1_28.jpg"
+        caption: ""
+      -
+        url: "album1_29.jpg"
+        caption: ""
+      -
+        url: "album1_30.jpg"
+        caption: ""
+      -
+        url: "album1_31.jpg"
+        caption: ""

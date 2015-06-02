@@ -17,11 +17,27 @@
     .tabable
       #upcoming-events.tabable-block.active
 
+        - data.event.to_join.each do |item|
+          %article.node-type-small
+            %h2
+              %a{:href => "./event-full-induction-training-enrolled.html"}
+                = item.title
+            .date-display-single
+              = item.date
+
+        - data.event.with_image_organising.each do |item|
+          %article.node-type-small
+            %h2
+              %a{:href => "./event-full-organiser.html"}
+                = item.title
+            .date-display-single
+              = item.date
+
         - data.event.upcoming.each do |item|
           %article.node-type-small
             %h2
               - if current_page.data.access == "mine"
-                %a{:href => "./event-full-organiser.html"}
+                %a{:href => "./event-full-enrolled.html"}
                   = item.title
               - else
                 %a{:href => "./event-full.html"}

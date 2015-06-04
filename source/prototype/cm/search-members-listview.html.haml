@@ -6,7 +6,6 @@ search_page: members
 listview: search-members-listview.html
 teaserview: search-members.html
 view: list
-design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -15,8 +14,8 @@ design_status: Needs review
 
   #content.block.current
 
-    %i.block-icon.icon-bg-default.icon-search
-    %h1.block-title#page-title
+    %i.block-icon.icon-bg-user.icon-search
+    %h1.block-title{"data-amtitle" => "Search members"}
       = current_page.data.title
 
     .content
@@ -83,10 +82,10 @@ design_status: Needs review
 
 
 %aside.l-sidebar.sidebar
-  .block.hidden-mobile
+  .block#block-filter
     = partial :"blocks/cm/search_filter_options"
-    %i.block-icon.icon-bg-default.icon-adjust
-    %h2.block-title
+    %i.block-icon.icon-bg-user.icon-adjust
+    %h2.block-title{"data-amtitle" => "Filter"}
       Filter
     .content
       %form

@@ -7,28 +7,6 @@ direct_parent:
     url: "blogs.html"
 user_role: lu
 subscribed: yes
-
-action_menu:
-  -
-    id: "#content"
-    label: "Blog"
-    icon: "blog"
-  -
-    id: "#block-comments"
-    label: "Comments"
-    icon: "comment"
-  -
-    id: "#block-go-to-group"
-    label: "Go to group"
-    icon: "users"
-  -
-    id: "#block-get-involved"
-    label: "Get involved"
-    icon: "plus"
-  -
-    id: "#block-subscribe"
-    label: "Updates"
-    icon: "eye"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -36,7 +14,7 @@ action_menu:
 .l-main-column
   #content.block.main-content.current
     %i.block-icon.icon-bg-news-media.icon-blog
-    %h1#page-title.block-title
+    %h1.block-title{"data-amtitle" => "Blog article"}
       = lorem.words 10
     .content
       %article.view-mode-full
@@ -48,7 +26,7 @@ action_menu:
 
           %span.submitted-date November 25th 2014 - 8:29
 
-          %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
+          %a.comments-shortcut.show-block{:href => "#block-comments", "data-scroll" => ""}
             %i.icon-comment
             10 comments
 

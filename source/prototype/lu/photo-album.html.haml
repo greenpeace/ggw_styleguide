@@ -6,28 +6,6 @@ direct_parent:
     name: "Photos"
     url: "photos.html"
 user_role: lu
-design_status: Work in progress
-action_menu:
-  -
-    id: "#content"
-    label: "Photo album"
-    icon: "photo"
-  -
-    id: "#block-comments"
-    label: "Comments"
-    icon: "comment"
-  -
-    id: "#block-go-to-group"
-    label: "Go to group"
-    icon: "users"
-  -
-    id: "#block-get-involved"
-    label: "Get involved"
-    icon: "plus"
-  -
-    id: "#block-subscribe"
-    label: "Updates"
-    icon: "eye"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -37,7 +15,7 @@ action_menu:
   .l-main-column
     #content.block.main-content.current
       %i.block-icon.icon-bg-news-media.icon-photo
-      %h1.block-title
+      %h1.block-title{"data-amtitle" => "Photo album"}
         = item.title
       .content
         %article.view-mode-full
@@ -50,7 +28,7 @@ action_menu:
             %span.submitted-date
               = item.datetime
 
-            %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
+            %a.comments-shortcut.show-block{:href => "#block-comments", "data-scroll" => ""}
               %i.icon-comment
               #{item.comment_amount} comments
 

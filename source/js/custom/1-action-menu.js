@@ -33,7 +33,6 @@ $(function() {
 
       // use the data attribute to set the anchor text
       var blockLabel = $(this).find('.block-title').attr("data-amtitle");
-      console.log(blockLabel);
 
       // build the nav item
       var menuItem = "<li><a href='#"+ blockId +"' class='tab'><i class='icon "+ blockIconClass +"'></i>"+ blockLabel +" </a></li>";
@@ -116,7 +115,7 @@ $(function() {
   if (window.location.hash) {
     var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
     if (hash.match("^block") ) {
-
+      console.log(hash);
       $('.action-menu li, .l-main-column .current, .sidebar .current').removeClass('current');
       $('#' + hash).addClass('current');
       $('.action-menu li a[href="#' + hash + '"]').parent().addClass('current');
@@ -148,24 +147,28 @@ $(function() {
 
   });
 
-  // Click on another button to trigger a action menu item switch
-  $('.show-block').click(function(e){
-    $('.action-menu li, .l-main-column .current, .sidebar .current').removeClass('current');
-    var currentTab = $(this).attr('href');
+  if ($(window).width() < 900) {
 
-    $('.action-menu li a').each(function() {
-      var link = $(this).attr('href');
-      if (link == currentTab) {
-        $(this).parent().addClass('current');
-      }
+    // Click on another button to trigger a action menu item switch
+    $('.show-block').click(function(e){
+      $('.action-menu li, .l-main-column .current, .sidebar .current').removeClass('current');
+      var currentTab = $(this).attr('href');
+
+      $('.action-menu li a').each(function() {
+        var link = $(this).attr('href');
+        if (link == currentTab) {
+          $(this).parent().addClass('current');
+        }
+      });
+
+      $(currentTab).addClass('current');
+
+      e.preventDefault();
+      $('html, body').animate({scrollTop: 0}, 300);
+
     });
 
-    $(currentTab).addClass('current');
-
-    e.preventDefault();
-    $('html, body').animate({scrollTop: 0}, 300);
-
-  });
+  }
 
   // On resize, run the function and reset the timeout
   // 250 is the delay in milliseconds.

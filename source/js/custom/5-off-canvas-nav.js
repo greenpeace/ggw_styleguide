@@ -148,7 +148,7 @@ $(function() {
   }
 
   if ( isMobile() == true ) {
-    $('.form-text, textarea')
+    $('.l-main .form-text, .l-main textarea')
       .blur(function() {
         $('.l-branding-header, .header').removeClass('element-hidden');
       })

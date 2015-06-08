@@ -52,11 +52,13 @@ textarea {
 }
 
 // hide two icons in chrome that hide a part of the selected date.
-.input-date::-webkit-clear-button,
-.input-date::-webkit-inner-spin-button,
-.input-time::-webkit-clear-button,
-.input-time::-webkit-inner-spin-button {
-  display: none;
+.no-touch {
+  .input-date::-webkit-clear-button,
+  .input-date::-webkit-inner-spin-button,
+  .input-time::-webkit-clear-button,
+  .input-time::-webkit-inner-spin-button {
+    display: none;
+  }
 }
 
 .input-small {

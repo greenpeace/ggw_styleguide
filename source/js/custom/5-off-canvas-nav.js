@@ -78,16 +78,21 @@ $(function() {
     return menuOpen;
   }
 
-  $(window).resize(function() {
 
-    // close left menu
-    if(root.hasClass('primary-nav')) {
-      root.removeClass('primary-nav')
-    }
-
-    // close right menu
-    if(root.hasClass('secondary-nav')) {
-      root.removeClass('secondary-nav')
+  // Android browser: when opening the soft keyboard a resize event is triggered, which causes a problem when you focus on the search block
+  $(window).on('resize', function(){
+    
+    // If the current active element is a text input, we can assume the soft keyboard is visible.
+    if($(document.activeElement).attr('type') !== 'text') {
+            // close left menu
+      if(root.hasClass('primary-nav')) {
+        root.removeClass('primary-nav')
+      }
+  
+      // close right menu
+      if(root.hasClass('secondary-nav')) {
+        root.removeClass('secondary-nav')
+      }
     }
 
   });
@@ -135,26 +140,20 @@ $(function() {
         $('.l-main').addClass('with-action-bar');
       } else {
         // Scroll Up
-        if(st + $(window).height() < $(document).height()) {
+        //if(st + $(window).height() < $(document).height()) {
           $('.l-branding-header').removeClass('nav-up').addClass('nav-down');
           $('.action-menu').removeClass('stick-to-top');
           $('.l-main').removeClass('with-action-bar');
-        }
+        //}
       }
 
       lastScrollTop = st;
     }
 
-  }
-
-  if ( isMobile() == true ) {
-    $('.form-text, textarea')
-      .blur(function() {
-        $('.l-branding-header, .header').removeClass('element-hidden');
-      })
-      .focus(function() {
-        $('.l-branding-header, .header').addClass('element-hidden');
-      });
+    //android version 4.1 and 4.2 do not support the css VH syntax. Set a minimum height on the main content so the nav bar is display completely.
+    var viewportHeight = $(window).height();
+    var contentHeight = viewportHeight-navbarHeight;
+    $('.l-main').css('min-height', contentHeight);
 
   }
 

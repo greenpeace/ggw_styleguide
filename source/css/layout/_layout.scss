@@ -82,6 +82,7 @@
   background: $white;
   transition: transform 500ms ease;
   z-index: 1;
+  min-height: 100%;
   min-height: 100vh;
   position: relative;
   -webkit-overflow-scrolling: touch;
@@ -93,6 +94,16 @@
     border: none;
     min-height: none;
     flex: 1; //push footer down to bottom
+    overflow: visible;
+    display: flex; // needed for IE
+    flex-flow: row wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    -ms-flex-preferred-size: auto; // needed for IE
+
+    .no-flexbox & {
+      overflow: hidden;
+    }
 
     // .container doesn't get applied
     @if $oldie {
@@ -287,6 +298,8 @@
 
 .no-js .l-main .block {
   display: block;
+  height: auto;
+  margin: 0 0 14px;
 }
 
 @include breakpoint($desk) {

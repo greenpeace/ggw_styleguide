@@ -93,7 +93,7 @@ $(function() {
 
     }
 
-  }
+    var vh = $(window).height();
 
     function notificationTrigger() {
 
@@ -107,6 +107,11 @@ $(function() {
         $('#notifications-trigger').addClass('modal-inline');
 
         $('.attention-panel').removeClass('dropdown dropdown-tip dropdown-anchor-right').addClass('mfp-hide').removeAttr('style');
+
+        $('.attention-panel .tabable-block').css({
+          'max-height': (vh - 70),
+          'overflow': 'auto'
+        });
 
       } else if ($(window).width() > 900) {
 
@@ -125,17 +130,14 @@ $(function() {
 
     }
 
-    //$('.dropdown-panel .messages .media').click(function(event) {
-    //  $(this).remove();
-    //});
 
-      // On resize, run the function and reset the timeout
-    // 250 is the delay in milliseconds.
     $(window).resize(function() {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(notificationTrigger, 250);
     });
 
     notificationTrigger();
+
+  }
 
 });

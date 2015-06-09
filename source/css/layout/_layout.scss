@@ -298,6 +298,8 @@
 
 .no-js .l-main .block {
   display: block;
+  height: auto;
+  margin: 0 0 14px;
 }
 
 @include breakpoint($desk) {

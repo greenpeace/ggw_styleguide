@@ -126,7 +126,6 @@ $(function() {
 
     function hasScrolled() {
       var st = $(this).scrollTop();
-      console.log(st);
 
       // Make sure they scroll more than delta
       if(Math.abs(lastScrollTop - st) <= delta)
@@ -151,15 +150,10 @@ $(function() {
       lastScrollTop = st;
     }
 
-  }
-  if ( isMobile() == true ) {
-    $('.l-main .form-text, .l-main textarea')
-      .blur(function() {
-        $('.l-branding-header, .header').removeClass('element-hidden');
-      })
-      .focus(function() {
-        $('.l-branding-header, .header').addClass('element-hidden');
-      });
+    //android version 4.1 and 4.2 do not support the css VH syntax. Set a minimum height on the main content so the nav bar is display completely.
+    var viewportHeight = $(window).height();
+    var contentHeight = viewportHeight-navbarHeight;
+    $('.l-main').css('min-height', contentHeight);
 
   }
 

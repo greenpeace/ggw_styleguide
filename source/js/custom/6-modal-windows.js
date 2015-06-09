@@ -21,9 +21,6 @@ $( window ).load(function() {
       open: function() {
         $(window).trigger("load");
         $('.form-comment-message textarea').trigger('keyup');
-        if($(window).width() < 700) {
-          alignTop: true
-        }
       }
     }
   });
@@ -39,9 +36,6 @@ $( window ).load(function() {
     callbacks: {
       ajaxContentAdded: function() {
         $('.private-message-form input[type=file]').nicefileinput();
-        if($(window).width() < 700) {
-          alignTop: true
-        }
       }
     }
   });

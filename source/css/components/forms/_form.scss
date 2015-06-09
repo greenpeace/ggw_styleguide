@@ -60,22 +60,19 @@ label {
     margin-left: $def-mar;
 
     .form-item {
-      display: flex;
+      
     }
 
     .form-label {
       display: inline-block;
-      width: 60%;
+      width: 56%;
       font-weight: 300;
       line-height: 1.3em;
-      flex: 1 1 auto;
-      align-self: center;
     }
 
     .selector {
       display: inline-block;
       width: 40%;
-      flex: 1 1 auto;
     }
 
   }

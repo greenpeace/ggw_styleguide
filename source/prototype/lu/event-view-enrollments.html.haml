@@ -49,7 +49,6 @@ user_role: lu
                   %th{"data-tablesaw-sortable-col" => ""} Member roles
                   %th{"data-tablesaw-sortable-col" => ""} Member since
                   %th Request message
-                  %th{"data-tablesaw-priority" => "persist"} Actions
 
               %tbody
                 - for member in item.enrollments
@@ -68,12 +67,3 @@ user_role: lu
                     %td #{member.roles}
                     %td #{member.member_since}
                     %td #{member.message}
-                    %td
-                      .btn-group
-                        %a.button
-                          %i.icon.icon-pencil
-                          %span.element-hidden edit
-                        %a.button
-                          %i.icon.icon-trash
-                          %span.element-hidden delete
-

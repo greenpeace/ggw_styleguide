@@ -2,9 +2,12 @@
   position: relative;
 
   .view-header & {
-    margin: $def-mar-half 0 $def-mar;
+    margin: 0 0 $def-mar-half 0;
   }
 
+  .page-manage-group-members .view-header & {
+    padding-right: 96px;
+  }
   .page-search .view-header &,
   .page-enrollments .view-header & {
     padding-right: 50px;
@@ -34,12 +37,13 @@
 
 .action-bar .resultstats {
   @include font-size($p);
+  font-weight: 700;
 }
 
 .action-bar-item > label {
   display: inline;
   font-weight: normal;
-  @include font-size($small);
+  @include font-size($p);
   margin-right: .3em;
 }
 

@@ -26,7 +26,7 @@
 
     .action-bar-item.sorting
       %label Sort by
-      %a.button.btn-s.sorting{"data-dropdown" => "#sort-results", :href => "#", :title => "Click to show options"}
+      %a.button.sorting{"data-dropdown" => "#sort-results", :href => "#", :title => "Click to show options"}
         %span Relevance
       #sort-results.dropdown.dropdown-tip.dropdown-relative
         %ul.dropdown-menu
@@ -126,13 +126,13 @@
   - if current_page.data.search_page == "all" or (current_page.data.search_page == "members" and current_page.data.user_role == "an")
     .action-bar-item.results-page.disabled
       %label Results per page
-      %a.button.btn-s.sorting{"data-dropdown" => "#page-results", :href => "#", :title => "Click to show options"}
+      %a.button.sorting{"data-dropdown" => "#page-results", :href => "#", :title => "Click to show options"}
         %span --
 
   - else
     .action-bar-item.results-page
       %label Results per page
-      %a.button.btn-s.results-page{"data-dropdown" => "#page-results", :href => "#", :title => "Click to show options"}
+      %a.button.results-page{"data-dropdown" => "#page-results", :href => "#", :title => "Click to show options"}
         %span 20
       #page-results.dropdown.dropdown-tip.dropdown-relative
         %ul.dropdown-menu
@@ -143,51 +143,11 @@
           %li
             %a{:href => "#"} 100
 
-  - if current_page.data.view == "list"
-
-    .action-bar-item.columns
-      %label Columns
-      %a.button.btn-s.results-page{"data-dropdown" => "#columns", :href => "#", :title => "Click to show options"}
-        %span Columns
-      #columns.dropdown.dropdown-tip.dropdown-relative
-        %ul.dropdown-panel
-          %form
-            .form-wrapper
-              - if current_page.data.search_page == "newsmedia"
-
-                - for item in data.search.columns_newsmedia_an
-                  %li
-                    .form-item.form-type-checkbox
-                      %input.form-checkbox{:id => "#{item}", :type => "checkbox", :value => "#{item}"}
-                      %label.option{:for => "#{item}"} #{item}
-
-              - if current_page.data.search_page == "members"
-
-                - for item in data.search.columns_members_lu_first
-                  %li
-                    .form-item.form-type-checkbox
-                      %input.form-checkbox{:id => "#{item}", :checked => "checked", :type => "checkbox", :value => "#{item}"}
-                      %label.option{:for => "#{item}"} #{item}
-                %hr
-                - for item in data.search.columns_members_lu_second
-                  %li
-                    .form-item.form-type-checkbox
-                      %input.form-checkbox{:id => "#{item}", :type => "checkbox", :value => "#{item}"}
-                      %label.option{:for => "#{item}"} #{item}
-
-                - if current_page.data.user_role == "cm"
-                  %hr
-                  - for item in data.search.columns_members_lu_third
-                    %li
-                      .form-item.form-type-checkbox
-                        %input.form-checkbox{:id => "#{item}", :type => "checkbox", :value => "#{item}"}
-                        %label.option{:for => "#{item}"} #{item}
-
   - if current_page.data.user_role == "cm"
 
     .action-bar-item.actions
       %label Actions
-      %a.button.btn-s.results-page{"data-dropdown" => "#actions", :href => "#", :title => "Click to show options"}
+      %a.button.results-page{"data-dropdown" => "#actions", :href => "#", :title => "Click to show options"}
         %span Actions
       #actions.dropdown.dropdown-tip.dropdown-relative
         %ul.dropdown-menu

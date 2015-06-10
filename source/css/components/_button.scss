@@ -125,27 +125,6 @@
   color: #dd4b39;
 }
 
-
-.backtotop-button {
-  @extend %button;
-  bottom: 0;
-  position: fixed;
-  z-index: 100;
-  display: none;
-  right: 30px;
-  height: 40px;
-  margin-bottom: -10px;
-  transition: margin-bottom 150ms linear;
-
-  &:active,
-  &:hover {
-    margin-bottom: -2px;
-    color: $base;
-    top: auto;
-  }
-
-}
-
 .load-more-btn {
   margin-top: $def-mar-half;
 }

@@ -1,0 +1,51 @@
+.tablesaw-sortable,
+.tablesaw-sortable thead,
+.tablesaw-sortable thead tr,
+.tablesaw-sortable thead tr th {
+  position: relative;
+}
+
+.tablesaw-sortable thead th {
+  vertical-align: top;
+}
+
+.tablesaw-sortable-btn {
+  min-width: 100%;
+  color: $heading;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  text-transform: inherit;
+  position: relative;
+}
+
+.tablesaw-sortable-ascending button:after,
+.tablesaw-sortable-descending button:after {
+  font-family: 'greenwire';
+  speak: none;
+  text-align: center;
+  display: inline-block;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 .5em;
+}
+
+.tablesaw-sortable .tablesaw-sortable-head.tablesaw-sortable-ascending button:after {
+  content: '\e889';
+}
+
+.tablesaw-sortable .tablesaw-sortable-head.tablesaw-sortable-descending button:after {
+  content: '\e886';
+}
+
+.tablesaw-sortable .not-applicable:after {
+  content: "--";
+  display: block;
+}
+
+.tablesaw-sortable .not-applicable span {
+  display: none;
+}

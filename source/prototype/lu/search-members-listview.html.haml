@@ -6,7 +6,6 @@ search_page: members
 listview: search-members-listview.html
 teaserview: search-members.html
 view: list
-design_status: Needs review
 action_menu:
   -
     id: "#content"
@@ -42,20 +41,20 @@ action_menu:
             %thead
               %tr
                 %th.views-field-avatar{"data-tablesaw-priority" => "persist"}
-                %th.views-field-name{"data-tablesaw-priority" => "persist", "data-tablesaw-sortable-col" => ""} Name
-                %th.views-field-username{"data-tablesaw-sortable-col" => "#"} Username
-                %th{"data-tablesaw-sortable-col" => ""} Location
-                %th{"data-tablesaw-sortable-col" => ""} Date joined
-                %th{"data-tablesaw-sortable-col" => "", "data-tablesaw-sortable-default-col" => "#"} Relevance
-                %th Member roles
-                %th Proximity to me
-                %th Profession
-                %th Language preferences
-                %th School
-                %th Skills
+                %th.views-field-name{"data-tablesaw-priority" => "1", "data-tablesaw-sortable-col" => ""} Name
+                %th.views-field-username{"data-tablesaw-priority" => "2", "data-tablesaw-sortable-col" => "#"} Username
+                %th{"data-tablesaw-priority" => "3", "data-tablesaw-sortable-col" => ""} Location
+                %th{"data-tablesaw-priority" => "4", "data-tablesaw-sortable-col" => ""} Date joined
+                %th{"data-tablesaw-priority" => "5", "data-tablesaw-sortable-col" => "", "data-tablesaw-sortable-default-col" => "#"} Relevance
+                %th{"data-tablesaw-priority" => "6"} Member roles
+                %th{"data-tablesaw-priority" => "6"} Proximity to me
+                %th{"data-tablesaw-priority" => "6"} Profession
+                %th{"data-tablesaw-priority" => "6"} Language preferences
+                %th{"data-tablesaw-priority" => "6"} School
+                %th{"data-tablesaw-priority" => "6"} Skills
 
             %tbody
-              - 50.times do |num|
+              - 20.times do |num|
                 %tr
                   %td
                     %img{:alt => "Example of image.", :src => "/photos/75/people1.jpg"}

@@ -4,36 +4,6 @@ body_class: not-front logged-in page-profile l-two-column
 profile: home
 access: other
 user_role: lu
-design_status: Work in progress
-action_menu:
-  -
-    id: "#block-user-profile"
-    label: "Profile"
-    icon: "user"
-  -
-    id: "#block-comments"
-    label: "Shoutbox"
-    icon: "chat"
-  -
-    id: "#block-friends"
-    label: "Friends"
-    icon: "users"
-  -
-    id: "#block-user-events"
-    label: "Events"
-    icon: "event"
-  -
-    id: "#block-skills"
-    label: "Skills"
-    icon: "skills"
-  -
-    id: "#block-user-groups"
-    label: "Groups"
-    icon: "users"
-  -
-    id: "#block-user-activity"
-    label: "Activity log"
-    icon: "clock"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -45,7 +15,7 @@ action_menu:
       #{item.first_name} #{item.last_name}
     #block-user-profile.block.current
       %i.block-icon.icon-bg-user.icon-user
-      %h1#page-title.block-title
+      %h2.block-title{"data-amtitle" => "Profile"}
         Profile
 
       .content
@@ -101,7 +71,7 @@ action_menu:
 
     #block-skills.block
       %i.block-icon.icon-bg-user.icon-skills
-      %h2.block-title
+      %h2.block-title{"data-amtitle" => "Skills"}
         Skills
 
       .content

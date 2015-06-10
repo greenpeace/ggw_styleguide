@@ -5,15 +5,6 @@ user_role: lu
 search_page: members
 listview: search-members-listview.html
 teaserview: search-members.html
-action_menu:
-  -
-    id: "#content"
-    label: "Search members"
-    icon: "users"
-  -
-    id: "#block-filter"
-    label: "Filter"
-    icon: "adjust"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -23,7 +14,7 @@ action_menu:
   #content.block.current
 
     %i.block-icon.icon-bg-user.icon-search
-    %h1.block-title#page-title
+    %h1.block-title{"data-amtitle" => "Search members"}
       = current_page.data.title
 
     .content
@@ -62,7 +53,7 @@ action_menu:
 %aside.l-sidebar.sidebar
   #block-filter.block
     %i.block-icon.icon-bg-user.icon-adjust
-    %h2.block-title Filter
+    %h2.block-title{"data-amtitle" => "Filter"} Filter
     .content
       %form
         = partial :"blocks/search_filters/location_range"

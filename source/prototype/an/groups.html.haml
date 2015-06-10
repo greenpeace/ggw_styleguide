@@ -2,19 +2,6 @@
 title: Groups
 body_class: not-front not-logged-in page-groups l-has-sidebar
 user_role: an
-action_menu:
-  -
-    id: "#content"
-    label: "Groups"
-    icon: "users"
-  -
-    id: "#block-find-groups"
-    label: "Find groups"
-    icon: "search"
-  -
-    id: "#create-account"
-    label: "Create account"
-    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -26,7 +13,7 @@ action_menu:
 .l-main-column
   #content.block.current
     %i.block-icon.icon-bg-group.icon-users
-    %h1#page-title.block-title
+    %h1.block-title{"data-amtitle" => "Groups"}
       = current_page.data.title
     .content
       .tabwrapper
@@ -64,9 +51,8 @@ action_menu:
         %a.button{:href => "#"} show some more
 
 %aside.l-sidebar.sidebar
-  .content
-    = partial :"blocks/find_groups"
-    = partial :"blocks/an/create_account"
+  = partial :"blocks/find_groups"
+  = partial :"blocks/an/create_account"
 
 
 = javascript_include_tag "leaflet"

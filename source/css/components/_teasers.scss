@@ -295,14 +295,6 @@
     }
   }
 
-  .field-type-date {
-    padding-left: 20px;
-
-    @include breakpoint($tab) {
-      padding: 0;
-    }
-  }
-
   .submitted {
     position: absolute;
 

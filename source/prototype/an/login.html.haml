@@ -2,16 +2,6 @@
 title: Login
 body_class: not-front not-logged-in page-login l-has-sidebar
 user_role: an
-design_status: Needs review
-action_menu:
-  -
-    id: "#content"
-    label: "Login form"
-    icon: "login"
-  -
-    id: "#create-account"
-    label: "Create account"
-    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -20,7 +10,7 @@ action_menu:
 
   #content.block.current.login-block
     %i.block-icon.icon-bg-user.icon-login
-    %h1.block-title
+    %h1.block-title{"data-amtitle" => "Login"}
       = current_page.data.title
 
     .content

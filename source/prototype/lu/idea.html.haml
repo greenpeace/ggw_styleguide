@@ -6,28 +6,6 @@ direct_parent:
     name: "Ideas"
     url: "ideas.html"
 user_role: lu
-design_status: Needs review
-action_menu:
-  -
-    id: "#content"
-    label: "Idea"
-    icon: "idea"
-  -
-    id: "#block-comments"
-    label: "Comments"
-    icon: "comment"
-  -
-    id: "#block-go-to-group"
-    label: "Go to group"
-    icon: "users"
-  -
-    id: "#block-get-involved"
-    label: "Get involved"
-    icon: "plus"
-  -
-    id: "#block-subscribe"
-    label: "Updates"
-    icon: "eye"
 ---
 
 
@@ -36,7 +14,7 @@ action_menu:
 .l-main-column
   #content.block.main-content.current
     %i.block-icon.icon-bg-news-media.icon-idea
-    %h1#page-title.block-title
+    %h1.block-title{"data-amtitle" => "Idea"}
       = lorem.words 10
     .content
       %article.view-mode-full
@@ -48,7 +26,7 @@ action_menu:
           -
           %span.submitted-date June 5th 2014 - 11:29
 
-          %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
+          %a.comments-shortcut.show-block{:href => "#block-comments", "data-scroll" => ""}
             %i.icon-comment
             10 comments
 

@@ -6,19 +6,6 @@ direct_parent:
     name: "Blogs"
     url: "blogs.html"
 user_role: an
-action_menu:
-  -
-    id: "#content"
-    label: "Blog"
-    icon: "blog"
-  -
-    id: "#block-go-to-group"
-    label: "Go to group"
-    icon: "users"
-  -
-    id: "#create-account"
-    label: "Create account"
-    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -28,7 +15,7 @@ action_menu:
   .l-main-column
     #content.block.main-content.current
       %i.block-icon.icon-bg-news-media.icon-blog
-      %h1.block-title
+      %h1.block-title{"data-amtitle" => "Blog"}
         = item.title
       .content
         %article.view-mode-full

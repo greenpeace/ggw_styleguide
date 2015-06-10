@@ -13,8 +13,8 @@ teaserview: search-newsmedia.html
 
   #content.block.current
 
-    %i.block-icon.icon-bg-default.icon-search
-    %h1.block-title#page-title
+    %i.block-icon.icon-bg-news-media.icon-search
+    %h1.block-title{"data-amtitle" => "News & media"}
       = current_page.data.title
 
     .content
@@ -43,9 +43,9 @@ teaserview: search-newsmedia.html
 
 
 %aside.l-sidebar.sidebar
-  .block
+  .block#block-filter-news-media
     %i.block-icon.icon-bg-news-media.icon-adjust
-    %h2.block-title Filter
+    %h2.block-title{"data-amtitle" => "Filter"} Filter
     .content
       %form
 

@@ -8,20 +8,6 @@ direct_parent:
     name: "Grace O'Flynn"
     url: "./../lu/my-profile.html"
 user_role: lu
-design_status: Needs review
-action_menu:
-  -
-    id: "#content"
-    label: "Manage friends"
-    icon: "users"
-  -
-    id: "#block-go-to-group"
-    label: "Groups"
-    icon: "users"
-  -
-    id: "#block-find-friends"
-    label: "Add new friends"
-    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -32,7 +18,7 @@ action_menu:
       Grace O'Flynn
   #content.block.current
     %i.block-icon.icon-bg-user.icon-users
-    %h2.block-title
+    %h2.block-title{"data-amtitle" => "Manage friends"}
       Manage friends
 
     .content
@@ -82,7 +68,7 @@ action_menu:
 
   #block-find-friends.block
     %i.block-icon.icon-bg-user.icon-user-add
-    %h2.block-title
+    %h2.block-title{"data-amtitle" => "Add friends"}
       Add new friends
     .content
       .form-item

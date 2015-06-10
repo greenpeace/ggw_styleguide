@@ -6,20 +6,6 @@ direct_parent:
     name: "Photos"
     url: "photos.html"
 user_role: an
-design_status: Work in progress
-action_menu:
-  -
-    id: "#content"
-    label: "Photo album"
-    icon: "photo"
-  -
-    id: "#block-go-to-group"
-    label: "Go to group"
-    icon: "users"
-  -
-    id: "#create-account"
-    label: "Create account"
-    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -29,7 +15,7 @@ action_menu:
   .l-main-column
     #content.block.current.main-content
       %i.block-icon.icon-bg-news-media.icon-photo
-      %h1.block-title
+      %h1.block-title{"data-amtitle" => "Photo album"}
         = item.title
       .content
         %article.view-mode-full

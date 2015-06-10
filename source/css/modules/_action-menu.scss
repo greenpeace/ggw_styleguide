@@ -21,7 +21,7 @@
   }
 
   &.current {
-    display: none;
+    background: darken($green2, 5%);
   }
 
 }

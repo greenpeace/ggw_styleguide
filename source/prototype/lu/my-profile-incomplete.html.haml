@@ -5,43 +5,6 @@ profile: home
 access: mine
 user_role: lu
 user_context : first-login
-action_menu:
-  -
-    id: "#block-user-profile"
-    label: "My profile"
-    icon: "user"
-  -
-    id: "#block-user-account"
-    label: "My settings"
-    icon: "settings"
-  -
-    id: "#block-skills"
-    label: "My skills"
-    icon: "skills"
-  -
-    id: "#block-friends"
-    label: "My friends"
-    icon: "users"
-  -
-    id: "#block-comments"
-    label: "My shoutbox"
-    icon: "chat"
-  -
-    id: "#block-user-events"
-    label: "My events"
-    icon: "event"
-  -
-    id: "#block-user-groups"
-    label: "My groups"
-    icon: "users"
-  -
-    id: "#block-user-subscriptions"
-    label: "My subscriptions"
-    icon: "subscription"
-  -
-    id: "#block-user-activity"
-    label: "My activity log"
-    icon: "clock"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -63,7 +26,7 @@ action_menu:
               %a{:href => "./edit-user-account.html"} Edit account
 
     %i.block-icon.icon-bg-user.icon-user
-    %h2.block-title
+    %h2.block-title{"data-amtitle" => "My profile"}
       Profile
 
     .content
@@ -119,7 +82,7 @@ action_menu:
         %a.button{:href => "./edit-user-profile.html#section-skills", :title => "Edit skills"} Edit
 
     %i.block-icon.icon-bg-user.icon-skills
-    %h2.block-title
+    %h2.block-title{"data-amtitle" => "My skills"}
       Skills
 
     .content

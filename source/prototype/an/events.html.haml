@@ -2,20 +2,6 @@
 title: Events
 body_class: not-front not-logged-in page-events l-has-sidebar
 user_role: an
-design_status: Needs review
-action_menu:
-  -
-    id: "#content"
-    label: "Article"
-    icon: "event"
-  -
-    id: "#block-find-events"
-    label: "Find events"
-    icon: "search"
-  -
-    id: "#create-account"
-    label: "Create account"
-    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -27,7 +13,7 @@ action_menu:
 .l-main-column
   #content.block.current
     %i.block-icon.icon-bg-event.icon-event
-    %h1#page-title.block-title
+    %h1.block-title{"data-amtitle" => "Events"}
       = current_page.data.title
     .content
       = partial :"teasers/event-no-image"
@@ -37,9 +23,8 @@ action_menu:
       = partial :"teasers/event-dummy2"
 
 %aside.l-sidebar.sidebar
-  .content
-    = partial :"blocks/find_events"
-    = partial :"blocks/an/create_account"
+  = partial :"blocks/find_events"
+  = partial :"blocks/an/create_account"
 
 = javascript_include_tag "leaflet"
 = javascript_include_tag "map-data"

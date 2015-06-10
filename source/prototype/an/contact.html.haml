@@ -2,7 +2,6 @@
 title: Contact Greenpeace Greenwire
 body_class: not-front not-logged-in page-contact l-has-sidebar
 user_role: an
-design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -12,13 +11,13 @@ design_status: Needs review
   #content.block.current
 
     %i.block-icon.icon-bg-default.icon-mail
-    %h1.block-title#page-title
+    %h1.block-title{"data-amtitle" => "Contact"}
       = current_page.data.title
 
     .content
       %p
         Questions? Consider reading the
-        %a{:href => "faq.html"} FAQ
+        %a{:href => "./faq.html"} FAQ
         first.
         %br
         Is your answer not there? We'll be glad to help! Leave a message.

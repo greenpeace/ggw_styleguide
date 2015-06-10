@@ -6,19 +6,6 @@ search_page: newsmedia
 filter_type: photos
 listview: search-newsmedia-listview.html
 teaserview: search-newsmedia.html
-action_menu:
-  -
-    id: "#content"
-    label: "Photos"
-    icon: "photo"
-  -
-    id: "#block-find-photos"
-    label: "Find photos"
-    icon: "search"
-  -
-    id: "#create-account"
-    label: "Create account"
-    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -28,7 +15,7 @@ action_menu:
   #content.block.current
 
     %i.block-icon.icon-bg-news-media.icon-photo
-    %h1.block-title#page-title
+    %h1.block-title{"data-amtitle" => "Photos"}
       = current_page.data.title
 
     .content
@@ -48,9 +35,9 @@ action_menu:
             %a.button{:href => "#"} show some more
 
 %aside.l-sidebar.sidebar
-  .block
+  .block#block-find-photos
     %i.block-icon.icon-bg-news-media.icon-adjust
-    %h2.block-title Filter
+    %h2.block-title{"data-amtitle" => "Filter"} Filter
     .content
       %form
 

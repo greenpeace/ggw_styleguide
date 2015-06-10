@@ -6,20 +6,6 @@ direct_parent:
     name: "News"
     url: "news.html"
 user_role: an
-design_status: Needs review
-action_menu:
-  -
-    id: "#content"
-    label: "Article"
-    icon: "news"
-  -
-    id: "#block-go-to-group"
-    label: "Go to group"
-    icon: "users"
-  -
-    id: "#create-account"
-    label: "Create account"
-    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -29,7 +15,7 @@ action_menu:
   .l-main-column
     #content.block.main-content.current
       %i.block-icon.icon-bg-news-media.icon-news
-      %h1#page-title.block-title
+      %h1.block-title{"data-amtitle" => "News article"}
         = item.title
       .content
         %article.view-mode-full

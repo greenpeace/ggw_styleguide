@@ -116,7 +116,7 @@ primary_an:
         url: "/prototype/an/ideas.html"
   -
     name: "Info"
-    url: "/prototype/an/about.html"
+    url: "#"
     sub:
       -
         name: "About"

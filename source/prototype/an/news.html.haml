@@ -6,19 +6,6 @@ search_page: newsmedia
 filter_type: news
 listview: search-newsmedia-listview.html
 teaserview: search-newsmedia.html
-action_menu:
-  -
-    id: "#content"
-    label: "News"
-    icon: "news"
-  -
-    id: "#block-find-news"
-    label: "Find news"
-    icon: "search"
-  -
-    id: "#create-account"
-    label: "Create account"
-    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -28,7 +15,7 @@ action_menu:
   #content.block.current
 
     %i.block-icon.icon-bg-news-media.icon-news
-    %h1.block-title#page-title
+    %h1.block-title{"data-amtitle" => "News"}
       = current_page.data.title
 
     .content
@@ -58,12 +45,11 @@ action_menu:
             %a.button{:href => "#"} show some more
 
 %aside.l-sidebar.sidebar
-  .block
+  .block#block-find-news
     %i.block-icon.icon-bg-news-media.icon-adjust
-    %h2.block-title Filter
+    %h2.block-title{"data-amtitle" => "Filter"} Filter
     .content
       %form
-
         = partial :"blocks/search_filters/type"
         = partial :"blocks/search_filters/created"
         = partial :"blocks/search_filters/tags"

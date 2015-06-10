@@ -4,32 +4,9 @@ body_class: not-front not-logged-in page-type-event l-has-sidebar node-full
 direct_parent:
   -
     name: "Events"
-    url: "search-events.html"
+    url: "events.html"
 user_role: an
 mapsds: event
-design_status: Work in progress
-script: leaflet
-action_menu:
-  -
-    id: "#content"
-    label: "Event"
-    icon: "event"
-  -
-    id: "#block-enroll"
-    label: "RSVP"
-    icon: "login"
-  -
-    id: "#block-comments"
-    label: "Comments"
-    icon: "chat"
-  -
-    id: "#block-go-to-group"
-    label: "Go to group"
-    icon: "users"
-  -
-    id: "#create-account"
-    label: "Create account"
-    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -39,7 +16,7 @@ action_menu:
   .l-main-column
     #content.block.main-content.current
       %i.block-icon.icon-bg-event.icon-event
-      %h1.block-title
+      %h1.block-title{"data-amtitle" => "Event"}
         = item.title
       .content
         %article.view-mode-full

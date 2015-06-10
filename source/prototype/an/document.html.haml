@@ -6,20 +6,6 @@ direct_parent:
     name: "Documents"
     url: "documents.html"
 user_role: an
-design_status: Needs review
-action_menu:
-  -
-    id: "#content"
-    label: "Document"
-    icon: "document"
-  -
-    id: "#block-go-to-group"
-    label: "Go to group"
-    icon: "users"
-  -
-    id: "#create-account"
-    label: "Create account"
-    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -30,7 +16,7 @@ action_menu:
   .l-main-column
     #content.block.current.main-content
       %i.block-icon.icon-bg-news-media.icon-document
-      %h1.block-title
+      %h1.block-title{"data-amtitle" => "Document"}
         = item.title
 
       .content

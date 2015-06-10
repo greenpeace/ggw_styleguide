@@ -2,16 +2,6 @@
 title: My messages - Inbox
 body_class: not-front logged-in page-type-message l-two-column
 user_role: lu
-design_status: Work in progress
-action_menu:
-  -
-    id: "#content"
-    label: "Inbox"
-    icon: "mail"
-  -
-    id: "#block-compose-message"
-    label: "New message"
-    icon: "pencil"
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -19,7 +9,7 @@ action_menu:
 .l-main-column
   #content.block.main-content.current
     %i.block-icon.icon-bg-user.icon-mail
-    %h1.block-title My private messages
+    %h1.block-title{"data-amtitle" => "Inbox"} Inbox
     .content
       %section.notifications-section.messages
         - data.messages.alen_message.each do |item|

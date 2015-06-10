@@ -10,7 +10,7 @@
           %a{:href => "./photo-album-created.html"}
             = item.title
         .submitted
-          %a.type.document{:href => "./photos.html"} Photos
+          %a.type.photo{:href => "./photos.html"} Photos
           = succeed ", by" do
             = item.date
           - if current_page.data.user_role != "an"

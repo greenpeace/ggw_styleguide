@@ -13,7 +13,7 @@
           %a.button.modal-inline{:href => "#confirm-group-leave"} Leave this group
 
     %i.block-icon.icon-users.icon-bg-group
-    %h2.block-title About
+    %h2.block-title{"data-amtitle" => "About"} About
     .content
 
       .field-name-group-image
@@ -32,23 +32,25 @@
 
       .clear
 
-      .field.field-group-primary-contact.field-inline-block
-        .field-label Primary contact
-        .field-item
-          - if current_page.data.user_role == "lu"
-            %a{:href => "./profile.html"}
+      - if item.primary_contact != ""
+        .field.field-group-primary-contact.field-inline-block
+          .field-label Primary contact
+          .field-item
+            - if current_page.data.user_role == "lu"
+              %a{:href => "./profile.html"}
+                = item.primary_contact
+            - else
               = item.primary_contact
-          - else
-            = item.primary_contact
 
-      .field.field-group-secondary-contact.field-inline-block
-        .field-label Secondary contact
-        .field-item
-          - if current_page.data.user_role == "lu"
-            %a{:href => "./profile.html"}
+      - if item.secondary_contact != ""
+        .field.field-group-secondary-contact.field-inline-block
+          .field-label Secondary contact
+          .field-item
+            - if current_page.data.user_role == "lu"
+              %a{:href => "./profile.html"}
+                = item.secondary_contact
+            - else
               = item.secondary_contact
-          - else
-            = item.secondary_contact
 
       .field.field-group-mission
         .field-label Mission

@@ -24,9 +24,14 @@
 
         // find all of the .items that arent visible and add/clone them to the overflow menu
         fullMenu.children('li').filter(function() {
-            var elementOffset = $(this).position().top;
-            return elementOffset + $(this).height() > fullHeight;
-        }).addClass('moved').clone(true).prependTo(overFlowMenu[0]).children('a').removeClass('tab');
+          var elementOffset = $(this).position().top;
+          return elementOffset + $(this).height() > fullHeight;
+        })
+        .addClass('moved')
+        .clone(true)
+        .prependTo(overFlowMenu[0])
+        .children('a')
+        .removeClass('tab');
 
         fullMenu.children('li:not(.moved)').each(function() {
           totalWidth += $(this).outerWidth(true);

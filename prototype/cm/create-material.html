@@ -12,11 +12,11 @@
     <title>Create new material — GGW Style Guide</title>
     <script src="../../js/lazysizes-e72de5ec.js" type="text/javascript"></script>
     <!--[if lte IE 8]>
-      <link href="../../css/old-ie-42e3c7c2.css" rel="stylesheet" type="text/css" />
+      <link href="../../css/old-ie-9f5b6312.css" rel="stylesheet" type="text/css" />
       <script src="../../js/html5shiv.min-cc7152cd.js" type="text/javascript"></script>
     <![endif]-->
     <!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
-    <link href="../../css/all-dd662f94.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/all-2a9bc8ae.css" rel="stylesheet" type="text/css" />
     <!--<![endif]-->
     <script>
       !function(){"use strict";function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===e}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(o))c(localStorage.font_css_cache);else{var n=new XMLHttpRequest;n.open("GET",o,!0),e(n,"load",function(){4===n.readyState&&(c(n.responseText),localStorage.font_css_cache=n.responseText,localStorage.font_css_cache_file=o)}),n.send()}else{var a=document.createElement("link");a.href=o,a.rel="stylesheet",a.type="text/css",document.getElementsByTagName("head")[0].appendChild(a),document.cookie="font_css_cache"}}function c(e){var t=document.createElement("style");t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t)}var o="/css/fonticons.woff.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}();
@@ -273,95 +273,6 @@
           </div>
         </div>
       </header>
-      <div class='block login-block block-no-icon white-popup mfp-hide' id='login-block'>
-        <h2 class='block-title'>Login</h2>
-        <div class='content'>
-          <form action='../lu/index.html' method='get'>
-            <div class='signup-wrapper'>
-              <a class='button btn-l btn-block btn-social-fb'>
-                <i class='icon icon-facebook'></i>
-                Log in with Facebook
-              </a>
-              <a class='button btn-l btn-block btn-social-gp'>
-                <i class='icon icon-gplus'></i>
-                Log in with Google+
-              </a>
-            </div>
-            <div class='signup-or-separator'>
-              <label>or</label>
-              <hr>
-            </div>
-            <div class='signup-wrapper'>
-              <div class='form-wrapper'>
-                <div class='form-item'>
-                  <input class='username form-text' max-length='60' placeholder='Username' type='text'>
-                  <i class='icon-user'></i>
-                </div>
-                <div class='form-item'>
-                  <input :max-length='60' class='form-text' placeholder='Password' type='password'>
-                  <i class='icon-password'></i>
-                </div>
-                <div class='form-item'>
-                  <a class='pull-right small-link' href=''>Lost password?</a>
-                </div>
-              </div>
-              <div class='form-actions form-wrapper'>
-                <div class='form-item'>
-                  <input class='button btn-primary btn-l btn-block' type='submit' value='Log in'>
-                </div>
-                <hr>
-                <p>
-                  No account yet?
-                  <a class='modal-inline' href='#signup-block'>Sign up</a>
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class='block signup-block block-no-icon white-popup mfp-hide' id='signup-block'>
-        <h2 class='block-title'>Sign up</h2>
-        <div class='content'>
-          <form action='../an/register-step2.html' method='get'>
-            <div class='signup-wrapper'>
-              <a class='button btn-l btn-block btn-social-fb'>
-                <i class='icon icon-facebook'></i>
-                Sign up with Facebook
-              </a>
-              <a class='button btn-l btn-block btn-social-gp'>
-                <i class='icon icon-gplus'></i>
-                Sign up with Google+
-              </a>
-            </div>
-            <div class='signup-or-separator'>
-              <label>or</label>
-              <hr>
-            </div>
-            <div class='signup-wrapper'>
-              <div class='form-wrapper'>
-                <div class='form-item'>
-                  <input class='username form-text' max-length='60' placeholder='Username' type='text'>
-                  <i class='icon-user'></i>
-                </div>
-                <div class='form-item'>
-                  <input :max-length='60' class='form-text' placeholder='email' type='text'>
-                  <i class='icon-mail'></i>
-                </div>
-              </div>
-              <div class='form-actions form-wrapper'>
-                <div class='form-item'>
-                  <input class='button btn-primary btn-l btn-block' type='submit' value='Sign up with Email'>
-                </div>
-                <hr>
-                <p>
-                  Already a member?
-                  <a class='modal-inline' href='#login-block'>Log in</a>
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
       <div class='l-main container' id='main'>
         <noscript>
           <div class='alert alert-warning' role='alert'>
@@ -379,7 +290,7 @@
               </a>
             </li>
             <li class='breadcrumb-item'>
-              <a class='breadcrumb-link' href='materials.html'>
+              <a class='breadcrumb-link' href='../lu/materials.html'>
                 Materials
               </a>
             </li>
@@ -393,404 +304,406 @@
             <i class='block-icon icon-material icon-bg-news-media'></i>
             <h2 class='block-title'>Create material</h2>
             <div class='content'>
-              <a class='sf-navbtn' href='#section-title'>
+              <a class='sf-navbtn' data-scroll='' href='#section-title'>
                 Title, body & image
               </a>
-              <a class='sf-navbtn' href='#section-specs'>
+              <a class='sf-navbtn' data-scroll='' href='#section-specs'>
                 Specifications
               </a>
-              <a class='sf-navbtn' href='#section-language'>
+              <a class='sf-navbtn' data-scroll='' href='#section-language'>
                 Languages & tags
               </a>
-              <a class='sf-navbtn' href='#section-visibility'>
+              <a class='sf-navbtn' data-scroll='' href='#section-visibility'>
                 Visibility
               </a>
             </div>
           </div>
         </aside>
         <div class='l-main-column'>
-          <section class='block current main-content' id='section-title'>
-            <i class='block-icon icon-pencil icon-bg-action'></i>
-            <h2 class='block-title'>Title, description & image</h2>
-            <div class='content'>
-              <div class='form-wrapper'>
-                <div class='form-item field-name-title'>
-                  <label class='form-label' for='edit-field-title'>
-                    Title
-                    <span class='form-required' title='This field is required.'>*</span>
-                  </label>
-                  <input class='form-text' id='edit-field-title' name='edit-field-title' tabindex='1' type='text' value=''>
-                </div>
-                <div class='form-item'>
-                  <label class='form-label' for='field-edit-body'>
-                    Description
-                    <span class='form-required' title='This field is required.'>*</span>
-                  </label>
-                  <textarea class='ckeditor' cols='80' id='field-edit-description' name='field-edit-description' rows='15' tabindex='2'></textarea>
-                </div>
-                <div class='form-item'>
-                  <label class='form-label' for='field-edit-image'>
-                    Image
-                    <span class='form-required' title='This field is required.'>*</span>
-                  </label>
-                  <div class='media-widget media'>
-                    <div class='preview media-figure'></div>
-                    <div class='media-body'>
-                      <div class='form-description'>
-                        Files must be smaller than3 MB <br/>
-                        Allowed file types: png gif jpg jpeg <br/>
-                        Images must be larger than 400x300 pixels.
+          <div class='content'>
+            <section class='block current main-content' id='section-title'>
+              <i class='block-icon icon-pencil icon-bg-action'></i>
+              <h2 class='block-title'>Title, description & image</h2>
+              <div class='content'>
+                <div class='form-wrapper'>
+                  <div class='form-item field-name-title'>
+                    <label class='form-label' for='edit-field-title'>
+                      Title
+                      <span class='form-required' title='This field is required.'>*</span>
+                    </label>
+                    <input class='form-text' id='edit-field-title' name='edit-field-title' tabindex='1' type='text' value=''>
+                  </div>
+                  <div class='form-item'>
+                    <label class='form-label' for='field-edit-body'>
+                      Description
+                      <span class='form-required' title='This field is required.'>*</span>
+                    </label>
+                    <textarea class='ckeditor' cols='80' id='field-edit-description' name='field-edit-description' rows='15' tabindex='2'></textarea>
+                  </div>
+                  <div class='form-item'>
+                    <label class='form-label' for='field-edit-image'>
+                      Image
+                      <span class='form-required' title='This field is required.'>*</span>
+                    </label>
+                    <div class='media-widget media'>
+                      <div class='preview media-figure'></div>
+                      <div class='media-body'>
+                        <div class='form-description'>
+                          Files must be smaller than3 MB <br/>
+                          Allowed file types: png gif jpg jpeg <br/>
+                          Images must be larger than 400x300 pixels.
+                        </div>
+                        <input accept='image/*' class='element-invisible' id='uploadimage' type='file' value='upload'>
+                        <button class='button launcher' tabindex='3'>select image</button>
+                        <a class='button remove element-invisible' href='#'>remove image</a>
                       </div>
-                      <input accept='image/*' class='element-invisible' id='uploadimage' type='file' value='upload'>
-                      <button class='button launcher' tabindex='3'>select image</button>
-                      <a class='button remove element-invisible' href='#'>remove image</a>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
-          <section class='block' id='section-specs'>
-            <i class='block-icon icon-material icon-bg-action'></i>
-            <h2 class='block-title'>Specifications</h2>
-            <div class='content'>
-              <div class='form-wrapper'>
-                <div class='form-item form-type-select'>
-                  <label class='form-label' for='campaign'>Related to campaign</label>
-                  <select class='chosen-select' data-placeholder='Choose a campaign' id='campaign' multiple='multiple' tabindex='4'>
-                    <option>
-                      at aut esse qui
-                    </option>
-                    <option>
-                      rerum atque hic harum
-                    </option>
-                    <option>
-                      tempore quae molestiae provident
-                    </option>
-                    <option>
-                      sint qui voluptatem quas
-                    </option>
-                    <option>
-                      enim ut perspiciatis repellat
-                    </option>
-                    <option>
-                      quos incidunt dignissimos nam
-                    </option>
-                    <option>
-                      suscipit est sed quis
-                    </option>
-                    <option>
-                      quia vero reiciendis autem
-                    </option>
-                    <option>
-                      sint vero eligendi asperiores
-                    </option>
-                    <option>
-                      quod quas omnis vero
-                    </option>
-                    <option>
-                      reiciendis quia accusantium cum
-                    </option>
-                    <option>
-                      non id dolores quia
-                    </option>
-                    <option>
-                      saepe beatae quidem error
-                    </option>
-                    <option>
-                      distinctio est quos et
-                    </option>
-                    <option>
-                      quisquam et voluptatem voluptatem
-                    </option>
-                    <option>
-                      et quis at deserunt
-                    </option>
-                    <option>
-                      sit laboriosam qui nihil
-                    </option>
-                    <option>
-                      sed eum provident fuga
-                    </option>
-                    <option>
-                      eveniet voluptatibus illo et
-                    </option>
-                    <option>
-                      quo repellat quia repellendus
-                    </option>
-                  </select>
-                </div>
-                <div class='form-item form-type-select'>
-                  <label class='form-label' for='purpose'>Purpose</label>
-                  <div class='form-description'>What can this item best be used for ?</div>
-                  <select class='chosen-select' data-placeholder='Choose a purpose' id='purpose' multiple='multiple' tabindex='5'>
-                    <option>Decoration</option>
-                    <option>Education</option>
-                    <option>Electronics</option>
-                    <option>Merchandise</option>
-                    <option>Other</option>
-                    <option>Stand Materials</option>
-                    <option>Suits</option>
-                    <option>Volunteers Clothing</option>
-                  </select>
-                </div>
-                <div class='form-item form-type-select'>
-                  <label class='form-label' for='state'>Purpose</label>
-                  <div class='form-description'>What state is the item in ?</div>
-                  <select class='form-select' id='state' tabindex='6'>
-                    <option>Bad</option>
-                    <option>Fair</option>
-                    <option>Good</option>
-                    <option>As new</option>
-                  </select>
-                </div>
-                <div class='form-item form-type-select'>
-                  <label class='form-label' for='material'>Material type</label>
-                  <div class='form-description'>Select the type of material.</div>
-                  <select class='form-select' id='material' tabindex='7'>
-                    <option>Metal</option>
-                    <option>Paper</option>
-                    <option>Plastic</option>
-                    <option>Textile</option>
-                    <option>Wood</option>
-                    <option>Other material</option>
-                  </select>
-                </div>
-                <div class='form-item form-type-select'>
-                  <label class='form-label' for='location'>Material location</label>
-                  <div class='form-description'>Where can this item be found?</div>
-                  <select class='form-select' id='location' tabindex='8'>
-                    <option>Office storage</option>
-                    <option>Office desk area</option>
-                    <option>Brown container</option>
-                    <option>Green container</option>
-                  </select>
-                </div>
-                <div class='form-item'>
-                  <label class='form-label'>
-                    Quantity
-                    <span class='form-required' title='This field is required.'>*</span>
-                  </label>
-                  <div class='form-description'>How many are there available?</div>
-                  <input class='form-text' tabindex='9' type='text' value=''>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class='block' id='section-language'>
-            <i class='block-icon icon-globe icon-bg-action'></i>
-            <h2 class='block-title'>Languages and tags</h2>
-            <div class='content'>
-              <div class='form-wrapper'>
-                <div class='form-item form-type-select'>
-                  <label class='form-label' for='language'>Language</label>
-                  <div class='form-description'>What language is this news in? You can select more than one language.</div>
-                  <select class='chosen-select' data-placeholder='Choose a language' id='language' multiple='multiple' tabindex='4'>
-                    <option selected=''>English, US</option>
-                    <option>French</option>
-                  </select>
-                </div>
-                <div class='form-item'>
-                  <label>Tags</label>
-                  <input class='form-text form-autocomplete' id='tagsinput' tabindex='5' type='text' value=''>
-                  <div class='autocomplete' id='tagsautocomplete'>
-                    <ul>
-                      <li>
-                        labore
-                      </li>
-                      <li>
-                        qui
-                      </li>
-                      <li>
-                        rem
-                      </li>
-                      <li>
-                        ducimus
-                      </li>
-                      <li>
-                        et
-                      </li>
-                      <li>
-                        non
-                      </li>
-                      <li>
-                        ex
-                      </li>
-                      <li>
-                        quibusdam
-                      </li>
-                      <li>
-                        nihil
-                      </li>
-                      <li>
-                        quis
-                      </li>
-                      <li>
-                        et
-                      </li>
-                      <li>
-                        explicabo
-                      </li>
-                      <li>
-                        dolores
-                      </li>
-                      <li>
-                        magnam
-                      </li>
-                      <li>
-                        voluptatem
-                      </li>
-                      <li>
-                        nihil
-                      </li>
-                      <li>
-                        quaerat
-                      </li>
-                      <li>
-                        eos
-                      </li>
-                      <li>
-                        ut
-                      </li>
-                      <li>
-                        optio
-                      </li>
-                      <li>
-                        provident
-                      </li>
-                      <li>
-                        delectus
-                      </li>
-                      <li>
-                        unde
-                      </li>
-                      <li>
-                        cum
-                      </li>
-                      <li>
-                        numquam
-                      </li>
-                      <li>
-                        minima
-                      </li>
-                      <li>
-                        hic
-                      </li>
-                      <li>
-                        est
-                      </li>
-                      <li>
-                        rerum
-                      </li>
-                      <li>
-                        ullam
-                      </li>
-                      <li>
-                        necessitatibus
-                      </li>
-                      <li>
-                        deserunt
-                      </li>
-                      <li>
-                        temporibus
-                      </li>
-                      <li>
-                        sed
-                      </li>
-                      <li>
-                        error
-                      </li>
-                      <li>
-                        expedita
-                      </li>
-                      <li>
-                        in
-                      </li>
-                      <li>
-                        molestias
-                      </li>
-                      <li>
-                        ea
-                      </li>
-                      <li>
-                        repellendus
-                      </li>
-                      <li>
-                        delectus
-                      </li>
-                      <li>
-                        fugiat
-                      </li>
-                      <li>
-                        dolorem
-                      </li>
-                      <li>
-                        et
-                      </li>
-                      <li>
-                        aliquid
-                      </li>
-                      <li>
-                        maxime
-                      </li>
-                      <li>
-                        accusantium
-                      </li>
-                      <li>
-                        doloribus
-                      </li>
-                      <li>
-                        magnam
-                      </li>
-                      <li>
-                        veritatis
-                      </li>
-                    </ul>
+            </section>
+            <section class='block' id='section-specs'>
+              <i class='block-icon icon-material icon-bg-action'></i>
+              <h2 class='block-title'>Specifications</h2>
+              <div class='content'>
+                <div class='form-wrapper'>
+                  <div class='form-item form-type-select'>
+                    <label class='form-label' for='campaign'>Related to campaign</label>
+                    <select class='chosen-select' data-placeholder='Choose a campaign' id='campaign' multiple='multiple' tabindex='4'>
+                      <option>
+                        aspernatur sint et rerum
+                      </option>
+                      <option>
+                        omnis minima provident eos
+                      </option>
+                      <option>
+                        reiciendis autem veniam optio
+                      </option>
+                      <option>
+                        eligendi labore nemo culpa
+                      </option>
+                      <option>
+                        eos velit sed facilis
+                      </option>
+                      <option>
+                        unde ab maxime voluptate
+                      </option>
+                      <option>
+                        culpa molestiae a iure
+                      </option>
+                      <option>
+                        qui aut et in
+                      </option>
+                      <option>
+                        autem veritatis et qui
+                      </option>
+                      <option>
+                        eligendi dolorum non quo
+                      </option>
+                      <option>
+                        est architecto repudiandae aut
+                      </option>
+                      <option>
+                        molestias voluptatem incidunt neque
+                      </option>
+                      <option>
+                        voluptatem qui laborum soluta
+                      </option>
+                      <option>
+                        omnis sit non esse
+                      </option>
+                      <option>
+                        nisi sed culpa dolorem
+                      </option>
+                      <option>
+                        velit illo corrupti et
+                      </option>
+                      <option>
+                        placeat officia velit architecto
+                      </option>
+                      <option>
+                        itaque illum quasi aut
+                      </option>
+                      <option>
+                        rem voluptatem porro ratione
+                      </option>
+                      <option>
+                        ut facere corrupti qui
+                      </option>
+                    </select>
+                  </div>
+                  <div class='form-item form-type-select'>
+                    <label class='form-label' for='purpose'>Purpose</label>
+                    <div class='form-description'>What can this item best be used for ?</div>
+                    <select class='chosen-select' data-placeholder='Choose a purpose' id='purpose' multiple='multiple' tabindex='5'>
+                      <option>Decoration</option>
+                      <option>Education</option>
+                      <option>Electronics</option>
+                      <option>Merchandise</option>
+                      <option>Other</option>
+                      <option>Stand Materials</option>
+                      <option>Suits</option>
+                      <option>Volunteers Clothing</option>
+                    </select>
+                  </div>
+                  <div class='form-item form-type-select'>
+                    <label class='form-label' for='state'>State</label>
+                    <div class='form-description'>What state is the item in ?</div>
+                    <select class='form-select' id='state' tabindex='6'>
+                      <option>As new</option>
+                      <option>Good</option>
+                      <option>Fair</option>
+                      <option>Bad</option>
+                    </select>
+                  </div>
+                  <div class='form-item form-type-select'>
+                    <label class='form-label' for='material'>Material type</label>
+                    <div class='form-description'>Select the type of material.</div>
+                    <select class='form-select' id='material' tabindex='7'>
+                      <option>Metal</option>
+                      <option>Paper</option>
+                      <option>Plastic</option>
+                      <option>Textile</option>
+                      <option>Wood</option>
+                      <option>Other material</option>
+                    </select>
+                  </div>
+                  <div class='form-item form-type-select'>
+                    <label class='form-label' for='location'>Material location</label>
+                    <div class='form-description'>Where can this item be found?</div>
+                    <select class='form-select' id='location' tabindex='8'>
+                      <option>Office storage</option>
+                      <option>Office desk area</option>
+                      <option>Brown container</option>
+                      <option>Green container</option>
+                    </select>
+                  </div>
+                  <div class='form-item'>
+                    <label class='form-label'>
+                      Quantity
+                      <span class='form-required' title='This field is required.'>*</span>
+                    </label>
+                    <div class='form-description'>How many are there available?</div>
+                    <input class='form-text' tabindex='9' type='text' value=''>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
-          <section class='block' id='section-visibility'>
-            <i class='block-icon icon-eye icon-bg-action'></i>
-            <h2 class='block-title'>Visibility</h2>
-            <div class='content'>
-              <div class='form-wrapper'>
-                <div class='form-item form-type-select'>
-                  <label class='form-label' for='groups'>Group(s)</label>
-                  <select class='chosen-select' data-placeholder='Select one or more groups' id='groups' multiple='multiple' tabindex='6'>
-                    <option value="1">Festivals</option>&#x000A;<option value="2">Climate change</option>&#x000A;<option value="3">Oceans</option>&#x000A;<option value="4" selected>Local group Amsterdam</option>&#x000A;<option value="5">Oil spill</option>&#x000A;<option value="6">Solar energy</option>&#x000A;<option value="7">Save the Arctic</option>&#x000A;
-                  </select>
-                </div>
-                <div class='form-item form-type-radios radio-blocks'>
-                  <label class='form-label' for='edit-group-content-access'>
-                    Private or public?
-                    <span class='form-required' title='This field is required.'>*</span>
-                  </label>
-                  <div class='form-radios'>
-                    <div class='form-type-radio'>
-                      <input checked='checked' class='form-radio' id='edit-group-content-access-und-0' name='group_content_access' tabindex='7' type='radio' value='0'>
-                      <label class='option' for='edit-group-content-access-und-0'>Private - only for group members</label>
-                    </div>
-                    <div class='form-type-radio'>
-                      <input class='form-radio' id='edit-group-content-access-und-1' name='group_content_access' type='radio' value='1'>
-                      <label class='option' for='edit-group-content-access-und-1'>All members of Greenwire</label>
-                    </div>
-                    <div class='form-type-radio'>
-                      <input class='form-radio' id='edit-group-content-access-und-2' name='group_content_access' type='radio' value='2'>
-                      <label class='option' for='edit-group-content-access-und-2'>Public - visible for all visitors of Greenwire</label>
+            </section>
+            <section class='block' id='section-language'>
+              <i class='block-icon icon-globe icon-bg-action'></i>
+              <h2 class='block-title'>Languages and tags</h2>
+              <div class='content'>
+                <div class='form-wrapper'>
+                  <div class='form-item form-type-select'>
+                    <label class='form-label' for='language'>Language</label>
+                    <div class='form-description'>What language is this news in? You can select more than one language.</div>
+                    <select class='chosen-select' data-placeholder='Choose a language' id='language' multiple='multiple' tabindex='4'>
+                      <option selected=''>English, US</option>
+                      <option>French</option>
+                    </select>
+                  </div>
+                  <div class='form-item'>
+                    <label>Tags</label>
+                    <input class='form-text form-autocomplete' id='tagsinput' tabindex='5' type='text' value=''>
+                    <div class='autocomplete' id='tagsautocomplete'>
+                      <ul>
+                        <li>
+                          dolorem
+                        </li>
+                        <li>
+                          laborum
+                        </li>
+                        <li>
+                          aut
+                        </li>
+                        <li>
+                          neque
+                        </li>
+                        <li>
+                          molestiae
+                        </li>
+                        <li>
+                          sint
+                        </li>
+                        <li>
+                          explicabo
+                        </li>
+                        <li>
+                          occaecati
+                        </li>
+                        <li>
+                          quasi
+                        </li>
+                        <li>
+                          dolor
+                        </li>
+                        <li>
+                          iure
+                        </li>
+                        <li>
+                          velit
+                        </li>
+                        <li>
+                          maiores
+                        </li>
+                        <li>
+                          consequatur
+                        </li>
+                        <li>
+                          minima
+                        </li>
+                        <li>
+                          ut
+                        </li>
+                        <li>
+                          quidem
+                        </li>
+                        <li>
+                          odio
+                        </li>
+                        <li>
+                          veritatis
+                        </li>
+                        <li>
+                          repellendus
+                        </li>
+                        <li>
+                          in
+                        </li>
+                        <li>
+                          molestiae
+                        </li>
+                        <li>
+                          eum
+                        </li>
+                        <li>
+                          et
+                        </li>
+                        <li>
+                          est
+                        </li>
+                        <li>
+                          sequi
+                        </li>
+                        <li>
+                          corrupti
+                        </li>
+                        <li>
+                          est
+                        </li>
+                        <li>
+                          quis
+                        </li>
+                        <li>
+                          atque
+                        </li>
+                        <li>
+                          eius
+                        </li>
+                        <li>
+                          accusantium
+                        </li>
+                        <li>
+                          est
+                        </li>
+                        <li>
+                          a
+                        </li>
+                        <li>
+                          reprehenderit
+                        </li>
+                        <li>
+                          iure
+                        </li>
+                        <li>
+                          ullam
+                        </li>
+                        <li>
+                          architecto
+                        </li>
+                        <li>
+                          necessitatibus
+                        </li>
+                        <li>
+                          beatae
+                        </li>
+                        <li>
+                          perspiciatis
+                        </li>
+                        <li>
+                          aut
+                        </li>
+                        <li>
+                          unde
+                        </li>
+                        <li>
+                          aut
+                        </li>
+                        <li>
+                          nemo
+                        </li>
+                        <li>
+                          ullam
+                        </li>
+                        <li>
+                          sed
+                        </li>
+                        <li>
+                          rerum
+                        </li>
+                        <li>
+                          corporis
+                        </li>
+                        <li>
+                          dolorem
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
-          <section id='section-submit'>
-            <div class='form-actions form-wrapper'>
-              <input class='button btn-primary btn-l' tabindex='7' type='submit' value='Submit'>
-              <a class='button btn-l' href='./documents.html' tabindex='8'>Cancel</a>
-            </div>
-          </section>
+            </section>
+            <section class='block' id='section-visibility'>
+              <i class='block-icon icon-eye icon-bg-action'></i>
+              <h2 class='block-title'>Visibility</h2>
+              <div class='content'>
+                <div class='form-wrapper'>
+                  <div class='form-item form-type-select'>
+                    <label class='form-label' for='groups'>Group(s)</label>
+                    <select class='chosen-select' data-placeholder='Select one or more groups' id='groups' multiple='multiple' tabindex='6'>
+                      <option value="1">Festivals</option>&#x000A;<option value="2">Climate change</option>&#x000A;<option value="3">Oceans</option>&#x000A;<option value="4" selected>Local group Amsterdam</option>&#x000A;<option value="5">Oil spill</option>&#x000A;<option value="6">Solar energy</option>&#x000A;<option value="7">Save the Arctic</option>&#x000A;
+                    </select>
+                  </div>
+                  <div class='form-item form-type-radios radio-blocks'>
+                    <label class='form-label' for='edit-group-content-access'>
+                      Private or public?
+                      <span class='form-required' title='This field is required.'>*</span>
+                    </label>
+                    <div class='form-radios'>
+                      <div class='form-type-radio'>
+                        <input checked='checked' class='form-radio' id='edit-group-content-access-und-0' name='group_content_access' tabindex='7' type='radio' value='0'>
+                        <label class='option' for='edit-group-content-access-und-0'>Private - only for group members</label>
+                      </div>
+                      <div class='form-type-radio'>
+                        <input class='form-radio' id='edit-group-content-access-und-1' name='group_content_access' type='radio' value='1'>
+                        <label class='option' for='edit-group-content-access-und-1'>All members of Greenwire</label>
+                      </div>
+                      <div class='form-type-radio'>
+                        <input class='form-radio' id='edit-group-content-access-und-2' name='group_content_access' type='radio' value='2'>
+                        <label class='option' for='edit-group-content-access-und-2'>Public - visible for all visitors of Greenwire</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section id='section-submit'>
+              <div class='form-actions form-wrapper'>
+                <input class='button btn-primary btn-l' tabindex='7' type='submit' value='Submit'>
+                <a class='button btn-l' href='./documents.html' tabindex='8'>Cancel</a>
+              </div>
+            </section>
+          </div>
         </div>
         <script>
           CKEDITOR.editorConfig=function(config){config.tabIndex=3,config.contentsCss="http://ggw-prototype.goalgorilla.com/css/all.css"};
@@ -875,7 +788,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Carley Ross
+                          Raul Song
                         </strong>
                         Rose Turner mentioned you in a shout.
                       </div>
@@ -926,7 +839,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Hudson Moss
+                          Emely West
                         </strong>
                         has invited you to join group 'local group Amsterdam'.
                       </div>
@@ -949,7 +862,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Brendan Hall
+                          Fatima Hawkins
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -972,7 +885,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Hudson Tilley
+                          Lori Johnston
                         </strong>
                         has invited you to join the event 'color the streets'.
                       </div>
@@ -995,7 +908,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Adrianna Davidson
+                          Bonita Clapp
                         </strong>
                         mention you in a comment.
                       </div>
@@ -1018,7 +931,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Stephanie Wilkerson
+                          Patrick Baker
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1041,7 +954,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Kendrick Walton
+                          Quinn Lane
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1064,7 +977,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Alonzo Dunn
+                          Melinda Hall
                         </strong>
                         has mentioned you in a comment.
                       </div>
@@ -1087,7 +1000,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Anahi O'Brien
+                          Alexis Morgan
                         </strong>
                         mention you in a comment.
                       </div>
@@ -1110,7 +1023,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Katherine Tilley
+                          Andre McKenzie
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1133,7 +1046,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Rylee Black
+                          Eoin Sparks
                         </strong>
                         invited you to join the group 'Green nerds'.
                       </div>
@@ -1156,7 +1069,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Xena McClure
+                          Stephanie Joseph
                         </strong>
                         invited you to join the event 'Paint the city'.
                       </div>
@@ -1183,7 +1096,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Brooklynn Singer
+                          Clinton Vick
                         </strong>
                         posted a shout in the group 'Greenpeace UK'
                       </div>
@@ -1206,7 +1119,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Perla Lane
+                          Brayden Eason
                         </strong>
                         replied to a comment in a photo album posted in the group 'Greenpeace UK'
                       </div>
@@ -1229,7 +1142,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Calum Monroe
+                          Perla Hatcher
                         </strong>
                         commented on a photo posted in the group 'Greenpeace UK'
                       </div>
@@ -1304,7 +1217,7 @@
         </div>
       </div>
     </div>
-    <script src="../../js/theme-0823496f.js" type="text/javascript"></script>
+    <script src="../../js/theme-b7c114c4.js" type="text/javascript"></script>
     <!--[if lte IE 8]>
       <script src="../../js/oldie-3c6d2ada.js" type="text/javascript"></script>
     <![endif]-->

@@ -12,11 +12,11 @@
     <title>Search members — GGW Style Guide</title>
     <script src="../../js/lazysizes-e72de5ec.js" type="text/javascript"></script>
     <!--[if lte IE 8]>
-      <link href="../../css/old-ie-42e3c7c2.css" rel="stylesheet" type="text/css" />
+      <link href="../../css/old-ie-9f5b6312.css" rel="stylesheet" type="text/css" />
       <script src="../../js/html5shiv.min-cc7152cd.js" type="text/javascript"></script>
     <![endif]-->
     <!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
-    <link href="../../css/all-dd662f94.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/all-2a9bc8ae.css" rel="stylesheet" type="text/css" />
     <!--<![endif]-->
     <script>
       !function(){"use strict";function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===e}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(o))c(localStorage.font_css_cache);else{var n=new XMLHttpRequest;n.open("GET",o,!0),e(n,"load",function(){4===n.readyState&&(c(n.responseText),localStorage.font_css_cache=n.responseText,localStorage.font_css_cache_file=o)}),n.send()}else{var a=document.createElement("link");a.href=o,a.rel="stylesheet",a.type="text/css",document.getElementsByTagName("head")[0].appendChild(a),document.cookie="font_css_cache"}}function c(e){var t=document.createElement("style");t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t)}var o="/css/fonticons.woff.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}();
@@ -43,33 +43,6 @@
             </a>
           </div>
         </div>
-      </div>
-      <div class='action-menu'>
-        <ul class='tabs'>
-          <li>
-            <a class='tab' href='#content'>
-              <i class='icon icon-users'></i>
-              Search members
-            </a>
-          </li>
-          <li>
-            <a class='tab' href='#block-filter'>
-              <i class='icon icon-adjust'></i>
-              Filter
-            </a>
-          </li>
-        </ul>
-        <ul class='tabs-overflow'>
-          <li>
-            <a class='tab-overflow-trigger' data-dropdown='#action-menu-tabs' href='#'>
-              more
-              <i class='icon-down-mini'></i>
-            </a>
-            <div class='dropdown dropdown-tip dropdown-relative dropdown-anchor-right' id='action-menu-tabs'>
-              <ul class='dropdown-menu'></ul>
-            </div>
-          </li>
-        </ul>
       </div>
       <header class='l-header header' role='banner'>
         <div class='container'>
@@ -297,95 +270,6 @@
           </div>
         </div>
       </header>
-      <div class='block login-block block-no-icon white-popup mfp-hide' id='login-block'>
-        <h2 class='block-title'>Login</h2>
-        <div class='content'>
-          <form action='../lu/index.html' method='get'>
-            <div class='signup-wrapper'>
-              <a class='button btn-l btn-block btn-social-fb'>
-                <i class='icon icon-facebook'></i>
-                Log in with Facebook
-              </a>
-              <a class='button btn-l btn-block btn-social-gp'>
-                <i class='icon icon-gplus'></i>
-                Log in with Google+
-              </a>
-            </div>
-            <div class='signup-or-separator'>
-              <label>or</label>
-              <hr>
-            </div>
-            <div class='signup-wrapper'>
-              <div class='form-wrapper'>
-                <div class='form-item'>
-                  <input class='username form-text' max-length='60' placeholder='Username' type='text'>
-                  <i class='icon-user'></i>
-                </div>
-                <div class='form-item'>
-                  <input :max-length='60' class='form-text' placeholder='Password' type='password'>
-                  <i class='icon-password'></i>
-                </div>
-                <div class='form-item'>
-                  <a class='pull-right small-link' href=''>Lost password?</a>
-                </div>
-              </div>
-              <div class='form-actions form-wrapper'>
-                <div class='form-item'>
-                  <input class='button btn-primary btn-l btn-block' type='submit' value='Log in'>
-                </div>
-                <hr>
-                <p>
-                  No account yet?
-                  <a class='modal-inline' href='#signup-block'>Sign up</a>
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class='block signup-block block-no-icon white-popup mfp-hide' id='signup-block'>
-        <h2 class='block-title'>Sign up</h2>
-        <div class='content'>
-          <form action='../an/register-step2.html' method='get'>
-            <div class='signup-wrapper'>
-              <a class='button btn-l btn-block btn-social-fb'>
-                <i class='icon icon-facebook'></i>
-                Sign up with Facebook
-              </a>
-              <a class='button btn-l btn-block btn-social-gp'>
-                <i class='icon icon-gplus'></i>
-                Sign up with Google+
-              </a>
-            </div>
-            <div class='signup-or-separator'>
-              <label>or</label>
-              <hr>
-            </div>
-            <div class='signup-wrapper'>
-              <div class='form-wrapper'>
-                <div class='form-item'>
-                  <input class='username form-text' max-length='60' placeholder='Username' type='text'>
-                  <i class='icon-user'></i>
-                </div>
-                <div class='form-item'>
-                  <input :max-length='60' class='form-text' placeholder='email' type='text'>
-                  <i class='icon-mail'></i>
-                </div>
-              </div>
-              <div class='form-actions form-wrapper'>
-                <div class='form-item'>
-                  <input class='button btn-primary btn-l btn-block' type='submit' value='Sign up with Email'>
-                </div>
-                <hr>
-                <p>
-                  Already a member?
-                  <a class='modal-inline' href='#login-block'>Log in</a>
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
       <div class='l-main container' id='main'>
         <noscript>
           <div class='alert alert-warning' role='alert'>
@@ -408,7 +292,7 @@
         <div class='l-main-column'>
           <div class='block current' id='content'>
             <i class='block-icon icon-bg-user icon-search'></i>
-            <h1 class='block-title' id='page-title'>
+            <h1 class='block-title' data-amtitle='Search members'>
               Search members
             </h1>
             <div class='content'>
@@ -1078,7 +962,7 @@
         <aside class='l-sidebar sidebar'>
           <div class='block' id='block-filter'>
             <i class='block-icon icon-bg-user icon-adjust'></i>
-            <h2 class='block-title'>Filter</h2>
+            <h2 class='block-title' data-amtitle='Filter'>Filter</h2>
             <div class='content'>
               <form>
                 <div class='views-exposed-widget'>
@@ -1324,7 +1208,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Skylar Chang
+                          Eoin May
                         </strong>
                         Rose Turner mentioned you in a shout.
                       </div>
@@ -1375,7 +1259,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Omar Li
+                          Rylee Pickett
                         </strong>
                         has invited you to join group 'local group Amsterdam'.
                       </div>
@@ -1398,7 +1282,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Calum Davidson
+                          Kristi Butler
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1421,7 +1305,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Lori Fischer
+                          Carmen O'Brien
                         </strong>
                         has invited you to join the event 'color the streets'.
                       </div>
@@ -1444,7 +1328,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Andre Goldman
+                          Rolando Becker
                         </strong>
                         mention you in a comment.
                       </div>
@@ -1467,7 +1351,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Lexi Palmer
+                          Summer Monroe
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1490,7 +1374,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Angela Cowan
+                          Jean Lloyd
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1513,7 +1397,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Ana Cooper
+                          Makenzie Proctor
                         </strong>
                         has mentioned you in a comment.
                       </div>
@@ -1536,7 +1420,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Dirk Palmer
+                          Jamie Atkins
                         </strong>
                         mention you in a comment.
                       </div>
@@ -1559,7 +1443,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Emiliano Harvey
+                          Ty Hanna
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1582,7 +1466,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Alexandra Bowling
+                          Beth Goldman
                         </strong>
                         invited you to join the group 'Green nerds'.
                       </div>
@@ -1605,7 +1489,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Constance Sharpe
+                          Johnnie Adkins
                         </strong>
                         invited you to join the event 'Paint the city'.
                       </div>
@@ -1632,7 +1516,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Madeline Wu
+                          Sydney Weeks
                         </strong>
                         posted a shout in the group 'Greenpeace UK'
                       </div>
@@ -1655,7 +1539,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Javon Goldstein
+                          Daryl Holloway
                         </strong>
                         replied to a comment in a photo album posted in the group 'Greenpeace UK'
                       </div>
@@ -1678,7 +1562,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Wendell Robertson
+                          Alexa Norman
                         </strong>
                         commented on a photo posted in the group 'Greenpeace UK'
                       </div>
@@ -1753,7 +1637,7 @@
         </div>
       </div>
     </div>
-    <script src="../../js/theme-0823496f.js" type="text/javascript"></script>
+    <script src="../../js/theme-b7c114c4.js" type="text/javascript"></script>
     <!--[if lte IE 8]>
       <script src="../../js/oldie-3c6d2ada.js" type="text/javascript"></script>
     <![endif]-->

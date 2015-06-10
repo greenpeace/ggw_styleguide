@@ -12,11 +12,11 @@
     <title>News & media — GGW Style Guide</title>
     <script src="../../js/lazysizes-e72de5ec.js" type="text/javascript"></script>
     <!--[if lte IE 8]>
-      <link href="../../css/old-ie-42e3c7c2.css" rel="stylesheet" type="text/css" />
+      <link href="../../css/old-ie-9f5b6312.css" rel="stylesheet" type="text/css" />
       <script src="../../js/html5shiv.min-cc7152cd.js" type="text/javascript"></script>
     <![endif]-->
     <!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
-    <link href="../../css/all-dd662f94.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/all-2a9bc8ae.css" rel="stylesheet" type="text/css" />
     <!--<![endif]-->
     <script>
       !function(){"use strict";function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===e}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(o))c(localStorage.font_css_cache);else{var n=new XMLHttpRequest;n.open("GET",o,!0),e(n,"load",function(){4===n.readyState&&(c(n.responseText),localStorage.font_css_cache=n.responseText,localStorage.font_css_cache_file=o)}),n.send()}else{var a=document.createElement("link");a.href=o,a.rel="stylesheet",a.type="text/css",document.getElementsByTagName("head")[0].appendChild(a),document.cookie="font_css_cache"}}function c(e){var t=document.createElement("style");t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t)}var o="/css/fonticons.woff.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}();
@@ -43,33 +43,6 @@
             </a>
           </div>
         </div>
-      </div>
-      <div class='action-menu'>
-        <ul class='tabs'>
-          <li>
-            <a class='tab' href='#content'>
-              <i class='icon icon-users'></i>
-              Search members
-            </a>
-          </li>
-          <li>
-            <a class='tab' href='#block-filter'>
-              <i class='icon icon-adjust'></i>
-              Filter
-            </a>
-          </li>
-        </ul>
-        <ul class='tabs-overflow'>
-          <li>
-            <a class='tab-overflow-trigger' data-dropdown='#action-menu-tabs' href='#'>
-              more
-              <i class='icon-down-mini'></i>
-            </a>
-            <div class='dropdown dropdown-tip dropdown-relative dropdown-anchor-right' id='action-menu-tabs'>
-              <ul class='dropdown-menu'></ul>
-            </div>
-          </li>
-        </ul>
       </div>
       <header class='l-header header' role='banner'>
         <div class='container'>
@@ -297,95 +270,6 @@
           </div>
         </div>
       </header>
-      <div class='block login-block block-no-icon white-popup mfp-hide' id='login-block'>
-        <h2 class='block-title'>Login</h2>
-        <div class='content'>
-          <form action='../lu/index.html' method='get'>
-            <div class='signup-wrapper'>
-              <a class='button btn-l btn-block btn-social-fb'>
-                <i class='icon icon-facebook'></i>
-                Log in with Facebook
-              </a>
-              <a class='button btn-l btn-block btn-social-gp'>
-                <i class='icon icon-gplus'></i>
-                Log in with Google+
-              </a>
-            </div>
-            <div class='signup-or-separator'>
-              <label>or</label>
-              <hr>
-            </div>
-            <div class='signup-wrapper'>
-              <div class='form-wrapper'>
-                <div class='form-item'>
-                  <input class='username form-text' max-length='60' placeholder='Username' type='text'>
-                  <i class='icon-user'></i>
-                </div>
-                <div class='form-item'>
-                  <input :max-length='60' class='form-text' placeholder='Password' type='password'>
-                  <i class='icon-password'></i>
-                </div>
-                <div class='form-item'>
-                  <a class='pull-right small-link' href=''>Lost password?</a>
-                </div>
-              </div>
-              <div class='form-actions form-wrapper'>
-                <div class='form-item'>
-                  <input class='button btn-primary btn-l btn-block' type='submit' value='Log in'>
-                </div>
-                <hr>
-                <p>
-                  No account yet?
-                  <a class='modal-inline' href='#signup-block'>Sign up</a>
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class='block signup-block block-no-icon white-popup mfp-hide' id='signup-block'>
-        <h2 class='block-title'>Sign up</h2>
-        <div class='content'>
-          <form action='../an/register-step2.html' method='get'>
-            <div class='signup-wrapper'>
-              <a class='button btn-l btn-block btn-social-fb'>
-                <i class='icon icon-facebook'></i>
-                Sign up with Facebook
-              </a>
-              <a class='button btn-l btn-block btn-social-gp'>
-                <i class='icon icon-gplus'></i>
-                Sign up with Google+
-              </a>
-            </div>
-            <div class='signup-or-separator'>
-              <label>or</label>
-              <hr>
-            </div>
-            <div class='signup-wrapper'>
-              <div class='form-wrapper'>
-                <div class='form-item'>
-                  <input class='username form-text' max-length='60' placeholder='Username' type='text'>
-                  <i class='icon-user'></i>
-                </div>
-                <div class='form-item'>
-                  <input :max-length='60' class='form-text' placeholder='email' type='text'>
-                  <i class='icon-mail'></i>
-                </div>
-              </div>
-              <div class='form-actions form-wrapper'>
-                <div class='form-item'>
-                  <input class='button btn-primary btn-l btn-block' type='submit' value='Sign up with Email'>
-                </div>
-                <hr>
-                <p>
-                  Already a member?
-                  <a class='modal-inline' href='#login-block'>Log in</a>
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
       <div class='l-main container' id='main'>
         <noscript>
           <div class='alert alert-warning' role='alert'>
@@ -443,7 +327,7 @@
               </div>
             </div>
             <i class='block-icon icon-bg-news-media icon-news'></i>
-            <h1 class='block-title' id='page-title'>
+            <h1 class='block-title' data-amtitle='Search news &amp; media'>
               News & media
             </h1>
             <div class='content'>
@@ -674,19 +558,19 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='./idea.html'>
-                            Ut officiis et blanditiis sint iusto
+                            Sunt voluptatibus maiores molestias voluptatum suscipit praesentium
                           </a>
                         </h2>
                         <div class='submitted'>
                           <a class='type idea' href='./ideas.html'>Idea</a>
                           9 Dec, by
                           <a href='./profile.html'>
-                            Josephine Glass
+                            Marianne Goldstein
                           </a>
                           <a class='teaser-comments' href='./idea.html#block-comments'>4</a>
                         </div>
                         <div class='field-name-body'>
-                          Atque ea quo nulla aliquam est provident fugit nulla praesentium sit quisquam commodi molestiae et. earum voluptas voluptas amet ea incidunt optio aut. voluptatibus molestiae et ea est. reprehenderit aut cupiditate vero laboriosam hic quia quaerat minus
+                          Maiores in aliquid ullam vero consectetur et tempore. voluptatem maxime quidem est et id porro ut ad nostrum ipsam maxime recusandae consequatur qui. non non labore maxime qui ut sequi assumenda animi necessitatibus ea unde. facere temporibus est eveniet. possimus recusandae eum maxime sunt earum molestias sed. officia autem eius ea sit et aut soluta impedit quia harum molestiae suscipit necessitatibus veniam. asperiores dignissimos maxime blanditiis debitis delectus repellendus labore fugiat odit unde aliquam esse
                         </div>
                       </div>
                     </article>
@@ -708,7 +592,7 @@
                           </a>
                         </h2>
                         <div class='submitted'>
-                          <a class='type document' href='./photos.html'>Photos</a>
+                          <a class='type photo' href='./photos.html'>Photos</a>
                           1 june 2015, by
                           <a href='./profile.html'>
                             Grace O’Flynn
@@ -786,18 +670,18 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='#'>
-                            dolore ipsa est molestiae recusandae officia molestiae beatae porro omnis magnam
+                            rem sed autem ea quidem non eum ipsam voluptas itaque magni
                           </a>
                         </h2>
                         <div class='submitted'>
                           <span class='type page' href='#'>Page</span>
                           16 Nov 2014, by
                           <a href='#'>
-                            Skyler Rosenthal
+                            Kyla Bender
                           </a>
                         </div>
                         <div class='field-name-body'>
-                          At nobis voluptatum magni asperiores omnis rem accusamus laudantium qui sit asperiores. eveniet veniam ut dignissimos eum quaerat qui omnis reiciendis qui quas assumenda facere. ab impedit non accusantium dolorum velit id sint. nostrum a qui aliquid rerum vero iste quam aut. dolorem autem quibusdam tempora repellendus nihil libero ut esse ut facilis quia. illo odit harum rerum occaecati minima quia itaque non recusandae ut ut non
+                          Fuga reiciendis impedit est architecto ipsa sed aliquam nemo est. dolores sunt laboriosam perspiciatis vitae dolorum ea. repellat quis magni ducimus est perferendis expedita
                         </div>
                       </div>
                     </article>
@@ -808,7 +692,7 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='#'>
-                            Reprehenderit quod rerum error aut quod qui doloribus ea provident aliquid sint saepe laboriosam voluptas
+                            Est blanditiis omnis provident sed libero praesentium et id non laborum expedita et
                             ?
                           </a>
                         </h2>
@@ -816,11 +700,11 @@
                           <a class='type faq' href='#'>Faq</a>
                           05 Dec 2014, by
                           <a href='#'>
-                            Marianne Gray
+                            Collin Carver
                           </a>
                         </div>
                         <div class='field-name-body'>
-                          Minus aut qui minima error quidem qui. quam distinctio nostrum consequatur eum minima consequuntur. eaque sunt quo voluptatem qui nisi et. ad et minus ab maiores vel vel ea enim. sequi est incidunt nihil similique impedit sapiente et vel fuga occaecati aut ducimus et repudiandae
+                          Ratione doloremque molestias dicta voluptatem sit explicabo. eius illum sequi ut cumque molestias exercitationem ducimus perferendis. numquam aut repudiandae aut porro ducimus
                         </div>
                       </div>
                     </article>
@@ -834,9 +718,9 @@
           </div>
         </div>
         <aside class='l-sidebar sidebar'>
-          <div class='block'>
+          <div class='block' id='block-filter'>
             <i class='block-icon icon-bg-news-media icon-adjust'></i>
-            <h2 class='block-title'>Filter</h2>
+            <h2 class='block-title' data-amtitle='Filter'>Filter</h2>
             <div class='content'>
               <form>
                 <div class='views-exposed-widget'>
@@ -1147,7 +1031,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Kenneth Choi
+                          Kaylin Graves
                         </strong>
                         Rose Turner mentioned you in a shout.
                       </div>
@@ -1198,7 +1082,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Dora Petersen
+                          Reid Coleman
                         </strong>
                         has invited you to join group 'local group Amsterdam'.
                       </div>
@@ -1221,7 +1105,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Javon Weinstein
+                          Billy Kinney
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1244,7 +1128,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Katherine Hawkins
+                          Johnny Monroe
                         </strong>
                         has invited you to join the event 'color the streets'.
                       </div>
@@ -1267,7 +1151,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Lexi McKenna
+                          Zoe Lucas
                         </strong>
                         mention you in a comment.
                       </div>
@@ -1290,7 +1174,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Kellie Goldman
+                          Beau Walton
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1313,7 +1197,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Carley Proctor
+                          Kenneth Vick
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1336,7 +1220,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Hamish Christian
+                          Arturo Black
                         </strong>
                         has mentioned you in a comment.
                       </div>
@@ -1359,7 +1243,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Laila Brady
+                          Orlaith Welch
                         </strong>
                         mention you in a comment.
                       </div>
@@ -1382,7 +1266,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Esmeralda Weeks
+                          Carly Vick
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1405,7 +1289,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Alonzo Choi
+                          Arturo Weiner
                         </strong>
                         invited you to join the group 'Green nerds'.
                       </div>
@@ -1428,7 +1312,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Alexis James
+                          Angela Sparks
                         </strong>
                         invited you to join the event 'Paint the city'.
                       </div>
@@ -1455,7 +1339,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Mohammed Song
+                          Isabel Rowe
                         </strong>
                         posted a shout in the group 'Greenpeace UK'
                       </div>
@@ -1478,7 +1362,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Cathleen Terrell
+                          Preston Goldstein
                         </strong>
                         replied to a comment in a photo album posted in the group 'Greenpeace UK'
                       </div>
@@ -1501,7 +1385,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Constance Kane
+                          Nadia Justice
                         </strong>
                         commented on a photo posted in the group 'Greenpeace UK'
                       </div>
@@ -1576,7 +1460,7 @@
         </div>
       </div>
     </div>
-    <script src="../../js/theme-0823496f.js" type="text/javascript"></script>
+    <script src="../../js/theme-b7c114c4.js" type="text/javascript"></script>
     <!--[if lte IE 8]>
       <script src="../../js/oldie-3c6d2ada.js" type="text/javascript"></script>
     <![endif]-->

@@ -12,11 +12,11 @@
     <title>Ideas — GGW Style Guide</title>
     <script src="../../js/lazysizes-e72de5ec.js" type="text/javascript"></script>
     <!--[if lte IE 8]>
-      <link href="../../css/old-ie-42e3c7c2.css" rel="stylesheet" type="text/css" />
+      <link href="../../css/old-ie-9f5b6312.css" rel="stylesheet" type="text/css" />
       <script src="../../js/html5shiv.min-cc7152cd.js" type="text/javascript"></script>
     <![endif]-->
     <!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
-    <link href="../../css/all-dd662f94.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/all-2a9bc8ae.css" rel="stylesheet" type="text/css" />
     <!--<![endif]-->
     <script>
       !function(){"use strict";function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===e}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(o))c(localStorage.font_css_cache);else{var n=new XMLHttpRequest;n.open("GET",o,!0),e(n,"load",function(){4===n.readyState&&(c(n.responseText),localStorage.font_css_cache=n.responseText,localStorage.font_css_cache_file=o)}),n.send()}else{var a=document.createElement("link");a.href=o,a.rel="stylesheet",a.type="text/css",document.getElementsByTagName("head")[0].appendChild(a),document.cookie="font_css_cache"}}function c(e){var t=document.createElement("style");t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t)}var o="/css/fonticons.woff.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}();
@@ -43,39 +43,6 @@
             </a>
           </div>
         </div>
-      </div>
-      <div class='action-menu'>
-        <ul class='tabs'>
-          <li>
-            <a class='tab' href='#content'>
-              <i class='icon icon-idea'></i>
-              Ideas
-            </a>
-          </li>
-          <li>
-            <a class='tab' href='#block-find-ideas'>
-              <i class='icon icon-search'></i>
-              Find ideas
-            </a>
-          </li>
-          <li>
-            <a class='tab' href='#create-account'>
-              <i class='icon icon-user-add'></i>
-              Create account
-            </a>
-          </li>
-        </ul>
-        <ul class='tabs-overflow'>
-          <li>
-            <a class='tab-overflow-trigger' data-dropdown='#action-menu-tabs' href='#'>
-              more
-              <i class='icon-down-mini'></i>
-            </a>
-            <div class='dropdown dropdown-tip dropdown-relative dropdown-anchor-right' id='action-menu-tabs'>
-              <ul class='dropdown-menu'></ul>
-            </div>
-          </li>
-        </ul>
       </div>
       <header class='l-header header' role='banner'>
         <div class='container'>
@@ -141,7 +108,7 @@
                     </ul>
                   </li>
                   <li class='menu-item'>
-                    <a class="menu-link" page="/prototype/an/ideas.html" href="about.html">Info</a>
+                    <a class="menu-link" page="/prototype/an/ideas.html" href="#">Info</a>
                     <ul class='menu'>
                       <li class='menu-item'>
                         <a class="menu-link" page="/prototype/an/ideas.html" href="about.html">About</a>
@@ -271,95 +238,6 @@
           </div>
         </div>
       </header>
-      <div class='block login-block block-no-icon white-popup mfp-hide' id='login-block'>
-        <h2 class='block-title'>Login</h2>
-        <div class='content'>
-          <form action='../lu/index.html' method='get'>
-            <div class='signup-wrapper'>
-              <a class='button btn-l btn-block btn-social-fb'>
-                <i class='icon icon-facebook'></i>
-                Log in with Facebook
-              </a>
-              <a class='button btn-l btn-block btn-social-gp'>
-                <i class='icon icon-gplus'></i>
-                Log in with Google+
-              </a>
-            </div>
-            <div class='signup-or-separator'>
-              <label>or</label>
-              <hr>
-            </div>
-            <div class='signup-wrapper'>
-              <div class='form-wrapper'>
-                <div class='form-item'>
-                  <input class='username form-text' max-length='60' placeholder='Username' type='text'>
-                  <i class='icon-user'></i>
-                </div>
-                <div class='form-item'>
-                  <input :max-length='60' class='form-text' placeholder='Password' type='password'>
-                  <i class='icon-password'></i>
-                </div>
-                <div class='form-item'>
-                  <a class='pull-right small-link' href=''>Lost password?</a>
-                </div>
-              </div>
-              <div class='form-actions form-wrapper'>
-                <div class='form-item'>
-                  <input class='button btn-primary btn-l btn-block' type='submit' value='Log in'>
-                </div>
-                <hr>
-                <p>
-                  No account yet?
-                  <a class='modal-inline' href='#signup-block'>Sign up</a>
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class='block signup-block block-no-icon white-popup mfp-hide' id='signup-block'>
-        <h2 class='block-title'>Sign up</h2>
-        <div class='content'>
-          <form action='../an/register-step2.html' method='get'>
-            <div class='signup-wrapper'>
-              <a class='button btn-l btn-block btn-social-fb'>
-                <i class='icon icon-facebook'></i>
-                Sign up with Facebook
-              </a>
-              <a class='button btn-l btn-block btn-social-gp'>
-                <i class='icon icon-gplus'></i>
-                Sign up with Google+
-              </a>
-            </div>
-            <div class='signup-or-separator'>
-              <label>or</label>
-              <hr>
-            </div>
-            <div class='signup-wrapper'>
-              <div class='form-wrapper'>
-                <div class='form-item'>
-                  <input class='username form-text' max-length='60' placeholder='Username' type='text'>
-                  <i class='icon-user'></i>
-                </div>
-                <div class='form-item'>
-                  <input :max-length='60' class='form-text' placeholder='email' type='text'>
-                  <i class='icon-mail'></i>
-                </div>
-              </div>
-              <div class='form-actions form-wrapper'>
-                <div class='form-item'>
-                  <input class='button btn-primary btn-l btn-block' type='submit' value='Sign up with Email'>
-                </div>
-                <hr>
-                <p>
-                  Already a member?
-                  <a class='modal-inline' href='#login-block'>Log in</a>
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
       <div class='l-main container' id='main'>
         <noscript>
           <div class='alert alert-warning' role='alert'>
@@ -382,7 +260,7 @@
         <div class='l-main-column'>
           <div class='block current' id='content'>
             <i class='block-icon icon-bg-news-media icon-idea'></i>
-            <h1 class='block-title' id='page-title'>
+            <h1 class='block-title' data-amtitle='Ideas'>
               Ideas
             </h1>
             <div class='content'>
@@ -493,16 +371,16 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='./idea.html'>
-                            Odio itaque in in temporibus
+                            Odio itaque ea est quia eos veniam error
                           </a>
                         </h2>
                         <div class='submitted'>
                           <a class='type idea' href='./ideas.html'>Idea</a>
                           9 Dec, by
-                          geraldine_hunt
+                          brenden_schroeder
                         </div>
                         <div class='field-name-body'>
-                          Consequuntur accusamus magni id et porro expedita voluptates aperiam aliquid ut maiores nobis assumenda quod. repudiandae enim veritatis magni tenetur quia optio quasi corporis illo doloremque et ullam reiciendis enim. dolor consequatur nesciunt ea fuga ipsum qui ut aliquam sapiente. eius qui accusantium maiores est consequatur rerum hic quisquam
+                          Minus repudiandae et est nulla dolorem voluptate voluptatibus ad aut officiis hic totam porro. officia est voluptatum quia quidem doloribus corporis et beatae labore earum nam distinctio omnis. perspiciatis rerum est aut distinctio explicabo ipsum necessitatibus ut voluptatem ipsum eum. quaerat est et quia ab. sapiente explicabo sit id eum eaque
                         </div>
                       </div>
                     </article>
@@ -513,16 +391,16 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='./idea.html'>
-                            Esse porro aut quia necessitatibus porro sunt iusto ratione laudantium sed laborum rerum quia est
+                            Quasi illo quisquam quia eos ullam dolore consequatur aliquid reiciendis aut magnam
                           </a>
                         </h2>
                         <div class='submitted'>
                           <a class='type idea' href='./ideas.html'>Idea</a>
                           9 Dec, by
-                          darius_alexander
+                          rylee_norman
                         </div>
                         <div class='field-name-body'>
-                          Aut est minima tempora rerum rerum quia. fugiat voluptatem non consequatur enim delectus sed soluta amet omnis in veniam. et sed dolores cum rerum dolor unde nobis voluptas magni. et nihil nihil est aut. accusantium labore qui possimus
+                          Dolores qui cupiditate quibusdam quasi dolor enim suscipit non. est voluptas sit enim quidem voluptas non soluta est consequatur. provident minima qui nulla dolores sunt fuga magnam reprehenderit rerum velit iusto. voluptates dolore voluptatem possimus voluptatem error voluptas ipsam odio iste quasi eos qui similique. minima necessitatibus repellendus nostrum occaecati quod illum quaerat qui blanditiis hic itaque consectetur. reprehenderit sed deserunt minima harum nesciunt est. tempore nihil fugiat vel nisi quibusdam
                         </div>
                       </div>
                     </article>
@@ -533,16 +411,16 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='./idea.html'>
-                            Voluptas quod eaque non nemo aut minima quo quod necessitatibus
+                            Non consequatur aut assumenda qui nemo iusto qui architecto autem est est dolores et
                           </a>
                         </h2>
                         <div class='submitted'>
                           <a class='type idea' href='./ideas.html'>Idea</a>
                           9 Dec, by
-                          manuel_cain
+                          bonnie_hewitt
                         </div>
                         <div class='field-name-body'>
-                          Eum tempore quis eos harum deserunt et est quaerat. minus sed dolorem voluptatem voluptatibus quo voluptatem in voluptatem nobis et deleniti rerum voluptatibus voluptatibus. qui facilis aut vel ea rerum molestiae ullam et. nam inventore qui voluptates et aut officia reprehenderit illo
+                          Dolor sequi quia nulla ex molestiae sequi. nulla eius dignissimos et vero odit qui cum labore eos enim. velit inventore ut vero velit voluptatum quia earum velit perspiciatis ad sit. qui et assumenda necessitatibus aut expedita expedita. ratione modi et pariatur quasi qui nostrum explicabo qui est omnis quia
                         </div>
                       </div>
                     </article>
@@ -553,16 +431,16 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='./idea.html'>
-                            Rerum odio voluptas qui
+                            Aliquam soluta earum exercitationem perferendis optio est ad aut deleniti voluptas quia est non sed
                           </a>
                         </h2>
                         <div class='submitted'>
                           <a class='type idea' href='./ideas.html'>Idea</a>
                           9 Dec, by
-                          elise_coleman
+                          jordyn_heath
                         </div>
                         <div class='field-name-body'>
-                          Quis fugit consequuntur distinctio velit dolores et optio qui quo magnam laboriosam quas ut harum. asperiores aut quis et molestiae. eaque sequi iste et et ex ex molestiae nihil. aliquid suscipit veniam fugiat veniam aut consequatur minus tempora deleniti omnis
+                          Odio iste amet aperiam est. atque eos aspernatur cumque suscipit incidunt voluptas sunt excepturi dolorem et nemo repellendus et et. tenetur in molestias est voluptate magnam iure ut consequatur. architecto quos illum temporibus repellat deleniti quo qui et voluptas non molestiae
                         </div>
                       </div>
                     </article>
@@ -573,16 +451,16 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='./idea.html'>
-                            Voluptate exercitationem dolores voluptatem sit beatae consequatur harum
+                            Eligendi non eum rerum expedita aliquam qui autem dolorem qui
                           </a>
                         </h2>
                         <div class='submitted'>
                           <a class='type idea' href='./ideas.html'>Idea</a>
                           9 Dec, by
-                          mohammed_bowling
+                          perla_garrett
                         </div>
                         <div class='field-name-body'>
-                          Aut esse tenetur est ullam odit tempora hic impedit molestiae sint. sed sit eum sint corrupti ipsa sunt odit vitae culpa nisi. placeat architecto illo molestiae consequuntur ipsam voluptatem nesciunt sapiente est veritatis dolor consectetur. maiores sit ipsam sed quos
+                          Nostrum qui eligendi ad ut qui est et omnis autem ducimus excepturi incidunt aut impedit. dolorem totam aperiam sit ullam molestiae rerum aliquid quam fugiat quasi dolores. voluptatum necessitatibus quas quia error iste vitae. quisquam quae voluptatem fuga minus dolor porro nisi. dolores odit deserunt quo sit molestias unde quis est ut natus deleniti et esse harum
                         </div>
                       </div>
                     </article>
@@ -593,16 +471,16 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='./idea.html'>
-                            Natus aut accusantium sed nisi non velit consectetur neque et officiis qui at
+                            Iure assumenda ad sunt sit facere sequi
                           </a>
                         </h2>
                         <div class='submitted'>
                           <a class='type idea' href='./ideas.html'>Idea</a>
                           9 Dec, by
-                          quinn_james
+                          kyleigh_hawkins
                         </div>
                         <div class='field-name-body'>
-                          Expedita sed et facilis omnis modi nihil. suscipit non hic doloremque animi laudantium et illo explicabo. nihil minima voluptatum unde incidunt laudantium quo neque natus tempore sit accusamus ad laboriosam
+                          Earum quis enim et commodi corrupti nihil doloremque quibusdam officiis necessitatibus provident omnis repellendus. est qui possimus modi. aut dolorem dolorum sit nihil optio. praesentium in reiciendis non quia
                         </div>
                       </div>
                     </article>
@@ -613,16 +491,16 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='./idea.html'>
-                            Nihil aliquid vel repellendus magni nihil modi
+                            Nisi possimus omnis consequatur aperiam repellendus atque eius iste iure est vitae rem
                           </a>
                         </h2>
                         <div class='submitted'>
                           <a class='type idea' href='./ideas.html'>Idea</a>
                           9 Dec, by
-                          luis_tilley
+                          tammie_may
                         </div>
                         <div class='field-name-body'>
-                          Quo labore eaque omnis autem necessitatibus qui et et rerum excepturi corrupti. et et similique sed natus quia quo voluptatem sit. deleniti perferendis repellendus id est perspiciatis vitae officia laudantium aut dolorem dicta. architecto aut facere et adipisci voluptas amet voluptatibus quia autem totam dolorem omnis ut sit. qui ut saepe ducimus sit omnis voluptatem. fugit ab laudantium ea expedita possimus fuga consequatur sint id velit ipsa aut. sit quia maxime unde nobis inventore id minima quia
+                          Quam et temporibus in molestiae asperiores. quia voluptatem similique blanditiis recusandae voluptas rem voluptate molestiae sequi voluptas. id aliquid odio in earum doloribus voluptatem a
                         </div>
                       </div>
                     </article>
@@ -633,16 +511,16 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='./idea.html'>
-                            Similique ut tempore fugit deserunt ut
+                            Deserunt aut cum nesciunt quia ea et et quo molestias velit et inventore id
                           </a>
                         </h2>
                         <div class='submitted'>
                           <a class='type idea' href='./ideas.html'>Idea</a>
                           9 Dec, by
-                          mya_barr
+                          sadie_eason
                         </div>
                         <div class='field-name-body'>
-                          Quia quia nostrum quia aspernatur dicta assumenda quibusdam. ut libero nam incidunt. nostrum deleniti est tenetur nulla hic nesciunt sed. quidem et praesentium et repudiandae. voluptate deleniti sunt in. maiores rerum sit aut et eum dolores eaque iusto nobis nisi optio natus molestias et. eveniet labore error quae fugiat autem commodi ab distinctio eum ab et temporibus blanditiis dolor
+                          Quia voluptatum consequatur in vel sit non odio illum cupiditate et delectus illo aut maxime. doloremque dolore qui aspernatur et incidunt tenetur officiis maxime nemo aut eaque voluptatum sapiente. nemo et temporibus ut nulla ipsum et sit. perspiciatis voluptatem in iste. ea recusandae autem aut alias autem praesentium iusto. minus sapiente necessitatibus vero voluptate ut. quis nihil incidunt repellat sint nisi dignissimos vel nesciunt reiciendis quas
                         </div>
                       </div>
                     </article>
@@ -653,16 +531,16 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='./idea.html'>
-                            Sunt quaerat suscipit consequatur enim
+                            Voluptatum non qui non aliquid error
                           </a>
                         </h2>
                         <div class='submitted'>
                           <a class='type idea' href='./ideas.html'>Idea</a>
                           9 Dec, by
-                          gordon_sutton
+                          gordon_raynor
                         </div>
                         <div class='field-name-body'>
-                          Sequi quod veniam rem velit mollitia. aliquam fuga necessitatibus voluptate libero tempore quia id eos assumenda consequatur. sapiente sed sit nobis voluptatum dolorem quis et neque enim numquam qui dolorum
+                          Animi repudiandae dicta deleniti est culpa quaerat quo. magnam nobis sed est odit praesentium. laborum rerum repellat et nemo nihil a culpa voluptatem sit. nihil expedita impedit voluptatibus praesentium et. et qui ea dolorem et ipsa quasi. expedita aliquam qui excepturi voluptas. enim quas voluptas aut ut harum repellat sunt adipisci doloribus
                         </div>
                       </div>
                     </article>
@@ -673,16 +551,16 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='./idea.html'>
-                            Maxime et et dolorum dolores sint
+                            Sit labore illo similique possimus id
                           </a>
                         </h2>
                         <div class='submitted'>
                           <a class='type idea' href='./ideas.html'>Idea</a>
                           9 Dec, by
-                          brooklynn_mclean
+                          marianne_gallagher
                         </div>
                         <div class='field-name-body'>
-                          Temporibus aliquid sed id molestias molestiae aperiam et occaecati qui sunt qui et eum. quia maxime nemo ut earum expedita inventore sint sapiente repellat aut nisi. magnam ipsam voluptas minus dolorem tempore maxime. ullam harum sed molestiae qui id eos similique unde aut earum. consequatur quibusdam nulla est
+                          Nihil facere molestiae aut voluptatem possimus magni. quia qui quo sint enim numquam. laborum vel ab incidunt debitis id ducimus repudiandae repellendus pariatur
                         </div>
                       </div>
                     </article>
@@ -696,9 +574,9 @@
           </div>
         </div>
         <aside class='l-sidebar sidebar'>
-          <div class='block'>
-            <i class='block-icon icon-bg-default icon-adjust'></i>
-            <h2 class='block-title'>Filter</h2>
+          <div class='block' id='block-find-ideas'>
+            <i class='block-icon icon-bg-news-media icon-adjust'></i>
+            <h2 class='block-title' data-amtitle='Filter'>Filter</h2>
             <div class='content'>
               <form>
                 <div class='views-exposed-widget'>
@@ -799,7 +677,7 @@
           </div>
           <div class='block' id='create-account'>
             <i class='block-icon icon-bg-action icon-user-add'></i>
-            <h2 class='block-title'>Create an account</h2>
+            <h2 class='block-title' data-amtitle='Create account'>Create an account</h2>
             <div class='content'>
               <p>Do not have an account yet? Click below to register!</p>
               <a class="button btn-primary" page="/prototype/an/ideas.html" href="register-step1.html">Get wired</a>
@@ -838,7 +716,7 @@
         </div>
       </footer>
     </div>
-    <script src="../../js/theme-0823496f.js" type="text/javascript"></script>
+    <script src="../../js/theme-b7c114c4.js" type="text/javascript"></script>
     <!--[if lte IE 8]>
       <script src="../../js/oldie-3c6d2ada.js" type="text/javascript"></script>
     <![endif]-->

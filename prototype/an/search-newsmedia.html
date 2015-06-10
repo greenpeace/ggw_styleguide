@@ -12,11 +12,11 @@
     <title>Search news & media — GGW Style Guide</title>
     <script src="../../js/lazysizes-e72de5ec.js" type="text/javascript"></script>
     <!--[if lte IE 8]>
-      <link href="../../css/old-ie-42e3c7c2.css" rel="stylesheet" type="text/css" />
+      <link href="../../css/old-ie-9f5b6312.css" rel="stylesheet" type="text/css" />
       <script src="../../js/html5shiv.min-cc7152cd.js" type="text/javascript"></script>
     <![endif]-->
     <!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
-    <link href="../../css/all-dd662f94.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/all-2a9bc8ae.css" rel="stylesheet" type="text/css" />
     <!--<![endif]-->
     <script>
       !function(){"use strict";function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===e}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(o))c(localStorage.font_css_cache);else{var n=new XMLHttpRequest;n.open("GET",o,!0),e(n,"load",function(){4===n.readyState&&(c(n.responseText),localStorage.font_css_cache=n.responseText,localStorage.font_css_cache_file=o)}),n.send()}else{var a=document.createElement("link");a.href=o,a.rel="stylesheet",a.type="text/css",document.getElementsByTagName("head")[0].appendChild(a),document.cookie="font_css_cache"}}function c(e){var t=document.createElement("style");t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t)}var o="/css/fonticons.woff.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}();
@@ -108,7 +108,7 @@
                     </ul>
                   </li>
                   <li class='menu-item'>
-                    <a class="menu-link" page="/prototype/an/search-newsmedia.html" href="about.html">Info</a>
+                    <a class="menu-link" page="/prototype/an/search-newsmedia.html" href="#">Info</a>
                     <ul class='menu'>
                       <li class='menu-item'>
                         <a class="menu-link" page="/prototype/an/search-newsmedia.html" href="about.html">About</a>
@@ -238,95 +238,6 @@
           </div>
         </div>
       </header>
-      <div class='block login-block block-no-icon white-popup mfp-hide' id='login-block'>
-        <h2 class='block-title'>Login</h2>
-        <div class='content'>
-          <form action='../lu/index.html' method='get'>
-            <div class='signup-wrapper'>
-              <a class='button btn-l btn-block btn-social-fb'>
-                <i class='icon icon-facebook'></i>
-                Log in with Facebook
-              </a>
-              <a class='button btn-l btn-block btn-social-gp'>
-                <i class='icon icon-gplus'></i>
-                Log in with Google+
-              </a>
-            </div>
-            <div class='signup-or-separator'>
-              <label>or</label>
-              <hr>
-            </div>
-            <div class='signup-wrapper'>
-              <div class='form-wrapper'>
-                <div class='form-item'>
-                  <input class='username form-text' max-length='60' placeholder='Username' type='text'>
-                  <i class='icon-user'></i>
-                </div>
-                <div class='form-item'>
-                  <input :max-length='60' class='form-text' placeholder='Password' type='password'>
-                  <i class='icon-password'></i>
-                </div>
-                <div class='form-item'>
-                  <a class='pull-right small-link' href=''>Lost password?</a>
-                </div>
-              </div>
-              <div class='form-actions form-wrapper'>
-                <div class='form-item'>
-                  <input class='button btn-primary btn-l btn-block' type='submit' value='Log in'>
-                </div>
-                <hr>
-                <p>
-                  No account yet?
-                  <a class='modal-inline' href='#signup-block'>Sign up</a>
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class='block signup-block block-no-icon white-popup mfp-hide' id='signup-block'>
-        <h2 class='block-title'>Sign up</h2>
-        <div class='content'>
-          <form action='../an/register-step2.html' method='get'>
-            <div class='signup-wrapper'>
-              <a class='button btn-l btn-block btn-social-fb'>
-                <i class='icon icon-facebook'></i>
-                Sign up with Facebook
-              </a>
-              <a class='button btn-l btn-block btn-social-gp'>
-                <i class='icon icon-gplus'></i>
-                Sign up with Google+
-              </a>
-            </div>
-            <div class='signup-or-separator'>
-              <label>or</label>
-              <hr>
-            </div>
-            <div class='signup-wrapper'>
-              <div class='form-wrapper'>
-                <div class='form-item'>
-                  <input class='username form-text' max-length='60' placeholder='Username' type='text'>
-                  <i class='icon-user'></i>
-                </div>
-                <div class='form-item'>
-                  <input :max-length='60' class='form-text' placeholder='email' type='text'>
-                  <i class='icon-mail'></i>
-                </div>
-              </div>
-              <div class='form-actions form-wrapper'>
-                <div class='form-item'>
-                  <input class='button btn-primary btn-l btn-block' type='submit' value='Sign up with Email'>
-                </div>
-                <hr>
-                <p>
-                  Already a member?
-                  <a class='modal-inline' href='#login-block'>Log in</a>
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
       <div class='l-main container' id='main'>
         <noscript>
           <div class='alert alert-warning' role='alert'>
@@ -348,8 +259,8 @@
         </nav>
         <div class='l-main-column'>
           <div class='block current' id='content'>
-            <i class='block-icon icon-bg-default icon-search'></i>
-            <h1 class='block-title' id='page-title'>
+            <i class='block-icon icon-bg-news-media icon-search'></i>
+            <h1 class='block-title' data-amtitle='News &amp; media'>
               Search news & media
             </h1>
             <div class='content'>
@@ -554,16 +465,16 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='./idea.html'>
-                            Et voluptas facilis eos omnis dolor consequatur atque ullam qui illum magni
+                            Similique doloremque et sunt ut illo eum tenetur eos ut
                           </a>
                         </h2>
                         <div class='submitted'>
                           <a class='type idea' href='./ideas.html'>Idea</a>
                           9 Dec, by
-                          davion_becker
+                          clyde_may
                         </div>
                         <div class='field-name-body'>
-                          Voluptatem est repudiandae quidem. ipsam inventore recusandae consequuntur consequatur totam dolorem voluptates praesentium aut vel accusantium qui enim. autem omnis dolores nulla aut vero ipsum dolores
+                          Officia sed culpa laudantium a esse. aspernatur ea iusto quo sequi exercitationem praesentium eum assumenda deleniti optio. est quo eum non explicabo qui commodi ipsum quis sed molestias aut tempore. explicabo qui animi nam ut itaque non. omnis et recusandae qui ut fugiat quibusdam. dolores qui fugiat sunt ut ut sunt sed tenetur ad dignissimos. reprehenderit autem est quibusdam nam nobis ratione ut eos id
                         </div>
                       </div>
                     </article>
@@ -585,7 +496,7 @@
                           </a>
                         </h2>
                         <div class='submitted'>
-                          <a class='type document' href='./photos.html'>Photos</a>
+                          <a class='type photo' href='./photos.html'>Photos</a>
                           1 june 2015, by
                           grace_o’flynn
                         </div>
@@ -648,16 +559,16 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='#'>
-                            nihil velit cum vitae quibusdam eligendi sequi doloremque occaecati inventore corporis
+                            qui beatae minima molestiae est et blanditiis debitis eum libero porro
                           </a>
                         </h2>
                         <div class='submitted'>
                           <span class='type page' href='#'>Page</span>
                           16 Nov 2014, by
-                          antoinette_stevenson
+                          ian_bender
                         </div>
                         <div class='field-name-body'>
-                          Cumque nam est est dolores sit ut. tempora aut neque mollitia iusto iste hic fugiat a laborum optio accusamus magnam molestiae culpa. maiores dolores facere commodi beatae consectetur fugit quae rerum consequatur. laborum dolor numquam cum omnis et dicta autem sit ut quis qui dignissimos aperiam delectus. eos aut aut voluptates porro aut cumque dolorum atque temporibus ab eos saepe eos
+                          Repellendus libero labore error tenetur ut quis est exercitationem officia sint quibusdam et et. consequatur quos quia vel. accusantium nesciunt sit et necessitatibus inventore molestiae in nesciunt aliquam. aperiam iure consequatur perferendis deleniti nisi itaque quis aut quo veritatis mollitia ut incidunt. sed ut eveniet architecto aut ut
                         </div>
                       </div>
                     </article>
@@ -668,17 +579,17 @@
                       <div class='field-type-wrapper'>
                         <h2 class='node-title'>
                           <a href='#'>
-                            Vero occaecati sapiente rem libero porro eum et rerum qui
+                            Laborum quis vero cumque in sunt dicta blanditiis magni et
                             ?
                           </a>
                         </h2>
                         <div class='submitted'>
                           <a class='type faq' href='#'>Faq</a>
                           05 Dec 2014, by
-                          colm_lucas
+                          marianne_o'brien
                         </div>
                         <div class='field-name-body'>
-                          Nemo autem laboriosam sequi explicabo. sint maiores esse sed doloremque odit et reiciendis. inventore sit quia assumenda deleniti laudantium numquam optio corporis. alias ut similique sunt consequatur officiis recusandae autem in excepturi. omnis ea aspernatur et voluptatem voluptates maxime quasi quasi odio et laborum
+                          Repudiandae optio recusandae iste accusantium. necessitatibus reprehenderit similique deleniti autem eos sapiente quas sunt voluptas quos sed. et officiis laudantium impedit illum voluptatem quia et omnis dolores architecto aliquid et. dolores reiciendis qui nihil magnam et neque quo tempora doloribus et
                         </div>
                       </div>
                     </article>
@@ -692,9 +603,9 @@
           </div>
         </div>
         <aside class='l-sidebar sidebar'>
-          <div class='block'>
+          <div class='block' id='block-filter-news-media'>
             <i class='block-icon icon-bg-news-media icon-adjust'></i>
-            <h2 class='block-title'>Filter</h2>
+            <h2 class='block-title' data-amtitle='Filter'>Filter</h2>
             <div class='content'>
               <form>
                 <div class='views-exposed-widget'>
@@ -826,7 +737,7 @@
         </div>
       </footer>
     </div>
-    <script src="../../js/theme-0823496f.js" type="text/javascript"></script>
+    <script src="../../js/theme-b7c114c4.js" type="text/javascript"></script>
     <!--[if lte IE 8]>
       <script src="../../js/oldie-3c6d2ada.js" type="text/javascript"></script>
     <![endif]-->

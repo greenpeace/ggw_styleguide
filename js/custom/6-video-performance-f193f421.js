@@ -1,1 +1,0 @@
-$(function(){lazyload_youtube.init({theme:"dark",colour:"white",controls:!0,responsive:!0,thumbnailquality:"0"}),0!=$(".node-full .container-lazyload").length&&$(".node-full .container-lazyload").insertBefore(".l-main-column")});

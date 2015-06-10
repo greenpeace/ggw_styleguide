@@ -12,11 +12,11 @@
     <title>Idea article example — GGW Style Guide</title>
     <script src="../../js/lazysizes-e72de5ec.js" type="text/javascript"></script>
     <!--[if lte IE 8]>
-      <link href="../../css/old-ie-42e3c7c2.css" rel="stylesheet" type="text/css" />
+      <link href="../../css/old-ie-9f5b6312.css" rel="stylesheet" type="text/css" />
       <script src="../../js/html5shiv.min-cc7152cd.js" type="text/javascript"></script>
     <![endif]-->
     <!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
-    <link href="../../css/all-dd662f94.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/all-2a9bc8ae.css" rel="stylesheet" type="text/css" />
     <!--<![endif]-->
     <script>
       !function(){"use strict";function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===e}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(o))c(localStorage.font_css_cache);else{var n=new XMLHttpRequest;n.open("GET",o,!0),e(n,"load",function(){4===n.readyState&&(c(n.responseText),localStorage.font_css_cache=n.responseText,localStorage.font_css_cache_file=o)}),n.send()}else{var a=document.createElement("link");a.href=o,a.rel="stylesheet",a.type="text/css",document.getElementsByTagName("head")[0].appendChild(a),document.cookie="font_css_cache"}}function c(e){var t=document.createElement("style");t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t)}var o="/css/fonticons.woff.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}();
@@ -43,51 +43,6 @@
             </a>
           </div>
         </div>
-      </div>
-      <div class='action-menu'>
-        <ul class='tabs'>
-          <li>
-            <a class='tab' href='#content'>
-              <i class='icon icon-idea'></i>
-              Idea
-            </a>
-          </li>
-          <li>
-            <a class='tab' href='#block-comments'>
-              <i class='icon icon-comment'></i>
-              Comments
-            </a>
-          </li>
-          <li>
-            <a class='tab' href='#block-go-to-group'>
-              <i class='icon icon-users'></i>
-              Go to group
-            </a>
-          </li>
-          <li>
-            <a class='tab' href='#block-get-involved'>
-              <i class='icon icon-plus'></i>
-              Get involved
-            </a>
-          </li>
-          <li>
-            <a class='tab' href='#block-subscribe'>
-              <i class='icon icon-eye'></i>
-              Updates
-            </a>
-          </li>
-        </ul>
-        <ul class='tabs-overflow'>
-          <li>
-            <a class='tab-overflow-trigger' data-dropdown='#action-menu-tabs' href='#'>
-              more
-              <i class='icon-down-mini'></i>
-            </a>
-            <div class='dropdown dropdown-tip dropdown-relative dropdown-anchor-right' id='action-menu-tabs'>
-              <ul class='dropdown-menu'></ul>
-            </div>
-          </li>
-        </ul>
       </div>
       <header class='l-header header' role='banner'>
         <div class='container'>
@@ -315,95 +270,6 @@
           </div>
         </div>
       </header>
-      <div class='block login-block block-no-icon white-popup mfp-hide' id='login-block'>
-        <h2 class='block-title'>Login</h2>
-        <div class='content'>
-          <form action='../lu/index.html' method='get'>
-            <div class='signup-wrapper'>
-              <a class='button btn-l btn-block btn-social-fb'>
-                <i class='icon icon-facebook'></i>
-                Log in with Facebook
-              </a>
-              <a class='button btn-l btn-block btn-social-gp'>
-                <i class='icon icon-gplus'></i>
-                Log in with Google+
-              </a>
-            </div>
-            <div class='signup-or-separator'>
-              <label>or</label>
-              <hr>
-            </div>
-            <div class='signup-wrapper'>
-              <div class='form-wrapper'>
-                <div class='form-item'>
-                  <input class='username form-text' max-length='60' placeholder='Username' type='text'>
-                  <i class='icon-user'></i>
-                </div>
-                <div class='form-item'>
-                  <input :max-length='60' class='form-text' placeholder='Password' type='password'>
-                  <i class='icon-password'></i>
-                </div>
-                <div class='form-item'>
-                  <a class='pull-right small-link' href=''>Lost password?</a>
-                </div>
-              </div>
-              <div class='form-actions form-wrapper'>
-                <div class='form-item'>
-                  <input class='button btn-primary btn-l btn-block' type='submit' value='Log in'>
-                </div>
-                <hr>
-                <p>
-                  No account yet?
-                  <a class='modal-inline' href='#signup-block'>Sign up</a>
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class='block signup-block block-no-icon white-popup mfp-hide' id='signup-block'>
-        <h2 class='block-title'>Sign up</h2>
-        <div class='content'>
-          <form action='../an/register-step2.html' method='get'>
-            <div class='signup-wrapper'>
-              <a class='button btn-l btn-block btn-social-fb'>
-                <i class='icon icon-facebook'></i>
-                Sign up with Facebook
-              </a>
-              <a class='button btn-l btn-block btn-social-gp'>
-                <i class='icon icon-gplus'></i>
-                Sign up with Google+
-              </a>
-            </div>
-            <div class='signup-or-separator'>
-              <label>or</label>
-              <hr>
-            </div>
-            <div class='signup-wrapper'>
-              <div class='form-wrapper'>
-                <div class='form-item'>
-                  <input class='username form-text' max-length='60' placeholder='Username' type='text'>
-                  <i class='icon-user'></i>
-                </div>
-                <div class='form-item'>
-                  <input :max-length='60' class='form-text' placeholder='email' type='text'>
-                  <i class='icon-mail'></i>
-                </div>
-              </div>
-              <div class='form-actions form-wrapper'>
-                <div class='form-item'>
-                  <input class='button btn-primary btn-l btn-block' type='submit' value='Sign up with Email'>
-                </div>
-                <hr>
-                <p>
-                  Already a member?
-                  <a class='modal-inline' href='#login-block'>Log in</a>
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
       <div class='l-main container' id='main'>
         <noscript>
           <div class='alert alert-warning' role='alert'>
@@ -431,8 +297,8 @@
         <div class='l-main-column'>
           <div class='block main-content current' id='content'>
             <i class='block-icon icon-bg-news-media icon-idea'></i>
-            <h1 class='block-title' id='page-title'>
-              nobis voluptas ipsa hic dolorum nulla vitae dicta dolorum ab
+            <h1 class='block-title' data-amtitle='Idea'>
+              et non ex magnam rerum non sunt dolor quasi veritatis
             </h1>
             <div class='content'>
               <article class='view-mode-full'>
@@ -440,10 +306,10 @@
                   <a class='type idea' href='./ideas.html'>Idea</a>
                   by
                   <a href='./profile.html'>
-                    Ruben Olsen
+                    Jamal Barton
                   </a>
                   <span class='submitted-date'>June 5th 2014 - 11:29</span>
-                  <a class='comments-shortcut' data-scroll='' href='#block-comments'>
+                  <a class='comments-shortcut show-block' data-scroll='' href='#block-comments'>
                     <i class='icon-comment'></i>
                     10 comments
                   </a>
@@ -478,56 +344,56 @@
                 </div>
                 <div class='field-name-body'>
                   <p>
-                    Eos aspernatur et deserunt vel vitae. cupiditate excepturi quas maiores explicabo. consectetur accusantium placeat dolor nemo et nam et assumenda voluptatem blanditiis quo molestiae earum et. in non hic fugit animi voluptates debitis labore velit assumenda iste. maxime corrupti rem aut voluptatem rem. voluptates adipisci quia deleniti saepe et et. et quia hic necessitatibus vitae unde dignissimos eos eos
+                    Temporibus pariatur numquam exercitationem ipsa. iure reiciendis voluptate libero. repudiandae fuga ratione sapiente praesentium laboriosam voluptatibus id perferendis. dolorem molestias error consequatur et omnis consectetur et. ea perspiciatis sint et perferendis qui et vel et quo dicta
                   </p>
                   <p>
-                    Eligendi voluptatem nobis aliquam laboriosam et eum ipsa nostrum voluptas voluptatem mollitia quae. corporis amet quis amet blanditiis eius nihil. vel voluptatem laborum consequatur quidem optio. hic molestiae qui et repellendus magnam corrupti dolore qui id eum sit est eius. ea reprehenderit ut quidem occaecati laborum minus. et natus rerum optio repellendus dolor reprehenderit porro delectus sit perspiciatis in voluptatum
+                    Et autem est qui commodi illo aliquam molestiae ut et maiores harum delectus. aut sed sit qui quia non nulla. magnam molestiae in fugiat eos autem temporibus vero est ea magni earum consequatur saepe. aperiam dolorem laudantium minus qui architecto dolores maxime ipsam. illum aut molestiae possimus et molestiae. dicta et exercitationem sed ut consectetur. soluta reprehenderit minima quaerat rerum iste quod deserunt
                   </p>
                   <blockquote>
                     <p>
-                      Rerum suscipit ut suscipit dolore distinctio eos facilis explicabo rerum deleniti
+                      Facere vel quos deleniti voluptatibus facilis beatae
                     </p>
                   </blockquote>
                   <p>
-                    Sint nulla vitae rerum quisquam eum velit voluptatem rerum sed tempora ullam ipsa sit. ea dignissimos reprehenderit quasi fuga qui aut excepturi voluptatem molestiae ut. atque et ipsam ut voluptatem. velit consequatur ducimus nulla saepe velit totam qui quia aperiam doloremque omnis deleniti sit blanditiis. facere nulla eius quia ullam. unde possimus harum distinctio delectus molestiae sit impedit esse dignissimos autem nesciunt
+                    Modi nemo ut adipisci aliquid illo natus quis facilis saepe laborum excepturi accusantium libero cumque. ab adipisci illo in aspernatur sint dolores. quas nesciunt qui dignissimos commodi rerum a nam officia nostrum repellendus praesentium nostrum beatae aut. labore dolorem cumque enim dolorum et porro aut ab. quasi velit delectus a error cumque commodi ea earum sint in ut facere enim
                   </p>
                   <p>
-                    Quis dolore velit nostrum. vel sit eveniet voluptates iste sed esse exercitationem odio sint enim quis ad nihil. sunt laudantium id quas omnis ipsa aut et eius odio. sit doloribus non nostrum omnis cumque dolores esse repellat quo expedita
+                    Eum sunt voluptas dolorem ut necessitatibus eius velit. in harum in ipsa quaerat similique officiis similique. repellat quia minima voluptates vero rerum incidunt quia et. ducimus consectetur similique officia eum dolores quidem qui saepe ut illo iure ut. cupiditate nostrum ex repellendus corrupti. autem explicabo est deleniti ratione aut voluptas vero inventore et voluptatem
                   </p>
                   <img alt='Description of the image.' class='field-type-image pull-right' src='/photos/nature10.jpg'>
                   <p>
-                    Et consequatur sunt omnis sed. voluptates vel repellendus quo repellendus et quae eligendi omnis dolor ut minima pariatur nobis asperiores. facere labore laborum animi officia sed libero similique. voluptas sit corrupti amet. nostrum dolores neque cumque repellendus ad modi esse voluptatem aliquam fugiat rerum. dolor et sed dolor nobis. ullam deleniti illo vitae excepturi amet pariatur
+                    Minus aspernatur aut explicabo et molestiae dolorum provident. consectetur ut perferendis debitis cum doloremque velit nulla error consequatur aliquid. soluta perferendis placeat laudantium et voluptatem consequatur qui enim nemo expedita aliquid natus. velit quo repellat delectus vel molestiae officiis amet iusto hic magni. dolor repellendus eaque hic cumque vitae. amet qui repellendus voluptatem exercitationem quod qui harum aut qui totam eos neque. veritatis beatae dolorem aspernatur autem magni laborum non excepturi qui voluptas
                   </p>
                   <ul>
                     <li>
-                      Sed dolores sed unde fugit possimus explicabo et et nobis sed
+                      Dolorem sunt aut assumenda commodi quis et
                     </li>
                     <li>
-                      Aliquid omnis inventore qui sunt amet debitis
+                      A ex repellendus doloribus a doloremque explicabo est
                     </li>
                     <li>
-                      Eius aspernatur ullam est autem sunt ut ipsum aut quas explicabo magnam quisquam
+                      Quam odio repellat dolore commodi provident fuga eius sequi est aut
                     </li>
                   </ul>
                   <p>
-                    Doloremque nisi explicabo rerum ea fuga voluptas est asperiores non ut soluta quo sed. corporis ut impedit consequatur accusamus libero id omnis et. corporis repudiandae molestiae est quia et. ipsum maiores aperiam et sit culpa dignissimos molestiae et temporibus officia. id voluptates voluptas consectetur officia
+                    Minima omnis delectus aut consequuntur voluptatem. exercitationem qui provident et. magnam cupiditate cum facilis non est voluptas officiis porro aut molestiae nesciunt laudantium quam dolores. cumque temporibus omnis eum placeat tempora. laboriosam aspernatur consequatur qui odit dolore culpa sed dolores. et omnis ducimus ab accusantium suscipit eaque alias et facilis voluptatem consequatur et aliquam. necessitatibus eum iusto impedit odio eveniet repellat eum optio illo maxime corrupti sunt
                   </p>
                   <ol>
                     <li>
-                      Non voluptas placeat reiciendis rem aliquid laudantium illum rerum laborum asperiores
+                      Est quia voluptatem voluptas qui doloremque
                     </li>
                     <li>
-                      Et recusandae autem et
+                      Repellat minima et qui esse eius consequatur beatae temporibus molestias reiciendis aperiam
                     </li>
                     <li>
-                      Et ut iusto iure perferendis rerum quis ullam debitis fugiat
+                      Corrupti quis doloribus reiciendis occaecati pariatur aut unde amet culpa laudantium sapiente id
                     </li>
                   </ol>
                   <img alt='Example of image.' class='field-type-image pull-left' src='/photos/animals3.jpg' width='200'>
                   <p>
-                    Corrupti eveniet dignissimos soluta veniam inventore
+                    Ut quos culpa ut eos in dignissimos iusto non saepe impedit sit
                     <strong>without</strong>
-                    Qui ducimus sed quia a aliquid harum enim deserunt necessitatibus dolorum
+                    Occaecati voluptas ut ut vitae recusandae incidunt vel velit
                   </p>
                 </div>
                 <div class='tags'>
@@ -560,7 +426,7 @@
           </div>
           <div class='block block-comments' id='block-comments'>
             <i class='block-icon icon-comment icon-bg-action'></i>
-            <h2 class='block-title'>Comments</h2>
+            <h2 class='block-title' data-amtitle='Comments'>Comments</h2>
             <div class='content'>
               <ul class='sort-comments'>
                 <li>Sort by:</li>
@@ -598,7 +464,7 @@
                   <div class='comment-holder media-body'>
                     <div class='comment-head'>
                       <a class='comment-author' href='./profile.html' title='View profile'>
-                        Dora Middleton
+                        Carly Scarborough
                       </a>
                     </div>
                     <div class='comment-body'>
@@ -624,7 +490,7 @@
                   <div class='comment-holder media-body'>
                     <div class='comment-head'>
                       <a class='comment-author' href='./profile.html' title='View profile'>
-                        Alma Teague
+                        Camila Vick
                       </a>
                       (<a href='./who-is-who.html'>Greenpeace staff</a>)
                     </div>
@@ -655,7 +521,7 @@
                   <div class='comment-holder media-body'>
                     <div class='comment-head'>
                       <a class='comment-author' href='./profile.html' title='View profile'>
-                        Guy Raynor
+                        Kaleigh Watts
                       </a>
                       (<a href='./who-is-who.html'>Community coach</a>)
                     </div>
@@ -682,7 +548,7 @@
                   <div class='comment-holder media-body'>
                     <div class='comment-head'>
                       <a class='comment-author' href='./profile.html' title='View profile'>
-                        Andre MacDonald
+                        Rolando Pittman
                       </a>
                     </div>
                     <div class='comment-body'>
@@ -909,7 +775,7 @@
         <aside class='l-sidebar sidebar'>
           <div class='block' id='block-go-to-group'>
             <i class='block-icon icon-users icon-bg-group'></i>
-            <h2 class='block-title'>Go to group</h2>
+            <h2 class='block-title' data-amtitle='Group'>Go to group</h2>
             <div class='content'>
               <p>
                 This belongs to
@@ -920,8 +786,8 @@
           </div>
           <div class='block' id='block-subscribe'>
             <i class='block-icon icon-bg-action icon-eye'></i>
-            <h2 class='block-title'>
-              Updates
+            <h2 class='block-title' data-amtitle='Subscribe'>
+              Subscribe
             </h2>
             <div class='content'>
               <p>
@@ -1014,7 +880,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Yvonne Glass
+                          Emiliano Hanna
                         </strong>
                         Rose Turner mentioned you in a shout.
                       </div>
@@ -1065,7 +931,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Ian Abrams
+                          Hudson Parks
                         </strong>
                         has invited you to join group 'local group Amsterdam'.
                       </div>
@@ -1088,7 +954,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Nolan Whitaker
+                          Daren Watson
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1111,7 +977,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Kerry Zhang
+                          Calum Hill
                         </strong>
                         has invited you to join the event 'color the streets'.
                       </div>
@@ -1134,7 +1000,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Allyson Bowman
+                          Dwayne West
                         </strong>
                         mention you in a comment.
                       </div>
@@ -1157,7 +1023,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Mitzi Watson
+                          Leslie Hodge
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1180,7 +1046,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Brenden Kane
+                          Skyler Lloyd
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1203,7 +1069,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Luis McLaughlin
+                          Kenneth Desai
                         </strong>
                         has mentioned you in a comment.
                       </div>
@@ -1226,7 +1092,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Clint Black
+                          Caitlyn Stout
                         </strong>
                         mention you in a comment.
                       </div>
@@ -1249,7 +1115,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Reid Watts
+                          Bart McLean
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1272,7 +1138,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Mohammed Houston
+                          Hector Boswell
                         </strong>
                         invited you to join the group 'Green nerds'.
                       </div>
@@ -1295,7 +1161,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Kelvin Neal
+                          Francesca Dougherty
                         </strong>
                         invited you to join the event 'Paint the city'.
                       </div>
@@ -1322,7 +1188,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Rylee Moore
+                          Kenneth Whitaker
                         </strong>
                         posted a shout in the group 'Greenpeace UK'
                       </div>
@@ -1345,7 +1211,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Justice Weiner
+                          Kaden Cooper
                         </strong>
                         replied to a comment in a photo album posted in the group 'Greenpeace UK'
                       </div>
@@ -1368,7 +1234,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Skyler Barr
+                          Clinton O'Donnell
                         </strong>
                         commented on a photo posted in the group 'Greenpeace UK'
                       </div>
@@ -1443,7 +1309,7 @@
         </div>
       </div>
     </div>
-    <script src="../../js/theme-0823496f.js" type="text/javascript"></script>
+    <script src="../../js/theme-b7c114c4.js" type="text/javascript"></script>
     <!--[if lte IE 8]>
       <script src="../../js/oldie-3c6d2ada.js" type="text/javascript"></script>
     <![endif]-->

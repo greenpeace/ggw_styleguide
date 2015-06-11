@@ -4,7 +4,6 @@ $( document ).ready(function() {
 
   //improve user experience by altering zooming on orientation change
   var mobile_timer = false;
-  //if(navigator.userAgent.match(/iPhone/i)) {
     $('#viewport').attr('content','width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0');
     $(window).bind('gesturestart',function () {
       clearTimeout(mobile_timer);
@@ -15,7 +14,6 @@ $( document ).ready(function() {
         $('#viewport').attr('content','width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0');
       },1000);
     });
-  //}
 
    // add class to external links so they can be styled
   $('.field-name-body a').filter(function() {

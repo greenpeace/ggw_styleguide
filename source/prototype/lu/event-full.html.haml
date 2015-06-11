@@ -119,8 +119,9 @@ user_role: lu
 
   %aside.l-sidebar.sidebar
     = partial :"blocks/go_to_group"
-    = partial :"blocks/lu/enrolled"
-    = partial :"blocks/lu/enrollments", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/enrolled", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/invite-friends", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/enrollments"
     = partial :"blocks/lu/subscribe"
 
 

@@ -1,6 +1,14 @@
 .block#block-enroll
   %i.block-icon.icon-login.icon-bg-action
   %h2.block-title{"data-amtitle" => "Enroll"} Enroll for this event
+
+  .content
+    %a.button.btn-primary.modal-inline{:href => "#block-enrollment-form"} Enroll
+
+#block-enrollment-form.block.white-popup.mfp-hide
+  %i.block-icon.icon-login.icon-bg-action
+  %h2.block-title Enroll for #{event} 
+
   .content
     - if current_page.data.context == "induction_training"
 

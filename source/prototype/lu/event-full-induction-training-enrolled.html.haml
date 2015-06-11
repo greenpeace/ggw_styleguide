@@ -115,11 +115,12 @@ context: induction_training
 
     = partial :"blocks/lu/comments-empty"
 
-%aside.l-sidebar.sidebar
-  = partial :"blocks/go_to_group_induction_training"
-  = partial :"blocks/lu/enrolled"
-  = partial :"blocks/lu/enrollments-induction2"
-  = partial :"blocks/lu/subscribe"
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/go_to_group_induction_training"
+    = partial :"blocks/lu/enrolled", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/invite-friends", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/enrollments-induction2"
+    = partial :"blocks/lu/subscribe"
 
 
 = javascript_include_tag "leaflet"

@@ -9,7 +9,8 @@
 
 .action-menu .tabs li {
   border-right: 1px solid darken($green2, 5%);
-  display: inline-block;
+  display: block;
+  float: left;
   position: relative;
   width: auto;
   text-align: center;

@@ -34,7 +34,7 @@ subscribed : true
             \-
             %span.submitted-date
               = item.datetime
-            %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
+            %a.comments-shortcut.show-block{:href => "#block-comments", "data-scroll" => ""}
               %i.icon-comment
               = item.comment_amount
               comments
@@ -122,8 +122,9 @@ subscribed : true
 
   %aside.l-sidebar.sidebar
     = partial :"blocks/go_to_group_induction_training"
-    = partial :"blocks/lu/enrolled"
-    = partial :"blocks/lu/enrollments_changed", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/enrolled", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/invite-friends", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/enrollments_changed"
     = partial :"blocks/lu/subscribe"
 
 

@@ -87,7 +87,7 @@ $(function() {
       var totalWidth = 0;
 
       fullMenu.children('li:visible:not(.moved)').each(function() {
-        totalWidth += $(this).outerWidth(true) + 4;
+        totalWidth += $(this).outerWidth(true);
       });
 
       // Position the 'more' button

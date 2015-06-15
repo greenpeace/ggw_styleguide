@@ -47,8 +47,9 @@ user_role: an
       = partial :"teasers/group-no-image"
       = partial :"teasers/group-with-image4"
       = partial :"teasers/group-with-image5"
-      .align-center
-        %a.button{:href => "#"} show some more
+      %ul.pager.pager-load-more
+        %li
+          %a{:href => "#"} Show some more
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/find_groups"

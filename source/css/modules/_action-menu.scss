@@ -1,7 +1,8 @@
 .action-menu .tabs {
   border-bottom: 1px solid darken($green2, 5%);
   border-top: 1px solid darken($green2, 5%);
-  height: 34px;
+  box-shadow: 0 2px 3px darken($green2, 15%);
+  height: 48px;
   background: $green2;
   overflow: hidden;
   position: relative;
@@ -29,7 +30,7 @@
 
 .action-menu a {
   color: $white;
-  line-height: 34px;
+  line-height: 48px;
   display: block;
   white-space: nowrap;
   @include font-size($small);
@@ -41,19 +42,14 @@
 }
 
 .js .action-menu {
-
-  height: 34px;
+  height: 48px;
   width: 100%;
   position: fixed;
   z-index: 2;
   top: 50px;
   transition: top 0.2s ease-in-out;
 
-  .above-content {
-    top: 50px;
-  }
-
-  .stick-to-top {
+  &.stick-to-top {
     top: 0px;
   }
 
@@ -81,7 +77,7 @@
   .tabs-overflow {
     display: inline-block;
     position: absolute;
-    margin-top: -34px;
+    margin-top: -48px;
   }
 
   .tab-overflow-trigger {
@@ -99,10 +95,6 @@
     transform: translate3d(0, 50px, 0);
     transition: transform 500ms ease;
     top: 0;
-  }
-
-  .above-content {
-    transform: translate3d(0px, 50px, 0px);
   }
 
   .stick-to-top {

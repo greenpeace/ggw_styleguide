@@ -115,8 +115,9 @@
 
     - if current_page.data.front == "frontpage" || current_page.data.joined == "joined"
       %hr
-      .align-center
-        %a.button.load-more-btn{:href => "#"} Show some more
+      %ul.pager.pager-load-more
+        %li
+          %a{:href => "#"} Show some more
 
   = partial :"blocks/lu/reply-comment"
   = partial :"blocks/lu/edit-comment"

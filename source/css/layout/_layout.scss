@@ -119,16 +119,16 @@
 }
 
 .js .with-action-menu .l-main {
-  padding-top: 84px;
+  padding-top: 100px;
 
   &.with-action-bar {
-    padding-top: 34px;
+    padding-top: 48px;
   }
 
 }
 
 .csstransforms3d .with-action-menu .l-main.with-action-bar {
-  padding-top: 84px;
+  padding-top: 100px;
   transform: translate3d(0, -50px, 0);
   transition: transform 500ms ease;
 }

@@ -8,24 +8,7 @@ direct_parent:
   -
     name: "Emlyn Garden Local Group"
     url: "./group-home-enrolled.html"
-user_role: cm
-action_menu:
-  -
-    id: "#content"
-    label: "Manage group"
-    icon: "users"
-  -
-    id: "#block-go-to-group"
-    label: "Groups"
-    icon: "users"
-  -
-    id: "#block-group-add-members"
-    label: "Add members"
-    icon: "user-add"
-  -
-    id: "#block-filter-members"
-    label: "Filters members"
-    icon: "adjust"
+user_role: lu
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -35,7 +18,7 @@ action_menu:
   #content.block.current
 
     %i.block-icon.icon-bg-default.icon-users
-    %h1.block-title#page-title
+    %h1.block-title
       = current_page.data.title
 
     .content
@@ -109,12 +92,11 @@ action_menu:
                 %th.views-field-avatar{"data-tablesaw-priority" => "persist"}
                 %th.views-field-name{"data-tablesaw-priority" => "persist", "data-tablesaw-sortable-col" => "", "data-tablesaw-sortable-default-col" => ""} Name
                 %th.views-field-username{"data-tablesaw-sortable-col" => "", "data-tablesaw-priority" => "1"} Username
-                %th.views-field-email{"data-tablesaw-sortable-col" => "", "data-tablesaw-priority" => "2"} Email
-                %th{"data-tablesaw-sortable-col" => "", "data-sortable-numeric" => "", "data-tablesaw-priority" => "3"} Phone
+                %th{"data-tablesaw-sortable-col" => "", "data-tablesaw-priority" => "2"} E-mail
+                %th{"data-tablesaw-sortable-col" => "", "data-tablesaw-priority" => "3"} City
                 %th{"data-tablesaw-sortable-col" => "", "data-tablesaw-priority" => "4"} Status
-                %th{"data-tablesaw-sortable-col" => "", "data-tablesaw-priority" => "5"} Member roles
-                %th{"data-tablesaw-sortable-col" => "", "data-tablesaw-priority" => "6"} Member since
-                %th{"data-tablesaw-priority" => "6"} Request message
+                %th{"data-tablesaw-sortable-col" => "", "data-tablesaw-priority" => "5"} Member since
+                %th{"data-tablesaw-sortable-col" => "", "data-tablesaw-priority" => "6"} Last login
 
             %tbody
               - 25.times do |num|
@@ -132,17 +114,33 @@ action_menu:
                   %td
                     = lorem.email
                   %td
-                    = rand(100000000)
+                    = lorem.word
                   %td
                     active
                   %td
-                    -
-                  %td
                     = lorem.date
                   %td
-                    = lorem.sentence
-          .align-center
-            %a.button{:href => "#"} show some more
+                    = lorem.date
+          %ul.pager
+            %li.pager-current
+              1
+            %li.pager-item
+              %a{:href => "#"} 2
+            %li.pager-item
+              %a{:href => "#"} 3
+            %li.pager-item
+              %a{:href => "#"} 4
+            %li.pager-item
+              %a{:href => "#"} 5
+            %li.pager-item
+              %a{:href => "#"} 6
+            %li.pager-ellipsis ...
+            %li.pager-item
+              %a{:href => "#"} 10
+            %li.pager-next
+              %a{:href => "#"} next ›
+            %li.pager-last
+              %a{:href => "#"} last »
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/lu/belongstogroup"

@@ -41,8 +41,9 @@ teaserview: search-newsmedia.html
           = partial :"teasers/news-with-image"
           = partial :"teasers/news-no-image"
           = partial :"teasers/news-with-image"
-          .align-center
-            %a.button{:href => "#"} show some more
+          %ul.pager.pager-load-more
+            %li
+              %a{:href => "#"} Show some more
 
 %aside.l-sidebar.sidebar
   .block#block-find-news

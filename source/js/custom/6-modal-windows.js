@@ -59,7 +59,7 @@ $( window ).load(function() {
         $(document).trigger('sleepyHead');
       }
     }
-  });
+  });     
 
   $('.mfp-content .btn-close').click(function(e) {
     $.magnificPopup.close();

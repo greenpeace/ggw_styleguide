@@ -33,8 +33,9 @@ search_page: groups
           = partial :"teasers/group-with-image3"
           = partial :"teasers/group-with-image4"
           = partial :"teasers/group-with-image5"
-          .align-center
-            %a.button{:href => "#"} show some more
+          %ul.pager.pager-load-more
+            %li
+              %a{:href => "#"} Show some more
 
 
 %aside.l-sidebar.sidebar

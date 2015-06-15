@@ -37,8 +37,9 @@ teaserview: search-newsmedia.html
           = partial :"teasers/blog-no-image"
           = partial :"teasers/blog-with-image"
           = partial :"teasers/blog-no-image"
-          .align-center
-            %a.button{:href => "#"} show some more
+          %ul.pager.pager-load-more
+            %li
+              %a{:href => "#"} Show some more
 
 
 %aside.l-sidebar.sidebar

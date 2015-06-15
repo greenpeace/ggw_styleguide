@@ -22,7 +22,7 @@ organiser: organiser
 
   = partial :"blocks/upcoming_events"
   = partial :"blocks/updates"
-  = partial :"blocks/lu/group-members"
+  = partial :"blocks/lu/group-members", :locals => {:groupname => "#{current_page.data.title}"}
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/lu/comments"

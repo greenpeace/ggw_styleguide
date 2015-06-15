@@ -2,10 +2,10 @@
   width: 134px;
   margin: 0 auto;
   position: relative;
-  top: $def-mar-half;
+  top: 0;
   display:block;
-  height: 34px;
-  background-position: 0 0;
+  height: 48px;
+  background-position: 0 7px;
 
   @include breakpoint($desk) {
     position: absolute;

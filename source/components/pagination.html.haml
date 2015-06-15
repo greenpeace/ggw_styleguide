@@ -1,0 +1,121 @@
+---
+title: Pagination
+body_class: page-pagination l-has-sidebar-first
+layout: styleguide
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "UI Components"
+    url: "./blocks.html"
+
+layout: styleguide
+---
+
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
+  = partial :"nav/uicomponents"
+#content.l-main-column
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Pagination
+    .content
+      :markdown
+        Provide pagination links with the multi-page pagination component, or the simpler 'show some more' alternative
+
+      %h2.section-heading Default pagination
+      %p Simple pagination mainly used for search results. The buttons are hard to miss, easily scalable, and provides large click areas. Link always go to an unique url, so the result page can be shared and export functionalities across multiple pages can work.
+      .demo
+        %ul.pager
+          %li.pager-current
+            1
+          %li.pager-item
+            %a{:href => "#"} 2
+          %li.pager-item
+            %a{:href => "#"} 3
+          %li.pager-item
+            %a{:href => "#"} 4
+          %li.pager-item
+            %a{:href => "#"} 5
+          %li.pager-item
+            %a{:href => "#"} 6
+          %li.pager-ellipsis ...
+          %li.pager-item
+            %a{:href => "#"} 10
+          %li.pager-next
+            %a{:href => "#"} next ›
+          %li.pager-last
+            %a{:href => "#"} last »
+
+        %ul.pager          
+          %li.pager-first
+            %a{:href => "#"} « first
+          %li.pager-previous
+            %a{:href => "#"} ‹ previous
+          %li.pager-item
+            %a{:href => "#"} 1
+          %li.pager-ellipsis ...
+          %li.pager-item
+            %a{:href => "#"} 3
+          %li.pager-item
+            %a{:href => "#"} 4
+          %li.pager-current
+            5
+          %li.pager-item
+            %a{:href => "#"} 6
+          %li.pager-item
+            %a{:href => "#"} 7
+          %li.pager-ellipsis ...
+          %li.pager-item
+            %a{:href => "#"} 10
+          %li.pager-next
+            %a{:href => "#"} next ›
+          %li.pager-last
+            %a{:href => "#"} last »
+
+        %ul.pager
+          %li.pager-first
+            %a{:href => "#"} « first
+          %li.pager-previous
+            %a{:href => "#"} ‹ previous
+          %li.pager-current
+            1
+          %li.pager-item
+            %a{:href => "#"} 2
+          %li.pager-item
+            %a{:href => "#"} 3
+          %li.pager-item
+            %a{:href => "#"} 4
+          %li.pager-item
+            %a{:href => "#"} 5
+          %li.pager-item
+            %a{:href => "#"} 6
+          %li.pager-ellipsis ...
+          %li.pager-item
+            %a{:href => "#"} 10
+
+
+      .code
+        :code
+          # lang: html
+            <ul class="pager">
+              <li class="pager-current">1</li>
+              <li class="pager-item"><a href="#">2</a></li>
+              <li class="pager-item"><a href="#">3</a></li>
+              <li class="pager-item"><a href="#">4</a></li>
+              <li class="pager-item"><a href="#">5</a></li>
+              <li class="pager-item"><a href="#">6</a></li>
+              <li class="pager-ellipsis">...</li>
+              <li class="pager-item"><a href="#">10</a></li>
+              <li class="pager-next"><a href="#">next ›</a></li>
+              <li class="pager-last"><a href="#">last »</a></li>
+            </ul>
+
+      %h2.section-heading Show more pager
+      %p Simple button which which uses ajax to retrieve more item of a result list. Mainly used in overviews (list of stacked nodes). This pager should not be used on tables.
+      .demo
+        %ul.pager.pager-load-more
+          %li
+            %a show some more

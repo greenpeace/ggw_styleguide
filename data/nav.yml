@@ -41,6 +41,9 @@ comp:
     name: "Hero / Slideshow"
     url: "/components/hero.html"
   -
+    name: "Pagination"
+    url: "/components/pagination.html"
+  -
     name: "Progress bar"
     url: "/components/progress-bar.html"
   -

@@ -30,8 +30,9 @@ teaserview: search-newsmedia.html
           - 10.times do |num|
             = partial :"teasers/video"
 
-          .align-center
-            %a.button{:href => "#"} show some more
+          %ul.pager.pager-load-more
+            %li
+              %a{:href => "#"} Show some more
 
 %aside.l-sidebar.sidebar
   .block

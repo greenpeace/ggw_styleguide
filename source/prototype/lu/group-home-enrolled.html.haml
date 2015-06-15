@@ -24,7 +24,7 @@ joined: joined
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/lu/comments"
-  = partial :"blocks/lu/group-members"
+  = partial :"blocks/lu/group-members", :locals => {:groupname => "#{current_page.data.title}"}
 
 = partial :"blocks/lu/group-members-full"
 = partial :"blocks/lu/confirm-group-leave"

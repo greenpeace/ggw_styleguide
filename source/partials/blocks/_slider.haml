@@ -37,7 +37,19 @@
   }),
   latlng = L.latLng(52.5, -2);
 
-  var map = L.map('map', {center: latlng, zoom: 5, scrollWheelZoom: false, layers: [tiles]});
+  var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+  var isDraggable = screenWidth > 480 ? true : false; 
+  var mapOptions = {
+      center: latlng,
+      zoom: 5,
+      scrollWheelZoom: false,
+      layers: [tiles],
+      draggable: isDraggable
+  };
+
+  console.log(isDraggable);
+  
+  var map = L.map('map', mapOptions);
 
   var markers = L.markerClusterGroup();
 

@@ -1,12 +1,12 @@
 .nav-btn {
-  left: 5px;
+  left: 1px;
   position: absolute;
-  top: 6px;
+  top: 0;
   font-size: 2.2em;
-  line-height: 34px;
+  line-height: 48px;
   color: $white;
-  min-width: 44px;
-  min-height: 44px;
+  min-width: 48px;
+  min-height: 48px;
 
   &:focus,
   &:hover {
@@ -17,7 +17,7 @@
 
 .nav-btn + .nav-btn {
   left: auto;
-  right: 7px;
+  right: 3px;
   font-size: 1.6em;
 
     @include breakpoint($tab) {
@@ -93,6 +93,22 @@
     top: -50px;
   }
 
+  .nav-inner-wrap {
+    display: none;
+  }
+
+  &.primary-nav .nav-inner-wrap,
+  &.secondary-nav .nav-inner-wrap {
+    display: block;
+  }
+
+  &.primary-nav .action-menu {
+    left: 266px;
+  }
+
+  &.secondary-nav .action-menu {
+    right: 266px;
+  }
 }
 
 
@@ -137,7 +153,8 @@
 
   // animate the menu like it comes forward
   .nav-inner-wrap {
-    opacity: .4;
+    opacity: 0;
+    display: none;
     transition: opacity 300ms 100ms ease, transform 500ms ease;
     transform: translate3d(10%, 0, 0) scale3d(.9, .9, .9);
     transform-origin: -50% 0%;
@@ -147,6 +164,7 @@
   &.secondary-nav {
     .nav-inner-wrap {
       opacity: 1;
+      display: block;
       transform: translate3d(0, 0, 0);
     }
   }
@@ -229,6 +247,10 @@
     border: 0;
   }
 
+  .js .nav-inner-wrap {
+    display: block;
+  }
+
   .nav-up {
     top: 0;
   }
@@ -239,6 +261,7 @@
 
   .csstransforms3d .nav-inner-wrap {
     opacity: 1;
+    display: block;
     transform: none;
     transform-origin: none;
     border: none;

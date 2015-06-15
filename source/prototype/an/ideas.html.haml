@@ -50,8 +50,9 @@ action_menu:
           = partial :"teasers/idea"
           = partial :"teasers/idea"
           = partial :"teasers/idea"
-          .align-center
-            %a.button{:href => "#"} show some more
+          %ul.pager.pager-load-more
+            %li
+              %a{:href => "#"} Show some more
 
 %aside.l-sidebar.sidebar
   .block#block-find-ideas

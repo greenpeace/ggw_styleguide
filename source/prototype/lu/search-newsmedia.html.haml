@@ -36,8 +36,9 @@ search_page: newsmedia
           = partial :"teasers/document"
           = partial :"teasers/page"
           = partial :"teasers/faq"
-          .align-center
-            %a.button{:href => "#"} show some more
+          %ul.pager.pager-load-more
+            %li
+              %a{:href => "#"} Show some more
 
 
 %aside.l-sidebar.sidebar

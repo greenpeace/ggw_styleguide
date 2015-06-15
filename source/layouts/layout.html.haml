@@ -11,14 +11,16 @@
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %title=page_title
 
-    = javascript_include_tag  "lazysizes"
+    = javascript_include_tag "lazysizes", :async => ""
     /[if lte IE 8]
       = stylesheet_link_tag "old-ie"
-      = javascript_include_tag "html5shiv.min"
+      = javascript_include_tag "html5shiv.min", :async => ""
 
     <!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
     = stylesheet_link_tag "all"
     <!--<![endif]-->
+
+    = javascript_include_tag "modernizr.2.8.2.custom.js"
 
     = partial :"loadfont"
 
@@ -63,31 +65,17 @@
         = partial :"blocks/lu/messages"
 
 
-    = javascript_include_tag  "theme"
+    = javascript_include_tag "theme", :async => ""
 
     - if current_page.data.upload == "image" || current_page.data.upload == "document"
-      = javascript_include_tag "dropzone"
-      = javascript_include_tag "editable/attach_dropzone"
+      = javascript_include_tag "dropzone", :async => ""
+      = javascript_include_tag "editable/attach_dropzone", :async => ""
 
     - if current_page.data.upload == "video"
-      = javascript_include_tag "editable/attach_video"
+      = javascript_include_tag "editable/attach_video", :async => ""
 
     - if current_page.data.script == "event"
-      = javascript_include_tag  "editable/edit-event"
-
-    - if current_page.data.mapsds == "event"
-      :javascript
-         $(document).ready(function() {
-          $('#open-confirm-rsvp').on('click', function(e) {
-            e.preventDefault();
-            $.magnificPopup.open({
-              items: {
-                src: '#confirm-rsvp'
-              },
-              type: 'inline',
-            });
-          });
-        });
+      = javascript_include_tag  "editable/edit-event", :async => ""
 
     /[if lte IE 8]
       = javascript_include_tag "oldie"

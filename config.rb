@@ -73,6 +73,8 @@ set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 set :partials_dir, 'partials'
 
+activate :inliner
+
 activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 9']
   config.cascade  = false
@@ -108,7 +110,6 @@ configure :build do
   # For example, change the Compass output style for deployment
   activate :minify_css
   activate :minify_html
-
   activate :imageoptim
 
   # Minify Javascript on build

@@ -2,8 +2,21 @@ $(function() {
 
   var resizeTimer;
 
+  function once(fn, context) { 
+    var result;
+
+    return function() { 
+      if(fn) {
+        result = fn.apply(context || this, arguments);
+        fn = null;
+      }
+
+      return result;
+    };
+  }
+
   // First function to create the action menu itself.
-  function createActionMenu() {
+  var createActionMenu = once(function() {
 
     //check if there are at least two blocks and they are not hidden on mobile nor in a modal window
     var blocksMain = $('.l-main-column > .block').not('.hidden-mobile').not('.white-popup');
@@ -46,7 +59,9 @@ $(function() {
 
     }
 
-  };
+  });
+
+  createActionMenu();
 
 
   // This script creates a dropdown of the action menu, when there are more then 2 buttons.
@@ -178,14 +193,14 @@ $(function() {
 
     if ($(window).width() < 900) {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(overflowDropdown, 250), setTimeout(createActionMenu.once(), 250) ;
+      resizeTimer = setTimeout(overflowDropdown, 350);
     
     }
   });
 
   if ($(window).width() < 900) {
-    createActionMenu();
     overflowDropdown();
   }
+
 });
 

@@ -51,13 +51,13 @@ body {
 .search-choice-close,
 .chosen-single abbr {
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-    background-image: url('../images/ggw_sprites2xv1.3.png');
+    background-image: url('/images/ggw_sprites2xv1.3.png');
   }
   @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
-    background-image: url('../images/ggw_sprites3xv1.3.png');
+    background-image: url('/images/ggw_sprites3xv1.3.png');
   }
 
-  background-image: url('../images/ggw_sprites1xv1.3.png');
+  background-image: url('/images/ggw_sprites1xv1.3.png');
   background-repeat: no-repeat;
   background-size: 203px 406px;
 }

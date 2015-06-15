@@ -11,16 +11,15 @@
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %title=page_title
 
-    = javascript_include_tag "lazysizes", :async => ""
     /[if lte IE 8]
-      = stylesheet_link_tag "old-ie"
-      = javascript_include_tag "html5shiv.min", :async => ""
+      = javascript_include_tag "html5shiv.min"
+
+    = javascript_include_tag "lazysizes", :async => ""
+    = javascript_include_tag "modernizr.js", :async => ""
 
     <!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
     = stylesheet_link_tag "all"
     <!--<![endif]-->
-
-    = javascript_include_tag "modernizr.2.8.2.custom.js"
 
     = partial :"loadfont"
 
@@ -28,6 +27,7 @@
       = stylesheet_link_tag "x-editable"
       = javascript_include_tag "//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"
       = javascript_include_tag "ckeditorconfig.js"
+
 
   %body{:class => "#{current_page.data.body_class || page_classes}", "data-spy" => "scroll", "data-target" => ".block-sf-nav", "data-offset" => "110"}
     /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
@@ -67,6 +67,10 @@
 
     = javascript_include_tag "theme", :async => ""
 
+    /[if lte IE 8]
+      = javascript_include_tag "oldie"
+      = stylesheet_link_tag "old-ie"
+
     - if current_page.data.upload == "image" || current_page.data.upload == "document"
       = javascript_include_tag "dropzone", :async => ""
       = javascript_include_tag "editable/attach_dropzone", :async => ""
@@ -76,6 +80,3 @@
 
     - if current_page.data.script == "event"
       = javascript_include_tag  "editable/edit-event", :async => ""
-
-    /[if lte IE 8]
-      = javascript_include_tag "oldie"

@@ -10,7 +10,7 @@
   @include breakpoint($desk) {
     position: absolute;
     left: 10px;
-    top: $def-mar;
+    top: $def-mar-half;
   }
 
   @include breakpoint($deskplus) {

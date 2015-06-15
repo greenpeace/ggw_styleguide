@@ -55,6 +55,11 @@
     margin: 0 auto;
   }
 
+  @include breakpoint($wide) {
+    width: 90%;
+    max-width: 1170px;
+  }
+
 }
 
 .l-header {

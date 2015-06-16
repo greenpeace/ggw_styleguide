@@ -1,0 +1,1 @@
+$(function(){lazyload_youtube.init({theme:"dark",colour:"white",controls:!0,responsive:!0,thumbnailquality:"0"})});

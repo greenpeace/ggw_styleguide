@@ -136,3 +136,12 @@
   }
 
 }
+
+@include breakpoint($wide) {
+  
+  .block-sf-nav.affix {
+    width: 23%;
+    max-width: 279px;
+  }
+
+}

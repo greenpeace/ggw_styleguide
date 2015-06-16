@@ -35,7 +35,7 @@ user_role: lu
           .field-name-gallery
             - for photo in item.photos
               %a.album-thumbnail{:href => "/photos/#{photo.url}", :title => "View large image"}
-                %img.lazyload{:alt => "#{photo.caption}", :src => "/photos/blank.png", "data-src" => "/photos/96/#{photo.url}" }
+                %img.lazyload{:alt => "#{photo.caption}", :src => "/images/blank.png", "data-src" => "/photos/96/#{photo.url}" }
                 %noscript
                   %img{:alt => "#{photo.caption}", :src => "/photos/96/#{photo.url}" }
 
@@ -51,7 +51,7 @@ user_role: lu
 
           .submitted.submitted-extended
             .submitted-image
-              %img.lazyload{:alt => "#{item.author}", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+              %img.lazyload{:alt => "#{item.author}", :src => "/images/blank.png", "data-src" => "/photos/75/people5.jpg"}/
             .submitted-info
               %div
                 %a{:href => "./photo.html"} Photos

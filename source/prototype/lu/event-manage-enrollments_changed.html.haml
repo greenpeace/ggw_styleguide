@@ -9,6 +9,7 @@ direct_parent:
     name: "Event (organising)"
     url: "event-full-organising.html"
 user_role: lu
+tables: yes
 ---
 
 = partial :"blocks/breadcrumbs"
@@ -56,7 +57,7 @@ user_role: lu
                     %td
                       %input.form-checkbox{:type => "checkbox"}
                     %td
-                      %img.lazyload{:alt => "#{member.name}", :src => "/photos/blank.png", "data-src" => "/photos/75/#{member.image}"}/
+                      %img.lazyload{:alt => "#{member.name}", :src => "/images/blank.png", "data-src" => "/photos/75/#{member.image}"}/
                       %noscript
                         %img{:alt => "#{member.name}", :src => "/photos/75/#{member.image}"}/
                     %td #{member.name}

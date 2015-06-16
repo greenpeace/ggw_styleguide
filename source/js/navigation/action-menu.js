@@ -75,7 +75,7 @@ $(function() {
 
       fullMenu.removeClass('flexthis').removeAttr('style');
 
-      $('.tabs-overflow').remove();
+      $('.action-menu .tabs-overflow').remove();
 
       var overFlowMenu = "<ul class='tabs-overflow element-invisible'><li><a class='tab-overflow-trigger' href='#' data-dropdown='#am-dropdown'>more <i class='icon-down-mini'></i></a><div class='dropdown dropdown-tip dropdown-relative dropdown-anchor-right' id='am-dropdown'><ul class='dropdown-menu'></ul></div></li></ul>";
       $(overFlowMenu).appendTo('.action-menu');

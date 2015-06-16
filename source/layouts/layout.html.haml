@@ -65,18 +65,28 @@
         = partial :"blocks/lu/messages"
 
 
-    = javascript_include_tag "theme", :async => ""
+    = javascript_include_tag "base"
+    = javascript_include_tag "forms", :async => ""
+    = javascript_include_tag "modal", :async => ""
+
+    - if current_page.data.user_role == "lu"
+      = javascript_include_tag "demo", :async => ""
+
+    - if current_page.data.script == "nodeform"
+      = javascript_include_tag "nodeform", :async => ""
+
+    - if current_page.data.dropzone
+      = javascript_include_tag "dropzone", :async => ""
+
+    - if current_page.data.slider
+      = javascript_include_tag "flexslider", :async => ""
+
+    - if current_page.data.comments
+      = javascript_include_tag "comments", :async => ""
+
+    - if current_page.data.tables
+      = javascript_include_tag "tablesaw"
 
     /[if lte IE 8]
       = javascript_include_tag "oldie"
       = stylesheet_link_tag "old-ie"
-
-    - if current_page.data.upload == "image" || current_page.data.upload == "document"
-      = javascript_include_tag "dropzone", :async => ""
-      = javascript_include_tag "editable/attach_dropzone", :async => ""
-
-    - if current_page.data.upload == "video"
-      = javascript_include_tag "editable/attach_video", :async => ""
-
-    - if current_page.data.script == "event"
-      = javascript_include_tag  "editable/edit-event", :async => ""

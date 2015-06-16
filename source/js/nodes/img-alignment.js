@@ -1,3 +1,5 @@
+// Function to make sure text is not sqeeuzed next to an image.
+
 $(function() {
 
   var resizeTimer; // Set resizeTimer to empty so it resets on page load

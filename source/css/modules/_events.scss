@@ -11,16 +11,10 @@
 
   .block .view-mode-full {
 
-    .field-group-wrapper {
-      background: $background;
-      overflow: hidden;
-      margin-bottom: $def-mar;
-
-      figure {
-        margin: 0;
-      }
+    figure {
+      margin: 0;
     }
-
+    
     .event-actions {
       padding: 0 $def-mar;
       overflow: hidden;

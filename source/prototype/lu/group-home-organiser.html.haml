@@ -1,0 +1,32 @@
+---
+title: Greenwire London
+body_class: not-front logged-in page-group-home l-two-column group-subscribed
+direct_parent:
+  -
+    name: "Groups"
+    url: "groups.html"
+user_role: lu
+joined: joined
+group: home
+organiser: organiser
+comments: yes
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column
+
+  %h1.group-heading.only-mobile
+    %i.icon-users
+    = current_page.data.title
+    %i.icon-subscribed
+
+  = partial :"blocks/upcoming_events"
+  = partial :"blocks/updates"
+  = partial :"blocks/lu/group-members", :locals => {:groupname => "#{current_page.data.title}"}
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/lu/comments"
+  = partial :"blocks/group_info_local"
+
+= partial :"blocks/lu/group-members-full"

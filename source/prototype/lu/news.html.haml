@@ -1,22 +1,59 @@
 ---
 title: News
-body_class: not-front logged-in page-news l-has-sidebar
+body_class: not-front logged-in page-search l-has-sidebar
 user_role: lu
-design_status: Needs review
+search_page: newsmedia
+filter_type: news
+listview: search-newsmedia-listview.html
+teaserview: search-newsmedia.html
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .main-content
+.l-main-column
+
+  #content.block.current
+    = partial :"blocks/lu/add-content"
+
     %i.block-icon.icon-bg-news-media.icon-news
-    %h1#page-title.block-title
+    %h1.block-title{"data-amtitle" => "News"}
       = current_page.data.title
+
     .content
-      = partial :"teasers/news-no-image"
-      = partial :"teasers/news-with-image"
-      = partial :"teasers/news-no-image"
-      = partial :"teasers/news-with-image"
+
+      = partial :"blocks/search-header-search-box"
+
+      .view-header
+        = partial :"nav/search-tabs"
+        = partial :"nav/search-actions"
+
+      .view-search-results
+        .view-content
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
+          = partial :"teasers/news-no-image"
+          = partial :"teasers/news-with-image"
+          %ul.pager.pager-load-more
+            %li
+              %a{:href => "#"} Show some more
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks/find_news"
+  .block#block-find-news
+    %i.block-icon.icon-bg-news-media.icon-adjust
+    %h2.block-title{"data-amtitle" => "Filter"} Filter
+    .content
+      %form
+        = partial :"blocks/search_filters/type"
+        = partial :"blocks/search_filters/groups"
+        = partial :"blocks/search_filters/created"
+        = partial :"blocks/search_filters/tags"
+        = partial :"blocks/search_filters/author"
+        = partial :"blocks/search_filters/form-action"

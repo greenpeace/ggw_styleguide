@@ -1,14 +1,19 @@
 #block-comments.block.block-comments
-  - if current_page.data.front == "frontpage"
-    %i.block-icon.icon-shout.icon-bg-action
-    %h2.block-title Shoutbox
+  - if current_page.data.front == "frontpage" || current_page.data.joined == "joined" || current_page.data.profile == "home"
+    - if current_page.data.profile == "home"
+      %i.block-icon.icon-chat.icon-bg-user
+    - else
+      %i.block-icon.icon-chat.icon-bg-action
+    %h2.block-title{"data-amtitle" => "Shoutbox"} Shoutbox
   - else
     %i.block-icon.icon-comment.icon-bg-action
-    %h2.block-title Comments
+    %h2.block-title{"data-amtitle" => "Comments"} Comments
 
   .content
-    - if current_page.data.front != "frontpage"
+    - if current_page.data.front != "frontpage" && current_page.data.joined != "joined"
+
       %ul.sort-comments
+        %li Sort by:
         %li
           %a.active{:href => "#"} Oldest
         %li
@@ -17,121 +22,212 @@
     .comment-form-holder
       %form.comment-form
         .form-comment-message
-          - if current_page.data.front == "frontpage"
+          - if current_page.data.front == "frontpage" || current_page.data.joined == "joined" || current_page.data.profile == "home"
             %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a shout...", :rows => "1"}
           - else
             %textarea#comment-comment{:cols => "50", :placeholder => "Write a comment...", :rows => "1"}
-        - if current_page.data.front == "frontpage"
+        .preview-wrapper
+          %a#remove-image.remove-image.element-hidden{:href => "#"}
+          %img#preview-image.shoutimage.element-hidden{:src => "/images/blank.png", :alt => "your image"}
+        .clear
+        %input.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
+        - if current_page.data.front == "frontpage" || current_page.data.joined == "joined" ||current_page.data.profile == "home"
+          %button.modal-inline.button.addlink-btn{:href => "#addexternallink"}
+            %i.icon-link
           %span#remain
         %input.form-comment-submit{:type => "submit", :value => "share"}
-        %input.tooltip.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
+
 
     %section.comments
-      %article.comment
-        .avatar-holder
-          %a{:href => "#", :title => "View user profile"}
-            %picture
-              %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/120/people1.jpg 2x"}/
-        .comment-holder
+      %article.comment.media
+        .avatar-holder.media-figure
+          %a{:href => "./profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "/images/blank.png", "data-srcset" => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
+            %noscript
+              %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
+        .comment-holder.media-body
           .comment-head
-            %a.comment-author{:href => "#", :title => "View profile"}
-              Dora Tilman
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
+              = lorem.name
           .comment-body
-            I agree.
+            Any event in London coming up?
           .comment-footer
             %span.comment-timestamp 5 minutes ago
             %span.comment-actions
-              %a.comment-actionlink{:href => "#"} reply
-              %a.comment-actionlink{:href => "#"} edit
-              %a.comment-actionlink{:href => "#"} delete
-      %article.comment
-        .avatar-holder
-          %a{:href => "#", :title => "View user profile"}
-            %picture
-              %img{:alt => "Chico Konink", :src => "/photos/60/people2.jpg", :srcset => "/photos/120/people2.jpg 2x"}/
-        .comment-holder
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+      %article.comment.media
+        .avatar-holder.media-figure
+          %a{:href => "./profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "/images/blank.png", "data-srcset" => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people2.jpg", :srcset => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
+        .comment-holder.media-body
           .comment-head
-            %a.comment-author{:href => "#", :title => "View profile"}
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
               = lorem.name
             (
             %a{:href => "./who-is-who.html"}><
               Greenpeace staff
             )
           .comment-body
-            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+            This is non Greenpeace related so apologies! Is anyone interested in going for a short treck to go see the cascade of Osmington Mills this week end?
+
+            %img.lazyload{:alt => "Chico Konink", :src => "/images/blank.png", "data-srcset" => "/photos/nature7.jpg 1x, /photos/nature8.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/nature7.jpg", :srcset => "/photos/nature7.jpg 1x, /photos/nature8.jpg 2x"}/
           .comment-footer
-            %span.comment-timestamp 1 hour ago
+            %span.comment-timestamp 30 minutes ago
             %span.comment-actions
-              %a.comment-actionlink{:href => "#"} reply
-              %a.comment-actionlink{:href => "#"} edit
-              %a.comment-actionlink{:href => "#"} delete
-      %article.comment.comment-reply
-        .avatar-holder
-          %a{:href => "#", :title => "View user profile"}
-            %picture
-              %img{:alt => "Chico Konink", :src => "/photos/60/people3.jpg", :srcset => "/photos/120/people3.jpg 2x"}/
-        .comment-holder
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+      %article.comment.comment-reply.media
+        .avatar-holder.media-figure
+          %a{:href => "profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "/images/blank.png", "data-srcset" => "/photos/60/people3.jpg 1x, /photos/120/people3.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people3.jpg", :srcset => "/photos/60/people3.jpg 1x, /photos/120/people3.jpg 2x"}/
+        .comment-holder.media-body
           .comment-head
-            %a.comment-author{:href => "#", :title => "View profile"}
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
               = lorem.name
             (
             %a{:href => "./who-is-who.html"}><
               Community coach
             )
           .comment-body
-            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+            Can't make it, but would have loved to come! Enjoy!
           .comment-footer
-            %span.comment-timestamp 30 minutes ago
-      %article.comment.comment-reply
-        .avatar-holder
-          %a{:href => "#", :title => "View user profile"}
-            %picture
-              %img{:alt => "Chico Konink", :src => "/photos/60/people7.jpg", :srcset => "/photos/120/people7.jpg 2x"}/
-        .comment-holder
+            %span.comment-timestamp 1 hour ago
+            %span.comment-actions
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+      %article.comment.comment-reply.media
+        .avatar-holder.media-figure
+          %a{:href => "profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "/images/blank.png", "data-srcset" => "/photos/60/people4.jpg 1x, /photos/120/people4.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people4.jpg", :srcset => "/photos/60/people4.jpg 1x, /photos/120/people4.jpg 2x"}/
+        .comment-holder.media-body
           .comment-head
-            %a.comment-author{:href => "#", :title => "View profile"}
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
               = lorem.name
           .comment-body
-            I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her.
+            Count me in! :)
           .comment-footer
-            %span.comment-timestamp 15 minutes ago
+            %span.comment-timestamp 2 hours ago
             %span.comment-actions
-              %a.comment-actionlink{:href => "#"} edit
-              %a.comment-actionlink{:href => "#"} delete
-      %article.comment
-        .avatar-holder
-          %a{:href => "#", :title => "View user profile"}
-            %picture
-              %img{:alt => "Erben de Bok", :src => "/photos/60/people5.jpg", :srcset => "/photos/120/people5.jpg 2x"}/
-        .comment-holder
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+      %article.comment-reply.media
+        .avatar-holder.media-figure
+          %a{:href => "./profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "/images/blank.png", "data-srcset" => "/photos/60/people5.jpg 1x, /photos/120/people5.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people5.jpg", :srcset => "/photos/60/people5.jpg 1x, /photos/120/people5.jpg 2x"}/
+        .comment-holder.media-body
           .comment-head
-            %a.comment-author{:href => "#", :title => "View profile"}
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
               Erben de Bok
           .comment-body
             “What do you think
             = succeed "?" do
-              %a{:href => "#", :title => "View Erben de Bok's profile"} Erben de Bok
+              %a{:href => "./profile.html", :title => "View Erben de Bok's profile"} Erben de Bok
           .comment-footer
-            %span.comment-timestamp 12 May, 2014 - 13:56
+            %span.comment-timestamp 12 May 2014 at 13:56
             %span.comment-actions
-              %a.comment-actionlink{:href => "#"} reply
-              %a.comment-actionlink{:href => "#"} edit
-              %a.comment-actionlink{:href => "#"} delete
-      %article.comment
-        .avatar-holder
-          %a{:href => "#", :title => "View user profile"}
-            %picture
-              %img{:alt => "Erben de Bok", :src => "/photos/60/people6.jpg", :srcset => "/photos/120/people6.jpg 2x"}/
-        .comment-holder
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+      %article.comment.media
+        .avatar-holder.media-figure
+          %a{:href => "./profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "/images/blank.png", "data-srcset" => "/photos/60/people6.jpg 1x, /photos/120/people6.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people6.jpg", :srcset => "/photos/60/people6.jpg 1x, /photos/120/people6.jpg 2x"}/
+        .comment-holder.media-body
           .comment-head
-            %a.comment-author{:href => "#", :title => "View profile"}
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
               Johnny with his extremelonglastname
           .comment-body
-            “I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her rehabilitation exercises after each surgery. “People I have known who had [replacement surgery] and who didn’t do the therapy, it doesn’t work out for them.”
+            Tulip Siddiq, Labour candidate for Hampstead and Kilburn (maybe the most marginal seat in the UK) just signed the Frack Free promise as a result of some frack free signs she saw on lamp posts outside her office. Well done to whoever put them there!
           .comment-footer
-            %span.comment-timestamp 2 November, 2013 - 08:56
+            %span.comment-timestamp 2 Nov 2013 at 08:56
             %span.comment-actions
-              %a.comment-actionlink{:href => "#"} reply
-              %a.comment-actionlink{:href => "#"} edit
-              %a.comment-actionlink{:href => "#"} delete
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+      %article.comment.media
+        .avatar-holder.media-figure
+          %a{:href => "profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "/images/blank.png", "data-srcset" => "/photos/60/people7.jpg 1x, /photos/120/people7.jpg 2x"}/
+            %noscript
+              %img{:alt => "Dora Tilman", :src => "/photos/60/people7.jpg", :srcset => "/photos/60/people7.jpg 1x, /photos/120/people7.jpg 2x"}/
+        .comment-holder.media-body
+          .comment-head
+            %a.comment-author{:href => "#", :title => "View profile"}
+              Arturo Joseph
+          .comment-body
+            Any advice for a good bike repair shop near Uxbridge?
+          .comment-footer
+            %span.comment-timestamp 5 minutes ago
+            %span.comment-actions
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+      %article.comment.media
+        .avatar-holder.media-figure
+          %a{:href => "./profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "/images/blank.png", "data-srcset" => "/photos/60/people7.jpg 1x, /photos/120/people7.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people7.jpg", :srcset => "/photos/60/people7.jpg 1x, /photos/120/people7.jpg 2x"}/
+        .comment-holder.media-body
+          .comment-head
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
+              Arturo Joseph
+          .comment-body
+            %em - This comment was deleted -
+          .comment-footer
+            %span.comment-timestamp 30 days ago
+            %span.comment-actions
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
 
+      %article.comment.media
+        .avatar-holder.media-figure
+          %a{:href => "./profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "/images/blank.png", "data-srcset" => "/photos/60/people9.jpg 1x, /photos/120/people9.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people9.jpg", :srcset => "/photos/60/people9.jpg 1x, /photos/120/people9.jpg 2x"}/
+        .comment-holder.media-body
+          .comment-head
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
+              Pete Fitzgerald
+          .comment-body
+            It's Pete from Hebden Bridge. Meant to get signed up ages ago but you know how it is. Who else is local to me?
+          .comment-footer
+            %span.comment-timestamp 30 days ago
+            %span.comment-actions
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+      %article.comment-reply.media
+        .avatar-holder.media-figure
+          %a{:href => "./profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "/images/blank.png", "data-srcset" => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people1.jpg", :srcset => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
+        .comment-holder.media-body
+          .comment-head
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
+              Rachael King
+              (
+              %a{:href => "./who-is-who.html"}><
+                Greenpeace Staff
+              )
+          .comment-body
+            Hi Pete, Your closest Networks are either Manchester or Leeds. Next Manchester meeting is Weds 3rd June, quite close to the train station so please come if you can. More info on our page.
+          .comment-footer
+            %span.comment-timestamp 30 days ago
+            %span.comment-actions
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+
+
+    - if current_page.data.front == "frontpage" || current_page.data.joined == "joined"
+      %hr
+      %ul.pager.pager-load-more
+        %li
+          %a{:href => "#"} Show some more
+
+  = partial :"blocks/lu/reply-comment"
+  = partial :"blocks/lu/edit-comment"
+  = partial :"blocks/lu/delete-comment"
+  - if current_page.data.front == "frontpage" || current_page.data.joined == "joined" ||current_page.data.profile == "home"
+    = partial :"blocks/lu/add-external-link"

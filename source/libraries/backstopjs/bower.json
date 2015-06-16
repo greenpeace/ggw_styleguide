@@ -1,0 +1,16 @@
+{
+  "name": "BackstopJS",
+  "version": "0.4.1",
+  "main": "/",
+  "ignore": [
+    "node_modules",
+    "bitmaps_test",
+    "*.sublime*",
+    "capture/config.json",
+    "compare/config.json"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

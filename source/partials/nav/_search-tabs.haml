@@ -2,26 +2,63 @@
   %ul.tabs
     - if current_page.data.user_role == "an"
       %li
-        =nav_link 'All', '/prototype/an/search.html', :class => 'tab'
+        - if current_page.data.search_page == "all"
+          %a.tab.active{:href => "/prototype/an/search.html"} All
+        - else
+          %a.tab{:href => "/prototype/an/search.html"} All
       %li
-        =nav_link 'News & Media', '/prototype/an/search-newsmedia.html', :class => 'tab'
+        - if current_page.data.search_page == "newsmedia"
+          %a.tab.active{:href => "/prototype/an/search-newsmedia.html"} News & Media
+        - else
+          %a.tab{:href => "/prototype/an/search-newsmedia.html"} News & Media
+
       %li
-        =nav_link 'Events', '/prototype/an/search-events.html', :class => 'tab'
+        - if current_page.data.search_page == "events"
+          %a.tab.active{:href => "/prototype/an/search-events.html"} Events
+        - else
+          %a.tab{:href => "/prototype/an/search-events.html"} Events
+
       %li
-        =nav_link 'Groups', '/prototype/an/search-groups.html', :class => 'tab'
+        - if current_page.data.search_page == "groups"
+          %a.tab.active{:href => "/prototype/an/search-groups.html"} Groups
+        - else
+          %a.tab{:href => "/prototype/an/search-groups.html"} Groups
+
       %li
-        =nav_link 'Members', '/prototype/an/search-members.html', :class => 'tab'
+        - if current_page.data.search_page == "members"
+          %a.tab.active{:href => "/prototype/an/search-members.html"} Members
+        - else
+          %a.tab{:href => "/prototype/an/search-members.html"} Members
+
     - if current_page.data.user_role == "lu" or current_page.data.user_role == "cm"
       %li
-        =nav_link 'All', '/prototype/lu/search.html', :class => 'tab'
+        - if current_page.data.search_page == "all"
+          %a.tab.active{:href => "/prototype/lu/search.html"} All
+        - else
+          %a.tab{:href => "/prototype/lu/search.html"} All
       %li
-        =nav_link 'News & Media', '/prototype/lu/search-newsmedia.html', :class => 'tab'
+        - if current_page.data.search_page == "newsmedia"
+          %a.tab.active{:href => "/prototype/lu/search-newsmedia.html"} News & Media
+        - else
+          %a.tab{:href => "/prototype/lu/search-newsmedia.html"} News & Media
+
       %li
-        =nav_link 'Events', '/prototype/lu/search-events.html', :class => 'tab'
+        - if current_page.data.search_page == "events"
+          %a.tab.active{:href => "/prototype/lu/search-events.html"} Events
+        - else
+          %a.tab{:href => "/prototype/lu/search-events.html"} Events
+
       %li
-        =nav_link 'Groups', '/prototype/lu/search-groups.html', :class => 'tab'
+        - if current_page.data.search_page == "groups"
+          %a.tab.active{:href => "/prototype/lu/search-groups.html"} Groups
+        - else
+          %a.tab{:href => "/prototype/lu/search-groups.html"} Groups
+
       %li
-        =nav_link 'Members', '/prototype/lu/search-members.html', :class => 'tab'
+        - if current_page.data.search_page == "members"
+          %a.tab.active{:href => "/prototype/lu/search-members.html"} Members
+        - else
+          %a.tab{:href => "/prototype/lu/search-members.html"} Members
   %ul.tabs-overflow
     %li
       %a.tab.tab-overflow-trigger{:href => "#", "data-dropdown" => "#dropdown-tabs"}

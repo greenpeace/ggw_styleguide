@@ -3,10 +3,33 @@
   .views-widget
     .form-item.form-type-select
       %select.chosen-select{"data-placeholder" => "Add type", :multiple => "multiple"}
-        %option{:value => ""}
-        %option{:value => "news"} News
-        %option{:value => "blogs"} Blogs
-        %option{:value => "documents"} Documents
-        %option{:value => "ideas"} Ideas
-        %option{:value => "photos"} Photos
-        %option{:value => "videos"} Videos
+        - if current_page.data.filter_type == "news"
+          %option{:value => "news", :selected => ""} News
+        - else
+          %option{:value => "news"} News
+
+        - if current_page.data.filter_type == "blog"
+          %option{:value => "blogs", :selected => ""} Blogs
+        - else
+          %option{:value => "blogs"} Blogs
+
+        - if current_page.data.filter_type == "documents"
+          %option{:value => "documents", :selected => ""} Documents
+        - else
+          %option{:value => "documents"} Documents
+
+        - if current_page.data.filter_type == "ideas"
+          %option{:value => "ideas", :selected => ""} Ideas
+        - else
+          %option{:value => "ideas"} Ideas
+
+        - if current_page.data.filter_type == "photos"
+          %option{:value => "photos", :selected => ""} Photos
+        - else
+          %option{:value => "photos"} Photos
+
+        - if current_page.data.filter_type == "videos"
+          %option{:value => "videos", :selected => ""} Videos
+        - else
+          %option{:value => "videos"} Videos
+

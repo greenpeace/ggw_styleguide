@@ -44,43 +44,59 @@
         %nav.user-menu{:role => "navigation"}
           %ul.menu
 
-            - if current_page.data.user_role == "lu" || current_page.data.user_role == "cm"
+            - if current_page.data.user_role == "lu" && current_page.data.user_context != "first-login" || current_page.data.user_role == "cm"
               %li.menu-item
                 %a.menu-link{:href => "my-profile.html"}
-                  John Doe Claus
+                  Grace O'Flynn
               %li.menu-item
-                %a.menu-link{:href => "#", "data-dropdown" => "#alerts"}
-                  Alerts
-                  %span.num-notifications 2
+                %a.menu-link.attention-trigger#notifications-trigger{:href => "#", "data-dropdown" => "#notifications-panel"}
+                  %span.menu-link-text Notifications
+                  %i.icon.icon-globe
+                  %span.attention-number#notifications-number
               %li.menu-item
-                %a.menu-link{:href => "#", "data-dropdown" => "#notifications"}
-                  Updates
-                  %span.num-notifications 4
+                %a.menu-link.attention-trigger#messages-trigger{:href => "#", "data-dropdown" => "#messages-panel"}
+                  %span.menu-link-text Messages
+                  %i.icon.icon-mail
+                  %span.attention-number#messages-number
+
+            - if current_page.data.user_role == "lu" && current_page.data.user_context == "first-login"
+              %li.menu-item
+                %a.menu-link{:href => "my-profile-incomplete.html"}
+                  Grace O'Flynn
+              %li.menu-item
+                %a.menu-link.attention-trigger#notifications-trigger{:href => "#", "data-dropdown" => "#notifications-panel"}
+                  %span.menu-link-text Notifications
+                  %i.icon.icon-globe
+              %li.menu-item
+                %a.menu-link.attention-trigger#messages-trigger{:href => "my-messages.html"}
+                  %span.menu-link-text Messages
+                  %i.icon.icon-mail
+
+            - if current_page.data.user_role == "lu" || current_page.data.user_role == "cm"
+              %li.menu-item.only-mobile
+                %a.menu-link{:href => "./my-profile-incomplete.html#block-user-groups"}
+                  My groups
+              %li.menu-item.only-mobile
+                %a.menu-link{:href => "./my-profile-incomplete.html#block-user-events"}
+                  My events
               %li.menu-item
                 %a.menu-link{:href => "../an/index.html"} Log out
 
             - else
-              - data.nav.secondary_an.each do |item|
-                %li.menu-item
-                  =nav_link item.name, item.url, :class => 'menu-link'
+              %li.menu-item
+                %a.menu-link{:href => "./login.html"} Login
+              %li.menu-item
+                %a.menu-link{:href => "./register-step1.html"} Sign up
 
-        .l-country-selector.country-selector
+
+        .l-country-selector.country-selector.nav-selector
           .dropdown-controller
             %a.trigger{"data-dropdown" => "#dropdown-content-country", :href => "#"}
-              International
+              United Kingdom
               %span.country-img
-          #dropdown-content-country.dropdown.dropdown-scroll.relative
+          #dropdown-content-country.dropdown.dropdown-scroll.relative.dropdown-relative
             %ul.dropdown-list
               - data.nav.nro.each do |item|
                 %li
                   %a{:href => "#"}
                     = item
-        .l-language-selector.language-selector
-          .dropdown-controller
-            %a.trigger{"data-dropdown" => "#dropdown-content-language", :href => "#"} Francais
-          #dropdown-content-language.dropdown.dropdown-scroll.relative
-            %ul.dropdown-list
-              %li
-                %a{:href => "#"} Francais
-              %li
-                %a{:href => "#"} Nederlands

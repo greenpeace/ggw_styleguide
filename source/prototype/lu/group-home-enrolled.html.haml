@@ -1,0 +1,31 @@
+---
+title: Emlyn Gardens local group
+body_class: not-front logged-in page-group-home l-two-column group-subscribed
+direct_parent:
+  -
+    name: "Groups"
+    url: "groups.html"
+user_role: lu
+group: home
+joined: joined
+comments: yes
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column
+  %h1.group-heading.only-mobile
+    %i.icon-users
+    = current_page.data.title
+    %i.icon-subscribed
+  = partial :"blocks/group_info_local"
+  = partial :"blocks/local_group_upcoming_events"
+  = partial :"blocks/group_local_updates"
+
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/lu/comments"
+  = partial :"blocks/lu/group-members", :locals => {:groupname => "#{current_page.data.title}"}
+
+= partial :"blocks/lu/group-members-full"
+= partial :"blocks/lu/confirm-group-leave"

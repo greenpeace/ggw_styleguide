@@ -31,8 +31,9 @@ activate :syntax
 # Page options, layouts, aliases and proxies
 ###
 
-#page "prototype/*", :layout => "sidebarsecond"
-#page "/design-elements/*", :layout => "styleguide"
+page "*/event_map_single.html", :layout => false
+page "*/random-private-message.html", :layout => false
+page "*/random-private-message*.html", :layout => false
 
 # Per-page layout changes:
 #
@@ -64,11 +65,15 @@ activate :syntax
 #   end
 # end
 
+sprockets.append_path File.join "#{root}", "/source/libraries"
+
 set :css_dir, 'css'
 set :js_dir, 'js'
 set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 set :partials_dir, 'partials'
+
+activate :inliner
 
 activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 9']
@@ -105,17 +110,19 @@ configure :build do
   # For example, change the Compass output style for deployment
   activate :minify_css
   activate :minify_html
-
   activate :imageoptim
 
   # Minify Javascript on build
   activate :minify_javascript, :inline => true, compressor: Uglifier.new(:comments => :none, mangle: false)
 
-  activate :gzip
+
+  ignore 'libraries/*'
+
+  #activate :gzip
 
   # Uniquely-named assets, preventing users from using outdated files
   # Exclude files that are called from template files directly
-  activate :asset_hash, :ignore => ['vendor', 'images', 'photos', 'font', 'css/fonticons.woff.css', 'css/fonticons.woff2.css']
+  activate :asset_hash, :ignore => ['.idea','vendor', 'images', 'photos', 'font', 'css/fonticons.woff.css', 'css/fonticons.woff2.css']
 
   # Enable cache buster
   # activate :cache_buster

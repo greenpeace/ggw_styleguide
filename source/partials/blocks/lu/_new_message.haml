@@ -1,0 +1,35 @@
+#block-compose-message.block.block-comments
+  %i.block-icon.icon-pencil.icon-bg-user
+  %h2.block-title{"data-amtitle" => "New message"} Write a new message
+  .content
+    %form.comment-form
+      .form-item
+        %label.form-label
+          To:
+          %span.form-required{:title => "This field is required."} *
+        .form-description By selecting multiple members you will be sending one message to each member
+        %input.form-text.form-autocomplete{:type => "text", :value => "", :placeholder => "Who do you want to send a message?"}
+        .autocomplete
+          %ul
+            - 20.times do |num|
+              %li
+                = lorem.name
+
+      .form-comment-message
+        %label{:for => "edit-body-und-0-value"}
+          Message:
+          %span.form-required{:title => "This field is required."} *
+        .form-textarea-wrapper.fullwidth
+          %textarea#edit-private-message-body.text-full.form-textarea{:rows => "6"}
+
+      .preview-wrapper
+        %img#preview-image.shoutimage.element-hidden{:src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", :alt => "your image"}
+      .clear
+      %input.form-comment-file{:accept => "image/*", :type => "file"}
+
+      %button.modal-inline.button.addlink-btn{:href => "#addexternallink"}
+        %i.icon-link
+
+      %input.button.form-comment-submit{:type => "submit", :value => "Send message"}
+
+= partial :"blocks/lu/add-external-link"

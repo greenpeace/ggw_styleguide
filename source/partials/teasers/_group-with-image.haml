@@ -1,13 +1,15 @@
-.views-row
-  %article.node-teaser-group.node-teaser
-    .field-type-image
-      = partial :"teasers/teaser-image"
-    .field-type-wrapper
-      %h2.node-title
-        %a{:href => "#"}
-          = lorem.sentence
-      .submitted
-        %a.type.group{:href => "#"} Group
-        Country group (open)
-      .field-name-body
-        =lorem.paragraph
+- data.groups.group_skills.each do |item|
+  .views-row
+    %article.node-teaser-group.node-teaser
+      .field-type-image
+        %a{:href => "./group-home.html"}
+          = partial :"teasers/teaser-image", :locals => {:image => "#{item.image}"}
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./group-home-local2.html"}
+            = item.title
+        .submitted
+          %a.type.group{:href => "./groups.html"} Group
+          #{item.group_type} (#{item.enrollment_type})
+        .field-name-body
+          = item.about

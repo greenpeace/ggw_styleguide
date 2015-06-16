@@ -1,1 +1,28 @@
-who-is-who.html.haml
+---
+title: Who is who
+body_class: not-front logged-in page-who-is-who l-two-column
+user_role: lu
+design_status: Work in progress
+action_menu:
+  -
+    id: "#block-community-coaches"
+    label: "Community coaches"
+    icon: "users"
+  -
+    id: "#block-greenpeace-staff"
+    label: "Greenpeace staff"
+    icon: "users"
+---
+
+
+= partial :"blocks/breadcrumbs"
+
+.region-highlight
+  .block.hero
+    =image_tag("/photos/group_public_large.jpg")
+
+.l-main-column
+  = partial :"blocks/block-community-coaches"
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/block-greenpeace-staff"

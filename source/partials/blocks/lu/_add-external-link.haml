@@ -1,0 +1,20 @@
+#addexternallink.block.white-popup.mfp-hide
+  %i.block-icon.icon-link.icon-bg-action
+  %h2.block-title Add link
+
+  .content
+    %form.comment-form.form-addlink
+      .form-wrapper.row
+        .form-item.form-comment-link
+          %label.form-label Enter a link
+          %input#shoutbox-comment-link.form-text.input-large{:type => "text", :value => "", :placeholder => "enter or past a url"}
+        .form-item
+          %a.show-linkinfo.button Check link
+      #linkinfo.urlive-container
+        %a.close-linkinfo.element-hidden{:href => "#"}
+          %i.icon-cancel
+
+      .form-actions.form-wrapper
+        %input#addexternallink{:type => "submit", :class => "button btn-primary", :value => "Insert link", :disabled => "disabled"}
+        %input{:type => "submit", :class => "button btn-close", :value => "Cancel"}
+

@@ -1,6 +1,6 @@
 #block-comments.block.block-comments
   %i.block-icon.icon-comment.icon-bg-action
-  %h2.block-title Comments
+  %h2.block-title{"data-amtitle" => "Comments"} Comments
   .content
     %p Only registered users can see and post comments. Please take a moment to register or login to join the conversation!
-    %a.button.btn-primary Get wired!
+    =nav_link 'Get wired', '/prototype/an/register-step1.html', :class => 'button btn-primary'

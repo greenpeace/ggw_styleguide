@@ -1,19 +1,27 @@
-.views-row
-  %article.node-teaser-user.node-teaser
-    .field-type-image
-      %picture
-        /[if IE 9] <video style="display: none;">
-        %source{:media => "(min-width: 48em)", :srcset => "/photos/130/people4.jpg, /photos/260/people5.jpg 1.5x"}
-        %source{:srcset => "/photos/180/people1.jpg 2x, /photos/90/people2.jpg 1x"}
-        /[if IE 9] </video>
-        %img{:alt => "Example of image.", :src => "/photos/blank.png", :srcset => "/photos/90/people3.jpg"}
-    .field-type-wrapper
-      %h2.node-title
-        %a{:href => "#"}
-          = lorem.name
-          %span.username (alexandra_scarborough)
-      .submitted
-        %a.type.user{:href => "#"} Greenpeace staff
-        %span Portland
-      .field-name-body
-        = lorem.paragraph
+- data.members.member_four.each do |item|
+  .views-row
+    %article.node-teaser-user.node-teaser
+      .field-type-image
+        %a{:href => "./profile.html"}
+          = partial :"teasers/teaser-image", :locals => {:image => "#{item.image}"}
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./profile.html"}
+            = item.first_name
+            = item.last_name
+            %span.username
+              (#{item.username})
+        .submitted
+          %a.type.user{:href => "./profile.html"}
+          %span #{item.city} //
+          %a{:href => "./who-is-who.html"} Greenpeace staff
+
+        - if current_page.data.profile == "friends" && current_page.data.access == "mine"
+          .field.field-friend-status
+            .btn-group
+              %a.button.btn-s{:href => "#"}
+                %i.icon-trash
+                Unfriend
+        - else
+          .field-name-body
+            = item.about

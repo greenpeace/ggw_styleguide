@@ -1,82 +1,29 @@
-@include breakpoint($tab) {
-  .style-guide {
+.style-guide p + p {
+  margin-top: 0;
 
-    .sidebar-left {
-      float: left;
-      width: 25%;
-
-      .block {
-        margin-right: 1.5em;
-      }
-    }
-
-    .l-main-column {
-      float: right;
-      width: 75%;
-      margin: 0;
-    }
-
-    &.l-has-sidebar {
-      .l-main-column {
-        width: 66%
-      }
-    }
-
+  .l-main-column .block {
+    margin-top: $def-mar;
   }
 
-}
-
-@include breakpoint($desk) {
-
-  .style-guide .sidebar-left .block {
-    margin: 1em 1.5em 1.5em 0;
-    padding: 0;
-  }
-
-}
-
-.style-guide {
-
-  .block,
-  .main-content {
-    margin: 1em 0;
-  }
-
-  p + p {
-    margin-top: 0;
-  }
 }
 
 // create a 2 columns grid
 .two-col {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  align-content: flex-start;
-  justify-content: flex-start;
+  clear: both;
 
   .col {
-    flex: 1 100%;
-    display: flex;
-    align-items: flex-start;
-    align-content: flex-start;
-    justify-content: flex-start;
+    display: block;
 
     @include breakpoint($tab) {
-      flex: 0 1 50%;
-    }
-
-    .block {
-      display: flex;
-      flex: 1 100%;
-      flex-direction: column;
-      justify-content: space-between;
-      margin: 1em 1.5em 1.5em 0;
+      float: left;
+      width: 50%;
+      padding-right: $def-mar-half;
     }
 
     // blocks on the right should not have white space on the right
-    &:nth-child(2n) .block {
-      margin-right: 0;
+    &:nth-child(2n) {
+      padding-left: $def-mar-half;
+      padding-right: 0;
     }
 
   }
@@ -107,14 +54,14 @@
 .card {
   overflow: hidden;
   border-radius: 4px;
-  box-shadow: 0 0 1px 0 rgba(black, 0.3);
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, .3);
   backface-visibility: hidden;
   background-clip: padding-box;
-  background: none repeat scroll 0 0 #fff;
+  background: none repeat scroll 0 0 $white;
   position: relative;
   text-align: center;
   font-size: $p;
-  letter-spacing: 0.05em;
+  letter-spacing: .05em;
 
   .color {
     padding: .5em 0;
@@ -142,50 +89,56 @@
   }
 }
 
-// buttons for styleguide navigation
-.sg-navbtn {
-  display: block;
-  line-height: 1.2em;
-  padding: .8em 1em;
-  font-size: $p;
-  color: $base;
-  border-bottom: 1px solid $grey-l;
-  position: relative;
-
-  &:last-child {
-    border: none;
-  }
-
-  &:before {
-    float: right;
-    @extend %load-icon;
-    @extend %icon-right-open;
-  }
-
-  &:hover {
-    background: $background;
-  }
-
-  &.active {
-    background: $green2;
-    color: $white;
-  }
-}
-
-// label above the left navigation
-.sidebar-left .block-title {
-  margin: 0;
-  padding: 1em;
-  font-size: $p;
-  color: $heading;
-  border-bottom: 1px solid $grey-l;
-}
 
 .sg-title {
   @extend %element-hidden;
 
   @include breakpoint($desk) {
+    @include font-size($h3);
     display: block;
+    color: $white;
+    font-weight: normal;
   }
 
 }
+
+.style-guide .affix-top .sf-navbtn:first-of-type {
+  background: $white;
+  color: $base;
+
+  &:hover,
+  &.current,
+  &.active {
+    background: $green2;
+    color: $white;
+    text-decoration: none !important;
+  }
+
+}
+
+@include breakpoint($desk) {
+  .l-has-sidebar-first .l-two-column {
+
+    .l-main-column,
+    .l-sidebar {
+      float: left;
+      position: relative;
+      width: 50%;
+      margin: 0;
+    }
+
+  }
+
+  .l-has-sidebar-first .l-has-sidebar {
+
+    .l-main-column{
+      float: left;
+      position: relative;
+      width: 66.66667%;
+      margin: 0;
+    }
+
+  }
+
+}
+

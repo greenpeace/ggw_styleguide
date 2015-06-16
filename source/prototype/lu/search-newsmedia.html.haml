@@ -1,19 +1,18 @@
 ---
-title: Search news & media
+title: News & media
 body_class: not-front logged-in page-search l-has-sidebar
 user_role: lu
 search_page: newsmedia
-design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
 
-  .main-content
-
-    %i.block-icon.icon-bg-default.icon-search
-    %h1.block-title#page-title
+  #content.block.current
+    = partial :"blocks/lu/add-content"
+    %i.block-icon.icon-bg-news-media.icon-news
+    %h1.block-title{"data-amtitle" => "Search news & media"}
       = current_page.data.title
 
     .content
@@ -37,14 +36,15 @@ design_status: Needs review
           = partial :"teasers/document"
           = partial :"teasers/page"
           = partial :"teasers/faq"
-          .align-center
-            %a.button{:href => "#"} show some more
+          %ul.pager.pager-load-more
+            %li
+              %a{:href => "#"} Show some more
 
 
 %aside.l-sidebar.sidebar
-  .block
-    %i.block-icon.icon-bg-default.icon-adjust
-    %h2.block-title Filter
+  .block#block-filter
+    %i.block-icon.icon-bg-news-media.icon-adjust
+    %h2.block-title{"data-amtitle" => "Filter"} Filter
     .content
       %form
         = partial :"blocks/search_filters/type"

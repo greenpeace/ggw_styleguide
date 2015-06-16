@@ -1,0 +1,108 @@
+---
+title: Rose Turner
+body_class: not-front logged-in page-profile l-two-column
+profile: home
+access: other
+user_role: lu
+comments: yes
+---
+
+= partial :"blocks/breadcrumbs"
+
+- data.members.member_rose.each do |item|
+
+  .l-main-column
+    %h1.group-heading.only-mobile
+      %i.icon-user
+      #{item.first_name} #{item.last_name}
+    #block-user-profile.block.current
+      %i.block-icon.icon-bg-user.icon-user
+      %h2.block-title{"data-amtitle" => "Profile"}
+        Profile
+
+      .content
+
+        .field-name-user-image
+          %img.lazyload{:alt => "Rose Turner", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/rose.jpg"}/
+          %noscript
+            %img{:src => "/photos/rose.jpg", :alt => "Rose Turner"}/
+
+        .field.field-name-user-name
+          #{item.first_name} #{item.last_name}
+          %span.username (#{item.username})
+
+        .field.field-name-body
+          .field-label.element-hidden About me:
+          .field-item
+            #{item.about}
+        .clear
+
+        .field.field-name-field-social-media.field-inline-block
+          .field-label Social media:
+          .field-item
+            %a.social-icon.twitter{:href => "#{item.social_twitter}", :target => "blank"}
+              %span.element-hidden twitter
+            %a.social-icon.facebook{:href => "#{item.social_facebook}", :target => "blank"}
+              %span.element-hidden facebook
+
+        .field.field-name-field-skype.field-inline-block
+          .field-label Skype:
+          .field-item
+            %i.icon-skype
+            %span #{item.skype}
+
+        .field.field-name-field-mail.field-inline-block
+          .field-label Email:
+          .field-item #{item.email}
+
+        .field.field-name-field-telephone.field-inline-block
+          .field-label Phone:
+          .field-item #{item.phone_home}
+
+        .field.field-name-field-location.field-inline-block
+          .field-label Address:
+          .field-item #{item.address}, #{item.city}, #{item.country}
+
+        .field.field-name-field-profession.field-inline-block
+          .field-label Profession:
+          .field-item #{item.profession}
+
+        .field.field-name-send-message
+          %p
+            %a.modal-inline.button.btn-primary{:href => "#send-private-message"} Send a private message
+
+    #block-skills.block
+      %i.block-icon.icon-bg-user.icon-skills
+      %h2.block-title{"data-amtitle" => "Skills"}
+        Skills
+
+      .content
+
+        .field.field-name-field-education
+          .field-label Education:
+          .field-item
+            Environmental Law and Sustainability Masters (LLM), University of London
+        .field.field-name-field-skills-general
+          .field-label General skills
+          .field-item
+            = succeed "," do
+              %a.tag{:href => "./search-members.html"} Research
+            = succeed "," do
+              %a.tag{:href => "./search-members.html"} Oceans
+            %a.tag{:href => "./search-members.html"} Law
+
+        .field.field-name-field-skills-campaigning
+          .field-label Campaigning skills
+          .field-item
+            %a.tag{:href => "./search-members.html"} NVDA general
+
+    = partial :"blocks/lu/user-events"
+    = partial :"blocks/lu/user-groups-roseturner"
+
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/lu/my-friends-roseturner"
+    = partial :"blocks/lu/comments-roseturner"
+    = partial :"blocks/lu/user-activity"
+
+  = partial :"blocks/lu/new_message_from_profile", :locals => {:name => "#{item.first_name} #{item.last_name}"}
+  = partial :"blocks/lu/confirm-friend-request", :locals => {:name => "#{item.first_name} #{item.last_name}"}

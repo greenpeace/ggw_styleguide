@@ -1,0 +1,217 @@
+.page-edit textarea {
+  max-width: none;
+}
+
+
+// Style the CKEditor element to look like a textfield
+.cke_editor_field-edit-description {
+  padding: 5px .5em;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  width: 100%;
+  -webkit-appearance: none;
+  font-size: 0.875rem;
+  outline: none;
+  min-height: 200px;
+}
+
+.cke_editable {
+  @include font-size(16px);
+  padding: 14px;
+
+  p {
+    margin: .65em 0 .95em;
+  }
+}
+
+@include breakpoint($desk) {
+
+  .section-submit .button {
+    background: $white;
+  }
+
+  .section-submit .btn-primary {
+    background: $primary;
+  }
+
+}
+
+// image upload preview
+.preview-wrapper {
+  background-color: $grey-l;
+  float: left;
+  height: 60px; //temp
+  margin-right: $def-mar;
+  overflow: hidden;
+  position: relative;
+  width: 90px;
+  z-index: 1;
+
+  @include breakpoint($smalltab) {
+    height: 90px;
+    width: 130px;
+  }
+
+  &:before {
+    @extend %load-icon;
+    color: $white;
+    font-size: 2.5rem;
+    line-height: 60px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+
+    @include breakpoint($smalltab) {
+      font-size: 3.5rem;
+      line-height: 90px;
+    }
+
+  }
+
+  img {
+    position: relative;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    max-width: 90px;
+
+    @include breakpoint($smalltab) {
+      max-width: 130px;
+    }
+
+  }
+
+}
+
+.field-type-blog {
+  @extend %icon-feather;
+}
+
+.field-type-news {
+  @extend %icon-book-open;
+}
+
+.field-type-event {
+  @extend %icon-calendar;
+}
+
+.field-type-group {
+  @extend %icon-users;
+}
+
+.field-type-video {
+  @extend %icon-video;
+}
+
+.wrapper {
+  @extend %wrapper;
+}
+
+
+.launcher {
+  position: relative;
+  z-index: 99;
+}
+
+#results {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.location-lookup-resultlist {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: $white;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 400px;
+
+  li {
+    display: block;
+  }
+
+  a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $base;
+    padding: 0.5em;
+    display: block;
+    line-height: 1.2em;
+
+    &:hover {
+      background-color: $green2;
+      color: $white;
+      text-decoration: none;
+    }
+
+  }
+
+}
+
+.close-result {
+  position: absolute;
+  top: -28px;
+  right: 0;
+  z-index: 100;
+  background: none;
+  border: none;
+  color: $grey-d;
+  font-weight: 700;
+  font-size: $h3;
+}
+
+.preview-location {
+  display: block;
+  width: 80%;
+  height: 220px;
+
+  @include breakpoint($desk) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 258px;
+    height: 258px;
+  }
+}
+
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+  transition: margin .2s;
+}
+
+@include breakpoint($smalltab) {
+  .flexbox .field-name-group-type {
+
+    .form-radios {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .form-type-radio {
+      margin: 0;
+      flex: 0 1 50%;
+    }
+
+  }
+
+}
+
+@include breakpoint($tab) {
+  .flexbox .field-name-group-type .form-type-radio {
+    flex: 0 1 33%;
+  }
+}
+
+@include breakpoint($desk) {
+  .flexbox .field-name-group-type .form-type-radio {
+    flex: 0 1 25%;
+  }
+}

@@ -1,0 +1,32 @@
+#block-compose-message.block.white-popup.mfp-hide
+  %i.block-icon.icon-pencil.icon-bg-action
+  %h2.block-title Write a new message
+  .content
+    %form.private-message-form
+      .form-item
+        %label.form-label
+          To:
+          %span.form-required{:title => "This field is required."} *
+        .form-description Use comma's for multiple members
+        %input.form-text.form-autocomplete{:type => "text", :value => "", :placeholder => "Who do you want to send a message?"}
+        .autocomplete
+          %ul
+            - 20.times do |num|
+              %li
+                = lorem.name
+      .form-item.form-type-textarea
+        %label{:for => "edit-body-und-0-value"}
+          Message:
+          %span.form-required{:title => "This field is required."} *
+        .form-textarea-wrapper.fullwidth
+          %textarea#edit-private-message-body.text-full.form-textarea{:rows => "6"}
+
+      .preview-wrapper
+        %img#preview-image.shoutimage.element-hidden{:src => "#", :alt => "your image"}
+      .clear
+      %input.tooltip.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
+
+      %button.modal-inline.button.addlink-btn{:href => "#addexternallink"}
+        %i.icon-link
+
+      %input.button.form-comment-submit{:type => "submit", :value => "Send message"}

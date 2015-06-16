@@ -1,0 +1,11 @@
+#confirm-group-leave.block.white-popup.mfp-hide
+  %i.block-icon.icon-leave.icon-bg-action
+  %h2.block-title Are you sure you want to leave this group?
+
+  .content
+    %form.comment-form{:action => "./group-home.html#confirmed-leave-group", :method => "get"}
+      %p Leaving the group means you will no longer be able to participate in this group on Greenwire. You can subscribe to this group again at a later stage.
+      .form-actions.form-wrapper
+        %input{:type => "submit", :class => "button btn-primary", :value => "Leave group"}
+        %input{:type => "submit", :class => "button ", :value => "Cancel"}
+

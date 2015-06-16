@@ -1,5 +1,5 @@
 .views-row
-  %article.node-teaser-idea.node-teaser
+  %article.node-teaser-idea.node-teaser.lazyload{"data-expand" => "0"}
     .field-type-image
     .field-type-wrapper
       %h2.node-title
@@ -13,5 +13,7 @@
             = lorem.name
         - else
           = lorem.name.downcase.tr(' ', '_')
+        - if current_page.data.user_role != "an"
+          %a.teaser-comments{:href => "./idea.html#block-comments"} 4
       .field-name-body
         =lorem.paragraph

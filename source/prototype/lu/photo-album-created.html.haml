@@ -1,0 +1,71 @@
+---
+title: Photos of induction training
+body_class: not-front logged-in page-type-photos l-has-sidebar node-full
+direct_parent:
+  -
+    name: "Photos"
+    url: "photos.html"
+user_role: lu
+---
+
+= partial :"blocks/breadcrumbs"
+
+- data.photos.album_three.each do |item|
+
+  .l-main-column
+    #content.block.main-content.current
+      %i.block-icon.icon-bg-news-media.icon-photo
+      %h1.block-title{"data-amtitle" => "Photo album"}
+        = item.title
+      .content
+        %article.view-mode-full
+          .submitted
+            %a.type.photo{:href => "./photos.html"} Photos
+            by
+            %a{:href => "./profile.html"}
+              = item.author
+
+            %span.submitted-date
+              = item.datetime
+
+            %a.comments-shortcut.show-block{:href => "#block-comments", "data-scroll" => ""}
+              %i.icon-comment
+              #{item.comment_amount} comments
+
+          .field-name-gallery
+            - for photo in item.photos
+              %a.album-thumbnail{:href => "/photos/#{photo.url}", :title => "View large image"}
+                %img.lazyload{:alt => "#{photo.caption}", :src => "/images/blank.png", "data-src" => "/photos/96/#{photo.url}" }
+                %noscript
+                  %img{:alt => "#{photo.caption}", :src => "/photos/96/#{photo.url}" }
+
+          .field-name-body
+            = item.full_text
+
+          .tags
+            Tags:
+            - for tag in item.tags
+              = succeed ", " do
+                %a.tag{:href => "./search-newsmedia.html"} #{tag}
+            %a.tag{:href => "./search-newsmedia.html"} organic farming
+
+          .submitted.submitted-extended
+            .submitted-image
+              %img.lazyload{:alt => "#{item.author}", :src => "/images/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+            .submitted-info
+              %div
+                %a{:href => "./photo.html"} Photos
+                by
+                %a{:href => "./profile.html"}
+                  = item.author
+              .submitted-all-reference
+                %a{:href => "./photos.html"}<
+                  All photo albums by #{item.author}.
+
+    = partial :"blocks/lu/comments"
+
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/related_photos"
+    = partial :"blocks/go_to_group"
+    = partial :"blocks/lu/subscribe"
+

@@ -1,0 +1,28 @@
+---
+title: Privacy policy
+body_class: not-front not-logged-in page-privacy l-has-sidebar
+user_role: an
+---
+
+= partial :"blocks/breadcrumbs"
+
+- data.privacy.policy.each do |item|
+
+  .l-main-column
+    #content.block.current
+
+      %i.block-icon.icon-bg-default.icon-info
+      %h1.block-title{"data-amtitle" => "Privacy policy"}
+        = item.title
+
+      .content
+        %article.view-mode-full
+          .submitted
+            %span.submitted-date
+              Last edited:
+              = item.date
+
+          = item.body
+
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/an/create_account"

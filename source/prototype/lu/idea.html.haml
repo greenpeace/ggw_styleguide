@@ -1,16 +1,21 @@
 ---
 title: Idea article example
 body_class: not-front logged-in page-type-idea l-has-sidebar node-full
+direct_parent:
+  -
+    name: "Ideas"
+    url: "ideas.html"
 user_role: lu
-design_status: Needs review
+comments: yes
 ---
+
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .main-content
+.l-main-column
+  #content.block.main-content.current
     %i.block-icon.icon-bg-news-media.icon-idea
-    %h1#page-title.block-title
+    %h1.block-title{"data-amtitle" => "Idea"}
       = lorem.words 10
     .content
       %article.view-mode-full
@@ -22,7 +27,7 @@ design_status: Needs review
           -
           %span.submitted-date June 5th 2014 - 11:29
 
-          %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
+          %a.comments-shortcut.show-block{:href => "#block-comments", "data-scroll" => ""}
             %i.icon-comment
             10 comments
 
@@ -88,7 +93,9 @@ design_status: Needs review
 
         .submitted.submitted-extended
           .submitted-image
-            %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+            %img.lazyload{:alt => "Name of the author.", :src => "/images/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+            %noscript
+              %img{:alt => "Name of the author.", :src => "/photos/75/people5.jpg"}/
           .submitted-info
             %div
               %a{:href => "#"} Idea
@@ -102,6 +109,5 @@ design_status: Needs review
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/go_to_group"
-  = partial :"blocks/lu/get_involved"
   = partial :"blocks/lu/subscribe"
 

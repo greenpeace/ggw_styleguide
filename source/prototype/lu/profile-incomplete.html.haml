@@ -1,0 +1,141 @@
+---
+title: Santa Doe Claus
+body_class: not-front logged-in page-profile l-two-column
+profile: home
+access: other
+user_role: lu
+comments: yes
+---
+
+= partial :"blocks/breadcrumbs"
+
+- data.members.member_two.each do |item|
+
+  .l-main-column
+    %h1.group-heading.only-mobile
+      %i.icon-user
+      #{item.first_name} #{item.last_name}
+    #block-user-profile.block.current
+      %i.block-icon.icon-bg-user.icon-user
+      %h1#page-title.block-title
+        Profile
+
+      .content
+
+        .field-name-user-image
+          %img.lazyload{:alt => "Grace O'Flynn", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/polar.png"}/
+          %noscript
+            %img{:src => "/photos/polar.png", :alt => "Santa Doe Claus"}/
+
+        .field.field-name-user-name
+          #{item.first_name} #{item.last_name}
+          %span.username (#{item.username})
+
+        .field.field-name-body
+          .field-label.element-hidden About me:
+          .field-item
+
+
+        .clear
+
+        .field.field-name-field-social-media.field-inline-block
+          .field-label Social media:
+          .field-item This user has no social media profiles.
+
+        .field.field-name-field-skype.field-inline-block
+
+
+        .field.field-name-field-mail.field-inline-block
+          .field-label Email:
+          .field-item #{item.email}
+
+        .field.field-name-field-telephone.field-inline-block
+          .field-label Phone:
+          .field-item 065 983 8973
+
+        .field.field-name-field-location.field-inline-block
+          .field-label Address:
+          .field-item Ottho Heldringstraat 5, Amsterdam, The Netherlands
+
+        .field.field-name-field-profession.field-inline-block
+          .field-label Profession:
+          .field-item -
+
+        .field.field-name-send-message
+          %p
+            %a.modal-inline.button.btn-primary{:href => "#send-private-message"} Send a private message
+
+
+    #block-skills.block
+      %i.block-icon.icon-bg-user.icon-skills
+      %h2.block-title
+        Skills
+
+      .content
+        %p #{item.first_name} #{item.last_name} hasn't entered any skills yet. Post a shout to ask him about his skills.
+
+    #block-user-events.block.lazyload{"data-expand" => "-40"}
+      %i.block-icon.icon-bg-user.icon-event
+      %h2.block-title Events
+      .content
+        :markdown
+          #{item.first_name} #{item.last_name} hasn't joined any Greenwire event yet.
+
+    #block-user-groups.block.lazyload{"data-expand" => "-40"}
+      %i.block-icon.icon-bg-user.icon-users
+      %h2.block-title Groups
+      .content
+        .views-row
+          %article.node-type-small
+            %h2.node-title
+              %a{:href => "./group-home.html"}
+                Greenpeace Greenwire United Kingdom
+            .field.field-created
+              .field-label Joined
+              .field-item today
+
+
+  %aside.l-sidebar.sidebar
+    #block-friends.block
+      .action-bar
+        .action-bar-item.add-content
+          %a.button{:href => "#", :title => "Add as friend"} Send friend request
+
+      %i.block-icon.icon-bg-user.icon-users
+      %h2.block-title Friends
+      .content
+        %p #{item.first_name} #{item.last_name} doesn't have any friends yet. Click on the button to add #{item.first_name} #{item.last_name} as a friend.
+
+    #block-comments.block.block-comments
+      %i.block-icon.icon-chat.icon-bg-action
+      %h2.block-title Shoutbox
+
+      .content
+        .comment-form-holder
+          %form.comment-form
+            .form-comment-message
+              %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a shout...", :rows => "1"}
+              %span#remain
+              %input.form-comment-submit{:type => "submit", :value => "share"}
+              %input.tooltip.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
+
+        %section.comments
+          %p There are no shouts yet.
+
+    #block-user-activity.block.lazyload{"data-expand" => "-40"}
+      %i.block-icon.icon-bg-user.icon-clock
+      %h2.block-title Activity log
+      .content
+        .view-ggw-user-activity
+          .view-content
+            .views-row
+              .views-field.views-field-timestamp
+                Today
+              .views-field.views-field-rendered-entity
+                %p
+                  %a{:href => "#"} Grace O'Flynn
+                  joined
+                  %a{:href => "#"} Greenpeace Greenwire United Kingdom
+
+  = partial :"blocks/lu/new_message_from_profile", :locals => {:name => "#{item.first_name} #{item.last_name}"}
+  = partial :"blocks/lu/confirm-friend-request", :locals => {:name => "#{item.first_name} #{item.last_name}"}

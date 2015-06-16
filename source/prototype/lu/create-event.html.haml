@@ -1,0 +1,427 @@
+---
+title: Create new event
+body_class: not-front logged-in page-type-event l-has-sidebar-first page-edit
+direct_parent:
+  -
+    name: "Events"
+    url: "events.html"
+user_role: lu
+script: nodeform
+editor: ckeditor
+menu:
+  -
+    name: 'Title, description & image'
+    url: '#section-title'
+  -
+    name: 'Date and location'
+    url: '#section-date'
+  -
+    name: 'Visibility'
+    url: '#section-visibility'
+  -
+    name: 'Event type, language & tags'
+    url: '#section-language'
+  -
+    name: 'Organisers and roles'
+    url: '#section-organisers'
+---
+
+
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first.sfmenu
+  .block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
+    %i.block-icon.icon-calendar.icon-bg-event
+    %h2.block-title Create event
+    .content
+      - for item in current_page.data.menu
+        %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
+          #{item.name}
+.l-main-column
+  %form{:action => "#", :method => "get", :enctype => "multipart/form-data"}
+    %section#section-title.block.current.main-content
+      %i.block-icon.icon-pencil.icon-bg-action
+      %h2.block-title Title, description & image
+      .content
+        .form-wrapper
+          .form-item.field-name-title
+            %label.form-label{:for => "edit-field-title"}
+              Title
+              %span.form-required{:title => "This field is required."} *
+            %input#edit-field-title.form-text{:name => "edit-field-title", :type => "text", :value => "", :tabindex => "1"}/
+          .form-item
+            %label.form-label{:for => "field-edit-description"}
+              Description
+              %span.form-required{:title => "This field is required."} *
+            %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "2"}
+          .form-item
+            %label.form-label{:for => "field-edit-image"}
+              Image
+              %span.form-required{:title => "This field is required."} *
+            .media-widget.media
+              .preview-wrapper.media-figure.field-type-event
+                %img#preview-image{:src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", :alt => "your image"}
+              .media-body
+                .form-description
+                  Files must be smaller than 3 MB <br/>
+                  Allowed file types: png gif jpg jpeg <br/>
+                  Images must be larger than 400x300 pixels.
+                %input#uploadimage.element-invisible{:type => "file", :value => "upload", :accept => "image/*"}
+                %button.button.launcher{:tabindex => "3"} select image
+                %button#remove-image.button.element-invisible remove image
+                %p#file-name.element-hidden
+
+    %section#section-date.block
+      %i.block-icon.icon-calendar.icon-bg-action
+      %h2.block-title Date and location
+      .content
+        .form-wrapper.row.deskwidth50
+          .inline-label
+            %label
+              Start:
+              %span.form-required{:title => "This field is required."} *
+          .form-item.field-name-event-date-und-0-value-date
+            %input#edit-field-event-date-und-0-value-date.form-text.input-small.input-date.js-date-picker{:type => "date", :value => "", :placeholder => "date", :tabindex => "5"}
+          .form-item.field-name-event-date-und-0-value-time
+            %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time.js-time-picker{:type => "time", :value => "", :placeholder => "time", :tabindex => "6"}
+        .form-wrapper.row.deskwidth50
+          .inline-label
+            %label
+              End:
+          .form-item.field-name-event-date-und-1-value-date
+            %input#edit-field-event-date-und-1-value-date.form-text.input-small.input-date.js-date-picker{:type => "date", :value => "", :placeholder => "date", :tabindex => "7"}
+          .form-item.field-name-event-date-und-1-value-time
+            %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time.js-time-picker{:type => "time", :value => "", :placeholder => "time", :tabindex => "8"}
+
+        .form-wrapper.wrapper
+
+          .form-item.field-event-location
+            %label.form-label{:for => "edit-event-location"}
+              Location name
+            .form-description Name of the building, market etc. where the event is held. <br />Can be anything you like.
+            %input#edit-event-location.form-text{:name => "edit-event-location", :type => "text", :value => "", :placeholder => "venue name", :tabindex => "9"}/
+
+          .form-item.form-type-select.field-event-location-und-country
+            %label.form-label{:for => "country-select"}
+              Country
+              %span.form-required{:title => "This field is required."} *
+            %select#country-select.form-select{:name => "edit-event-location-und-country", :tabindex => "10", :onchange => "country_select_search()"}
+              %option{:value => ""} Please select
+              %option{:value => "un"} NOT LISTED
+              %option{:value => "au"} Australia
+              %option{:value => "be"} Belgium
+              %option{:value => "br"} Brazil
+              %option{:value => "ca"} Canada
+              %option{:value => "de"} Germany
+              %option{:value => "fi"} Finland
+              %option{:value => "fr"} France
+              %option{:value => "in"} India
+              %option{:value => "id"} Indonesia
+              %option{:value => "it"} Italy
+              %option{:value => "mx"} Mexico
+              %option{:value => "nl"} The Netherlands
+              %option{:value => "no"} Norway
+              %option{:value => "nz"} New Zealand
+              %option{:value => "ru"} Russia
+              %option{:value => "za"} South Africa
+              %option{:value => "se"} Sweden
+              %option{:value => "th"} Thailand
+              %option{:value => "ug"} Uganda
+              %option{:value => "us"} USA
+              %option{:value => "uk"} United Kingdom
+
+          .form-item.field-event-address
+            %label.form-label{:for => "edit-event-address"}
+              Address
+            .form-description We will attempt to calculate the coordinates from the supplied address.
+            %input#edit-event-address.form-text{:name => "edit-event-address", :type => "text", :value => "", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
+            #results
+            %a.small-link.modal-inline{:href => "#manual-coordinates-form"} add geocoordinates manually
+
+          .preview-location
+            #map{:style => "width: 100%; height: 100%;"}
+
+    %section#section-visibility.block
+      %i.block-icon.icon-eye.icon-bg-action
+      %h2.block-title Visibility
+      .content
+        .form-wrapper
+          .form-item.form-type-select
+            %label.form-label{:for => "groups"} Group(s)
+            %select#groups.chosen-select{"data-placeholder" => "Select one or more groups", :multiple => "multiple", :tabindex => "16"}
+              - for item in data.event.with_image_organising
+                - for group in item.groups
+                  %option{:value => ""}
+                    #{group}
+              - for groups in data.groups.my_groups
+                %option{:value => ""}
+                  #{groups}
+
+          .form-item.form-type-radios.radio-blocks
+            %label.form-label{:for => "edit-group-content-access"}
+              Private or public?
+              %span.form-required{:title => "This field is required."} *
+            .form-radios
+              .form-type-radio
+                %input#edit-group-content-access-und-0.form-radio{:name => "group_content_access", :type => "radio", :value => "0", :tabindex => "17"}
+                %label.option{:for => "edit-group-content-access-und-0"} Private - only for group members
+              .form-type-radio
+                %input#edit-group-content-access-und-1.form-radio{:name => "group_content_access", :type => "radio", :value => "1", :tabindex => "18"}
+                %label.option{:for => "edit-group-content-access-und-1"} All members of Greenwire
+              .form-type-radio
+                %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2", :checked => "checked", :tabindex => "19"}
+                %label.option{:for => "edit-group-content-access-und-2"} Public - visible for all visitors of Greenwire
+
+    %section#section-language.block
+      %i.block-icon.icon-tag.icon-bg-action
+      %h2.block-title Event type & tags
+      .content
+        .form-wrapper
+
+          .form-item.form-type-select
+            %label.form-label{:for => "eventtype"} Event type
+            %select#eventtype.chosen-select{"data-placeholder" => "Select one or more types", :multiple => "multiple", :tabindex => "14"}
+              - for type in data.event.event_types
+                %option{:value => ""}
+                  #{type}
+
+          .form-item
+            %label Tags
+            %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "", :placeholder => "Text input", :tabindex => "15"}
+            .autocomplete#tagsautocomplete
+              %ul
+                - for tag in data.tags.suggestion
+                  %li #{tag}
+
+    %section#section-organisers.block
+      %i.block-icon.icon-users.icon-bg-action
+      %h2.block-title Organisers and roles
+      .content
+        .form-wrapper
+          .form-item.form-type-select
+            %label.form-label{:for => "organisersinput"} Organisers
+            %select#organisersinput.chosen-select{"data-placeholder" => "Select organisers...", :multiple => "multiple", :tabindex => "11"}
+              - 50.times do |num|
+                :preserve
+                  <option>
+                = lorem.name
+                :preserve
+                  </option>
+
+          .form-item
+            %label.form-label
+              Roles & maximum of people needed
+            .form-description Enter the roles to which the users can subscribe to. Example: Driver (9:00 - 13:00).
+
+            .row.clone-item
+              .form-item.edit-field-event-roles-und-0-human{:style => "margin-top:7px;"}
+                %input#edit-field-event-roles-und-0-human.form-text{:size => "29", :type => "text", :value => "", :placeholder => "describe the role", :tabindex => "12"}
+              .form-item.field-event-roles-und-0-role-limit{:style => "margin-top:7px;"}
+                %input#edit-field-event-roles-und-0-role-limit.form-text.number-field{:type => "number", :value => "", :min => "1", :max => "9999", :step => "1", :placeholder => "max. no.", :tabindex => "13"}
+            %a.small-link.clone-trigger{:href => "#"} add another role
+
+
+  %section#section-submit.section-submit
+    .form-actions.form-wrapper
+      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "./event-full-organiser.html#event-created"}
+        %a.button.btn-l{:href => "./events.html", :tabindex => "8"} Cancel
+
+#manual-coordinates-form.block.white-popup.mfp-hide
+  %i.block-icon.icon-map.icon-bg-action
+  %h2.block-title Add coordinates of your event
+  .content
+    %form
+      .form-wrapper
+        .form-item
+          %label.form-label{:for => "latitude"} Latitude
+          %input.form-text#latitude{:type => "text", :value => ""}
+        .form-item
+          %label.form-label{:for => "longitude"} Longitude
+          %input.form-text#longitude{:type => "text", :value => ""}
+      .form-actions.form-wrapper
+        %input{:type => "submit", :class => "button btn-primary", :value => "Submit"}
+        %input{:type => "submit", :class => "button btn-close", :value => "Cancel"}
+
+
+= javascript_include_tag "leaflet"
+
+:javascript
+
+  var map;
+  var feature;
+
+  var marker = {};
+
+  var findaddress = _.debounce(function(e) {
+
+    var country = document.getElementById("country-select");
+    var addressfield = document.getElementById("edit-event-address");
+
+    $.getJSON('http://nominatim.openstreetmap.org/search/' + country.value + '/' + addressfield.value + ' ?format=json&limit=3&addressdetails=1', function(data) {
+        var items = [];
+
+        venue = "";
+        street = "";
+        house_number = "";
+        city = "";
+        postcode = "";
+        suburb = "";
+
+        $.each(data, function(key, val) {
+          if (val.type == 'works' || val.type == 'it') {
+            venue = val.address['address29'] + ", ";
+          } else if (val.type == 'stadium') {
+            venue = val.address['stadium'] + ", ";
+          } else if (val.type == 'stream') {
+            venue = val.address['stream'] + ", ";
+          } else if (val.type == 'bar') {
+            venue = val.address['bar'] + ", ";
+          }
+          if (typeof(val.address['road'])!='undefined') {
+            street = val.address['road'] + ", ";
+          }
+          if (typeof(val.address['pedestrian'])!='undefined') {
+            street = val.address['pedestrian'] + ", ";
+          }
+          if (typeof(val.address['footway'])!='undefined') {
+            street = val.address['footway'] + ", ";
+          }
+          if (typeof(val.address['house_number'])!='undefined') {
+            house_number = val.address['house_number'] + ", ";
+          }
+          if (typeof(val.address['suburb'])!='undefined') {
+            suburb = val.address['suburb'] + ", ";
+          }
+          if (typeof(val.address['city'])!='undefined') {
+            city = val.address['city'];
+          }
+          if (typeof(val.address['town'])!='undefined') {
+            city = val.address['town'];
+          }
+          if (typeof(val.address['postcode'])!='undefined') {
+            postcode = " (" + val.address['postcode'] + ")";
+          }
+          lon = val.lon;
+          lat = val.lat;
+          latlng = L.latLng(lat, lon);
+          items.push("<li><a href='#' onclick='chooseAddr(" + lat + ", " + lon + ");return false;'>" + venue + street + house_number + suburb + city + postcode + "</a></li>");
+        });
+
+      $('#results')
+        .empty()
+        .show();
+      if (items.length != 0) {
+        $('<ul/>', {
+          'class': 'location-lookup-resultlist',
+          html: items.join('')
+        }).appendTo('#results');
+        $('<button class="close-result"><i class="icon-cancel"></i></button>').appendTo('#results');
+        $('.close-result').click(function(e) {
+          e.preventDefault();
+          $('#results').empty().hide();
+        });
+      } else {
+        $('<ul/>', {
+          'class': 'location-lookup-resultlist',
+          html: '<li><a href="#" onclick="return false">Address not found</a></li>'
+        }).appendTo('#results');
+        $('<button class="close-result"><i class="icon-cancel"></i></button>').appendTo('#results');
+
+        $('.close-result').click(function(e) {
+          e.preventDefault();
+          $('#results').empty().hide();
+        });
+      }
+
+      $(document).click(function() {
+        $('#results').empty().hide();
+      });
+
+      });
+  }, 500);
+
+  L.Marker.prototype.animateDragging = function () {
+
+    var iconMargin, shadowMargin;
+
+    this.on('dragstart', function () {
+      if (!iconMargin) {
+        iconMargin = parseInt(L.DomUtil.getStyle(this._icon, 'marginTop'));
+        shadowMargin = parseInt(L.DomUtil.getStyle(this._shadow, 'marginLeft'));
+      }
+
+      this._icon.style.marginTop = (iconMargin - 15)  + 'px';
+      this._shadow.style.marginLeft = (shadowMargin + 8) + 'px';
+    });
+
+    return this.on('dragend', function () {
+      this._icon.style.marginTop = iconMargin + 'px';
+      this._shadow.style.marginLeft = shadowMargin + 'px';
+    });
+  };
+
+  var eventIcon = L.icon({
+    iconUrl: '/images/marker-events.png',
+    iconRetinaUrl: '/images/marker-events@2x.png',
+    shadowUrl: '/images/marker-shadow.png',
+    shadowRetinaUrl: '/images/marker-shadow@2x.png',
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [41, 41], // size of the shadow
+    iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
+    shadowAnchor: [13, 41],  // the same for the shadow
+    popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
+  });
+
+
+  map = new L.Map('map', {zoomControl: true});
+  marker = L.marker(new L.LatLng(0,0),{icon: eventIcon, draggable:true})
+  .animateDragging()
+  .addTo(map);
+
+  var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    osm = new L.TileLayer(osmUrl, {maxZoom: 18});
+
+  map.setView(new L.LatLng(0, 0), 1).addLayer(osm);
+
+  map.on({
+    click: function() {
+      map.setView([0,0],2);
+    }
+  });
+
+
+
+  function country_select_search() {
+    var inp = document.getElementById("country-select");
+
+    $.getJSON('http://nominatim.openstreetmap.org/search?format=json&country=' + inp.value, function(data) {
+        var items = [];
+
+        $.each(data, function(key, val) {
+          lon = val.lon;
+          lat = val.lat;
+          latlng = L.latLng(lat, lon);
+          map.setView(latlng, 5, {animation: true});
+          marker.setLatLng(latlng);
+        });
+
+      });
+  }
+
+  function address_input_search() {
+    var addressfield = document.getElementById("edit-event-address");
+    $('#results').show();
+    addressfield.addEventListener('input', findaddress, false);
+
+  }
+
+  function chooseAddr(lat, lon) {
+    var latlng = new L.LatLng(lat, lon);
+    map.setView(latlng, 15, {animation: true});
+    marker.setLatLng(latlng);
+    $('#results').hide();
+  }
+
+  function triggerUpload() {
+    document.getElementById('uploadimage').click();
+  }

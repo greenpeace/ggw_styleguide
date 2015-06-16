@@ -1,15 +1,24 @@
 ---
 title: Editing the style guide
-body_class: styleguide-editing
+body_class: styleguide-editing l-has-sidebar-first
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "Documentation"
+    url: "./getting-started.html"
 layout: styleguide
 design_status: Work in progress
 ---
 
-%aside.sidebar-left
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
   = partial :"nav/documentation"
 
 #content.l-main-column
-  .main-content
+  .main-content.block
     %i.block-icon.icon-bg-default.icon-info
     %h1#page-title.block-title
       = current_page.data.title

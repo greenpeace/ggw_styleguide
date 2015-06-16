@@ -1,4 +1,6 @@
-.block
+.block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
+  %i.block-icon.icon-info.icon-bg-default
   %h2.block-title Documentation
-  - data.nav.docs.each do |item|
-    =nav_link item.name , item.url, :class => 'sg-navbtn'
+  .content
+    - data.nav.docs.each do |item|
+      =nav_link item.name , item.url, :class => 'sf-navbtn'

@@ -6,17 +6,17 @@ search_page: newsmedia
 listview: search-newsmedia-listview.html
 teaserview: search-newsmedia.html
 view: list
-design_status: Needs review
+tables: yes
 ---
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
 
-  .main-content
+  #content.block.current
 
-    %i.block-icon.icon-bg-default.icon-search
-    %h1.block-title#page-title
+    %i.block-icon.icon-bg-news-media.icon-search
+    %h1.block-title{"data-amtitle" => "News & media"}
       = current_page.data.title
 
     .content
@@ -31,10 +31,10 @@ design_status: Needs review
       .view-search-results
         .view-content
 
-          %table.tablesaw{"data-mode" => "swipe"}
+          %table.tablesaw{"data-tablesaw-mode" => "swipe"}
             %thead
               %tr
-                %th.views-field-title{"data-priority" => "persist"}
+                %th.views-field-title{"data-tablesaw-priority" => "persist"}
                   %a{:href => "#", :title => "Sort on Title"} Title
                 %th.views-field-type
                   %a{:href => "#", :title => "Sort on Type"} Type
@@ -71,9 +71,9 @@ design_status: Needs review
 
 
 %aside.l-sidebar.sidebar
-  .block
-    %i.block-icon.icon-bg-default.icon-adjust
-    %h2.block-title Filter
+  .block#block-filter-news-media
+    %i.block-icon.icon-bg-news-media.icon-adjust
+    %h2.block-title{"data-amtitle" => "Filter"} Filter
     .content
       %form
 

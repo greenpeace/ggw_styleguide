@@ -1,0 +1,26 @@
+.media-widget {
+  margin-bottom: $def-mar + 5px;
+  position: relative;
+
+  .description {
+    overflow: hidden;
+    position: relative;
+  }
+
+}
+
+.filename {
+  @include font-size($small);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &:before {
+    color: $green5;
+    line-height: 20px;
+    @include font-size($h4);
+    margin-right: $def-mar-half;
+    @extend %load-icon;
+    @extend %icon-check;
+  }
+}

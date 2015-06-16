@@ -1,0 +1,147 @@
+.sidebar-first .block {
+  margin-bottom: $def-mar;
+
+  p {
+    margin: 0;
+  }
+
+}
+
+@include breakpoint($desk) {
+  .l-has-sidebar-first {
+
+    .l-main-column .block {
+      display: block;
+      clear: none;
+      margin: 0 0 $def-mar 0;
+    }
+
+  }
+
+
+}
+
+.sidebar-first {
+  margin: 7px;
+
+  @include breakpoint($desk) {
+    float: left;
+    width: 25%;
+    padding: 7px 7px 0 0;
+    margin: 0;
+  }
+
+  @include breakpoint($desk) {
+    .block-title {
+      margin-left: 45px;
+    }
+  }
+
+}
+
+@include breakpoint($desk) {
+
+  .l-has-sidebar-first .l-main-column {
+    float: right;
+    width: 75%;
+    margin: 7px 0 0;
+    padding: 0 7px;
+  }
+
+}
+
+@include breakpoint($desk) {
+
+  .sidebar-first .block {
+    padding: 0;
+
+    p {
+      margin: 0.65em 0 0.95em;
+    }
+
+    + .block .content {
+      padding: 0 $def-mar $def-mar $def-mar;
+    }
+
+  }
+
+}
+
+
+// Sidebar first buttons for navigation
+.sf-navbtn {
+  display: block;
+  line-height: 1.2em;
+  padding: .8em 1em;
+  font-size: $p;
+  color: $base;
+  border-bottom: 1px solid $grey-l;
+  position: relative;
+
+  @include breakpoint($desk) {
+    &:last-child {
+      border: none;
+      border-radius: 0 0 4px 4px;
+    }
+  }
+
+  &:before {
+    float: right;
+    @extend %load-icon;
+    @extend %icon-right-open;
+  }
+
+  &:hover,
+  &.current,
+  &.active {
+    background: $green2;
+    color: $white;
+    text-decoration: none !important;
+  }
+
+}
+
+.sf-title {
+  @extend %element-hidden;
+
+  @include breakpoint($desk) {
+    display: block;
+  }
+
+}
+
+@include breakpoint($desk) {
+
+  .l-has-sidebar-first .l-main {
+    display: block;
+    transform: none;
+  }
+
+  // by default highlight the first button
+  .affix-top .sf-navbtn:first-of-type {
+    background: $green2;
+    color: $white;
+  }
+
+  .block-sf-nav.affix {
+    width: 23%;
+    max-width: 233px;
+    margin-top: -50px;
+    z-index: 10;
+
+    // once affix is active, hide following blocks as they conflict with fixed position
+    + .block {
+      display: none;
+    }
+  }
+
+}
+
+@include breakpoint($wide) {
+  
+  .block-sf-nav.affix {
+    width: 23%;
+    max-width: 279px;
+  }
+
+}

@@ -2,23 +2,22 @@
 title: Contact Greenpeace Greenwire
 body_class: not-front not-logged-in page-contact l-has-sidebar
 user_role: an
-design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
 
-  .main-content
+  #content.block.current
 
     %i.block-icon.icon-bg-default.icon-mail
-    %h1.block-title#page-title
+    %h1.block-title{"data-amtitle" => "Contact"}
       = current_page.data.title
 
     .content
       %p
         Questions? Consider reading the
-        %a{:href => "faq.html"} FAQ
+        %a{:href => "./faq.html"} FAQ
         first.
         %br
         Is your answer not there? We'll be glad to help! Leave a message.
@@ -58,4 +57,4 @@ design_status: Needs review
         %input{:type => "submit", :class => "button btn-primary", :value => "Send message"}
 
 %aside.l-sidebar.sidebar
-  = partial :"blocks//an/create_account"
+  = partial :"blocks/an/create_account"

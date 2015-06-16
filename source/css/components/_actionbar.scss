@@ -1,20 +1,23 @@
 .action-bar {
-  clear: both;
-  @include font-size($small);
   position: relative;
 
-  .page-search .main-content & {
-    padding-right: 60px;
+  .view-header & {
+    margin: 0 0 $def-mar-half 0;
   }
-}
 
-.page-search .view-header .action-bar {
-  margin: $def-mar-half 0 $def-mar;
+  .page-manage-group-members .view-header & {
+    padding-right: 96px;
+  }
+  .page-search .view-header &,
+  .page-enrollments .view-header & {
+    padding-right: 50px;
+  }
+
 }
 
 .action-bar-item {
-  margin-bottom: .5em;
-  margin-right: .5em;
+  margin-bottom: $def-mar-half;
+  margin-right: $def-mar-half;
   display: inline-block;
 
   &.disabled,
@@ -24,16 +27,30 @@
   }
 
   @include breakpoint($smalltab) {
-    margin-right: 1em;
-    display: inline-block;
+    margin-right: $def-mar-half;
   }
+
+  .button {
+    margin-top: 0 !important;
+  }
+}
+
+.action-bar .resultstats {
+  @include font-size($p);
+  font-weight: 700;
 }
 
 .action-bar-item > label {
   display: inline;
   font-weight: normal;
-  @include font-size($small);
+  @include font-size($p);
   margin-right: .3em;
+}
+
+.action-bar-item .form-text {
+  display: inline-block;
+  width: auto;
+  @include font-size($p);
 }
 
 .action-bar .actions > label,
@@ -62,10 +79,7 @@
     display: block;
     position: absolute;
     right: 0;
-    margin: 0;
-  }
-
-  @include breakpoint($tab) {
+    top: -44px;
     margin: 0;
   }
 
@@ -105,4 +119,16 @@
   padding-top: 10px;
   line-height: 1rem;
   margin: 0;
+}
+
+.action-bar-item.edit-content,
+.action-bar-item.add-content {
+  float: right;
+  line-height: 1rem;
+  margin: 0;
+
+  @include breakpoint($desk) {
+    padding-top: 10px;
+  }
+
 }

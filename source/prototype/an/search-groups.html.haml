@@ -3,17 +3,16 @@ title: Search Groups
 body_class: not-front not-logged-in page-search l-has-sidebar
 user_role: an
 search_page: groups
-design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
 
-  .main-content
+  #content.block.current
 
-    %i.block-icon.icon-bg-default.icon-search
-    %h1.block-title#page-title
+    %i.block-icon.icon-bg-group.icon-search
+    %h1.block-title{"data-amtitle" => "Search groups"}
       = current_page.data.title
 
     .content
@@ -28,19 +27,21 @@ design_status: Needs review
       .view-search-results
         .view-content
           = partial :"teasers/group-no-image"
+          = partial :"teasers/group-country"
           = partial :"teasers/group-with-image"
-          = partial :"teasers/group-no-image"
-          = partial :"teasers/group-with-image"
-          = partial :"teasers/group-no-image"
-          = partial :"teasers/group-with-image"
-          .align-center
-            %a.button{:href => "#"} show some more
+          = partial :"teasers/group-with-image2"
+          = partial :"teasers/group-with-image3"
+          = partial :"teasers/group-with-image4"
+          = partial :"teasers/group-with-image5"
+          %ul.pager.pager-load-more
+            %li
+              %a{:href => "#"} Show some more
 
 
 %aside.l-sidebar.sidebar
-  .block
-    %i.block-icon.icon-bg-default.icon-adjust
-    %h2.block-title Filter
+  .block#block-filter-groups
+    %i.block-icon.icon-bg-group.icon-adjust
+    %h2.block-title{"data-amtitle" => "Filter"} Filter
     .content
       %form
         = partial :"blocks/search_filters/group_type"

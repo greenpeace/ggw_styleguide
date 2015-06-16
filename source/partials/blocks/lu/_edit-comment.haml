@@ -1,0 +1,27 @@
+#edit-comment.block.white-popup.mfp-hide
+  - if current_page.data.front == "frontpage"
+    %i.block-icon.icon-pencil.icon-bg-action
+    %h2.block-title Edit shout
+  - else
+    %i.block-icon.icon-pencil.icon-bg-action
+    %h2.block-title Edit comment
+
+  .content
+    .comment-form-holder
+      %form.comment-form
+        .form-comment-message
+          - if current_page.data.front == "frontpage"
+            %textarea#shoutbox-comment{:cols => "50"}
+              De winkel Gekke Gerrit ( What's in a name ) denkt dat het okay is om Coca Cola flessen van 1,5 liter te verkopen zonder statiegeld. Laten jullie ze op hun facebook pagina weten dat dat echt niet kan? Bedankt!
+          - else
+            %textarea#comment-comment{:cols => "50"}
+              "I keep my weight down, and I exercise,” she said. And, she added, she was diligent about doing her rehabilitation exercises after each surgery. “People I have known who had [replacement surgery] and who didn’t do the therapy, it doesn’t work out for them."
+        - if current_page.data.front == "frontpage"
+          %span#remain
+        %input.form-comment-submit{:type => "submit", :value => "save"}
+        %span.hint
+          You cannot edit the attachment of a
+          - if current_page.data.front == "frontpage"
+            shout
+          - else
+            comment

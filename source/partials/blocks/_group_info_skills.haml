@@ -1,0 +1,95 @@
+
+- data.groups.group_skills.each do |item|
+
+  #block-group-info.block.block-profile.current
+    .action-bar
+      .action-bar-item.edit-content
+        - if current_page.data.joined != "joined"
+          - if current_page.data.user_role == "lu"
+            %a.button.btn-primary.modal-inline{:href => "#confirm-group-subscription"} Join group
+          - else
+            %a.button.btn-primary{:href => "/prototype/an/login.html"} Join group
+        - else
+          %a.button.modal-inline{:href => "#confirm-group-leave"} Leave this group
+
+    %i.block-icon.icon-users.icon-bg-group
+    %h2.block-title{"data-amtitle" => "About"} About
+    .content
+
+      .field-name-group-image
+        %img.lazyload{:alt => "Profile picture of group.", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-src" => "/photos/group-avatar210.jpg"}/
+        %noscript
+          %img{:alt => "Profile picture of group.", :src => "/photos/group-avatar210.jpg"}/
+
+      .field.field-name-group-name
+        = item.title
+
+      .field.field-name-body
+        .field-label.element-hidden About:
+        .field-item
+          %p
+            = item.about
+
+      .clear
+
+      .field.field-group-primary-contact.field-inline-block
+        .field-label Primary contact
+        .field-item
+          - if current_page.data.user_role == "lu"
+            %a{:href => "./profile.html"}
+              = item.primary_contact
+          - else
+            = item.primary_contact
+
+      .field.field-group-secondary-contact.field-inline-block
+        .field-label Secondary contact
+        .field-item
+          - if current_page.data.user_role == "lu"
+            %a{:href => "./profile.html"}
+              = item.secondary_contact
+          - else
+            = item.secondary_contact
+
+      .field.field-group-mission
+        .field-label Mission
+        .field-item
+          = item.mission
+
+      .field.field-name-field-social-media
+        .field-label Social channels
+        .field-item
+          %a.social-icon.twitter{:href => "#{item.social_twitter}", :target => "blank"}
+            %span.element-hidden twitter
+          %a.social-icon.facebook{:href => "#{item.social_facebook}", :target => "blank"}
+            %span.element-hidden facebook
+          %a.social-icon.googleplus{:href => "#{item.social_googleplus}", :target => "blank"}
+            %span.element-hidden googleplus
+          %a.social-icon.linkedin{:href => "#{item.social_linkedin}", :target => "blank"}
+            %span.element-hidden linkedin
+          %a.social-icon.pinterest{:href => "#{item.social_pinterest}", :target => "blank"}
+            %span.element-hidden pinterest
+          %a.social-icon.vk{:href => "#{item.social_vk}", :target => "blank"}
+            %span.element-hidden vkontakte
+
+      .field.field-group-type
+        .field-label Group type
+        .field-item
+          = item.group_type
+
+      .field.field-group-skills
+        .field-label Skills
+        .field-item
+          - for skill in item.skills
+            = succeed ", " do
+              %a.tag{:href => "./search-newsmedia.html"} #{skill}
+            %a.tag{:href => "./search-newsmedia.html"} Public speaking
+
+      .field.field-group-tags
+        .field-label Tags
+        .field-item
+          - for tag in item.tags
+            = succeed ", " do
+              %a.tag{:href => "./search-newsmedia.html"} #{tag}
+            %a.tag{:href => "./search-newsmedia.html"} Arctic oil
+
+      = partial :"blocks/lu/confirm-group-leave"

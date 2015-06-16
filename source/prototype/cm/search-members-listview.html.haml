@@ -6,17 +6,16 @@ search_page: members
 listview: search-members-listview.html
 teaserview: search-members.html
 view: list
-design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
 
-  .main-content
+  #content.block.current
 
-    %i.block-icon.icon-bg-default.icon-search
-    %h1.block-title#page-title
+    %i.block-icon.icon-bg-user.icon-search
+    %h1.block-title{"data-amtitle" => "Search members"}
       = current_page.data.title
 
     .content
@@ -30,23 +29,26 @@ design_status: Needs review
 
       .view-search-results
         .view-content
-          %table.tablesaw{"data-mode" => "swipe"}
+          %table.tablesaw{"data-tablesaw-mode" => "swipe"}
             %thead
               %tr
-                %th.views-field-views-bulk-operations{"data-priority" => "persist"}
-                  %input.form-checkbox{:type => "checkbox"}
-                %th.views-field-avatar{"data-priority" => "persist"}
-                %th.views-field-name{"data-priority" => "persist"} Name
-                %th.views-field-username Username
-                %th Location
-                %th Date joined
-                %th Relevance
+                %th.views-field-views-bulk-operations{"data-tablesaw-priority" => "persist"}
+                  %input.form-checkbox.js-selectall{:type => "checkbox"}
+                %th.views-field-avatar{"data-tablesaw-priority" => "persist"}
+                %th.views-field-name{"data-tablesaw-sortable-col" => ""} Name
+                %th.views-field-username{"data-tablesaw-sortable-col" => "#"} Username
+                %th{"data-tablesaw-sortable-col" => ""} Location
+                %th{"data-tablesaw-sortable-col" => ""} Date joined
+                %th{"data-tablesaw-sortable-col" => "", "data-tablesaw-sortable-default-col" => "#"} Relevance
                 %th Member roles
                 %th Proximity to me
                 %th Profession
                 %th.views-field-email Email
+                %th Language preferences
                 %th Gender
                 %th Last login
+                %th School
+                %th Skills
 
             %tbody
               - 50.times do |num|
@@ -54,7 +56,9 @@ design_status: Needs review
                   %td
                     %input.form-checkbox{:type => "checkbox"}
                   %td
-                    %img{:alt => "Example of image.", :src => "http://lorempixel.com/70/47/people/9/"}
+                    %img.lazyload{:alt => "Name of the author.", :src => "/images/blank.png", "data-src" => "/photos/75/people3.jpg"}/
+                    %noscript
+                      %img{:alt => "Name of the author.", :src => "/photos/75/people3.jpg"}/
                   %td
                     = lorem.name
                   %td
@@ -76,15 +80,20 @@ design_status: Needs review
                   %td
                     = lorem.word
                   %td
+                    = lorem.word
+                  %td
                     = lorem.date
-
+                  %td
+                    = lorem.word
+                  %td
+                    = lorem.word
 
 
 %aside.l-sidebar.sidebar
-  .block.hidden-mobile
+  .block#block-filter
     = partial :"blocks/cm/search_filter_options"
-    %i.block-icon.icon-bg-default.icon-adjust
-    %h2.block-title
+    %i.block-icon.icon-bg-user.icon-adjust
+    %h2.block-title{"data-amtitle" => "Filter"}
       Filter
     .content
       %form

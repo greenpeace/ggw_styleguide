@@ -1,0 +1,168 @@
+---
+title: Create new document
+body_class: not-front logged-in page-type-document l-has-sidebar-first page-edit
+direct_parent:
+  -
+    name: "Documents"
+    url: "documents.html"
+user_role: lu
+editor: ckeditor
+script: nodeform
+dropzone: yes
+menu:
+  -
+    name: 'Title & body'
+    url: '#section-title'
+  -
+    name: 'Documents'
+    url: '#section-documents'
+  -
+    name: 'Languages & tags'
+    url: '#section-language'
+  -
+    name: 'Visibility'
+    url: '#section-visibility'
+---
+
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first.sfmenu
+  .block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
+    %i.block-icon.icon-document.icon-bg-news-media
+    %h2.block-title Create document
+    .content
+      - for item in current_page.data.menu
+        %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
+          #{item.name}
+.l-main-column
+  %form
+    %section#section-title.block.current.main-content
+      %i.block-icon.icon-pencil.icon-bg-action
+      %h2.block-title Title, description & image
+      .content
+        .form-wrapper
+          .form-item.field-name-title.has-error-hidden
+            %label.form-label{:for => "edit-field-title"}
+              Title
+              %span.form-required{:title => "This field is required."} *
+            %input#edit-field-title.form-text{:name => "edit-field-title", :type => "text", :value => "", :tabindex => "1"}/
+            %span.help-block.element-invisible Please fill in a correct title. (example)
+          .form-item
+            %label.form-label{:for => "field-edit-body"}
+              Body text
+              %span.form-required{:title => "This field is required."} *
+            %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "2"}
+
+
+    %section#section-documents.block
+      %i.block-icon.icon-document.icon-bg-action
+      %h2.block-title Documents
+      .content
+        .form-wrapper
+
+          .form-item#dropzone-actions
+            %span.button.btn-add.fileinput-button.needsclick
+              %i.icon-plus
+              %span Add files
+            %button.button.btn-upload.start
+              %i.icon-upload
+              %span Start upload
+            %button.button.cancel{"type" => "reset"}
+              %i.icon-block
+              %span Cancel upload
+            .total-fileupload-process
+              .fileupload-process
+                #total-progress.progress.progress-striped.active{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "0", :role => "progressbar"}
+                  .progress-bar.progress-bar-success{"data-dz-uploadprogress" => "", :style => "width:0%;"}
+          .form-item
+            .form-description The maximum size per file is 15MB. Allowed file formats are doc, docx, xls, xlsx, ppt, pptx, odt, odp, ods and pdf.
+          .form-item.dropzone-droparea
+            .dz-message.disabled
+              Drop files here or click on the 'Add files' button above to upload.
+            %ul#previews.files-table
+              %li#template.file-row
+                .image-preview
+                  %span.preview
+                    %img{"data-dz-thumbnail" => ""}/
+                .image-name
+                  .name{"data-dz-name" => ""}
+                  %strong.error.text-danger{"data-dz-errormessage" => ""}
+                  .fileupload-process
+                    .size{"data-dz-size" => ""}
+                    .progress.progress-striped.active{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "0", :role => "progressbar"}
+                      .progress-bar.progress-bar-success{"data-dz-uploadprogress" => "", :style => "width:0%;"}
+                .action-buttons
+                  %button.button.btn-upload.start
+                    %i.icon-upload
+                    %span Start
+                  %button.button.cancel{"data-dz-remove" => ""}
+                    %i.icon-cancel
+                    %span Cancel
+                  %button.button.btn-delete.delete{"data-dz-remove" => ""}
+                    %i.icon-trash
+                    %span Delete
+
+
+    %section#section-language.block
+      %i.block-icon.icon-globe.icon-bg-action
+      %h2.block-title Languages and tags
+      .content
+        .form-wrapper
+          .form-item.form-type-select.has-error-hidden
+            %label.form-label{:for => "language"} Language
+            .form-description What language is this news in? You can select more than one language.
+            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple", :tabindex => "4"}
+              %option{:selected => ""} English, US
+              %option French
+            %span.help-block.element-invisible Please select at least one language. (example)
+          .form-item
+            %label Tags
+            %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "", :tabindex => "5"}
+            .autocomplete#tagsautocomplete
+              %ul
+                - 50.times do |num|
+                  %li
+                    = lorem.word
+
+    %section#section-visibility.block
+      %i.block-icon.icon-eye.icon-bg-action
+      %h2.block-title Visibility
+      .content
+        .form-wrapper
+          .form-item.form-type-select
+            %label.form-label{:for => "groups"} Group(s)
+            %select#groups.chosen-select{"data-placeholder" => "Select one or more groups", :multiple => "multiple", :tabindex => "6"}
+              :preserve
+                <option value="1">Festivals</option>
+                <option value="2">Climate change</option>
+                <option value="3">Oceans</option>
+                <option value="4" selected>Local group Amsterdam</option>
+                <option value="5">Oil spill</option>
+                <option value="6">Solar energy</option>
+                <option value="7">Save the Arctic</option>
+
+          .form-item.form-type-radios.radio-blocks
+            %label.form-label{:for => "edit-group-content-access"}
+              Private or public?
+              %span.form-required{:title => "This field is required."} *
+            .form-radios
+              .form-type-radio
+                %input#edit-group-content-access-und-0.form-radio{:name => "group_content_access", :type => "radio", :value => "0", :checked => "checked", :tabindex => "7"}
+                %label.option{:for => "edit-group-content-access-und-0"} Private - only for group members
+              .form-type-radio
+                %input#edit-group-content-access-und-1.form-radio{:name => "group_content_access", :type => "radio", :value => "1"}
+                %label.option{:for => "edit-group-content-access-und-1"} All members of Greenwire
+              .form-type-radio
+                %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2"}
+                %label.option{:for => "edit-group-content-access-und-2"} Public - visible for all visitors of Greenwire
+
+    %section#section-submit.section-submit
+      .form-actions.form-wrapper
+        %input{:type => "submit", :class => "button btn-primary btn-l input-false", :value => "Save and view", :tabindex => "7", "data-target" => "document.html#form-saved"}
+        %a.button.btn-l{:href => "./documents.html", :tabindex => "8"} Cancel
+
+:javascript
+  CKEDITOR.editorConfig = function( config ) {
+    config.tabIndex = 3;
+    config.contentsCss = 'http://ggw-prototype.goalgorilla.com/css/all.css';
+  };

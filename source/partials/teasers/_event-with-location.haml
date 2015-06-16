@@ -1,23 +1,38 @@
-.views-row
-  %article.node-teaser-event.node-teaser
-    .field-type-image
-      %picture
-        /[if IE 9] <video style="display: none;">
-        %source{:media => "(min-width: 48em)", :srcset => "./../../images/event-map-example_130.jpg, ./../../images/event-map-example_260.jpg 1.5x"}
-        %source{:srcset => "./../../images/event-map-example_90.jpg, ./../../images/event-map-example_180.jpg 1.5x"}
-        /[if IE 9] </video>
-        %img{:alt => "Example of image.", :src => "./../../images/event-map-example_90.jpg"}/
-    .field-type-wrapper
-      %h2.node-title
+- data.event.with_location.each do |item|
+  .views-row
+    %article.node-teaser-event.node-teaser
+      .field-type-image
         %a{:href => "./event-full.html"}
-          = lorem.sentence
-      .submitted
-        %a.type.event{:href => "./events.html"} Event
-        2 Jan, 20:00 - 23:00 CET
-      .field-group-format
-        .field-type-date
-          %label Time:
-          August 10th, 8:00PM until 11:30 PM
-        .field-type-location
-          %label Address:
-          Oude Markt 9B, Enschede (Market Square)
+          %img.lazyload{:alt => "Example of image.", :src => "/images/event-map-example_90.jpg", "data-sizes" => "(min-width: 48em) 130px, 90px", "data-srcset" => "/images/event-map-example_260.jpg 260w, /images/event-map-example_130.jpg 130w, /images/event-map-example_180.jpg 180w, /images/event-map-example_90.jpg 90w"}/
+          %noscript
+            %img{:alt => "Example of image.", :src => "/images/event-map-example_90.jpg", "sizes" => "(min-width: 48em) 130px, 90px", "srcset" => "/images/event-map-example_260.jpg 260w, /images/event-map-example_130.jpg 130w, /images/event-map-example_180.jpg 180w, /images/event-map-example_90.jpg 90w"}/
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./event-full.html"}
+            = item.title
+        .submitted
+          %a.type.event{:href => "./events.html"} Event
+          %span.created-date
+          = succeed ", by" do
+            = item.date
+          - if current_page.data.user_role != "an"
+            %a{:href => "./profile.html"}
+              = item.author
+          - else
+            = item.author.downcase.tr(' ', '_')
+          - if current_page.data.user_role != "an"
+            - if item.comment_amount
+              %a.teaser-comments{:href => "./event-full.html#block-comments"}
+                = item.comment_amount
+      .field-type-date
+        %label Event Time:
+        %span
+          = item.event_date
+      .field-type-location
+        %label Address:
+        %span
+          = succeed " - " do
+            = item.location_name
+          = succeed ", " do
+            = item.address
+          = item.city

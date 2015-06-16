@@ -1,16 +1,33 @@
 ---
 title: Idea article example
 body_class: not-front not-logged-in page-type-idea l-has-sidebar node-full
+direct_parent:
+  -
+    name: "Ideas"
+    url: "ideas.html"
 user_role: an
 design_status: Needs review
+action_menu:
+  -
+    id: "#content"
+    label: "Idea"
+    icon: "idea"
+  -
+    id: "#block-go-to-group"
+    label: "Go to group"
+    icon: "users"
+  -
+    id: "#create-account"
+    label: "Create account"
+    icon: "user-add"
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .main-content
+.l-main-column
+  #content.block.current.main-content
     %i.block-icon.icon-bg-news-media.icon-idea
-    %h1#page-title.block-title
+    %h1.block-title{"data-amtitle" => "Idea"}
       = lorem.words 10
     .content
       %article.view-mode-full
@@ -52,7 +69,9 @@ design_status: Needs review
 
         .submitted.submitted-extended
           .submitted-image
-            %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+            %img.lazyload{:alt => "Name of the author.", :src => "/images/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+            %noscript
+              %img{:alt => "Name of the author.", :src => "/photos/75/people5.jpg"}/
           .submitted-info
             %div
               %a{:href => "./ideas.html"} Idea

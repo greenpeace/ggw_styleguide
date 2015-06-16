@@ -1,78 +1,56 @@
 ---
 title: Blog article example
 body_class: not-front not-logged-in page-type-blog l-has-sidebar node-full
+direct_parent:
+  -
+    name: "Blogs"
+    url: "blogs.html"
 user_role: an
-design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .main-content
-    %i.block-icon.icon-bg-news-media.icon-blog
-    %h1#page-title.block-title
-      = lorem.words 10
-    .content
-      %article.view-mode-full
-        .submitted
-          %a.type.news{:href => "./blogs.html"} Blog
-          by willie_mackenzie -
-          %span.submitted-date November 25th 2014 - 8:29
+- data.blog.with_image.each do |item|
 
-        = partial :"images/article-image"
+  .l-main-column
+    #content.block.main-content.current
+      %i.block-icon.icon-bg-news-media.icon-blog
+      %h1.block-title{"data-amtitle" => "Blog"}
+        = item.title
+      .content
+        %article.view-mode-full
+          .submitted
+            %a.type.news{:href => "./blogs.html"} Blog
+            by
+            = item.author.downcase.tr(' ', '_')
+            %span.submitted-date
+              -
+              = item.datetime
 
-        .field-name-body
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.paragraph
-          %blockquote
-            %p
-              = lorem.sentence
-          %p
-            = lorem.paragraph
-            %a{:href => "http://www.greenpeace.org"} go to website
-          %p
-            = lorem.paragraph
-          %img.field-type-image{:alt => "Description of the image.", :src => "http://placeimg.com/620/320/nature/6"}/
-          %p
-            = lorem.paragraph
-          %ul
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-          %p
-            = lorem.paragraph
-          %ol
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-          %img.field-type-image.pull-right{:alt => "Example of image.", :src => "http://placeimg.com/300/200/arch/5"}/
-          %p
-            = lorem.sentence
-            %strong without
-            = lorem.sentence
+          = partial :"images/article-image"
 
-        = partial :"blocks/tags"
+          .field-name-body
+            = item.full_text
 
-        .submitted.submitted-extended
-          .submitted-image
-            %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
-          .submitted-info
-            %div
-              %a{:href => "./blogs.html"} Blog
-              by willie_mackenzie
-            .submitted-all-reference
-              %a{:href => "#"}> All Blogs by willy_mackenzie
-              \.
+          .tags
+            Tags:
+            - for tag in item.tags
+              = succeed ", " do
+                %a.tag{:href => "./search-newsmedia.html"} #{tag}
+            %a.tag{:href => "./search-newsmedia.html"} Arctic oil
 
-  = partial :"blocks/an/comments"
+          .submitted.submitted-extended
+            .submitted-image
+              %img.lazyload{:alt => "#{item.author}", :src => "/images/blank.png", "data-src" =>  "/photos/75/people5.jpg"}/
+              %noscript
+                %img{:alt => "#{item.author}", :src => "/photos/75/people5.jpg"}/
+            .submitted-info
+              %div
+                %a{:href => "./blogs.html"} Blog
+                by
+                = item.author.downcase.tr(' ', '_')
+
+    = partial :"blocks/an/comments"
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/go_to_group"

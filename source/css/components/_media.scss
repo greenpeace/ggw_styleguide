@@ -1,5 +1,11 @@
-img, picture, media {
+img,
+picture,
+media {
   max-width: 100%;
+}
+
+.no-js img.lazyload {
+  display: none;
 }
 
 article picture,
@@ -18,12 +24,7 @@ td img {
 
 }
 
-.sidebar .block img {
-  margin: auto;
-  display: flex;
-}
-
-article img.nofloat {
+.nofloat {
   float: none;
   margin-left: 0;
   margin-right: 0;
@@ -42,11 +43,12 @@ article img.nofloat {
 .l-main-column figcaption {
   position: absolute;
   bottom: 0;
-  background: #000;
-  background: rgba(0,0,0,.7);
+  background: $heading;
+  background: rgba(0, 0, 0, .7);
   padding: .5em;
   width: 100%;
   color: $grey-l;
   @include font-size($small);
   line-height: 1.35em;
 }
+

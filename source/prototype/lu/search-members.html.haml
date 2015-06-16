@@ -5,17 +5,16 @@ user_role: lu
 search_page: members
 listview: search-members-listview.html
 teaserview: search-members.html
-design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
 
-  .main-content
+  #content.block.current
 
-    %i.block-icon.icon-bg-default.icon-search
-    %h1.block-title#page-title
+    %i.block-icon.icon-bg-user.icon-search
+    %h1.block-title{"data-amtitle" => "Search members"}
       = current_page.data.title
 
     .content
@@ -33,7 +32,9 @@ design_status: Needs review
           = partial :"teasers/member_2"
           = partial :"teasers/member_3"
           = partial :"teasers/member_4"
-          = partial :"teasers/member"
+          = partial :"teasers/member_rachael"
+          = partial :"teasers/member_rose"
+          = partial :"teasers/member_alen"
           = partial :"teasers/member_2"
           = partial :"teasers/member_3"
           = partial :"teasers/member_4"
@@ -45,14 +46,15 @@ design_status: Needs review
           = partial :"teasers/member_2"
           = partial :"teasers/member_3"
           = partial :"teasers/member_4"
-          .align-center
-            %a.button{:href => "#"} show some more
+          %ul.pager.pager-load-more
+            %li
+              %a{:href => "#"} Show some more
 
 
 %aside.l-sidebar.sidebar
-  .block
-    %i.block-icon.icon-bg-default.icon-adjust
-    %h2.block-title Filter
+  #block-filter.block
+    %i.block-icon.icon-bg-user.icon-adjust
+    %h2.block-title{"data-amtitle" => "Filter"} Filter
     .content
       %form
         = partial :"blocks/search_filters/location_range"

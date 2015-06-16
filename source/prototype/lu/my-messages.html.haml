@@ -1,0 +1,49 @@
+---
+title: My messages - Inbox
+body_class: not-front logged-in page-type-message l-two-column
+user_role: lu
+comments: yes
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column
+  #content.block.main-content.current
+    %i.block-icon.icon-bg-user.icon-mail
+    %h1.block-title{"data-amtitle" => "Inbox"} Inbox
+    .content
+      %section.notifications-section.messages
+        - data.messages.alen_message.each do |item|
+          %article.notification
+            %a.media.popup-ajax{:href => "./random-private-message2.html"}
+              .media-figure.avatar-holder
+                %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/alen.jpg 1x, /photos/120/alen.jpg 2x"}/
+                %noscript
+                  %img{:alt => "Alen Marsh", :src => "/photos/60/alen.jpg", :srcset => "/photos/60/alen.jpg 1x, /photos/120/alen.jpg 2x"}/
+              .media-body.notifications-body
+                %strong
+                  from: #{item.author}
+                %br
+                  = item.teaser
+                .notifications-footer
+                  %span.timestamp
+                    = item.date
+
+        - data.messages.rachael_message.each do |item|
+          %article.notification
+            %a.media.popup-ajax{:href => "./random-private-message1.html"}
+              .media-figure.avatar-holder
+                %img.lazyload{:alt => "Rachael King", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/rachael.jpg 1x, /photos/120/rachael.jpg 2x"}/
+                %noscript
+                  %img{:alt => "Rachael King", :src => "/photos/60/rachael.jpg", :srcset => "/photos/60/rachael.jpg 1x, /photos/120/rachael.jpg 2x"}/
+              .media-body.notifications-body
+                %strong
+                  from: #{item.author}
+                %br
+                  = item.teaser
+                .notifications-footer
+                  %span.timestamp
+                    = item.date
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/lu/new_message"

@@ -2,15 +2,18 @@
 title: Groups
 body_class: not-front not-logged-in page-groups l-has-sidebar
 user_role: an
-design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .main-content
+.region-highlight
+  .block.current.hero
+    #groupmap.map
+
+.l-main-column
+  #content.block.current
     %i.block-icon.icon-bg-group.icon-users
-    %h1#page-title.block-title
+    %h1.block-title{"data-amtitle" => "Groups"}
       = current_page.data.title
     .content
       .tabwrapper
@@ -37,16 +40,53 @@ design_status: Needs review
             .dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right#dropdown-tabs
               %ul.dropdown-menu
 
-      = partial :"teasers/group-no-image"
+      = partial :"teasers/group-country"
       = partial :"teasers/group-with-image"
+      = partial :"teasers/group-with-image2"
+      = partial :"teasers/group-with-image3"
       = partial :"teasers/group-no-image"
-      = partial :"teasers/group-with-image"
-      = partial :"teasers/group-no-image"
-      = partial :"teasers/group-with-image"
-      .align-center
-        %a.button{:href => "#"} show some more
+      = partial :"teasers/group-with-image4"
+      = partial :"teasers/group-with-image5"
+      %ul.pager.pager-load-more
+        %li
+          %a{:href => "#"} Show some more
 
 %aside.l-sidebar.sidebar
-  .content
-    = partial :"blocks/find_groups"
-    = partial :"blocks/an/create_account"
+  = partial :"blocks/find_groups"
+  = partial :"blocks/an/create_account"
+
+
+= javascript_include_tag "leaflet"
+= javascript_include_tag "map-data"
+
+:javascript
+
+  var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+  }),
+  latlng = L.latLng(52.5, -2);
+
+  var map = L.map('groupmap', {center: latlng, zoom: 5, scrollWheelZoom: false, layers: [tiles]});
+
+  var markers = L.markerClusterGroup();
+
+  var groupIcon = L.icon({
+    iconUrl: '/images/marker-groups.png',
+    iconRetinaUrl: '/images/marker-groups@2x.png',
+    shadowUrl: '/images/marker-shadow.png',
+    shadowRetinaUrl: '/images/marker-shadow@2x.png',
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [41, 41], // size of the shadow
+    iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
+    shadowAnchor: [13, 41],  // the same for the shadow
+  });
+
+  for (var i = 0; i < groups.length; i++) {
+    var a = groups[i];
+    var marker = L.marker(new L.LatLng(a['lat'], a['lng']), {icon: groupIcon});
+    marker.bindPopup('<h2 class="node-title"><a href="' + a.link + '">' + a.name +'</a></h2><div class="field field-name-field-group-type">Local group (' + a.subscription_type +')</div>');
+    markers.addLayer(marker);
+  }
+
+  map.addLayer(markers);

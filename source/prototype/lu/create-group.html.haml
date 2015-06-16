@@ -1,0 +1,480 @@
+---
+title: Create new group
+body_class: not-front logged-in page-type-group l-has-sidebar-first page-edit
+direct_parent:
+  -
+    name: "Groups"
+    url: "groups.html"
+user_role: lu
+script: nodeform
+editor: ckeditor
+menu:
+  -
+    name: 'Group name & description'
+    url: '#section-name'
+  -
+    name: 'Group & subscription type'
+    url: '#section-type'
+  -
+    name: 'Language'
+    url: '#section-language'
+  -
+    name: 'Contact & social media'
+    url: '#section-contact-social'
+
+---
+
+
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first.sfmenu
+  .block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
+    %i.block-icon.icon-users.icon-bg-group
+    %h2.block-title Create group
+    .content
+      - for item in current_page.data.menu
+        %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
+          #{item.name}
+.l-main-column
+  %form{:action => "#", :method => "get", :enctype => "multipart/form-data"}
+    %section#section-name.block.current.main-content
+      %i.block-icon.icon-pencil.icon-bg-action
+      %h2.block-title Group name, description & image
+      .content
+        .form-wrapper
+          .form-item.field-name-name
+            %label.form-label{:for => "edit-field-name"}
+              Group name
+              %span.form-required{:title => "This field is required."} *
+            %input#edit-field-name.form-text{:name => "edit-field-name", :type => "text", :value => "", :tabindex => "1"}/
+          .form-item.field-name-mission
+            %label.form-label{:for => "edit-field-mission"}
+              Group mission
+            %input#edit-field-mission.form-text{:name => "edit-field-mission", :type => "text", :value => "", :tabindex => "2"}/
+          .form-item
+            %label.form-label{:for => "field-edit-description"}
+              Description
+              %span.form-required{:title => "This field is required."} *
+            %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "3"}
+
+          .form-item
+            %label.form-label{:for => "field-edit-image"}
+              Image
+              %span.form-required{:title => "This field is required."} *
+            .media-widget.media
+              .preview-wrapper.media-figure.field-type-group
+                %img#preview-image{:src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", :alt => "your image"}
+              .media-body
+                .form-description
+                  Files must be smaller than 3 MB <br/>
+                  Allowed file types: png gif jpg jpeg <br/>
+                  Images must be larger than 400x300 pixels.
+                %input#uploadimage.element-invisible{:type => "file", :value => "upload", :accept => "image/*"}
+                %button.button.launcher{:tabindex => "3"} select image
+                %button#remove-image.button.element-invisible remove image
+                %p#file-name.element-hidden
+
+
+    %section#section-type.block
+      %i.block-icon.icon-calendar.icon-bg-action
+      %h2.block-title Group and subscription type
+      .content
+        .form-wrapper
+          .form-item.field-name-group-type
+            %label.form-label{:for => "edit-field-event-date-type"}
+              Group type
+            .form-radios
+              .form-type-radio
+                %input#edit-field-group-type-und-0.form-radio{:name => "field_group_type", :type => "radio", :value => "0", :tabindex => "4"}
+                %label.option{:for => "edit-field-group-type-und-0"} Campaign group
+              .form-type-radio
+                %input#edit-field-group-type-und-1.form-radio{:name => "field_group_type", :type => "radio", :value => "1"}
+                %label.option{:for => "edit-field-group-type-und-1"} Project group
+              .form-type-radio
+                %input#edit-field-group-type-und-2.form-radio{:name => "field_group_type", :type => "radio", :value => "2"}
+                %label.option{:for => "edit-field-group-type-und-2"} Discussion group
+              .form-type-radio
+                %input#edit-field-group-type-und-3.form-radio{:name => "field_group_type", :type => "radio", :value => "3"}
+                %label.option{:for => "edit-field-group-type-und-3"} Interest group
+              .form-type-radio#group-type-localgroup
+                %input#edit-field-group-type-und-4.form-radio{:name => "field_group_type", :type => "radio", :value => "4"}
+                %label.option{:for => "edit-field-group-type-und-4"} Local group
+              .form-type-radio
+                %input#edit-field-group-type-und-5.form-radio{:name => "field_group_type", :type => "radio", :value => "5"}
+                %label.option{:for => "edit-field-group-type-und-5"} Skill-based group
+              .form-type-radio
+                %input#edit-field-group-type-und-6.form-radio{:name => "field_group_type", :type => "radio", :value => "6"}
+                %label.option{:for => "edit-field-group-type-und-6"} Other type of group
+
+          .form-item.field-name-subscription-type
+            %label.form-label{:for => "edit-field-subscription-type"}
+              Group subscription type
+            .form-radios
+              .form-type-radio
+                %input#edit-field-group-subscription-type-und-0.form-radio{:name => "field_group_subscription_type", :type => "radio", :value => "0", :checked => "checked", :tabindex => "4"}
+                %label.option{:for => "edit-field-group-subscription-type-und-0"} Open
+                .form-description Anyone can join this group
+              .form-type-radio
+                %input#edit-field-group-subscription-type-und-1.form-radio{:name => "field_group_subscription_type", :type => "radio", :value => "1"}
+                %label.option{:for => "edit-field-group-subscription-type-und-1"} Enroll
+                .form-description Anyone can this group, but group managers need to approve the request to join.
+              .form-type-radio
+                %input#edit-field-group-subscription-type-und-2.form-radio{:name => "field_group_subscription_type", :type => "radio", :value => "2", :tabindex => "4"}
+                %label.option{:for => "edit-field-group-subscription-type-und-2"} On request
+                .form-description Group manager can invite volunteers to join a group
+              .form-type-radio
+                %input#edit-field-group-subscription-type-und-3.form-radio{:name => "field_group_subscription_type", :type => "radio", :value => "3", :tabindex => "4"}
+                %label.option{:for => "edit-field-group-subscription-type-und-3"} Hidden
+                .form-description The group will be hidden from search and overviews. Everything in the group is private.
+
+          .form-item
+            %label.form-label{:for => "tags"} Tags
+            %input.form-text.form-autocomplete#tags{:type => "text", :value => ""}
+            .autocomplete
+              %ul
+                - 20.times do |num|
+                  %li
+                    = lorem.word
+
+    %section#section-skillsgroup.block
+      %i.block-icon.icon-skills.icon-bg-action
+      %h2.block-title Skills-based group
+      .content
+        .form-wrapper.wrapper
+          .form-item.field-name-location-und-country.form-type-select
+            %label.form-label{:for => "field-general-skills"}
+              General skills
+            %select.chosen-select{:name => "field-general-skills", :multiple => "multiple", "data-placeholder" => "Select multiple skills..."}
+              %option{:value => ""}
+              %optgroup{:label => "Activist"}
+                %option Activist
+              %optgroup{:label => "Analytic"}
+                %option Research
+                %option Translation
+                %option Writing/blogging
+              %optgroup{:label => "Campaign fanatic"}
+                %option Climate & energy
+                %option Oceans
+                %option Sustainable agriculture
+                %option Toxics
+              %optgroup{:label => "Communicator"}
+                %option Crowd motivation, cheerleading
+                %option Environmental outreach
+                %option Facilitator
+                %option Fundraising
+                %option Media relations
+                %option Networking
+                %option Public speaking
+                %option Socialising
+                %option Storytelling
+              %optgroup{:label => "Nerd"}
+                %option Content management
+                %option Drupal
+                %option Online communities
+                %option Social media
+                %option Web development
+          .form-item.form-type-select
+            %label.form-label{:for => "language"} Language skills
+            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
+              %option English
+              %option French
+
+    %section#section-localgroup.block
+      %i.block-icon.icon-map.icon-bg-action
+      %h2.block-title Local group location
+      .content
+        .form-wrapper.wrapper
+
+          .form-item.field-group-location
+            %label.form-label{:for => "edit-group-location"}
+              Location name
+            .form-description Name of the building, market etc. where the group is based. <br />Can be anything you like.
+            %input#edit-group-location.form-text{:name => "edit-group-location", :type => "text", :value => "", :placeholder => "venue name", :tabindex => "9"}/
+
+          .form-item.form-type-select.field-group-location-und-country
+            %label.form-label{:for => "country-select"}
+              Country
+              %span.form-required{:title => "This field is required."} *
+            %select#country-select.form-select{:name => "edit-group-location-und-country", :tabindex => "10", :onchange => "country_select_search()"}
+              %option{:value => ""} Please select
+              %option{:value => "un"} NOT LISTED
+              %option{:value => "au"} Australia
+              %option{:value => "be"} Belgium
+              %option{:value => "br"} Brazil
+              %option{:value => "ca"} Canada
+              %option{:value => "de"} Germany
+              %option{:value => "fi"} Finland
+              %option{:value => "fr"} France
+              %option{:value => "in"} India
+              %option{:value => "id"} Indonesia
+              %option{:value => "it"} Italy
+              %option{:value => "mx"} Mexico
+              %option{:value => "nl"} The Netherlands
+              %option{:value => "no"} Norway
+              %option{:value => "nz"} New Zealand
+              %option{:value => "ru"} Russia
+              %option{:value => "za"} South Africa
+              %option{:value => "se"} Sweden
+              %option{:value => "th"} Thailand
+              %option{:value => "ug"} Uganda
+              %option{:value => "us"} USA
+              %option{:value => "uk"} United Kingdom
+
+          .form-item.field-group-location-und-address
+            %label.form-label{:for => "edit-group-address"}
+              Address
+            .form-description We will attempt to calculate the coordinates from the supplied address.
+            %input#edit-group-address.form-text{:name => "edit-group-address", :type => "text", :value => "", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
+            #results
+            %a.small-link.modal-inline{:href => "#manual-coordinates-form"} add geocoordinates manually
+
+          .preview-location
+            #map.map{:style => "width: 100%; height: 100%;"}
+
+    %section#section-language.block
+      %i.block-icon.icon-globe.icon-bg-action
+      %h2.block-title Group language
+      .content
+        .form-wrapper
+          .form-item.form-type-select
+            %label.form-label{:for => "language"} Languages
+            .form-description What languages can people use to participate in this group? You can select multiple languages.
+            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
+              %option English, US
+              %option French
+
+    %section#section-contact-social.block
+      %i.block-icon.icon-user.icon-bg-action
+      %h2.block-title Contact and social media
+      .content
+        .form-wrapper.row
+          .form-item
+            %label.form-label{:for => "primarycontact"} Primary contact
+            %input.form-text.form-autocomplete.input-medium#primarycontact{:type => "text", :value => ""}
+            .autocomplete
+              %ul
+                - 20.times do |num|
+                  %li
+                    = lorem.name
+          .form-item
+            %label.form-label{:for => "secondarycontact"} Secondary contact
+            %input.form-text.form-autocomplete.input-medium#secondarycontact{:type => "text", :value => ""}
+            .autocomplete
+              %ul
+                - 20.times do |num|
+                  %li
+                    = lorem.name
+
+        .form-wrapper
+          .form-item
+            %label.form-label
+              Social media channels
+            .form-description Select the desired social network and copy/paste the full URL to field below.
+
+            .row.clone-item
+              .form-item.edit-field-select-social-media{:style => "margin-top:7px;"}
+                %select.form-select.input-medium
+                  %option{:value => ""} Select a platform
+                  %option{:value => "tw"} Twitter
+                  %option{:value => "fb"} Facebook
+                  %option{:value => "in"} Linkedin
+                  %option{:value => "pi"} Pinterest
+                  %option{:value => "gp"} Google plus
+                  %option{:value => "vk"} Vkontakte
+                  %option{:value => "other"} Other
+              .form-item.field-event-roles-und-0-role-limit
+                %input#edit-field-event-roles-und-0-role-limit.form-text.input-medium{:type => "url", :value => "", :tabindex => "13", :size => "35", :pattern => "https?://.+"}
+            %a.small-link.clone-trigger{:href => "#"} add another item
+
+
+  %section#section-submit.section-submit
+    .form-actions.form-wrapper
+      %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save  and view", :tabindex => "7", "data-target" => "./group-home-organiser.html#form-saved"}
+      %a.button.btn-l{:href => "./groups.html", :tabindex => "8"} Cancel
+
+#manual-coordinates-form.block.white-popup.mfp-hide
+  %i.block-icon.icon-map.icon-bg-action
+  %h2.block-title Add coordinates of your local group
+  .content
+    %form
+      .form-wrapper
+        .form-item
+          %label.form-label{:for => "latitude"} Latitude
+          %input.form-text#latitude{:type => "text", :value => ""}
+        .form-item
+          %label.form-label{:for => "longitude"} Longitude
+          %input.form-text#longitude{:type => "text", :value => ""}
+      .form-actions.form-wrapper
+        %input{:type => "submit", :class => "button btn-primary", :value => "Submit"}
+        %input{:type => "submit", :class => "button btn-close", :value => "Cancel"}
+
+
+= javascript_include_tag "leaflet"
+= javascript_include_tag "underscore"
+
+:javascript
+
+  var map;
+  var feature;
+
+  var marker = {};
+
+  var findaddress = _.debounce(function(e) {
+
+    var country = document.getElementById("country-select");
+    var addressfield = document.getElementById("edit-event-address");
+
+    $.getJSON('http://nominatim.openstreetmap.org/search/' + country.value + '/' + addressfield.value + ' ?format=json&limit=3&addressdetails=1', function(data) {
+        var items = [];
+        console.log(data);
+
+        venue = "";
+        street = "";
+        house_number = "";
+        city = "";
+        postcode = "";
+        suburb = "";
+
+        $.each(data, function(key, val) {
+          if (val.type == 'works' || val.type == 'it') {
+            venue = val.address['address29'] + ", ";
+          } else if (val.type == 'stadium') {
+            venue = val.address['stadium'] + ", ";
+          } else if (val.type == 'stream') {
+            venue = val.address['stream'] + ", ";
+          } else if (val.type == 'bar') {
+            venue = val.address['bar'] + ", ";
+          } else if (val.type == 'taxi') {
+            venue = val.address['taxi'] + ", ";
+          } else if (val.type == 'attraction') {
+            venue = val.address['attraction'] + ", ";
+          }
+          if (typeof(val.address['road'])!='undefined') {
+            street = val.address['road'] + ", ";
+          }
+          if (typeof(val.address['pedestrian'])!='undefined') {
+            street = val.address['pedestrian'] + ", ";
+          }
+          if (typeof(val.address['footway'])!='undefined') {
+            street = val.address['footway'] + ", ";
+          }
+          if (typeof(val.address['house_number'])!='undefined') {
+            house_number = val.address['house_number'] + ", ";
+          }
+          if (typeof(val.address['suburb'])!='undefined') {
+            suburb = val.address['suburb'] + ", ";
+          }
+          if (typeof(val.address['city'])!='undefined') {
+            city = val.address['city'];
+          }
+          if (typeof(val.address['town'])!='undefined') {
+            city = val.address['town'];
+          }
+          if (typeof(val.address['postcode'])!='undefined') {
+            postcode = " (" + val.address['postcode'] + ")";
+          }
+          lon = val.lon;
+          lat = val.lat;
+          latlng = L.latLng(lat, lon);
+          items.push("<li><a href='#' onclick='chooseAddr(" + lat + ", " + lon + ");return false;'>" + venue + street + house_number + suburb + city + postcode + "</a></li>");
+        });
+
+      $('#results').empty().show();
+      if (items.length != 0) {
+        $('<ul/>', {
+          'class': 'location-lookup-resultlist',
+          html: items.join('')
+        }).appendTo('#results');
+      } else {
+        $('<p/>', {
+          html: 'Address not found'
+        }).appendTo('#results');
+      }
+
+      });
+  }, 500);
+
+  L.Marker.prototype.animateDragging = function () {
+
+    var iconMargin, shadowMargin;
+
+    this.on('dragstart', function () {
+      if (!iconMargin) {
+        iconMargin = parseInt(L.DomUtil.getStyle(this._icon, 'marginTop'));
+        shadowMargin = parseInt(L.DomUtil.getStyle(this._shadow, 'marginLeft'));
+      }
+
+      this._icon.style.marginTop = (iconMargin - 15)  + 'px';
+      this._shadow.style.marginLeft = (shadowMargin + 8) + 'px';
+    });
+
+    return this.on('dragend', function () {
+      this._icon.style.marginTop = iconMargin + 'px';
+      this._shadow.style.marginLeft = shadowMargin + 'px';
+    });
+  };
+
+  var eventIcon = L.icon({
+    iconUrl: '/images/marker-events.png',
+    iconRetinaUrl: '/images/marker-events@2x.png',
+    shadowUrl: '/images/marker-shadow.png',
+    shadowRetinaUrl: '/images/marker-shadow@2x.png',
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [41, 41], // size of the shadow
+    iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
+    shadowAnchor: [13, 41],  // the same for the shadow
+    popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
+  });
+
+  map = new L.Map('map', {zoomControl: true});
+  marker = L.marker(new L.LatLng(0,0),{icon: eventIcon, draggable:true})
+  .animateDragging()
+  .addTo(map);
+
+  var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    osm = new L.TileLayer(osmUrl, {maxZoom: 18});
+
+  map.setView(new L.LatLng(0, 0), 1).addLayer(osm);
+
+  map.on({
+    click: function() {
+      map.setView([0,0],2);
+    }
+  });
+
+  function country_select_search() {
+    var inp = document.getElementById("country-select");
+
+    $.getJSON('http://nominatim.openstreetmap.org/search?format=json&country=' + inp.value, function(data) {
+        var items = [];
+
+        $.each(data, function(key, val) {
+          lon = val.lon;
+          lat = val.lat;
+          latlng = L.latLng(lat, lon);
+          map.setView(latlng, 5, {animation: true});
+          marker.setLatLng(latlng);
+        });
+
+      });
+
+  }
+
+  function address_input_search() {
+    var addressfield = document.getElementById("edit-event-address");
+    $('#results').show();
+    addressfield.addEventListener('input', findaddress, false);
+
+  }
+
+  function chooseAddr(lat, lon) {
+    var latlng = new L.LatLng(lat, lon);
+    map.setView(latlng, 15, {animation: true});
+    marker.setLatLng(latlng);
+    $('#results').hide();
+  }
+
+  function triggerUpload() {
+    document.getElementById('uploadimage').click();
+  }
+

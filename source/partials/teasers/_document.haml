@@ -1,17 +1,23 @@
-.views-row
-  %article.node-teaser-document.node-teaser
-    .field-type-image
-    .field-type-wrapper
-      %h2.node-title
-        %a{:href => "./document.html"}
-          = lorem.sentence
-      .submitted
-        %a.type.document{:href => "./documents.html"} Document
-        24 Sep 2013, by
-        - if current_page.data.user_role != "an"
-          %a{:href => "./profile.html"}
-            = lorem.name
-        - else
-          = lorem.name.downcase.tr(' ', '_')
-      .field-name-body
-        =lorem.paragraph
+- data.documents.document_one.each do |item|
+  .views-row
+    %article.node-teaser-document.node-teaser
+      .field-type-image
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./document.html"}
+            = item.title
+        .submitted
+          %a.type.document{:href => "./documents.html"} Document
+          = succeed ", by" do
+            = item.date
+          - if current_page.data.user_role != "an"
+            %a{:href => "./profile.html"}
+              = item.author
+          - else
+            = item.author.downcase.tr(' ', '_')
+          - if current_page.data.user_role != "an"
+            - if item.comment_amount
+              %a.teaser-comments{:href => "./blog-article.html#block-comments"}
+                = item.comment_amount
+        .field-name-body
+          = item.introtext

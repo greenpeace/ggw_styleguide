@@ -1,30 +1,40 @@
 ---
 title: Materials
-body_class: not-front logged-in page-materials l-has-sidebar
+body_class: not-front logged-in page-materials no-sidebar
 user_role: lu
-design_status: Work in progress
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .main-content
-    %i.block-icon.icon-bg-group.icon-users
+.l-main-column
+  #content.block.current
+    %i.block-icon.icon-bg-news-media.icon-material
     %h1#page-title.block-title
       = current_page.data.title
     .content
-      %p table with items
+      %table.tablesaw{"data-tablesaw-mode" => "swipe", "data-tablesaw-sortable" => ""}
+        %thead
+          %tr
+            %th.views-field-image{"data-tablesaw-priority" => "persist"}
+            %th.views-field-title{"data-tablesaw-priority" => "persist", "data-tablesaw-sortable-col" => ""} Title
+            %th{"data-tablesaw-sortable-col" => "", "data-sortable-numeric" => ""} Amount
+            %th{"data-tablesaw-sortable-col" => ""} Condition
+            %th Description
 
-      = partial :"teasers/group-no-image"
-      = partial :"teasers/group-with-image"
-      = partial :"teasers/group-no-image"
-      = partial :"teasers/group-with-image"
-      = partial :"teasers/group-no-image"
-      = partial :"teasers/group-with-image"
-      .align-center
-        %a.button{:href => "#"} show some more
+        %tbody
+          - 20.times do |num|
+            %tr
+              %td
+                %img.lazyload{:alt => "Example of image.", :src => "/images/blank.png", "data-src" => "/photos/75/nature1.jpg" }
+              %td
+                = lorem.words 2
+              %td
+                = rand(100)
+              %td
+                As good as new
+              %td
+                = lorem.sentence
 
-%aside.l-sidebar.sidebar
-  .content
-    = partial :"blocks/find_groups"
-    = partial :"blocks/lu/get_involved"
+          %ul.pager.pager-load-more
+            %li
+              %a{:href => "#"} Show some more

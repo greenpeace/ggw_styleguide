@@ -1,0 +1,64 @@
+.row {
+  vertical-align: bottom;
+
+  .form-item {
+    display: inline-block;
+    margin: 0 $def-mar-half $def-mar-half 0;
+    width: 100%;
+
+    @include breakpoint($tab) {
+      margin: 0 $def-mar 0 0;
+      width: auto;
+    }
+  }
+
+  .form-wrapper & {
+    margin-bottom: $def-mar;
+  }
+
+  // fix bug in vertical alignment
+  .selector {
+    display: block;
+  }
+
+}
+
+@include breakpoint($tab) {
+
+  .form-wrapper.row {
+    display: inline-block;
+    vertical-align: bottom;
+
+    // a label for multiple inline fields
+    .inline-label {
+      display: inline-table;
+      margin-bottom: 0;
+      margin-right: $def-mar-half;
+      min-width: 60px;
+    }
+
+    .form-item {
+      display: inline-table;
+      margin-bottom: 0;
+      margin-right: $def-mar-half;
+      vertical-align: bottom;
+    }
+    .button {
+      margin: 0;
+    }
+
+    .input-date {
+      max-width: 135px;
+    }
+
+    // keep event edit form compact
+    .date-field {
+      width: 130px;
+    }
+    .time-field,
+    .number-field {
+      width: 100px;
+    }
+  }
+
+}

@@ -1,0 +1,79 @@
+---
+title: Event view enrollments
+body_class: not-front logged-in page-enrollments no-sidebar is-content-manager
+direct_parent:
+  -
+    name: "Events"
+    url: "search-events.html"
+  -
+    name: "Event (organising)"
+    url: "event-full-organising.html"
+user_role: lu
+tables: yes
+---
+
+= partial :"blocks/breadcrumbs"
+
+- data.event.with_image_organising.each do |item|
+
+  .l-main-column
+
+    .block
+      .action-bar
+        .action-bar-item.edit-content
+          %a.button{:href => "./event-full-organiser.html", :title => "view event"} View event
+
+      %i.block-icon.icon-bg-event.icon-users
+      %h1.block-title
+        Manage enrollments -
+        = item.title
+
+      .content
+
+        .view-filters
+          = partial :"nav/manage-enrollments-actions"
+
+        .view-search-results
+          .view-content
+            %table.tablesaw{"data-tablesaw-mode" => "swipe", "data-tablesaw-sortable" => ""}
+              %thead
+                %tr
+                  %th.views-field-views-bulk-operations{"data-tablesaw-priority" => "persist"}
+                    %input.form-checkbox.js-selectall{:type => "checkbox"}
+                  %th.views-field-avatar{"data-tablesaw-priority" => "persist"}
+                  %th.views-field-name{"data-tablesaw-priority" => "persist", "data-tablesaw-sortable-col" => "", "data-tablesaw-sortable-default-col" => ""} Name
+                  %th.views-field-username{"data-tablesaw-sortable-col" => ""} Username
+                  %th.views-field-email{"data-tablesaw-sortable-col" => ""} Email
+                  %th{"data-tablesaw-sortable-col" => "", "data-sortable-numeric" => ""} Phone
+                  %th{"data-tablesaw-sortable-col" => ""} Is there?
+                  %th{"data-tablesaw-sortable-col" => ""} Member roles
+                  %th{"data-tablesaw-sortable-col" => ""} Member since
+                  %th Request message
+                  %th.views-field-actions Actions
+
+              %tbody
+                - for member in item.enrollments
+                  %tr
+                    %td
+                      %input.form-checkbox{:type => "checkbox"}
+                    %td
+                      %img.lazyload{:alt => "#{member.name}", :src => "/images/blank.png", "data-src" => "/photos/75/#{member.image}"}/
+                      %noscript
+                        %img{:alt => "#{member.name}", :src => "/photos/75/#{member.image}"}/
+                    %td #{member.name}
+                    %td #{member.username}
+                    %td #{member.email}
+                    %td #{member.phone}
+                    %td #{member.is_there}
+                    %td #{member.roles}
+                    %td #{member.member_since}
+                    %td #{member.message}
+                    %td
+                      .btn-group
+                        %a.button
+                          %i.icon.icon-pencil
+                          %span.element-hidden edit
+                        %a.button
+                          %i.icon.icon-trash
+                          %span.element-hidden delete
+

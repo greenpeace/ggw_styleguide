@@ -1,12 +1,4 @@
 %figure
-  %picture
-    /[if IE 9] <video style="display: none;">
-    %source{:media => "(min-width: 64em)", :srcset => "/photos/nature9.jpg, /photos/nature6.jpg 2x"}
-    %source{:media => "(min-width: 48em)", :srcset => "/photos/nature7.jpg, /photos/nature8.jpg 2x"}
-    %source{:media => "(min-width: 24em)", :srcset => "/photos/nature11.jpg, /photos/nature12.jpg 2x"}
-    /[if IE 9] </video>
-    %img{:alt => "Example of an image.", :src => "/photos/blank.png", :srcset => "/photos/nature13.jpg 2x"}
-  %figcaption
-    A cheeky macaque, Lower Kintaganban River, Borneo. Original by
-    %a{:href => "#"}
-      = lorem.name
+  %img.lazyload{:alt => "Example of image.", :src => "/images/blank.png", "data-sizes" => "(min-width: 64em) 603px, (min-width: 48em) 768px, (min-width: 24em) 640px, 320px", "data-srcset" => "/photos/black-ice.jpg 1536w, /photos/black-ice.jpg 1440w, /photos/black-ice.jpg 1280w, /photos/black-ice.jpg 768w, /photos/black-ice.jpg 640w, /photos/black-ice.jpg 603w, /photos/black-ice.jpg 320w"}/
+  %noscript
+    %img{:src => "/photos/black-ice.jpg", "sizes" => "(min-width: 64em) 603px, (min-width: 48em) 768px, (min-width: 24em) 640px, 320px", "srcset" => "/photos/black-ice.jpg 1536w, /photos/black-ice.jpg 1440w, /photos/black-ice.jpg 1280w, /photos/black-ice.jpg 768w, /photos/black-ice.jpg 640w, /photos/black-ice.jpg 603w, /photos/black-ice.jpg 320w"}/

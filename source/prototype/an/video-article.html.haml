@@ -1,17 +1,20 @@
 ---
 title: Video page example
 body_class: not-front not-logged-in page-type-video l-has-sidebar node-full
+direct_parent:
+  -
+    name: "Videos"
+    url: "videos.html"
 user_role: an
-design_status: Work in progress
 loadvideo: youtube
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .main-content
+.l-main-column
+  #content.block.current.main-content
     %i.block-icon.icon-bg-news-media.icon-video
-    %h1#page-title.block-title
+    %h1.block-title{"data-amtitle" => "Video"}
       = lorem.words 10
     .content
       %article.view-mode-full
@@ -47,7 +50,9 @@ loadvideo: youtube
 
         .submitted.submitted-extended
           .submitted-image
-            %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+            %img.lazyload{:alt => "Name of the author.", :src => "/images/blank.png", "data-src" => "/photos/75/people1.jpg"}/
+            %noscript
+              %img{:alt => "Name of the author.", :src => "/photos/75/people1.jpg"}/
 
           .submitted-info
             %div

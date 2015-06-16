@@ -1,0 +1,272 @@
+suggestion:
+- Raul Fox
+- Dalton Bender
+- Ashton Johnston
+- Josephine Graves
+- Monty MacDonald
+- Reid Abrams
+- Carly Merritt
+- Byron Monroe
+- John Middleton
+- Daryl mCneill
+- Alondra Cross
+- Vanessa Heath
+- Vance Gallagher
+- Courtney Walker
+- Gabriel Lane
+
+member_one:
+  -
+    first_name: "Grace"
+    last_name: "O'Flynn"
+    image: "grace210.jpg"
+    gender: "Female"
+    username: "grace_oflynn"
+    locality: ""
+    address: "96 Uxbridge Road"
+    postcode: "SE1 4NX"
+    city: "London"
+    country: "England"
+    birth_day: "25"
+    birth_month: "10"
+    birth_month_written: "October"
+    birth_year: "1980"
+    geocoordinates: "51.915625, -2.077950"
+    phone_mobile: "065 983 8973"
+    phone_home: "12372929"
+    email: "grace@riseup.net"
+    skype: "grace_oflynn"
+    about: "Hello, I'm Grace. I work in bike repair shop in the west side of London. Initially I studied law but it wasn't really for me. I also run a small community Garden. I'm not sure what else to write here, but well, nice to meet you all :)"
+    profession: "Bike doctor!"
+    employer: ""
+    social_facebook: "http://www.facebook.com/awesome_johnston"
+    social_twitter: "http://www.twitter.com/awesome_johnston"
+    social_linkedin: "http://www.linkedin.com/awesome_johnston"
+    education: "Environmental Law Master in University of London"
+    general_skills:
+      - Bike
+      - Cooking
+    language_skills:
+      - German
+      - Finish
+    other_skills:
+      - gardening
+      - composing music
+
+member_alen:
+  -
+    first_name: "Alen"
+    last_name: "Marsh"
+    image: "alen.jpg"
+    gender: "Male"
+    username: "alen_marsh"
+    locality: "London"
+    address: "82-96 MG Road"
+    postcode: "SE1 4NX"
+    city: "London"
+    country: "England"
+    birth_day: "26"
+    birth_month: "04"
+    birth_month_written: "April"
+    birth_year: "1996"
+    geocoordinates: "51.915625, -2.077950"
+    phone_mobile: "793672929"
+    phone_home: "12372929"
+    skype: "alen_marsh"
+    email: "alen@yahoo.co.uk"
+    about: "Hi everybody! I’m Alen and in addition to being a Greenwire coach, I co-ordinate the Emlyn Garden Local group London and work as a production editor for educational materials. In a previous career, I worked in IT support for almost six years, so I’d like to think that I’ve got endless patience when dealing with people’s technical queries. I’m very excited to be helping out on Greenwire and am really looking forward to seeing how it develops as a community platform. When I’m not working or helping out with Greenpeace, you can find me at one of the many indoor rock climbing centres in London, probably looking thoughtfully at a wall as I plan out a move that I’m not strong enough to do."
+    profession: "Video Producer"
+    employer: ""
+    social_facebook: "http://www.facebook.com/alen_marsh7"
+    social_twitter: "http://www.twitter.com/alen_marsh7"
+    social_linkedin: "http://www.linkedin.com/alen_marsh7"
+    education: "Gobelin, Paris"
+    general_skills:
+      - Video
+      - Painting
+    language_skills:
+      - English
+    other_skills:
+      - gardening
+
+member_rachael :
+  -
+    first_name: "Rachael"
+    last_name: "King"
+    image: "rachael.jpg"
+    gender: "Female"
+    username: "rachael_king"
+    locality: "London"
+    address: "82-96 MG Road"
+    postcode: "SE1 4NX"
+    city: "London"
+    country: "England"
+    birth_day: "22"
+    birth_month: "04"
+    birth_month_written: "April"
+    birth_year: "1984"
+    geocoordinates: "51.915625, -2.077950"
+    phone_mobile: "793672929"
+    phone_home: "12372929"
+    skype: "rachael_king"
+    email: "rachael@greenpeace.org"
+    about: ""
+    profession: "Community Manager at Greenpeace U"
+    employer: ""
+    social_facebook: "http://www.facebook.com/rachael_king8"
+    social_twitter: "http://www.twitter.com/rachael_king8"
+    social_linkedin: "http://www.linkedin.com/rachael_king8"
+    education: "London school of economics"
+    general_skills:
+      - Community manager
+    language_skills:
+      - English
+    other_skills:
+      - Juggling
+
+member_rose:
+  -
+    first_name: "Rose"
+    last_name: "Turner"
+    image: "rose.jpg"
+    gender: "Female"
+    username: "rose_turner"
+    locality: "London"
+    address: "42 Lakshmi Bahvan"
+    postcode: "SE1 4NX"
+    city: "London"
+    country: "England"
+    birth_day: "22"
+    birth_month: "01"
+    birth_month_written: "January"
+    birth_year: "1983"
+    geocoordinates: "51.915625, -2.077950"
+    phone_mobile: "793672929"
+    phone_home: "12372929"
+    skype: "rose_turner_uk_man"
+    email: "rachael@greenpeace.org"
+    about: "Hello I'm Rose Turner from Manchester. I'm originally from London. My master in Environmental Law sparked my passion for the environment. Now I want nothing more than do my fair share to save the planet. Let's campaign hard and party harder! "
+    profession: "Lawyer at Casper & Co"
+    employer: "Casper & Co"
+    social_facebook: "http://www.facebook.com/roseturner974"
+    social_twitter: "http://www.twitter.com/roseturner974"
+    social_linkedin: "http://www.linkedin.com/roseturner974"
+    education: ""
+    general_skills:
+      - Community manager
+    language_skills:
+      - English
+    other_skills:
+      - Juggling
+
+member_two:
+  -
+    first_name: "Madeline"
+    last_name: "Fox"
+    image: "people2.jpg"
+    gender: "Female"
+    username: "Madie_fox"
+    locality: ""
+    address: "82-96 Old Kent Road"
+    postcode: "SE1 4NX"
+    city: "London"
+    country: "England"
+    birth_day: "26"
+    birth_month: "04"
+    birth_month_written: "April"
+    birth_year: "1996"
+    geocoordinates: "51.915625, -2.077950"
+    phone_mobile: "793672929"
+    phone_home: "12372929"
+    skype: "madie_fox_london"
+    email: "madeline_fox@yahoo.co.uk"
+    about: "I was born in Bristol, u.k. a long time ago, I make a living as a Fine Artist/Muralist, I spent 20 years abroad accumulating a wealth of experiences in order to obtain some sort of idea regards Homoerectus the planet and where on earth we are going....."
+    profession: "Accountmanager Finance"
+    employer: "Greenpeace International"
+    social_facebook: "http://www.facebook.com/awesome_johnston"
+    social_twitter: "http://www.twitter.com/awesome_johnston"
+    social_linkedin: "http://www.linkedin.com/awesome_johnston"
+    education: "I have a degree"
+    general_skills:
+      - Research
+      - Painting
+    language_skills:
+      - German
+      - Finish
+    other_skills:
+      - gardening
+      - composing music
+
+member_three:
+  -
+    first_name: "Reid"
+    last_name: "Abrams"
+    image: "people3.jpg"
+    gender: "Male"
+    username: "abrams_reid"
+    locality: ""
+    address: "82-96 Old Kent Road"
+    postcode: "SE1 4NX"
+    city: "Twickenham"
+    country: "England"
+    birth_day: "26"
+    birth_month: "04"
+    birth_month_written: "April"
+    birth_year: "1996"
+    geocoordinates: "51.915625, -2.077950"
+    phone_mobile: "793672929"
+    phone_home: "12372929"
+    skype: "awesome_johnston"
+    about: "I was born in Bristol, u.k. a long time ago, I make a living as a Fine Artist/Muralist, I spent 20 years abroad accumulating a wealth of experiences in order to obtain some sort of idea regards Homoerectus the planet and where on earth we are going....."
+    profession: "Accountmanager Finance"
+    employer: "Greenpeace International"
+    social_facebook: "http://www.facebook.com/awesome_johnston"
+    social_twitter: "http://www.twitter.com/awesome_johnston"
+    social_linkedin: "http://www.linkedin.com/awesome_johnston"
+    education: "I have a degree"
+    general_skills:
+      - Research
+      - Painting
+    language_skills:
+      - German
+      - Finish
+    other_skills:
+      - gardening
+      - composing music
+
+member_four:
+  -
+    first_name: "Alondra"
+    last_name: "Cross"
+    image: "people4.jpg"
+    gender: "Female"
+    username: "cross_478"
+    locality: ""
+    address: "82-96 Old Kent Road"
+    postcode: "SE1 4NX"
+    city: "UxBridge"
+    country: "England"
+    birth_day: "26"
+    birth_month: "04"
+    birth_month_written: "April"
+    birth_year: "1996"
+    geocoordinates: "51.915625, -2.077950"
+    phone_mobile: "793672929"
+    phone_home: "12372929"
+    skype: "awesome_johnston"
+    about: "I was born in Bristol, u.k. a long time ago, I make a living as a Fine Artist/Muralist, I spent 20 years abroad accumulating a wealth of experiences in order to obtain some sort of idea regards Homoerectus the planet and where on earth we are going....."
+    profession: "Accountmanager Finance"
+    employer: "Greenpeace International"
+    social_facebook: "http://www.facebook.com/awesome_johnston"
+    social_twitter: "http://www.twitter.com/awesome_johnston"
+    social_linkedin: "http://www.linkedin.com/awesome_johnston"
+    education: "I have a degree"
+    general_skills:
+      - Research
+      - Painting
+    language_skills:
+      - German
+      - Finish
+    other_skills:
+      - gardening
+      - composing music

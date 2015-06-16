@@ -1,6 +1,6 @@
-.block
+.block#block-enroll
   %i.block-icon.icon-login.icon-bg-action
-  %h2.block-title Enroll for this event
+  %h2.block-title{"data-amtitle" => "Enroll"} Enroll for this event
   .content
     %p You are currently enrolled
     %a.modal-inline.button{:href => "#event-signup"} Edit enrollment
@@ -8,9 +8,9 @@
 
 #event-signup.block.white-popup.mfp-hide
   %i.block-icon.icon-login.icon-bg-action
-  %h2.block-title Enrollment
+  %h2.block-title Enrollment for #{event}
   .content
-    %form.node-form.node-event_signup-form{:action => "event-full.html", :method => "get"}
+    %form.node-form.node-event_signup-form{:action => "event-full-induction-training.html", :method => "get"}
       .form-item.form-type-radios
         %label{:for => "edit-field-signup-status-und"}
           Are you joining this event?

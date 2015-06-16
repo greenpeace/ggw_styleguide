@@ -1,23 +1,86 @@
 ---
 title: FAQ Greenpeace Greenwire
-body_class: not-front not-logged-in page-faq l-has-sidebar
+body_class: not-front not-logged-in page-faq l-has-sidebar-first
 user_role: an
-design_status: Work in progress
+menu:
+  -
+    name: 'Category 1'
+    url: '#section-category1'
+  -
+    name: 'Category 2'
+    url: '#section-category2'
+  -
+    name: 'Category 3'
+    url: '#section-category3'
+  -
+    name: 'Category 4'
+    url: '#section-category4'
 ---
+
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+%aside.sidebar-first.sfmenu
 
-  .main-content
-
-    %i.block-icon.icon-bg-default.icon-mail
-    %h1.block-title#page-title
-      = current_page.data.title
-
+  .block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
+    %i.block-icon.icon-help.icon-bg-default
+    %h2.block-title Categories
     .content
-      %p
+      - for item in current_page.data.menu
+        %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
+          #{item.name}
 
+.l-main-column#content
+  .categories-wrapper
+    %section#section-category1.block.block-no-icon
+      %h2.block-title Category 1
 
-%aside.l-sidebar.sidebar
-  = partial :"blocks//an/create_account"
+      .content
+        - 10.times do |num|
+          .views-row
+            %article.node-teaser-faq.node-collapse
+              %h2.node-title
+                %a{:href => "#0"}
+                  = lorem.sentence
+              .field-name-body
+                %p
+                  =lorem.paragraph
+
+    %section#section-category2.block.block-no-icon
+      %h2.block-title Category 2
+
+      .content
+        - 10.times do |num|
+          .views-row
+            %article.node-teaser-faq.node-collapse
+              %h2.node-title
+                %a{:href => "#0"}
+                  = lorem.sentence
+              .field-name-body
+                =lorem.paragraph
+
+    %section#section-category3.block.block-no-icon
+      %h2.block-title Category 3
+
+      .content
+        - 10.times do |num|
+          .views-row
+            %article.node-teaser-faq.node-collapse
+              %h2.node-title
+                %a{:href => "#0"}
+                  = lorem.sentence
+              .field-name-body
+                =lorem.paragraph
+
+    %section#section-category4.block.block-no-icon
+      %h2.block-title Category 4
+
+      .content
+        - 10.times do |num|
+          .views-row
+            %article.node-teaser-faq.node-collapse
+              %h2.node-title
+                %a{:href => "#0"}
+                  = lorem.sentence
+              .field-name-body
+                =lorem.paragraph

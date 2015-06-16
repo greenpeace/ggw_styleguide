@@ -1,15 +1,24 @@
 ---
 title: Style guide structure
-body_class: styleguide-structure
+body_class: styleguide-structure l-has-sidebar-first
 layout: styleguide
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "Documentation"
+    url: "./getting-started.html"
 design_status: Work in progress
 ---
 
-%aside.sidebar-left
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
   = partial :"nav/documentation"
 
 #content.l-main-column
-  .main-content
+  .main-content.block
     %i.block-icon.icon-bg-default.icon-info
     %h1#page-title.block-title Root folders
     %article.view-mode-full.content
@@ -71,16 +80,16 @@ design_status: Work in progress
 
   .block
     %i.block-icon.icon-bg-default.icon-info
-    %h1#page-title.block-title Vendor
+    %h1#page-title.block-title Libraries
     %article.view-mode-full.content
       :markdown
-        This folder contains libraries that we use which consist of more than one file type. So for example a combination of Javascript, CSS and images.
+        This folder contains libraries that are maintained by third parties and might be updated regularly. We update the libraries folder using [Bower](http://bower.io). Including the files in our project is done via middleman sprockets (eg. "//= require "modernizr.2.8.2.custom.js"). You do not have to specify the path to this folder, Middleman will search in the libraries folder by default.
 
   .block
     %i.block-icon.icon-bg-default.icon-info
     %h1#page-title.block-title Images
     %article.view-mode-full.content
-      %p Images that are used for the site, such as CSS background images, form elements and the logo.
+      %p Images that are used for the site, such as CSS background images (use sprites!), map markers and illustration images.
 
   .block
     %i.block-icon.icon-bg-default.icon-info

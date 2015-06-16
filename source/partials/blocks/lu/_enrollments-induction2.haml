@@ -1,0 +1,22 @@
+.block#block-enrollments
+  %i.block-icon.icon-users.icon-bg-event
+  %h2.block-title{"data-amtitle" => "Enrollments"} Enrollments
+  .content
+    .members
+      - 6.times do |num|
+        - if num  > 1
+          %a.member-item{:href => "#"}
+            %img.lazyload{:alt => "Name of user", :src => "/images/blank.png", "data-srcset" => "/photos/75/member#{num}.jpg"}/
+            %noscript
+              %img{:alt => "Name of user", :src => "/photos/75/member#{num}.jpg"}/
+        %a{:href => "my-profile.html"}
+          %img.lazyload{:alt => "Name of user", :src => "/images/blank.png", "data-srcset" => "/photos/75/grace.jpg"}/
+          %noscript
+            %img{:alt => "Name of user", :src => "/photos/75/grace.jpg"}/
+
+    %p 6 persons are going
+
+  - if current_page.data.organiser == "organiser"
+    %a.button.btn-block{:href => "./event-manage-enrollments.html"} Manage enrollments
+  - else
+    %a.button.btn-block{:href => "./event-view-enrollments.html"} View enrollments

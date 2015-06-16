@@ -1,0 +1,28 @@
+---
+title: Greenpeace Greenwire United Kingdom
+direct_parent:
+  -
+    name: "Groups"
+    url: "groups.html"
+body_class: not-front not-logged-in page-group-home l-two-column
+user_role: an
+---
+
+= partial :"blocks/breadcrumbs"
+
+- data.groups.group_country.each do |item|
+
+  .l-main-column
+
+    %h1.group-heading.only-mobile
+      %i.icon-users
+      = item.title
+
+    = partial :"blocks/group_info_country"
+    = partial :"blocks/upcoming_events"
+
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/group-members"
+    = partial :"blocks/updates"
+
+

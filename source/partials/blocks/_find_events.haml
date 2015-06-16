@@ -1,19 +1,29 @@
-.block
-  %i.block-icon.icon-search.icon-bg-event
-  %h2.block-title Find events
+.block#block-find-events
+  %i.block-icon.icon-adjust.icon-bg-event
+  %h2.block-title{"data-amtitle" => "Filter"} Filter events
   .content
     %form
       - if current_page.data.user_role == "lu"
         .views-exposed-widget
           %label Author
           .views-widget
-            .form-item.form-type-textfield
-              %input.form-autocomplete.form-text{:type => "text"}/
+            .form-item
+              %input.form-text.form-autocomplete#authorinput{:type => "text", :value => ""}
+              .autocomplete#authorautocomplete
+                %ul
+                  - for members in data.members.suggestion
+                    %li
+                      #{members}
       .views-exposed-widget
         %label Tags
         .views-widget
-          .form-item.form-type-textfield
-            %input.form-autocomplete.form-text{:type => "text"}/
+          .form-item
+            %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => ""}
+            .autocomplete#tagsautocomplete
+              %ul
+                - for tags in data.tags.suggestion
+                  %li
+                    #{tags}
       .views-exposed-widget
         %label City
         .views-widget
@@ -23,11 +33,12 @@
         %label From
         .views-widget
           .form-item.form-type-textfield
-            %input.form-text{:type => "date"}/
+            %input.form-text.input-date.js-date-picker{:type => "date"}/
       .views-exposed-widget
         %label Until
         .views-widget
           .form-item.form-type-textfield
-            %input.form-text{:type => "date"}/
+            %input.form-text.input-date.js-date-picker{:type => "date"}/
       .views-exposed-widget.views-submit-button
         %input.button{:type => "submit", :value => "Search"}/
+        %a.small-link.pull-right{:href => "./search-events.html"} Advanced search

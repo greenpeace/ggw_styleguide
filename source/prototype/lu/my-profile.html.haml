@@ -1,85 +1,117 @@
 ---
 title: My profile
-body_class: not-front logged-in page-profile l-has-sidebar
+body_class: not-front logged-in page-profile l-two-column
+profile: home
+access: mine
 user_role: lu
-design_status: Work in progress
+comments: yes
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .main-content
-    %i.block-icon.icon-bg-user.icon-user
-    %h1#page-title.block-title
-      John Doe Claus
-      %span.secondary-title (johnny_has_a_nickname)
+- data.members.member_one.each do |item|
 
-    .content
+  .l-main-column
+    %h1.group-heading.only-mobile
+      %i.icon-user
+      %span #{item.first_name} #{item.last_name}
+    #block-user-profile.block.block-profile.current
+      .action-bar
+        .action-bar-item.edit-content
+          %button.button{"data-dropdown" => "#edit-profile", :href => "#"}
+            %span Edit
+          #edit-profile.dropdown.dropdown-relative.dropdown-tip.dropdown-anchor-right
+            %ul.dropdown-menu
+              %li
+                %a{:href => "./edit-user-profile-full.html"} Edit profile
+              %li
+                %a{:href => "./edit-user-account.html"} Edit account
 
-      .profile
+      %i.block-icon.icon-bg-user.icon-user
+      %h2.block-title{"data-amtitle" => "My profile"}
+        My profile
 
-        %a.button.btn-edit{:href => "#"}
-          %i.icon-edit edit
+      .content
 
-        .field-type-image
-          %img{:src => "http://lorempixel.com/130/130/people", :alt => "John Doe Claus"}
+        .field-name-user-image
+          %img.lazyload{:alt => "#{item.first_name} #{item.last_name}", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/#{item.image}"}/
+          %noscript
+            %img{:src => "/photos/#{item.image}", :alt => "#{item.first_name} #{item.last_name}"}/
 
-        .field-type-wrapper
+        .field.field-name-user-name
+          #{item.first_name} #{item.last_name}
+          %span.username (#{item.username})
 
-          .field.field-name-field-social-media
-            %a.social-icon.twitter{:target => "blank"}
-              %span.element-hidden twitter
-            %a.social-icon.facebook{:target => "blank"}
-              %span.element-hidden facebook
-            %a.social-icon.googleplus{:target => "blank"}
-              %span.element-hidden googleplus
-            %a.social-icon.linkedin{:target => "blank"}
-              %span.element-hidden linkedin
-            %a.social-icon.pinterest{:target => "blank"}
-              %span.element-hidden pinterest
-            %a.social-icon.vk{:target => "blank"}
-              %span.element-hidden vkontakte
-
-          .field.field-name-field-skype
-            .field-label
-              %span.element-hidden
-                Skype:
-            .field-item
-              %i.icon-skype
-              %span john_doe_north_pole
+        .field.field-name-body
+          .field-label.element-hidden About me:
+          .field-item
+            = item.about
 
         .clear
 
-        .field-type-wrapper
+        .field.field-name-field-social-media.field-inline-block
+          .field-label Social media:
+          .field-item
+            %a.social-icon.twitter{:href => "#", :target => "blank"}
+              %span.element-hidden twitter
+            %a.social-icon.facebook{:href => "#", :target => "blank"}
+              %span.element-hidden facebook
 
-          .field.field-name-field-birthday
-            .field-label Date of birth:
-            .field-item October 25th, 1980
+        .field.field-name-field-skype.field-inline-block
+          .field-label Skype:
+          .field-item
+            %i.icon-skype
+            %span #{item.skype}
 
-          .field.field-name-field-mail
-            .field-label Email:
-            .field-item john_doe_claus@greenpeace.org
+        .field.field-name-field-birthday.field-inline-block
+          .field-label Date of birth:
+          .field-item #{item.birth_month_written} #{item.birth_day}th, #{item.birth_year}
 
-          .field.field-name-field-about
-            .field-label About me:
-            .field-item
-              In et sagittis turpis, quis malesuada urna! Duis tempus pellentesque eros, eget bibendum quam rhoncus posuere. Duis commodo lobortis elit; eu condimentum ante feugiat ut. In dictum risus sed tempor rhoncus. Pellentesque tellus risus, sodales ut eleifend vel, porta sit amet nisi. Praesent vestibulum vitae nibh nec ultricies. Vivamus semper, ipsum ut eleifend eleifend, dui dui tempor neque, sit amet gravida ligula sapien et est.
+        .field.field-name-field-mail.field-inline-block
+          .field-label Email:
+          .field-item  #{item.email}
 
-          .field.field-name-field-location
-            .field-label Hometown:
-            .field-item North Pole, Greenland
+        .field.field-name-field-telephone.field-inline-block
+          .field-label Phone:
+          .field-item #{item.phone_mobile}
 
-          .field.field-name-field-profession
-            .field-label Profession:
-            .field-item Accountmanager at Greenpeace International
+        .field.field-name-field-location.field-inline-block
+          .field-label Address:
+          .field-item #{item.address} #{item.city}, #{item.country}
 
-          .field.field-name-field-education
-            .field-label Education:
-            .field-item
-              Cras porttitor convallis porta. Praesent nibh sapien, tempus vitae lacus ut, convallis molestie odio. Sed porttitor turpis sed velit feugiat, at consequat dolor mattis. Aenean bibendum dolor id orci facilisis, non vestibulum odio posuere. Vivamus lobortis nulla in neque ullamcorper mattis.
+        .field.field-name-field-profession.field-inline-block
+          .field-label Profession:
+          .field-item #{item.profession} #{item.employer}
 
-          .field.field-name-field-skills
-            .field-label Skills:
-            .field-item
-              Research, Oceans, Storytelling, Blogging, Painting, French, Custome design, Fundraising
+    = partial :"blocks/lu/user-events"
+    = partial :"blocks/lu/user-groups-empty"
 
+    #block-skills.block.lazyload{"data-expand" => "-40"}
+      .action-bar
+        .action-bar-item.edit-content
+          %a.button{:href => "./edit-user-profile.html#section-skills", :title => "Edit skills"} Edit
+
+      %i.block-icon.icon-bg-user.icon-skills
+      %h2.block-title{"data-amtitle" => "My skills"}
+        Skills
+
+      .content
+        .field.field-name-field-education
+          .field-label Education:
+          .field-item
+            = item.education
+
+        .field.field-name-field-skills-general
+          .field-label General skills
+          .field-item
+            - for skill in item.general_skills
+              = succeed "," do
+                %a{:href => "./search-members.html"} #{skill}
+            %a{:href => "./search-members.html"} Gardening
+
+    = partial :"blocks/lu/subscription-empty"
+
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/lu/comments-empty"
+    = partial :"blocks/lu/my-friends-empty"
+    = partial :"blocks/lu/user-activity-gracestart"

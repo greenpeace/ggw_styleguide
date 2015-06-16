@@ -1,14 +1,17 @@
-.views-row
-  %article.node-teaser-group.node-teaser.subscribed
-    .field-type-image
-      = partial :"teasers/teaser-image"
-    .field-type-wrapper
-      %h2.node-title
-        %a{:href => "#"}
-          = lorem.sentence
-      .submitted
-        %a.type.group{:href => "#"} Group
-        %span Country group
-        .subscribed member
-      .field-name-body
-        =lorem.paragraph
+- data.groups.group_country.each do |item|
+  .views-row
+    %article.node-teaser-group.node-teaser
+      .field-type-image
+        %a{:href => "./group-home-enrolled.html"}
+          = partial :"teasers/teaser-image", :locals => {:image => "#{item.image}"}
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./group-home-country-enrolled.html"}
+            = item.title
+        .submitted
+          %a.type.group{:href => "./groups.html"} Group
+          .subscribed member
+          #{item.group_type} (#{item.enrollment_type})
+        .field-name-body
+          = item.about
+

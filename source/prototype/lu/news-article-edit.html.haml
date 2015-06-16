@@ -1,0 +1,128 @@
+---
+title: Edit news article example
+body_class: not-front logged-in page-type-news l-has-sidebar-first page-edit
+direct_parent:
+  -
+    name: "News"
+    url: "news.html"
+  -
+    name: "News article "
+    url: "news-article.html"
+user_role: lu
+editor: ckeditor
+script: nodeform
+menu:
+  -
+    name: 'Title, body & image'
+    url: '#section-title'
+  -
+    name: 'Languages & tags'
+    url: '#section-language'
+  -
+    name: 'Visibility'
+    url: '#section-visibility'
+---
+
+
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first.sfmenu
+  .block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
+    %i.block-icon.icon-news.icon-bg-news-media
+    %h2.block-title Edit news
+    .content
+      - for item in current_page.data.menu
+        %a.sf-navbtn{:href => "#{item.url}", "data-scroll" => ""}
+          #{item.name}
+
+- data.news.with_image.each do |item|
+  .l-main-column
+    %form{:action => "#", :method => "get", :enctype => "multipart/form-data"}
+      %section#section-title.block.current.main-content
+        %i.block-icon.icon-pencil.icon-bg-action
+        %h2.block-title Title, description & image
+        .content
+          .form-wrapper
+            .form-item.field-name-title
+              %label.form-label{:for => "edit-field-title"}
+                Title
+                %span.form-required{:title => "This field is required."} *
+              %input#edit-field-title.form-text{:name => "edit-field-title", :type => "text", :value => "#{item.title}", :tabindex => "1"}/
+            .form-item
+              %label.form-label{:for => "field-edit-body"}
+                Body text
+                %span.form-required{:title => "This field is required."} *
+              %textarea#field-edit-description.ckeditor{:name => "field-edit-description", :rows => "15", :cols => "80", :tabindex => "2"}
+                = item.full_text
+
+            .form-item
+              %label.form-label{:for => "field-edit-image"}
+                Image
+                %span.form-required{:title => "This field is required."} *
+              .media-widget.media
+                .preview-wrapper.media-figure
+                  %img.media-item{:alt => "Example of image.", :src => "/photos/nature10.jpg"}/
+                .media-body
+                  .form-description
+                    Files must be smaller than3 MB <br/>
+                    Allowed file types: png gif jpg jpeg <br/>
+                    Images must be larger than 400x300 pixels.
+                  %input#uploadimage.element-invisible{:type => "file", :value => "upload"}
+                  %button.button.launcher select image
+                  %a.button.remove{:href => "#", :tabindex => "3"} remove image
+                  %br
+                  %p.filename nature10.jpg
+
+      %section#section-language.block
+        %i.block-icon.icon-globe.icon-bg-action
+        %h2.block-title Languages and tags
+        .content
+          .form-wrapper
+            .form-item.form-type-select
+              %label.form-label{:for => "language"} Language
+              .form-description What language is this news in? You can select more than one language.
+              %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple"}
+                %option{:selected => ""} English, US
+                %option French
+
+            .form-item
+              %label Tags
+              %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "#{item.tags}", :placeholder => "Text input", :tabindex => "15"}
+              .autocomplete#tagsautocomplete
+                %ul
+                  - for tags in data.tags.suggestion
+                    %li
+                      #{tags}
+
+      %section#section-visibility.block
+        %i.block-icon.icon-eye.icon-bg-action
+        %h2.block-title Visibility
+        .content
+          .form-wrapper
+            .form-item.form-type-select
+              %label.form-label{:for => "groups"} Group(s)
+              %select#groups.chosen-select{"data-placeholder" => "Select one or more groups", :multiple => "multiple", :tabindex => "16"}
+                - for groups in data.groups.my_groups
+                  %option{:value => ""}
+                    #{groups}
+                %option{:value => "", :selected => ""} Local group London
+
+            .form-item.form-type-radios.radio-blocks
+              %label.form-label{:for => "edit-group-content-access"}
+                Private or public?
+                %span.form-required{:title => "This field is required."} *
+              .form-radios
+                .form-type-radio
+                  %input#edit-group-content-access-und-0.form-radio{:name => "group_content_access", :type => "radio", :value => "0", :checked => "checked", :tabindex => "17"}
+                  %label.option{:for => "edit-group-content-access-und-0"} Private - only for group members
+                .form-type-radio
+                  %input#edit-group-content-access-und-1.form-radio{:name => "group_content_access", :type => "radio", :value => "1", :tabindex => "18"}
+                  %label.option{:for => "edit-group-content-access-und-1"} All members of Your brand community
+                .form-type-radio
+                  %input#edit-group-content-access-und-2.form-radio{:name => "group_content_access", :type => "radio", :value => "2", :tabindex => "19"}
+                  %label.option{:for => "edit-group-content-access-und-2"} Public - visible for all visitors of Your brand community
+
+      %section#section-submit.section-submit
+        .form-actions.form-wrapper
+          %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit"}
+          %input{:type => "submit", :class => "button btn-l", :value => "Cancel"}

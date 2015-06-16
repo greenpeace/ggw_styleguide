@@ -1,59 +1,83 @@
 .node-teaser {
-  overflow: hidden;
-  margin-bottom: $def-mar + 5px;
   height: 60px;
   line-height: 1.2em;
+  margin-bottom: $def-mar + 5px;
+  overflow: hidden;
   position: relative;
 
   @include breakpoint($tab) {
-    .l-main-column & {
-      height: 90px;
+    height: 90px;
+
+    .l-has-sidebar .sidebar & {
+      height: 60px;
     }
   }
 
   .field-type-image {
-    float: left;
-    margin-right: .5em;
-    width: 90px;
-    height: 60px; //temp
     background-color: $grey-l;
+    float: left;
+    height: 60px; //temp
+    margin-right: $def-mar;
     overflow: hidden;
     position: relative;
+    width: 90px;
     z-index: 1;
 
     @include breakpoint($tab) {
-      .l-main-column & {
-        width: 130px;
-        height: 90px;
+      height: 90px;
+      width: 130px;
+
+      .l-has-sidebar .sidebar & {
+        height: 60px;
+        width: 90px;
       }
+
     }
 
     &:before {
-      color: $white;
-      position: relative;
-      font-size: 2.5rem;
-      z-index: 2;
-      line-height: 60px;
-      width: 100%;
       @extend %load-icon;
+      color: $white;
+      font-size: 2.5rem;
+      line-height: 60px;
+      position: relative;
+      width: 100%;
+      z-index: 2;
 
       @include breakpoint($tab) {
-        .l-main-column & {
-          line-height: 90px;
-          font-size: 3.5rem;
+        font-size: 3.5rem;
+        line-height: 90px;
+
+        .l-has-sidebar .sidebar & {
+          line-height: 60px;
+          font-size: 2.5rem;
         }
+
       }
+
     }
 
   }
 
-  picture {
-    position: relative;
+  img {
     z-index: 3;
     position: absolute;
     top: 0;
     left: 0;
     height: 60px;
+
+    @include breakpoint($tab) {
+      height: 90px;
+    }
+
+  }
+
+  .created-date,
+  .author {
+    display: none;
+
+    @include breakpoint($tab) {
+      display: inline-block;
+    }
   }
 
   .field-type-wrapper {
@@ -63,16 +87,43 @@
 
   label {
     display: inline-block;
-    margin-right: .3em;
   }
 
-  .field-group-format,
+  .field-type-date {
+    @extend %fontsizesmall;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.5em;
+
+    label {
+      display: none;
+
+      @include breakpoint($smalltab) {
+        display: inline-block;
+      }
+
+    }
+
+    @include breakpoint($tab) {
+      margin-bottom: 4px;
+    }
+
+  }
+
+  .field-type-location {
+    @extend %fontsizesmall;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .field-name-body {
     @extend %element-hidden;
 
     @include breakpoint($smalltab) {
-      display: block;
       @include font-size(14px);
+      display: block;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -97,25 +148,36 @@
   }
 
   .submitted {
-    padding: 0;
     margin: 0;
     overflow: hidden;
-    white-space: nowrap;
+    padding: 0;
     text-overflow: ellipsis;
+    white-space: nowrap;
 
     .type {
-      width: 1em;
       display: inline-block;
       overflow: hidden;
       vertical-align: bottom;
+      width: 1em;
+
+      &:before {
+        @extend %load-icon;
+        position: relative;
+        top: -1px;
+        width: 1em;
+      }
+
     }
 
-    .type:before {
-      @extend %load-icon;
+    .teaser-comments {
       display: inline-block;
-      top: -1px;
-      position: relative;
-      width: 1em;
+
+      &:before {
+        @extend %load-icon;
+        @extend %icon-comment;
+        width: 1.2em;
+      }
+
     }
 
     span {
@@ -123,16 +185,17 @@
     }
 
     @include breakpoint($tab) {
-      .l-main-column & {
-        margin-bottom: 5px;
+      margin-bottom: 5px;
 
-        .type {
-          width: auto;
+      .l-has-sidebar .sidebar & {
+        margin-bottom: 0px;
+      }
 
-          &:before {
-            margin-right: .2em;
-          }
+      .type {
+        width: auto;
 
+        &:before {
+          margin-right: .2em;
         }
 
       }
@@ -148,14 +211,16 @@
     vertical-align: middle;
 
     &:before {
-      text-indent: 9999px;
       @extend %load-icon;
       @extend %icon-star;
       color: $primary;
+      position: relative;
+      text-indent: 9999px;
+      top: -1px;
       width: 1em;
     }
 
-    @include breakpoint($smalltab) {
+    @include breakpoint($tab) {
 
       &:before {
         display: none;
@@ -174,27 +239,34 @@
 
 }
 
+.page-who-is-who .node-teaser {
+  height: auto;
+
+  .field-name-body {
+    height: auto;
+  }
+}
+
 .node-teaser-notification {
   border-bottom: 1px solid $background;
-  padding-bottom: 1em;
-  margin-bottom: 1em;
   height: auto;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
 
   .field-type-image {
     width: 60px;
 
-      @include breakpoint($tab) {
-        width: 60px;
-        height: 60px;
-      }
+    @include breakpoint($tab) {
+      height: 60px;
+      width: 60px;
+    }
 
     img {
-      position: relative;
-      z-index: 3;
+      height: 60px;
+      left: 0;
       position: absolute;
       top: 0;
-      left: 0;
-      height: 60px;
+      z-index: 3;
     }
 
   }
@@ -205,17 +277,39 @@
   }
 
   .submitted {
+    @include font-size($small);
     color: $grey-m;
-    @include font-size(12px);
   }
 
 }
 
+.node-teaser-event {
+
+  &.event-subscribed {
+    .field-type-date {
+      padding-left: 32px;
+
+      @include breakpoint($tab) {
+        padding: 0;
+      }
+    }
+  }
+
+  .submitted {
+    position: absolute;
+
+    @include breakpoint($tab) {
+      position: relative;
+    }
+
+  }
+
+}
 
 // List all background-images for types which will show if there is no image present
 // and list all submitted type icons
 
-@each $type, $icon in (news: book-open, blog: feather, event: calendar, group: users, photo: camera, document: attach, video: video, idea: thumbs-up, page: info, material: bucket, faq: help, notification: user, user: user, download: download, idea2: chat) {
+@each $type, $icon in (news: book-open, blog: feather, event: calendar, group: users, photo: camera, document: attach, video: video, idea: thumbs-up, page: info, material: bucket, faq: help, user: user, download: download, idea2: chat) {
 
   .node-teaser-#{$type} .field-type-image {
     @extend %icon-#{$icon};

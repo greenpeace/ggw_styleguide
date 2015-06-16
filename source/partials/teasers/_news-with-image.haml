@@ -1,18 +1,24 @@
-.views-row
-  %article.node-teaser-news.node-teaser
-    .field-type-image
-      = partial :"teasers/teaser-image"
-    .field-type-wrapper
-      %h2.node-title
+- data.news.with_image.each do |item|
+  .views-row
+    %article.node-teaser-news.node-teaser.lazyload{"data-expand" => "0"}
+      .field-type-image
         %a{:href => "./news-article.html"}
-          = lorem.sentence
-      .submitted
-        %a.type.news{:href => "./news.html"} News
-        23 Jul 2014, by
-        - if current_page.data.user_role != "an"
-          %a{:href => "#"}
-            = lorem.name
-        - else
-          = lorem.name.downcase.tr(' ', '_')
-      .field-name-body
-        =lorem.paragraph
+          = partial :"teasers/teaser-image", :locals => {:image => "#{item.image}"}
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./news-article.html"}
+            = item.title
+        .submitted
+          %a.type.news{:href => "./news.html"} News
+          = succeed ", by" do
+            = item.date
+          - if current_page.data.user_role != "an"
+            %a{:href => "./profile.html"}
+              = item.author
+          - else
+            = item.author.downcase.tr(' ', '_')
+          - if current_page.data.user_role != "an"
+            %a.teaser-comments{:href => "./news-article.html#block-comments"}
+              = item.comment_amount
+        .field-name-body
+          = item.introtext

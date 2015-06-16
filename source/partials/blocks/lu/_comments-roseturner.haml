@@ -1,0 +1,126 @@
+#block-comments.block.block-comments
+  - if current_page.data.front == "frontpage" || current_page.data.joined == "joined" || current_page.data.profile == "home"
+    - if current_page.data.profile == "home"
+      %i.block-icon.icon-chat.icon-bg-user
+    - else
+      %i.block-icon.icon-chat.icon-bg-action
+    %h2.block-title{"data-amtitle" => "Shoutbox"} Shoutbox
+  - else
+    %i.block-icon.icon-comment.icon-bg-action
+    %h2.block-title{"data-amtitle" => "Comments"} Comments
+
+  .content
+    - if current_page.data.front != "frontpage" && current_page.data.joined != "joined"
+
+      %ul.sort-comments
+        %li Sort by:
+        %li
+          %a.active{:href => "#"} Oldest
+        %li
+          %a{:href => "#"} Newest
+
+    .comment-form-holder
+      %form.comment-form
+        .form-comment-message
+          - if current_page.data.front == "frontpage" || current_page.data.joined == "joined" || current_page.data.profile == "home"
+            %textarea#shoutbox-comment{:cols => "50", :placeholder => "Write a shout...", :rows => "1"}
+          - else
+            %textarea#comment-comment{:cols => "50", :placeholder => "Write a comment...", :rows => "1"}
+        .preview-wrapper
+          %a#remove-image.remove-image.element-hidden{:href => "#"}
+          %img#preview-image.shoutimage.element-hidden{:src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", :alt => "your image"}
+        .clear
+        %input.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
+        - if current_page.data.front == "frontpage" || current_page.data.joined == "joined" ||current_page.data.profile == "home"
+          %button.modal-inline.button.addlink-btn{:href => "#addexternallink"}
+            %i.icon-link
+          %span#remain
+        %input.form-comment-submit{:type => "submit", :value => "share"}
+
+
+    %section.comments
+      %article.comment.media
+        .avatar-holder.media-figure
+          %a{:href => "./profile-rose.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Rose Turner", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/roseturner.jpg 1x, /photos/120/roseturner.jpg 2x"}/
+            %noscript
+              %img{:alt => "Rose Turner", :src => "/photos/60/roseturner.jpg", :srcset => "/photos/60/roseturner.jpg 1x, /photos/120/roseturner.jpg 2x"}/
+        .comment-holder.media-body
+          .comment-head
+            %a.comment-author{:href => "./profile-rose.html", :title => "View profile"}
+              Rose Turner
+          .comment-body
+            Did you managed to find me
+            = succeed "?" do
+              %a{:href => "./my-profile.html", :title => "View Grace O'Flynn profile"} Grace O'Flynn
+          .comment-footer
+            %span.comment-timestamp 6 hours ago
+            %span.comment-actions
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+
+      %article.comment.media
+        .avatar-holder.media-figure
+          %a{:href => "./profile-rachael.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Rachael King", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/rachael.jpg 1x, /photos/120/rachael.jpg 2x"}/
+            %noscript
+              %img{:alt => "Rachael King", :src => "/photos/60/rachael.jpg", :srcset => "/photos/60/rachael.jpg 1x, /photos/120/rachael.jpg 2x"}/
+        .comment-holder.media-body
+          .comment-head
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
+              Rachael King
+              (
+              %a{:href => "./who-is-who.html"}><
+                Greenpeace Staff
+              )
+          .comment-body
+            I really like the you are doing in manchester! Can you get in touch with me to discuss how we could replicate your efforts in other local groups?
+          .comment-footer
+            %span.comment-timestamp 3 days ago
+            %span.comment-actions
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+
+      %article.comment.media
+        .avatar-holder.media-figure
+          %a{:href => "./profile.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Dora Tilman", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
+            %noscript
+              %img{:alt => "Chico Konink", :src => "/photos/60/people2.jpg", :srcset => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
+        .comment-holder.media-body
+          .comment-head
+            %a.comment-author{:href => "./profile.html", :title => "View profile"}
+              Marsha Schroeder
+          .comment-body
+            Is the monthly meeting at the 'Cheeky Coffee Co' in Manchester still happening?
+          .comment-footer
+            %span.comment-timestamp 30 days ago
+            %span.comment-actions
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+      %article.comment-reply.media
+        .avatar-holder.media-figure
+          %a{:href => "./profile-rose.html", :title => "View user profile"}
+            %img.lazyload{:alt => "Rose Turner", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/roseturner.jpg 1x, /photos/120/roseturner.jpg 2x"}/
+            %noscript
+              %img{:alt => "Rose Turner", :src => "/photos/60/roseturner.jpg", :srcset => "/photos/60/roseturner.jpg 1x, /photos/120/roseturner.jpg 2x"}/
+        .comment-holder.media-body
+          .comment-head
+            %a.comment-author{:href => "./profile-rose.html", :title => "View profile"}
+              Rose Turner
+          .comment-body
+            Yes definitely, I hope to see you there!
+          .comment-footer
+            %span.comment-timestamp 30 days ago
+            %span.comment-actions
+              %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
+
+
+    - if current_page.data.front == "frontpage" || current_page.data.joined == "joined"
+      %hr
+      %ul.pager.pager-load-more
+        %li
+          %a{:href => "#"} Show some more
+
+  = partial :"blocks/lu/reply-comment"
+  = partial :"blocks/lu/edit-comment"
+  = partial :"blocks/lu/delete-comment"
+  - if current_page.data.front == "frontpage" || current_page.data.joined == "joined" ||current_page.data.profile == "home"
+    = partial :"blocks/lu/add-external-link"

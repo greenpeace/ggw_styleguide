@@ -3,17 +3,16 @@ title: Search events
 body_class: not-front logged-in page-search l-has-sidebar
 user_role: lu
 search_page: events
-design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
 
-  .main-content
-
-    %i.block-icon.icon-bg-default.icon-search
-    %h1.block-title#page-title
+  #content.block.current
+    = partial :"blocks/lu/add-content"
+    %i.block-icon.icon-bg-event.icon-search
+    %h1.block-title{"data-amtitle" => "Search events"}
       = current_page.data.title
 
     .content
@@ -28,17 +27,16 @@ design_status: Needs review
       .view-search-results
         .view-content
           = partial :"teasers/event-no-image"
+          = partial :"teasers/event-to-join"
           = partial :"teasers/event-with-location"
           = partial :"teasers/event-with-image"
-          = partial :"teasers/event-no-image"
-          = partial :"teasers/event-with-location"
-          = partial :"teasers/event-with-image"
-
+          = partial :"teasers/event-dummy1"
+          = partial :"teasers/event-dummy2"
 
 %aside.l-sidebar.sidebar
-  .block
-    %i.block-icon.icon-bg-default.icon-adjust
-    %h2.block-title Filter
+  .block#block-filter
+    %i.block-icon.icon-bg-event.icon-adjust
+    %h2.block-title{"data-amtitle" => "Filter"} Filter
     .content
       %form
         = partial :"blocks/search_filters/event_date"

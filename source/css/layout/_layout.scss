@@ -23,7 +23,6 @@
   }
 }
 
-
 .layout-base {
   overflow: hidden;
   background: $white;
@@ -56,6 +55,11 @@
     margin: 0 auto;
   }
 
+  @include breakpoint($wide) {
+    width: 90%;
+    max-width: 1170px;
+  }
+
 }
 
 .l-header {
@@ -75,17 +79,17 @@
   }
 }
 
-
 .l-main {
+  @extend %cf;
   margin: 0 auto;
   padding: 50px 0 0;
   width: 100%;
-  background:#FFF;
+  background: $white;
   transition: transform 500ms ease;
   z-index: 1;
-  position: relative;
-  overflow: hidden;
+  min-height: 100%;
   min-height: 100vh;
+  position: relative;
   -webkit-overflow-scrolling: touch;
   transform: translate3d(0, 0, 0);
 
@@ -94,13 +98,13 @@
     padding:88px $def-mar 0;
     border: none;
     min-height: none;
+    flex: 1; //push footer down to bottom
     overflow: visible;
-    flex: 1;
-    display: flex;
+    display: flex; // needed for IE
     flex-flow: row wrap;
     align-content: flex-start;
     align-items: flex-start;
-    -ms-flex-preferred-size: auto;
+    -ms-flex-preferred-size: auto; // needed for IE
 
     .no-flexbox & {
       overflow: hidden;
@@ -119,13 +123,28 @@
 
 }
 
-.l-footer {
-  display: none;
+.js .with-action-menu .l-main {
+  padding-top: 100px;
 
-  @include breakpoint($desk) {
-    display: block;
-    margin-top: 2em;
+  &.with-action-bar {
+    padding-top: 48px;
   }
+
+}
+
+.csstransforms3d .with-action-menu .l-main.with-action-bar {
+  padding-top: 100px;
+  transform: translate3d(0, -50px, 0);
+  transition: transform 500ms ease;
+}
+
+// when the off canvas menu is active and there is an action menu and the user scrolls, prevent content from moving to the side.
+.csstransforms3d.primary-nav .with-action-menu .l-main.with-action-bar {
+  transform: translate3d(265px, 0, 0);
+}
+
+.csstransforms3d.secondary-nav .with-action-menu .l-main.with-action-bar {
+  transform: translate3d(-265px, 0, 0);
 }
 
 //
@@ -138,7 +157,7 @@
   position: fixed;
   z-index: 2;
   top: 0;
-  transition: top 0.2s ease-in-out;
+  transition: top .2s ease-in-out;
 
   .csstransforms3d & {
     transform: translate3d(0, 0, 0);
@@ -162,28 +181,6 @@
   }
 }
 
-.l-country-selector {
-  @include breakpoint($desk) {
-    position: absolute;
-    width: 200px;
-    left: 200px;
-    bottom: 10px;
-  }
-}
-
-.l-language-selector {
-  @include breakpoint($desk) {
-    position: absolute;
-    width: auto;
-    right: 10px;
-    bottom: 32px;
-  }
-
-  @include breakpoint($deskplus) {
-    right: 0;
-  }
-}
-
 .l-header-navigation {
 
   @include breakpoint($desk) {
@@ -193,44 +190,43 @@
   }
 }
 
-.block-search {
-
-  @include breakpoint($desk) {
-    @include grid-span(4, 9, $output-style: 'isolation');
-    bottom: 10px;
-    position: absolute;
-    right: 10px;
-    .icon-search {
-      display: none;
-    }
-  }
-
-  @include breakpoint($deskplus) {
-    right: 0;
-  }
-
-}
-
-.breadcrumb {
-  @extend %element-hidden;
-
-  @include breakpoint($desk) {
-    display: block;
-    flex: 1 1 100%;
-    order: 0;
-  }
-
-}
-
 .l-main-column {
   margin: $def-mar-half;
   z-index: 1;
-  //padding-bottom: 50px;
 
   @include breakpoint($desk) {
     margin: 0;
     padding-bottom: 0;
   }
+}
+
+.l-sidebar {
+  margin: $def-mar-half;
+
+  .page-profile &,
+  .page-group-home & {
+    margin: 0 $def-mar-half;
+
+    @include breakpoint($desk) {
+      margin: 0;
+    }
+  }
+
+  @include breakpoint($desk) {
+    position: relative;
+    display: block;
+    margin: 0;
+    right: auto;
+    top: 0;
+    padding-top: 0;
+    float: right;
+    width: (100%/3);
+    background: none;
+    border: 0;
+    overflow: visible;
+
+  }
+
 }
 
 .l-has-sidebar .l-main-column {
@@ -239,6 +235,15 @@
     float: left;
     position: relative;
     width: (100%/1.5);
+  }
+
+}
+
+.no-sidebar .l-main-column {
+
+  @include breakpoint($desk) {
+    width: 100%;
+    padding: 0;
   }
 
 }
@@ -269,38 +274,42 @@
   .footer-offset {
     height: 100px;
     background: #e4e4e4;
-    border-bottom: 3px solid #CCC;
+    border-bottom: 3px solid $grey-l;
   }
 
 }
 
-.l-two-column {
-
-  .l-main-column,
-  .block {
-    clear: both;
+.l-two-column,
+.l-has-sidebar {
+  .l-main .block {
     display: none;
-    margin: $def-mar-half;
+    height: 0;
 
     &.current {
       display: block;
+      height: auto;
     }
 
     @include breakpoint($desk) {
       display: block;
+      height: auto;
       clear: none;
-      margin: 0 0 $def-mar 0;
+      margin: 0 0 $def-mar;
     }
 
   }
 
 }
 
+.no-js .l-main .block {
+  display: block;
+  height: auto;
+  margin: 0 0 14px;
+}
 
-.hidden-mobile {
-  display: none;
-
-  @include breakpoint($desk) {
-    display: block;
+@include breakpoint($desk) {
+  .deskwidth50 {
+    width: 49.5%;
   }
 }
+

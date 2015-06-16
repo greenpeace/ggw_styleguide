@@ -1,0 +1,100 @@
+%header.l-header.header{:role => "banner"}
+  .container
+    #primary-nav.off-canvas
+      .nav-inner-wrap
+        = partial :"blocks/search"
+        %nav.main-menu{:role => "navigation"}
+          %ul.menu
+
+            - if current_page.data.user_role == "lu"
+              - data.nav.primary_lu.each do |item|
+                %li.menu-item
+                  =nav_link item.name, item.url, :class => 'menu-link'
+
+                  - if item.sub
+                    %ul.menu
+                      - item.sub.each do|hist|
+                        %li.menu-item
+                          =nav_link hist.name, hist.url, :class => 'menu-link'
+
+            - elsif current_page.data.user_role == "idea"
+              - data.nav.idea_menu.each do |item|
+                %li.menu-item
+                  =nav_link item.name, item.url, :class => 'menu-link'
+
+                  - if item.sub
+                    %ul.menu
+                      - item.sub.each do|hist|
+                        %li.menu-item
+                          =nav_link hist.name, hist.url, :class => 'menu-link'
+
+            - else
+              - data.nav.primary_an.each do |item|
+                %li.menu-item
+                  =nav_link item.name, item.url, :class => 'menu-link'
+
+                  - if item.sub
+                    %ul.menu
+                      - item.sub.each do|hist|
+                        %li.menu-item
+                          =nav_link hist.name, hist.url, :class => 'menu-link'
+
+    #secondary-nav.off-canvas
+      .nav-inner-wrap
+        %nav.user-menu{:role => "navigation"}
+          %ul.menu
+
+            - if current_page.data.user_role == "lu" || current_page.data.user_role == "cm"
+              %li.menu-item
+                %a.menu-link{:href => "my-profile.html"}
+                  Grace O'Flynn
+              %li.menu-item
+                %a.menu-link.attention-trigger#notifications-trigger{:href => "#", "data-dropdown" => "#notifications-panel"}
+                  %span.menu-link-text Notifications
+                  %i.icon.icon-globe
+                  %span.attention-number#notifications-number
+              %li.menu-item
+                %a.menu-link.attention-trigger#messages-trigger{:href => "#", "data-dropdown" => "#messages-panel"}
+                  %span.menu-link-text Messages
+                  %i.icon.icon-mail
+                  %span.attention-number#messages-number
+              %li.menu-item.only-mobile
+                %a.menu-link{:href => "./my-profile.html#block-user-groups"}
+                  My groups
+              %li.menu-item.only-mobile
+                %a.menu-link{:href => "./my-profile.html#block-user-events"}
+                  My events
+              %li.menu-item
+                %a.menu-link{:href => "../an/index.html"} Log out
+
+            - else
+              %li.menu-item
+                %a.menu-link{:href => "./login.html"} Login
+              %li.menu-item
+                %a.menu-link{:href => "./register-step1.html"} Sign up
+
+
+        .l-country-selector.country-selector.nav-selector
+          .dropdown-controller
+            %a.trigger{"data-dropdown" => "#dropdown-content-country", :href => "#"}
+              United Kingdom
+              %span.country-img
+          #dropdown-content-country.dropdown.dropdown-scroll.relative.dropdown-relative
+            %ul.dropdown-list
+              - data.nav.nro.each do |item|
+                %li
+                  %a{:href => "#"}
+                    = item
+        .l-language-selector.language-selector.nav-selector
+          .dropdown-controller
+            %a.trigger{"data-dropdown" => "#dropdown-content-language", :href => "#"} Francais
+          #dropdown-content-language.dropdown.dropdown-scroll.relative.dropdown-anchor-right.dropdown-relative
+            %ul.dropdown-list
+              %li
+                %a{:href => "#"} Francais
+              %li
+                %a{:href => "#"} Nederlands
+
+
+= partial :"blocks/an/login_block"
+= partial :"blocks/an/sign_up_block"

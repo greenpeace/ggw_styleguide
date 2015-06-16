@@ -1,0 +1,40 @@
+.node-type-small {
+  margin: 0 0 .5em;
+  padding-left: 1em;
+
+  h2 {
+    @include font-size($p);
+    margin: 0;
+
+    &:before {
+      @extend %load-icon;
+      @extend %icon-right-open;
+      color: $green5;
+      position: absolute;
+      margin-left: -1em;
+    }
+
+    a {
+      @include truncate;
+      line-height: 1.2em;
+      display: block;
+    }
+
+  }
+
+  .date-display-single {
+    @include font-size($p);
+  }
+
+  .field {
+    color: $grey-d;
+    margin: 0;
+  }
+
+  .field-label,
+  .field-item {
+    display: inline-block;
+    font-weight: 300;
+  }
+
+}

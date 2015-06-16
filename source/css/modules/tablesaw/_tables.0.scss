@@ -1,0 +1,86 @@
+.view-search-results .view-content {
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.tablesaw {
+  empty-cells: show;
+  max-width: 100%;
+  width: 100%;
+
+  thead {
+    border-bottom: 1px solid $grey-l;
+    background: $background;
+
+    a {
+      color: $base;
+    }
+
+    th {
+      color: $grey-d;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border: 0;
+    }
+
+    td {
+      border: 0;
+    }
+
+  }
+
+  .btn-group .button {
+    padding: .3em .6em;
+
+    i {
+      @include font-size($small);
+    }
+
+    @include breakpoint($tab) {
+      padding: 5px 12px;
+
+      i {
+        @include font-size($base-font-size);
+      }
+    }
+  }
+
+}
+
+.tablesaw tbody tr {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.tablesaw-cell-hidden {
+  @extend %element-hidden;
+}
+
+// persistant styling
+.tablesaw thead .tablesaw-cell-persist {
+  background: darken($background, 8%);
+}
+
+.tablesaw .tablesaw-cell-persist:last-child {
+  text-align: center;
+}
+
+.tablesaw th.views-field-views-bulk-operations{
+  min-width: 23px;
+  width: 23px;
+}
+
+.tablesaw th.views-field-avatar,
+.tablesaw th.views-field-image,
+.tablesaw th.views-field-actions {
+  min-width: 77px;
+  width: 77px;
+}
+
+@include breakpoint($tab) {
+  .tablesaw th.views-field-actions {
+    min-width: 96px;
+    width: 96px;
+  }
+}

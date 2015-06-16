@@ -5,17 +5,16 @@ user_role: an
 search_page: newsmedia
 listview: search-newsmedia-listview.html
 teaserview: search-newsmedia.html
-design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
 
-  .main-content
+  #content.block.current
 
-    %i.block-icon.icon-bg-default.icon-search
-    %h1.block-title#page-title
+    %i.block-icon.icon-bg-news-media.icon-search
+    %h1.block-title{"data-amtitle" => "News & media"}
       = current_page.data.title
 
     .content
@@ -39,14 +38,15 @@ design_status: Needs review
           = partial :"teasers/document"
           = partial :"teasers/page"
           = partial :"teasers/faq"
-          .align-center
-            %a.button{:href => "#"} show some more
+          %ul.pager.pager-load-more
+            %li
+              %a{:href => "#"} Show some more
 
 
 %aside.l-sidebar.sidebar
-  .block
-    %i.block-icon.icon-bg-default.icon-adjust
-    %h2.block-title Filter
+  .block#block-filter-news-media
+    %i.block-icon.icon-bg-news-media.icon-adjust
+    %h2.block-title{"data-amtitle" => "Filter"} Filter
     .content
       %form
 

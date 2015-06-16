@@ -1,0 +1,101 @@
+---
+title: My profile (incomplete)
+body_class: not-front logged-in page-profile l-two-column
+profile: home
+access: mine
+user_role: lu
+user_context : first-login
+comments: yes
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column
+  %h1.group-heading.only-mobile
+    %i.icon-user
+    %span Grace O'Flynn
+  #block-user-profile.block.current.editable
+    .action-bar
+      .action-bar-item.edit-content
+        %button.button{"data-dropdown" => "#edit-profile", :href => "#"}
+          %span Edit
+        #edit-profile.dropdown.dropdown-relative.dropdown-tip.dropdown-anchor-right
+          %ul.dropdown-menu
+            %li
+              %a{:href => "./edit-user-profile.html"} Edit profile
+            %li
+              %a{:href => "./edit-user-account.html"} Edit account
+
+    %i.block-icon.icon-bg-user.icon-user
+    %h2.block-title{"data-amtitle" => "My profile"}
+      Profile
+
+    .content
+
+      .field-name-user-image
+        %img.lazyload{:alt => "Grace O'Flynn", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/polar.png"}/
+        %noscript
+          %img{:src => "/photos/polar.png", :alt => "Grace O'Flynn"}/
+
+      .field.field-name-user-name
+        Grace O'Flynn
+        %span.username (grace_oflynn)
+
+      .field.field-name-body
+        .field-label.element-hidden About me:
+        .field-item
+          You haven't entered a bio yet. Click on the 'edit' button to add some information about yourself.
+
+      .clear
+
+      .field.field-name-field-social-media.field-inline-block
+        .field-label Social media:
+        .field-item
+          :markdown
+            You have not added any social media profiles yet.
+            [Click here](./edit-user-profile.html#section-social) to add them.
+
+      .field.field-name-field-skype.field-inline-block
+
+
+      .field.field-name-field-birthday.field-inline-block
+        .field-label Date of birth:
+        .field-item October 25th, 1980
+
+      .field.field-name-field-mail.field-inline-block
+        .field-label Email:
+        .field-item grace@risup.net
+
+      .field.field-name-field-telephone.field-inline-block
+        .field-label Phone:
+        .field-item 065 983 8973
+
+      .field.field-name-field-location.field-inline-block
+        .field-label Address:
+        .field-item Uxbridge Road, London, UK
+
+
+  = partial :"blocks/lu/user-account"
+
+  #block-skills.block
+    .action-bar
+      .action-bar-item.edit-content
+        %a.button{:href => "./edit-user-profile.html#section-skills", :title => "Edit skills"} Edit
+
+    %i.block-icon.icon-bg-user.icon-skills
+    %h2.block-title{"data-amtitle" => "My skills"}
+      Skills
+
+    .content
+      :markdown
+        You have not entered any skills yet.
+        [Click here](./edit-user-profile.html#section-skills) to add them.
+
+  = partial :"blocks/lu/user-events-empty"
+  = partial :"blocks/lu/user-groups-empty"
+  = partial :"blocks/lu/subscription-empty"
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/lu/comments-empty"
+  = partial :"blocks/lu/my-friends-empty"
+  = partial :"blocks/lu/user-activity-gracestart"

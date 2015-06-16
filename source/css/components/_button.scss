@@ -31,8 +31,35 @@
   width: 100%;
 }
 
+.btn-disabled {
+  background-color: $white;
+  border-color: $grey-l;
+  pointer-events: none;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-back {
+  position: absolute;
+  top: 10px;
+  right: 0;
+
+  &:active {
+    top: 11px;
+  }
+
+  @include breakpoint($desk) {
+    right: 14px;
+  }
+
+}
+
 .button + .button {
   margin-top: 5px;
+}
+
+.form-wrapper.row .button + .button {
+  margin: 0 0 0 5px;
 }
 
 .btn-group {
@@ -43,7 +70,27 @@
   > .button {
     float: left;
     position: relative;
+    margin-top: 0;
+
+    + .button {
+      margin-left: -1px;
+    }
   }
+
+  > .button:first-child:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  > .button:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+
+  > .button:last-child:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
 }
 
 
@@ -78,27 +125,24 @@
   color: #dd4b39;
 }
 
-
-.backtotop-button {
-  @extend %button;
-  bottom: 0;
-  position: fixed;
-  z-index: 100;
-  display: none;
-  right: 30px;
-  height: 40px;
-  margin-bottom: -10px;
-  transition: margin-bottom 150ms linear;
-
-  &:active,
-  &:hover {
-    margin-bottom: -2px;
-    color: $base;
-    top: auto;
-  }
-
+.load-more-btn {
+  margin-top: $def-mar-half;
 }
 
-.invite-btn {
-  margin-top: 10px;
+.btn-add {
+  background: $green5;
+  border: 1px solid darken($green5, 10%);
+  color: $white;
+}
+
+.btn-upload {
+  background: $group;
+  border: 1px solid darken($group, 10%);
+  color: $white;
+}
+
+.btn-delete {
+  background: $error;
+  border: 1px solid darken($error, 10%);
+  color: $white;
 }

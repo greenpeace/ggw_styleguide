@@ -1,10 +1,25 @@
+.breadcrumb {
+  @extend %element-hidden;
+
+  @include breakpoint($desk) {
+    display: block;
+    flex: 1 1 100%;
+    order: 0;
+  }
+
+}
+
 .breadcrumbs {
-  @extend %hlist;
+  padding: 0;
   margin: .8em 0;
 }
 
 .breadcrumb-item {
-  margin-right: 3px;
+  list-style-image: none;
+  list-style-type: none;
+  margin: 0 3px 0 0;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .breadcrumb-link {

@@ -1,92 +1,64 @@
 ---
 title: Photo album example
 body_class: not-front not-logged-in page-type-photos l-has-sidebar node-full
+direct_parent:
+  -
+    name: "Photos"
+    url: "photos.html"
 user_role: an
-design_status: Work in progress
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .main-content
-    %i.block-icon.icon-bg-news-media.icon-photo
-    %h1#page-title.block-title
-      = lorem.words 10
-    .content
-      %article.view-mode-full
-        .submitted
-          %a.type.photo{:href => "./photos.html"} Photos
-          by willie_mackenzie -
-          %span.submitted-date June 5th 2014 - 11:29
+- data.photos.album_one.each do |item|
 
-        .field-name-gallery
-          - 7.times do |num|
-            %a.album-thumbnail{:href => "/photos/nature1.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature1.jpg" }
-            %a.album-thumbnail{:href => "/photos/nature2.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature2.jpg"}
-            %a.album-thumbnail{:href => "/photos/people1.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/people1.jpg"}
-            %a.album-thumbnail{:href => "/photos/nature3.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature3.jpg"}
-            %a.album-thumbnail{:href => "/photos/animals1.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/animals1.jpg"}
-            %a.album-thumbnail{:href => "/photos/nature4.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature4.jpg"}
-            %a.album-thumbnail{:href => "/photos/nature5.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nature5.jpg"}
-            %a.album-thumbnail{:href => "/photos/animals2.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/animals2.jpg"}
-            %a.album-thumbnail{:href => "/photos/animals3.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/animals3.jpg"}
-            %a.album-thumbnail{:href => "/photos/people2.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/people2.jpg"}
-            %a.album-thumbnail{:href => "/photos/nightlife1.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/nightlife1.jpg"}
-            %a.album-thumbnail{:href => "/photos/animals4.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/animals4.jpg"}
-            %a.album-thumbnail{:href => "/photos/people3.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/people3.jpg"}
-            %a.album-thumbnail{:href => "/photos/food1.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/food1.jpg"}
-            %a.album-thumbnail{:href => "/photos/people4.jpg", :title => "Title of the image"}
-              %img{:alt => "", :src => "/photos/blank.png", "data-src" => "/photos/96/people4.jpg"}
-        .field-name-body
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.paragraph
-          %ul
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.sentence
-            %strong without
-            = lorem.sentence
+  .l-main-column
+    #content.block.current.main-content
+      %i.block-icon.icon-bg-news-media.icon-photo
+      %h1.block-title{"data-amtitle" => "Photo album"}
+        = item.title
+      .content
+        %article.view-mode-full
+          .submitted
+            %a.type.photo{:href => "./photos.html"} Photos
+            by
+            = item.author.downcase.tr(' ', '_')
+            %span.submitted-date
+              -
+              = item.datetime
 
-        = partial :"blocks/tags"
+          .field-name-gallery
+            - for photo in item.photos
+              %a.album-thumbnail{:href => "/photos/#{photo.url}", :title => "View large image"}
+                %img.lazyload{:alt => "#{photo.caption}", :src => "/images/blank.png", "data-src" => "/photos/96/#{photo.url}" }
+                %noscript
+                  %img{:alt => "#{photo.caption}", :src => "/photos/96/#{photo.url}" }
 
-        .submitted.submitted-extended
-          .submitted-image
-            %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
-          .submitted-info
-            %div
-              %a{:href => "./photo.html"} Photos
-              by willie_mackenzie
-            .submitted-all-reference
-              %a{:href => "#"}> All Photos by willy_mackenzie
-              \.
+          .field-name-body
+            = item.full_text
 
-  = partial :"blocks/an/comments"
+          .tags
+            Tags:
+            - for tag in item.tags
+              = succeed ", " do
+                %a.tag{:href => "./search-newsmedia.html"} #{tag}
+            %a.tag{:href => "./search-newsmedia.html"} Arctic oil
 
-%aside.l-sidebar.sidebar
-  = partial :"blocks/related_photos"
-  = partial :"blocks/go_to_group"
-  = partial :"blocks/an/create_account"
+          .submitted.submitted-extended
+            .submitted-image
+              %img.lazyload{:alt => "#{item.author}", :src => "/images/blank.png", "data-src" =>  "/photos/75/people5.jpg"}/
+              %noscript
+                %img{:alt => "#{item.author}", :src => "/photos/75/people5.jpg"}/
+            .submitted-info
+              %div
+                %a{:href => "./photos.html"} Photo album
+                by
+                = item.author.downcase.tr(' ', '_')
+
+    = partial :"blocks/an/comments"
+
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/related_photos"
+    = partial :"blocks/go_to_group"
+    = partial :"blocks/an/create_account"
 

@@ -1,0 +1,42 @@
+#messages-panel.attention-panel.dropdown.dropdown-tip.dropdown-anchor-right
+  .dropdown-panel.content
+
+    %a.small-link{:href => "./my-messages.html#block-compose-message"}
+      %i.icon-pencil
+      New message
+    .clear
+
+    - data.messages.alen_message.each do |item|
+      %section.notifications-section.messages
+        %a.notification.media.popup-ajax{:href => "./random-private-message2.html"}
+          .media-figure.avatar-holder
+            %img.lazyload{:alt => "Alen Marsh", :src => "/images/blank.png", "data-srcset" => "/photos/60/alen.jpg 1x, /photos/120/alen.jpg 2x"}/
+            %noscript
+              %img{:alt => "Alen Marsh", :src => "/photos/60/alen.jpg", :srcset => "/photos/60/alen.jpg 1x, /photos/120/alen.jpg 2x"}/
+          .media-body.notifications-body
+            %strong
+              #{item.author}
+            #{item.teaser}
+            .notifications-footer
+              %span.timestamp
+                = item.date
+
+    - data.messages.rachael_message.each do |item|
+      %section.notifications-section.messages
+        %a.notification.media.popup-ajax{:href => "./random-private-message1.html"}
+          .media-figure.avatar-holder
+            %img.lazyload{:alt => "Rachael King", :src => "/images/blank.png", "data-srcset" => "/photos/60/rachael.jpg 1x, /photos/120/rachael.jpg 2x"}/
+            %noscript
+              %img{:alt => "Rachael King", :src => "/photos/60/rachael.jpg", :srcset => "/photos/60/rachael.jpg 1x, /photos/120/rachael.jpg 2x"}/
+          .media-body.notifications-body
+            %strong
+              #{item.author}
+            #{item.teaser}
+            .notifications-footer
+              %span.timestamp
+                = item.date
+
+
+
+    .load-more-wrapper
+      %a.button.btn-block{:href => "./my-messages.html"} View all messages

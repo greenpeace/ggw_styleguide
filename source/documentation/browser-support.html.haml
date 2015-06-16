@@ -1,15 +1,24 @@
 ---
 title: Device & browser support
-body_class: styleguide-support
+body_class: styleguide-support l-has-sidebar-first
 layout: styleguide
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "Documentation"
+    url: "./getting-started.html"
 design_status: Work in progress
 ---
 
-%aside.sidebar-left
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
   = partial :"nav/documentation"
 
 #content.l-main-column
-  .main-content
+  .main-content.block
     %i.block-icon.icon-bg-default.icon-info
     %h1#page-title.block-title Device and browser support
     %article.view-mode-full.content

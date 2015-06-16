@@ -1,0 +1,26 @@
+// minimap
+.tablesaw-advance.minimap {
+  margin-right: .4em;
+}
+
+.tablesaw-advance-dots li {
+  display: table-cell;
+  padding:0 .2em;
+  line-height: 1.2em;
+}
+
+.tablesaw-advance-dots li i {
+  width: .25em;
+  height: .25em;
+  background: $grey-d;
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.tablesaw-advance-dots-hide {
+  opacity: .25;
+  filter: alpha(opacity=25);
+  cursor: default;
+  pointer-events: none;
+}

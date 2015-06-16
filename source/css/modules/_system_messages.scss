@@ -1,0 +1,79 @@
+.cookiewall {
+  background-color: $white;
+  width: 100%;
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  transition: top .2s ease-in-out;
+  border-bottom: 1px solid $grey-l;
+  padding: $def-mar 0;
+
+  .csstransforms3d & {
+    transform: translate3d(0, 0, 0);
+    transition: transform 500ms ease;
+  }
+
+  .logo-greenpeace {
+    background-image: url('../images/ggw_sprites2xv1.3.png');
+    background-repeat: no-repeat;
+    background-position: -170px -653px;
+    width: 80px;
+    height: 90px;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+  }
+
+  p {
+    margin: 0 0 .5em;
+    line-height: 1.35em;
+  }
+
+}
+
+.form-sent {
+  padding: $def-mar;
+  border-radius: 4px;
+  color: $white;
+  margin: $def-mar;
+  position: fixed;
+  z-index: 1000;
+  overflow: hidden;
+  text-align: center;
+  width: 500px;
+  max-width: 90%;
+
+  @include breakpoint($tab) {
+    left: 50%;
+    margin-left: -300px;
+    margin-top: 50px;
+    width: 600px;
+    padding: (2 * $def-mar);
+  }
+
+  .icon {
+    font-size: $h1;
+    float: left;
+    margin-right: $def-mar-half;
+    line-height: $h4;
+  }
+
+  p {
+    font-size: $h4;
+    overflow: hidden;
+    margin: 0;
+    line-height: $h4;
+  }
+
+}
+
+
+.form-success {
+  background-color: $group;
+  border: 1px solid darken($group, 5%);
+}
+
+.form-error {
+  background-color: $error;
+  border: 1px solid darken($error, 5%);
+}

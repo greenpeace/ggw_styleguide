@@ -1,13 +1,19 @@
-.block
+.block#block-enroll
   %i.block-icon.icon-login.icon-bg-action
-  %h2.block-title RSVP for this event
+  %h2.block-title{"data-amtitle" => "RSVP"} RSVP for this event
+  .content
+    %p
+      Already a Greenwire member?
+      =nav_link 'Log in', data.nav.secondary_an.first['url']
+    %a.button.btn-primary.modal-inline{:href => "#block-rsvp-form"} RSVP
+
+
+#block-rsvp-form.block.white-popup.mfp-hide
+  %i.block-icon.icon-login.icon-bg-action
+  %h2.block-title RSVP   
   .content
     %form
-      %p
-        Already a Greenwire member?
-        =nav_link 'Log in', data.nav.secondary_an.first['url']
-      %p Not a member? RSVP below
-      .form-item.form-type-textfield
+      .form-item.form-type-textfield{:action => "./event-full.html", :method => "get"}
         %label{:for => "edit-firstname"}
           First name:
           %span.form-required{:title => "This field is required."} *
@@ -43,4 +49,4 @@
         .form-textarea-wrapper.resizable
           %textarea#edit-message.form-textarea{:tabindex => "1"}
       .form-actions
-        %input.button.btn-primary{:type => "submit", :value => "Save"}/
+        %input#open-confirm-rsvp.button.btn-primary{:type => "submit", :value => "Save"}/

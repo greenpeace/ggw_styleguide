@@ -1,0 +1,31 @@
+document_one:
+  -
+    title: "Nuclear waste on dutch soil"
+    date: "5 May 2015"
+    datetime: "5 May 2015 - 7:25 PM"
+    author: "Gabriel Lane"
+    comment_amount: "3"
+    tags:
+      - Labour
+      - Chelsea & Fulham
+      - fracking
+      - sustainability
+      - Alex Sanderson
+    introtext: "Factsheet about nuclear waste on dutch soil"
+    full_text: "<p>Factsheet about nuclear waste on dutch soil</p>"
+
+document_two:
+  -
+    title: "Research illegal wood"
+    date: "5 May 2015"
+    datetime: "5 May 2015 - 7:25 PM"
+    author: "Courtney Walker"
+    comment_amount: "3"
+    tags:
+      - Labour
+      - Chelsea & Fulham
+      - fracking
+      - sustainability
+      - Alex Sanderson
+    introtext: "Investigation about illegal wood"
+    full_text: "<p>Investigation about illegal wood</p>"

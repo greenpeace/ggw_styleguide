@@ -1,0 +1,49 @@
+- data.messages.alen_message.each do |item|
+
+  .block.white-popup
+    %i.block-icon.icon-pencil.icon-bg-action
+    %h2.block-title
+      You have a message from #{item.author}
+    .content
+
+      %h1.group-heading
+        %a{:href => "./profile-alen.html"}
+          %i.icon-user
+          %span
+            = item.author
+
+      %article.notification
+        %a.media-figure.avatar-holder{:href => "./profile-alen.html"}
+          %img.lazyload{:alt => "Alen Marsh", :src => "data:image/gif;base64,    R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/60/alen.jpg 1x, /photos/120/alen.jpg 2x"}/
+          %noscript
+            %img{:alt => "Alen Marsh", :src => "/photos/60/alen.jpg", :srcset => "/photos/60/alen.jpg 1x, /photos/120/alen.jpg 2x"}/
+        .media-body.notifications-body
+          %p
+            = item.body
+
+          .notifications-footer
+            %span.timestamp
+              = item.date
+
+      .action-bar
+        .action-bar-item
+          %a.button Mark as unread
+          %a.button Delete message
+
+      %form.private-message-form
+        .form-item.form-type-textarea
+          %label{:for => "edit-body-und-0-value"}
+            Message:
+            %span.form-required{:title => "This field is required."} *
+          .form-textarea-wrapper.fullwidth
+            %textarea#edit-private-message-body.text-full.form-textarea{:rows => "6"}
+
+        .preview-wrapper
+          %img#preview-image.shoutimage.element-hidden{:src => "#", :alt => "your image"}
+        .clear
+        %input.tooltip.form-comment-file{:accept => "image/*", "data-tip" => "Attach a photo", :type => "file"}
+
+        %button.modal-inline.button.addlink-btn{:href => "#addexternallink"}
+          %i.icon-link
+
+        %input.button.form-comment-submit{:type => "submit", :value => "Reply"}

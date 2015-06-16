@@ -1,6 +1,6 @@
-.block
-  %i.block-icon.icon-search.icon-bg-event
-  %h2.block-title Find groups
+.block#block-find-groups
+  %i.block-icon.icon-adjust.icon-bg-group
+  %h2.block-title{"data-amtitle" => "Filter"} Find groups
   .content
     %form
       - if current_page.data.user_role == "lu"
@@ -33,3 +33,4 @@
             %input.form-text{:type => "text"}
       .views-exposed-widget.views-submit-button
         %input.button{:type => "submit", :value => "Search"}
+        %a.small-link.pull-right{:href => "./search-groups.html"} Advanced search

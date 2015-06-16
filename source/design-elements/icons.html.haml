@@ -1,11 +1,20 @@
 ---
 title: Icons
-body_class: page-icons
+body_class: page-icons l-has-sidebar-first
 layout: styleguide
-design_status: Work in progress
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "Design elements"
+    url: "./colors.html"
+layout: styleguide
 ---
 
-%aside.sidebar-left
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
   = partial :"nav/designelements"
 
 #content.l-main-column
@@ -39,6 +48,18 @@ design_status: Work in progress
 
   %section.cardbox
     - for icon in data.icons.interface
+      .cardholder
+        .card.icon
+          %i{:class => "icon-#{icon}"}
+          %code #{icon}
+
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Social media icons
+    %p These are the icons we use for linking to social media profiles and pages.
+
+  %section.cardbox
+    - for icon in data.icons.social
       .cardholder
         .card.icon
           %i{:class => "icon-#{icon}"}

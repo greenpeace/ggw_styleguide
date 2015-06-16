@@ -1,0 +1,28 @@
+#block-user-groups.block.lazyload{"data-expand" => "-40"}
+  %i.block-icon.icon-bg-user.icon-users
+  - if current_page.data.access == "mine"
+    %h2.block-title{"data-amtitle" => "My groups"} My groups
+  - else
+    %h2.block-title{"data-amtitle" => "Groups"} Groups
+
+  .content
+    .views-row
+      %article.node-type-small
+        %h2.node-title
+          %a{:href => "./group-home-organiser.html"}
+            Greenpeace Greenwire UK
+        .field.field-created
+          .field-label Joined
+          .field-item 11 months and 2 days ago
+
+      %article.node-type-small
+        %h2.node-title
+          %a{:href => "./group-home-organiser.html"}
+            Manchester Local Group
+        .field.field-created
+          .field-label Joined
+          .field-item 9 months and 11 days ago
+
+    %a.button{:href => "#"} load more
+
+

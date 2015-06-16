@@ -1,0 +1,25 @@
+#block-user-subscriptions.block.lazyload{"data-expand" => "-40"}
+  %i.block-icon.icon-bg-user.icon-subscription
+  %h2.block-title{"data-amtitle" => "My subscriptions"} My subscriptions
+
+  .content
+
+    .tabwrapper.tabable-wrapper
+      %ul.tabs
+        %li
+          =nav_link 'Groups you follow', '#group-subscriptions', :class => 'tab'
+        %li
+          =nav_link 'Content you follow', '#content-subscriptions', :class => 'tab'
+
+    .tabable
+      #group-subscriptions.tabable-block.active
+        .view-ggw-subscribe-node
+          .view-content
+            :markdown
+                You are not following any groups yet.
+
+      #content-subscriptions.tabable-block
+        .view-ggw-subscribe-node
+          .view-content
+            :markdown
+                You are not following any content yet.

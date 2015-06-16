@@ -1,15 +1,48 @@
 ---
 title: Progressive enhancement
-body_class: styleguide-progressive-enhancement
+body_class: styleguide-progressive-enhancement l-has-sidebar-first
 layout: styleguide
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "Documentation"
+    url: "./getting-started.html"
 design_status: Work in progress
 ---
 
-%aside.sidebar-left
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
   = partial :"nav/documentation"
 
 #content.l-main-column
-  .main-content
+  .main-content.block
     %i.block-icon.icon-bg-default.icon-info
     %h1#page-title.block-title Progressive enhancement
     %article.view-mode-full.content
+      :markdown
+        Progressive enhancement is an approach to web development that aims to deliver the best possible experience to the widest possible audience — whether users are viewing Greenwire on an iPhone, a high-end desktop system, a Kindle, or hearing it on a screen-reader, their experience should be as fully featured and functional as possible.
+
+        People that have the latest devices will get the most progressively enhanced experience, and people on slow connections or less capable devices will still be able to access the information. Greenwire doesn’t need to look the same in every browser, it just need to deliver core content and functionality.
+
+      %h2.section-heading Core principles
+      %ul
+        %li Basic content should be accessible to all web browsers
+        %li Basic functionality should be accessible to all web browsers
+        %li Sparse, semantic markup contains all content
+        %li Enhanced layout is provided by externally linked CSS
+        %li Enhanced behavior is provided by unobtrusive, externally linked JavaScript
+        %li End-user web browser preferences are respected
+
+      %h2.section-heading Methodology
+      :markdown
+        Progressive enhancement (PE) is as much a mindset as a methodology. It focuses first and foremost on content anf functionality. All HTML should be valid and semantically correct so that the widest variety of user agents can view the page. On top of semantic HTML we develop CSS and Javascript to enhance the user's experience. Although PE principles say we should avoid inline styles and scripts, we do insert these to improve performance. For each style or script you should consider how soon on page load you need it to render and what it might block during rendering. So as much as we try to follow the principles of PE, it must not impact negative on performance.
+
+      %h2.section-heading Advantages
+      %ul
+        %li It avoids having to test each new functionality in all browsers and devices. Functionality works by default, enhanced experience will only be available when it is supported.
+        %li Code is easier to understand because HTML is semantic and scripts and styles are written modular. Functional components can be reused across pages and modules.
+        %li It is future proof. The basic functionality will work today and in a few years. Enhancements such as CSS4 and devices capabilities can be build on top of that.
+        %li If for some reason JavaScript breaks, the site should still work and look good. If the CSS doesn’t load correctly, the HTML content should still be there with meaningful hyperlinks.

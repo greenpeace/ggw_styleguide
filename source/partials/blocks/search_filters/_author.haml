@@ -5,23 +5,6 @@
       %input.form-text.form-autocomplete#authorinput{:type => "text", :value => ""}
       .autocomplete#authorautocomplete
         %ul
-          %li
-            = lorem.name
-          %li
-            = lorem.name
-          %li
-            = lorem.name
-          %li
-            = lorem.name
-          %li
-            = lorem.name
-          %li
-            = lorem.name
-          %li
-            = lorem.name
-          %li
-            = lorem.name
-          %li
-            = lorem.name
-          %li
-            = lorem.name
+          - for members in data.members.suggestion
+            %li
+              #{members}

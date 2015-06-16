@@ -1,0 +1,22 @@
+#block-friends.block
+  .action-bar
+    .action-bar-item.add-content
+      - if current_page.data.access == "mine"
+        %a.button{:href => "./profile-manage-friends.html", :title => "Manage friends"} Manage friends
+      - else
+        %a.button{:href => "#", :title => "Send friend request"} Send friend request
+
+  %i.block-icon.icon-bg-user.icon-users
+  %h2.block-title{"data-amtitle" => "Friends"}
+    - if current_page.data.access == "mine"
+      My friends
+    - else
+      Friends
+  .content
+    .members
+      - 18.times do |num|
+        - if num  > 1
+          %a.member-item{:href => "./profile.html"}
+            %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/member#{num}.jpg"}/
+          %noscript
+            %img{:alt => "Name of user", :src => "/photos/75/member#{num}.jpg"}/

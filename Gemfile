@@ -27,6 +27,8 @@ gem "sass-globbing"
 
 gem 'scss-lint'
 
+gem 'middleman-inliner'
+
 # Singularity grid system
 gem 'singularitygs', '~> 1.4.0'
 

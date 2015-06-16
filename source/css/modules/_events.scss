@@ -3,41 +3,18 @@
   margin: $def-mar 0;
 }
 
+.page-type-event .block .field {
+  margin: 0;
+}
+
 @include breakpoint($tab) {
 
-  .view-mode-full {
+  .block .view-mode-full {
 
-    .field-group-wrapper {
-      background: $background;
-      padding:  $def-mar 0 $def-mar $def-mar;
-      overflow: hidden;
-      margin-bottom: $def-mar;
-
-      figure {
-        margin: 0;
-      }
-    }
-
-    .page-type-event & {
-
-      figure,
-      .field-type-image {
-        float:left;
-        max-width: (60%);
-      }
-
-      figure .field-type-image {
-        float: none;
-        max-width: none;
-      }
-
-    }
-
-    .field-group-format {
-      overflow: hidden;
+    figure {
       margin: 0;
     }
-
+    
     .event-actions {
       padding: 0 $def-mar;
       overflow: hidden;
@@ -47,107 +24,25 @@
 
 }
 
-.block-events .mapwrapper {
-  margin-bottom: 1em;
-}
-
 @include breakpoint($desk) {
-  .block-events .mapwrapper {
-    height: 300px;
-    position: relative;
-  }
-
-  .event-actions,
-  .block-events .map-trigger {
+  .event-actions {
     @include element-hidden;
   }
 
-  .block-events #map{
-    right: -$def-mar;
-    left: -$def-mar;
-    height: 300px;
-    min-width: 100%;
-    position: absolute;
-  }
-
 }
 
-.node-event-small {
-  margin: 0 0 .5em;
-  padding-left: 1em;
-
-  h2 {
-    @include font-size (14px);
-    margin: 0;
-
-     &:before {
-      @extend %load-icon;
-      @extend %icon-right-open;
-      color: $green5;
-      position: absolute;
-      margin-left: -1em;
-    }
-
-    a {
-      color: $base;
-      @include truncate;
-      line-height: 1.2em;
-      display: block;
-    }
-
-  }
-
-  .date-display-single {
-    @include font-size(14px);
-    color: $grey-d;
-  }
+.block-events #map {
+  height: 300px;
+  margin-bottom: $def-mar;
+  width: 100%;
 }
 
-#desktopmap {
+#eventmap-desk {
   display: none;
 
   @include breakpoint ($desk) {
-    display:block;
+    display: block;
     height: 300px;
     width: 100%;
   }
-}
-
-#mobilemap {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 50px;
-  bottom: 0;
-  z-index: 0;
-
-  @include breakpoint ($desk) {
-    display:none;
-  }
-}
-
-.map-close-button {
-  @extend %load-icon;
-  @extend %icon-cancel;
-  color: $base;
-  @include font-size(32px);
-  position: fixed;
-  top: 60px;
-  right: 10px;
-  z-index: -1;
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px 0 #999999;
-  padding: 5px 10px;
-
-  @include breakpoint ($desk) {
-    display:none;
-  }
-
-}
-
-.ontop {
-  z-index: 99 !important;
 }

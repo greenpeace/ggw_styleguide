@@ -1,79 +1,53 @@
 ---
 title: News article example
 body_class: not-front not-logged-in page-type-news l-has-sidebar node-full
+direct_parent:
+  -
+    name: "News"
+    url: "news.html"
 user_role: an
-design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .main-content
-    %i.block-icon.icon-bg-news-media.icon-news
-    %h1#page-title.block-title
-      = lorem.words 10
-    .content
-      %article.view-mode-full
-        .submitted
-          %a.type.news{:href => "./news.html"} News
-          by willie_mackenzie -
-          %span.submitted-date June 5th 2014 - 11:29
+- data.news.with_image.each do |item|
 
-        = partial :"images/article-image"
+  .l-main-column
+    #content.block.main-content.current
+      %i.block-icon.icon-bg-news-media.icon-news
+      %h1.block-title{"data-amtitle" => "News article"}
+        = item.title
+      .content
+        %article.view-mode-full
+          .submitted
+            %a.type.news{:href => "./news.html"} News
+            = succeed " -" do
+              = item.author.downcase.tr(' ', '_')
+            %span.submitted-date
+              = item.datetime
 
-        .field-name-body
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.paragraph
-          %blockquote
-            %p
-              = lorem.sentence
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.paragraph
-          %img.field-type-image.pull-right{:alt => "Description of the image.", :src => "http://placeimg.com/320/320/nature/9/image"}
-          %p
-            = lorem.paragraph
-          %ul
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-          %p
-            = lorem.paragraph
-          %ol
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://placeimg.com/400/100/nature/5/image"}/
-          %p
-            = lorem.sentence
-            %strong without
-            = lorem.sentence
+          = partial :"images/article-image"
 
-          = partial :"blocks/tags"
+          .field-name-body
+            = item.full_text
+
+          .tags
+            Tags:
+            %a.tag
+              = item.tags
 
           .submitted.submitted-extended
             .submitted-image
-              %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+              %img.lazyload{:alt => "#{item.author}", :src => "/images/blank.png", "data-src" =>  "/photos/75/people5.jpg"}/
+              %noscript
+                %img{:alt => "#{item.author}", :src => "/photos/75/people5.jpg"}/
             .submitted-info
               %div
-                %a{:href => "./news.html"}
-                  News
-                by willie_mackenzie
-              .submitted-all-reference
-                %a{:href => "#"}
-                  All News by willy_mackenzie
-                \.
+                %a{:href => "./news.html"} News
+                by
+                = item.author.downcase.tr(' ', '_')
 
-  = partial :"blocks/an/comments"
+    = partial :"blocks/an/comments"
 
 %aside.l-sidebar.sidebar
   = partial :"blocks/go_to_group"

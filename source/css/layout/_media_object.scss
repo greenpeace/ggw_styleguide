@@ -1,0 +1,23 @@
+.media {
+  overflow: hidden;
+
+  .flexbox & {
+    display: flex;
+    align-items: flex-start;
+  }
+
+}
+
+.media-figure {
+  float: left;
+}
+
+.media-body {
+  overflow: hidden;
+  padding: 3px;
+
+  .flexbox & {
+    flex: 1;
+  }
+
+}

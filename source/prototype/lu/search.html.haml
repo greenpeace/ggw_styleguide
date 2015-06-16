@@ -8,12 +8,12 @@ design_status: Needs review
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
 
-  .main-content
-
+  #content.block.current
+    = partial :"blocks/lu/add-content"
     %i.block-icon.icon-bg-default.icon-search
-    %h1.block-title#page-title
+    %h1.block-title{"data-amtitle" => "Search"}
       = current_page.data.title
 
     .content
@@ -22,8 +22,8 @@ design_status: Needs review
       = partial :"blocks/search-header-search-box"
 
       .view-header
-      = partial :"nav/search-tabs"
-      = partial :"nav/search-actions"
+        = partial :"nav/search-tabs"
+        = partial :"nav/search-actions"
 
       .view-search-results
         .view-content
@@ -64,9 +64,9 @@ design_status: Needs review
 
 
 %aside.l-sidebar.sidebar
-  .block
+  .block#block-filter
     %i.block-icon.icon-bg-default.icon-adjust
-    %h2.block-title Filter
+    %h2.block-title{"data-amtitle" => "Filter"} Filter
     .content
       %form
         = partial :"blocks/search_filters/groups"

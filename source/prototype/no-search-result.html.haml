@@ -6,9 +6,8 @@ user_role: an lu cm
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
-
-  .main-content
+.l-main-column
+  #content.block.current
 
     %i.block-icon.icon-bg-default.icon-search
     %h1.block-title#page-title
@@ -32,3 +31,11 @@ user_role: an lu cm
 
           %p Use the links above to find what you're looking for, or try a new search query. The filters are also super helpful for quickly finding content most relevant to you.
 
+%aside.l-sidebar.sidebar
+  .block
+    %i.block-icon.icon-bg-default.icon-adjust
+    %h2.block-title Filter
+    .content
+      %form
+        = partial :"blocks/search_filters/created"
+        = partial :"blocks/search_filters/form-action"

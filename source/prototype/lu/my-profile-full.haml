@@ -1,0 +1,117 @@
+---
+title: My profile
+body_class: not-front logged-in page-profile l-two-column
+profile: home
+access: mine
+user_role: lu
+comments: yes
+---
+
+= partial :"blocks/breadcrumbs"
+- data.members.member_one.each do |item|
+
+  .l-main-column
+    %h1.group-heading.only-mobile
+      %i.icon-user
+      %span #{item.first_name} #{item.last_name}
+    #block-user-profile.block.block-profile.current
+      .action-bar
+        .action-bar-item.edit-content
+          %button.button{"data-dropdown" => "#edit-profile", :href => "#"}
+            %span Edit
+          #edit-profile.dropdown.dropdown-relative.dropdown-tip.dropdown-anchor-right
+            %ul.dropdown-menu
+              %li
+                %a{:href => "./edit-user-profile-full.html"} Edit profile
+              %li
+                %a{:href => "./edit-user-account.html"} Edit account
+
+      %i.block-icon.icon-bg-user.icon-user
+      %h2.block-title{"data-amtitle" => "My profile"}
+        My profile
+
+      .content
+
+        .field-name-user-image
+          %img.lazyload{:alt => "#{item.first_name} #{item.last_name}", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/#{item.image}"}/
+          %noscript
+            %img{:src => "/photos/#{item.image}", :alt => "#{item.first_name} #{item.last_name}"}/
+
+        .field.field-name-user-name
+          #{item.first_name} #{item.last_name}
+          %span.username (#{item.username})
+
+        .field.field-name-body
+          .field-label.element-hidden About me:
+          .field-item
+            = item.about
+
+        .clear
+
+        .field.field-name-field-social-media.field-inline-block
+          .field-label Social media:
+          .field-item
+            %a.social-icon.twitter{:href => "#", :target => "blank"}
+              %span.element-hidden twitter
+            %a.social-icon.facebook{:href => "#", :target => "blank"}
+              %span.element-hidden facebook
+
+        .field.field-name-field-skype.field-inline-block
+          .field-label Skype:
+          .field-item
+            %i.icon-skype
+            %span #{item.skype}
+
+        .field.field-name-field-birthday.field-inline-block
+          .field-label Date of birth:
+          .field-item #{item.birth_month_written} #{item.birth_day}th, #{item.birth_year}
+
+        .field.field-name-field-mail.field-inline-block
+          .field-label Email:
+          .field-item  #{item.email}
+
+        .field.field-name-field-telephone.field-inline-block
+          .field-label Phone:
+          .field-item #{item.phone_mobile}
+
+        .field.field-name-field-location.field-inline-block
+          .field-label Address:
+          .field-item #{item.address} #{item.city}, #{item.country}
+
+        .field.field-name-field-profession.field-inline-block
+          .field-label Profession:
+          .field-item #{item.profession} #{item.employer}
+
+    = partial :"blocks/lu/user-events-empty"
+    = partial :"blocks/lu/user-groups-empty"
+
+    #block-skills.block.lazyload{"data-expand" => "-40"}
+      .action-bar
+        .action-bar-item.edit-content
+          %a.button{:href => "./edit-user-profile.html#section-skills", :title => "Edit skills"} Edit
+
+      %i.block-icon.icon-bg-user.icon-skills
+      %h2.block-title{"data-amtitle" => "Skills"}
+        Skills
+
+      .content
+        .field.field-name-field-education
+          .field-label Education:
+          .field-item
+            = item.education
+
+        .field.field-name-field-skills-general
+          .field-label General skills
+          .field-item
+            - for skill in item.general_skills
+              = succeed "," do
+                %a{:href => "./search-members.html"} #{skill}
+            %a{:href => "./search-members.html"} Gardening
+
+    = partial :"blocks/lu/subscription-empty"
+
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/lu/comments-empty"
+    = partial :"blocks/lu/my-friends-empty"
+    = partial :"blocks/lu/user-activity-gracestart"
+

@@ -1,6 +1,8 @@
-%section.slider
-  .flexslider
+%section.region-highlight
+  .flexslider.hero
     %ul.slides
+      %li
+        #map.map
       %li
         %a{:href => "#"}
           =image_tag("slide1.jpg")
@@ -8,20 +10,81 @@
             %span This is a line of text with a link
       %li
         %a{:href => "#"}
-          =image_tag("blank.png", "data-src" => "/images/slide2.jpg")
+          =image_tag("/images/slide2.jpg")
           %p
             %span We are now looking at the 2nd slide, this text is actually too long for the slide
           %button.button.btn-primary take action
       %li
         .container-lazyload.preview-lazyload.container-youtube#youtube_1
-          %a.lazy-load-youtube.preview-lazyload.preview-youtube{:href => "http://www.youtube.com/watch?v=IJNR2EpS0jw", "video-title" => "Dumb Ways to Die", :title => "Play Video &quot;Dumb Ways to Die&quot;"}
-            http://www.youtube.com/watch?v=IJNR2EpS0jw
+          %a.lazy-load-youtube.preview-lazyload.preview-youtube{:href => "https://www.youtube.com/watch?v=Vk94Qm0FZ5U", "video-title" => "Greenwire", :title => "Play Video Greenwire"}
+            https://www.youtube.com/watch?v=Vk94Qm0FZ5U
       %li
         %iframe.vimeo#player_2{:frameborder => "0", :width => "500", :height => "281", :src => "http://player.vimeo.com/video/27243869?api=1&player_id=player_2", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}
       %li
         %a{:href => "#"}
-          =image_tag("blank.png", "data-src" => "/images/slide3.jpg")
+          =image_tag("/images/slide3.jpg")
           %p
             %span This is a campaign slide to a separate page
-      %li
-        %iframe.vimeo#player_4{:frameborder => "0", :width => "500", :height => "281", :src => "http://player.vimeo.com/video/112010467?api=1&player_id=player_4", :webkitallowfullscreen => "", :mozallowfullscreen => "", :allowfullscreen => ""}
+
+= javascript_include_tag "leaflet"
+= javascript_include_tag "map-data"
+
+:javascript
+
+  var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+  }),
+  latlng = L.latLng(52.5, -2);
+
+  var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+  var isDraggable = screenWidth > 480 ? true : false; 
+  var mapOptions = {
+      center: latlng,
+      zoom: 5,
+      scrollWheelZoom: false,
+      layers: [tiles],
+      draggable: isDraggable
+  };
+  
+  var map = L.map('map', mapOptions);
+
+  var markers = L.markerClusterGroup();
+
+  var eventIcon = L.icon({
+    iconUrl: '/images/marker-events.png',
+    iconRetinaUrl: '/images/marker-events@2x.png',
+    shadowUrl: '/images/marker-shadow.png',
+    shadowRetinaUrl: '/images/marker-shadow@2x.png',
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [41, 41], // size of the shadow
+    iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
+    shadowAnchor: [13, 41],  // the same for the shadow
+  });
+
+  var groupIcon = L.icon({
+    iconUrl: '/images/marker-groups.png',
+    iconRetinaUrl: '/images/marker-groups@2x.png',
+    shadowUrl: '/images/marker-shadow.png',
+    shadowRetinaUrl: '/images/marker-shadow@2x.png',
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [41, 41], // size of the shadow
+    iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
+    shadowAnchor: [13, 41],  // the same for the shadow
+  });
+
+  for (var i = 0; i < events.length; i++) {
+    var a = events[i];
+    var marker = L.marker(new L.LatLng(a.lat, a.lng), {icon: eventIcon});
+    marker.bindPopup('<h2 class="node-title"><a href="' + a.link + '">' + a.title +'</a></h2><div class="field field-name-field-event-date"><span class="date-display-single">'+ a.date +'</span></div>');
+    markers.addLayer(marker);
+  }
+
+  for (var i = 0; i < groups.length; i++) {
+    var a = groups[i];
+    var marker = L.marker(new L.LatLng(a['lat'], a['lng']), {icon: groupIcon});
+    marker.bindPopup('<h2 class="node-title"><a href="' + a.link + '">' + a.name +'</a></h2><div class="field field-name-field-group-type">Local group (' + a.subscription_type +')</div>');
+    markers.addLayer(marker);
+  }
+
+  map.addLayer(markers);

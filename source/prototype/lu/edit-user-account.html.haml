@@ -1,0 +1,545 @@
+---
+title: Edit user account
+body_class: not-front logged-in page-type-user-account l-has-sidebar-first page-edit
+direct_parent:
+  -
+    name: "Grace O'Flynn"
+    url: "my-profile.html"
+user_role: lu
+script: nodeform
+editor: ckeditor
+menu:
+  -
+    name: 'General settings'
+    url: '#section-general'
+  -
+    name: 'Language & timezone'
+    url: '#section-language'
+  -
+    name: 'Privacy preferences'
+    url: '#section-privacy'
+  -
+    name: 'E-mail notifications'
+    url: '#section-notifications'
+---
+
+
+= partial :"blocks/breadcrumbs"
+
+
+- data.members.member_one.each do |item|
+  %aside.sidebar-first.sfmenu
+    %h1.group-heading.only-mobile
+      %i.icon-user
+        #{item.first_name} #{item.last_name}
+    .block.block-sf-nav.affix-top{"data-spy" => "affix", "data-offset-top" => "110"}
+      %i.block-icon.icon-settings.icon-bg-user
+      %h2.block-title Edit account settings
+      .content
+        - for menuitem in current_page.data.menu
+          %a.sf-navbtn{:href => "#{menuitem.url}", "data-scroll" => ""}
+            #{menuitem.name}
+
+    #block-edit-profile.block
+      %i.block-icon.icon-bg-user.icon-pencil
+      %h2.block-title Edit profile
+      .content
+        %p To change your personal details, contact details, skills, picture and social media click the button below.
+        %a.button{:href => "./edit-user-profile.html"} Edit profile
+
+  .l-main-column
+    %form{:action => "./my-profile.html#form-saved", :method => "get", :enctype => "multipart/form-data"}
+      %section#section-general.block.current.main-content
+        %i.block-icon.icon-pencil.icon-bg-user
+        %h2.block-title General settings
+        .content
+          .form-wrapper
+            .form-item.field-name-username
+              %label.form-label{:for => "edit-field-username"}
+                Username
+                %span.form-required{:title => "This field is required."} *
+              .form-description You are not allowed to use spaces, but hypens and underscores are allowed.
+              %input#edit-field-username.form-text{:name => "edit-field-username", :type => "text", :value => "#{item.username}", :tabindex => "1"}/
+
+            .form-item.field-name-username
+              %label.form-label{:for => "edit-field-username"}
+                E-mail
+                %span.form-required{:title => "This field is required."} *
+              .form-description Enter your current password and a valid email address in order to change your current email. All mails from Greenwire are send to this address.
+              %input#edit-field-username.form-text{:name => "edit-field-username", :type => "text", :value => "#{item.email}", :tabindex => "2"}/
+
+            .form-item.field-name-current-pass
+              %label.form-label{:for => "edit-field-current-pass"}
+                Current password
+              .form-description
+                Enter your current password in order to change your e-mailaddress or to change your password.
+                %a{:href => "#"} Have you lost your current password?
+              %input#edit-field-current-pass.form-text{:name => "edit-field-current-pass", :type => "password", :value => "some_password", :tabindex => "3"}/
+
+          .form-wrapper.row
+
+            .form-item.field-name-pass-pass1
+              %label.form-label{:for => "edit-field-pass-pass1"}
+                New password
+              %input#edit-field-pass-pass1.form-text{:size => "25", :name => "edit-field-pass-pass1", :type => "password", :value => "", :tabindex => "4"}/
+
+            .form-item.field-name-pass-pass2
+              %label.form-label{:for => "edit-field-pass-pass2"}
+                Confirm password
+              %input#edit-field-pass-pass2.form-text{:size => "25", :name => "edit-field-pass-pass2", :type => "password", :value => "", :tabindex => "5"}/
+            .form-description
+              Enter your new password in both fields below. Do not forget to enter your current password in the field above.
+
+              A valid and safe password contains at least 8 characters, an Uppercase letter, a lowercase letter and digit and a special character.
+
+          %br/
+          %br/
+          .form-wrapper
+            .form-item.field-name-user-social-settings
+              %label.form-label{:for => "edit-field-current-pass"}
+                Connected accounts
+              .form-description
+                Connect your account with facebook or Google+ social login.
+              %hr
+              %p You have no connected accounts.
+              %a.social-icon.facebook{:href => "#", :target => "blank", :tabindex => "6"}
+                %span.element-hidden facebook
+              %a.social-icon.googleplus{:href => "#", :target => "blank", :tabindex => "7"}
+                %span.element-hidden googleplus
+
+
+      %section#section-language.block
+        %i.block-icon.icon-globe.icon-bg-user
+        %h2.block-title Language & timezone
+        .content
+          .form-wrapper
+            .form-item.form-type-select.field-name-language-settings
+              %label.form-label{:for => "edit-field-language-settings"} Interface language
+              %select#edit-field-language-settings.form-select{"data-placeholder" => "Choose a language", :tabindex => "8"}
+                %option{:selected => ""} English, UK
+                %option French
+
+            .form-item.form-type-select.field-event-location-und-country
+              %label.form-label{:for => "edit-event-location"}
+                Timezone
+              %select.chosen-select{:name => "edit-timezone--2", :tabindex => "9"}
+                %option{:value => "-12"} (GMT-12:00) International Date Line West
+                %option{:value => "-11"} (GMT-11:00) Midway Island, Samoa
+                %option{:value => "-10"} (GMT-10:00) Hawaii
+                %option{:value => "-9"} (GMT-09:00) Alaska
+                %option{:value => "-8"} (GMT-08:00) Pacific Time (US  Canada)
+                %option{:value => "-8"} (GMT-08:00) Tijuana, Baja California
+                %option{:value => "-7"} (GMT-07:00) Arizona
+                %option{:value => "-7"} (GMT-07:00) Chihuahua, La Paz, Mazatlan
+                %option{:value => "-7"} (GMT-07:00) Mountain Time (US  Canada)
+                %option{ :value => "-6"} (GMT-06:00) Central America
+                %option{ :value => "-6"} (GMT-06:00) Central Time (US  Canada)
+                %option{ :value => "-6"} (GMT-06:00) Guadalajara, Mexico City, Monterrey
+                %option{ :value => "-6"} (GMT-06:00) Saskatchewan
+                %option{ :value => "-5"} (GMT-05:00) Bogota, Lima, Quito, Rio Branco
+                %option{ :value => "-5"} (GMT-05:00) Eastern Time (US  Canada)
+                %option{ :value => "-5"} (GMT-05:00) Indiana (East)
+                %option{ :value => "-4"} (GMT-04:00) Atlantic Time (Canada)
+                %option{ :value => "-4"} (GMT-04:00) Caracas, La Paz
+                %option{ :value => "-4"} (GMT-04:00) Manaus
+                %option{ :value => "-4"} (GMT-04:00) Santiago
+                %option{ :value => "-3.5"} (GMT-03:30) Newfoundland
+                %option{ :value => "-3"} (GMT-03:00) Brasilia
+                %option{ :value => "-3"} (GMT-03:00) Buenos Aires, Georgetown
+                %option{ :value => "-3"} (GMT-03:00) Greenland
+                %option{ :value => "-3"} (GMT-03:00) Montevideo
+                %option{ :value => "-2"} (GMT-02:00) Mid-Atlantic
+                %option{ :value => "-1"} (GMT-01:00) Cape Verde Is.
+                %option{ :value => "-1"} (GMT-01:00) Azores
+                %option{ :value => "0"} (GMT+00:00) Casablanca, Monrovia, Reykjavik
+                %option{ :value => "0", :selected => "selected"} (GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London
+                %option{ :value => "1"} (GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
+                %option{ :value => "1"} (GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague
+                %option{ :value => "1"} (GMT+01:00) Brussels, Copenhagen, Madrid, Paris
+                %option{ :value => "1"} (GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb
+                %option{ :value => "1"} (GMT+01:00) West Central Africa
+                %option{ :value => "2"} (GMT+02:00) Amman
+                %option{ :value => "2"} (GMT+02:00) Athens, Bucharest, Istanbul
+                %option{ :value => "2"} (GMT+02:00) Beirut
+                %option{ :value => "2"} (GMT+02:00) Cairo
+                %option{ :value => "2"} (GMT+02:00) Harare, Pretoria
+                %option{ :value => "2"} (GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius
+                %option{ :value => "2"} (GMT+02:00) Jerusalem
+                %option{ :value => "2"} (GMT+02:00) Minsk
+                %option{ :value => "2"} (GMT+02:00) Windhoek
+                %option{ :value => "3"} (GMT+03:00) Kuwait, Riyadh, Baghdad
+                %option{ :value => "3"} (GMT+03:00) Moscow, St. Petersburg, Volgograd
+                %option{ :value => "3"} (GMT+03:00) Nairobi
+                %option{ :value => "3"} (GMT+03:00) Tbilisi
+                %option{ :value => "3.5"} (GMT+03:30) Tehran
+                %option{ :value => "4"} (GMT+04:00) Abu Dhabi, Muscat
+                %option{ :value => "4"} (GMT+04:00) Baku
+                %option{ :value => "4"} (GMT+04:00) Yerevan
+                %option{ :value => "4.5"} (GMT+04:30) Kabul
+                %option{ :value => "5"} (GMT+05:00) Yekaterinburg
+                %option{ :value => "5"} (GMT+05:00) Islamabad, Karachi, Tashkent
+                %option{ :value => "5.5"} (GMT+05:30) Sri Jayawardenapura
+                %option{ :value => "5.5"} (GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi
+                %option{ :value => "5.75"} (GMT+05:45) Kathmandu
+                %option{ :value => "6"} (GMT+06:00) Almaty, Novosibirsk
+                %option{ :value => "6"} (GMT+06:00) Astana, Dhaka
+                %option{ :value => "6.5"} (GMT+06:30) Yangon (Rangoon)
+                %option{ :value => "7"} (GMT+07:00) Bangkok, Hanoi, Jakarta
+                %option{ :value => "7"} (GMT+07:00) Krasnoyarsk
+                %option{ :value => "8"} (GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi
+                %option{ :value => "8"} (GMT+08:00) Kuala Lumpur, Singapore
+                %option{ :value => "8"} (GMT+08:00) Irkutsk, Ulaan Bataar
+                %option{ :value => "8"} (GMT+08:00) Perth
+                %option{ :value => "8"} (GMT+08:00) Taipei
+                %option{ :value => "9"} (GMT+09:00) Osaka, Sapporo, Tokyo
+                %option{ :value => "9"} (GMT+09:00) Seoul
+                %option{ :value => "9"} (GMT+09:00) Yakutsk
+                %option{ :value => "9.5"} (GMT+09:30) Adelaide
+                %option{ :value => "9.5"} (GMT+09:30) Darwin
+                %option{ :value => "10"} (GMT+10:00) Brisbane
+                %option{ :value => "10"} (GMT+10:00) Canberra, Melbourne, Sydney
+                %option{ :value => "10"} (GMT+10:00) Hobart
+                %option{ :value => "10"} (GMT+10:00) Guam, Port Moresby
+                %option{ :value => "10"} (GMT+10:00) Vladivostok
+                %option{ :value => "11"} (GMT+11:00) Magadan, Solomon Is., New Caledonia
+                %option{ :value => "12"} (GMT+12:00) Auckland, Wellington
+                %option{ :value => "12"} (GMT+12:00) Fiji, Kamchatka, Marshall Is.
+                %option{ :value => "13"} (GMT+13:00) Nuku'alofa
+
+      %section#section-privacy.block
+        %i.block-icon.icon-eye.icon-bg-user
+        %h2.block-title Privacy preferences
+        .content
+          .form-wrapper
+            .form-item
+              %label.form-label
+                Hide my last name for other members
+              .form-radios
+                .form-type-radio
+                  %input#edit-field-hide1-yes.form-radio{:name => "hide1", :type => "radio", :value => "0"}
+                  %label.option{:for => "edit-field-hide1-yes"} Yes
+                .form-type-radio
+                  %input#edit-field-hide1-no.form-radio{:name => "hide1", :type => "radio", :value => "1", :checked => "checked", :tabindex => "10"}
+                  %label.option{:for => "edit-field-hide1-no"} No
+
+            .form-item
+              %label.form-label
+                Hide my date of birth for other members
+              .form-radios
+                .form-type-radio
+                  %input#edit-field-hide2-yes.form-radio{:name => "hide2", :type => "radio", :value => "0", :checked => "checked", :tabindex => "11"}
+                  %label.option{:for => "edit-field-hide2-yes"} Yes
+                .form-type-radio
+                  %input#edit-field-hide2-no.form-radio{:name => "hide2", :type => "radio", :value => "1"}
+                  %label.option{:for => "edit-field-hide2-no"} No
+
+            .form-item
+              %label.form-label
+                Hide my avatar on public pages
+              .form-radios
+                .form-type-radio
+                  %input#edit-field-hide3-yes.form-radio{:name => "hide3", :type => "radio", :value => "0"}
+                  %label.option{:for => "edit-field-hide3-yes"} Yes
+                .form-type-radio
+                  %input#edit-field-hide3-no.form-radio{:name => "hide3", :type => "radio", :value => "1", :checked => "checked", :tabindex => "12"}
+                  %label.option{:for => "edit-field-hide3-no"} No
+
+            .form-item
+              %label.form-label
+                Hide my phone number for organisers of events
+              .form-description
+                If you select “No” only greenpeace staff will be able to see your phone number.
+              .form-radios
+                .form-type-radio
+                  %input#edit-field-hide4-yes.form-radio{:name => "hide4", :type => "radio", :value => "0"}
+                  %label.option{:for => "edit-field-hide4-yes"} Yes
+                .form-type-radio
+                  %input#edit-field-hide4-no.form-radio{:name => "hide4", :type => "radio", :value => "1", :checked => "checked", :tabindex => "13"     }
+                  %label.option{:for => "edit-field-hide4-no"} No
+
+      %section#section-notifications.block
+        .action-bar
+          .action-bar-item.edit-content
+            %a.button{:href => "#", :title => "Reset to default", :tabindex => "18"} Set to default
+        %i.block-icon.icon-mail.icon-bg-user
+        %h2.block-title Email notifications
+        .content
+          .form-wrapper
+
+            .form-item
+              %label.form-label
+                Messages to me
+              .form-description
+                Private messages, Friends Requests, Being Tagged, Shouts on my profile, Reactions on my Comments/Shouts
+              %select#message-to-me.form-select{:tabindex => "14"}
+                %option{:selected => ""} Immediately
+                %option Daily Digest
+                %option Weekly Digest
+                %option None
+                %option{:value => "specify"} Specify per item &raquo;
+
+          #message-to-me-extended.form-wrapper.collapsible-fieldset-wrapper.element-hidden
+
+            .form-item
+              %label.form-label
+                Private message
+              %select.form-select{:tabindex => "15"}
+                %option{:selected => ""} Immediately
+                %option Daily Digest
+                %option Weekly Digest
+                %option None
+
+            .form-item
+              %label.form-label
+                Friends requests
+              %select.form-select{:tabindex => "15"}
+                %option{:selected => ""} Immediately
+                %option Daily Digest
+                %option Weekly Digest
+                %option None
+
+            .form-item
+              %label.form-label
+                I am mentioned
+              %select.form-select{:tabindex => "15"}
+                %option{:selected => ""} Immediately
+                %option Daily Digest
+                %option Weekly Digest
+                %option None
+
+            .form-item
+              %label.form-label
+                Shouts on my profile
+              %select.form-select{:tabindex => "15"}
+                %option{:selected => ""} Immediately
+                %option Daily Digest
+                %option Weekly Digest
+                %option None
+
+            .form-item
+              %label.form-label
+                Replies on my comments/shouts
+              %select.form-select{:tabindex => "15"}
+                %option{:selected => ""} Immediately
+                %option Daily Digest
+                %option Weekly Digest
+                %option None
+
+          .form-wrapper
+            .form-item
+              %label.form-label
+                What I follow
+                %a.modal-inline.explain-label-trigger{:href => "#block-what-i-follow"} Check out what I follow
+              .form-description
+                The groups, events, news & media I follow
+              %select#what-i-follow.form-select{:tabindex => "15"}
+                %option{:selected => ""} Immediately
+                %option Daily Digest
+                %option Weekly Digest
+                %option None
+                %option{:value => "specify"} Specify per item &raquo;
+
+          #what-i-follow-extended.form-wrapper.collapsible-fieldset-wrapper.element-hidden
+
+            .form-item
+              %label.form-label
+                Shouts in groups
+              %select.form-select{:tabindex => "15"}
+                %option Immediately
+                %option Daily Digest
+                %option{:selected => ""} Weekly Digest
+                %option None
+
+            .form-item
+              %label.form-label
+                Comments in groups
+              %select.form-select{:tabindex => "15"}
+                %option Immediately
+                %option Daily Digest
+                %option{:selected => ""} Weekly Digest
+                %option None
+
+            .form-item
+              %label.form-label
+                Comments in events
+              %select.form-select{:tabindex => "15"}
+                %option Immediately
+                %option Daily Digest
+                %option{:selected => ""} Weekly Digest
+                %option None
+
+            .form-item
+              %label.form-label
+                Comments in news and media
+              %select.form-select{:tabindex => "15"}
+                %option Immediately
+                %option Daily Digest
+                %option{:selected => ""} Weekly Digest
+                %option None
+
+          .form-wrapper
+
+            .form-item
+              %label.form-label
+                What I manage
+                %a.modal-inline.explain-label-trigger{:href => "#block-what-i-manage"} Check out what I manage
+              .form-description
+                The groups, events, news &amp; media I manage
+              %select#what-i-manage.form-select{:tabindex => "16"}
+                %option{:selected => ""} Immediately
+                %option Daily Digest
+                %option Weekly Digest
+                %option None
+                %option{:value => "specify"} Specify per item &raquo;
+
+          #what-i-manage-extended.form-wrapper.collapsible-fieldset-wrapper.element-hidden
+
+            %label.form-title Groups
+
+            .form-item
+              %label.form-label
+                Shouts in groups
+              %select.form-select{:tabindex => "15"}
+                %option Immediately
+                %option Daily Digest
+                %option{:selected => ""} Weekly Digest
+                %option None
+
+            .form-item
+              %label.form-label
+                Comments in groups
+              %select.form-select{:tabindex => "15"}
+                %option Immediately
+                %option Daily Digest
+                %option{:selected => ""} Weekly Digest
+                %option None
+
+            .form-item
+              %label.form-label
+                Participation updates in groups
+              %select.form-select{:tabindex => "15"}
+                %option Immediately
+                %option Daily Digest
+                %option{:selected => ""} Weekly Digest
+                %option None
+
+            .form-item
+              %label.form-label
+                Participation requests in groups
+              %select.form-select{:tabindex => "15"}
+                %option Immediately
+                %option Daily Digest
+                %option{:selected => ""} Weekly Digest
+                %option None
+
+            %label.form-title Events
+
+            .form-item
+              %label.form-label
+                Comments in events
+              %select.form-select{:tabindex => "15"}
+                %option Immediately
+                %option Daily Digest
+                %option{:selected => ""} Weekly Digest
+                %option None
+
+            .form-item
+              %label.form-label
+                Participation updates in events
+              %select.form-select{:tabindex => "15"}
+                %option Immediately
+                %option Daily Digest
+                %option{:selected => ""} Weekly Digest
+                %option None
+
+            %label.form-title News &amp; media
+
+            .form-item
+              %label.form-label
+                Comments in news &amp; media
+              %select.form-select{:tabindex => "15"}
+                %option Immediately
+                %option Daily Digest
+                %option{:selected => ""} Weekly Digest
+                %option None
+
+          .form-wrapper
+
+            .form-item
+              %label.form-label
+                I want to receive the Newsletter
+              .form-radios
+                .form-type-radio
+                  %input#edit-field-newsletter-yes.form-radio{:name => "newsletter", :type => "radio", :value => "0", :checked => "checked", :tabindex => "17"}
+                  %label.option{:for => "edit-field-newsletter-yes"} Yes
+                .form-type-radio
+                  %input#edit-field-newsletter-no.form-radio{:name => "newsletter", :type => "radio", :value => "1"}
+                  %label.option{:for => "edit-field-newsletter-no"} No
+
+          %a#toggle-more-options.show-more-options{:href => "#"} Other options
+
+          #more-options-fieldset.form-wrapper.collapsible-fieldset-wrapper
+
+            .form-item
+              %label.form-label
+                Send me daily digest at
+              %select.form-select{:tabindex => "17"}
+                %option 01:00
+                %option 02:00
+                %option 03:00
+                %option 04:00
+                %option 05:00
+                %option 06:00
+                %option 07:00
+                %option{:selected => ""} 08:00
+                %option 09:00
+                %option 10:00
+                %option 11:00
+                %option 12:00
+                %option 13:00
+                %option 14:00
+                %option 15:00
+                %option 16:00
+                %option 17:00
+                %option 18:00
+                %option 19:00
+                %option 20:00
+                %option 21:00
+                %option 22:00
+                %option 23:00
+                %option 24:00
+
+            .form-item
+              %label.form-label
+                Send me weekly digest on
+              %select.form-select{:tabindex => "17"}
+                %option{:selected => ""} Monday
+                %option Tuesday
+                %option Wednesday
+                %option Thursday
+                %option Friday
+                %option Saturday
+                %option Sunday
+
+            .views-exposed-widget
+              .views-operator
+                .form-item.form-type-checkbox
+                  %input#notification.form-checkbox{:type => "checkbox"}
+                  %label.option{:for => "notification"} Turn off email notification between
+
+              .views-widget.inline-fields
+                .form-item.form-type-textfield
+                  %input.form-text.min.input-date.js-date-picker{:type => "date", :placeholder => "select date"}
+                .form-item.form-type-textfield
+                  %input.form-text.max.input-date.js-date-picker{:type => "date", :placeholder => "select date"}
+
+
+
+      %section#section-submit.section-submit
+        .form-actions.form-wrapper
+          %input{:type => "submit", :class => "button btn-primary btn-l", :value => "Submit", :tabindex => "19"}
+          %input{:type => "submit", :class => "button btn-l", :value => "Cancel", :tabindex => "20"}
+
+
+  = partial :"blocks/lu/what-i-follow"
+  = partial :"blocks/lu/what-i-manage"

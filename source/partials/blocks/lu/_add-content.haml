@@ -1,0 +1,22 @@
+.action-bar
+  .action-bar-item.add-content
+    %a.button{"data-dropdown" => "#content-type-list", :href => "#", :title => "Click to show options"}
+      %span Add
+  #content-type-list.dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right
+    %ul.dropdown-menu
+      %li
+        %a{:href => "./create-blog.html"} Blog
+      %li
+        %a{:href => "./create-document.html"} Document
+      %li
+        %a{:href => "./create-event.html"} Event
+      %li
+        %a{:href => "./create-group.html"} Group
+      %li
+        %a{:href => "./create-idea.html"} Idea
+      %li
+        %a{:href => "./create-news.html"} News
+      %li
+        %a{:href => "./create-photo-album.html"} Photo album
+      %li
+        %a{:href => "./create-video.html"} Video

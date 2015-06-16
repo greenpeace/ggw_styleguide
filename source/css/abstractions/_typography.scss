@@ -1,6 +1,20 @@
 // Horizontal list
 %hlist {
-  @include horizontal-list(false);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  @if $oldie {
+    *zoom: 1;
+  }
+
+  li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+    white-space: nowrap;
+    float: left;
+  }
 }
 
 @mixin ellipsis {

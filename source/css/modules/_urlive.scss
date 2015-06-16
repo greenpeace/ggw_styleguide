@@ -1,0 +1,105 @@
+.urlive-container {
+  margin-bottom: $def-mar;
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  padding: $def-mar;
+  background: $background;
+  border: 1px solid $grey-l;
+  border-radius: 3px;
+  display: none;
+
+  p {
+    margin: 0;
+  }
+}
+
+.urlive-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  @include font-size($p);
+  margin-right: 20px;
+  z-index: 1;
+}
+
+.content a.urlive-link:hover {
+  text-decoration: none;
+}
+
+.urlive-title {
+  @include font-size($h4);
+  color: $base;
+  line-height: 1.2em;
+  font-weight: 700;
+}
+
+.urlive-url {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.urlive-description,
+.urlive-sitename,
+.urlive-type {
+  @extend %element-hidden;
+}
+
+.urlive-img-small .urlive-img-wrapper {
+  width: auto;
+  max-width: 400px;
+  position: relative;
+  border: 1px solid $grey-l;
+  margin-bottom: $def-mar;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+  }
+}
+
+.show-linkinfo {
+  vertical-align: bottom;
+  transition: all 700ms;
+}
+
+.close-linkinfo {
+  position: absolute;
+  right: $def-mar;
+  top: $def-mar;
+  line-height: 1em;
+  color: $base;
+  z-index: 2;
+  @include font-size($h4);
+}
+
+.remove-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  background: $grey-l;
+  @extend %load-icon;
+  @extend %icon-cancel;
+  color: $base;
+}
+
+.linkclone {
+  border-top: 1px solid $background;
+  padding-top: $def-mar-half;
+  margin-top: $def-mar-half;
+}
+
+.comment-body img.shoutimage {
+  margin: $def-mar 0;
+}

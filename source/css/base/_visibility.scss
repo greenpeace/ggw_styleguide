@@ -10,10 +10,36 @@
   @extend %element-placeholder;
 }
 
+.element-hiddenclickable {
+  @extend %hideYetClickable;
+}
+
 .clearfix {
   @extend %cf;
 }
 
 .clear {
   @extend %inline-cf;
+}
+
+@include breakpoint($desk) {
+
+  .affix {
+    position: fixed;
+  }
+
+}
+
+.hidden-mobile {
+  display: none;
+
+  @include breakpoint($desk) {
+    display: block;
+  }
+}
+
+@include breakpoint($desk) {
+  .only-mobile {
+    display: none;
+  }
 }

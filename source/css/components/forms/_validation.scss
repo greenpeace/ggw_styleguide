@@ -1,0 +1,55 @@
+.has-error {
+
+  .form-text,
+  .form-password,
+  textarea,
+  .chosen-container-multi .chosen-choices {
+    border: 1px solid $error;
+    position: relative;
+    padding-right: 2em;
+
+    &:focus {
+      border-color: $green1;
+    }
+
+  }
+
+  .chosen-container-active .chosen-choices {
+    border-color: $green1;
+  }
+
+  .form-radio + label,
+  .form-checkbox + label {
+    color: $error;
+  }
+
+  .selector {
+    border: 1px solid $error;
+
+    &.focused {
+      border-color: $green1;
+    }
+  }
+
+  .form-feedback {
+    color: $error;
+  }
+
+}
+
+.form-feedback {
+  position: relative;
+  z-index: 9;
+  vertical-align: top;
+  pointer-events: none;
+  font-weight: 700;
+  font-size: 1.4em;
+  line-height: 28px;
+  margin-left: -.7em;
+}
+
+.help-block {
+  display: block;
+  color: $grey-d;
+  @include font-size($p);
+}

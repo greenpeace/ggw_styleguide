@@ -3,36 +3,25 @@ title: Home
 body_class: front not-logged-in page-home l-two-column
 user_role: idea
 design_status: Concept idea
-script: leaflet
 ---
 
 = partial :"blocks/breadcrumbs"
 
 = partial :"blocks/slider"
 
-.original-action-menu
-  %ul
-    %li
-      %a.tab{:href => "#content"}
-        %i.icon.icon-news
-        Updates
-    %li
-      %a.tab{:href => "#upcoming-events"}
-        %i.icon.icon-event
-        Events
-
-.l-main-column#content
-  .block.block-no-icon
-    %h2.block-title A platform for change-makers
+.l-main-column
+  #content.block
+    %i.block-icon.icon-bg-default.icon-info
+    %h2.block-title{"data-amtitle" => "Info"} A platform for change-makers
     .content
       %p Welcome to Greenpeace Greenwire where people like you connect with other volunteers, activists and groups working on environmental campaigns all across the country.  This is your meeting place to start groups, host events, run campaigns, share photos,videos, blogs and join with other interested activists eager to help.
       %a.button.btn-primary{:href => "#"} Get wired!
       .clear
-  .main-content
+  .block#block-updates
     .action-bar
       .action-bar-item.filter
         %label Filter
-        %a.button.btn-s.btn-dropdown{"data-dropdown" => "#updates-filter", :href => "#", :title => "Filter content"}
+        %a.button.btn-dropdown{"data-dropdown" => "#updates-filter", :href => "#", :title => "Filter content"}
           %span All
         #updates-filter.dropdown.dropdown-tip.dropdown-relative.dropdown-anchor-right
           %ul.dropdown-menu
@@ -54,7 +43,7 @@ script: leaflet
               %a{:href => "#"} Document
 
     %i.block-icon.icon-bg-news-media.icon-news
-    %h1#page-title.block-title Updates
+    %h1.block-title{"data-amtitle" => "Updates"} Updates
     .content
       = partial :"teasers/news-no-image"
       = partial :"teasers/news-with-image"

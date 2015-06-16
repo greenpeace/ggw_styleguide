@@ -2,63 +2,59 @@
 title: Login
 body_class: not-front not-logged-in page-login l-has-sidebar
 user_role: an
-design_status: Needs review
 ---
 
 = partial :"blocks/breadcrumbs"
 
-.l-main-column#content
+.l-main-column
 
-  .main-content
-
+  #content.block.current.login-block
     %i.block-icon.icon-bg-user.icon-login
-    %h1.block-title#page-title
+    %h1.block-title{"data-amtitle" => "Login"}
       = current_page.data.title
 
     .content
 
-      %form.flexrow{:action => "../lu/index.html", :method => "get"}
+      %form{:action => "../lu/index.html", :method => "get"}
 
-        .signup-wrapper.social-signup-wrapper{"data-title" => "OR"}
+        .signup-wrapper
 
-          %h3.form-title Log in with social media
-
-          %a.button.btn-l.btn-block.btn-social-fb
+          %a.button.btn-l.btn-block.btn-social-fb{:href => "../lu/index.html"}
             %i.icon.icon-facebook
-              Log in with Facebook
+            Log in with Facebook
 
-          %a.button.btn-l.btn-block.btn-social-gp
+          %a.button.btn-l.btn-block.btn-social-gp{:href => "../lu/index.html"}
             %i.icon.icon-gplus
-              Log in with Google+
+            Log in with Google+
+
+        .signup-or-separator
+          %label or login with your email
+          %hr
 
         .signup-wrapper
 
           .form-wrapper
 
-            %h3.form-title Log in with email
+            .form-item
+              %input{:type => "text", :class => "username form-text", "max-length" => "60", " placeholder" => "Username"}
+              %i.icon-user
 
             .form-item
-
-              %label.form-label{:for=>"edit-name"}
-                Username
-                %span.form-required{:title=>"This field is required."} *
-
-              .form-description Enter your Greenpeace Greenwire Nederland username or email address.
-
-              %input{:type => "text", :class => "username form-text", "max-length" => "60"}
+              %input{:type => "password", :class => "form-text", ":max-length" => "60", "placeholder  " => "Password"}
+              %i.icon-password
 
             .form-item
-
-              %label.form-label{:for=>"edit-password"}
-                Password
-                %span.form-required{:title=>"This field is required."} *
-
-              .form-description Enter the password that accompanies your username.
-
-              %input{:type => "text", :class => "form-text", ":max-length" => "60"}
+              %a.pull-right.small-link{:href => ""} Lost password?
 
           .form-actions.form-wrapper
-            %input{:type => "submit", :class => "button btn-primary pull-right", :value => "Log in"}
+
+            .form-item
+              %input{:type => "submit", :class => "button btn-primary btn-l btn-block", :value => " Log in"}
+
+            %p
+              No account yet?
+              %a{:href => "./register-step1.html"} Sign up
+
 
 %aside.l-sidebar.sidebar
   = partial :"blocks//an/create_account"

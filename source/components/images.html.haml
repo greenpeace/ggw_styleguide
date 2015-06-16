@@ -1,11 +1,21 @@
 ---
 title: Images
-body_class: page-images
+body_class: page-images l-has-sidebar-first
 layout: styleguide
-design_status: Work in progress
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "UI Components"
+    url: "./blocks.html"
+
+layout: styleguide
 ---
 
-%aside.sidebar-left
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
   = partial :"nav/uicomponents"
 #content.l-main-column
   %section.block
@@ -13,105 +23,72 @@ design_status: Work in progress
     %h2.block-title Image fields
     .content
     :markdown
-      Wherever a user uploads an image in a seperate field, we process it as a responsive image with the `picture` element. This means each screensize might be served with a different image size. This will dramatically improve performance, since about 80% of the load are images.
+      Wherever a user uploads an image in a seperate field, we process it as a responsive image with the `srcset` and `sizes` attributes. This means each screen size might be served with a different image size. This will dramatically improve performance, since about 80% of the page load are images.
 
       For content images we are not able to use this technique at the moment. When an image is inserted via an editor we cannot separate the image from the rest of the content.
 
   %section.block
     %i.block-icon.icon-info.icon-bg-default
-    %h2.block-title Picture element
+    %h2.block-title Images
     %article.content
-      :markdown
-        The `<picture>` element offers a declarative approach towards image resource loading. Users benefit from natively-optimized image resource loading—especially important for users on slower mobile internet connections.
-
-        #### Use with <source> elements
-        The `<picture>` element has no unique attributes of its own. The magic happens when `<picture>` is used as a container for `<source>`.
-
-        The `<source>` element, which is used for loading media such as video and audio, has been updated for image loading and these new attributes have been added:
-
-      %dl
-        %dt
-          srcset
-          %em (required)
-        %dd
-          %p Accepts a single image file path (e.g. srcset="image.jpg").
-          %p Or a comma-delimited list of image file paths with pixel density descriptors (e.g. srcset="kitten.png, kitten@2X.png 2x") where a 1x descriptor is assumed when it is left off.
-      %dl
-        %dt
-          media
-          %em (optional)
-        %dd
-          %p Accepts any valid media query that you would normally find in a CSS @media selector (e.g. media="(max-width: 24em)").
-
-      %h4 Order of sources
-      :markdown
-        The browser will use the hints passed in as attribute values to load the most appropriate image resource. The listing order of tags matter! The browser will use the first `<source>` element with a matching hint and ignore any following `<source>` tags.
-
-      :markdown
-        #### `<img>` tag comes last
-        The `<img>` element must be used within `<picture>` as the fallback in case a browser does not support the picture element or if no source element tags are matched. Using `<img>` within `<picture>` is a requirement — if you forget it, no images will show up.
-
-        Use `<img>` to declare the default image to be used within a `<picture>` block. Place `<img>` as the last child of `<picture>` since the browser will ignore any `<source>` declarations that occur after an `<img>` tag is found. The image tag is also where you should attach alternative text using the image element's alt attribute.
-
-      %h4 Use of Pixel density descriptors
-      :markdown
-        In the example you can see there are two arguments for each `srcset` attribute. We use `2x` to target high resolution screens. To put it simple these screens have twice the amount of (device) pixels on the same resolution and therefore require images twice the original size for them to be displayed sharp.
 
       .demo
-        %figure
-          %picture
-            %source{:media => "(min-width: 64em)", :srcset => "/photos/nature9.jpg, /photos/nature6.jpg 2x"}
-            %source{:media => "(min-width: 48em)", :srcset => "/photos/nature7.jpg, /photos/nature8.jpg 2x"}
-            %source{:media => "(min-width: 24em)", :srcset => "/photos/nature11.jpg, /photos/nature12.jpg 2x"}
-            %img{:alt => "The president giving an award.", :src => "/photos/nature10.jpg", :srcset => "/photos/nature13.jpg 2x"}
-          %figcaption
-            A cheeky macaque, Lower Kintaganban River, Borneo. Original by
-            %a{:href => "#"}
-              = lorem.name
+        = partial :"images/article-image"
       .code
         :code
           # lang: html
             <figure>
-              <picture>
-                <source media='(min-width: 64em)' srcset='/photos/nature9.jpg, /photos/nature6.jpg 2x'>
-                <source media='(min-width: 48em)' srcset='/photos/nature7.jpg, /photos/nature8.jpg 2x'>
-                <source media='(min-width: 24em)' srcset='/photos/nature11.jpg, /photos/nature12.jpg 2x'>
-                <img alt='The president giving an award.' src='/photos/nature10.jpg' srcset='/photos/nature13.jpg 2x'>
-              </picture>
+              <img alt='Example of image.' class='lazyload' data-sizes='(min-width: 64em) 603px, (min-width: 48em) 768px, (min-width: 24em) 640px, 320px' data-srcset='/photos/nature8.jpg 1536w, /photos/nature6.jpg 1440w, /photos/nature12.jpg 1280w, /photos/nature7.jpg 768w, /photos/nature11.jpg 640w, /photos/nature9.jpg 603w, /photos/nature10.jpg 320w' src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='>
+              <noscript>
+                <img sizes='(min-width: 64em) 603px, (min-width: 48em) 768px, (min-width: 24em) 640px, 320px' src='/photos/nature10.jpg' srcset='/photos/nature8.jpg 1536w, /photos/nature6.jpg 1440w, /photos/nature12.jpg 1280w, /photos/nature7.jpg 768w, /photos/nature11.jpg 640w, /photos/nature9.jpg 603w, /photos/nature10.jpg 320w'>
+              </noscript>
               <figcaption>
                 A cheeky macaque, Lower Kintaganban River, Borneo. Original by
-                <a href='#'>Cathleen Chang</a>
+                  <a href='#'>
+                    Casey Black
+                  </a>
               </figcaption>
             </figure>
+
+      :markdown
+        When looking at the above example we see the following attributes: *class*, data-sizes, data-scrset, src and alt.
+
+        ### Lazyload
+
+        Most of the images on Greenwire are loaded with lazyload. This means we have a src attribute of a 1px gif image which is the same for all images. This means the DOM is loaded very fast. With the Lazyload JS we check if the image is in the viewport of the user. If that is the case we replace the 1px image with the right image.
+
+        ### No js fallback
+
+        You can see there is a large repetition of code inside the `<noscript>` tag. Whenever a browser doesn't support javascript it will still display the images.
+
+        ### Data-srcset
+        `data-srcset` is the equilevant of the `srcset` attribute, it is rewritten to work with lazyload. This attribute contains a grocery list of resources that the browser can pick from, and the w descriptors tell the browser each resource’s physical dimensions.
+
+        ### Data-sizes
+        `data-sizes` is the equilevant of `sizes`. It is comprised of value pairs, where the first (optional) value is a media condition (a media query without the media type) and the second value is a CSS length.
+
+        The browser goes over the media conditions and looks for the first one that matches the current environment (in most cases, “current environment” == current viewport). The second value of the pair (or the first one if the media condition is missing), is set as the pair’s “effective size”, and it describes the estimated display dimensions of the image.
+
+        This is the hint the developer has to give the browser in order for it to know which resource to pick.
+
+        The effective size of the matching pair is used by the browser, along with the screen’s DPR (and possibly other factors) to figure out which resource would be the best to download and display.
 
   %section.block
     %i.block-icon.icon-info.icon-bg-default
     %h2.block-title Picturefill fallback
     .content
       :markdown
-        For browser that do not support the picture element we use the [Picturefill](http://scottjehl.github.io/picturefill/) script.
+        For browser that do not support the img `srcset` and `sizes` we use the [Picturefill](http://scottjehl.github.io/picturefill/) script to add support for these new features.
 
-        While most versions of IE (even older ones!) are supported well, IE9 has a little conflict to work around. To support IE9, you will need to wrap a video element wrapper around the source elements in your picture tag. You can do this using conditional comments, like so:
-
-      .code
-        :code
-          # lang: html
-            <picture>
-              <!--[if IE 9]><video style="display: none;"><![endif]-->
-                <source srcset="examples/images/extralarge.jpg" media="(min-width: 1000px)">
-                <source srcset="examples/images/large.jpg" media="(min-width: 800px)">
-              <!--[if IE 9]></video><![endif]-->
-              <img srcset="examples/images/medium.jpg" alt="Description of this image">
-            </picture>
 
   %section.block
     %i.block-icon.icon-info.icon-bg-default
     %h2.block-title Content images
     .content
       :markdown
-        Images are responsive-friendly by default. An image has a `max-width: 100%` and `height: auto` so that it scales nicely to the parent element.
+        Images are scale well by default. For every content image we have set a `max-width: 100%` and `height: auto` so that it scales nicely to the parent element.
       .demo
-        %img{:alt => "Description of this image.", :src => "/photos/animals4.jpg"}
+        %img.lazyload{:alt => "Description of this image.", "data-srcset" => "/photos/animals4.jpg", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="}
 
       .code
         :code

@@ -1,0 +1,47 @@
+---
+title: Collapse
+body_class: page-collapse l-has-sidebar-first
+layout: styleguide
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "UI Components"
+    url: "./blocks.html"
+
+layout: styleguide
+---
+
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
+  = partial :"nav/uicomponents"
+#content.l-main-column
+  %section.block
+    %i.block-icon.icon-info.icon-bg-default
+    %h2.block-title Collapse
+    .content
+      :markdown
+        Collapse can be used to **toggle** content. Primary use is now for the FAQ page where we show the answer for a question, by clicking on the question itself. This pattern can be extended or reused.
+
+        The `href` attribute in this component is ignored. Javascript will always execute on clicking the `.node-title` element inside a `node-collapse`. Then it will look for the next sibling `.field-name-body` and show this block.
+
+      .demo
+        %article.node-teaser-faq.node-collapse
+          %h2.node-title
+            %a{:href => "#0"} Link with a title
+          .field-name-body
+            %p Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      .code
+        :code
+          # lang: html
+            <article class='node-teaser-faq node-collapse'>
+              <h2 class='node-title'>
+                <a href='#0'>Link with a title</a>
+              </h2>
+              <div class='field-name-body'>
+                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+              </div>
+            </article>
+

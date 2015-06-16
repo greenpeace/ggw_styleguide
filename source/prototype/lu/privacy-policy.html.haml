@@ -1,0 +1,25 @@
+---
+title: Privacy policy
+body_class: not-front not-logged-in page-privacy no-sidebar
+user_role: lu
+---
+
+= partial :"blocks/breadcrumbs"
+
+- data.privacy.policy.each do |item|
+
+  .l-main-column
+    #content.block.current
+
+      %i.block-icon.icon-bg-default.icon-info
+      %h1.block-title
+        = item.title
+
+      .content
+        %article.view-mode-full
+          .submitted
+            %span.submitted-date
+              Last edited:
+              = item.date
+
+          = item.body

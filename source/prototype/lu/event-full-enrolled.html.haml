@@ -1,120 +1,150 @@
 ---
-title: Join us to festival Mundial
+title: Event article example
 body_class: not-front logged-in page-type-event l-has-sidebar node-full
+direct_parent:
+  -
+    name: "Events"
+    url: "events.html"
 user_role: lu
-script: leaflet
-design_status: Work progress
+comments: yes
 ---
 
 = partial :"blocks/breadcrumbs"
 
-#content.l-main-column
-  .main-content
-    %i.block-icon.icon-bg-event.icon-event
-    %h1#page-title.block-title
-      = current_page.data.title
-    .content
-      %article.view-mode-full
-        .submitted
-          %a.type.event{:href => "./events.html"} Event
-          by
-          %a{:href => "./profile.html"}
-            = lorem.name
-          \-
-          %span.submitted-date June 5th 2014 - 11:29
-          %a.comments-shortcut{:href => "#block-comments", "data-scroll" => ""}
-            %i.icon-comment
-            10 comments
+- data.event.with_image_subscribed.each do |item|
 
-        .field-name-body
+  .l-main-column
+    #content.block.main-content.current
+      %i.block-icon.icon-bg-event.icon-event
+      %h1.block-title{"data-amtitle" => "Event"}
+        = item.title
 
-          .field-group-wrapper
-
-            = partial :"images/article-image"
-
-            .event-actions
-              %a.button.btn-block.btn-primary.btn-l.modal-inline{:href => "#event-signup"} You are currently enrolled
-
-            .field-group-format
-
-              .field.field-name-field-event-date
-                .field-label Date:
-                %div
-                  %span.date-display-start 13 July, 2014 - 09:00 CEST
-                  to
-                  %span.date-display-end 14 July, 2014 - 12:00 CEST
-
-              .field.field-name-field-event-location
-                .field-label Location:
-                %div
-                  %a.js-show-mobile-map{:href => "#"}
-                    %span Somewhere down town
-                    %span Mainstreet 234
-                    %span London
-
-              .field.field-name-field-event-type
-                .field-label Event type:
-                %div
-                  %span Festival/Market
-
-              .field.field-name-field-event-organiser
-                .field-label Event organiser:
-                %div
-                  Organised by
-                  %a{:href => "#"}
-                    = lorem.name
-
-              .field.field-name-field-event-num-attendees
-                .field-label Attendees:
-                %div
-                  %span 36 persons are going
-
-          #desktopmap
-
-          %p
-            %strong Festival Mundial
-
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.paragraph
-          %p
-            = lorem.paragraph
-          %ol
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-            %li
-              = lorem.sentence
-          %img.field-type-image.pull-left{:alt => "Example of image.", :src => "http://lorempixel.  com/100/100/nature/5/image"}/
-          %p
-            = lorem.sentence
-            %strong without
-            = lorem.sentence
-
-      = partial :"blocks/tags"
-
-      .submitted.submitted-extended
-        .submitted-image
-          %img{:alt => "Name of the author.", :src => "/photos/blank.png", "data-src" => "/photos/75/people5.jpg"}/
-        .submitted-info
-          %div
-            %a{:href => "./events.html"} Event
+      .content
+        %article.view-mode-full
+          .submitted
+            %a.type.event{:href => "./search-events.html"} Event
             by
-            = lorem.name
-          .submitted-bio
-            %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
-          .submitted-all-reference
-            %a{:href => "#"}>
-              All events by
-              = lorem.name
-              \.
+            %a{:href => "./profile.html"}
+              = item.author
+            \-
+            %span.submitted-date
+              = item.datetime
 
-  = partial :"blocks/lu/comments"
+            %a.comments-shortcut.show-block{:href => "#block-comments", "data-scroll" => ""}
+              %i.icon-comment
+              = item.comment_amount
+              comments
 
-%aside.l-sidebar.sidebar
-  = partial :"blocks/go_to_group"
-  = partial :"blocks/lu/enrolled"
-  = partial :"blocks/lu/enrollments"
-  = partial :"blocks/lu/subscribe"
+          .field-name-body
+
+            .field-group-wrapper
+
+              = partial :"images/custom-article-image", :locals => {:image => "#{item.image}", :caption => "Tea Sutra Newcastle"}
+
+              .event-actions
+                %a.button.btn-block.btn-l.modal-inline{:href => "#event-signup"} You are currently enrolled
+
+              .field-group-format
+
+                .field.field-name-field-event-date
+                  .field-label Date:
+                  %div
+                    %span.date-display-start
+                      = item.event_start
+                    to
+                    %span.date-display-end
+                      = item.event_end
+
+                .field.field-name-field-event-location
+                  .field-label Location:
+                  %div
+                    %a.popup-iframe{:href => "../lu/event_map_single.html"}
+                      %span
+                        = item.location_name
+                      %span
+                        = item.address
+                      %span
+                        = item.city
+
+                .field.field-name-field-event-type
+                  .field-label Event type:
+                  %div
+                    %span
+                      = item.event_type
+
+                .field.field-name-field-event-organiser
+                  .field-label Event organiser:
+                  %div
+                    Organised by
+                    %a{:href => "#"}
+                      = item.organiser
+
+                .field.field-name-field-event-num-attendees
+                  .field-label Attendees:
+                  %div
+                    %span
+                      = item.no_attendees
+                      persons are going
+
+            #eventmap-desk.map
+
+            = item.full_text
+
+
+
+          .submitted.submitted-extended
+            .submitted-image
+              %img.lazyload{:alt => "#{item.author}", :src => "/images/blank.png", "data-src" => "/photos/75/people5.jpg"}/
+              %noscript
+                %img{:alt => "#{item.author}", :src => "/photos/75/people5.jpg"}/
+            .submitted-info
+              %div
+                %a{:href => "./search-events.html"} Event
+                by
+                = item.author
+              .submitted-bio
+                %p Born in 1965 and hailing from South Africa, Willie MacKenzie has been Greenpeace’s International Executive Director since November 2009.
+              .submitted-all-reference
+                %a{:href => "./search-events.html"}>
+                  All events by
+                  = item.author
+                  \.
+
+    = partial :"blocks/lu/comments"
+
+  %aside.l-sidebar.sidebar
+    = partial :"blocks/go_to_group"
+    = partial :"blocks/lu/enrolled", :locals => {:event => "#{item.title}"}
+    = partial :"blocks/lu/invite-friends", :locals => {:event => "#{item.title}"}    
+    = partial :"blocks/lu/enrollments"
+    = partial :"blocks/lu/subscribe"
+
+
+= javascript_include_tag "leaflet"
+
+
+- data.event.with_image_subscribed.each do |item|
+  :javascript
+
+    var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+    }),
+    latlng = L.latLng(#{item.geocoordinates});
+
+    var map = L.map('eventmap-desk', {center: latlng, zoom: 11, scrollWheelZoom: false, layers: [tiles]});
+
+    var eventIcon = L.icon({
+      iconUrl: '/images/marker-events.png',
+      iconRetinaUrl: '/images/marker-events@2x.png',
+      shadowUrl: '/images/marker-shadow.png',
+      shadowRetinaUrl: '/images/marker-shadow@2x.png',
+      iconSize:     [25, 41], // size of the icon
+      shadowSize:   [41, 41], // size of the shadow
+      iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
+      shadowAnchor: [13, 41],  // the same for the shadow
+      popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
+    });
+
+    L.marker([#{item.geocoordinates}], {icon: eventIcon}).bindPopup('<h2 class="node-title"><a href="#">#{item.title}</a></h2><div class="field field-name-field-event-date"><span class="date-display-single">#{item.event_date}</span></div>').addTo(map);
+

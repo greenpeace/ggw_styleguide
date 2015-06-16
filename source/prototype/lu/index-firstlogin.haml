@@ -1,0 +1,20 @@
+---
+title: Home
+body_class: front logged-in page-home l-two-column
+user_role: lu
+user_context: first-login
+front: frontpage
+comments: yes
+---
+
+= partial :"blocks/breadcrumbs"
+
+= partial :"blocks/slider_single"
+
+.l-main-column
+  = partial :"blocks/upcoming_events"
+  = partial :"blocks/updates"
+
+%aside.l-sidebar.sidebar
+  = partial :"blocks/lu/comments"
+  = partial :"blocks/random-image"

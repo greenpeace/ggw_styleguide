@@ -1,10 +1,14 @@
-.block
+.block#block-go-to-group
   %i.block-icon.icon-users.icon-bg-group
-  %h2.block-title Go to group
+  %h2.block-title{"data-amtitle" => "Group"} Go to group
   .content
     %p
       This belongs to
-      = succeed "." do
-        %a{:href => "#"} local groups amsterdam
-    %p
-      %a.button{:href => "#"} Go to this group
+      - if current_page.data.user_role == "an"
+        = succeed "." do
+          %a{:href => "./group-home.html"} Local group Amsterdam
+      - else
+        = succeed "," do
+          %a{:href => "./group-home.html"} Local group Amsterdam
+        = succeed "." do
+          %a{:href => "./group-home-enrolled.html"} Save the Artic

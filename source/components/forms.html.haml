@@ -1,14 +1,24 @@
 ---
 title: Forms
-body_class: page-forms
+body_class: page-forms l-has-sidebar-first
 layout: styleguide
-design_status: Needs review
+direct_parent:
+  -
+    name: "Styleguide"
+    url: "/"
+  -
+    name: "UI Components"
+    url: "./blocks.html"
+
+layout: styleguide
 ---
 
-%aside.sidebar-left
+= partial :"blocks/breadcrumbs"
+
+%aside.sidebar-first
   = partial :"nav/uicomponents"
-#content.l-main-column
-  %section.block
+.l-main-column
+  %section.block#content
     %i.block-icon.icon-info.icon-bg-default
     %h2.block-title Forms
     :markdown

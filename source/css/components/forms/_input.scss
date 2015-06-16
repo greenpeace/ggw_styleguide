@@ -1,14 +1,14 @@
 .form-text,
 .form-password,
 textarea {
-  padding:5px .5em;
+  padding: 5px .5em;
   border: 1px solid $grey-l;
   border-radius: 3px;
   width: 100%;
   max-width: 400px;
   -webkit-appearance: none;
-  @include font-size($p);
   background-color: $white;
+  outline: none;
 
   &:hover {
     border-color: $grey-m;
@@ -16,25 +16,27 @@ textarea {
 
   &:focus {
     border-color: $green1;
-    box-shadow: inset 1px 1px 2px rgba(0,0,0,.2);
   }
 
   &:disabled {
-    border: 1px solid $grey-l;
+    border-color: $grey-l;
     background: #F3F3F3;
   }
 
-  &.error {
-    border: 1px solid darken($primary, 10%);
-    position: relative;
-    padding-right: 2em;
+  @include breakpoint($tab) {
+    @include font-size($p);
   }
 
 }
 
+.date-padding {
+  line-height: 100%;
+}
+
 // 1) fix for ios7 heights on date inputs
 // 2) make sure the text doesn't continue over the icon, if there is an icon
-input[type=date] {
+.input-date,
+.input-time {
   height: 30px; // 1
 
   &.picker__input {
@@ -42,14 +44,45 @@ input[type=date] {
   }
 }
 
-input[type=date] + i {
+.input-date + i,
+.input-time + i {
+  position: relative;
   margin-left: -1.5em;
-  top: .4em;
+  top: 0;
   line-height: normal;
 }
 
 // hide two icons in chrome that hide a part of the selected date.
-input[type=date]::-webkit-clear-button,
-input[type=date]::-webkit-inner-spin-button {
+.no-touch {
+  .input-date::-webkit-clear-button,
+  .input-date::-webkit-inner-spin-button,
+  .input-time::-webkit-clear-button,
+  .input-time::-webkit-inner-spin-button {
     display: none;
+  }
+}
+
+.input-small {
+  width: 100%;
+  max-width: 120px;
+}
+
+// two small inputs plus margin-right
+.input-medium {
+  width: 100%;
+  max-width: 252px;
+}
+
+// a small input + a large input + margin-right
+.input-large {
+  width: 100%;
+  max-width: 379px;
+}
+
+.hiddenfile {
+  position: absolute;
+  opacity: 0;
+  height: 30px;
+  width: 160px;
+  z-index: 100;
 }

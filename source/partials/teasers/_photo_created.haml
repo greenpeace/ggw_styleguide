@@ -1,0 +1,26 @@
+
+- data.photos.album_three.each do |item|
+  .views-row
+    %article.node-teaser-photo.node-teaser
+      .field-type-image
+        %a{:href => "./photo-album-created.html"}
+          = partial :"teasers/teaser-image", :locals => {:image => "#{item.image}"}
+      .field-type-wrapper
+        %h2.node-title
+          %a{:href => "./photo-album-created.html"}
+            = item.title
+        .submitted
+          %a.type.photo{:href => "./photos.html"} Photos
+          = succeed ", by" do
+            = item.date
+          - if current_page.data.user_role != "an"
+            %a{:href => "./my-profile.html"}
+              = item.author
+          - else
+            = item.author.downcase.tr(' ', '_')
+          - if current_page.data.user_role != "an"
+            - if item.comment_amount
+              %a.teaser-comments{:href => "./photo-album-created.html#block-comments"}
+                = item.comment_amount
+        .field-name-body
+          = item.introtext

@@ -21,6 +21,11 @@ $(function() {
 
   });
 
+  $('#section-social .form-select').on('change', function() {
+    var channel = {fb: 'http://www.facebook.com/username', tw: 'http://www.twitter.com/username', in: 'http://www.linkedin.com/username', pi: 'http://www.pinterest.com/username', gp: 'http://plus.google.com/username', vk: 'http://www.vk.com/username'};
+    $(this).closest('.row').find('.form-text').attr('placeholder', channel[$(this).val()]);
+  });
+
   // When editing a group or event with an address,
   // disable the address field untill country has been selected
   var editableAddress = $('#edit-event-address, #edit-group-address')

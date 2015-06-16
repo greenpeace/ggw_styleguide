@@ -93,6 +93,14 @@
   -webkit-overflow-scrolling: touch;
   transform: translate3d(0, 0, 0);
 
+  .with-action-menu & {
+    padding-top: 100px;
+  }
+
+  &.with-action-bar {
+    padding-top: 48px;
+  }
+
   @include breakpoint($desk) {
     background: transparent;
     padding:88px $def-mar 0;
@@ -119,15 +127,6 @@
 
   @include breakpoint($deskplus) {
     padding: 88px 0 0;
-  }
-
-}
-
-.js .with-action-menu .l-main {
-  padding-top: 100px;
-
-  &.with-action-bar {
-    padding-top: 48px;
   }
 
 }

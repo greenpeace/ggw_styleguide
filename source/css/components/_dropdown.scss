@@ -20,7 +20,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  line-height: 18px;
+  line-height: 28px;
 }
 
 .dropdown-menu li > a,
@@ -28,8 +28,8 @@
   display: block;
   color: $base;
   text-decoration: none;
-  @include font-size($small);
-  line-height: 18px;
+  @include font-size($p);
+  line-height: 28px;
   padding: 3px $def-mar;
   white-space: nowrap;
 

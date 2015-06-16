@@ -18,51 +18,73 @@ $(function() {
   // First function to create the action menu itself.
   var createActionMenu = once(function() {
 
-    //check if there are at least two blocks and they are not hidden on mobile nor in a modal window
-    var blocksMain = $('.l-main-column > .block').not('.hidden-mobile').not('.white-popup');
-    var blocksSidebar = $('.l-sidebar > .block').not('.hidden-mobile').not('.white-popup');
-    var blocks = blocksMain.add(blocksSidebar);
+    // create menu wrapper
+    var action_menu_object = "<nav class='action-menu'><ul class='tabs'></ul></nav>";
 
-    var no = $(blocks).length;
+    $(action_menu_object).insertBefore('header');
 
-    if (no >= 2) {
+    // create menu items from sidebar
+    $(blocks).each(function() {
 
-      // create space for the action menu
-      $('body').addClass('with-action-menu');
+      // get the ID to link to
+      var blockId     = $(this).attr('id');
 
-      // create menu wrapper
-      var action_menu_object = "<nav class='action-menu'><ul class='tabs'></ul></nav>";
-
-      $(action_menu_object).insertBefore('header');
-
-      // create menu items from sidebar
-      $(blocks).each(function() {
-
-        // get the ID to link to
-        var blockId     = $(this).attr('id');
-
-        // manipulate the classes, so we end with 1 class to use
-        var blockIcon   = $(this).children('i').clone().removeClass(function (index, css) {
-          var class1 = css.match(/(^|\s)block-\S+/g);
-          var class2 = css.match(/(^|\s)icon-bg\S+/g);
-          return class1+ " "+class2
-        });
-        var blockIconClass = blockIcon.attr("class");
-
-        // use the data attribute to set the anchor text
-        var blockLabel = $(this).find('.block-title').attr("data-amtitle");
-
-        // build the nav item
-        var menuItem = "<li><a href='#"+ blockId +"' class='tab'><i class='icon "+ blockIconClass +"'></i>"+ blockLabel +" </a></li>";
-        $(menuItem).appendTo($('nav.action-menu .tabs'));
+      // manipulate the classes, so we end with 1 class to use
+      var blockIcon   = $(this).children('i').clone().removeClass(function (index, css) {
+        var class1 = css.match(/(^|\s)block-\S+/g);
+        var class2 = css.match(/(^|\s)icon-bg\S+/g);
+        return class1+ " "+class2
       });
+      var blockIconClass = blockIcon.attr("class");
 
+      // use the data attribute to set the anchor text
+      var blockLabel = $(this).find('.block-title').attr("data-amtitle");
+
+      // build the nav item
+      var menuItem = "<li><a href='#"+ blockId +"' class='tab'><i class='icon "+ blockIconClass +"'></i>"+ blockLabel +" </a></li>";
+      $(menuItem).appendTo($('nav.action-menu .tabs'));
+    });
+
+  });
+
+  //check if there are at least two blocks and they are not hidden on mobile nor in a modal window
+  var blocksMain = $('.l-main-column > .block').not('.hidden-mobile').not('.white-popup');
+  var blocksSidebar = $('.l-sidebar > .block').not('.hidden-mobile').not('.white-popup');
+  var blocks = blocksMain.add(blocksSidebar);
+
+  var no = $(blocks).length;
+
+  if (no >= 2) {
+
+    createActionMenu();
+
+    if ($(window).width() < 900) {
+      $('body').addClass('with-action-menu');
+    }
+
+  }
+
+  // On resize, run the function and reset the timeout
+  // 250 is the delay in milliseconds.
+  $(window).resize(function() {
+
+    if ($(window).width() < 900) {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(overflowDropdown, 350);
+
+      if (no >= 2 && $('body:not(.with-action-menu)') ) {
+        $('body').addClass('with-action-menu');
+      }
+
+    } else {
+      $('body').removeClass('with-action-menu');
     }
 
   });
 
-  createActionMenu();
-
+  if ($(window).width() < 900) {
+    overflowDropdown();
+  }
 
   // This script creates a dropdown of the action menu, when there are more then 2 buttons.
   function overflowDropdown() {
@@ -187,20 +209,7 @@ $(function() {
 
   }
 
-  // On resize, run the function and reset the timeout
-  // 250 is the delay in milliseconds.
-  $(window).resize(function() {
 
-    if ($(window).width() < 900) {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(overflowDropdown, 350);
-    
-    }
-  });
-
-  if ($(window).width() < 900) {
-    overflowDropdown();
-  }
 
 });
 

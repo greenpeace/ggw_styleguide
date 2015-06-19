@@ -35,34 +35,48 @@
   padding: $def-mar;
   border-radius: 4px;
   color: $white;
-  margin: $def-mar;
+  margin: 60px 5% 0;
   position: fixed;
   z-index: 1000;
   overflow: hidden;
-  text-align: center;
-  width: 500px;
-  max-width: 90%;
+  width: 90%;
 
-  @include breakpoint($tab) {
-    left: 50%;
-    margin-left: -300px;
-    margin-top: 50px;
-    width: 600px;
+  @include breakpoint($desk) {
+    margin: 100px 10% 0;
+    width: 80%;
     padding: (2 * $def-mar);
   }
 
+  @include breakpoint($wide) {
+    margin: 100px 20% 0;
+    width: 60%;
+  }
+
+  .feedback-message {
+    margin-bottom: $def-mar;
+  }
+
   .icon {
-    font-size: $h1;
+    font-size: $h2;
+    width: 1em;
     float: left;
     margin-right: $def-mar-half;
-    line-height: $h4;
+  }
+
+  .icon-attention {
+    color: $user;
   }
 
   p {
     font-size: $h4;
     overflow: hidden;
-    margin: 0;
-    line-height: $h4;
+    margin: 0 0 .5em;
+    line-height: $h3;
+  }
+
+  a {
+    color: $white;
+    text-decoration: underline;
   }
 
 }

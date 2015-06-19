@@ -37,6 +37,32 @@
 
 }
 
+.has-attention {
+  .form-text,
+  .form-password,
+  textarea,
+  .chosen-container-multi .chosen-choices {
+    border: 1px solid $user;
+    position: relative;
+    padding-right: 2em;
+
+    &:focus {
+      border-color: $green1;
+
+      + i {
+        visibility: hidden;
+      }
+    }
+
+  }
+
+  .form-feedback {
+    color: $user;
+    font-size: 1em;
+  }
+
+}
+
 .form-feedback {
   position: relative;
   z-index: 9;
@@ -45,7 +71,8 @@
   font-weight: 700;
   font-size: 1.4em;
   line-height: 28px;
-  margin-left: -.7em;
+  width: 1em;
+  margin-left: -1.4em;
 }
 
 .help-block {

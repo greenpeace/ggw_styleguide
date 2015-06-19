@@ -1,4 +1,8 @@
 #block-user-events.block.lazyload{"data-expand" => "-40"}
+  - if current_page.data.access == "mine"
+    .action-bar
+      .action-bar-item.edit-content
+        %a.button{:href => "./create-event.html", :title => "Create new event"} Add event
   %i.block-icon.icon-bg-user.icon-event
   - if current_page.data.access == "mine"
     %h2.block-title{"data-amtitle" => "My events"} My events

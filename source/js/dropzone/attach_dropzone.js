@@ -177,7 +177,7 @@ $(function() {
         reader.readAsDataURL(file);
       },
       previewTemplate: previewTemplate,
-      autoQueue: false, // Make sure the files aren't queued until manually added
+      //autoQueue: false, // Make sure the files aren't queued until manually added
       previewsContainer: "#previews", // Define the container to display the previews
      clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
     });
@@ -192,7 +192,7 @@ $(function() {
       maxFilesize: 15,
       acceptedFiles: ".doc, .docx, .xls, .xlsx, .ppt, .pptx, .odt, .odp, .ods, .pdf",
       previewTemplate: previewTemplate,
-      autoQueue: false, // Make sure the files aren't queued until manually added
+      //autoQueue: false, // Make sure the files aren't queued until manually added
       previewsContainer: "#previews", // Define the container to display the previews
       clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
     });

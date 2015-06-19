@@ -48,7 +48,8 @@ $(function() {
 
     // Iterate through only Vimeo videos
     $('.flexslider .vimeo').each(function(){
-    //  Froogaloop(this).addEvent('ready', ready);
+      var player = $(this).closest('.container-lazyload').find('iframe');
+      $f(player).addEvent('ready', ready);
     });
 
     function ready(playerID) {
@@ -57,6 +58,10 @@ $(function() {
       });
       Froogaloop(playerID).addEvent('pause', function(data) {
         $('.flexslider').flexslider('play');
+      });
+
+      $('.flex-next, .flex-prev').click(function() {
+        player.api("pause");
       });
     }
 
@@ -78,8 +83,9 @@ $(function() {
       },
       before: function(slider){
         // Vimeo stop
-        if (slider.slides.eq(slider.currentSlide).find('.vimeo').length !== 0) {
-          $f( slider.slides.eq(slider.currentSlide).find('.vimeo').attr('id') ).api('pause');
+        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+          $f( slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');
+          playVideoAndPauseOthers($('.container-vimeo iframe')[0]);
         }
         // Youtube stop
         else if(!canSlide) {
@@ -87,6 +93,13 @@ $(function() {
         }
       },
     });
+
+    function playVideoAndPauseOthers(frame) {
+      $('.container-vimeo iframe').each(function(i) {
+        var func = this === frame ? 'playVideo' : 'stopVideo';
+        this.contentWindow.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+      });
+    }
 
     // check if the slider is still visible for the user, otherwise pause the slider.
     slider.on('inview', function(event, isVisible) {
@@ -97,13 +110,23 @@ $(function() {
 
     $('iframe.youtube').iframeTracker({
       blurCallback: function(){
+        console.log('clicked');
         slider.flexslider('stop');
+      }
+    });
+
+    $('iframe.vimeo').iframeTracker({
+      blurCallback: function(){
+        player.api("pause");
       }
     });
 
     if ( slider.find('.flex-viewport').length != 0) {
       slider.addClass('active');
     }
+
+
+    
 
   }
 

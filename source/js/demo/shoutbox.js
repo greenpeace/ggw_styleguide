@@ -29,7 +29,7 @@ $(function() {
     readURL(this);
   });
 
-  $('.form-comment-submit').click(function(e) {
+  $('.block-comments .form-comment-submit').click(function(e) {
     var posttext = $('.form-comment-message textarea').val();
     var shoutImage = $('.comment-form-holder .preview-wrapper').html();
     var richLink = $('.comment-form-holder #linkinfo').html();
@@ -73,6 +73,12 @@ $(function() {
     $('.comment-form-holder #preview-image').addClass('element-hidden');
     e.preventDefault();
     $('.comment-body').linkify().urlToLink();
+  });
+
+  $('#reply-comment .form-comment-submit').click(function(e) { 
+    e.preventDefault();
+    $.magnificPopup.close();
+    $('<div class="form-sent form-success"><i class="icon icon-chat"></i> <p>Your reply has been posted.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
   });
 
   $('.form-comment-message textarea').keyup(function() {

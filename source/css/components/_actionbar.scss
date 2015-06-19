@@ -72,6 +72,10 @@
   margin-left: 3px;
 }
 
+.action-bar-item .btn-primary span:after{
+  border-top-color: $white;
+}
+
 .viewmode-switcher {
   display: none;
 

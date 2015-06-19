@@ -2,7 +2,9 @@
   flex: 1 100%;
 
   @include breakpoint($desk) {
-    margin-top: $def-mar;
+    .block {
+      margin-top: $def-mar !important;
+    }
   }
 
 }

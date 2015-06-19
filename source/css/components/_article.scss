@@ -37,10 +37,6 @@ article {
     margin-right: 60px;
   }
 
-}
-
-.view-mode-full {
-
   .submitted {
 
     .type:before {
@@ -70,6 +66,39 @@ article {
     }
 
   }
+
+  .submitted-extended {
+    padding: $def-mar;
+    background: $background;
+    border-radius: 3px;
+    margin: $def-mar 0 0;
+  }
+
+  .field-name-document {
+    padding: 0;
+
+    .type {
+      @include font-size($p);
+      width: auto;
+      display: block;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
+
+    .type:before {
+      @extend %load-icon;
+      display: inline-block;
+      top: -1px;
+      position: relative;
+      width: 1em;
+      margin-right: .2em;
+    }
+
+  }
+
+}
+
+.view-mode-full {
 
   .field-group-format {
     margin: $def-mar 0;
@@ -103,76 +132,53 @@ article {
 
   }
 
-  .field-name-document {
-    padding: 0;
+}
 
-    .type {
-      @include font-size($p);
-      width: auto;
-      display: block;
-      overflow: hidden;
-      vertical-align: bottom;
-    }
+.comments-shortcut {
+  white-space: nowrap;
 
-    .type:before {
-      @extend %load-icon;
-      display: inline-block;
-      top: -1px;
-      position: relative;
-      width: 1em;
-      margin-right: .2em;
-    }
-
+  @include breakpoint($smalltab) {
+    float: right;
   }
 
 }
 
-.field-name-field-event-date .field-label + div:before {
-  @extend %icon-calendar;
+.tags,
+.shortcut,
+.submitted,
+.submitted a {
+  @extend %fontsizesmall;
 }
 
-.field-name-field-event-location .field-label + div:before {
-  @extend %icon-location;
-  @include font-size($h2);
+.submitted,
+.submitted-info {
+  @include media;
 }
 
-.field-name-field-event-organiser .field-label + div:before {
-  @extend %icon-user;
+.submitted .icon:before {
+  margin: 0 .2em 0 .1em;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
 }
 
-.field-name-field-event-type .field-label + div:before {
-  @extend %icon-info-circled;
+.submitted-origin {
+  display: inline-block;
 }
 
-.field-name-field-event-num-attendees .field-label + div:before {
-  @extend %icon-users;
-}
+.submitted-image {
+  float: left;
+  margin-right: 10px;
 
-.field-name-field-event-location {
-  span {
-    margin-right: .3em;
+  img {
+    display: block;
   }
-
-  @include breakpoint($desk) {
-    a {
-      pointer-events: none;
-      cursor: default;
-      color: $base-desk;
-    }
-
-  }
-
 }
 
-.field-name-gallery {
-  overflow: hidden;
-  margin: $def-mar 0;
+.submitted-date {
+  display: inline-block;
+}
 
-  .album-thumbnail {
-    float: left;
-    margin: 0 3px 3px 0;
-    width: 96px;
-    height: 96px;
-    background: $grey-l;
-  }
+.tags a {
+  text-transform: lowercase;
+  font-style: italic;
 }

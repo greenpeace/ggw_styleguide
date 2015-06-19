@@ -226,8 +226,8 @@
         %li
           %a{:href => "#"} Show some more
 
-  = partial :"blocks/lu/reply-comment"
-  = partial :"blocks/lu/edit-comment"
-  = partial :"blocks/lu/delete-comment"
-  - if current_page.data.front == "frontpage" || current_page.data.joined == "joined" ||current_page.data.profile == "home"
-    = partial :"blocks/lu/add-external-link"
+= partial :"blocks/lu/reply-comment"
+= partial :"blocks/lu/edit-comment"
+= partial :"blocks/lu/delete-comment"
+- if current_page.data.front == "frontpage" || current_page.data.joined == "joined" ||current_page.data.profile == "home"
+  = partial :"blocks/lu/add-external-link"

@@ -3,7 +3,11 @@
 //enhance with icons
 function showErrorIcons() {
   $('.has-error .form-text, .has-error textarea').after('<i class="form-feedback icon-cancel" aria-hidden="true"></i>');
-  }
+}
+
+function showAttentionIcons() {
+  $('.has-attention .form-text, .has-attention textarea').after('<i class="form-feedback icon-attention" aria-hidden="true"></i>');
+}
 
 $(function() {
   'use strict';

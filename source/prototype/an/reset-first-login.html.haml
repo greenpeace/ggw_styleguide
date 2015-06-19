@@ -1,0 +1,22 @@
+---
+title: Reset your password
+body_class: page-register not-logged-in l-has-sidebar
+user_role: an
+---
+
+= partial :"blocks/breadcrumbs"
+
+.l-main-column
+  #content.block.current
+    %i.block-icon.icon-bg-user.icon-user
+    %h1#page-title.block-title
+      = current_page.data.title
+    .content
+      %p 
+        This is a one-time login for {username} and will expire on {24hrs ahead}.
+        %br
+        This login can be used only once.
+      %p
+        %a.button.btn-primary{:href => "../lu/edit-user-account.html#first-login", :title => "Login"} Login
+%aside.l-sidebar.sidebar
+  = partial :"blocks/an/save_planet5"

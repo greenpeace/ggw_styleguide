@@ -13,12 +13,6 @@ html {
 
 body {
   @include font-size($base-font-size);
-
-  @include breakpoint($desk) {
-    background-color: $grey-sl;
-    color: $base-desk;
-  }
-
   background-color: $white;
   color: $base;
   font-family: $base-font-family;
@@ -26,6 +20,12 @@ body {
   line-height: $base-line-height;
   min-height: 100%;
   position: relative;
+
+  @include breakpoint($desk) {
+    background-color: $grey-sl;
+    color: $base-desk;
+  }
+
 }
 
 // used for images for example, but it can be applied on other elements as well

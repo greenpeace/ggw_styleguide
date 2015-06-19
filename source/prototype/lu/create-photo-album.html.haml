@@ -60,15 +60,9 @@ menu:
         .form-wrapper
 
           .form-item#dropzone-actions
-            %span.button.btn-add.fileinput-button.needsclick
+            %span.button.btn-add.fileinput-button.needsclick.start
               %i.icon-plus
               %span Add files
-            %button.button.btn-upload.start
-              %i.icon-upload
-              %span Start upload
-            %button.button.cancel{"type" => "reset"}
-              %i.icon-block
-              %span Cancel upload
             .total-fileupload-process
               .fileupload-process
                 #total-progress.progress.progress-striped.active{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "0", :role => "progressbar"}

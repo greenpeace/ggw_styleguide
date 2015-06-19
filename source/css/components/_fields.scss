@@ -84,3 +84,53 @@
   }
 
 }
+
+.field-name-field-event-date .field-label + div:before {
+  @extend %icon-calendar;
+}
+
+.field-name-field-event-location .field-label + div:before {
+  @extend %icon-location;
+  @include font-size($h2);
+}
+
+.field-name-field-event-organiser .field-label + div:before {
+  @extend %icon-user;
+}
+
+.field-name-field-event-type .field-label + div:before {
+  @extend %icon-info-circled;
+}
+
+.field-name-field-event-num-attendees .field-label + div:before {
+  @extend %icon-users;
+}
+
+.field-name-field-event-location {
+  span {
+    margin-right: .3em;
+  }
+
+  @include breakpoint($desk) {
+    a {
+      pointer-events: none;
+      cursor: default;
+      color: $base-desk;
+    }
+
+  }
+
+}
+
+.field-name-gallery {
+  overflow: hidden;
+  margin: $def-mar 0;
+
+  .album-thumbnail {
+    float: left;
+    margin: 0 3px 3px 0;
+    width: 96px;
+    height: 96px;
+    background: $grey-l;
+  }
+}

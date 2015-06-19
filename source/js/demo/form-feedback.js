@@ -31,6 +31,11 @@ $(function() {
     if (hash == 'confirmed-leave-group') {
       $('<div class="form-sent form-success"><i class="icon icon-cancel"></i> <p>You are not longer a member of Emlyn Gardens local group.</p></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
     }
+    if (hash == 'first-login') {
+      $('<div class="form-sent form-success"><div class="media feedback-message"><i class="icon icon-info media-figure"></i><div class="media-body"><p>You have been added to the group <a href="./group-home-country-enrolled.html">Greenpeace Greenwire UK</a>.</p></div></div><div class="media feedback-message"><i class="icon icon-attention media-figure"></i> <div class="media-body"><p>You have now logged in with the temporary password which was automatically generated for you.</p> <p>Please change your password before continuing your use of Greenwire.</div></div></div>').insertBefore('.l-main').hide().fadeIn('slow');
+      $('.has-attention-hidden').removeClass('has-attention-hidden').addClass('has-attention');
+      showAttentionIcons();
+    }
 
   }
 

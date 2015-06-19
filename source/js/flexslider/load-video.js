@@ -8,4 +8,12 @@ $(function() {
     thumbnailquality: '0'
   });
 
+  lazyload_vimeo.init({
+    buttonstyle: '',
+    playercolour: '',
+    videoseo: false,
+    responsive: true,
+    callback: null
+  });
+
 });

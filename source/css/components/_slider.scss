@@ -41,6 +41,7 @@ html[xmlns] .slides {display: block;}
 
   @include breakpoint($desk) {
     margin: $def-mar 0;
+    padding: 4px;
   }
 
   &.active {

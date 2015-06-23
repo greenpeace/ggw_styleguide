@@ -89,10 +89,10 @@ $(function() {
     e.preventDefault(); // stop default behaviour
     e.stopPropagation(); // stop the click event from bubbling up when we click on the trigger
     $('.help-block').removeClass('element-invisible');
-    $('<div class="form-sent form-error"><i class="icon icon-cancel"></i> <p>You need to fill in the required fields.</p></div>').insertBefore('.l-main').hide().fadeIn('slow');
+    $('<div class="absolute_message"><div class="form-sent form-error"> <p>You need to fill in the required fields.</p></div></div>').insertBefore('.l-main').hide().fadeIn('slow');
     $('.has-error-hidden').removeClass('has-error-hidden').addClass('has-error');
     $('html, body').animate({
-      scrollTop: $('.has-error:visible:first').offset().top - 110
+      scrollTop: $('.absolute_message').offset().top - 110
     }, 1000);
     showErrorIcons();
   });
@@ -139,6 +139,21 @@ $(function() {
     readURL(this);
     $('#file-name').removeClass('element-hidden').addClass('filename').html(this.files[0].name);
   });
+
+
+    formmodified=0;
+    $('form *').change(function(){
+        formmodified=1;
+    });
+    window.onbeforeunload = confirmExit;
+    function confirmExit() {
+        if (formmodified == 1) {
+            return "You have made changes to this content which is not saved. Scroll down to save. Do you wish to leave the page?";
+        }
+    }
+    $(".input-good").click(function() {
+        formmodified = 0;
+    });
 
 
 });

@@ -7,14 +7,16 @@ user_role: lu
 = partial :"blocks/breadcrumbs"
 
 .region-highlight
-  .block.current.hero
+  .block.hero#block-hero.current
+    %i.block-icon.icon-bg-event.icon-map.only-mobile
+    %h2.block-title.element-hidden{"data-amtitle" => "Events map"}
     #eventmap.map
 
 .l-main-column
   #content.block.current
     = partial :"blocks/lu/add-content"
     %i.block-icon.icon-bg-event.icon-event
-    %h1.block-title{"data-amtitle" => "Events"}
+    %h1.block-title{"data-amtitle" => "Events list"}
       = current_page.data.title
     .content
       = partial :"teasers/event-with-image-subscribed"
@@ -53,7 +55,6 @@ user_role: lu
     shadowSize:   [41, 41], // size of the shadow
     iconAnchor:   [13, 41], // point of the icon which will correspond to marker's location
     shadowAnchor: [13, 41],  // the same for the shadow
-    popupAnchor:  [1, -5] // point from which the popup should open relative to the iconAnchor
   });
 
   for (var i = 0; i < events.length; i++) {

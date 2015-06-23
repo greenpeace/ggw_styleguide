@@ -7,7 +7,9 @@ user_role: an
 = partial :"blocks/breadcrumbs"
 
 .region-highlight
-  .block.current.hero
+  .block.hero#block-hero.current
+    %i.block-icon.icon-map.only-mobile
+    %h2.block-title.element-hidden{"data-amtitle" => "Group map"}
     #groupmap.map
 
 .l-main-column

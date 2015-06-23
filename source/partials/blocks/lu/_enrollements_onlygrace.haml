@@ -4,7 +4,7 @@
   .content
     .members
       - 1.times do |num|
-        %a.member-item{:href => "#"}
+        %a.member-item{:href => "./my-profile.html"}
           %img.lazyload{:alt => "Grace O'Flynn", :src => "/images/blank.png", "data-srcset" => "/photos/75/grace.jpg"}/
           %noscript
             %img{:alt => "Grace O'Flynn", :src => "/photos/75/grace.jpg"}/
@@ -12,6 +12,6 @@
     %p 1 person is going
 
   - if current_page.data.organiser == "organiser"
-    %a.button.btn-block{:href => "./event-manage-enrollments.html"} Manage enrollments
+    %a.button{:href => "./event-manage-enrollments.html"} Manage enrollments
   - else
-    %a.button.btn-block{:href => "./event-view-enrollments.html"} View enrollments
+    %a.button{:href => "./event-view-enrollments.html"} View enrollments

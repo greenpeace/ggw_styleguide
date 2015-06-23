@@ -190,17 +190,14 @@
 }
 
 .l-main-column {
-  margin: $def-mar-half;
   z-index: 1;
 
   @include breakpoint($desk) {
-    margin: 0;
     padding-bottom: 0;
   }
 }
 
 .l-sidebar {
-  margin: $def-mar-half;
 
   .page-profile &,
   .page-group-home & {
@@ -300,6 +297,17 @@
 
 }
 
+.no-sidebar .block {
+  margin: $def-mar-half;
+}
+
+.l-main-column,
+.l-sidebar {
+  .block.current {
+    margin: $def-mar-half;
+  }
+}
+
 .no-js .l-main .block {
   display: block;
   height: auto;
@@ -311,4 +319,3 @@
     width: 49.5%;
   }
 }
-

@@ -33,7 +33,8 @@ $(function() {
       var blockIcon   = $(this).children('i').clone().removeClass(function (index, css) {
         var class1 = css.match(/(^|\s)block-\S+/g);
         var class2 = css.match(/(^|\s)icon-bg\S+/g);
-        return class1+ " "+class2
+        var class3 = 'element-hidden';
+        return class1+ " "+class2+" "+class3
       });
       var blockIconClass = blockIcon.attr("class");
 
@@ -50,7 +51,8 @@ $(function() {
   //check if there are at least two blocks and they are not hidden on mobile nor in a modal window
   var blocksMain = $('.l-main-column > .block').not('.hidden-mobile').not('.white-popup');
   var blocksSidebar = $('.l-sidebar > .block').not('.hidden-mobile').not('.white-popup');
-  var blocks = blocksMain.add(blocksSidebar);
+  var blocksHero = $('.region-highlight > .block').not('.hidden-mobile').not('.white-popup');
+  var blocks = blocksMain.add(blocksSidebar).add(blocksHero);
 
   var no = $(blocks).length;
 
@@ -145,17 +147,19 @@ $(function() {
 
   $('.action-menu li:first').addClass('current');
 
-  // for prototype only
-  if ($('body').hasClass('front')) {
-    $('#content').removeClass('current');
-    $('#upcoming-events').addClass('current');
+  if ( ($('.block .map').length != 0) && $(window).width() < 900) {
+
+    var viewportHeight = $(window).height();
+    var navbarHeight = $('.l-branding-header').outerHeight();
+    var contentHeight = viewportHeight-navbarHeight-50;
+    $('.map').not('.flexslider .map').css('height', contentHeight);
+    map.invalidateSize();
   }
 
   if (window.location.hash) {
     var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
     if (hash.match("^block") ) {
-      console.log(hash);
-      $('.action-menu li, .l-main-column .current, .sidebar .current').removeClass('current');
+      $('.action-menu li, .region-highlight .current, .l-main-column .current, .sidebar .current').removeClass('current');
       $('#' + hash).addClass('current');
       $('.action-menu li a[href="#' + hash + '"]').parent().addClass('current');
     }
@@ -164,7 +168,7 @@ $(function() {
 
   $('.action-menu .tab').click(function(e){
 
-    $('.action-menu li, .l-main-column .current, .sidebar .current').removeClass('current');
+    $('.action-menu li, .region-highlight .current, .l-main-column .current, .sidebar .current').removeClass('current');
     $(this).parent().addClass('current');
     var currentTab = $(this).attr('href');
     $(currentTab).addClass('current');
@@ -174,7 +178,9 @@ $(function() {
     var scrollTo = $('body').offset().top - 50;
     $(window).scrollTop(scrollTo);
 
-    $('input[type=file]').nicefileinput();
+    if ($('input[type=file]').length != 0) {
+      $('input[type=file]').nicefileinput();
+    }
 
     if ($('.block .map').length != 0) {
       map.invalidateSize(); //solve map is not loading correctly

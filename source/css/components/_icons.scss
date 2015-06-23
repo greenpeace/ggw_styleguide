@@ -53,6 +53,7 @@
 .icon-install {     @extend %icon-install;}
 .icon-password {    @extend %icon-lock; }
 .icon-export {      @extend %icon-export;}
+.icon-featured {    @extend %icon-star;}
 
 .icon-event {       @extend %icon-calendar; }
 .icon-news {        @extend %icon-book-open; }

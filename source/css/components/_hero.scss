@@ -7,6 +7,13 @@
     }
   }
 
+  @include breakpoint($desk) {
+    &.slider .block {
+      padding: 0;
+      background: none;
+    }
+  }
+
 }
 
 .hero {
@@ -19,7 +26,6 @@
   }
 
   @include breakpoint($tab) {
-    padding: 4px;
     min-height: 340px;
   }
 
@@ -108,7 +114,7 @@
 
   .map {
     width: 100%;
-    height: 250px;
+    height: 220px;
 
     @include breakpoint($tab) {
       height: 440px;
@@ -122,11 +128,5 @@
 
 }
 
-// override the default block action menu toggle
-.l-two-column .l-main .hero,
-.l-has-sidebar .l-main .hero {
-  display: block;
-  height: auto;
-}
 
 

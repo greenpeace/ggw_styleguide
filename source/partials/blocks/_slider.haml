@@ -1,32 +1,35 @@
-%section.region-highlight
-  .flexslider.hero
-    %ul.slides
-      %li
-        #map.map
-      %li
-        %a{:href => "#"}
-          =image_tag("slide1.jpg")
-          %p
-            %span This is a line of text with a link
-      %li
-        %a{:href => "#"}
-          =image_tag("/images/slide2.jpg")
-          %p
-            %span We are now looking at the 2nd slide, this text is actually too long for the slide
-          %button.button.btn-primary take action
-      %li
-        .container-lazyload.preview-lazyload.container-youtube#youtube_1
-          %a.lazy-load-youtube.preview-lazyload.preview-youtube{:href => "https://www.youtube.com/watch?v=Vk94Qm0FZ5U", "video-title" => "Greenwire", :title => "Play Video Greenwire"}
-            https://www.youtube.com/watch?v=Vk94Qm0FZ5U
-      %li
-        .container-lazyload.preview-lazyload.container-vimeo#player_2
-          .lazy-load-vimeo.preview-lazyload.preview-vimeo#27243869{:title => "Play Video &quot; Eat &quot;"}
-            http://player.vimeo.com/video/27243869?api=1&player_id=player_2
-      %li
-        %a{:href => "#"}
-          =image_tag("/images/slide3.jpg")
-          %p
-            %span This is a campaign slide to a separate page
+%section.region-highlight.slider
+  .block.hero#block-hero.current
+    %i.icon-featured.element-hidden
+    %h2.block-title.element-hidden{"data-amtitle" => "Featured"}
+    .flexslider
+      %ul.slides
+        %li
+          #map.map
+        %li
+          %a{:href => "#"}
+            =image_tag("slide1.jpg")
+            %p
+              %span This is a line of text with a link
+        %li
+          %a{:href => "#"}
+            =image_tag("/images/slide2.jpg")
+            %p
+              %span We are now looking at the 2nd slide, this text is actually too long for the slide
+            %button.button.btn-primary take action
+        %li
+          .container-lazyload.preview-lazyload.container-youtube#youtube_1
+            %a.lazy-load-youtube.preview-lazyload.preview-youtube{:href => "https://www.youtube.com/watch?v=Vk94Qm0FZ5U", "video-title" => "Greenwire", :title => "Play Video Greenwire"}
+              https://www.youtube.com/watch?v=Vk94Qm0FZ5U
+        %li
+          .container-lazyload.preview-lazyload.container-vimeo#player_2
+            .lazy-load-vimeo.preview-lazyload.preview-vimeo#27243869{:title => "Play Video &quot; Eat &quot;"}
+              http://player.vimeo.com/video/27243869?api=1&player_id=player_2
+        %li
+          %a{:href => "#"}
+            =image_tag("/images/slide3.jpg")
+            %p
+              %span This is a campaign slide to a separate page
 
 = javascript_include_tag "leaflet"
 = javascript_include_tag "map-data"
@@ -39,6 +42,7 @@
   }),
   latlng = L.latLng(52.5, -2);
 
+
   var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
   var isDraggable = screenWidth > 480 ? true : false; 
   var mapOptions = {
@@ -46,10 +50,32 @@
       zoom: 5,
       scrollWheelZoom: false,
       layers: [tiles],
-      draggable: isDraggable
+      dragging: isDraggable
   };
   
   var map = L.map('map', mapOptions);
+
+  var dragFlag = false;
+  var start = 0, end = 0;
+
+  function thisTouchStart(e) {
+    dragFlag = true;
+    start = e.touches[0].pageY; 
+  }
+
+  function thisTouchEnd() {
+    dragFlag = false;
+  }
+
+  function thisTouchMove(e) {
+    if ( !dragFlag ) return;
+    end = e.touches[0].pageY;
+    window.scrollBy( 0,( start - end ) );
+  }
+
+  document.getElementById("map").addEventListener("touchstart", thisTouchStart, true);
+  document.getElementById("map").addEventListener("touchend", thisTouchEnd, true);
+  document.getElementById("map").addEventListener("touchmove", thisTouchMove, true);
 
   var markers = L.markerClusterGroup();
 

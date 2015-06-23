@@ -7,14 +7,16 @@ user_role: lu
 = partial :"blocks/breadcrumbs"
 
 .region-highlight
-  .block.current.hero
+  .block.hero#block-hero.current
+    %i.block-icon.icon-map.only-mobile
+    %h2.block-title.element-hidden{"data-amtitle" => "Group map"}
     #groupmap.map
 
 .l-main-column
   #content.block.current
     = partial :"blocks/lu/add-content"
     %i.block-icon.icon-bg-group.icon-users
-    %h1.block-title{"data-amtitle" => "Groups"}
+    %h1.block-title{"data-amtitle" => "Group list"}
       = current_page.data.title
     .content
       .tabwrapper

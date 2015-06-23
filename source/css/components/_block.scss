@@ -63,6 +63,10 @@
   float:left;
   margin: 0 $def-mar-half $def-mar-half 0;
 
+  @include breakpoint($wide) {
+    margin-right: 6px;
+  }
+
   img {
     width: 64px;
     height: 64px;

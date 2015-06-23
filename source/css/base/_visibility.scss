@@ -31,7 +31,7 @@
 }
 
 .hidden-mobile {
-  display: none;
+  display: none !important;
 
   @include breakpoint($desk) {
     display: block;

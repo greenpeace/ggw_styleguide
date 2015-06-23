@@ -81,7 +81,7 @@ menu:
               Start:
               %span.form-required{:title => "This field is required."} *
           .form-item.field-name-event-date-und-0-value-date
-            %input#edit-field-event-date-und-0-value-date.form-text.input-small.input-date.js-date-picker{:type => "date", :value => "", :placeholder => "date", :tabindex => "5"}
+            %input#edit-field-event-date-und-0-value-date.form-text.input-date.js-date-picker{:type => "date", :value => "", :placeholder => "date", :tabindex => "5"}
           .form-item.field-name-event-date-und-0-value-time
             %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time.js-time-picker{:type => "time", :value => "", :placeholder => "time", :tabindex => "6"}
         .form-wrapper.row
@@ -89,57 +89,59 @@ menu:
             %label
               End:
           .form-item.field-name-event-date-und-1-value-date
-            %input#edit-field-event-date-und-1-value-date.form-text.input-small.input-date.js-date-picker{:type => "date", :value => "", :placeholder => "date", :tabindex => "7"}
+            %input#edit-field-event-date-und-1-value-date.form-text.input-date.js-date-picker{:type => "date", :value => "", :placeholder => "date", :tabindex => "7"}
           .form-item.field-name-event-date-und-1-value-time
             %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time.js-time-picker{:type => "time", :value => "", :placeholder => "time", :tabindex => "8"}
 
         .form-wrapper.wrapper
 
-          .form-item.field-event-location
-            %label.form-label{:for => "edit-event-location"}
-              Location name
-            .form-description Name of the building, market etc. where the event is held. <br />Can be anything you like.
-            %input#edit-event-location.form-text{:name => "edit-event-location", :type => "text", :value => "", :placeholder => "venue name", :tabindex => "9"}/
+          .media-form-fields
 
-          .form-item.form-type-select.field-event-location-und-country
-            %label.form-label{:for => "country-select"}
-              Country
-              %span.form-required{:title => "This field is required."} *
-            %select#country-select.form-select{:name => "edit-event-location-und-country", :tabindex => "10", :onchange => "country_select_search()"}
-              %option{:value => ""} Please select
-              %option{:value => "un"} NOT LISTED
-              %option{:value => "au"} Australia
-              %option{:value => "be"} Belgium
-              %option{:value => "br"} Brazil
-              %option{:value => "ca"} Canada
-              %option{:value => "de"} Germany
-              %option{:value => "fi"} Finland
-              %option{:value => "fr"} France
-              %option{:value => "in"} India
-              %option{:value => "id"} Indonesia
-              %option{:value => "it"} Italy
-              %option{:value => "mx"} Mexico
-              %option{:value => "nl"} The Netherlands
-              %option{:value => "no"} Norway
-              %option{:value => "nz"} New Zealand
-              %option{:value => "ru"} Russia
-              %option{:value => "za"} South Africa
-              %option{:value => "se"} Sweden
-              %option{:value => "th"} Thailand
-              %option{:value => "ug"} Uganda
-              %option{:value => "us"} USA
-              %option{:value => "uk"} United Kingdom
+            .form-item.field-event-location
+              %label.form-label{:for => "edit-event-location"}
+                Location name
+              .form-description Name of the building, market etc. where the event is held. <br />Can be anything you like.
+              %input#edit-event-location.form-text{:name => "edit-event-location", :type => "text", :value => "", :placeholder => "venue name", :tabindex => "9"}/
 
-          .form-item.field-event-address
-            %label.form-label{:for => "edit-event-address"}
-              Address
-            .form-description We will attempt to calculate the coordinates from the supplied address.
-            %input#edit-event-address.form-text{:name => "edit-event-address", :type => "text", :value => "", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
-            #results
-            %a.small-link.modal-inline{:href => "#manual-coordinates-form"} add geocoordinates manually
+            .form-item.form-type-select.field-event-location-und-country
+              %label.form-label{:for => "country-select"}
+                Country
+                %span.form-required{:title => "This field is required."} *
+              %select#country-select.form-select{:name => "edit-event-location-und-country", :tabindex => "10", :onchange => "country_select_search()"}
+                %option{:value => ""} Please select
+                %option{:value => "un"} NOT LISTED
+                %option{:value => "au"} Australia
+                %option{:value => "be"} Belgium
+                %option{:value => "br"} Brazil
+                %option{:value => "ca"} Canada
+                %option{:value => "de"} Germany
+                %option{:value => "fi"} Finland
+                %option{:value => "fr"} France
+                %option{:value => "in"} India
+                %option{:value => "id"} Indonesia
+                %option{:value => "it"} Italy
+                %option{:value => "mx"} Mexico
+                %option{:value => "nl"} The Netherlands
+                %option{:value => "no"} Norway
+                %option{:value => "nz"} New Zealand
+                %option{:value => "ru"} Russia
+                %option{:value => "za"} South Africa
+                %option{:value => "se"} Sweden
+                %option{:value => "th"} Thailand
+                %option{:value => "ug"} Uganda
+                %option{:value => "us"} USA
+                %option{:value => "uk"} United Kingdom
 
-          .preview-location
-            #map{:style => "width: 100%; height: 100%;"}
+            .form-item.field-event-address
+              %label.form-label{:for => "edit-event-address"}
+                Address
+              .form-description We will attempt to calculate the coordinates from the supplied address.
+              %input#edit-event-address.form-text{:name => "edit-event-address", :type => "text", :value => "", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
+              #results
+  
+          .preview-location-wrapper
+            .preview-location{:style => "opacity: 0;"}
+              #map{:style => "width: 100%; height: 100%;"}
 
     %section#section-visibility.block
       %i.block-icon.icon-eye.icon-bg-action
@@ -420,6 +422,8 @@ menu:
     map.setView(latlng, 15, {animation: true});
     marker.setLatLng(latlng);
     $('#results').hide();
+    var mapwrapper = document.querySelector(".preview-location");
+    mapwrapper.style.opacity = 1;
   }
 
   function triggerUpload() {

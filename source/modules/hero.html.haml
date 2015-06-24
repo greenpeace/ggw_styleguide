@@ -7,16 +7,18 @@ direct_parent:
     name: "Styleguide"
     url: "/"
   -
-    name: "UI Components"
-    url: "./blocks.html"
+    name: "Modules"
+    url: "./breadcrumbs.html"
 
 layout: styleguide
+slider: yes
 ---
 
 = partial :"blocks/breadcrumbs"
 
 %aside.sidebar-first
-  = partial :"nav/uicomponents"
+  = partial :"nav/modules"
+  
 #content.l-main-column
   %section.block
     %i.block-icon.icon-info.icon-bg-default

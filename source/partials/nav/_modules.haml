@@ -1,0 +1,6 @@
+.block.block-sf-nav
+  %i.block-icon.icon-info.icon-bg-default
+  %h2.block-title Modules
+  .content
+    - data.nav.modules.each do |item|
+      =nav_link item.name , item.url, :class => 'sf-navbtn'

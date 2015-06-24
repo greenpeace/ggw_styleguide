@@ -35,7 +35,7 @@ $( window ).load(function() {
     fixedContentPos: true,
     callbacks: {
       ajaxContentAdded: function() {
-        $('.private-message-form input[type=file]').nicefileinput();
+        $('.comment-form input[type=file]').nicefileinput();
       }
     }
   });

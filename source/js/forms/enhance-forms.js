@@ -17,19 +17,18 @@ $(function() {
     catch(e){ return false; }
   }
 
-  // Selector styling wrapper
-  $('.form-item .form-select').wrap('<div class="selector"></div>');
-
   // Apply chosen to select element.
   $(".chosen-select").chosen({width: "100%"});
 
   // Pass focused state to visible parent element.
-  $('.form-item .form-select').focus(function(){
-    $(this).parent('.selector').addClass('focused');
-  });
-  $('.form-item .form-select').blur(function(){
-    $(this).parent('.selector').removeClass('focused');
-  });
+  $('.form-item .form-select')
+    .wrap('<div class="selector"></div>')
+    .focus(function(){
+      $(this).parent('.selector').addClass('focused');
+    })
+    .blur(function(){
+      $(this).parent('.selector').removeClass('focused');
+    });
 
   // attach datepicker plugin to date input fields
   if ( isMobile() == false ) {
@@ -65,22 +64,10 @@ $(function() {
 
   // toggle a fieldset  with a link
   $('#more-options-fieldset').hide();
-  $('#toggle-more-options').click(function(event) {
-    event.preventDefault();
+  $('#toggle-more-options').click(function(e) {
+    e.preventDefault();
     $(this).next('.collapsible-fieldset-wrapper').slideToggle(400);
   });
-
-  var cookies_accepted = $.cookie("cookie_acceptance");
-
-  $('#hide-cookies').click(function(event) {
-    $(this).closest('.cookiewall').hide();
-    $.cookie('cookie_acceptance', 'is_dismissed', { expires: 7, path: '/' });
-    event.preventDefault();
-  });
-
-  if (cookies_accepted != 'is_dismissed') {
-    $('.cookiewall').removeClass('element-hidden');
-  }
 
   showErrorIcons();
 

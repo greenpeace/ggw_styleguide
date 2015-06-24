@@ -25,5 +25,11 @@
               %li.menu-item
                 =nav_link item.name , item.url, :class => 'menu-link'
         %li.menu-item
+          =nav_link 'Modules', data.nav.modules.first['url'],  :class => 'menu-link'
+          %ul.menu
+            - data.nav.modules.each do |item|
+              %li.menu-item
+                =nav_link item.name , item.url, :class => 'menu-link'
+        %li.menu-item
           =nav_link 'Prototype', '/prototype/index.html',  :class => 'menu-link'
 

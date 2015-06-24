@@ -34,13 +34,7 @@ comp:
   -
     name: "Images"
     url: "/components/images.html"
-  -
-    name: "Breadcrumbs"
-    url: "/components/breadcrumbs.html"
-  -
-    name: "Hero / Slideshow"
-    url: "/components/hero.html"
-  -
+
     name: "Pagination"
     url: "/components/pagination.html"
   -
@@ -52,10 +46,19 @@ comp:
   -
     name: "Teasers"
     url: "/components/teasers.html"
+
+# Modules menu
+modules:
+  -
+    name: "Breadcrumbs"
+    url: "/modules/breadcrumbs.html"
+  -
+    name: "Hero / Slideshow"
+    url: "/modules/hero.html"
   -
     name: "Comments"
-    url: "/components/comments.html"
-
+    url: "/modules/comments.html"
+  
 # Documentation menu
 docs:
   -

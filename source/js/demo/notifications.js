@@ -140,4 +140,16 @@ $(function() {
 
   }
 
+  var cookies_accepted = $.cookie("cookie_acceptance");
+
+  $('#hide-cookies').click(function(event) {
+    $(this).closest('.cookiewall').hide();
+    $.cookie('cookie_acceptance', 'is_dismissed', { expires: 7, path: '/' });
+    event.preventDefault();
+  });
+
+  if (cookies_accepted != 'is_dismissed') {
+    $('.cookiewall').removeClass('element-hidden');
+  }
+
 });

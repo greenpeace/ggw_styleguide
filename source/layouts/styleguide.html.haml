@@ -11,14 +11,14 @@
     %title=page_title
 
     = javascript_include_tag "lazysizes", :async => ""
+    = javascript_include_tag "modernizr.js", :async => ""
+    
     /[if lte IE 8]
       = javascript_include_tag "html5shiv.min", :async => ""
 
     <!--[if (gte IE 9)|(gt IEMobile 7)|(!IE)]><!-->
     = stylesheet_link_tag "all"
     <!--<![endif]-->
-
-    = javascript_include_tag "modernizr.js"
 
     // for regression testing we use the old simple way of including the font
     = stylesheet_link_tag "fonticons.woff"
@@ -48,8 +48,16 @@
       = partial :"nav/footer"
 
 
-    = javascript_include_tag "all"
+    = javascript_include_tag "base"
+    = javascript_include_tag "forms", :async => ""
+    = javascript_include_tag "modal", :async => ""
     = javascript_include_tag "styleguide"
+
+    - if current_page.data.slider
+      = javascript_include_tag "flexslider", :async => ""
+
+    - if current_page.data.comments
+      = javascript_include_tag "comments", :async => ""
 
     /[if lte IE 8]
       = stylesheet_link_tag "old-ie"

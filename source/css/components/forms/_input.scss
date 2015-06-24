@@ -50,6 +50,7 @@ textarea {
   margin-left: -1.5em;
   top: 0;
   line-height: normal;
+  pointer-events: none; //prevent icon being clickable
 }
 
 // hide two icons in chrome that hide a part of the selected date.

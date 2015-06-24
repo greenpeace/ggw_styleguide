@@ -34,7 +34,7 @@
   display: none !important;
 
   @include breakpoint($desk) {
-    display: block;
+    display: block !important;
   }
 }
 

@@ -199,15 +199,6 @@
 
 .l-sidebar {
 
-  .page-profile &,
-  .page-group-home & {
-    margin: 0 $def-mar-half;
-
-    @include breakpoint($desk) {
-      margin: 0;
-    }
-  }
-
   @include breakpoint($desk) {
     position: relative;
     display: block;
@@ -312,10 +303,4 @@
   display: block;
   height: auto;
   margin: 0 0 14px;
-}
-
-@include breakpoint($desk) {
-  .deskwidth50 {
-    width: 49.5%;
-  }
 }

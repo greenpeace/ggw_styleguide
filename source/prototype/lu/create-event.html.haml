@@ -83,7 +83,7 @@ menu:
           .form-item.field-name-event-date-und-0-value-date
             %input#edit-field-event-date-und-0-value-date.form-text.input-date.js-date-picker{:type => "date", :value => "", :placeholder => "date", :tabindex => "5"}
           .form-item.field-name-event-date-und-0-value-time
-            %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time.js-time-picker{:type => "time", :value => "", :placeholder => "time", :tabindex => "6"}
+            %input#edit-field-event-date-und-0-value-time.form-text.input-time.js-time-picker{:type => "time", :value => "", :placeholder => "time", :tabindex => "6"}
         .form-wrapper.row
           .inline-label
             %label
@@ -91,7 +91,7 @@ menu:
           .form-item.field-name-event-date-und-1-value-date
             %input#edit-field-event-date-und-1-value-date.form-text.input-date.js-date-picker{:type => "date", :value => "", :placeholder => "date", :tabindex => "7"}
           .form-item.field-name-event-date-und-1-value-time
-            %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time.js-time-picker{:type => "time", :value => "", :placeholder => "time", :tabindex => "8"}
+            %input#edit-field-event-date-und-1-value-time.form-text.input-time.js-time-picker{:type => "time", :value => "", :placeholder => "time", :tabindex => "8"}
 
         .form-wrapper.wrapper
 
@@ -203,6 +203,8 @@ menu:
           .form-item.form-type-select
             %label.form-label{:for => "organisersinput"} Organisers
             %select#organisersinput.chosen-select{"data-placeholder" => "Select organisers...", :multiple => "multiple", :tabindex => "11"}
+              %option{:value => "", :selected => ""}
+                Grace O'Flynn
               - 50.times do |num|
                 :preserve
                   <option>

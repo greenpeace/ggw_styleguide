@@ -37,28 +37,32 @@ $(function() {
       showAttentionIcons();
     }
 
+    $(document).on('click', function() {
+      $('.form-sent').fadeOut('slow');
+    });
+
   }
 
 
   $('#send-private-message .form-comment-submit').click(function(e) {
     $.magnificPopup.close();
-    $('<div class="absolute_message"><div class="form-sent form-success"><i class="icon icon-mail"></i> <p>A private message has been sent.</p></div></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
+    $('<div class="absolute_message"><div class="form-sent form-success"><p>A private message has been sent.</p></div></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
   });
 
   $('#send-message .form-comment-submit').click(function(e) {
     $.magnificPopup.close();
-    $('<div class="absolute_message"><div class="form-sent form-success"><i class="icon icon-comment"></i> <p>A message is sent to the selected attendees.</p></div></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
+    $('<div class="absolute_message"><div class="form-sent form-success"><p>A message is sent to the selected attendees.</p></div></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
   });
 
   $('#send-email .form-comment-submit').click(function(e) {
     $.magnificPopup.close();
-    $('<div class="absolute_message"><div class="form-sent form-success"><i class="icon icon-mail"></i> <p>An email is sent to all selected attendees.</p></div></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
+    $('<div class="absolute_message"><div class="form-sent form-success"><p>An email is sent to all selected attendees.</p></div></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
   });
 
   $('#confirm-friend-request').click(function(e) {
     $.magnificPopup.close();
     $('#button-friend-request').addClass('disabled').text('Friend request has been sent.');
-    $('<div class="absolute_message"><div class="form-sent form-success"><i class="icon icon-mail"></i> <p>Your friend request has been sent.</p></div></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
+    $('<div class="absolute_message"><div class="form-sent form-success"><p>Your friend request has been sent.</p></div></div>').insertBefore('.l-main').show().delay(5000).fadeOut('slow');
   });
 
 

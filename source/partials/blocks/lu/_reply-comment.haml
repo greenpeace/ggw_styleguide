@@ -1,6 +1,24 @@
-#reply-comment.block.white-popup.mfp-hide
+#reply-comment.block.white-popup.mfp-hide.block-comments
   %i.block-icon.icon-comment.icon-bg-action
   %h2.block-title Reply
+  .content
+
+    %article.comment.media
+      .avatar-holder.media-figure
+        %a{:href => "./profile.html", :title => "View user profile"}
+          %img.lazyload{:alt => "Dora Tilman", :src => "/images/blank.png", "data-srcset" => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
+          %noscript
+            %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
+      .comment-holder.media-body
+        .comment-head
+          %a.comment-author{:href => "./profile.html", :title => "View profile"}
+            = lorem.name
+        .comment-body
+          This is non Greenpeace related so apologies! Is anyone interested in going for a short treck to go see the cascade of Osmington Mills this week end?
+        .comment-footer
+          %span.comment-timestamp 5 minutes ago
+          %span.comment-actions
+            %a.comment-actionlink.modal-inline{:href => "#reply-comment"} reply
 
   .content
     .comment-form-holder

@@ -7,17 +7,13 @@
 
 }
 
-@include breakpoint($desk) {
-  .l-has-sidebar-first {
+.l-has-sidebar-first .l-main-column .block,
+.l-has-sidebar-first .l-main-column .section-submit {
+  margin: $def-mar-half;
 
-    .l-main-column .block {
-      display: block;
-      clear: none;
-      margin: 0 0 $def-mar 0;
-    }
-
+  @include breakpoint($desk) {
+    margin: 0 0 $def-mar 0;
   }
-
 
 }
 

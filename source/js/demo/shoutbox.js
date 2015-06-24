@@ -172,7 +172,7 @@ $(function() {
   $('.block-comments .form-comment-submit').click(function(event) {
      event.preventDefault();
     $('html, body').animate({scrollTop: 0}, 300);
-    $('<div class="form-sent form-success"><i class="icon icon-check"></i> <p>Your comment has been posted.</p></div>').insertBefore('.l-main').hide().slideDown('slow').delay(6000).slideUp();
+    $('<div class="absolute_message"><div class="form-sent form-success"> <p>Your comment has been posted.</p></div></div>').insertBefore('.l-main').hide().slideDown('slow').delay(6000).slideUp();
     $('.remove-image').addClass('element-hidden');
     $('.comment-body .remove-image, .comment-body .close-linkinfo').remove();
   });

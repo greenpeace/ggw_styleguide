@@ -35,7 +35,7 @@ $(function() {
 
     $('.js-date-picker')
       .pickadate({
-        format: 'd mmmm yyyy',
+        format: 'dd mmmm yyyy',
         formatSubmit: 'yyyy/mm/dd'
       })
       .addClass('date-field')

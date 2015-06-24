@@ -80,52 +80,54 @@ menu:
         %i.block-icon.icon-calendar.icon-bg-action
         %h2.block-title Date and location
         .content
-          .form-wrapper.row.deskwidth50
+          .form-wrapper.row
             .inline-label
               %label
                 Start:
                 %span.form-required{:title => "This field is required."} *
             .form-item.field-name-event-date-und-0-value-date
-              %input#edit-field-event-date-und-0-value-date.form-text.input-small.input-date.js-date-picker{:type => "date", :value => "#{item.event_start_date}", :placeholder => "date", :tabindex => "5"}
+              %input#edit-field-event-date-und-0-value-date.form-text.input-date.js-date-picker{:type => "date", "data-value" => "#{item.event_start_date}", :value => "#{item.event_start_date}", :placeholder => "date", :tabindex => "5"}
             .form-item.field-name-event-date-und-0-value-time
-              %input#edit-field-event-date-und-0-value-time.form-text.input-small.input-time.js-time-picker{:type => "time", :value => "#{item.event_start_time}", :placeholder => "time", :tabindex => "6"}
-          .form-wrapper.row.deskwidth50
+              %input#edit-field-event-date-und-0-value-time.form-text.input-time.js-time-picker{:type => "time", :value => "#{item.event_start_time}", :placeholder => "time", :tabindex => "6"}
+          .form-wrapper.row
             .inline-label
               %label
                 End:
             .form-item.field-name-event-date-und-1-value-date
-              %input#edit-field-event-date-und-1-value-date.form-text.input-small.input-date.js-date-picker{:type => "date", :value => "#{item.event_end_date}", :placeholder => "date", :tabindex => "7"}
+              %input#edit-field-event-date-und-1-value-date.form-text.input-date.js-date-picker{:type => "date", "data-value" => "#{item.event_end_date}", :value => "#{item.event_end_date}", :placeholder => "date", :tabindex => "7"}
             .form-item.field-name-event-date-und-1-value-time
-              %input#edit-field-event-date-und-1-value-time.form-text.input-small.input-time.js-time-picker{:type => "time", :value => "#{item.event_end_time}", :placeholder => "time", :tabindex => "8"}
+              %input#edit-field-event-date-und-1-value-time.form-text.input-time.js-time-picker{:type => "time", :value => "#{item.event_end_time}", :placeholder => "time", :tabindex => "8"}
 
           .form-wrapper.wrapper
 
-            .form-item.field-event-location
-              %label.form-label{:for => "edit-event-location"}
-                Location name
-              .form-description Name of the building, market etc. where the event is held. <br />Can be anything you like.
-              %input#edit-event-location.form-text{:name => "edit-event-location", :type => "text", :value => "#{item.location_name}", :placeholder => "venue name", :tabindex => "9"}/
+            .media-form-fields
 
-            .form-item.form-type-select.field-event-location-und-country
-              %label.form-label{:for => "country-select"}
-                Country
-                %span.form-required{:title => "This field is required."} *
-              %select#country-select.chosen-select{"data-placeholder" => "Select one or more groups", :tabindex => "10", :onchange => "country_select_search()"}
-                - for country in data.countries.countries
-                  %option{:value => "#{country}"}
-                    #{country}
-                %option{:value => "", :selected => "UK"} United Kingdom
+              .form-item.field-event-location
+                %label.form-label{:for => "edit-event-location"}
+                  Location name
+                .form-description Name of the building, market etc. where the event is held. <br />Can be anything you like.
+                %input#edit-event-location.form-text{:name => "edit-event-location", :type => "text", :value => "#{item.location_name}", :placeholder => "venue name", :tabindex => "9"}/
 
-            .form-item.field-event-address
-              %label.form-label{:for => "edit-event-address"}
-                Address
-              .form-description We will attempt to calculate the coordinates from the supplied address.
-              %input#edit-event-address.form-text{:name => "edit-event-address", :type => "text", :value => "#{item.address}", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
-              #results
-              %a.small-link.modal-inline{:href => "#manual-coordinates-form"} add geocoordinates manually
+              .form-item.form-type-select.field-event-location-und-country
+                %label.form-label{:for => "country-select"}
+                  Country
+                  %span.form-required{:title => "This field is required."} *
+                %select#country-select.chosen-select{"data-placeholder" => "Select one or more groups", :tabindex => "10", :onchange => "country_select_search()"}
+                  - for country in data.countries.countries
+                    %option{:value => "#{country}"}
+                      #{country}
+                  %option{:value => "", :selected => "UK"} United Kingdom
 
-            .preview-location
-              #map{:style => "width: 100%; height: 100%;"}
+              .form-item.field-event-address
+                %label.form-label{:for => "edit-event-address"}
+                  Address
+                .form-description We will attempt to calculate the coordinates from the supplied address.
+                %input#edit-event-address.form-text{:name => "edit-event-address", :type => "text", :value => "#{item.address}", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
+                #results
+
+            .preview-location-wrapper
+              .preview-location
+                #map{:style => "width: 100%; height: 100%;"}
 
       %section#section-visibility.block
         %i.block-icon.icon-eye.icon-bg-action
@@ -213,22 +215,6 @@ menu:
       .form-actions.form-wrapper
         %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "./event-full-organiser_changed.html#form-saved"}
           %a.button.btn-l{:href => "./events.html", :tabindex => "8"} Cancel
-
-  #manual-coordinates-form.block.white-popup.mfp-hide
-    %i.block-icon.icon-map.icon-bg-action
-    %h2.block-title Add coordinates of your event
-    .content
-      %form
-        .form-wrapper
-          .form-item
-            %label.form-label{:for => "latitude"} Latitude
-            %input.form-text#latitude{:type => "text", :value => ""}
-          .form-item
-            %label.form-label{:for => "longitude"} Longitude
-            %input.form-text#longitude{:type => "text", :value => ""}
-        .form-actions.form-wrapper
-          %input{:type => "submit", :class => "button btn-primary", :value => "Submit"}
-          %input{:type => "submit", :class => "button btn-close", :value => "Cancel"}
 
 
 = javascript_include_tag "leaflet"

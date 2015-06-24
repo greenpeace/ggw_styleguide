@@ -66,7 +66,7 @@
 }
 
 .comment {
-  padding: $def-mar-half 0;
+  margin-top: $def-mar + 5px;
   line-height: 1.1em;
 
   &:last-child {
@@ -76,6 +76,7 @@
 
 .comment-reply {
   margin-left: 45px + $def-mar;
+  margin-top: $def-mar-half;
 
   @include breakpoint($desk) {
     margin-left: 60px + $def-mar;

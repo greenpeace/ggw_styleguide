@@ -178,18 +178,15 @@
 }
 
 .preview-location-wrapper {
-  transform: translateY(-91px);
   overflow: hidden;
-  margin-bottom: -91px;
 }
 
 .preview-location {
   width: 90%;
-  height: 220px;
+  height: 240px;
 
   @include breakpoint($desk) {
     width: 100%;
-    height: 335px;
   }
 
 }

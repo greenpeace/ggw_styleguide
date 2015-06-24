@@ -97,7 +97,7 @@ $(function() {
     showErrorIcons();
   });
 
-  $(document).click(function(e) {
+  $(document).on('click', function() {
     $('.form-sent').fadeOut('slow');
   });
 

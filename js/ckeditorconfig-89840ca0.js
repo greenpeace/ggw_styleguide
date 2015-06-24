@@ -1,1 +1,1 @@
-CKEDITOR.config.toolbar=[["Bold","Italic","RemoveFormat"],["NumberedList","BulletedList"],["Format"],["Image","Link","Unlink"],["Source"]],CKEDITOR.config.contentsCss=["/css/all-f71b9684.css","/css/x-editable-d461df1c.css"];
+CKEDITOR.config.toolbar=[["Bold","Italic","RemoveFormat"],["NumberedList","BulletedList"],["Format"],["Image","Link","Unlink"],["Source"]],CKEDITOR.config.contentsCss=["/css/all-d449170c.css","/css/x-editable-1983f25e.css"];

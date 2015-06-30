@@ -18,7 +18,9 @@ $(function() {
   }
 
   // Apply chosen to select element.
-  $(".chosen-select").chosen({width: "100%"});
+  if ( isMobile() == false ) {
+    $(".chosen-select").chosen({width: "100%"});
+  }
 
   // Pass focused state to visible parent element.
   $('.form-item .form-select')

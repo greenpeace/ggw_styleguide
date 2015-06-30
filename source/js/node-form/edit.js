@@ -19,7 +19,14 @@ $(function() {
       e.preventDefault();
     });
 
+    $('.field-event-roles-values').sortable({
+      handle: '.tabledrag-handle',
+      items: ':not(.disabled)'
+    });
+
   });
+
+
 
   $('#section-social .form-select').on('change', function() {
     var channel = {fb: 'http://www.facebook.com/username', tw: 'http://www.twitter.com/username', in: 'http://www.linkedin.com/username', pi: 'http://www.pinterest.com/username', gp: 'http://plus.google.com/username', vk: 'http://www.vk.com/username'};
@@ -141,7 +148,7 @@ $(function() {
   });
 
 
-    formmodified=0;
+    var formmodified=0;
     $('form *').change(function(){
         formmodified=1;
     });

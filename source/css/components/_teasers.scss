@@ -95,6 +95,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     line-height: 1.5em;
+    padding-left: 20px;
 
     label {
       display: none;
@@ -107,6 +108,8 @@
 
     @include breakpoint($tab) {
       margin-bottom: 4px;
+      display: block;
+      padding-left: 0;
     }
 
   }
@@ -169,15 +172,10 @@
 
     }
 
-    .teaser-comments {
-      display: inline-block;
-
-      &:before {
-        @extend %load-icon;
-        @extend %icon-comment;
-        width: 1.2em;
-      }
-
+    .teaser-comments:before {
+      @extend %load-icon;
+      @extend %icon-comment;
+      width: 1.2em;
     }
 
     span {
@@ -285,6 +283,25 @@
 
 .node-teaser-event {
 
+  .submitted {
+    position: absolute;
+
+    @include breakpoint($tab) {
+      position: relative;
+    }
+  }
+
+  .created-date,
+  .node-teaser-author,
+  .teaser-comments {
+    display: none;
+
+    @include breakpoint($tab) {
+      display: inline-block;
+    }
+
+  }
+
   &.event-subscribed {
     .field-type-date {
       padding-left: 32px;
@@ -293,15 +310,6 @@
         padding: 0;
       }
     }
-  }
-
-  .submitted {
-    position: absolute;
-
-    @include breakpoint($tab) {
-      position: relative;
-    }
-
   }
 
 }

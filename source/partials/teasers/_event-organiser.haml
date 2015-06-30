@@ -11,10 +11,10 @@
         .submitted
           %a.type.event{:href => "./events.html"} Event
           %span.created-date
-          = succeed ", by" do
-            = item.date
+            = succeed ", by" do
+              = item.date
           - if current_page.data.user_role != "an"
-            %a{:href => "./my-profile.html"}
+            %a.node-teaser-author{:href => "./my-profile.html"}
               = item.author
           - else
             = item.author.downcase.tr(' ', '_')
@@ -22,15 +22,15 @@
             - if item.comment_amount
               %a.teaser-comments{:href => "./event-full-organiser.html#block-comments"}
                 = item.comment_amount
-      .field-type-date
-        %label Event Time:
-        %span
-          = item.event_date
-      .field-type-location
-        %label Address:
-        %span
-          = succeed " - " do
-            = item.location_name
-          = succeed ", " do
-            = item.address
-          = item.city
+        .field-type-date
+          %label Event Time:
+          %span
+            = item.event_date
+        .field-type-location
+          %label Address:
+          %span
+            = succeed " - " do
+              = item.location_name
+            = succeed ", " do
+              = item.address
+            = item.city

@@ -1,7 +1,5 @@
 
-.event-actions {
-  margin: $def-mar 0;
-}
+
 
 .page-type-event .block .field {
   margin: 0;
@@ -24,8 +22,10 @@
 
 }
 
-@include breakpoint($desk) {
-  .event-actions {
+.event-actions {
+  margin: $def-mar 0;
+
+  @include breakpoint($desk) {
     @include element-hidden;
   }
 

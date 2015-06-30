@@ -35,7 +35,7 @@ comments: yes
 
           .field-name-gallery
             - for photo in item.photos
-              %a.album-thumbnail{:href => "/photos/#{photo.url}", :title => "View large image"}
+              %a.album-thumbnail{:href => "/photos/#{photo.url}", :title => "Description for this image"}
                 %img.lazyload{:alt => "#{photo.caption}", :src => "/images/blank.png", "data-src" => "/photos/96/#{photo.url}" }
                 %noscript
                   %img{:alt => "#{photo.caption}", :src => "/photos/96/#{photo.url}" }

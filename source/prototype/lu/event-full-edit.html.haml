@@ -203,11 +203,15 @@ menu:
                 Roles & maximum of people needed
               .form-description Enter the roles to which the users can subscribe to. Example: Driver (9:00 - 13:00).
 
-              .row.clone-item
-                .form-item.edit-field-event-roles-und-0-human{:style => "margin-top:7px;"}
-                  %input#edit-field-event-roles-und-0-human.form-text{:size => "29", :type => "text", :value => "", :placeholder => "describe the role", :tabindex => "12"}
-                .form-item.field-event-roles-und-0-role-limit{:style => "margin-top:7px;"}
-                  %input#edit-field-event-roles-und-0-role-limit.form-text.number-field{:type => "number", :value => "", :min => "1", :max => "9999", :step => "1", :placeholder => "max. no.", :tabindex => "13"}
+              %ul.field-event-roles-values
+                %li.row.clone-item
+                  .form-item{:style => "margin-top:7px;"}
+                    .field-multiple-drag
+                      .tabledrag-handle
+                  .form-item.edit-field-event-roles-und-0-human{:style => "margin-top:7px;"}
+                    %input#edit-field-event-roles-und-0-human.form-text{:size => "29", :type => "text", :value => "", :placeholder => "describe the role", :tabindex => "12"}
+                  .form-item.field-event-roles-und-0-role-limit{:style => "margin-top:7px;"}
+                    %input#edit-field-event-roles-und-0-role-limit.form-text.number-field{:type => "number", :value => "", :min => "1", :max => "9999", :step => "1", :placeholder => "max. no.", :tabindex => "13"}
               %a.small-link.clone-trigger{:href => "#"} add another role
 
 

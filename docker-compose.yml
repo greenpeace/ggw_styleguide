@@ -1,0 +1,7 @@
+middleman:
+  build: .
+  container_name: middleman
+  ports:
+   - "4568:4567"
+  volumes:
+   - ./styleguide:/styleguide

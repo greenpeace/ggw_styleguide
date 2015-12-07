@@ -10,7 +10,7 @@ compass_config do |config|
   config.output_style = :expanded
 end
 
-activate :livereload, :host => "127.0.0.1"
+activate :livereload #, :host => "192.168.99.100"
 
 activate :syntax
 
@@ -65,7 +65,7 @@ page "*/random-private-message*.html", :layout => false
 #   end
 # end
 
-#sprockets.append_path File.join "#{root}", "/source/libraries"
+sprockets.append_path File.join "#{root}", "/source/libraries"
 
 set :css_dir, 'css'
 set :js_dir, 'js'

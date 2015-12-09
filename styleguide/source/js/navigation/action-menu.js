@@ -55,20 +55,20 @@ $(function() {
         $target = $(target);
 
         var st = $(this).offset().top; 
-        console.log(st);
 
+        // extra offset for nav height
+        // When scrolling down we need 50 + a bit more.
+        // when scrolling up we need 100 + a bit more.
         if (st > lastScrollTop){
           var extraOffset = 60;
         } else {
           var extraOffset = 110;
         }
 
-        console.log(extraOffset);
-
         lastScrollTop = st;
 
         $('html, body').stop().animate({
-            'scrollTop': $target.offset().top - extraOffset // - 100px (nav-height)
+            'scrollTop': $target.offset().top - extraOffset
         }, 900, 'swing', function () {
             window.location.hash = target;
         });

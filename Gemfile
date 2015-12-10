@@ -36,5 +36,4 @@ gem 'middleman-title'
 
 #Deploy Middleman build via rsync, ftp, sftp, or git (e.g. gh-pages on github).
 gem 'middleman-deploy'
-gem "rb-inotify"
 gem "therubyracer"

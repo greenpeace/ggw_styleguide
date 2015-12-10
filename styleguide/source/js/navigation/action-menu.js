@@ -42,9 +42,37 @@ $(function() {
       var blockLabel = $(this).find('.block-title').attr("data-amtitle");
 
       // build the nav item
-      var menuItem = "<li><a href='#"+ blockId +"' class='tab'><i class='icon "+ blockIconClass +"'></i>"+ blockLabel +" </a></li>";
+      var menuItem = "<li><a href='#"+ blockId +"' class='tab' data-scroll=''><i class='icon "+ blockIconClass +"'></i>"+ blockLabel +" </a></li>";
       $(menuItem).appendTo($('nav.action-menu .tabs'));
+
     });
+
+    var lastScrollTop = 0;
+
+      $('a[data-scroll]').on('click',function (e) {
+        e.preventDefault();
+        var target = this.hash,
+        $target = $(target);
+
+        var st = $(this).offset().top; 
+
+        // extra offset for nav height
+        // When scrolling down we need 50 + a bit more.
+        // when scrolling up we need 100 + a bit more.
+        if (st > lastScrollTop){
+          var extraOffset = 60;
+        } else {
+          var extraOffset = 110;
+        }
+
+        lastScrollTop = st;
+
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top - extraOffset
+        }, 900, 'swing', function () {
+            window.location.hash = target;
+        });
+      });
 
   });
 
@@ -164,24 +192,23 @@ $(function() {
   if (window.location.hash) {
     var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
     if (hash.match("^block") ) {
-      $('.action-menu li, .region-highlight .current, .l-main-column .current, .sidebar .current').removeClass('current');
-      $('#' + hash).addClass('current');
+      $('.action-menu li').removeClass('current');
       $('.action-menu li a[href="#' + hash + '"]').parent().addClass('current');
+      var target = hash,
+        $target = $('#' + target);
+      $('html, body').animate({
+            'scrollTop': $target.offset().top - 110 // - 100px (nav-height)
+        }, 900, 'swing');
     }
 
   }
 
   $('.action-menu .tab').click(function(e){
 
-    $('.action-menu li, .region-highlight .current, .l-main-column .current, .sidebar .current').removeClass('current');
+    $('.action-menu li').removeClass('current');
     $(this).parent().addClass('current');
-    var currentTab = $(this).attr('href');
-    $(currentTab).addClass('current');
 
     e.preventDefault();
-
-    var scrollTo = $('body').offset().top - 50;
-    $(window).scrollTop(scrollTo);
 
     if ($('input[type=file]').length != 0) {
       $('input[type=file]').nicefileinput();
@@ -201,7 +228,7 @@ $(function() {
 
     // Click on another button to trigger a action menu item switch
     $('.show-block').click(function(e){
-      $('.action-menu li, .l-main-column .current, .sidebar .current').removeClass('current');
+      $('.action-menu li').removeClass('current');
       var currentTab = $(this).attr('href');
 
       $('.action-menu li a').each(function() {
@@ -211,10 +238,7 @@ $(function() {
         }
       });
 
-      $(currentTab).addClass('current');
-
       e.preventDefault();
-      $('html, body').animate({scrollTop: 0}, 300);
 
     });
 

@@ -172,9 +172,6 @@ primary_lu:
       -
         name: "Ideas"
         url: "/prototype/lu/ideas.html"
-      -
-        name: "Materials"
-        url: "/prototype/lu/materials.html"
   -
     name: "Info"
     url: "#"

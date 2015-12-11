@@ -4,3 +4,4 @@ libraries/backstopjs/bitmaps_test
 **/*/.DS_Store
 .idea/
 .DS_Store
+styleguide/build

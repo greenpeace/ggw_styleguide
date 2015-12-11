@@ -33,6 +33,33 @@ design_status: Work in progress
         :code
           #lang: bash
           $ git clone git@github.com:greenpeace/ggw_styleguide.git
+      %h2.section-heading Running the styleguide locally
+      :markdown
+        To simplify the development workflow a [Docker](https://www.docker.com/) config is available. First you will need to install docker. Then open the docker quickstart terminal and go to your project directory and type:
+
+      #example
+        :code
+          # lang: bash
+          $ docker-compose up -d
+      :markdown
+        This command will build a container based on docker-compose.yml and Dockerfile located at the root of the project directory.
+        It may take a while to build as docker will download and build all the dependencies.
+        Once this is done, you should be able then see the site at [http://192.168.99.100:4568](http://192.168.99.100:4568)
+        You can get a terminal to execute commands inside the container with the following:
+
+      #example
+        :code
+          # lang: bash
+          $ docker exec -it middleman bash
+      :markdown
+        To check if the docker container is running you can try the following command:
+
+      #example
+        :code
+          # lang: bash
+          $ docker ps
+          CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                    NAMES
+          19c82396f1f8        ggwstyleguide_middleman   "/bin/sh -c 'middlema"   16 minutes ago      Up 16 minutes       0.0.0.0:4568->4567/tcp   middleman
       %h2.section-heading Middleman
       :markdown
         We are using [Middleman](http://middlemanapp.com/) to generate this styleguide. Middleman is a command-line tool for creating static websites using all the shortcuts and tools of the modern web development environment.

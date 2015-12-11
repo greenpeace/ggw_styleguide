@@ -1,1 +1,0 @@
-$(".js-selectall").click(function(){$(this).closest("table").find(".form-checkbox").prop("checked",this.checked)});

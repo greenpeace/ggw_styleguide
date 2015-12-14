@@ -268,14 +268,8 @@
 
 .l-two-column,
 .l-has-sidebar {
-  .l-main .block {
-    display: none;
-    height: 0;
-
-    &.current {
-      display: block;
-      height: auto;
-    }
+  .l-main .block {  
+    margin: $def-mar $def-mar-half;
 
     @include breakpoint($desk) {
       display: block;
@@ -290,13 +284,6 @@
 
 .no-sidebar .l-main .block {
   margin: $def-mar-half;
-}
-
-.l-main-column,
-.l-sidebar {
-  .block.current {
-    margin: $def-mar-half;
-  }
 }
 
 .no-js .l-main .block {

@@ -1,35 +1,40 @@
 #!/usr/bin/env bash
-#stop original docker contianer to make sure middleman is not running.
-#echo "Stopping and removing running docker containers."
-#docker-compose stop middleman
-#docker-compose rm
-#
-## Do a build of middleman in a new container.
-#rm -rf styleguide/build
-#echo "Removed the styleguide/build directory."
-#
-#echo "Starting a new middleman build."
-#
-## Run the middleman build command inside the docker container.
-#docker-compose run --service-ports middleman bash /ggw_styleguide/middleman_build.sh
-#
-## Publish the new build on the local device.
-#cd styleguide/build/
-#
-#git init .
+stop original docker contianer to make sure middleman is not running.
+echo "Stopping and removing running docker containers."
+docker-compose stop middleman
+docker-compose rm
 
-git remote add https://github.com/greenpeace/ggw_styleguide.git
+# Do a build of middleman in a new container.
+cd styleguide/build/
 
-# Checkout ot the gh-pages branch.
+# Fetch git repository for the first time.
+if [ ! -d ".git" ]; then
+  echo "Initial git repository for styleguide/build to publish to gh-pages."
+  git init .
+  git remote add origin https://github.com/greenpeace/ggw_styleguide.git
+  git fetch origin gh-pages
+fi
+
 git checkout gh-pages
 
+echo "Starting a new middleman build."
+
+# Go back to the project root.
+cd ../../
+
+# Run the middleman build command inside the docker container.
+docker-compose run --service-ports middleman bash /ggw_styleguide/middleman_build.sh
+
+# Publish the new build on the local device.
+cd styleguide/build/
+
+# Add the changes.
 git add -A
 
-git commit -m "Automatic new build of the gh-pages"
+DATE=`date +%Y-%m-%d:%H:%M:%S`
+
+git commit -m " Automated commit at $DATE by deploy script using middleman build"
 
 git push origin gh-pages
-
-# Now remove the git repository.
-rm -rf ./.git/
 
 

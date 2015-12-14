@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-stop original docker contianer to make sure middleman is not running.
+# Stop original docker container to make sure middleman is not running.
 echo "Stopping and removing running docker containers."
 docker-compose stop middleman
-docker-compose rm
 
 # Do a build of middleman in a new container.
 cd styleguide/build/
@@ -10,8 +9,12 @@ cd styleguide/build/
 # Fetch git repository for the first time.
 if [ ! -d ".git" ]; then
   echo "Initial git repository for styleguide/build to publish to gh-pages."
+  cd ../
+  rm -rf build
+  mkdir build
+  cd build/
   git init .
-  git remote add origin https://github.com/greenpeace/ggw_styleguide.git
+  git remote add origin git@github.com:greenpeace/ggw_styleguide.git
   git fetch origin gh-pages
 fi
 

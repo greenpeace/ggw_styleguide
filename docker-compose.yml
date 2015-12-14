@@ -1,8 +1,9 @@
 middleman:
   build: .
   container_name: middleman
+  command: bash
   ports:
    - "4568:4567"
    - "35729:35729"
   volumes:
-   - ./styleguide:/styleguide
+   - .:/ggw_styleguide

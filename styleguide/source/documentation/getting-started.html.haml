@@ -60,6 +60,21 @@ design_status: Work in progress
           $ docker ps
           CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                    NAMES
           19c82396f1f8        ggwstyleguide_middleman   "/bin/sh -c 'middlema"   16 minutes ago      Up 16 minutes       0.0.0.0:4568->4567/tcp   middleman
+      :markdown
+        An alternative way to start the docker container without middleman starting by default is to use the command:
+
+      #example
+        :code
+          # lang: bash
+          $ docker-compose run --service-ports middleman bash
+      :markdown
+        In order to publish the changes to the static pages that are deployed on <http://ggw-prototype.goalgorilla.com> the following command can be used:
+
+      #example
+      :code
+          # lang: bash
+          $ sh middleman_deploy.sh
+
       %h2.section-heading Middleman
       :markdown
         We are using [Middleman](http://middlemanapp.com/) to generate this styleguide. Middleman is a command-line tool for creating static websites using all the shortcuts and tools of the modern web development environment.

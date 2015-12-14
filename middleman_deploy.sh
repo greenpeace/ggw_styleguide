@@ -18,7 +18,9 @@ if [ ! -d ".git" ]; then
   git fetch origin gh-pages
 fi
 
+git fetch
 git checkout gh-pages
+git merge origin/gh-pages
 
 echo "Starting a new middleman build."
 

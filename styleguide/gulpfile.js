@@ -37,9 +37,9 @@ var asset_dir = {
 };
 
 var path = {
-  site: asset_dir.site,
-  js: asset_dir.js,
-  css: asset_dir.css,
+  site: asset_dir.source + '/' + asset_dir.site,
+  js: asset_dir.source + '/' + asset_dir.js,
+  css: asset_dir.source + '/' + asset_dir.css,
   sass: asset_dir.source + '/' + asset_dir.css + '/' + asset_dir.sass
 };
 

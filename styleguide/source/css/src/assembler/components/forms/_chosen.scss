@@ -236,7 +236,7 @@
       margin: 3px 5px;
       padding: .3em 20px .3em .6em;
       background: $secondary;
-      background-image: linear-gradient($secondary, darken($secondary, 3%));
+      background: linear-gradient(to bottom, $secondary, darken($secondary, 3%));
       max-width: 100%;
       border-radius: 3px;
       border: 1px solid $grey-l;
@@ -265,7 +265,7 @@
       padding-right: 5px;
       border: 1px solid #ccc;
       background-color: #e4e4e4;
-      background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
+      background: linear-gradient(to bottom, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
       color: #666;
     }
     &.search-choice-focus {

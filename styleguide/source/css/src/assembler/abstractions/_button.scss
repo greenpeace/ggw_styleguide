@@ -1,6 +1,6 @@
 @mixin button {
   background: $secondary;
-  background-image: linear-gradient($secondary, darken($secondary, 3%));
+  background: linear-gradient(to bottom, $secondary, darken($secondary, 3%));
   display: inline-block;
   cursor: pointer;
   border-radius: 3px;

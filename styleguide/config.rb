@@ -1,7 +1,7 @@
 # Combine media queries at bottom of document
 require 'uglifier'
 
-activate :livereload #, :host => "192.168.99.100"
+#activate :livereload, :host => "192.168.99.100"
 
 activate :syntax
 

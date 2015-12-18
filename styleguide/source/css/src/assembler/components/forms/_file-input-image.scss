@@ -16,7 +16,7 @@
   @extend %load-icon;
   @extend %icon-camera;
   background: $secondary;
-  background-image: linear-gradient($secondary, darken($secondary, 3%));
+  background: linear-gradient(to bottom, $secondary, darken($secondary, 3%));
   cursor: pointer;
   border-radius: 3px;
   border: 1px solid $grey-l;

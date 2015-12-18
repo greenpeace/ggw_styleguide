@@ -33,6 +33,10 @@ design_status: Work in progress
         :code
           #lang: bash
           $ git clone git@github.com:greenpeace/ggw_styleguide.git
+      %h2.section-heading Middleman
+      :markdown
+        We are using [Middleman](http://middlemanapp.com/) to generate this styleguide. Middleman is a command-line tool for creating static websites using all the shortcuts and tools of the modern web development environment.
+
       %h2.section-heading Running the styleguide locally
       :markdown
         To simplify the development workflow a [Docker](https://www.docker.com/) config is available. First you will need to install docker. Then open the docker quickstart terminal and go to your project directory and type:
@@ -68,84 +72,43 @@ design_status: Work in progress
           # lang: bash
           $ docker-compose run --service-ports middleman bash
       :markdown
-        In order to publish the changes to the static pages that are deployed on <http://ggw-prototype.goalgorilla.com> the following command can be used:
-
-      #example
-      :code
-          # lang: bash
-          $ sh middleman_deploy.sh
-
-      %h2.section-heading Middleman
-      :markdown
-        We are using [Middleman](http://middlemanapp.com/) to generate this styleguide. Middleman is a command-line tool for creating static websites using all the shortcuts and tools of the modern web development environment.
-
-        #### Installing
-        First of all, Middleman is a Ruby gem (a packaged Ruby library) so you’ll need Ruby running on your machine (see .ruby-version file in project root folder) along with [Bundler](http://bundler.io/) (A Ruby package management tool). There’s a comprehensive Ruby install guide for Mac [here](http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/), and for [Windows](http://rubyinstaller.org/) here. Although Middleman is a Ruby library, you won’t need to have an understanding of Ruby to get started.
-
-        You also need to be fairly comfortable with a terminal as Middleman requires the command line to run its tasks. However, you won’t need to know much, just how to run some simple commands.
-
-        To get started we need to install the Middleman gem. You can read all about what a Gem is and how it works [here](http://guides.rubygems.org/what-is-a-gem/).
-
-      #example
-        :code
-          # lang: bash
-          $ gem install middleman
-      :markdown
-        You may need to run it with 'sudo', depending upon your system permissions.
-        If all has gone well, you should be able to run
-
-      #example
-        :code
-          # lang: bash
-          $ middleman version
-      %h4 Ruby gems
-      :markdown
-        Ruby Gems are a kind of library or plug-in. It’s some functionality that you’ll install to fill a specific need. Examples of ruby gems we use are Sass, Compass, Middleman and Autoprefix.
-
-        Navigate to the middleman folder in your terminal and run
-      #example
-        :code
-          # lang: bash
-          $ bundle
-      :markdown
-        This will read the gems listed in the Gemfile and install them (and their dependencies) on your machine. We have also set a ruby version for this project. This way you can use multiple ruby versions on your machine next to each other. (see .ruby-version file)
-
-      %h2.section-heading The Development Cycle (middleman server)
-
-      :markdown
-        The Middleman separates your development and production code from the start. This allows you to utilize a bevy of tools (such as Haml, Sass, CoffeeScript, etc.) during development that are unnecessary or undesirable in production. We refer to these environments as The Development Cycle and the Static Site.
-
-        The vast majority of time spent using Middleman will be in the Development Cycle.
-
-        From the command-line, start the preview web-server from inside your project folder:
-
-      #example
-        :code
-          # lang: bash
-          $ cd /path-to-project/middleman
-          $ bundle exec middleman server
-      :markdown
-        or use the short command:
-      #example
-        :code
-          # lang: bash
-          $ middleman
-      :markdown
-        This will start a local web server running at: http://localhost:4567/
-
-        You can create and edit files in the source folder and see the changes reflected on the preview web-server.
-
         You can stop the preview server from the command-line using CTRL-C.
 
-      %h2.section-heading Exporting the Static Site (middleman build)
+      %h2.section-heading Publishing the static site (middleman deploy)
       :markdown
-        Finally, when you are ready to deliver static code or, in the case of "blog mode", host a static blog, you will need to build the site. Using the command-line, from the project folder, run middleman build:
+        Finally, when you are ready to deliver static code, you will need to build and deploy the site. From within the root of the container execute sh middleman_deploy.sh. This will first create a new build and then checkout to the gh-pages branch and push the changes there. You can also do a 
+        %code sh middleman_build.sh
+        to check your changes before deploying.
 
       #example
         :code
           # lang: bash
-          $ middleman build
+          $ sh middleman_deploy.sh
+      %h2.section-heading Changing CSS
       :markdown
-        This will create a static file for each file located in your source folder. Template files will be compiled, static files will be copied and any enabled build-time features (such as compression) will be executed. Middleman will automatically clean out files from the build directory for you that are left over from earlier builds but would no longer be produced.
+        All CSS that is used is generated with GulpJS. This is also what you need to have installed locally (not part of Docker container).
+
+        In the project folder you will find a package.json file. In this file you find all the gulp plugins you need. 
+
+        First make sure you have gulp installed on your machine:
+
+        ```
+        $ npm install --global gulp
+        ```
+
+        To install the gulp plugins and gulp itself in the project you can simple run the following commands from the theme (this) folder.
+
+        ```
+        $ npm install
+        ```
+
+        To start compiling you scss files into css, you can use the following gulp task:
+
+        ```
+        $ gulp
+        ```
+
+        What this task does can be found in the gulpfile (default). It will automically open the styleguide in your browser, including livereload. You do not have to use this feature each time you work on the theme, it is just default behavior of the gulp tasks.
 
 
+  

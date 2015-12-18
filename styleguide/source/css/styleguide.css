@@ -61,7 +61,11 @@ code {
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8; }
 
-code.html:after, code.haml:after, code.javascript:after, code.json:after, code.css:after {
+code.html:after,
+code.haml:after,
+code.javascript:after,
+code.json:after,
+code.css:after {
   position: absolute;
   top: 0;
   right: -1px;
@@ -411,7 +415,8 @@ code.json:after {
     color: #fff;
     font-weight: normal; }
 
-  .l-has-sidebar-first .l-two-column .l-main-column, .l-has-sidebar-first .l-two-column .l-sidebar {
+  .l-has-sidebar-first .l-two-column .l-main-column,
+  .l-has-sidebar-first .l-two-column .l-sidebar {
     float: left;
     position: relative;
     width: 50%;

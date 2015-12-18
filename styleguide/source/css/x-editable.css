@@ -55,7 +55,8 @@
       -webkit-flex: 0 1 auto;
           -ms-flex: 0 1 auto;
               flex: 0 1 auto; }
-  .file-row .image-name, .file-row .btn-upload {
+  .file-row .image-name,
+  .file-row .btn-upload {
     display: none; }
   .file-row .name {
     width: 100%;
@@ -104,7 +105,8 @@
 .file-row .delete {
   display: none; }
 
-.file-row.dz-success .start, .file-row.dz-success .cancel {
+.file-row.dz-success .start,
+.file-row.dz-success .cancel {
   display: none; }
 
 .file-row.dz-success .delete {
@@ -130,14 +132,12 @@
 @-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 40px 0; }
-
   to {
     background-position: 0 0; } }
 
 @keyframes progress-bar-stripes {
   from {
     background-position: 40px 0; }
-
   to {
     background-position: 0 0; } }
 
@@ -174,52 +174,52 @@
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .image-preview.pdf {
-  background: url('../images/filetypes/pdf.png') 50% 50% no-repeat;
+  background: url("../images/filetypes/pdf.png") 50% 50% no-repeat;
   width: 68px;
   height: 68px; }
 
 .image-preview.xls {
-  background: url('../images/filetypes/xls.png') 50% 50% no-repeat;
+  background: url("../images/filetypes/xls.png") 50% 50% no-repeat;
   width: 68px;
   height: 68px; }
 
 .image-preview.xlsx {
-  background: url('../images/filetypes/xlsx.png') 50% 50% no-repeat;
+  background: url("../images/filetypes/xlsx.png") 50% 50% no-repeat;
   width: 68px;
   height: 68px; }
 
 .image-preview.doc {
-  background: url('../images/filetypes/doc.png') 50% 50% no-repeat;
+  background: url("../images/filetypes/doc.png") 50% 50% no-repeat;
   width: 68px;
   height: 68px; }
 
 .image-preview.docx {
-  background: url('../images/filetypes/doc.png') 50% 50% no-repeat;
+  background: url("../images/filetypes/doc.png") 50% 50% no-repeat;
   width: 68px;
   height: 68px; }
 
 .image-preview.ppt {
-  background: url('../images/filetypes/ppt.png') 50% 50% no-repeat;
+  background: url("../images/filetypes/ppt.png") 50% 50% no-repeat;
   width: 68px;
   height: 68px; }
 
 .image-preview.pptx {
-  background: url('../images/filetypes/ppt.png') 50% 50% no-repeat;
+  background: url("../images/filetypes/ppt.png") 50% 50% no-repeat;
   width: 68px;
   height: 68px; }
 
 .image-preview.odt {
-  background: url('../images/filetypes/odt.png') 50% 50% no-repeat;
+  background: url("../images/filetypes/odt.png") 50% 50% no-repeat;
   width: 68px;
   height: 68px; }
 
 .image-preview.odp {
-  background: url('../images/filetypes/otp.png') 50% 50% no-repeat;
+  background: url("../images/filetypes/otp.png") 50% 50% no-repeat;
   width: 68px;
   height: 68px; }
 
 .image-preview.ods {
-  background: url('../images/filetypes/ods.png') 50% 50% no-repeat;
+  background: url("../images/filetypes/ods.png") 50% 50% no-repeat;
   width: 68px;
   height: 68px; }
 
@@ -323,7 +323,8 @@
   width: 90%;
   height: 240px; }
 
-.leaflet-marker-icon, .leaflet-marker-shadow {
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
   transition: margin .2s; }
 
 .field-multiple-drag {
@@ -339,7 +340,7 @@
   display: block;
   width: 20px;
   height: 20px;
-  background: url('../images/draggable.png') 5px 6px no-repeat; }
+  background: url("../images/draggable.png") 5px 6px no-repeat; }
 
 .field-event-roles-values .sortable-placeholder {
   height: 35px; }
@@ -388,7 +389,8 @@
   .file-row > div {
     border-top: 1px solid #ccc; }
 
-  .file-row .image-name, .file-row .btn-upload {
+  .file-row .image-name,
+      .file-row .btn-upload {
     display: inline-block; }
 
   .file-row .button {

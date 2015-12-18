@@ -1,15 +1,5 @@
 .block-search
   %form.search-form{"accept-charset" => "UTF-8", :action => "search.html", :method => "get"}
-    .form-item-searchtype.form-type-select
-      %select.form-select
-        %option All
-        %option News &amp; media
-        %option Events
-        %option Groups
-        - if current_page.data.user_role == "an"
-          %option{:disabled => "disabled"} Members
-        - else
-          %option Members
     .form-item-search
       %i.icon-search
       %input.form-text{:maxlength => "128", :name => "search", :placeholder => "Search", :size => "60", :type => "text"}/

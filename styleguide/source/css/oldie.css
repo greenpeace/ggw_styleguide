@@ -1,6 +1,6 @@
 @charset "UTF-8";
 *, *:after, *:before {
-  box-sizing: content-box; }
+  box-sizing: border-box; }
 
 .button, .pager.pager-load-more li a {
   background: #f5f5f5;
@@ -5591,7 +5591,7 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
 
 .block-search {
   position: relative;
-  width: 285px;
+  width: 200px;
   bottom: 10px;
   position: absolute;
   right: 10px; }
@@ -5627,7 +5627,6 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     border: 1px solid #56b004;
     border-radius: 3px;
     padding: 3px 6px;
-    padding-left: 100px;
     font-style: normal; }
   .search-form .form-submit {
     opacity: 0;

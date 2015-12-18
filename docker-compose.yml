@@ -5,4 +5,4 @@ middleman:
    - "4568:4567"
    - "35729:35729"
   volumes:
-   - ./styleguide:/styleguide
+   - .:/ggw_styleguide

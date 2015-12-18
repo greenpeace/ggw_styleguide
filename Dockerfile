@@ -6,9 +6,9 @@ RUN gem install bundler
 ADD ./Gemfile Gemfile
 RUN bundle install
 
-ADD ./styleguide styleguide
+ADD . /ggw_styleguide
 
-WORKDIR styleguide
+WORKDIR /ggw_styleguide/styleguide
 
 EXPOSE 4567
 EXPOSE 35729

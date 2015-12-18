@@ -1,0 +1,1 @@
+$(function(){$(".comment-form textarea").autogrow({animate:!1}),$(".comment-form input[type=file]").nicefileinput(),$("#shoutbox-comment").maxlength({max:255,feedbackTarget:"#remain",feedbackText:"{r} characters remaining"})});

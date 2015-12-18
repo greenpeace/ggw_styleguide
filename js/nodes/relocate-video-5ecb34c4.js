@@ -1,1 +1,0 @@
-$(function(){0!=$(".page-type-video .container-lazyload").length&&$(window).width()>899&&$(".page-type-video .container-lazyload").insertBefore(".l-main-column")});

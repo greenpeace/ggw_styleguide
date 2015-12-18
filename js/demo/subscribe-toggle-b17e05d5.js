@@ -1,1 +1,0 @@
-$(function(){$("#subscribe-toggle").on("click",function(){$(this).text(function(i,text){return"Follow"===text?"Unfollow":"Follow"}),$(this).toggleClass("active")})});

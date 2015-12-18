@@ -1,0 +1,184 @@
+article {
+  @extend %clearfix;
+}
+
+.node-full {
+
+  .main-content .block-icon {
+    display: none;
+
+    @include breakpoint($desk) {
+      display: block;
+    }
+  }
+
+  .main-content .block-title {
+    margin: 0;
+    @include font-size($h3);
+
+    @include breakpoint($desk) {
+      @include font-size($h4);
+      margin-left: 30px;
+    }
+
+  }
+
+  .main-content .content {
+    margin-top: $def-mar-half;
+
+    @include breakpoint($desk) {
+      //margin-top: $def-mar + 10px;
+      margin-top: $def-mar;
+    }
+
+  }
+
+  .editable .block-title {
+    margin-right: 60px;
+  }
+
+  .submitted {
+
+    .type:before {
+      @extend %load-icon;
+      display: inline-block;
+      top: -1px;
+      position: relative;
+      min-width: 1em;
+      margin-right: .2em;
+    }
+
+    span {
+      vertical-align: top;
+    }
+
+    @include breakpoint($tab) {
+
+      .type {
+        width: auto;
+
+        &:before {
+          margin-right: .2em;
+        }
+
+      }
+
+    }
+
+  }
+
+  .submitted-extended {
+    padding: $def-mar;
+    background: $background;
+    border-radius: 3px;
+    margin: $def-mar 0 0;
+  }
+
+  .field-name-document {
+    padding: 0;
+
+    .type {
+      @include font-size($p);
+      width: auto;
+      display: block;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
+
+    .type:before {
+      @extend %load-icon;
+      display: inline-block;
+      top: -1px;
+      position: relative;
+      width: 1em;
+      margin-right: .2em;
+    }
+
+  }
+
+}
+
+.view-mode-full {
+
+  .field-group-format {
+    margin: $def-mar 0;
+    background: $background;
+  }
+
+  .field-name-body {
+    margin: $def-mar 0 0;
+    @extend %clearfix;
+  }
+
+  .field {
+    padding: $def-mar-half $def-mar;
+    @include font-size($small);
+  }
+
+  .field-label {
+    @extend %element-invisible;
+
+    + div {
+      margin-left: 2em;
+    }
+
+    + div:before {
+      @extend %load-icon;
+      @include font-size($h3);
+      margin-left: -1.25em;
+      position: absolute;
+      width: 1em;
+    }
+
+  }
+
+}
+
+.comments-shortcut {
+  white-space: nowrap;
+
+  @include breakpoint($smalltab) {
+    float: right;
+  }
+
+}
+
+.tags,
+.shortcut,
+.submitted,
+.submitted a {
+  @extend %fontsizesmall;
+}
+
+.submitted,
+.submitted-info {
+  @include media;
+}
+
+.submitted .icon:before {
+  margin: 0 .2em 0 .1em;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+.submitted-origin {
+  display: inline-block;
+}
+
+.submitted-image {
+  float: left;
+  margin-right: 10px;
+
+  img {
+    display: block;
+  }
+}
+
+.submitted-date {
+  display: inline-block;
+}
+
+.tags a {
+  text-transform: lowercase;
+  font-style: italic;
+}

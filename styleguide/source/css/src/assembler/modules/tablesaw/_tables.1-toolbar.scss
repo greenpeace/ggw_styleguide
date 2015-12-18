@@ -1,0 +1,146 @@
+.tablesaw-bar {
+  position: absolute;
+  right: 0;
+  margin-top: -42px;
+}
+
+.mode-swipe .tablesaw-advance {
+  @extend .btn-group;
+}
+
+.tablesaw-nav-btn {
+  float: left;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @if $old-ie {
+    display: none;
+  }
+
+  &.left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &.right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+  }
+
+  &:before {
+    @extend %load-icon;
+    color: $heading;
+    @include font-size($h4);
+  }
+
+  &.left:before {
+    @extend %icon-left-open;
+  }
+
+  &.right:before {
+    @extend %icon-right-open;
+  }
+
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+
+    &:before {
+      color: $grey-l;
+    }
+  }
+
+}
+
+.tablesaw-bar .btn-select select {
+  background: none;
+  border: none;
+  display: block;
+  position: absolute;
+  font-weight: inherit;
+  left: 0;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  min-height: 1em;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  display:inline-block;
+  color: transparent;
+  
+  option {
+    background: #fff;
+    color: #000;
+    font-family: sans-serif;
+  }
+
+}
+
+.tablesaw-enhanced .tablesaw-bar .btn-select {
+  margin-left: .4em;
+  padding-right: 2em;
+  min-width: 7.25em;
+}
+
+.tablesaw-bar .tablesaw-toolbar .btn-select {
+	min-width: 0;
+}
+
+.tablesaw-bar .tablesaw-toolbar .btn-select:after {
+  display: inline-block;
+  position: absolute;
+  right: .6em;
+  top: .6em;
+  content: '';
+  height: 0;
+  width: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid $grey-d;
+}
+
+.tablesaw-bar .tablesaw-toolbar select {
+	color: #888;
+	text-transform: none;
+	background: transparent;
+  display: inline-block;
+}
+
+.tablesaw-columntoggle-btn:after {
+  height: 0;
+  width: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid $grey-d;
+  display: inline-block;
+  content: '';
+  vertical-align: bottom;
+  margin-left: 3px;
+}
+
+.tablesaw-toolbar ~ table {
+	clear: both;
+}
+.tablesaw-toolbar .a11y-sm {
+	clip: rect(0 0 0 0);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+}
+@media (min-width: 24em) {
+	.tablesaw-toolbar .a11y-sm {
+		clip: none;
+		height: auto;
+		width: auto;
+		position: static;
+		overflow: visible;
+	}
+}

@@ -1,0 +1,96 @@
+
+// ---------------------
+// Pagination
+// ---------------------
+
+.pager {
+  max-width: 768px;
+  margin: 1em auto 2em;
+  text-align: center;
+  line-height: normal;
+  @extend %clearfix;
+
+  li {
+    margin: 0 .2em;
+    
+    a {
+      display: inline-block;
+      user-select: none;
+      padding: .6em .8em;
+      color: $base;
+      font-size: $p;
+      border: 1px solid $grey-l;
+      border-radius: 3px;
+
+      &:active {
+        transform: scale(0.9);
+      }
+
+    }
+
+  }
+
+  &.pager-load-more li a {
+    @extend %button;
+  }
+
+}
+
+.no-touch .pager a:hover {
+  background-color: $grey-sl;
+}
+
+.pager-item {
+  display: none;
+
+  @include breakpoint($tab) {
+    display: inline-block;
+  }
+
+}
+
+.pager-ellipsis,
+.pager-first,
+.pager-last {
+  display: none;
+
+  @include breakpoint($tab) {
+    display: inline-block;
+  }
+
+}
+
+.pager-current {
+  display: none;
+
+  @include breakpoint($tab) {
+    display: inline-block;
+    background-color: $green5;
+    border: 1px solid $green2;
+    border-radius: 3px;
+    color: $white;
+    pointer-events: none;
+    padding: .6em .8em;
+    font-size: $p;
+  }
+}
+
+
+.pager-previous,
+.pager-next {
+  display: inline-block;
+}
+
+@include breakpoint($tab) {
+
+  .pager-first,
+  .pager-previous {
+    float: left;
+  }
+  
+  .pager-last,
+  .pager-next {
+    float: right;
+  }
+  
+}

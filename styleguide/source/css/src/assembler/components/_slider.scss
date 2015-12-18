@@ -1,0 +1,174 @@
+// Browser Resets
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+
+// FlexSlider Necessary Styles
+.flexslider {
+  margin: 0;
+  padding: 0;
+}
+
+.slides > li {-webkit-backface-visibility: hidden; display: none; position: relative;} // Hide the slides before the JS is loaded. Avoids image jumping
+
+
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+@if $old-ie {
+  * html .slides {height: 1%;}
+}
+// No JavaScript Fallback */
+// If you are not using another script, such as Modernizr, make sure you
+// include js that eliminates this class on page load
+.no-js .slides > li:first-child {display: block;}
+
+// FlexSlider Default Theme
+
+.flexslider {
+
+  @include breakpoint($tab) {
+    @include block-rich;
+    padding: 0;
+  }
+
+  @include breakpoint($desk) {
+    margin: $def-mar 0;
+    padding: 4px;
+  }
+
+  &.active {
+    margin-bottom: (2 * $def-mar);
+
+    @include breakpoint($desk) {
+      margin-bottom: (3 * $def-mar);
+    }
+
+  }
+}
+
+.flex-viewport {
+  max-height: 2000px;
+  transition: all 1s ease;
+
+  //@include breakpoint($desk) {
+  //  min-height: 340px;
+  //}
+
+}
+
+
+.loading .flex-viewport { max-height: 300px; }
+.flexslider .slides { zoom: 1; }
+.carousel li { margin-right: 5px; }
+
+// Direction Nav
+.flex-direction-nav {
+  @if $old-ie {
+    *height: 0;
+  }
+
+  a  {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: -20px 0 0;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    overflow: hidden;
+    opacity: 0;
+    cursor: pointer;
+    color: $white;
+    background: #000;
+    transition: all .3s ease;
+    text-align: center;
+  }
+
+  .flex-prev {
+    left: -50px;
+  }
+
+  .flex-next {
+    right: -50px;
+  }
+
+}
+
+@include breakpoint($tab) {
+  .flexslider:hover {
+
+    .flex-prev {
+      opacity: 0.9;
+      left: 0;
+    }
+
+    .flex-next {
+      opacity: 0.9;
+      right: 0;
+    }
+
+    .flex-next:hover,
+    .flex-prev:hover {
+      opacity: 1;
+    }
+
+  }
+}
+
+.flex-direction-nav {
+
+  .flex-disabled {
+    opacity: 0!important;
+    filter:alpha(opacity=0);
+    cursor: default;
+  }
+
+  a:before  {
+    @extend %load-icon;
+    font-size: 40px;
+    line-height:1;
+    padding: 5px;
+    display: inline-block;
+    @extend %icon-left-open-big;
+  }
+
+
+  a.flex-next:before  {
+    @extend %icon-right-open-big;
+  }
+
+}
+
+// Control Nav
+.flex-control-nav {
+  width: 100%;
+  position: absolute;
+  bottom: -35px;
+  text-align: center;
+
+  @include breakpoint($desk) {
+    bottom: -40px;
+  }
+
+  li {
+    margin: 0 6px;
+    display: inline-block;
+    @if $old-ie {
+      zoom: 1;
+      *display: inline;
+    }
+  }
+
+}
+
+.flex-control-paging li a {width: 11px; height: 11px; display: block; background: #666; background: rgba(0,0,0,0.5); cursor: pointer; text-indent: -9999px; border-radius: 20px; box-shadow: inset 0 0 3px rgba(0,0,0,0.3); }
+.flex-control-paging li a:hover { background: #333; background: rgba(0,0,0,0.7); }
+.flex-control-paging li a.flex-active { background: #000; background: rgba(0,0,0,0.9); cursor: default; }

@@ -1,0 +1,256 @@
+@include breakpoint($desk) {
+  p,
+  q,
+  dl,
+  li,
+  code,
+  .form-text,
+  textarea,
+  legend,
+  select {
+    @include font-size($p);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2em;
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding: 0;
+  }
+}
+
+li li {
+  font-size: 1em;
+}
+
+dt {
+  color: $heading;
+  font-weight: 700;
+
+  em {
+    font-weight: 300;
+  }
+
+}
+
+dd {
+  margin-bottom: .5em;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid $background;
+  margin: .4em 0;
+}
+
+a {
+  color: $green5;
+  text-decoration: none;
+}
+
+.content .button:hover,
+.content .item-list a:hover {
+  text-decoration: none;
+}
+
+.content .external {
+  background-position: 100% -128px;
+  padding-right: 14px;
+}
+
+article {
+
+  p {
+    margin: .65em 0 .95em;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 10px;
+    padding: 0 0 0 20px;
+  }
+
+  ol ol,
+  ul ul {
+    margin-bottom: 0;
+    padding: 0 0 0 $def-mar;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  // headings
+  #{headings()} {
+    margin: 10px 0;
+    color: $heading;
+  }
+
+  $headings: h1, h2, h3, h4, h5, h6;
+  $size: $h1, $h2, $h3, $h4, $h5, $h6;
+
+  $head-size: zip($headings, $size);
+
+  @each $a in $head-size {
+    #{nth($a, 1)} {
+      @if $old-ie {
+        font-size: nth($a, 2);
+      } @else {
+        font-size: (nth($a, 2) / $base-font-size)*1rem;
+      }
+    }
+  }
+
+  q {
+    font-style: italic;
+    quotes: '\201C' '\201D' '\2018' '\2019';
+  }
+
+  blockquote {
+    border-left: 3px solid $green2;
+    font-style: italic;
+    margin-left: 5%;
+    padding-left: 1.25em;
+    quotes: '\201C' '\201D' '\2018' '\2019';
+  }
+
+
+  @include breakpoint($desk) {
+    p a {
+      text-decoration: underline;
+
+      &:hover {
+        color: darken($green5, 10%);
+      }
+    }
+  }
+
+}
+
+::selection {
+  background: $green1;
+  color: $white;
+  text-shadow: none;
+}
+
+.small-link {
+  @include font-size($p);
+  display: block;
+}
+
+.list {
+  @extend %list;
+}
+
+.item-list a {
+  display: block;
+
+  &:before {
+    padding-right: $def-mar-half;
+    @extend %load-icon;
+    @extend %icon-right-open-mini;
+  }
+
+  &:hover {
+    color: darken($green5, 10%);
+  }
+
+  &.sublevel {
+    padding-left: 1em;
+  }
+
+}
+
+.align-center {
+  text-align: center;
+}
+
+// section are used when we have multiple sections inside a page/article that need clear seperation
+.section-heading {
+  @include font-size($h4);
+  color: $heading;
+  line-height: 1rem; // must be able to span multiple lines
+  margin: .5em 0 1em;
+  padding-top: 10px;
+}
+
+.group-heading {
+  @include font-size($h4);
+  color: $green2;
+  line-height: 1rem; // must be able to span multiple lines
+  margin: $def-mar $def-mar-half;
+
+  i {
+    @include font-size($p);
+    vertical-align: text-top;
+  }
+
+  span {
+    display: inline-block;
+  }
+}
+
+@include breakpoint($desk) {
+  .l-has-sidebar .sidebar p {
+    margin: .35em 0 .65em;
+  }
+}
+
+.node-title {
+  @include font-size(16px);
+  color: $green5;
+  line-height: 1.2em;
+  margin: 0 0 3px;
+  max-height: 2.4em; //equals two line-heights
+  overflow: hidden;
+
+  .map &,
+  .sidebar & {
+    @include font-size(14px);
+  }
+
+  @include breakpoint($tab) {
+    margin-bottom: 5px;
+  }
+
+  a {
+    @extend %block;
+  }
+
+  .username {
+    color: $grey-m;
+    font-weight: 300;
+    font-size: .85em;
+  }
+
+}
+
+@include breakpoint($desk) {
+  .node-teaser .body-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

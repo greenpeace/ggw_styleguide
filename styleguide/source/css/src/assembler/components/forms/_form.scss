@@ -1,0 +1,184 @@
+// each form item is wrapped
+.form-wrapper {
+  @extend %clearfix;
+  margin-bottom: $def-mar;
+
+  .button {
+    margin-top: 5px;
+  }
+
+}
+
+.form-title {
+  @include font-size(16px);
+  margin: .5em 0 1em;
+}
+
+.form-actions p {
+  margin: 0;
+}
+
+.form-item {
+  margin-bottom: $def-mar;
+
+  .sidebar & {
+    margin-bottom: $def-mar-half;
+    width: 100%;
+    line-height: normal;
+  }
+
+  .mfp-content & {
+    margin-bottom: $def-mar;
+  }
+
+}
+
+.sidebar .node-form,
+.sidebar .views-exposed-widget {
+  margin-top: $def-mar;
+}
+
+label {
+  font-weight: 700;
+  display: block;
+  @include font-size($p);
+
+  .sidebar & {
+    line-height: 1.5em;
+  }
+
+}
+
+.collapsible-fieldset-wrapper {
+  max-width: (400px - $def-mar);
+  margin: -$def-mar 0 $def-mar 0;
+  padding: $def-mar $def-mar 0;
+  border: 1px solid $grey-l;
+  border-radius: 3px;
+
+  @include breakpoint($smalltab) {
+    margin-left: $def-mar;
+
+    .form-item {
+      
+    }
+
+    .form-label {
+      display: inline-block;
+      width: 56%;
+      font-weight: 300;
+      line-height: 1.3em;
+    }
+
+    .selector {
+      display: inline-block;
+      width: 40%;
+    }
+
+  }
+
+}
+
+// labels for checkboxes
+.option {
+  font-weight: 300;
+  display: inline;
+  vertical-align: middle;
+}
+
+.form-required {
+  color: $error;
+}
+
+.form-description {
+  font-size: $small;
+  color: $grey-d;
+  line-height: 1.2em;
+}
+
+.form-description,
+.form-description + .form-text,
+.form-description + .chosen-select,
+.form-description + .selector,
+.form-description + .chosen-select + .chosen-container,
+.form-description + .form-text + .form-feedback {
+  margin-top: $def-mar-half;
+}
+
+.form-label + .form-description,
+.media-body .form-description {
+  margin-top: 0;
+}
+
+
+//
+// Inline fields (multiple fields on the same line)
+// used in search filters with two dates
+
+.inline-fields {
+  display: flex;
+  margin-bottom: $def-mar-half;
+
+  .form-item {
+    margin: 0;
+  }
+
+  // In case we to to have the input and select on one line
+  .form-type-textfield + .form-type-select {
+    width: auto;
+    min-width: 5em;
+  }
+
+  .separator {
+    margin: 0 .5em;
+    display: inline-block;
+    flex: 1 0 auto; // must not not shrink
+    line-height: 1.9em; // default line-height plus padding inside .form-text
+  }
+
+}
+
+// class can be used to eliminate the maximum width of 400px;
+.fullwidth {
+  input,
+  textarea {
+    max-width: none;
+    resize: vertical;
+  }
+}
+
+// explain what a form item is for, usually triggers a modal window
+.explain-label-trigger {
+  margin-left: .5em;
+  font-weight: 300;
+  text-decoration: underline;
+  @include font-size($small);
+}
+
+.show-more-options {
+  @include font-size($p);
+  display: block;
+  margin: 0 0 (2 * $def-mar);
+
+  &:before {
+    @extend %load-icon;
+    @extend %icon-right-open;
+    margin-right: .5em;
+  }
+}
+
+// browser specific
+.lt-ie9 {
+  .page-register .date-padding .form-item {
+    width: 100px;
+  }
+}
+
+// used at login form
+@include breakpoint($tab) {
+  form.flexrow {
+    @include clearfix;
+    display: flex;
+    flex-flow: row no-wrap;
+  }
+}

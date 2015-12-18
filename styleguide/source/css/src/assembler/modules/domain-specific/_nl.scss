@@ -1,0 +1,31 @@
+.domain-nl {
+
+  // REGISTER
+
+  @include breakpoint($tab) {
+
+    .field-name-field-user-initials {
+      width:14.89362%; 
+      clear:right;
+      float:left;
+      margin-left:0;
+      margin-right:2.12766%
+    }
+
+    .field-name-field-user-first-name {
+      width:40.42553%;
+      clear:right;
+      float:left;
+      margin-right:2.12766%
+    }
+
+    .field-name-field-user-last-name {
+      width:40.42553%;
+      clear:right;
+      float:right;
+      margin-right:0
+    }
+
+  }
+
+}

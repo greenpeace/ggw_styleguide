@@ -1,0 +1,62 @@
+$fix-mqs: false !default;
+
+// Check for export, otherwise build a media query
+@mixin breakpoint($width) {
+  
+  @if ($width == 'retina2') {
+    @media screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+      @content;
+    }
+  }
+
+  @else if ($width == 'retina3') {
+    @media screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
+      @content;
+    }
+  }
+    
+  @else if $fix-mqs {
+    @if $fix-mqs >= $width {
+      @content;
+    }
+  }
+
+  @else {
+    @media screen and (min-width: $width) {
+      @content;
+    }
+  }
+
+}
+
+// Prevent IE styles from exporting, unless asked for
+$old-ie: false !default;
+
+// Everything for IE8-
+@mixin old-ie {
+  @if $old-ie {
+    @content;
+  }
+}
+
+@mixin clearfix {
+
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+}
+
+%clearfix {
+  @include clearfix;
+}
+
+%inline-clear {
+  clear: both;
+}

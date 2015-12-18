@@ -1,19 +1,9 @@
 # Combine media queries at bottom of document
-require 'sass-media_query_combiner'
-require 'breakpoint'
-require 'singularitygs'
-require 'sass-globbing'
 require 'uglifier'
-
-# Change Compass configuration
-compass_config do |config|
-  config.output_style = :expanded
-end
 
 activate :livereload #, :host => "192.168.99.100"
 
 activate :syntax
-
 
 #with_layout :example do
 #  page "/examples/*"
@@ -75,11 +65,6 @@ set :partials_dir, 'partials'
 
 activate :inliner
 
-activate :autoprefixer do |config|
-  config.browsers = ['last 2 versions', 'Explorer >= 9']
-  config.cascade  = false
-  config.inline   = true
-end
 
 helpers do
 
@@ -108,8 +93,6 @@ activate :title, site: 'GGW Style Guide', separator: ' — '
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  activate :minify_css
-  activate :minify_html
   activate :imageoptim
 
   # Minify Javascript on build

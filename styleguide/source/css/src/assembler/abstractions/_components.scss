@@ -1,0 +1,40 @@
+@mixin block-rich {
+  border-radius: 4px;
+  background-color: $white;
+  padding: 0 $def-mar $def-mar;
+}
+
+%block-element {
+   @include block-rich;
+}
+
+@mixin white-popup {
+  @include block-rich;
+  width: auto;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 0 $def-mar $def-mar;
+  position: relative;
+}
+
+%white-popup {
+  @include white-popup;
+}
+
+@mixin media {
+  overflow:hidden;
+  @if $old-ie {
+    _overflow:visible;
+    zoom:1;
+  }
+}
+
+// remove default button styling
+@mixin debuttonize {
+  background: transparent;
+  border: none;
+}
+
+%debuttonize {
+  @include debuttonize;
+}

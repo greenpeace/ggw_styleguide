@@ -1,0 +1,268 @@
+.layout-base {
+  overflow: hidden;
+  background: $white;
+  z-index: 1;
+  position: relative;
+
+  // remove space for scrollbar when lightbox is active
+  .mfp-zoom-out-cur & {
+    overflow: visible;
+  }
+
+  @include breakpoint($desk) {
+    display: flex;
+    min-height: 100%;
+    min-height: 100vh; // needed for sticky footer
+    flex-direction: column;
+    background: $background;
+  }
+}
+
+//
+// Outer containers
+//
+
+.container {
+
+  @include breakpoint($deskplus) {
+    width: 960px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  @include breakpoint($wide) {
+    width: 90%;
+    max-width: 1170px;
+  }
+
+}
+
+.l-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  z-index: 1;
+
+  @include breakpoint($desk) {
+    top: 60px;
+    z-index: 3;
+    bottom: auto;
+  }
+}
+
+.l-main {
+  @extend %clearfix;
+  margin: 0 auto;
+  padding: 50px 0 0;
+  width: 100%;
+  background: $white;
+  transition: transform 500ms ease;
+  z-index: 1;
+  min-height: 100%;
+  min-height: 100vh;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  transform: translate3d(0, 0, 0);
+
+  .with-action-menu & {
+    padding-top: 100px;
+  }
+
+  &.with-action-bar {
+    padding-top: 48px;
+  }
+
+  @include breakpoint($desk) {
+    background: transparent;
+    padding:88px $def-mar 0;
+    border: none;
+    min-height: none;
+    flex: 1; //push footer down to bottom
+    overflow: visible;
+    display: flex; // needed for IE
+    flex-flow: row wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    -ms-flex-preferred-size: auto; // needed for IE
+
+    .no-flexbox & {
+      overflow: hidden;
+    }
+
+    // .container doesn't get applied
+    @if $old-ie {
+      width: 960px;
+    }
+
+  }
+
+  @include breakpoint($deskplus) {
+    padding: 88px 0 0;
+  }
+
+}
+
+.csstransforms3d .with-action-menu .l-main.with-action-bar {
+  padding-top: 100px;
+  transform: translate3d(0, -50px, 0);
+  transition: transform 500ms ease;
+}
+
+// when the off canvas menu is active and there is an action menu and the user scrolls, prevent content from moving to the side.
+.csstransforms3d.primary-nav .with-action-menu .l-main.with-action-bar {
+  transform: translate3d(265px, 0, 0);
+}
+
+.csstransforms3d.secondary-nav .with-action-menu .l-main.with-action-bar {
+  transform: translate3d(-265px, 0, 0);
+}
+
+//
+// Inner containers
+//
+.l-branding-header {
+  background-color: $green1;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  transition: top .2s ease-in-out;
+
+  .csstransforms3d & {
+    transform: translate3d(0, 0, 0);
+    transition: transform 500ms ease;
+  }
+
+  @include breakpoint($desk) {
+    height: 88px;
+
+    // the background is inserted via pseudo element because it is not present on mobile
+    &:after {
+      display: block;
+      background-color: $green2;
+      border-top: 1px solid darken($green2, 3%);
+      content:'';
+      height: 28px;
+      position: fixed;
+      top: 60px;
+      width: 100%;
+    }
+  }
+}
+
+.l-header-navigation {
+
+  @include breakpoint($desk) {
+    position: relative;
+    top: 44px;
+    z-index: 2;
+  }
+}
+
+.l-main-column {
+  z-index: 1;
+
+  @include breakpoint($desk) {
+    padding-bottom: 0;
+  }
+}
+
+.l-sidebar {
+
+  @include breakpoint($desk) {
+    position: relative;
+    display: block;
+    margin: 0;
+    right: auto;
+    top: 0;
+    padding-top: 0;
+    float: right;
+    width: (100%/3);
+    background: none;
+    border: 0;
+    overflow: visible;
+
+  }
+
+}
+
+.l-has-sidebar .l-main-column {
+
+  @include breakpoint($desk) {
+    float: left;
+    position: relative;
+    width: (100%/1.5);
+  }
+
+}
+
+.no-sidebar .l-main-column {
+
+  @include breakpoint($desk) {
+    width: 100%;
+    padding: 0;
+  }
+
+}
+
+@include breakpoint($desk) {
+
+  .l-two-column .l-main-column,
+  .l-two-column .l-sidebar {
+    float: left;
+    position: relative;
+    width: (100%/2);
+  }
+
+  .l-main-column {
+    padding-right: $def-mar-half;
+  }
+
+  .l-sidebar {
+    padding-left: $def-mar-half;
+  }
+
+}
+
+// Footer
+
+@include breakpoint($desk) {
+
+  .footer-offset {
+    height: 100px;
+    background: #e4e4e4;
+    border-bottom: 3px solid $grey-l;
+  }
+
+}
+
+.l-two-column,
+.l-has-sidebar {
+  .l-main .block {  
+    margin: $def-mar $def-mar-half;
+
+    @include breakpoint($desk) {
+      display: block;
+      height: auto;
+      clear: none;
+      margin: 0 0 $def-mar;
+    }
+
+  }
+
+}
+
+.no-sidebar .l-main .block {
+  margin: $def-mar-half;
+}
+
+.no-js .l-main .block {
+  display: block;
+  height: auto;
+  margin: 0 0 14px;
+}

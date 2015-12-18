@@ -1,0 +1,25 @@
+
+// doesn't look like this is used anymore
+.view-header .field {
+  display: inline-block;
+  margin-right: $def-mar;
+}
+
+// manage group members
+.flexbox .page-manage-group-members .block .view-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+// edit group node
+@include breakpoint($smalltab) {
+  .field-name-subscription-type .form-type-radio {
+    display: block;
+  }
+}
+
+@include breakpoint($tab) {
+  .block-profile .content{
+    @include clearfix;
+  }
+}

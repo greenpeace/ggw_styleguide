@@ -6,4 +6,4 @@ CKEDITOR.config.toolbar = [
    ['Source']
 ];
 
-CKEDITOR.config.contentsCss = ['/css/all.css', '/css/x-editable.css'];
+CKEDITOR.config.contentsCss = ['/css/style.css', '/css/x-editable.css'];

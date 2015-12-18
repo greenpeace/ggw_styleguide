@@ -1,0 +1,66 @@
+// layout
+.l-footer {
+  display: none;
+
+  .container {
+    @extend %clearfix;
+  }
+
+  @include breakpoint($desk) {
+    display: block;
+    margin-top: 2em;
+    position: relative;
+    z-index: 0;
+  }
+
+}
+
+.footer {
+  background: $green1;
+  color: $white;
+}
+
+.l-branding-footer {
+  float: left;
+  margin: 1.8em 2em 0 0;
+
+  span {
+    line-height: 1em;
+    float: left;
+    @include font-size ($p);
+  }
+
+  .logo-footer {
+    background-position: 3px -45px;
+    width: 98px;
+    margin: -2px 3px 0 4px;
+    text-indent: -999px;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+  }
+
+}
+
+.footer-menu {
+  padding-top: .7em;
+  float: right;
+
+  li {
+    float: left;
+  }
+
+  a {
+    display: block;
+    padding: 1em .5em;
+    text-align: left;
+    color: $white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+  }
+
+}
+

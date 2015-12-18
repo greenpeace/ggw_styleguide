@@ -1,0 +1,118 @@
+
+.block-search {
+  position: relative;
+
+  @include breakpoint($desk) {
+    width: 285px;
+    bottom: 10px;
+    position: absolute;
+    right: 10px;
+    .icon-search {
+      display: none;
+    }
+  }
+
+  @include breakpoint($deskplus) {
+    right: 0;
+  }
+
+
+  .icon-search {
+    position: absolute;
+    top: 11px;
+    left: 18px;
+    font-size: 18px;
+    color: $grey-m;
+  }
+
+
+  .form-text {
+    border: 0;
+    padding: .95em 2.5em;
+    max-width: 99.8%;
+    border-radius: 0;
+    font-style: italic;
+    @include font-size(16px); //prevents safari from zooming in on focus
+
+    &:focus {
+      box-shadow: none;
+    }
+
+  }
+
+  .form-actions {
+    @extend %element-hidden;
+    @extend %load-icon;
+    @extend %icon-search;
+
+    @include breakpoint($desk) {
+      display: block;
+    }
+
+  }
+
+}
+
+// END block search
+
+.form-item-search label,
+.form-item-search .form-description {
+  @extend %element-hidden;
+}
+
+.form-item-search .form-text {
+  max-width: none;
+}
+
+@include breakpoint($desk) {
+  .search-form {
+    position: relative;
+
+    .form-item-search {
+      line-height: 1em;
+    }
+
+    .form-text {
+      font-size: $small;
+      border: 1px solid $green2;
+      border-radius: 3px;
+      padding: 3px 6px;
+      padding-left: 100px;
+      font-style: normal;
+    }
+
+    .form-submit {
+      @include hideYetClickable;
+      position: absolute;
+      top: 0;
+      width: 16px;
+      padding: 0;
+      left: 0;
+      text-indent: -9999px;
+    }
+
+    .form-actions {
+      position: absolute;
+      top: 4px;
+      right: 5px;
+      width: 16px;
+      line-height: 16px;
+      height: 16px;
+      border-radius: 3px;
+      padding: 0 0 0 2px;
+      color: $green2;
+      font-size: $h3;
+    }
+
+  }
+
+}
+
+.view-empty p {
+  @include font-size($p);
+}
+
+.view-header {
+  @extend %clearfix;
+}
+

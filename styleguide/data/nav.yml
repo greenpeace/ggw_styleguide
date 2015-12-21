@@ -86,21 +86,8 @@ docs:
 # Primary navigation in prototype for AN
 primary_an:
   -
-    name: "Home"
+    name: "Updates"
     url: "/prototype/an/index.html"
-  -
-    name: "Community"
-    url: "#"
-    sub:
-      -
-        name: "Events"
-        url: "/prototype/an/events.html"
-      -
-        name: "Groups"
-        url: "/prototype/an/groups.html"
-  -
-    name: "News and Media"
-    url: "#"
     sub:
       -
         name: "News"
@@ -121,38 +108,29 @@ primary_an:
         name: "Ideas"
         url: "/prototype/an/ideas.html"
   -
-    name: "Info"
-    url: "#"
+    name: "Events"
+    url: "/prototype/an/events.html"
+  -
+    name: "Groups"
+    url: "/prototype/an/groups.html"
+  -
+    name: "Help"
+    url: "/prototype/an/help.html"
     sub:
-      -
-        name: "About"
-        url: "/prototype/an/about.html"
       -
         name: "FAQ"
         url: "/prototype/an/faq.html"
       -
         name: "Contact"
         url: "/prototype/an/contact.html"
+      -
+        name: "About"
+        url: "/prototype/an/about.html"
+
 primary_lu:
   -
-    name: "Home"
+    name: "Updates"
     url: "/prototype/lu/index.html"
-  -
-    name: "Community"
-    url: "#"
-    sub:
-      -
-        name: "Events"
-        url: "/prototype/lu/events.html"
-      -
-        name: "Groups"
-        url: "/prototype/lu/groups.html"
-      -
-        name: "Members"
-        url: "/prototype/lu/search-members.html"
-  -
-    name: "News and Media"
-    url: "#"
     sub:
       -
         name: "News"
@@ -173,8 +151,31 @@ primary_lu:
         name: "Ideas"
         url: "/prototype/lu/ideas.html"
   -
-    name: "Info"
-    url: "#"
+    name: "Events"
+    url: "/prototype/lu/events.html"
+    sub:
+      -
+        name: "My events"
+        url: "/prototype/lu/my-profile.html#block-user-events"
+      -
+        name: "Create event"
+        url: "/prototype/lu/create-event.html"
+  -
+    name: "Groups"
+    url: "/prototype/lu/groups.html"
+    sub:
+      -
+        name: "My groups"
+        url: "/prototype/lu/my-profile.html#block-user-groups"
+      -
+        name: "Create group"
+        url: "/prototype/lu/create-group.html"
+      -
+        name: "Members"
+        url: "/prototype/lu/search-members.html"
+  -
+    name: "Help"
+    url: "/prototype/lu/help.html"
     sub:
       -
         name: "Getting started"
@@ -183,105 +184,13 @@ primary_lu:
         name: "FAQ"
         url: "/prototype/lu/faq.html"
       -
+        name: "Contact"
+        url: "/prototype/lu/contact.html"
+      -
         name: "Who is who"
         url: "/prototype/lu/who-is-who.html"
-idea_menu:
-  -
-    name: "Home"
-    url: "/prototype/lu/index.html"
-  -
-    name: "Learn"
-    url: "#"
-    sub:
-      -
-        name: "Catch up with the news"
-        url: "/prototype/lu/news.html"
-      -
-        name: "Read the blogs"
-        url: "/prototype/lu/blogs.html"
-      -
-        name: "View the photos"
-        url: "/prototype/lu/photos.html"
-      -
-        name: "Play videos"
-        url: "/prototype/lu/videos.html"
-      -
-        name: "Browse documents"
-        url: "/prototype/lu/documents.html"
-      -
-        name: "Vote on ideas"
-        url: "/prototype/lu/ideas.html"
-  -
-    name: "Connect"
-    url: "/prototype/lu/events.html"
-    sub:
-      -
-        name: "Find an event"
-        url: "/prototype/lu/events.html"
-      -
-        name: "Join a group"
-        url: "/prototype/lu/groups.html"
-      -
-        name: "Connect with members"
-        url: "/prototype/lu/search-members.html"
-      -
-        name: "Contact a coach"
-        url: "/prototype/lu/who-is-who.html"
-  -
-    name: "Contribute"
-    url: "#"
-    sub:
-      -
-        name: "Post a news article"
-        url: "/prototype/lu/create-news.html"
-      -
-        name: "Write a blog"
-        url: "/prototype/lu/create-blog.html"
-      -
-        name: "Upload photos"
-        url: "/prototype/lu/create-photo-album.html"
-      -
-        name: "Submit a video"
-        url: "/prototype/lu/create-video.html"
-      -
-        name: "Upload documents"
-        url: "/prototype/lu/create-document.html"
-      -
-        name: "Propose an idea"
-        url: "/prototype/lu/create-idea.html"
-  -
-    name: "Organize"
-    url: "#"
-    sub:
-      -
-        name: "Create an event"
-        url: "/prototype/lu/create-event.html"
-      -
-        name: "Start a group"
-        url: "/prototype/lu/create-group.html"
-      -
-        name: "Browse material list"
-        url: "/prototype/lu/materials.html"
-      -
-        name: "Propose an idea"
-        url: "/prototype/lu/create-idea.html"
-  -
-    name: "Help"
-    url: "#"
-    sub:
-      -
-        name: "New to greenwire?"
-        url: "/prototype/lu/getting-started.html"
-      -
-        name: "FAQ"
-        url: "/prototype/lu/faq.html"
-      -
-        name: "Contact a coach"
-        url: "/prototype/lu/who-is-who.html"
-
 
 # secondary menu, user menu for AN
-
 secondary_an:
   -
     name: "Log in"

@@ -199,8 +199,7 @@
 }
 
 .menu .menu {
-  position: static;
-  top: 100%;
+  display: none;
 }
 
 .trigger:before,
@@ -316,7 +315,6 @@
 
   // submenu container
   .menu .menu {
-    display: none;
     position: absolute;
     height: auto;
     left: 0;

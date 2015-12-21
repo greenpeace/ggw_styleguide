@@ -4580,8 +4580,7 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
   font-size: 1rem; }
 
 .menu .menu {
-  position: static;
-  top: 100%; }
+  display: none; }
 
 .trigger:before,
 .off-canvas .navcaret:before {
@@ -6125,7 +6124,6 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
   .menu-item:last-child{
     margin: 0; }
   .menu .menu{
-    display: none;
     position: absolute;
     height: auto;
     left: 0;

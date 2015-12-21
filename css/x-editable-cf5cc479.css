@@ -1,7 +1,7 @@
 *, *:after, *:before {
   box-sizing: border-box; }
 
-.preview-wrapper:before {
+.file-row.dz-success .action-buttons:before, .file-row.dz-error .action-buttons:before, .preview-wrapper:before {
   font-family: 'greenwire';
   speak: none;
   text-align: center;
@@ -16,8 +16,14 @@
 .field-type-video:before {
   content: '\e80c'; }
 
+.file-row.dz-success .action-buttons:before {
+  content: '\e81c'; }
+
 .field-type-blog:before {
   content: '\e831'; }
+
+.file-row.dz-error .action-buttons:before {
+  content: '\e80a'; }
 
 .field-type-news:before {
   content: '\e830'; }
@@ -68,17 +74,44 @@
   .file-row.dz-processing .progress {
     opacity: 1; }
   .file-row .action-buttons {
-    position: absolute;
-    left: 70px;
-    padding: 0;
-    top: -5px; }
+    padding: 0; }
     .page-type-document .file-row .action-buttons {
       left: 40px; }
   .file-row .action-buttons .button {
-    border-radius: 20px;
-    padding: 3px; }
+    padding: 7px;
+    position: absolute;
+    bottom: 0;
+    right: 5px; }
+    .file-row .action-buttons .button:active {
+      top: auto; }
+    .file-row .action-buttons .button i {
+      font-size: 1.4em; }
     .file-row .action-buttons .button span {
       display: none; }
+  .file-row.dz-success .action-buttons:before {
+    display: block;
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    opacity: 0.75;
+    font-size: 1.5em;
+    color: #559f0c;
+    padding: 5px;
+    position: absolute;
+    top: 7px;
+    right: 11px; }
+  .file-row.dz-error .action-buttons:before {
+    display: block;
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    opacity: 0.75;
+    font-size: 1.5em;
+    color: #ac2925;
+    padding: 5px;
+    position: absolute;
+    top: 7px;
+    right: 11px; }
   .file-row .preview {
     display: block; }
   .file-row:nth-child(odd) .progress {
@@ -416,10 +449,21 @@
 
   .file-row .action-buttons .button {
     border-radius: 3px;
-    padding: 5px 12px; }
+    padding: 5px 12px;
+    position: relative;
+    right: auto; }
 
   .file-row .action-buttons .button span {
     display: inline; }
+
+  .file-row .action-buttons .button i {
+    font-size: 1rem; }
+
+  .file-row.dz-success .action-buttons:before {
+    display: none; }
+
+  .file-row.dz-error .action-buttons:before {
+    display: none; }
 
   .dropzone-droparea {
     border-bottom: 1px solid #ccc; }

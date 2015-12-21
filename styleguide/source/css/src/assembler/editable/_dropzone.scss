@@ -86,10 +86,7 @@
   }
 
   .action-buttons {
-    position: absolute;
-    left: 70px;
     padding: 0;
-    top: -5px;
 
     @include breakpoint($tab) {
       position: relative;
@@ -117,8 +114,18 @@
 
 
   .action-buttons .button {
-    border-radius: 20px;
-    padding: 3px;
+    padding: 7px;
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+
+    &:active {
+      top: auto;
+    }
+
+    i {
+      font-size: 1.4em;
+    }
 
     span {
       display: none;
@@ -127,11 +134,58 @@
     @include breakpoint($tab) {
       border-radius: 3px;
       padding: 5px 12px;
+      position: relative;
+      right: auto;
 
       span {
         display: inline;
       }
+
+      i {
+        font-size: 1rem;
+      }
     }
+  }
+
+  &.dz-success .action-buttons:before {
+    @extend %load-icon;
+    @extend %icon-check;
+    display: block;
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    opacity: 0.75;
+    font-size: 1.5em;
+    color: $green5;
+    padding: 5px;
+    position: absolute;
+    top: 7px;
+    right: 11px;
+
+    @include breakpoint($tab) {
+      display: none;
+    }
+  }
+
+  &.dz-error .action-buttons:before {
+    @extend %load-icon;
+    @extend %icon-attention;
+    display: block;
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    opacity: 0.75;
+    font-size: 1.5em;
+    color: $error;
+    padding: 5px;
+    position: absolute;
+    top: 7px;
+    right: 11px;
+    
+    @include breakpoint($tab) {
+      display: none;
+    }
+
   }
 
   .preview {

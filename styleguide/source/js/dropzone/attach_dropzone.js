@@ -77,6 +77,16 @@ $(function() {
     file.previewElement.querySelector(".preview").style.opacity='.5';
     file.previewElement.querySelector(".name").remove();
     file.previewElement.querySelector(".start").remove();
+    $("#upload-specs").css({
+      'background-color': '#fedc68',
+      'padding': '5px',
+      'color': '#000'
+    });
+    setTimeout(function() {
+      $("#upload-specs").css({
+        'background-color': '#ffffff'
+      })
+    }, 2500);
   });
 
   // Update the total progress bar

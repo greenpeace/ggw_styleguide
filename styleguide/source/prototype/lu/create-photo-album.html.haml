@@ -68,7 +68,7 @@ menu:
                 #total-progress.progress.progress-striped.active{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "0", :role => "progressbar"}
                   .progress-bar.progress-bar-success{"data-dz-uploadprogress" => "", :style => "width:0%;"}
           .form-item
-            .form-description The maximum size per file is 3MB. Allowed file formats are jpg, jpeg, gif, bmp, png and tiff. The image needs to be at least 200x100 pixels.
+            .form-description#upload-specs Images files must have format jpg, jpeg, gif, bmp, png or tiff, be less than 3MB in size and at least 200x100 pixels.
           .form-item.dropzone-droparea
             .dz-message.disabled
               Drop files here or click on the 'Add files' button above to upload.
@@ -88,10 +88,7 @@ menu:
                   %button.button.btn-upload.start
                     %i.icon-upload
                     %span Start
-                  %button.button.cancel{"data-dz-remove" => ""}
-                    %i.icon-cancel
-                    %span Cancel
-                  %button.button.btn-delete.delete{"data-dz-remove" => ""}
+                  %button.button.delete{"data-dz-remove" => ""}
                     %i.icon-trash
                     %span Delete
 

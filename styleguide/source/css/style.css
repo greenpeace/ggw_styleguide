@@ -4515,7 +4515,9 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
 .csstransforms3d.primary-nav .l-branding-header,
 .csstransforms3d.secondary-nav .l-branding-header,
 .csstransforms3d.primary-nav .l-main,
-.csstransforms3d.secondary-nav .l-main {
+.csstransforms3d.secondary-nav .l-main,
+.csstransforms3d.primary-nav .action-menu,
+.csstransforms3d.secondary-nav .action-menu {
   left: auto;
   right: auto; }
 

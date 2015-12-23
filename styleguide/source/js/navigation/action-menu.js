@@ -81,10 +81,11 @@ $(function() {
   if ($('.l-has-sidebar-first').length == 0) {
 
     //check if there are at least two blocks and they are not hidden on mobile nor in a modal window
-    var blocksMain = $('.l-main-column > .block').not('.hidden-mobile').not('.white-popup');
+    var blocksMain = $('.l-main-column > .block').not('.hidden-mobile').not('.white-popup').not('.action-menu-hidden');
     var blocksSidebar = $('.l-sidebar > .block').not('.hidden-mobile').not('.white-popup');
     var blocksHero = $('.region-highlight > .block').not('.hidden-mobile').not('.white-popup');
-    blocks = blocksMain.add(blocksSidebar).add(blocksHero);
+    var blocks = blocksMain.add(blocksSidebar).add(blocksHero);
+    blocks = $(blocks).not('[data-amhide]');
   }
 
   var no = $(blocks).length;

@@ -27,42 +27,20 @@ design_status: Needs review
 
       .view-search-results
         .view-content
-
-          %h2.section-heading
-            %a{:href => "./search-newsmedia.html"} News and media
           = partial :"teasers/news-with-image"
-          = partial :"teasers/blog-with-image"
-          = partial :"teasers/idea"
-          = partial :"teasers/photo"
-          = partial :"teasers/video"
-          .align-center
-            %a.button{:href => "./search-newsmedia.html"} Find more News & Media
-
-          %h2.section-heading
-            %a{:href => "./search-events.html"} Events
           = partial :"teasers/event-with-location"
+          = partial :"teasers/blog-with-image"
           = partial :"teasers/event-with-image"
-          = partial :"teasers/event-no-image"
-          .align-center
-            %a.button{:href => "./search-events.html"} Find more Events
-
-          %h2.section-heading
-            %a{:href => "./search-groups.html"} Groups
-          = partial :"teasers/group-no-image"
+          = partial :"teasers/idea"
           = partial :"teasers/group-with-image4"
+          = partial :"teasers/event-no-image"
+          = partial :"teasers/photo"
+          = partial :"teasers/group-no-image"
+          = partial :"teasers/video"
           = partial :"teasers/group-with-image5"
-          .align-center
-            %a.button{:href => "./search-groups.html"} Find more Groups
-
-          %h2.section-heading
-            %a{:href => "./search-members.html"} Members
-          .view-empty
-            %p
-              Please log in to search for members.
-              %a Click here to log in.
-            %p
-              Not a member yet?
-              %a Click here to sign up
+          %ul.pager.pager-load-more
+            %li
+              %a{:href => "#"} Show some more
 
 
 

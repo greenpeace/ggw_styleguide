@@ -5620,6 +5620,8 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     display: block; }
   .page-register .form-wrapper{
     margin-top: 0; }
+  .page-search-form .form-wrapper.row{
+    display: inline-block; }
   .domain-nl .field-name-field-user-initials{
     width: 14.89362%;
     clear: right;

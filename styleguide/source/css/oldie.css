@@ -5591,6 +5591,9 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     color: #ccc;
     font-size: 19px; }
 
+.page-search-form .form-wrapper.row {
+  display: inline-block; }
+
 .block-search {
   position: relative;
   width: 200px;

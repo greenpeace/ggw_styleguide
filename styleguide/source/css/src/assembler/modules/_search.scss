@@ -1,4 +1,10 @@
-
+.page-search-form{
+  .form-wrapper.row{
+    @include breakpoint($tab){
+      display: inline-block;
+    }
+  }
+}
 .block-search {
   position: relative;
 

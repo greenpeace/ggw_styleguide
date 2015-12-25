@@ -4088,6 +4088,10 @@ select:-moz-focusring {
   -webkit-order: 0;
       -ms-flex-order: 0;
           order: 0; }
+  .breadcrumb + .region-highlight {
+    margin-top: -14px; }
+    body.front .breadcrumb + .region-highlight {
+      margin-top: 0; }
 
 .breadcrumbs {
   padding: 0;

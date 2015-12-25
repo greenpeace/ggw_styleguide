@@ -6,7 +6,14 @@
     flex: 1 1 100%;
     order: 0;
   }
-
+  @include breakpoint($desk){
+    & + .region-highlight{
+      margin-top: -14px;
+      body.front &{
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 .breadcrumbs {

@@ -5901,6 +5901,10 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0; }
+  .breadcrumb + .region-highlight{
+    margin-top: -14px; }
+  body.front .breadcrumb + .region-highlight{
+    margin-top: 0; }
   .comment-reply{
     margin-left: 74px; }
   .avatar-holder{
@@ -5984,7 +5988,7 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     top: 7px; }
   .l-country-selector{
     position: absolute;
-    width: 200px;
+    width: 230px;
     left: 200px;
     bottom: 10px; }
   .l-country-selector .trigger{
@@ -6198,7 +6202,7 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
   .attention-panel .messages{
     border: 0; }
   .block-search{
-    width: 200px;
+    width: 270px;
     bottom: 10px;
     position: absolute;
     right: 10px; }

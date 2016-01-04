@@ -2461,6 +2461,12 @@ html[xmlns] .slides {
         right: 0;
         height: 16px;
         width: 1px; }
+      .tabwrapper .tabs li.active a {
+        color: #1a1a1a;
+        font-weight: bold;
+        border-color: #1a1a1a; }
+        .tabwrapper .tabs li.active a:hover {
+          border-color: #1a1a1a; }
   .tabwrapper .tab {
     position: relative;
     display: block;
@@ -2471,11 +2477,7 @@ html[xmlns] .slides {
     .tabwrapper .tab:last-child:after {
       border: none; }
     .tabwrapper .tab.active {
-      color: #1a1a1a;
-      font-weight: bold;
-      border-color: #1a1a1a; }
-      .tabwrapper .tab.active:hover {
-        border-color: #1a1a1a; }
+      color: inherit; }
     .tabwrapper .tab:hover {
       border-color: #56b004;
       text-decoration: none; }
@@ -5623,6 +5625,9 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
       box-shadow: none; }
   .block-search .form-actions {
     display: block; }
+
+.form-item-search {
+  margin-bottom: 0; }
 
 .form-item-search .form-text {
   max-width: none; }

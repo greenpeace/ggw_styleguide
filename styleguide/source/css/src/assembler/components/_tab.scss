@@ -34,6 +34,18 @@
 
       }
 
+      &.active {
+        a{
+          color: $heading;
+          font-weight: bold;
+          border-color: $heading;
+
+          &:hover {
+            border-color: $heading;
+          }
+        }
+      }
+
     }
 
   }
@@ -49,16 +61,10 @@
     &:last-child:after {
       border: none;
     }
-
-    &.active {
-      color: $heading;
-      font-weight: bold;
-      border-color: $heading;
-
-      &:hover {
-        border-color: $heading;
-      }
+    &.active{
+      color: inherit;
     }
+
 
     &:hover {
       border-color: $green2;

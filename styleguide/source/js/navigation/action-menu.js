@@ -84,7 +84,7 @@ $(function() {
     var blocksMain = $('.l-main-column > .block').not('.hidden-mobile').not('.white-popup');
     var blocksBottom = $('.region-content-bottom > .block').not('.hidden-mobile').not('.white-popup');
     var blocksSidebar = $('.l-sidebar > .block').not('.hidden-mobile').not('.white-popup');
-    var blocksHero = $('.region-highlight > .block').not('.hidden-mobile').not('.white-popup');
+    var blocksHero = $('.region-highlighted > .block').not('.hidden-mobile').not('.white-popup');
     blocks = blocksMain.add(blocksBottom).add(blocksSidebar).add(blocksHero);
   }
 

@@ -1441,7 +1441,7 @@ article blockquote {
     height: 96px;
     background: #ccc; }
 
-.region-highlight {
+.region-highlighted {
   -webkit-flex: 1 100%;
       -ms-flex: 1 100%;
           flex: 1 100%; }
@@ -5852,9 +5852,9 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     pointer-events: none;
     cursor: default;
     color: #4d4d4d; }
-  .region-highlight .block{
+  .region-highlighted .block{
     margin-top: 14px !important; }
-  .region-highlight.slider .block{
+  .region-highlighted.slider .block{
     padding: 0;
     background: none; }
   .hero{
@@ -5906,9 +5906,9 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0; }
-  .breadcrumb + .region-highlight{
+  .breadcrumb + .region-highlighted{
     margin-top: -14px; }
-  body.front .breadcrumb + .region-highlight{
+  body.front .breadcrumb + .region-highlighted{
     margin-top: 0; }
   .comment-reply{
     margin-left: 74px; }

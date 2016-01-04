@@ -66,6 +66,9 @@
   @extend %element-hidden;
 }
 
+.form-item-search{
+  margin-bottom: 0;
+}
 .form-item-search .form-text {
   max-width: none;
 }

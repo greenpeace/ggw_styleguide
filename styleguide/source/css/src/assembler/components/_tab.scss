@@ -12,6 +12,7 @@
       float: left;
       padding-right: 1em;
       line-height: 1em;
+      color: $green5;
 
       &:last-child:after {
         @extend %element-hidden;

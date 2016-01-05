@@ -1919,6 +1919,8 @@ img.mfp-img {
       white-space: nowrap;
       line-height: 1.2em;
       display: block; }
+  .node-type-small .submitted {
+    display: none; }
   .node-type-small .date-display-single {
     font-size: 0.875rem; }
   .node-type-small .field {
@@ -2143,7 +2145,8 @@ html[xmlns] .slides {
       display: inline-block;
       float: left;
       padding-right: 1em;
-      line-height: 1em; }
+      line-height: 1em;
+      color: #559f0c; }
       .tabwrapper .tabs li.active a {
         color: #1a1a1a;
         font-weight: bold;
@@ -2229,6 +2232,9 @@ tr:hover > td {
 
 table table {
   background-color: #ffffff; }
+
+.quicktabs-hide {
+  display: none; }
 
 .node-teaser {
   height: 60px;

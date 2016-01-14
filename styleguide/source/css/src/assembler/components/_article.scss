@@ -114,9 +114,12 @@ article {
     padding: $def-mar-half $def-mar;
     @include font-size($small);
   }
-
+  &:not(.node-group){
+    .field-label{
+      @extend %element-invisible;
+    }
+  }
   .field-label {
-    @extend %element-invisible;
 
     + div {
       margin-left: 2em;

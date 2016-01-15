@@ -10,10 +10,7 @@
           - else
             %a.button.btn-primary{:href => "/prototype/an/login.html"} Join group
         - else
-          - if current_page.data.organiser != "organiser"
-            %a.button.modal-inline{:href => "#confirm-group-leave"} Leave this group
-          - else
-            %a.button{:href => "/prototype/lu/create-group.html"} Edit
+          %a.button{:href => "/prototype/lu/create-group.html"} Edit
 
     %i.block-icon.icon-users.icon-bg-group
     %h2.block-title{"data-amtitle" => "About"} About

@@ -2181,6 +2181,8 @@ img.mfp-img {
       white-space: nowrap;
       line-height: 1.2em;
       display: block; }
+  .node-type-small .submitted {
+    display: none; }
   .node-type-small .date-display-single {
     font-size: 14px; }
   .node-type-small .field {
@@ -2450,6 +2452,7 @@ html[xmlns] .slides {
       float: left;
       padding-right: 1em;
       line-height: 1em;
+      color: #559f0c;
       padding-right: 1em;
       margin-right: 1em; }
       .tabwrapper .tabs li:after {
@@ -2546,6 +2549,9 @@ tr:hover > td {
 
 table table {
   background-color: #ffffff; }
+
+.quicktabs-hide {
+  display: none; }
 
 .node-teaser {
   height: 60px;

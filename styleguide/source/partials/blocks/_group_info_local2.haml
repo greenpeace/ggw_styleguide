@@ -6,17 +6,17 @@
       .action-bar-item.edit-content
         - if current_page.data.joined != "joined"
           - if current_page.data.user_role == "lu"
-            %a.button.btn-primary.modal-inline{:href => "#confirm-group-subscription"} Join group
+            %a.button{:href => "/prototype/lu/create-group.html"} Edit
           - else
             %a.button.btn-primary{:href => "/prototype/an/login.html"} Join group
         - else
-          %a.button.modal-inline{:href => "#confirm-group-leave"} Leave this group
+          %a.button{:href => "/prototype/lu/create-group.html"} Edit
 
     %i.block-icon.icon-users.icon-bg-group
     %h2.block-title{"data-amtitle" => "About"} About
     .content
 
-      .field-name-group-image
+      .field-name-field-group-image
         %img.lazyload{:alt => "Profile picture of group.", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-src" => "/photos/group-avatar2-210.jpg"}/
         %noscript
           %img{:alt => "Profile picture of group.", :src => "/photos/group-avatar2-210.jpg"}/

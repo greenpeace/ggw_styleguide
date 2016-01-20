@@ -12,6 +12,7 @@
       float: left;
       padding-right: 1em;
       line-height: 1em;
+      color: $green5;
 
       &:last-child:after {
         @extend %element-hidden;
@@ -34,6 +35,18 @@
 
       }
 
+      &.active {
+        a{
+          color: $heading;
+          font-weight: bold;
+          border-color: $heading;
+
+          &:hover {
+            border-color: $heading;
+          }
+        }
+      }
+
     }
 
   }
@@ -49,16 +62,10 @@
     &:last-child:after {
       border: none;
     }
-
-    &.active {
-      color: $heading;
-      font-weight: bold;
-      border-color: $heading;
-
-      &:hover {
-        border-color: $heading;
-      }
+    &.active{
+      color: inherit;
     }
+
 
     &:hover {
       border-color: $green2;

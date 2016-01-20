@@ -82,9 +82,10 @@ $(function() {
 
     //check if there are at least two blocks and they are not hidden on mobile nor in a modal window
     var blocksMain = $('.l-main-column > .block').not('.hidden-mobile').not('.white-popup').not('.action-menu-hidden');
+    var blocksBottom = $('.region-content-bottom > .block').not('.hidden-mobile').not('.white-popup');
     var blocksSidebar = $('.l-sidebar > .block').not('.hidden-mobile').not('.white-popup');
-    var blocksHero = $('.region-highlight > .block').not('.hidden-mobile').not('.white-popup');
-    var blocks = blocksMain.add(blocksSidebar).add(blocksHero);
+    var blocksHero = $('.region-highlighted > .block').not('.hidden-mobile').not('.white-popup');
+    var blocks = blocksMain.add(blocksBottom).add(blocksSidebar).add(blocksHero);
     blocks = $(blocks).not('[data-amhide]');
   }
 

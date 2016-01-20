@@ -57,7 +57,6 @@ menu:
           .form-item
             %label.form-label{:for => "field-edit-image"}
               Image
-              %span.form-required{:title => "This field is required."} *
             .media-widget.media
               .preview-wrapper.media-figure.field-type-event
                 %img#preview-image{:src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", :alt => "your image"}
@@ -176,7 +175,7 @@ menu:
 
     %section#section-language.block
       %i.block-icon.icon-tag.icon-bg-action
-      %h2.block-title Event type & tags
+      %h2.block-title Event type, language & tags
       .content
         .form-wrapper
 
@@ -186,6 +185,13 @@ menu:
               - for type in data.event.event_types
                 %option{:value => ""}
                   #{type}
+
+          .form-item.form-type-select
+            %label.form-label{:for => "language"} Language
+            .form-description What language is this blog in? You can select more than one language.
+            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple", :tabindex => "4"}
+              %option{:selected => ""} English, US
+              %option French
 
           .form-item
             %label Tags

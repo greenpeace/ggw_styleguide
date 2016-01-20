@@ -21,6 +21,9 @@
     }
 
   }
+  .submitted{
+    display: none;
+  }
 
   .date-display-single {
     @include font-size($p);

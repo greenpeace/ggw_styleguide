@@ -95,9 +95,16 @@ menu:
 
     %section#section-language.block
       %i.block-icon.icon-globe.icon-bg-action
-      %h2.block-title Tags
+      %h2.block-title Languages & tags
       .content
         .form-wrapper
+
+          .form-item.form-type-select
+            %label.form-label{:for => "language"} Language
+            .form-description What language is this blog in? You can select more than one language.
+            %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple", :tabindex => "4"}
+              %option{:selected => ""} English, US
+              %option French
 
           .form-item
             %label Tags

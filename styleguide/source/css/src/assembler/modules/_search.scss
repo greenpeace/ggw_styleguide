@@ -1,9 +1,15 @@
-
+.page-search-form{
+  .form-wrapper.row{
+    @include breakpoint($tab){
+      display: inline-block;
+    }
+  }
+}
 .block-search {
   position: relative;
 
   @include breakpoint($desk) {
-    width: 200px;
+    width: 270px;
     bottom: 10px;
     position: absolute;
     right: 10px;
@@ -60,6 +66,9 @@
   @extend %element-hidden;
 }
 
+.form-item-search{
+  margin-bottom: 0;
+}
 .form-item-search .form-text {
   max-width: none;
 }

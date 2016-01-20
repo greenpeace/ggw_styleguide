@@ -3,7 +3,7 @@
 
 //= require_tree ./base
 
-//= require "navigation/mobile-nav.js"
+
 //= require "navigation/off-canvas-nav.js"
 //= require "navigation/jquery.responsiveTabs.js"
 //= require "navigation/tabs-dropdown.js"

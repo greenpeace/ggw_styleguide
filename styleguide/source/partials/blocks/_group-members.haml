@@ -8,10 +8,11 @@
       - if current_page.data.user_role == "lu"
         - 14.times do |num|
           - if num  > 1
-            %a.member-item{:href => "./profile.html"}
-              %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/member#{num}.jpg"}/
-              %noscript
-                %img{:alt => "Name of user", :src => "/photos/75/member#{num}.jpg"}/
+            .member-item
+              %a{:href => "./profile.html"}
+                %img.lazyload{:alt => "Name of user", :src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", "data-srcset" => "/photos/75/member#{num}.jpg"}/
+                %noscript
+                  %img{:alt => "Name of user", :src => "/photos/75/member#{num}.jpg"}/
 
       - else
 

@@ -118,7 +118,9 @@
   &.primary-nav .l-branding-header,
   &.secondary-nav .l-branding-header,
   &.primary-nav .l-main,
-  &.secondary-nav .l-main {
+  &.secondary-nav .l-main,
+  &.primary-nav .action-menu,
+  &.secondary-nav .action-menu {
     left: auto;
     right: auto;
   }

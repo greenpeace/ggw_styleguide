@@ -51,7 +51,6 @@ menu:
           .form-item
             %label.form-label{:for => "field-edit-image"}
               Image
-              %span.form-required{:title => "This field is required."} *
             .media-widget.media
               .preview-wrapper.media-figure.field-type-blog
                 %img#preview-image{:src => "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", :alt => "your image"}
@@ -72,7 +71,7 @@ menu:
         .form-wrapper
           .form-item.form-type-select
             %label.form-label{:for => "language"} Language
-            .form-description What language is this news in? You can select more than one language.
+            .form-description What language is this blog in? You can select more than one language.
             %select#language.chosen-select{"data-placeholder" => "Choose a language", :multiple => "multiple", :tabindex => "4"}
               %option{:selected => ""} English, US
               %option French

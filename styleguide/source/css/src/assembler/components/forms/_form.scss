@@ -1,6 +1,5 @@
 // each form item is wrapped
 .form-wrapper {
-  @extend %clearfix;
   margin-bottom: $def-mar;
 
   .button {

@@ -23,6 +23,19 @@
 
 }
 
+.date-row{
+  label{
+    display: inline-block;
+    margin: 0 $def-mar-half $def-mar-half 0;
+    width: 100%;
+
+    @include breakpoint($tab) {
+      margin: 0 $def-mar 0 0;
+      width: auto;
+    }
+  }
+}
+
 @include breakpoint($tab) {
 
   .form-wrapper.row {

@@ -1,8 +1,9 @@
 CKEDITOR.config.toolbar = [
    ['Bold','Italic','RemoveFormat'],
    ['NumberedList','BulletedList'],
+   ['Scayt'],
+   ['Image','Video','Link','Unlink'],
    ['Format'],
-   ['Image','Link','Unlink'],
    ['Source']
 ];
 

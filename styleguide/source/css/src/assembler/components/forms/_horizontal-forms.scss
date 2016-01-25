@@ -22,20 +22,14 @@
   }
 
 }
-
 .date-row{
   label{
-    display: inline-block;
-    margin: 0 $def-mar-half $def-mar-half 0;
-    width: 100%;
-
-    @include breakpoint($tab) {
-      margin: 0 $def-mar 0 0;
-      width: auto;
-    }
+    font-weight: bold;
+  }
+  .date-padding{
+    margin-bottom: 0;
   }
 }
-
 @include breakpoint($tab) {
 
   .form-wrapper.row {
@@ -58,6 +52,20 @@
       margin: 0;
     }
 
+  }
+  .date-row{
+    label{
+      display: inline-table;
+      margin-bottom: 0;
+      margin-right: $def-mar-half;
+      min-width: 60px;
+      & + .form-text{
+        width: auto;
+      }
+    }
+    .date-padding{
+      display: inline-table;
+    }
   }
 
 }

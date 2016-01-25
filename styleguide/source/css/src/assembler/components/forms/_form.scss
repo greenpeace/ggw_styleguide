@@ -8,6 +8,14 @@
 
 }
 
+.form-buttons{
+  .button{
+    & + .button{
+      margin-left: 4px;
+    }
+  }
+}
+
 .form-title {
   @include font-size(16px);
   margin: .5em 0 1em;

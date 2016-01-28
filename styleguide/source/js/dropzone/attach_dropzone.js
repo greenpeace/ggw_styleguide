@@ -74,7 +74,6 @@ $(function() {
   });
 
   myDropzone.on("error", function(file) {
-    file.previewElement.querySelector(".preview").style.opacity='.5';
     file.previewElement.querySelector(".name").remove();
     file.previewElement.querySelector(".start").remove();
     $("#upload-specs").css({
@@ -87,6 +86,7 @@ $(function() {
         'background-color': '#ffffff'
       })
     }, 2500);
+    file.previewElement.querySelector(".preview").style.opacity='.5';
   });
 
   // Update the total progress bar

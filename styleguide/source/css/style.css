@@ -48,7 +48,7 @@
   padding: 0 14px 14px;
   position: relative; }
 
-.item-list a:before, .sf-navbtn:before, .node-full .submitted .type:before, .node-full .field-name-document .type:before, .view-mode-full .field-label + div:before, .field-name-group-image:before,
+.item-list a:before, .sf-navbtn:before, .node-full .submitted .type:before, .node-full .field-name-document .type:before, .view-mode-full .field-label + div:before, .field-name-field-group-image:before,
 .field-name-user-image:before, [class*="icon-"], .view-mode-full .submitted .type:before, .view-mode-full .submitted .field-label + div:before, button.mfp-arrow:before, .node-type-small h2:before, .flex-direction-nav a:before, .social-icon, .icon-skype, .node-teaser .field-type-image:before, .node-teaser .submitted .type:before, .node-teaser .submitted .teaser-comments:before, .node-teaser .subscribed:before, .nfi-button, .show-more-options:before, .filename:before, .comment-actionlink:before, .trigger:before,
 .off-canvas .navcaret:before, .view-ggw-subscribe-node .views-field-title .type:before, .block-search .form-actions, .remove-image, .tablesaw-nav-btn:before {
   font-family: 'greenwire';
@@ -77,7 +77,7 @@
 .field-name-user-image:before, .field-name-field-event-organiser .field-label + div:before, .icon-user:before, .node-teaser-user .field-type-image:before, .user:before {
   content: '\e812'; }
 
-.field-name-group-image:before, .field-name-field-event-num-attendees .field-label + div:before, .icon-users:before, .node-teaser-group .field-type-image:before, .group:before {
+.field-name-field-group-image:before, .field-name-field-event-num-attendees .field-label + div:before, .icon-users:before, .node-teaser-group .field-type-image:before, .group:before {
   content: '\e806'; }
 
 .icon-user-add:before {
@@ -271,11 +271,11 @@ button.mfp-arrow-right:before, .flex-direction-nav a.flex-next:before {
 .icon-skype:before {
   content: '\e902'; }
 
-.clearfix:before, .l-main:before, article:before, .view-mode-full .field-name-body:before, .members:before, .pager:before, .form-wrapper:before, .comment-form:before, .l-footer .container:before, .view-header:before, .clearfix:after, .l-main:after, article:after, .view-mode-full .field-name-body:after, .members:after, .pager:after, .form-wrapper:after, .comment-form:after, .l-footer .container:after, .view-header:after {
+.clearfix:before, .l-main:before, article:before, .view-mode-full .field-name-body:before, .members:before, .pager:before, .comment-form:before, .l-footer .container:before, .view-header:before, .clearfix:after, .l-main:after, article:after, .view-mode-full .field-name-body:after, .members:after, .pager:after, .comment-form:after, .l-footer .container:after, .view-header:after {
   content: '';
   display: table; }
 
-.clearfix:after, .l-main:after, article:after, .view-mode-full .field-name-body:after, .members:after, .pager:after, .form-wrapper:after, .comment-form:after, .l-footer .container:after, .view-header:after {
+.clearfix:after, .l-main:after, article:after, .view-mode-full .field-name-body:after, .members:after, .pager:after, .comment-form:after, .l-footer .container:after, .view-header:after {
   clear: both; }
 
 .clear {
@@ -315,7 +315,7 @@ button.mfp-arrow-right:before, .flex-direction-nav a.flex-next:before {
 .urlive-type, .tablesaw-cell-hidden {
   display: none; }
 
-.element-invisible, .view-mode-full .field-label {
+.element-invisible, .view-mode-full:not(.node-group) .field-label {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
@@ -369,12 +369,18 @@ body {
 .content .external,
 .chosen-container-single .chosen-single div,
 .chosen-search input[type="text"],
-.chosen-container-multi .chosen-choices,
 .search-choice-close,
 .chosen-single abbr {
   background-image: url("/images/ggw_sprites1xv1.3.png");
   background-repeat: no-repeat;
   background-size: 203px 406px; }
+
+.chosen-container-multi .chosen-choices {
+  background-image: url("/images/chosen-multiselect.png");
+  background-repeat: no-repeat; }
+
+#admin-toolbar * {
+  box-sizing: content-box; }
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
@@ -1396,7 +1402,7 @@ article blockquote {
   width: 49%;
   vertical-align: top; }
 
-.field-name-group-image,
+.field-name-field-group-image,
 .field-name-user-image {
   float: left;
   margin: 0 14px 14px 0;
@@ -1405,7 +1411,7 @@ article blockquote {
   background-color: #ccc;
   overflow: hidden;
   position: relative; }
-  .field-name-group-image:before,
+  .field-name-field-group-image:before,
   .field-name-user-image:before {
     color: #fff;
     position: relative;
@@ -1413,7 +1419,7 @@ article blockquote {
     z-index: 2;
     line-height: 140px;
     width: 100%; }
-  .field-name-group-image img,
+  .field-name-field-group-image img,
   .field-name-user-image img {
     position: relative;
     z-index: 3;
@@ -2529,8 +2535,8 @@ table table {
   position: relative;
   overflow: hidden;
   border-radius: 3px;
-  background-clip: padding-box;
-  background-position: 99% -270px;
+  background-size: 13px 13px;
+  background-position: 99% 5px;
   border: 1px solid #ccc;
   cursor: text; }
 
@@ -3145,6 +3151,9 @@ table table {
   .form-wrapper .button {
     margin-top: 5px; }
 
+.form-buttons .button + .button {
+  margin-left: 4px; }
+
 .form-title {
   font-size: 1rem;
   margin: .5em 0 1em; }
@@ -3253,6 +3262,12 @@ label {
     margin-bottom: 14px; }
   .row .selector {
     display: block; }
+
+.date-row label {
+  font-weight: bold; }
+
+.date-row .date-padding {
+  margin-bottom: 0; }
 
 .form-text,
 .form-password,
@@ -3830,6 +3845,9 @@ select:-moz-focusring {
   margin-right: 7px;
   width: 34px;
   height: 34px; }
+
+.node-type-full .submitted {
+  margin-bottom: 14px; }
 
 .page-type-event .block .field {
   margin: 0; }
@@ -5459,11 +5477,11 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     padding: 14px 50px 14px 14px; }
   .node-collapse .node-title a:before, .node-collapse .node-title a:after{
     top: 50%; }
-  .field-name-group-image,
+  .field-name-field-group-image,
     .field-name-user-image{
     width: 210px;
     height: 210px; }
-  .field-name-group-image:before,
+  .field-name-field-group-image:before,
       .field-name-user-image:before{
     line-height: 210px;
     font-size: 7rem; }
@@ -5603,6 +5621,15 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     vertical-align: bottom; }
   .form-wrapper.row .button{
     margin: 0; }
+  .date-row label{
+    display: inline-table;
+    margin-bottom: 0;
+    margin-right: 7px;
+    min-width: 60px; }
+  .date-row label + .form-text{
+    width: auto; }
+  .date-row .date-padding{
+    display: inline-table; }
   .form-text,
     .form-password,
     textarea{
@@ -5862,6 +5889,9 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
   .region-highlighted.slider .block{
     padding: 0;
     background: none; }
+  .hero .item-wrapper{
+    padding: 4px;
+    background-color: #ffffff; }
   .hero{
     padding: 4px;
     margin-bottom: 14px; }
@@ -6299,10 +6329,11 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     .content .external,
     .chosen-container-single .chosen-single div,
     .chosen-search input[type="text"],
-    .chosen-container-multi .chosen-choices,
     .search-choice-close,
     .chosen-single abbr{
-    background-image: url("/images/ggw_sprites3xv1.3.png"); } }
+    background-image: url("/images/ggw_sprites3xv1.3.png"); }
+  .chosen-container-multi .chosen-choices{
+    background-image: url("/images/chosen-multiselect@3x.png"); } }
 
 @media (max-width: 39.9375em){
   .tablesaw-stack thead td,
@@ -6398,10 +6429,11 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     .content .external,
     .chosen-container-single .chosen-single div,
     .chosen-search input[type="text"],
-    .chosen-container-multi .chosen-choices,
     .search-choice-close,
     .chosen-single abbr{
-    background-image: url("/images/ggw_sprites2xv1.3.png"); } }
+    background-image: url("/images/ggw_sprites2xv1.3.png"); }
+  .chosen-container-multi .chosen-choices{
+    background-image: url("/images/chosen-multiselect@2x.png"); } }
 
 @media (min-height: 46.75em){
   .picker__list-item{

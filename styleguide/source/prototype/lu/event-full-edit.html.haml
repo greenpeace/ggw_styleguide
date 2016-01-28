@@ -123,6 +123,7 @@ menu:
                 .form-description We will attempt to calculate the coordinates from the supplied address.
                 %input#edit-event-address.form-text{:name => "edit-event-address", :type => "text", :value => "#{item.address}", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
                 #results
+                %a.small-link.modal-inline{:href => "#manual-coordinates-form"} add geocoordinates manually
 
             .preview-location-wrapper
               .preview-location
@@ -219,6 +220,21 @@ menu:
         %input{:type => "submit", :class => "button btn-primary btn-l input-good", :value => "Save and view", :tabindex => "7", "data-target" => "./event-full-organiser_changed.html#form-saved"}
           %a.button.btn-l{:href => "./events.html", :tabindex => "8"} Cancel
 
+#manual-coordinates-form.block.white-popup.mfp-hide
+  %i.block-icon.icon-map.icon-bg-action
+  %h2.block-title Add coordinates of your local group
+  .content
+    %form
+      .form-wrapper
+        .form-item
+          %label.form-label{:for => "latitude"} Latitude
+          %input.form-text#latitude{:type => "text", :value => ""}
+        .form-item
+          %label.form-label{:for => "longitude"} Longitude
+          %input.form-text#longitude{:type => "text", :value => ""}
+      .form-actions.form-wrapper
+        %input{:type => "submit", :class => "button btn-primary", :value => "Submit"}
+        %input{:type => "submit", :class => "button btn-close", :value => "Cancel"}
 
 = javascript_include_tag "leaflet"
 = javascript_include_tag "underscore"

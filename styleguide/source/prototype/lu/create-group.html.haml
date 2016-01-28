@@ -183,52 +183,53 @@ menu:
       %h2.block-title Local group location
       .content
         .form-wrapper.wrapper
+          .media-form-fields
+            .form-item.field-group-location
+              %label.form-label{:for => "edit-group-location"}
+                Location name
+              .form-description Name of the building, market etc. where the group is based. <br />Can be anything you like.
+              %input#edit-group-location.form-text{:name => "edit-group-location", :type => "text", :value => "", :placeholder => "venue name", :tabindex => "9"}/
 
-          .form-item.field-group-location
-            %label.form-label{:for => "edit-group-location"}
-              Location name
-            .form-description Name of the building, market etc. where the group is based. <br />Can be anything you like.
-            %input#edit-group-location.form-text{:name => "edit-group-location", :type => "text", :value => "", :placeholder => "venue name", :tabindex => "9"}/
+            .form-item.form-type-select.field-group-location-und-country
+              %label.form-label{:for => "country-select"}
+                Country
+                %span.form-required{:title => "This field is required."} *
+              %select#country-select.form-select{:name => "edit-group-location-und-country", :tabindex => "10", :onchange => "country_select_search()"}
+                %option{:value => ""} Please select
+                %option{:value => "un"} NOT LISTED
+                %option{:value => "au"} Australia
+                %option{:value => "be"} Belgium
+                %option{:value => "br"} Brazil
+                %option{:value => "ca"} Canada
+                %option{:value => "de"} Germany
+                %option{:value => "fi"} Finland
+                %option{:value => "fr"} France
+                %option{:value => "in"} India
+                %option{:value => "id"} Indonesia
+                %option{:value => "it"} Italy
+                %option{:value => "mx"} Mexico
+                %option{:value => "nl"} The Netherlands
+                %option{:value => "no"} Norway
+                %option{:value => "nz"} New Zealand
+                %option{:value => "ru"} Russia
+                %option{:value => "za"} South Africa
+                %option{:value => "se"} Sweden
+                %option{:value => "th"} Thailand
+                %option{:value => "ug"} Uganda
+                %option{:value => "us"} USA
+                %option{:value => "uk"} United Kingdom
 
-          .form-item.form-type-select.field-group-location-und-country
-            %label.form-label{:for => "country-select"}
-              Country
-              %span.form-required{:title => "This field is required."} *
-            %select#country-select.form-select{:name => "edit-group-location-und-country", :tabindex => "10", :onchange => "country_select_search()"}
-              %option{:value => ""} Please select
-              %option{:value => "un"} NOT LISTED
-              %option{:value => "au"} Australia
-              %option{:value => "be"} Belgium
-              %option{:value => "br"} Brazil
-              %option{:value => "ca"} Canada
-              %option{:value => "de"} Germany
-              %option{:value => "fi"} Finland
-              %option{:value => "fr"} France
-              %option{:value => "in"} India
-              %option{:value => "id"} Indonesia
-              %option{:value => "it"} Italy
-              %option{:value => "mx"} Mexico
-              %option{:value => "nl"} The Netherlands
-              %option{:value => "no"} Norway
-              %option{:value => "nz"} New Zealand
-              %option{:value => "ru"} Russia
-              %option{:value => "za"} South Africa
-              %option{:value => "se"} Sweden
-              %option{:value => "th"} Thailand
-              %option{:value => "ug"} Uganda
-              %option{:value => "us"} USA
-              %option{:value => "uk"} United Kingdom
+            .form-item.field-group-location-und-address
+              %label.form-label{:for => "edit-group-address"}
+                Address
+              .form-description We will attempt to calculate the coordinates from the supplied address.
+              %input#edit-group-address.form-text{:name => "edit-group-address", :type => "text", :value => "", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
+              #results
+              %a.small-link.modal-inline{:href => "#manual-coordinates-form"} add geocoordinates manually
 
-          .form-item.field-group-location-und-address
-            %label.form-label{:for => "edit-group-address"}
-              Address
-            .form-description We will attempt to calculate the coordinates from the supplied address.
-            %input#edit-group-address.form-text{:name => "edit-group-address", :type => "text", :value => "", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
-            #results
-            %a.small-link.modal-inline{:href => "#manual-coordinates-form"} add geocoordinates manually
-
-          .preview-location
-            #map.map{:style => "width: 100%; height: 100%;"}
+          .preview-location-wrapper
+            .preview-location
+              #map.map{:style => "width: 100%; height: 100%;"}
 
     %section#section-language.block
       %i.block-icon.icon-globe.icon-bg-action

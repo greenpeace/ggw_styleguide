@@ -21,6 +21,13 @@
   display: block;
   margin: 0;
 
+  .item-wrapper{
+    @include breakpoint($desk) {
+      padding: 4px;
+      background-color: #ffffff;
+    }
+  }
+
   .no-js & {
     min-height: 0 !important;
   }

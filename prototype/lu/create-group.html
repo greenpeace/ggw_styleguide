@@ -455,64 +455,64 @@
                     <div class='autocomplete'>
                       <ul>
                         <li>
-                          neque
+                          saepe
                         </li>
                         <li>
-                          aliquam
-                        </li>
-                        <li>
-                          iste
-                        </li>
-                        <li>
-                          facere
-                        </li>
-                        <li>
-                          similique
-                        </li>
-                        <li>
-                          natus
-                        </li>
-                        <li>
-                          velit
-                        </li>
-                        <li>
-                          id
+                          rerum
                         </li>
                         <li>
                           temporibus
                         </li>
                         <li>
-                          molestiae
+                          in
                         </li>
                         <li>
-                          deserunt
+                          aut
+                        </li>
+                        <li>
+                          maiores
+                        </li>
+                        <li>
+                          suscipit
+                        </li>
+                        <li>
+                          cum
                         </li>
                         <li>
                           modi
                         </li>
                         <li>
-                          impedit
+                          sunt
                         </li>
                         <li>
-                          non
+                          dolorem
                         </li>
                         <li>
-                          omnis
+                          voluptatem
                         </li>
                         <li>
-                          non
+                          laborum
                         </li>
                         <li>
-                          eveniet
+                          illum
                         </li>
                         <li>
-                          dolore
+                          dignissimos
                         </li>
                         <li>
-                          rem
+                          repellat
                         </li>
                         <li>
-                          qui
+                          officiis
+                        </li>
+                        <li>
+                          vel
+                        </li>
+                        <li>
+                          nostrum
+                        </li>
+                        <li>
+                          autem
                         </li>
                       </ul>
                     </div>
@@ -580,55 +580,59 @@
               <h2 class='block-title'>Local group location</h2>
               <div class='content'>
                 <div class='form-wrapper wrapper'>
-                  <div class='form-item field-group-location'>
-                    <label class='form-label' for='edit-group-location'>
-                      Location name
-                    </label>
-                    <div class='form-description'>Name of the building, market etc. where the group is based. <br />Can be anything you like.</div>
-                    <input class='form-text' id='edit-group-location' name='edit-group-location' placeholder='venue name' tabindex='9' type='text' value=''>
+                  <div class='media-form-fields'>
+                    <div class='form-item field-group-location'>
+                      <label class='form-label' for='edit-group-location'>
+                        Location name
+                      </label>
+                      <div class='form-description'>Name of the building, market etc. where the group is based. <br />Can be anything you like.</div>
+                      <input class='form-text' id='edit-group-location' name='edit-group-location' placeholder='venue name' tabindex='9' type='text' value=''>
+                    </div>
+                    <div class='form-item form-type-select field-group-location-und-country'>
+                      <label class='form-label' for='country-select'>
+                        Country
+                        <span class='form-required' title='This field is required.'>*</span>
+                      </label>
+                      <select class='form-select' id='country-select' name='edit-group-location-und-country' onchange='country_select_search()' tabindex='10'>
+                        <option value=''>Please select</option>
+                        <option value='un'>NOT LISTED</option>
+                        <option value='au'>Australia</option>
+                        <option value='be'>Belgium</option>
+                        <option value='br'>Brazil</option>
+                        <option value='ca'>Canada</option>
+                        <option value='de'>Germany</option>
+                        <option value='fi'>Finland</option>
+                        <option value='fr'>France</option>
+                        <option value='in'>India</option>
+                        <option value='id'>Indonesia</option>
+                        <option value='it'>Italy</option>
+                        <option value='mx'>Mexico</option>
+                        <option value='nl'>The Netherlands</option>
+                        <option value='no'>Norway</option>
+                        <option value='nz'>New Zealand</option>
+                        <option value='ru'>Russia</option>
+                        <option value='za'>South Africa</option>
+                        <option value='se'>Sweden</option>
+                        <option value='th'>Thailand</option>
+                        <option value='ug'>Uganda</option>
+                        <option value='us'>USA</option>
+                        <option value='uk'>United Kingdom</option>
+                      </select>
+                    </div>
+                    <div class='form-item field-group-location-und-address'>
+                      <label class='form-label' for='edit-group-address'>
+                        Address
+                      </label>
+                      <div class='form-description'>We will attempt to calculate the coordinates from the supplied address.</div>
+                      <input class='form-text' id='edit-group-address' min='4' name='edit-group-address' onfocus='address_input_search()' placeholder='address, city' tabindex='11' type='text' value=''>
+                      <div id='results'></div>
+                      <a class='small-link modal-inline' href='#manual-coordinates-form'>add geocoordinates manually</a>
+                    </div>
                   </div>
-                  <div class='form-item form-type-select field-group-location-und-country'>
-                    <label class='form-label' for='country-select'>
-                      Country
-                      <span class='form-required' title='This field is required.'>*</span>
-                    </label>
-                    <select class='form-select' id='country-select' name='edit-group-location-und-country' onchange='country_select_search()' tabindex='10'>
-                      <option value=''>Please select</option>
-                      <option value='un'>NOT LISTED</option>
-                      <option value='au'>Australia</option>
-                      <option value='be'>Belgium</option>
-                      <option value='br'>Brazil</option>
-                      <option value='ca'>Canada</option>
-                      <option value='de'>Germany</option>
-                      <option value='fi'>Finland</option>
-                      <option value='fr'>France</option>
-                      <option value='in'>India</option>
-                      <option value='id'>Indonesia</option>
-                      <option value='it'>Italy</option>
-                      <option value='mx'>Mexico</option>
-                      <option value='nl'>The Netherlands</option>
-                      <option value='no'>Norway</option>
-                      <option value='nz'>New Zealand</option>
-                      <option value='ru'>Russia</option>
-                      <option value='za'>South Africa</option>
-                      <option value='se'>Sweden</option>
-                      <option value='th'>Thailand</option>
-                      <option value='ug'>Uganda</option>
-                      <option value='us'>USA</option>
-                      <option value='uk'>United Kingdom</option>
-                    </select>
-                  </div>
-                  <div class='form-item field-group-location-und-address'>
-                    <label class='form-label' for='edit-group-address'>
-                      Address
-                    </label>
-                    <div class='form-description'>We will attempt to calculate the coordinates from the supplied address.</div>
-                    <input class='form-text' id='edit-group-address' min='4' name='edit-group-address' onfocus='address_input_search()' placeholder='address, city' tabindex='11' type='text' value=''>
-                    <div id='results'></div>
-                    <a class='small-link modal-inline' href='#manual-coordinates-form'>add geocoordinates manually</a>
-                  </div>
-                  <div class='preview-location'>
-                    <div class='map' id='map' style='width: 100%; height: 100%;'></div>
+                  <div class='preview-location-wrapper'>
+                    <div class='preview-location'>
+                      <div class='map' id='map' style='width: 100%; height: 100%;'></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -660,64 +664,64 @@
                     <div class='autocomplete'>
                       <ul>
                         <li>
-                          Annika Gross
+                          Kelly Lucas
                         </li>
                         <li>
-                          Peggy Wagner
+                          Beth McLean
                         </li>
                         <li>
-                          Dora Graham
+                          Alexa Barton
                         </li>
                         <li>
-                          Vance Davidson
+                          Allen Shaffer
                         </li>
                         <li>
-                          Sheryl Clapp
+                          Beth Pittman
                         </li>
                         <li>
-                          Elaine Houston
+                          Teddy Teague
                         </li>
                         <li>
-                          Nadia Mangum
+                          Ashton Monroe
                         </li>
                         <li>
-                          Mohammed Blanchard
+                          Abigail Lane
                         </li>
                         <li>
-                          Francesca Hewitt
+                          Sienna Harvey
                         </li>
                         <li>
-                          Harrison Olsen
+                          Tomas Hester
                         </li>
                         <li>
-                          Dora Barr
+                          Casey Lamb
                         </li>
                         <li>
-                          Cara Lamb
+                          Hector Chan
                         </li>
                         <li>
-                          Ana Middleton
+                          Summer Ross
                         </li>
                         <li>
-                          Hamish Terrell
+                          Guy Eason
                         </li>
                         <li>
-                          Katie Watkins
+                          Ewan Vick
                         </li>
                         <li>
-                          Dwayne Jones
+                          Darius Fox
                         </li>
                         <li>
-                          Margarita Norman
+                          Elise Powers
                         </li>
                         <li>
-                          Casey Kaplan
+                          Sienna Farrell
                         </li>
                         <li>
-                          Kaylin Vick
+                          Nolan Heller
                         </li>
                         <li>
-                          Annika Love
+                          Zachariah Hewitt
                         </li>
                       </ul>
                     </div>
@@ -728,64 +732,64 @@
                     <div class='autocomplete'>
                       <ul>
                         <li>
-                          George Puckett
+                          Bonnie Boykin
                         </li>
                         <li>
-                          Maisie Shaffer
+                          Patrick Heath
                         </li>
                         <li>
-                          Ida Tilley
+                          Justice Becker
                         </li>
                         <li>
-                          Bart Love
+                          Daryl Proctor
                         </li>
                         <li>
-                          Kyla Watson
+                          Byron Robertson
                         </li>
                         <li>
-                          Eliza Weinstein
+                          Noel Becker
                         </li>
                         <li>
-                          Katherine Marsh
+                          Skylar Clapp
                         </li>
                         <li>
-                          Alfredo May
+                          Vanessa Watts
                         </li>
                         <li>
-                          Preston McAllister
+                          Dalton Hawkins
                         </li>
                         <li>
-                          Moses Justice
+                          Michelle Goldstein
                         </li>
                         <li>
-                          Jamal Davidson
+                          Moses Fischer
                         </li>
                         <li>
-                          Harriet Bowling
+                          Dwayne Morse
                         </li>
                         <li>
-                          Johnnie Baker
+                          Beau O'Brien
                         </li>
                         <li>
-                          Luis Weinstein
+                          Alexa Glover
                         </li>
                         <li>
-                          Roberto Brady
+                          Sadie Rollins
                         </li>
                         <li>
-                          Angelo Fischer
+                          Hudson Chappell
                         </li>
                         <li>
-                          Alvin Whitaker
+                          Jackie O'Brien
                         </li>
                         <li>
-                          Beth May
+                          Jerald Graham
                         </li>
                         <li>
-                          Courtney Lloyd
+                          Uriel Byrne
                         </li>
                         <li>
-                          Rylee Connolly
+                          Skyler McAllister
                         </li>
                       </ul>
                     </div>
@@ -934,7 +938,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Lucinda Hunt
+                          Angelo Weinstein
                         </strong>
                         Rose Turner mentioned you in a shout.
                       </div>
@@ -985,7 +989,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Wayne Glass
+                          Brooklynn Kaplan
                         </strong>
                         has invited you to join group 'local group Amsterdam'.
                       </div>
@@ -1008,7 +1012,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Kerry Heller
+                          Adrianna Woodard
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1031,7 +1035,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Alonzo Branch
+                          Marianne McKenna
                         </strong>
                         has invited you to join the event 'color the streets'.
                       </div>
@@ -1054,7 +1058,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Melinda Weiner
+                          Ana Hester
                         </strong>
                         mention you in a comment.
                       </div>
@@ -1077,7 +1081,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Isabelle Abbott
+                          Nadia Merritt
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1100,7 +1104,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Danielle Merritt
+                          Piper Snyder
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1123,7 +1127,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Don Hatcher
+                          Stephanie Joyce
                         </strong>
                         has mentioned you in a comment.
                       </div>
@@ -1146,7 +1150,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Katie Parks
+                          Arturo Barton
                         </strong>
                         mention you in a comment.
                       </div>
@@ -1169,7 +1173,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Neil Snyder
+                          Peggy Hobbs
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1192,7 +1196,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Liliana Scarborough
+                          Beth Bowling
                         </strong>
                         invited you to join the group 'Green nerds'.
                       </div>
@@ -1215,7 +1219,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Lorenzo Conner
+                          Dulce Puckett
                         </strong>
                         invited you to join the event 'Paint the city'.
                       </div>
@@ -1242,7 +1246,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Tomas Hardin
+                          Sheryl Fox
                         </strong>
                         posted a shout in the group 'Greenpeace UK'
                       </div>
@@ -1265,7 +1269,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Brendon Morse
+                          Eric Shaffer
                         </strong>
                         replied to a comment in a photo album posted in the group 'Greenpeace UK'
                       </div>
@@ -1288,7 +1292,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Wayne Kane
+                          Makenzie Allen
                         </strong>
                         commented on a photo posted in the group 'Greenpeace UK'
                       </div>

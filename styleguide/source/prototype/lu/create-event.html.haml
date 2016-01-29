@@ -137,6 +137,7 @@ menu:
               .form-description We will attempt to calculate the coordinates from the supplied address.
               %input#edit-event-address.form-text{:name => "edit-event-address", :type => "text", :value => "", :placeholder => "address, city", :min => "4", :tabindex => "11", :onfocus => "address_input_search()"}/
               #results
+              %a.small-link.modal-inline{:href => "#manual-coordinates-form"} add geocoordinates manually
   
           .preview-location-wrapper
             .preview-location{:style => "opacity: 0;"}
@@ -206,29 +207,42 @@ menu:
       %h2.block-title Organisers and roles
       .content
         .form-wrapper
+          .form-item.form-type-select.field-organized-by-the-group
+            %label.form-label{:for => "organized-by"}
+              Organized by the group
+              %span.form-required{:title => "This field is required."} *
+            %select#organized-by.chosen-select{"data-placeholder" => "Select one or more groups", :tabindex => "10"}
+              - for groups in data.groups.my_groups
+                %option{:value => ""}
+                  #{groups}
+              - for groups in item.groups
+                %option{:value => "", :selected => ""}
+                  #{groups}
           .form-item.form-type-select
             %label.form-label{:for => "organisersinput"} Organisers
-            %select#organisersinput.chosen-select{"data-placeholder" => "Select organisers...", :multiple => "multiple", :tabindex => "11"}
-              %option{:value => "", :selected => ""}
-                Grace O'Flynn
-              - 50.times do |num|
-                :preserve
-                  <option>
-                = lorem.name
-                :preserve
-                  </option>
+
+            %input.form-text.form-autocomplete#tagsinput{:type => "text", :value => "Grace O'Flynn", :placeholder => "Select organisers...", :tabindex => "11"}
+            .autocomplete
+              %ul
+                - 20.times do |num|
+                  %li
+                    = lorem.name
 
           .form-item
             %label.form-label
               Roles & maximum of people needed
             .form-description Enter the roles to which the users can subscribe to. Example: Driver (9:00 - 13:00).
 
-            .row.clone-item
-              .form-item.edit-field-event-roles-und-0-human{:style => "margin-top:7px;"}
-                %input#edit-field-event-roles-und-0-human.form-text{:size => "29", :type => "text", :value => "", :placeholder => "describe the role", :tabindex => "12"}
-              .form-item.field-event-roles-und-0-role-limit{:style => "margin-top:7px;"}
-                %input#edit-field-event-roles-und-0-role-limit.form-text.number-field{:type => "number", :value => "", :min => "1", :max => "9999", :step => "1", :placeholder => "max. no.", :tabindex => "13"}
-            %a.small-link.clone-trigger{:href => "#"} add another role
+            %ul.field-event-roles-values
+              %li.row.clone-item
+                .form-item{:style => "margin-top:7px;"}
+                  .field-multiple-drag
+                    .tabledrag-handle
+                .form-item.edit-field-event-roles-und-0-human{:style => "margin-top:7px;"}
+                  %input#edit-field-event-roles-und-0-human.form-text{:size => "29", :type => "text", :value => "", :placeholder => "describe the role", :tabindex => "12"}
+                .form-item.field-event-roles-und-0-role-limit{:style => "margin-top:7px;"}
+                  %input#edit-field-event-roles-und-0-role-limit.form-text.number-field{:type => "number", :value => "", :min => "1", :max => "9999", :step => "1", :placeholder => "max. no.", :tabindex => "13"}
+            %a.button.clone-trigger{:href => "#"} Add another role
 
 
   %section#section-submit.section-submit

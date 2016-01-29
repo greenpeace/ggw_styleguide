@@ -3538,6 +3538,13 @@ table table {
   font-size: 16px;
   margin: .5em 0 1em; }
 
+.form-actions:before, .form-actions:after {
+  content: '';
+  display: table; }
+
+.form-actions:after {
+  clear: both; }
+
 .form-actions p {
   margin: 0; }
 
@@ -5662,6 +5669,7 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
   .block-search .form-actions {
     display: block; }
 
+.field-search,
 .form-item-search {
   margin-bottom: 0; }
 

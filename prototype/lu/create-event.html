@@ -457,6 +457,7 @@
                       <div class='form-description'>We will attempt to calculate the coordinates from the supplied address.</div>
                       <input class='form-text' id='edit-event-address' min='4' name='edit-event-address' onfocus='address_input_search()' placeholder='address, city' tabindex='11' type='text' value=''>
                       <div id='results'></div>
+                      <a class='small-link modal-inline' href='#manual-coordinates-form'>add geocoordinates manually</a>
                     </div>
                   </div>
                   <div class='preview-location-wrapper'>
@@ -616,178 +617,136 @@
               <h2 class='block-title'>Organisers and roles</h2>
               <div class='content'>
                 <div class='form-wrapper'>
+                  <div class='form-item form-type-select field-organized-by-the-group'>
+                    <label class='form-label' for='organized-by'>
+                      Organized by the group
+                      <span class='form-required' title='This field is required.'>*</span>
+                    </label>
+                    <select class='chosen-select' data-placeholder='Select one or more groups' id='organized-by' tabindex='10'>
+                      <option value=''>
+                        Festivals
+                      </option>
+                      <option value=''>
+                        Climate change
+                      </option>
+                      <option value=''>
+                        Oceans
+                      </option>
+                      <option value=''>
+                        Local group Amsterdam
+                      </option>
+                      <option value=''>
+                        Oil spill
+                      </option>
+                      <option value=''>
+                        Solar energy
+                      </option>
+                      <option value=''>
+                        Sustainability
+                      </option>
+                      <option value=''>
+                        Save the Arctic
+                      </option>
+                      <option value=''>
+                        Deforestation
+                      </option>
+                      <option selected='' value=''>
+                        Emlyn Garden local group
+                      </option>
+                      <option selected='' value=''>
+                        Greenpeace Greenwire UK
+                      </option>
+                    </select>
+                  </div>
                   <div class='form-item form-type-select'>
                     <label class='form-label' for='organisersinput'>Organisers</label>
-                    <select class='chosen-select' data-placeholder='Select organisers...' id='organisersinput' multiple='multiple' tabindex='11'>
-                      <option selected='' value=''>
-                        Grace O'Flynn
-                      </option>
-                      <option>
-                      Alma Bowman
-                      </option>&#x000A;
-                      <option>
-                      Alondra Floyd
-                      </option>&#x000A;
-                      <option>
-                      Gayle Fischer
-                      </option>&#x000A;
-                      <option>
-                      Katherine Monroe
-                      </option>&#x000A;
-                      <option>
-                      Janet Hoyle
-                      </option>&#x000A;
-                      <option>
-                      Vanessa O'Brien
-                      </option>&#x000A;
-                      <option>
-                      Ciaran Weinstein
-                      </option>&#x000A;
-                      <option>
-                      Mya Gallagher
-                      </option>&#x000A;
-                      <option>
-                      Marybeth Wallace
-                      </option>&#x000A;
-                      <option>
-                      Cara Becker
-                      </option>&#x000A;
-                      <option>
-                      Brendan Jones
-                      </option>&#x000A;
-                      <option>
-                      Alexandra Black
-                      </option>&#x000A;
-                      <option>
-                      Brenden Sutton
-                      </option>&#x000A;
-                      <option>
-                      Kaden May
-                      </option>&#x000A;
-                      <option>
-                      Aniya Baker
-                      </option>&#x000A;
-                      <option>
-                      Sonja May
-                      </option>&#x000A;
-                      <option>
-                      Yehudi Brady
-                      </option>&#x000A;
-                      <option>
-                      Jerald Davidson
-                      </option>&#x000A;
-                      <option>
-                      Jamal Merritt
-                      </option>&#x000A;
-                      <option>
-                      Neil Morgan
-                      </option>&#x000A;
-                      <option>
-                      Hector Chung
-                      </option>&#x000A;
-                      <option>
-                      Wendell Goldstein
-                      </option>&#x000A;
-                      <option>
-                      Ida Chung
-                      </option>&#x000A;
-                      <option>
-                      Vanessa Teague
-                      </option>&#x000A;
-                      <option>
-                      Bonita Lawrence
-                      </option>&#x000A;
-                      <option>
-                      Leland Lucas
-                      </option>&#x000A;
-                      <option>
-                      Daryl McKenna
-                      </option>&#x000A;
-                      <option>
-                      Kyra Sinclair
-                      </option>&#x000A;
-                      <option>
-                      Allyson Rich
-                      </option>&#x000A;
-                      <option>
-                      Kyla Chan
-                      </option>&#x000A;
-                      <option>
-                      Carley Wagner
-                      </option>&#x000A;
-                      <option>
-                      Don Love
-                      </option>&#x000A;
-                      <option>
-                      Camila Woods
-                      </option>&#x000A;
-                      <option>
-                      Abigail Hinton
-                      </option>&#x000A;
-                      <option>
-                      Alondra Beasley
-                      </option>&#x000A;
-                      <option>
-                      Dominick Bowling
-                      </option>&#x000A;
-                      <option>
-                      Eliza Cooper
-                      </option>&#x000A;
-                      <option>
-                      Moses Nichols
-                      </option>&#x000A;
-                      <option>
-                      Brendan Brady
-                      </option>&#x000A;
-                      <option>
-                      Jackie Lamb
-                      </option>&#x000A;
-                      <option>
-                      Arturo Neal
-                      </option>&#x000A;
-                      <option>
-                      Carmen Willis
-                      </option>&#x000A;
-                      <option>
-                      Orlaith Davidson
-                      </option>&#x000A;
-                      <option>
-                      Cara McLean
-                      </option>&#x000A;
-                      <option>
-                      Bart Boswell
-                      </option>&#x000A;
-                      <option>
-                      Tonia Bowman
-                      </option>&#x000A;
-                      <option>
-                      Ty Atkins
-                      </option>&#x000A;
-                      <option>
-                      Phil Lawrence
-                      </option>&#x000A;
-                      <option>
-                      Geraldine Graves
-                      </option>&#x000A;
-                      <option>
-                      Sadie Jones
-                      </option>&#x000A;
-                    </select>
+                    <input class='form-text form-autocomplete' id='tagsinput' placeholder='Select organisers...' tabindex='11' type='text' value="Grace O'Flynn">
+                    <div class='autocomplete'>
+                      <ul>
+                        <li>
+                          Judith Kane
+                        </li>
+                        <li>
+                          Shawn Wu
+                        </li>
+                        <li>
+                          Abigail Byrne
+                        </li>
+                        <li>
+                          Carmen Song
+                        </li>
+                        <li>
+                          Sydney Finch
+                        </li>
+                        <li>
+                          Jerald Baker
+                        </li>
+                        <li>
+                          Don Rich
+                        </li>
+                        <li>
+                          Andres Chung
+                        </li>
+                        <li>
+                          Sadie Graham
+                        </li>
+                        <li>
+                          Terry Solomon
+                        </li>
+                        <li>
+                          Dalton Baker
+                        </li>
+                        <li>
+                          Penny Wilkerson
+                        </li>
+                        <li>
+                          Vanessa Brady
+                        </li>
+                        <li>
+                          Jackie Underwood
+                        </li>
+                        <li>
+                          Ty Snyder
+                        </li>
+                        <li>
+                          Aniya Robertson
+                        </li>
+                        <li>
+                          Beau Monroe
+                        </li>
+                        <li>
+                          Mohammed Garrett
+                        </li>
+                        <li>
+                          Rylee Cross
+                        </li>
+                        <li>
+                          Moses Snyder
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                   <div class='form-item'>
                     <label class='form-label'>
                       Roles & maximum of people needed
                     </label>
                     <div class='form-description'>Enter the roles to which the users can subscribe to. Example: Driver (9:00 - 13:00).</div>
-                    <div class='row clone-item'>
-                      <div class='form-item edit-field-event-roles-und-0-human' style='margin-top:7px;'>
-                        <input class='form-text' id='edit-field-event-roles-und-0-human' placeholder='describe the role' size='29' tabindex='12' type='text' value=''>
-                      </div>
-                      <div class='form-item field-event-roles-und-0-role-limit' style='margin-top:7px;'>
-                        <input class='form-text number-field' id='edit-field-event-roles-und-0-role-limit' max='9999' min='1' placeholder='max. no.' step='1' tabindex='13' type='number' value=''>
-                      </div>
-                    </div>
-                    <a class='small-link clone-trigger' href='#'>add another role</a>
+                    <ul class='field-event-roles-values'>
+                      <li class='row clone-item'>
+                        <div class='form-item' style='margin-top:7px;'>
+                          <div class='field-multiple-drag'>
+                            <div class='tabledrag-handle'></div>
+                          </div>
+                        </div>
+                        <div class='form-item edit-field-event-roles-und-0-human' style='margin-top:7px;'>
+                          <input class='form-text' id='edit-field-event-roles-und-0-human' placeholder='describe the role' size='29' tabindex='12' type='text' value=''>
+                        </div>
+                        <div class='form-item field-event-roles-und-0-role-limit' style='margin-top:7px;'>
+                          <input class='form-text number-field' id='edit-field-event-roles-und-0-role-limit' max='9999' min='1' placeholder='max. no.' step='1' tabindex='13' type='number' value=''>
+                        </div>
+                      </li>
+                    </ul>
+                    <a class='button clone-trigger' href='#'>Add another role</a>
                   </div>
                 </div>
               </div>
@@ -907,7 +866,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Katie Branch
+                          Carmen Love
                         </strong>
                         Rose Turner mentioned you in a shout.
                       </div>
@@ -958,7 +917,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Melinda Lamb
+                          Yvonne Carlton
                         </strong>
                         has invited you to join group 'local group Amsterdam'.
                       </div>
@@ -981,7 +940,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Dirk Pearson
+                          Kaylin Hoyle
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1004,7 +963,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Katie Watts
+                          Daren Beasley
                         </strong>
                         has invited you to join the event 'color the streets'.
                       </div>
@@ -1027,7 +986,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Virgil Hill
+                          Eli Singer
                         </strong>
                         mention you in a comment.
                       </div>
@@ -1050,7 +1009,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Emma Blanchard
+                          Billie Walton
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1073,7 +1032,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Leslie Proctor
+                          Maisie Nichols
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1096,7 +1055,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Bart Eason
+                          Staci Cassidy
                         </strong>
                         has mentioned you in a comment.
                       </div>
@@ -1119,7 +1078,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Dirk Steele
+                          Yvonne Choi
                         </strong>
                         mention you in a comment.
                       </div>
@@ -1142,7 +1101,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Brooklynn Branch
+                          Brenden Branch
                         </strong>
                         has sent you a friend request.
                       </div>
@@ -1165,7 +1124,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Earl Lucas
+                          Jamie Welch
                         </strong>
                         invited you to join the group 'Green nerds'.
                       </div>
@@ -1188,7 +1147,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Skye Rose
+                          Nadia Christensen
                         </strong>
                         invited you to join the event 'Paint the city'.
                       </div>
@@ -1215,7 +1174,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Vanessa Pittman
+                          Kellie Hatcher
                         </strong>
                         posted a shout in the group 'Greenpeace UK'
                       </div>
@@ -1238,7 +1197,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Emely Wu
+                          Judith Fischer
                         </strong>
                         replied to a comment in a photo album posted in the group 'Greenpeace UK'
                       </div>
@@ -1261,7 +1220,7 @@
                     <div class='media-body'>
                       <div class='notifications-body'>
                         <strong>
-                          Alonzo Neal
+                          Marybeth Rodgers
                         </strong>
                         commented on a photo posted in the group 'Greenpeace UK'
                       </div>

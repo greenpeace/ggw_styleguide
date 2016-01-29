@@ -20,7 +20,9 @@
   @include font-size(16px);
   margin: .5em 0 1em;
 }
-
+.form-actions{
+  @include clearfix;
+}
 .form-actions p {
   margin: 0;
 }

@@ -48,7 +48,8 @@
   padding: 0 14px 14px;
   position: relative; }
 
-.item-list a:before, .sf-navbtn:before, .node-full .submitted .type:before, .node-full .field-name-document .type:before, .view-mode-full .field-label + div:before, .field-name-field-group-image:before,
+.item-list a:before, .sf-navbtn:before, .node-full .submitted .type:before, .node-full .field-name-document .type:before, .view-mode-full .field-label + div:before, .field-name-group-image:before,
+.field-name-field-group-image:before,
 .field-name-user-image:before, [class*="icon-"], .view-mode-full .submitted .type:before, .view-mode-full .submitted .field-label + div:before, button.mfp-arrow:before, .node-type-small h2:before, .flex-direction-nav a:before, .social-icon, .icon-skype, .node-teaser .field-type-image:before, .node-teaser .submitted .type:before, .node-teaser .submitted .teaser-comments:before, .node-teaser .subscribed:before, .nfi-button, .show-more-options:before, .filename:before, .comment-actionlink:before, .trigger:before,
 .off-canvas .navcaret:before, .view-ggw-subscribe-node .views-field-title .type:before, .block-search .form-actions, .remove-image, .tablesaw-nav-btn:before {
   font-family: 'greenwire';
@@ -77,6 +78,7 @@
 .field-name-user-image:before, .field-name-field-event-organiser .field-label + div:before, .icon-user:before, .node-teaser-user .field-type-image:before, .user:before {
   content: '\e812'; }
 
+.field-name-group-image:before,
 .field-name-field-group-image:before, .field-name-field-event-num-attendees .field-label + div:before, .icon-users:before, .node-teaser-group .field-type-image:before, .group:before {
   content: '\e806'; }
 
@@ -1402,6 +1404,7 @@ article blockquote {
   width: 49%;
   vertical-align: top; }
 
+.field-name-group-image,
 .field-name-field-group-image,
 .field-name-user-image {
   float: left;
@@ -1411,6 +1414,7 @@ article blockquote {
   background-color: #ccc;
   overflow: hidden;
   position: relative; }
+  .field-name-group-image:before,
   .field-name-field-group-image:before,
   .field-name-user-image:before {
     color: #fff;
@@ -1419,6 +1423,7 @@ article blockquote {
     z-index: 2;
     line-height: 140px;
     width: 100%; }
+  .field-name-group-image img,
   .field-name-field-group-image img,
   .field-name-user-image img {
     position: relative;
@@ -5485,11 +5490,13 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     padding: 14px 50px 14px 14px; }
   .node-collapse .node-title a:before, .node-collapse .node-title a:after{
     top: 50%; }
-  .field-name-field-group-image,
+  .field-name-group-image,
+    .field-name-field-group-image,
     .field-name-user-image{
     width: 210px;
     height: 210px; }
-  .field-name-field-group-image:before,
+  .field-name-group-image:before,
+      .field-name-field-group-image:before,
       .field-name-user-image:before{
     line-height: 210px;
     font-size: 7rem; }
@@ -6317,7 +6324,7 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     width: 90%;
     max-width: 1170px; }
   .block-sf-nav.affix{
-    width: 23%;
+    width: 22%;
     max-width: 279px; }
   .member-item{
     margin-right: 6px; } }

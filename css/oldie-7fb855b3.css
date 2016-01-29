@@ -48,7 +48,8 @@
   padding: 0 14px 14px;
   position: relative; }
 
-.item-list a:before, .sf-navbtn:before, .node-full .submitted .type:before, .node-full .field-name-document .type:before, .view-mode-full .field-label + div:before, .field-name-field-group-image:before,
+.item-list a:before, .sf-navbtn:before, .node-full .submitted .type:before, .node-full .field-name-document .type:before, .view-mode-full .field-label + div:before, .field-name-group-image:before,
+.field-name-field-group-image:before,
 .field-name-user-image:before, [class*="icon-"], .view-mode-full .submitted .type:before, .view-mode-full .submitted .field-label + div:before, button.mfp-arrow:before, .node-type-small h2:before, .flex-direction-nav a:before, .social-icon, .icon-skype, .node-teaser .field-type-image:before, .node-teaser .submitted .type:before, .node-teaser .submitted .teaser-comments:before, .node-teaser .subscribed:before, .nfi-button, .show-more-options:before, .filename:before, .comment-actionlink:before, .trigger:before,
 .off-canvas .navcaret:before, .view-ggw-subscribe-node .views-field-title .type:before, .block-search .form-actions, .remove-image, .tablesaw-nav-btn:before {
   font-family: 'greenwire';
@@ -77,6 +78,7 @@
 .field-name-user-image:before, .field-name-field-event-organiser .field-label + div:before, .icon-user:before, .node-teaser-user .field-type-image:before, .user:before {
   content: '\e812'; }
 
+.field-name-group-image:before,
 .field-name-field-group-image:before, .field-name-field-event-num-attendees .field-label + div:before, .icon-users:before, .node-teaser-group .field-type-image:before, .group:before {
   content: '\e806'; }
 
@@ -1603,6 +1605,7 @@ article p a {
   width: 49%;
   vertical-align: top; }
 
+.field-name-group-image,
 .field-name-field-group-image,
 .field-name-user-image {
   float: left;
@@ -1614,6 +1617,7 @@ article p a {
   position: relative;
   width: 210px;
   height: 210px; }
+  .field-name-group-image:before,
   .field-name-field-group-image:before,
   .field-name-user-image:before {
     color: #fff;
@@ -1624,6 +1628,7 @@ article p a {
     width: 100%;
     line-height: 210px;
     font-size: 112px; }
+  .field-name-group-image img,
   .field-name-field-group-image img,
   .field-name-user-image img {
     position: relative;

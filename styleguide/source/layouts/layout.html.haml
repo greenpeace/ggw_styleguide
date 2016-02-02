@@ -75,6 +75,9 @@
     - if current_page.data.script == "nodeform"
       = javascript_include_tag "nodeform", :async => ""
 
+    - if current_page.data.script == "demo"
+      = javascript_include_tag "demo", :async => ""
+
     - if current_page.data.dropzone
       = javascript_include_tag "dropzone", :async => ""
 

@@ -59,7 +59,17 @@ $( window ).load(function() {
         $(document).trigger('sleepyHead');
       }
     }
-  });     
+  });
+
+  $("body").swipe({
+    swipeLeft: function(event, direction, distance, duration, fingerCount) {
+      $(".mfp-arrow-right").magnificPopup("next");
+    },
+    swipeRight: function() {
+      $(".mfp-arrow-left").magnificPopup("prev");
+    },
+    threshold: 50
+  });
 
   $('.mfp-content .btn-close').click(function(e) {
     $.magnificPopup.close();

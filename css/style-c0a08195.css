@@ -1388,6 +1388,13 @@ article blockquote {
 .no-js .language-selector:hover #dropdown-content-language {
   display: block; }
 
+#edit-additional-settings {
+  background-color: #ffffff; }
+
+fieldset.collapsed .fieldset-wrapper {
+  display: none;
+  overflow: hidden; }
+
 .field {
   font-size: 0.875rem;
   margin-bottom: 14px; }
@@ -1451,6 +1458,17 @@ article blockquote {
     width: 96px;
     height: 96px;
     background: #ccc; }
+
+table.field-multiple-table td {
+  background: none;
+  border: none;
+  padding: 7px 5px 7px; }
+  table.field-multiple-table td .form-item {
+    vertical-align: top; }
+  table.field-multiple-table td .btn-s {
+    margin-top: 0; }
+  table.field-multiple-table td .machine-name-source + .field-suffix {
+    display: none; }
 
 .region-highlighted {
   -webkit-flex: 1 100%;
@@ -4459,6 +4477,9 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
 .marker-cluster span {
   line-height: 30px; }
 
+.leaflet-container a {
+  color: #559f0c !important; }
+
 .logo {
   width: 134px;
   margin: 0 auto;
@@ -5649,6 +5670,14 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     .form-password,
     textarea{
     font-size: 0.875rem; }
+  .form-text[type=date],
+    .form-password[type=date],
+    textarea[type=date]{
+    width: 300px; }
+  .form-text[type=time],
+    .form-password[type=time],
+    textarea[type=time]{
+    width: 150px; }
   .selector select{
     font-size: 0.875rem; }
   .block-profile .content:before, .block-profile .content:after{

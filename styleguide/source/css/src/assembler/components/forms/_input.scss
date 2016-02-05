@@ -27,6 +27,14 @@ textarea {
     @include font-size($p);
   }
 
+  @media screen and (min-width: $tab) {
+    &[type=date] {
+      width: 300px;
+    }
+    &[type=time] {
+      width: 150px;
+    }
+  }
 }
 
 .date-padding {

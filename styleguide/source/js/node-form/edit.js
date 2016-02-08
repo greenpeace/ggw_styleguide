@@ -3,6 +3,17 @@ $(function() {
   // function to clone collection of fields, mainly used for social media
   // ! probably for prototype/ demo only
 
+  $('.delete-clone').click(function(event) {
+    event.preventDefault();
+    var tr = $(this).closest('.row');
+    tr.find('input').each(function(){
+      $(this).val('');
+    });
+    tr.find('select').each(function(){
+      $(this).val('').trigger('chosen:updated');
+    });
+  });
+
   var counter = 0;
   $('.clone-trigger').click(function(e){
     $('.clone-item').clone(true)
@@ -10,14 +21,9 @@ $(function() {
     .removeClass('clone-item')
     .addClass('item' + counter)
     .find('input').val('');
-    $('.item' + counter).append('<a href="#" class="button btn-s delete-clone"><i class="icon-trash"></i></a>');
     counter++;
     e.preventDefault();
 
-    $('.delete-clone').click(function(e){
-      $(this).parent().remove();
-      e.preventDefault();
-    });
 
     $('.field-event-roles-values').sortable({
       handle: '.tabledrag-handle',

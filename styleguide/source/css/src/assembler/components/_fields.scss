@@ -149,6 +149,9 @@ table.field-multiple-table{
     background: none;
     border: none;
     padding: 7px 5px 7px;
+    a.tabledrag-handle{
+      margin-top: 7px;
+    }
     .form-item{
       vertical-align: top;
     }
@@ -160,5 +163,10 @@ table.field-multiple-table{
         display: none;
       }
     }
+  }
+}
+section{
+  .tabledrag-toggle-weight-wrapper{
+    display: none;
   }
 }

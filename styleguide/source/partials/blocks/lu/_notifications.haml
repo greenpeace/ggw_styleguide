@@ -1,13 +1,6 @@
 #notifications-panel.attention-panel.dropdown.dropdown-tip.dropdown-anchor-right
   .dropdown-panel.content
 
-    .tabwrapper.tabable-wrapper
-      %ul.tabs
-        %li
-          =nav_link 'Alerts (3)', '#notialerts', :class => 'tab'
-        %li
-          =nav_link 'Updates (3)', '#notiupdates', :class => 'tab'
-
     .tabable
       #notialerts.tabable-block.active
         %section.notifications-section
@@ -225,55 +218,3 @@
                 .notifications-footer
                   %span.timestamp
                     1 month ago
-
-      #notiupdates.tabable-block
-
-        %section.notifications-section
-          %article.notification.notification
-            %a.media{:href => "./group-home-enrolled.html#block-comments"}
-              .media-figure.avatar-holder
-                %img.lazyload{:alt => "Dora Tilman", :src => "/images/blank.png", "data-srcset" => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
-                %noscript
-                  %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/60/people1.jpg 1x, /photos/120/people1.jpg 2x"}/
-              .media-body
-                .notifications-body
-                  %strong
-                    = lorem.name
-                  posted a shout in the group 'Greenpeace UK'
-                .notifications-footer
-                  %span.timestamp
-                    5 minutes ago
-
-          %article.notification.notificatio
-            %a.media{:href => "./photo-album.html"}
-              .media-figure.avatar-holder
-                %img.lazyload{:alt => "Dora Tilman", :src => "/images/blank.png", "data-srcset" => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
-                %noscript
-                  %img{:alt => "Dora Tilman", :src => "/photos/60/people2.jpg", :srcset => "/photos/60/people2.jpg 1x, /photos/120/people2.jpg 2x"}/
-              .media-body
-                .notifications-body
-                  %strong
-                    = lorem.name
-                  replied to a comment in a photo album posted in the group 'Greenpeace UK'
-                .notifications-footer
-                  %span.timestamp
-                    7 minutes ago
-
-          %article.notification.notificatio
-            %a.media{:href => "./photo-album.html"}
-              .media-figure.avatar-holder
-                %img.lazyload{:alt => "Dora Tilman", :src => "/images/blank.png", "data-srcset" => "/photos/60/people9.jpg 1x, /photos/120/people9.jpg 2x"}/
-                %noscript
-                  %img{:alt => "Dora Tilman", :src => "/photos/60/people1.jpg", :srcset => "/photos/60/people9.jpg 1x, /photos/120/people9.jpg 2x"}/
-              .media-body
-                .notifications-body
-                  %strong
-                    = lorem.name
-                  commented on a photo posted in the group 'Greenpeace UK'
-                .notifications-footer
-                  %span.timestamp
-                    7 minutes ago
-
-
-        .load-more-wrapper
-          %a.button.btn-block.disabled{:href => "#"} see all

@@ -272,6 +272,9 @@ menu:
             .form-description Select the desired social network and copy/paste the full URL to field below.
 
             .row.clone-item
+              .form-item{:style => "margin-top:7px;"}
+                .field-multiple-drag
+                  .tabledrag-handle
               .form-item.edit-field-select-social-media{:style => "margin-top:7px;"}
                 %select.form-select.input-medium
                   %option{:value => ""} Select a platform
@@ -284,7 +287,7 @@ menu:
                   %option{:value => "other"} Other
               .form-item.field-event-roles-und-0-role-limit
                 %input#edit-field-event-roles-und-0-role-limit.form-text.input-medium{:type => "url", :value => "", :tabindex => "13", :size => "35", :pattern => "https?://.+"}
-            %a.small-link.clone-trigger{:href => "#"} add another item
+            %a.button.clone-trigger{:href => "#"} add another item
 
 
   %section#section-submit.section-submit

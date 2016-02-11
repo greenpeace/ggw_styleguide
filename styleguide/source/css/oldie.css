@@ -733,6 +733,7 @@ article p a {
 
 .group-heading {
   font-size: 16px;
+  font-weight: bold;
   color: #56b004;
   line-height: 1rem;
   margin: 14px 7px; }
@@ -1647,6 +1648,7 @@ fieldset.collapsed .fieldset-wrapper {
     top: 0;
     left: 0; }
 
+.group-name,
 .field-name-group-name,
 .field-name-user-name {
   display: none;
@@ -1655,6 +1657,7 @@ fieldset.collapsed .fieldset-wrapper {
   font-weight: 700;
   font-size: 19px;
   line-height: 1.1em; }
+  .group-name span,
   .field-name-group-name span,
   .field-name-user-name span {
     color: #999; }
@@ -2637,6 +2640,11 @@ table table {
     height: 90px; }
   .node-teaser .created-date,
   .node-teaser .author {
+    display: none;
+    display: inline-block; }
+  .node-teaser .submitted-info-teaser {
+    display: inline-block; }
+  .node-teaser.node-teaser-event .submitted-info-teaser {
     display: none;
     display: inline-block; }
   .node-teaser .field-type-wrapper {

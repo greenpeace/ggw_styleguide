@@ -82,6 +82,17 @@
       display: inline-block;
     }
   }
+  .submitted-info-teaser{
+    display: inline-block;
+  }
+  &.node-teaser-event{
+    .submitted-info-teaser{
+      display: none;
+      @include breakpoint($tab) {
+        display: inline-block;
+      }
+    }
+  }
 
   .field-type-wrapper {
     overflow: hidden;

@@ -715,6 +715,7 @@ article blockquote {
 
 .group-heading {
   font-size: 1rem;
+  font-weight: bold;
   color: #56b004;
   line-height: 1rem;
   margin: 14px 7px; }
@@ -1442,6 +1443,7 @@ fieldset.collapsed .fieldset-wrapper {
     top: 0;
     left: 0; }
 
+.group-name,
 .field-name-group-name,
 .field-name-user-name {
   display: none; }
@@ -2303,6 +2305,10 @@ table table {
     height: 60px; }
   .node-teaser .created-date,
   .node-teaser .author {
+    display: none; }
+  .node-teaser .submitted-info-teaser {
+    display: inline-block; }
+  .node-teaser.node-teaser-event .submitted-info-teaser {
     display: none; }
   .node-teaser .field-type-wrapper {
     overflow: hidden;
@@ -5594,6 +5600,8 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
   .node-teaser .created-date,
       .node-teaser .author{
     display: inline-block; }
+  .node-teaser.node-teaser-event .submitted-info-teaser{
+    display: inline-block; }
   .node-teaser .field-type-date{
     margin-bottom: 4px;
     display: block;
@@ -5922,14 +5930,16 @@ a.lazy-load-youtube:hover, .lazy-load-vimeo:hover {
     left: 0; }
   .block-title{
     margin-left: 30px; }
-  .field-name-group-name,
+  .group-name,
+    .field-name-group-name,
     .field-name-user-name{
     display: block;
     color: #1a1a1a;
     font-weight: 700;
     font-size: 1.1875rem;
     line-height: 1.1em; }
-  .field-name-group-name span,
+  .group-name span,
+      .field-name-group-name span,
       .field-name-user-name span{
     color: #999; }
   .field-name-field-event-location a{

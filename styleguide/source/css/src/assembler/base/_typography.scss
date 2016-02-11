@@ -198,6 +198,7 @@ article {
 
 .group-heading {
   @include font-size($h4);
+  font-weight: bold;
   color: $green2;
   line-height: 1rem; // must be able to span multiple lines
   margin: $def-mar $def-mar-half;

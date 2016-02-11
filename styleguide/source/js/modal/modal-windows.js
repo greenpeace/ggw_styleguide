@@ -55,21 +55,24 @@ $( window ).load(function() {
       titleSrc: 'title'
     },
     callbacks: {
+      beforeOpen:function(){
+        $("body").swipe({
+          swipeLeft: function(event, direction, distance, duration, fingerCount) {
+            $(".mfp-arrow-right").magnificPopup("next");
+          },
+          swipeRight: function() {
+            $(".mfp-arrow-left").magnificPopup("prev");
+          },
+          threshold: 50
+        });
+      },
       close: function () {
         $(document).trigger('sleepyHead');
+        $("body").swipe('destroy');
       }
     }
   });
 
-  $("body").swipe({
-    swipeLeft: function(event, direction, distance, duration, fingerCount) {
-      $(".mfp-arrow-right").magnificPopup("next");
-    },
-    swipeRight: function() {
-      $(".mfp-arrow-left").magnificPopup("prev");
-    },
-    threshold: 50
-  });
 
   $('.mfp-content .btn-close').click(function(e) {
     $.magnificPopup.close();
